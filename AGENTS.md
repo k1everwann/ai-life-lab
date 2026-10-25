@@ -5,6 +5,8 @@ Public Traditional Chinese teaching materials for families and AI beginners.
 - Keep HTML, CSS, and JavaScript dependency-free. GitHub Pages serves the repository root.
 - Preserve two complete 60-minute alternative routes: phone and computer.
 - Label fictional exercises, prepared outputs, and reconstructed project demos.
+- Public previews are fictional reconstructions, never captures or embeds of private pages. Keep investment examples free of accounts, holdings, strategies, performance, and live trading connections.
+- Preserve Gmail and Drive's five-minute demonstrations each. Teach a short initial request, a learner-authored follow-up, and both source fidelity and source credibility.
 - Never publish private source data, wardrobe metadata, photos, infrastructure, credentials, or private Notion content.
 - Distinguish rule engines, AI generation, retrieval, and automation in project summaries.
 - Keep phone layouts, keyboard focus, touch targets, and text feedback usable.

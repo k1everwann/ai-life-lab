@@ -22,6 +22,12 @@ $$('[role="tablist"]').forEach(list => list.addEventListener("keydown", event =>
  if (next >= 0) { event.preventDefault(); tabs[next].focus(); tabs[next].click(); }
 }));
 const stories = {
+ market: {
+  name:"TickForge Community",title:"對股票有興趣？先看研究工具怎麼把關。",problem:"研究資訊散在不同地方，想知道每一步依據，以及資料不明時該不該繼續。",
+  method:"公開交易研究框架把資料、規則、選用的 AI 複核與風險檢查分開；內建模式只做模擬。",
+  boundary:"這裡重現研究框架的部分概念，沒有行情、券商、私人策略或交易紀錄；不能當買賣依據，也不展示報酬承諾。",start:"先做自己的股票資料核對清單：來源、資料時間、單位、缺漏。喜歡其他題材也能沿用。",
+  demo:'<span class="demo-label">固定教學重現 · 虛構情境，非私人截圖</span><div class="demo-window"><h4>AI 回覆後，還有哪些事要確認？</h4><p>資料 → 規則 → AI 複核 → 風險檢查 → 模擬紀錄</p><div class="demo-choices"><button data-market-state="ready" aria-pressed="true">AI 正常回覆</button><button data-market-state="timeout" aria-pressed="false">AI 沒有回覆</button><button data-market-state="unknown" aria-pressed="false">先前狀態不明</button></div><p id="market-result" class="demo-result" aria-live="polite">AI 有回覆仍須確認規則與風險檢查；回覆本身不是執行依據。</p><a class="text-link" href="https://github.com/k1everwann/tickforge-community" target="_blank" rel="noopener">查看公開研究框架 ↗</a></div><p class="demo-note">沒有呼叫 AI、即時行情或券商。這是研究流程示意，不是投資建議。</p>'
+ },
  outfit: {
   name:"Forge Outfit",title:"每天穿什麼，變成有依據的建議。",problem:"把天氣、已擁有的衣物與每日提醒整理在一起。",
   method:"取得天氣資料，以規則選衣，再生成 AI 實穿示意圖，透過排程通知。",
@@ -58,16 +64,17 @@ function showcase(key) {
 $$("[data-showcase]").forEach(b=>b.addEventListener("click",()=>showcase(b.dataset.showcase)));
 $("#showcase-panel").addEventListener("click",event=>{
  const b=event.target.closest("button");if(!b)return;
+ if(b.dataset.marketState){const states={ready:"AI 有回覆仍須確認規則與風險檢查；回覆本身不是執行依據。",timeout:"AI 逾時或回覆格式不符，拒絕這次候選進場；風險退出不等待 AI，不能把沒有回覆補成通過。",unknown:"先前委託狀態不明，先查清楚，封鎖後續進場；不能假設上一筆沒有發生。"};$("#market-result").textContent=states[b.dataset.marketState];$$("[data-market-state]").forEach(n=>n.setAttribute("aria-pressed",String(n===b)));}
  if(b.dataset.weather){const rain=b.dataset.weather==="rain";$$("[data-weather]").forEach(n=>n.setAttribute("aria-pressed",String(n===b)));$("#garment-one").textContent=rain?"防水外套":"透氣上衣";$("#garment-two").textContent=rain?"長褲":"輕薄下身";$("#garment-three").textContent=rain?"雨具":"水壺";$("#weather-result").textContent=rain?"示意規則：下雨加入防水裝備；天涼增加外層。":"示意規則：炎熱時優先透氣，並準備飲水。";}
  if(b.dataset.studyAnswer){$("#study-result").textContent=b.dataset.studyAnswer==="correct"?"答對了。原文依據：「11/05 18:00 報名截止」。活動日不是報名截止日。":"再核對原文：「11/05 18:00 報名截止」。11/08 是活動日期。";}
  if(b.id==="collection-toggle"){const on=b.getAttribute("aria-pressed")!=="true";b.setAttribute("aria-pressed",String(on));b.textContent=on?"把第一本改回想讀":"把第一本標為讀完";$("#collection-result").textContent="目前 "+(on?1:0)+" / 3 本已讀完。狀態只在這個展示中使用。";}
-});showcase("outfit");
+});showcase("market");
 const contexts={picnic:["野餐墊、水和垃圾袋","背景能幫助產生合適建議；實際規定仍要看活動通知。"],library:["借閱證、筆記本與想讀的書","同一問題換了背景，合適的建議也會改變。"],unknown:["先問：去哪裡、做什麼、有哪些規定？","缺少關鍵資訊時，先釐清需求比直接補出答案更有用。"]};
 $$("[data-context]").forEach(b=>b.addEventListener("click",()=>{const[a,n]=contexts[b.dataset.context];$("#context-answer").textContent=a;$("#context-note").textContent=n;$$("[data-context]").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));}));
 const notices="教學虛構資料。情境日期：2026-11-02，所有日期與時間皆採 Asia/Taipei。\n通知 A（11/02）：社區自然觀察活動於 11/08（日）09:00–12:00 舉辦，報名截止為 11/05（四）18:00。透過社區表單報名；成功與否需等確認信。\n通知 B（11/01 舊通知）：手作課原訂 11/07（六）10:00，在一樓教室。\n通知 C（11/02 更正）：更新 B，改為 11/07（六）14:00，在二樓教室。請於 11/04（三）20:00 前回覆能否出席。\n通知 D（11/02）：包裹請於 11/06（五）前到指定門市領取。沒有提供營業時間或最後取貨時刻。";
 const phoneTask="請只根據通知 A–D 整理待辦草稿，列出「要做什麼、處理期限、活動時間、來源、待確認資訊」。更正通知優先於舊通知；區分活動日與報名截止日。未寫明的時間或狀態標示待確認，不自行補齊。只整理，不代為報名、回信或付款。";
 const prompts={
- notices,"phone-full":notices+"\n\n"+phoneTask,
+ notices,"phone-short":notices+"\n\n請把通知 A–D 整理成待辦清單。","phone-full":notices+"\n\n"+phoneTask,
  gmail:"請透過 Gmail 查找最近七天本次可取得的信件，整理需要我回覆或處理的事項，附原信來源、期限與本次搜尋範圍。已讀不代表完成；沒有明確期限請標待確認。不宣稱涵蓋全部待辦。僅讀取與整理。",
  drive:"請透過 Google Drive，只讀取我指定的方案文件（請先向我要文件連結）。先確認日期、人數、幣別與每人／整團計價，再比較總額與包含項目。附文件來源，標記缺漏；沒有資料就不要猜。找到檔名但未讀到內容時請明說。僅讀取與整理。",
  budget:"虛構旅遊預算：同一天、四位成人的一日行程，全部以新台幣計價。方案 A 每人 800 元，另加整團交通 1,200 元，午餐費未提供。方案 B 整團 4,000 元，已含交通與午餐。請列出兩方案已知費用的計算式、比較條件與尚缺資訊；不要將未知費用當成零。",
@@ -78,6 +85,7 @@ async function copyText(text,message="已複製，可以貼到你的 AI 對話�
  catch{const dialog=document.createElement("dialog"),title=document.createElement("h3"),area=document.createElement("textarea"),close=document.createElement("button");title.textContent="請手動選取並複製";area.value=text;area.rows=10;area.setAttribute("aria-label","待複製的練習內容");close.textContent="關閉";close.className="button small";dialog.style.cssText="max-width:650px;width:90%;border:1px solid #cfd4dc;border-radius:16px;padding:25px";dialog.append(title,area,close);document.body.append(dialog);close.addEventListener("click",()=>dialog.close());dialog.addEventListener("close",()=>dialog.remove());dialog.showModal();area.focus();area.select();}
 }
 $$("[data-copy]").forEach(b=>b.addEventListener("click",()=>copyText(b.dataset.copy==="build"?$("#build-prompt").value:prompts[b.dataset.copy]||"")));
+$("#copy-followup").addEventListener("click",()=>{const value=$("#phone-followup").value.trim();if(!value){toast("先寫下你想補充的一個要求。");return;}copyText(value,"已複製補充要求；回到同一個 AI 對話貼上，再核對修改結果。");});
 $("#share-route").addEventListener("click",()=>copyText("https://k1everwann.github.io/ai-life-lab/?route="+(progress.route==="computer"?"computer":"phone")+"#classroom","已複製這條路線的公開分享連結。"));
 const correct={q1:"contradicted",q2:"supported",q3:"unknown"};
 const explanations={q1:"① 與原文矛盾：A 寫明 11/05 18:00 報名截止；11/08 是活動日。",q2:"② 有依據：C 更正為 11/07 14:00、二樓，應更新舊通知 B。",q3:"③ 目前無法判斷：D 沒有門市營業時間，22:00 是無依據的補充。"};
@@ -105,9 +113,13 @@ $("#run-preview").addEventListener("click",()=>{
 });
 $("#download-code").addEventListener("click",()=>{const code=$("#html-code").value.trim();if(!code){toast("請先貼上 HTML 或載入範例。");return;}download("my-webpage.html",code,"text/html;charset=utf-8");toast("已送出下載；請確認檔案保存成功。");});
 $$("[data-check]").forEach(b=>{b.checked=Boolean(progress[b.dataset.check]);b.addEventListener("change",()=>{progress[b.dataset.check]=b.checked;save();});});
-$("#download-card").addEventListener("click",()=>{
+function makeCard(){
  const checks=$$("[data-check]").map(b=>(b.checked?"[已親自確認] ":"[尚未確認] ")+b.parentElement.textContent.trim()).join("\n");
- const body="AI 生活實驗室｜我的帶走卡\n路線："+(progress.route==="computer"?"電腦做網頁":"手機生活應用")+"\n\n我下次想做的事：\n"+($("#my-next-task").value.trim()||"尚未填寫")+"\n\n我會如何核對：\n"+($("#my-check").value.trim()||"尚未填寫")+"\n\n"+(progress.route==="computer"?checks+"\n\n":"")+"方法：說明需求 → 提供材料 → 取得草稿 → 核對與修改。\n提醒：整理不等於執行；搜尋不保證完整。\n";download("ai-life-takeaway.txt",body);toast("已送出下載；請確認帶走卡保存成功。");
+ return "AI 生活實驗室｜我的帶走卡\n路線："+(progress.route==="computer"?"電腦做網頁":"手機生活應用")+"\n\n我今天核對後的成果：\n"+($("#my-completed").value.trim()||"尚未填寫")+"\n\n我下次想做的事：\n"+($("#my-next-task").value.trim()||"尚未填寫")+"\n\n我會如何核對：\n"+($("#my-check").value.trim()||"尚未填寫")+"\n\n"+(progress.route==="computer"?checks+"\n\n":"")+"方法：說明需求 → 提供材料 → 取得草稿 → 核對與修改。\n提醒：整理不等於執行；搜尋不保證完整。對得上原文，仍要確認原始消息可信。\n";
+}
+$("#copy-card").addEventListener("click",async()=>{await copyText(makeCard(),"帶走卡已複製，請貼到自己的備忘錄並確認保存。");$("#card-status").textContent="完成複製後，請到備忘錄貼上；再重新開啟筆記確認。";});
+$("#download-card").addEventListener("click",()=>{
+ download("ai-life-takeaway.txt",makeCard());$("#card-status").textContent="已送出下載。請到瀏覽器下載清單或手機檔案中，開啟 ai-life-takeaway.txt 確認內容；未成功時改用複製。";toast("已送出下載；請確認帶走卡保存成功。");
 });
 $("#present-toggle").addEventListener("click",e=>{const on=document.body.classList.toggle("present-mode");e.currentTarget.setAttribute("aria-pressed",String(on));e.currentTarget.textContent=on?"還原字級":"放大字級";});
 $("#reset-progress").addEventListener("click",()=>{progress={};save();$$('input[type="radio"],[data-check]').forEach(x=>x.checked=false);$("#audit-feedback").replaceChildren();toast("已清除此網站在本裝置的練習進度。");});

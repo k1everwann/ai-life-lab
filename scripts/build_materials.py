@@ -16,11 +16,11 @@ VERIFIED = "2026-10-25"
 PHONE = [
 ("0-7", "7", "成果展示與共同原理", "看見用途，知道結果需要核對"),
 ("7-15", "8", "讀通知，找出錯誤草稿", "區分活動日、截止日與未知資訊"),
-("15-23", "8", "示範需求與來源核對", "指定材料、欄位與缺資料處理方式"),
-("23-38", "15", "手機實作與一次修改", "提交自己的要求，取得並修正草稿"),
+("15-23", "8", "短問句、看缺漏、補一個要求", "知道指令可以依草稿逐步補充"),
+("23-38", "15", "手機五步操作與一次修改", "複製、貼上、返回核對並保留成果"),
 ("38-48", "10", "Gmail 與 Drive 各約五分鐘", "看懂工具取資料與核對的分工"),
-("48-55", "7", "查核挑戰與預算加總", "回原文核對，避免把未知費用當零"),
-("55-60", "5", "出口題與帶走卡", "說出下次任務及自己的查核方式"),
+("48-55", "7", "查核原文、發布者與預算", "區分忠實整理、來源可信與未知費用"),
+("55-60", "5", "保存成果與出口題", "重新找到自己的清單，說出查核方式"),
 ]
 COMPUTER = [
 ("0-7", "7", "成果展示與共同原理", "看懂從小問題到作品的過程"),
@@ -40,6 +40,8 @@ NOTICES = [
 PHONE_PROMPT = "請只根據通知 A-D 整理待辦草稿，列出要做什麼、處理期限、活動時間、來源與待確認資訊。更正通知優先於舊通知，區分活動日與報名截止日。未寫明的時間或狀態標示待確認，不自行補齊。僅整理，不代為報名、回信或付款。"
 BUILD_PROMPT = "請在新的練習資料夾製作單檔 index.html，主題是我的旅行準備清單，包含用途說明與至少三個項目。可勾選與取消，完成數即時更新，提供全部重設按鈕。使用繁體中文，390px 手機寬度也可操作。HTML、CSS、JavaScript 放同一檔，不使用外部套件、API、登入或網路字型。第一版重新整理後可重設，請在畫面說明。只處理練習資料夾，不部署。完成後列出我應親自執行的測試步驟。"
 SOURCES = [
+("公開交易研究框架與模擬界線", "https://github.com/k1everwann/tickforge-community"),
+("ChatGPT 年齡與成人操作說明", "https://help.openai.com/en/articles/8313401-is-chatgpt-safe-for-all-ages"),
 ("既有工程入門教材", "https://github.com/k1everwann/codex-starter-guide"),
 ("ChatGPT 使用與成果查核", "https://learn.chatgpt.com/docs/use-chatgpt"),
 ("插件與手機可用性", "https://learn.chatgpt.com/docs/plugins"),
@@ -67,41 +69,44 @@ PAGES = [
 ("bullet", "找不同熟練度的人先試走，記錄卡住的位置與時間；尚未宣稱教學成效已驗證。"),
 ]),
 ("共同開場與成果展示講稿", [
-("p", "0-3 分鐘展示成果，3-7 分鐘解釋原理。每個成果回答：原本的問題是什麼、怎麼接起來、學員能從哪一步開始。"),
-("h", "四個可以點開的真實專案摘要"),
+("p", "0-3 分鐘只主講投資研究與學習網站，各約 90 秒；3-7 分鐘解釋原理。每例說明：自己的問題、可操作成果、AI 與工具分工、學員今天能開始的一步。"),
+("h", "主講兩例，其餘供自行點閱"),
 ("table", (["專案", "可以這樣說", "從小處開始"], [
-["Forge Outfit", "天氣資料、選衣規則、AI 示意圖與排程通知組合在一起。選衣理由包含規則引擎。", "下雨天出門準備清單"],
-["Forge Japanese N1", "用網站整理教材與練習，作答後回到原文看證據。不是即時 AI 家教。", "三題自己的練習與解析"],
+["TickForge Community（主講）", "公開交易研究框架：資料、規則、選用 AI 複核與風險檢查分工，只做模擬；不展示私人投資狀況。", "股票資料的來源、時間、單位與缺漏核對清單"],
+["Forge Outfit", "天氣資料、選衣規則、AI 示意圖與排程提醒各有分工。", "下雨天出門準備清單"],
+["Forge Japanese N1（主講）", "用網站整理教材與練習，作答後看證據；不是即時 AI 家教。", "三題自己的練習與解析"],
 ["Forge Glow", "用資料庫與 API 整理書籍、電影與影集收藏；不把一般資料庫叫做 AI。", "三本書的閱讀清單"],
 ["公開工程教材", "把實作整理成下一個人能學的網站與原始碼。今天之後還能繼續深入。", "保存需求、修改與驗收過程"]])),
 ("h", "三個共同原理"),
 ("bullet", "模型從範例學到模式，依眼前指令與材料生成答案或程式；流暢不保證正確。"),
 ("bullet", "連接器與工具決定能取得什麼資料、能執行什麼動作；沒有授權的資料不能假設已讀到。"),
 ("bullet", "人要回原文、算總額、實際操作。把待辦列出來，不等於已完成；產出程式，也不等於功能正確。"),
-("callout", "這些作品都是從一個具體問題開始。今天只完成一件自己用得上的小事，並親自確認它能不能用。"),
+("callout", "投資研究示意中，AI 逾時時拒絕候選進場，風險退出不等待 AI；先前狀態不明則阻擋新進場。不展示價格、績效或買賣建議，今天從核對清單或小測驗開始。"),
 ("p", "展示區為經標示的虛構資料重現，並非正式系統截圖。不要臨場打開私人主機總覽、衣櫃、真實郵件或部署設定。"),
 ]),
 ("A 手機路線 六十分鐘教案", [
 ("table", (["時間", "活動", "看得見的成果"], [[r[0]+" 分",r[2],r[3]] for r in PHONE])),
 ("h", "四項學員驗收"),
-("bullet", "提交一段含任務、材料、輸出欄位與缺資料處理方式的需求。"),
+("bullet", "先用簡短任務取得草稿，再親自補一個要求；成人操作組由孩子說需求、成人送出，分開記錄平台操作。"),
 ("bullet", "回通知原文，區分一項報名截止與活動日期，修正錯誤或遺漏。"),
 ("bullet", "辨識至少一項目前無法判斷的內容，不接受 AI 自行補出的時間。"),
-("bullet", "能說明本次搜尋不保證完整、清單不代表已回信或報名。"),
+("bullet", "能說明原文也需要核對發布者；保存修正清單後重新找回。搜尋不保證完整，清單不代表已執行。"),
 ("h", "跟不上時怎麼調整"),
-("p", "手機 App 切換留在 23-38 分鐘的練習時間內。可兩人一組，一人操作、一人查核，再交換。沒有 AI 帳號者先做預先草稿查核，註明尚未完成親自提問，不把兩種成果混算。"),
-("p", "時間不足時保留原文查核與出口題，將 Drive 分析移到課後選修。不要為了介紹更多平台而刪除驗證。"),
+("p", "五步操作：按複製 → 切到 AI 長按輸入欄貼上並送出 → 切回教材 → 對照通知、補要求修改 → 把成果貼到帶走卡。成人操作組與無帳號組保留判斷練習，不混算本人平台操作。"),
+("p", "Gmail、Drive 各五分鐘維持正式課程。先試走登入與切換；練習用同一組通知，不另加情境。結束時可複製到備忘錄或下載，再開啟確認真的保存。"),
 ]),
 ("A 練習資料與查核答案", [
 ("p", "全部為虛構教學資料，情境日 2026-11-02，日期與時間採 Asia/Taipei。"),
 ("table", (["通知", "內容"], [[n[0]+" / "+n[1]+" "+n[2],n[3]] for n in NOTICES])),
-("h", "可直接使用的需求"),
+("h", "先短問，再補條件"),
+("p", "先問：請把通知 A-D 整理成待辦清單。回原文看看期限、版本與未知時間有沒有問題，再親改一個要求，例如：請附通知來源，沒寫明的時間標待確認。"),
+("h", "修改後可參考的整合版需求"),
 ("callout", PHONE_PROMPT),
 ("h", "參考答案與易錯點"),
 ("bullet", "活動報名：11/05 18:00 截止，活動為 11/08 09:00-12:00，來源 A；報名是否成功仍需確認信。"),
 ("bullet", "手作課回覆：11/04 20:00 截止；課程為 11/07 14:00、二樓，來源 C 更新 B。"),
 ("bullet", "包裹：11/06 前領取，來源 D；營業時間、最後取貨時刻均未知。"),
-("p", "查核題答案依序為：與原文矛盾、有依據、目前無法判斷。網站提供逐項解析。"),
+("p", "查核題依序為：與原文矛盾、有依據、目前無法判斷。對得上原文只代表忠實整理；若原文是群組轉傳，仍要向主辦單位確認日期與更新，不能把轉傳當作正式通知。"),
 ]),
 ("A 連接器與雲端資料示範", [
 ("h", "Gmail 約五分鐘"),
@@ -116,7 +121,7 @@ PAGES = [
 ("p", "CSV 與資料說明可由講師頁下載。A 的午餐未知，不是零元；B 的交通已包含，不再重複加一次。此為算術與資料口徑練習，不是實際旅遊報價。"),
 ("h", "課前必查"),
 ("bullet", "用實際 iPhone／Android、預計帳號與網路試走。可用功能受方案、地區、插件與權限影響。"),
-("bullet", "未符合 AI 平台使用年齡者由講師或家長操作 AI；不要要求借用他人帳號。"),
+("bullet", "12 歲的 ChatGPT 實際互動由成人進行，孩子提出要求與查核；入口前說明，沒有成人時用本頁草稿。不要求借帳號。"),
 ("bullet", "只讀取指定教學資料。寄信、報名、付款與建立日曆不列入本堂練習。"),
 ]),
 ("B 電腦路線 六十分鐘教案", [
@@ -151,10 +156,10 @@ PAGES = [
 ("bullet", "課前在桌面、手機與投影上試走主要流程。確認公開網址、PDF、範例與複製按鈕可使用。"),
 ("bullet", "共用七分鐘後選一條主課程；設備混合時，另一條提供自學指引或助教協助，不讓一位講師同時講兩套。"),
 ("bullet", "依操作熟練度提供提示，避免以年齡判斷能力。可放大字級，讓操作員與查核員輪換。"),
-("bullet", "網站不會自動保存自由輸入與 HTML。結束前提醒下載帶走卡或作品，並確認手機下載位置。"),
+("bullet", "網站不會自動保存自由輸入與 HTML。帶走卡含今天成果：可複製到備忘錄或下載 ai-life-takeaway.txt；請學員重新開啟確認。"),
 ("h", "素材採用與界線"),
 ("p", "課程方向參考個人 AI 工作坊筆記中的 Vibe Coding 與 Google Workspace 應用，並核對個人專案 README 與維護文件。公開版本只保留功能摘要，不包含私人筆記、帳號、主機資訊與原始資料。"),
-("p", "Outfit 維護文件含歷史選衣架構描述；本教材依較新的專案 README 分開說明規則選衣與 AI 產圖。N1 題庫規模與私人收藏數量不作教學成效證明。"),
+("p", "展示均為虛構重現，無私人截圖或嵌入。股票研究依公開社群版說明，不代表私人正式系統；N1 與收藏數量不作成效證明。"),
 ("h", "官方與公開延伸資料"),
 ] + [("source",s) for s in SOURCES] + [
 ("p", "產品可用性與操作入口可能變動，開課前以實際帳號及官方文件再確認。本手冊是可執行的教案，學員成效仍待試教驗證。"),
@@ -162,22 +167,23 @@ PAGES = [
 ]
 STUDENT = [
 ("手機路線 學員速查卡", [
-("p", "今天的成果：一份經你自己核對的待辦草稿。可以先用網站的虛構通知練習，不必連接私人信箱。"),
-("h", "四句好用的交代方式"),
-("bullet", "我要完成什麼？例如：把通知整理成待辦草稿。"),
-("bullet", "請根據哪些材料？指定通知、文件或本次搜尋範圍。"),
-("bullet", "希望怎麼呈現？例如：事項、期限、活動時間、來源、缺漏。"),
-("bullet", "沒有資料時怎麼辦？標待確認，不自行補齊。"),
-("callout", PHONE_PROMPT),
-("h", "核對三個地方"),
-("bullet", "日期：報名截止、回覆期限、活動時間有沒有混在一起？"),
-("bullet", "版本：有更正通知時，是否更新了舊資料？"),
-("bullet", "證據：來源真的寫了嗎？沒寫的內容應標待確認。"),
+("p", "今天帶走：一份自己核對、修改並保存的待辦清單。用網站虛構通知練習，不需連接私人信箱。12 歲由成人實際操作 ChatGPT，孩子說需求、做查核。"),
+("h", "先問一句，再親自補一個要求"),
+("callout", "請把通知 A-D 整理成待辦清單。"),
+("p", "看草稿是否分清期限與活動日、採用更正版本、把未知寫成確定。再補：請附來源；沒有寫明的時間請標待確認，不要猜。"),
+("h", "手機五步操作"),
+("bullet", "按教材的複製，看到提示；必要時手動選取複製。"),
+("bullet", "開 AI 對話，長按輸入欄貼上，確認通知與任務再送出。"),
+("bullet", "用 App 或分頁切換回教材，保留教材分頁。"),
+("bullet", "核對原文，補一個要求，請 AI 修改後再確認。"),
+("bullet", "把修正清單貼到帶走卡，複製到備忘錄或下載，再重新開啟。"),
+("h", "核對內容，也核對來源"),
+("p", "看期限、版本與未知資訊；再問原文由誰發布、何時更新。群組轉傳須向主辦單位確認；股票消息回正式公告核對時間與單位。AI 忠實抄寫不代表消息真實。"),
 ("h", "連接器與分析提醒"),
-("p", "本次搜尋不保證涵蓋全部資料。已讀不等於已完成；整理清單不等於已報名或付款。計算前先確認人數、幣別、每人／整團單位，未知費用不是零。"),
-("h", "下次我的一個小任務"),
-("p", "我想整理：________________________________________"),
-("p", "我會回到哪裡確認：________________________________"),
+("p", "Gmail、Drive 各五分鐘示範。搜尋不保證完整；已讀不等於已完成。分析先對人數、幣別與每人／整團，未知費用不是零。"),
+("h", "保存在哪裡"),
+("p", "複製後到備忘錄貼上。下載檔 ai-life-takeaway.txt 可在瀏覽器下載清單或手機檔案尋找，位置依設定而異。自由輸入不會自動保存。"),
+("p", "我的下次任務：________________  查核來源：________________"),
 ("p", URL+"?route=phone#classroom"),
 ]),
 ("電腦路線 學員速查卡", [
@@ -217,7 +223,7 @@ def render_html(pages):
                 headers,rows=value
                 parts.append('<div class="table-scroll"><table><thead><tr>'+''.join(f"<th>{escape(x)}</th>" for x in headers)+'</tr></thead><tbody>'+''.join('<tr>'+''.join(f"<td>{escape(x)}</td>" for x in row)+'</tr>' for row in rows)+'</tbody></table></div>')
         parts.append("</section>");sections.append("\n".join(parts))
-    return '<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#ffffff"><title>講師備課｜AI 生活實驗室</title><link rel="stylesheet" href="styles.css?v=2"></head><body class="instructor-page"><header class="site-header"><a class="brand" href="index.html">AI 生活實驗室<span>講師備課</span></a><nav aria-label="主要導覽"><a href="index.html">學員教材</a><a href="https://github.com/k1everwann/ai-life-lab" target="_blank" rel="noopener">GitHub ↗</a></nav><a class="button small outline" href="index.html">返回教材</a></header><aside class="course-sidebar"><p class="sidebar-title">教案目錄</p><nav aria-label="講師教案目錄"><a href="#part-1">課程目標</a><a href="#part-2">成果展示講稿</a><a href="#part-3">A\u3000手機教案</a><a href="#part-4">通知與參考答案</a><a href="#part-5">連接器示範</a><a href="#part-6">B\u3000電腦教案</a><a href="#part-7">測試與故障備案</a><a href="#part-8">課前準備與來源</a><a href="index.html">返回學員教材</a></nav></aside><details class="mobile-toc"><summary>教案目錄</summary><nav aria-label="講師教案目錄"><a href="#part-1">課程目標</a><a href="#part-2">成果展示講稿</a><a href="#part-3">A\u3000手機教案</a><a href="#part-4">通知與參考答案</a><a href="#part-5">連接器示範</a><a href="#part-6">B\u3000電腦教案</a><a href="#part-7">測試與故障備案</a><a href="#part-8">課前準備與來源</a><a href="index.html">返回學員教材</a></nav></details><main class="wrap instructor-content"><div class="instructor-hero"><p class="breadcrumb">課程教材 / 講師備課</p><h1>雙路線教案與備課資料</h1><p class="lead">兩套各 60 分鐘教案，包含共同開場、實作、驗收與故障備案。依設備選擇手機生活應用或電腦網頁製作。</p><div class="copy-row"><a class="button" href="downloads/instructor-guide.pdf" target="_blank" rel="noopener">講師手冊 PDF</a><a class="button outline" href="downloads/student-cards.pdf" target="_blank" rel="noopener">學員速查卡 PDF</a></div><div class="overview-downloads"><a href="downloads/family-notices.txt" download>通知文字檔</a><span>·</span><a href="downloads/travel-budget.csv" download>預算 CSV</a><span>·</span><a href="downloads/travel-budget-notes.txt" download>預算資料說明</a></div></div>'+"\n".join(sections)+'</main><footer class="site-footer wrap"><p>內容核對 2026-10-25（Asia/Taipei）。練習為虛構資料；真實專案僅呈現經核實的功能摘要。</p><a href="index.html">返回學員教材</a></footer></body></html>'
+    return '<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#ffffff"><title>講師備課｜AI 生活實驗室</title><link rel="stylesheet" href="styles.css?v=3"></head><body class="instructor-page"><header class="site-header"><a class="brand" href="index.html">AI 生活實驗室<span>講師備課</span></a><nav aria-label="主要導覽"><a href="index.html">學員教材</a><a href="https://github.com/k1everwann/ai-life-lab" target="_blank" rel="noopener">GitHub ↗</a></nav><a class="button small outline" href="index.html">返回教材</a></header><aside class="course-sidebar"><p class="sidebar-title">教案目錄</p><nav aria-label="講師教案目錄"><a href="#part-1">課程目標</a><a href="#part-2">成果展示講稿</a><a href="#part-3">A\u3000手機教案</a><a href="#part-4">通知與參考答案</a><a href="#part-5">連接器示範</a><a href="#part-6">B\u3000電腦教案</a><a href="#part-7">測試與故障備案</a><a href="#part-8">課前準備與來源</a><a href="index.html">返回學員教材</a></nav></aside><details class="mobile-toc"><summary>教案目錄</summary><nav aria-label="講師教案目錄"><a href="#part-1">課程目標</a><a href="#part-2">成果展示講稿</a><a href="#part-3">A\u3000手機教案</a><a href="#part-4">通知與參考答案</a><a href="#part-5">連接器示範</a><a href="#part-6">B\u3000電腦教案</a><a href="#part-7">測試與故障備案</a><a href="#part-8">課前準備與來源</a><a href="index.html">返回學員教材</a></nav></details><main class="wrap instructor-content"><div class="instructor-hero"><p class="breadcrumb">課程教材 / 講師備課</p><h1>雙路線教案與備課資料</h1><p class="lead">兩套各 60 分鐘教案，包含共同開場、實作、驗收與故障備案。依設備選擇手機生活應用或電腦網頁製作。</p><div class="copy-row"><a class="button" href="downloads/instructor-guide.pdf" target="_blank" rel="noopener">講師手冊 PDF</a><a class="button outline" href="downloads/student-cards.pdf" target="_blank" rel="noopener">學員速查卡 PDF</a></div><div class="overview-downloads"><a href="downloads/family-notices.txt" download>通知文字檔</a><span>·</span><a href="downloads/travel-budget.csv" download>預算 CSV</a><span>·</span><a href="downloads/travel-budget-notes.txt" download>預算資料說明</a></div></div>'+"\n".join(sections)+'</main><footer class="site-footer wrap"><p>內容核對 2026-10-25（Asia/Taipei）。練習為虛構資料；真實專案僅呈現經核實的功能摘要。</p><a href="index.html">返回學員教材</a></footer></body></html>'
 
 def build():
     font=os.environ.get("AI_LAB_FONT",r"C:\Windows\Fonts\msjh.ttc")
@@ -267,7 +273,7 @@ def build():
         doc=SimpleDocTemplate(str(dest),pagesize=A4,rightMargin=48,leftMargin=48,topMargin=57,bottomMargin=56,title="AI 生活實驗室 "+("講師手冊" if "instructor" in filename else "學員速查卡"),author="AI Life Lab")
         doc.build(flow,onFirstPage=footer,onLaterPages=footer)
         print(dest.name)
-    (ROOT/"instructor.html").write_text(render_html(PAGES),encoding="utf-8")
+    (ROOT/"instructor.html").write_text(render_html(PAGES),encoding="utf-8",newline="\n")
     make_pdf("instructor-guide.pdf",PAGES);make_pdf("student-cards.pdf",STUDENT)
 
 if __name__=="__main__":build()

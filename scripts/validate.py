@@ -58,6 +58,10 @@ for name,rows in (("phone",m.PHONE),("computer",m.COMPUTER)):
         end=new_end
     if end!=60 or sum(int(r[1])for r in rows)!=60:errors.append(f"{name}: not 60 minutes")
 checks.append("Both schedules: continuous, 60 minutes each")
+connector_rows=[r for r in m.PHONE if "Gmail" in r[2] and "Drive" in r[2]]
+if len(connector_rows)!=1 or connector_rows[0][0]!="38-48" or connector_rows[0][1]!="10":
+    errors.append("phone: preserve Gmail and Drive demonstrations, five minutes each at 38-48")
+checks.append("Connector teaching: Gmail and Drive keep their combined 10-minute slot")
 
 assert date(2026,11,8).weekday()==6
 assert date(2026,11,5).weekday()==3
