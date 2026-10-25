@@ -1,0 +1,3 @@
+scenario,currency,people,plan,pricing_basis,amount,transport_group_total,lunch_status
+fictional,TWD,4,A,per_person,800,1200,unknown
+fictional,TWD,4,B,whole_group,4000,0,included

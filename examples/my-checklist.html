@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>我的旅行準備清單</title><style>
+*{box-sizing:border-box}body{margin:0;padding:35px 18px;background:#f2f3eb;color:#163f35;font-family:"Microsoft JhengHei",system-ui,sans-serif;line-height:1.8}main{max-width:580px;margin:auto;background:#fffefa;padding:30px;border-radius:20px;border:1px solid #d7dfd0}small{font-size:12px;letter-spacing:1px;color:#61745f}h1{font-size:30px;line-height:1.4;margin:10px 0 15px}p{color:#50664f}label{display:flex;align-items:center;gap:14px;min-height:58px;border-bottom:1px solid #e0e6d8;cursor:pointer}input{width:22px;height:22px;accent-color:#23614d;flex-shrink:0}input:checked+span{text-decoration:line-through;color:#7a8976}button{font:inherit;background:#215a47;color:white;border:0;border-radius:8px;min-height:46px;padding:10px 20px;cursor:pointer;margin-top:15px}button:focus-visible,input:focus-visible{outline:3px solid #c7673c;outline-offset:4px}#count{font-weight:700;color:#215a47}footer{font-size:12px;color:#70816a;margin-top:24px}@media(max-width:420px){main{padding:22px}h1{font-size:26px}}
+</style></head><body><main><small>MY FIRST WEBPAGE</small><h1>我的旅行準備清單</h1><p>出發前快速確認行李有沒有帶齊。</p><p id="count" aria-live="polite">已完成 0 / 4 項</p><div id="items"><label><input type="checkbox"><span>確認交通方式</span></label><label><input type="checkbox"><span>準備雨具</span></label><label><input type="checkbox"><span>攜帶水壺</span></label><label><input type="checkbox"><span>檢查充電線</span></label></div><button id="reset" type="button">全部重設</button><footer>這是單檔網頁練習。重新整理或關閉後不保留勾選。</footer></main><script>
+const checks=[...document.querySelectorAll('input[type="checkbox"]')];
+function update(){document.getElementById("count").textContent="已完成 "+checks.filter(x=>x.checked).length+" / "+checks.length+" 項";}
+checks.forEach(x=>x.addEventListener("change",update));
+document.getElementById("reset").addEventListener("click",()=>{checks.forEach(x=>x.checked=false);update();});
+update();
+</script></body></html>
