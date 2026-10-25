@@ -60,7 +60,7 @@ PAGES = [
 ["B 電腦製作網頁", "電腦與已能使用的 Codex、Claude Code 或程式 AI", "自己的 HTML、一次修改與實測紀錄"]])),
 ("h", "上課與分享入口"),
 ("p", URL),
-("p", "先開主頁，展示成果，再選 A 或 B。投影模式可提高閱讀字級；講師頁有流程、備案與下載。兩條路線是不同場次的備案，不要求一位講師同時教完兩套。"),
+("p", "先開主頁，展示成果，再選 A 或 B。放大字級可提高閱讀字級；講師頁有流程、備案與下載。兩條路線是不同場次的備案，不要求一位講師同時教完兩套。"),
 ("h", "備課先看三件事"),
 ("bullet", "確認學員設備與工具已可用，安裝登入在課前完成。"),
 ("bullet", "講師只用教學帳號與虛構資料示範連接器，不投影私人信箱。"),
@@ -217,7 +217,7 @@ def render_html(pages):
                 headers,rows=value
                 parts.append('<div class="table-scroll"><table><thead><tr>'+''.join(f"<th>{escape(x)}</th>" for x in headers)+'</tr></thead><tbody>'+''.join('<tr>'+''.join(f"<td>{escape(x)}</td>" for x in row)+'</tr>' for row in rows)+'</tbody></table></div>')
         parts.append("</section>");sections.append("\n".join(parts))
-    return """<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>講師備課｜AI 生活實驗室</title><link rel="stylesheet" href="styles.css"></head><body><header class="site-header"><a class="brand" href="index.html">AI 生活實驗室</a><nav aria-label="備課導覽"><a href="#part-3">手機教案</a><a href="#part-6">電腦教案</a><a href="#part-8">課前準備</a></nav><a class="button small outline" href="index.html">回到教學網站</a></header><main class="wrap instructor-content"><div class="instructor-hero"><p class="eyebrow">給講師的上課工具包 · 兩套各 60 分鐘</p><h1>帶著流程與備案，<br>把一堂課教清楚。</h1><p class="lead">共同開場展示真實成果，再依設備選擇手機生活應用或電腦網頁製作。以學員能親自確認的成果收尾。</p><div class="copy-row"><a class="button" href="downloads/instructor-guide.pdf" target="_blank" rel="noopener">講師手冊 PDF ↗</a><a class="button outline" href="downloads/student-cards.pdf" target="_blank" rel="noopener">學員速查卡 PDF ↗</a></div><div class="copy-row"><a class="text-link" href="downloads/family-notices.txt" download>下載虛構通知包 ↓</a><a class="text-link" href="downloads/travel-budget.csv" download>下載預算 CSV ↓</a><a class="text-link" href="downloads/travel-budget-notes.txt" download>預算資料說明 ↓</a></div></div>"""+"\n".join(sections)+"""</main><footer class="site-footer wrap"><p>內容核對 2026-10-25（Asia/Taipei）。全部練習為虛構資料；真實專案僅呈現經核實的功能摘要。</p><a href="index.html">回到主教材 →</a></footer></body></html>"""
+    return '<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#ffffff"><title>講師備課｜AI 生活實驗室</title><link rel="stylesheet" href="styles.css?v=2"></head><body class="instructor-page"><header class="site-header"><a class="brand" href="index.html">AI 生活實驗室<span>講師備課</span></a><nav aria-label="主要導覽"><a href="index.html">學員教材</a><a href="https://github.com/k1everwann/ai-life-lab" target="_blank" rel="noopener">GitHub ↗</a></nav><a class="button small outline" href="index.html">返回教材</a></header><aside class="course-sidebar"><p class="sidebar-title">教案目錄</p><nav aria-label="講師教案目錄"><a href="#part-1">課程目標</a><a href="#part-2">成果展示講稿</a><a href="#part-3">A\u3000手機教案</a><a href="#part-4">通知與參考答案</a><a href="#part-5">連接器示範</a><a href="#part-6">B\u3000電腦教案</a><a href="#part-7">測試與故障備案</a><a href="#part-8">課前準備與來源</a><a href="index.html">返回學員教材</a></nav></aside><details class="mobile-toc"><summary>教案目錄</summary><nav aria-label="講師教案目錄"><a href="#part-1">課程目標</a><a href="#part-2">成果展示講稿</a><a href="#part-3">A\u3000手機教案</a><a href="#part-4">通知與參考答案</a><a href="#part-5">連接器示範</a><a href="#part-6">B\u3000電腦教案</a><a href="#part-7">測試與故障備案</a><a href="#part-8">課前準備與來源</a><a href="index.html">返回學員教材</a></nav></details><main class="wrap instructor-content"><div class="instructor-hero"><p class="breadcrumb">課程教材 / 講師備課</p><h1>雙路線教案與備課資料</h1><p class="lead">兩套各 60 分鐘教案，包含共同開場、實作、驗收與故障備案。依設備選擇手機生活應用或電腦網頁製作。</p><div class="copy-row"><a class="button" href="downloads/instructor-guide.pdf" target="_blank" rel="noopener">講師手冊 PDF</a><a class="button outline" href="downloads/student-cards.pdf" target="_blank" rel="noopener">學員速查卡 PDF</a></div><div class="overview-downloads"><a href="downloads/family-notices.txt" download>通知文字檔</a><span>·</span><a href="downloads/travel-budget.csv" download>預算 CSV</a><span>·</span><a href="downloads/travel-budget-notes.txt" download>預算資料說明</a></div></div>'+"\n".join(sections)+'</main><footer class="site-footer wrap"><p>內容核對 2026-10-25（Asia/Taipei）。練習為虛構資料；真實專案僅呈現經核實的功能摘要。</p><a href="index.html">返回學員教材</a></footer></body></html>'
 
 def build():
     font=os.environ.get("AI_LAB_FONT",r"C:\Windows\Fonts\msjh.ttc")
@@ -225,7 +225,7 @@ def build():
     pdfmetrics.registerFont(TTFont("Lab",font,subfontIndex=0))
     pdfmetrics.registerFont(TTFont("LabBold",bold,subfontIndex=0))
     pdfmetrics.registerFontFamily("Lab",normal="Lab",bold="LabBold",italic="Lab",boldItalic="LabBold")
-    INK=colors.HexColor("#173b34");GREEN=colors.HexColor("#164f43");LINE=colors.HexColor("#d5ddcf")
+    INK=colors.HexColor("#202124");GREEN=colors.HexColor("#2458a6");LINE=colors.HexColor("#dfe3e8")
     styles={
     "title":ParagraphStyle("title",fontName="LabBold",fontSize=23,leading=32,textColor=INK,spaceAfter=17,wordWrap="CJK"),
     "p":ParagraphStyle("p",fontName="Lab",fontSize=10,leading=17,textColor=INK,spaceAfter=10,wordWrap="CJK"),
@@ -238,7 +238,7 @@ def build():
     def footer(canvas,doc):
         canvas.saveState();w,h=A4
         canvas.setFillColor(GREEN);canvas.rect(0,h-12,w,12,fill=1,stroke=0)
-        canvas.setFont("Lab",8);canvas.setFillColor(colors.HexColor("#607169"))
+        canvas.setFont("Lab",8);canvas.setFillColor(colors.HexColor("#626973"))
         canvas.drawString(46,h-35,"AI LIFE LAB   /   AI 生活實驗室")
         canvas.setStrokeColor(LINE);canvas.line(46,40,w-46,40)
         canvas.drawString(46,26,"內容核對 "+VERIFIED+"  Asia/Taipei")
@@ -252,9 +252,9 @@ def build():
                 if kind in ("p","h"):flow.append(para(value,kind))
                 elif kind=="bullet":flow.append(para("• "+value))
                 elif kind=="source":
-                    flow.append(Paragraph('<link href="'+escape(value[1],quote=True)+'" color="#164f43">'+text(value[0])+'</link><br/>'+text(value[1]),styles["small"]))
+                    flow.append(Paragraph('<link href="'+escape(value[1],quote=True)+'" color="#2458a6">'+text(value[0])+'</link><br/>'+text(value[1]),styles["small"]))
                 elif kind=="callout":
-                    t=Table([[para(value)]],colWidths=[A4[0]-112]);t.setStyle(TableStyle([("BACKGROUND",(0,0),(-1,-1),colors.HexColor("#edf1e5")),("BOX",(0,0),(-1,-1),.6,LINE),("LEFTPADDING",(0,0),(-1,-1),14),("RIGHTPADDING",(0,0),(-1,-1),14),("TOPPADDING",(0,0),(-1,-1),12),("BOTTOMPADDING",(0,0),(-1,-1),4)]));flow.extend([t,Spacer(1,12)])
+                    t=Table([[para(value)]],colWidths=[A4[0]-112]);t.setStyle(TableStyle([("BACKGROUND",(0,0),(-1,-1),colors.HexColor("#f5f6f8")),("BOX",(0,0),(-1,-1),.6,LINE),("LEFTPADDING",(0,0),(-1,-1),14),("RIGHTPADDING",(0,0),(-1,-1),14),("TOPPADDING",(0,0),(-1,-1),12),("BOTTOMPADDING",(0,0),(-1,-1),4)]));flow.extend([t,Spacer(1,12)])
                 elif kind=="table":
                     headers,rows=value;total=A4[0]-96
                     if len(headers)==4:widths=[total*.13,total*.08,total*.35,total*.44]
@@ -262,7 +262,7 @@ def build():
                     else:widths=[total*.25,total*.75]
                     data=[[para(x,"th")for x in headers]]+[[para(x,"cell")for x in row]for row in rows]
                     t=Table(data,colWidths=widths,repeatRows=1,hAlign="LEFT")
-                    t.setStyle(TableStyle([("BACKGROUND",(0,0),(-1,0),colors.HexColor("#e4ebd8")),("VALIGN",(0,0),(-1,-1),"TOP"),("LINEBELOW",(0,0),(-1,-1),.5,LINE),("LEFTPADDING",(0,0),(-1,-1),9),("RIGHTPADDING",(0,0),(-1,-1),9),("TOPPADDING",(0,0),(-1,-1),8),("BOTTOMPADDING",(0,0),(-1,-1),8)]));flow.extend([t,Spacer(1,12)])
+                    t.setStyle(TableStyle([("BACKGROUND",(0,0),(-1,0),colors.HexColor("#eef1f5")),("VALIGN",(0,0),(-1,-1),"TOP"),("LINEBELOW",(0,0),(-1,-1),.5,LINE),("LEFTPADDING",(0,0),(-1,-1),9),("RIGHTPADDING",(0,0),(-1,-1),9),("TOPPADDING",(0,0),(-1,-1),8),("BOTTOMPADDING",(0,0),(-1,-1),8)]));flow.extend([t,Spacer(1,12)])
         dest=ROOT/"downloads"/filename;dest.parent.mkdir(exist_ok=True)
         doc=SimpleDocTemplate(str(dest),pagesize=A4,rightMargin=48,leftMargin=48,topMargin=57,bottomMargin=56,title="AI 生活實驗室 "+("講師手冊" if "instructor" in filename else "學員速查卡"),author="AI Life Lab")
         doc.build(flow,onFirstPage=footer,onLaterPages=footer)

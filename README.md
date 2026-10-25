@@ -10,7 +10,7 @@
 
 ## 使用方式
 
-先看成果展示與共同原理，再選擇一條課程。上課可開啟投影模式；學員在手機或電腦複製練習指令，提交到自己可用的 AI 工具。網站本身沒有呼叫 AI，也沒有接入信箱或雲端硬碟。
+先看成果展示與共同原理，再選擇一條課程。需要時可使用「放大字級」；學員在手機或電腦複製練習指令，提交到自己可用的 AI 工具。網站本身沒有呼叫 AI，也沒有接入信箱或雲端硬碟。
 
 手機課的核心練習不需要 Gmail 或 Drive 連接器。講師可在自己的教學帳號示範已準備的虛構資料；功能依帳號與平台條件而異。未符合所選 AI 平台使用年齡的學員，由講師或家長操作 AI，孩子使用本頁做判斷練習。
 
@@ -25,6 +25,18 @@
 - examples/my-checklist.html：可勾選、取消、重設與即時計數的完成品。
 - scripts/build_materials.py：產生講師頁與 PDF 的維護工具；使用者瀏覽不需要 Python。
 - scripts/validate.py：驗證本地引用、錨點、練習資料、課程時長及 JavaScript 語法。
+
+## 視覺設計
+
+採教材文件版型：桌面左側章節目錄、手機可收合目錄，首頁直接呈現課程與下載入口。標題為桌面 28px、手機 24px，使用白灰底、深色文字與少量藍色操作，取消大型宣傳首屏、插畫卡片與大片留白。講師頁、範例與 PDF 使用相同配色。
+
+參考版型與資訊結構：
+
+- [MDN Learn](https://developer.mozilla.org/en-US/docs/Learn_web_development)：章節目錄與正文層級。
+- [CS50x](https://cs50.harvard.edu/x/)：課程導覽、文字與教材直接呈現。
+- [Google Machine Learning Crash Course](https://developers.google.com/machine-learning/crash-course/)：模組化課程入口。
+
+未複製這些網站的圖像、品牌資產或程式碼。
 
 ## 本機預覽與驗證
 

@@ -75,7 +75,7 @@ const prompts={
 };
 async function copyText(text,message="已複製，可以貼到你的 AI 對話。") {
  try{await navigator.clipboard.writeText(text);toast(message);}
- catch{const dialog=document.createElement("dialog"),title=document.createElement("h3"),area=document.createElement("textarea"),close=document.createElement("button");title.textContent="請手動選取並複製";area.value=text;area.rows=10;area.setAttribute("aria-label","待複製的練習內容");close.textContent="關閉";close.className="button small";dialog.style.cssText="max-width:650px;width:90%;border:1px solid #b9c8b2;border-radius:16px;padding:25px";dialog.append(title,area,close);document.body.append(dialog);close.addEventListener("click",()=>dialog.close());dialog.addEventListener("close",()=>dialog.remove());dialog.showModal();area.focus();area.select();}
+ catch{const dialog=document.createElement("dialog"),title=document.createElement("h3"),area=document.createElement("textarea"),close=document.createElement("button");title.textContent="請手動選取並複製";area.value=text;area.rows=10;area.setAttribute("aria-label","待複製的練習內容");close.textContent="關閉";close.className="button small";dialog.style.cssText="max-width:650px;width:90%;border:1px solid #cfd4dc;border-radius:16px;padding:25px";dialog.append(title,area,close);document.body.append(dialog);close.addEventListener("click",()=>dialog.close());dialog.addEventListener("close",()=>dialog.remove());dialog.showModal();area.focus();area.select();}
 }
 $$("[data-copy]").forEach(b=>b.addEventListener("click",()=>copyText(b.dataset.copy==="build"?$("#build-prompt").value:prompts[b.dataset.copy]||"")));
 $("#share-route").addEventListener("click",()=>copyText("https://k1everwann.github.io/ai-life-lab/?route="+(progress.route==="computer"?"computer":"phone")+"#classroom","已複製這條路線的公開分享連結。"));
@@ -109,6 +109,6 @@ $("#download-card").addEventListener("click",()=>{
  const checks=$$("[data-check]").map(b=>(b.checked?"[已親自確認] ":"[尚未確認] ")+b.parentElement.textContent.trim()).join("\n");
  const body="AI 生活實驗室｜我的帶走卡\n路線："+(progress.route==="computer"?"電腦做網頁":"手機生活應用")+"\n\n我下次想做的事：\n"+($("#my-next-task").value.trim()||"尚未填寫")+"\n\n我會如何核對：\n"+($("#my-check").value.trim()||"尚未填寫")+"\n\n"+(progress.route==="computer"?checks+"\n\n":"")+"方法：說明需求 → 提供材料 → 取得草稿 → 核對與修改。\n提醒：整理不等於執行；搜尋不保證完整。\n";download("ai-life-takeaway.txt",body);toast("已送出下載；請確認帶走卡保存成功。");
 });
-$("#present-toggle").addEventListener("click",e=>{const on=document.body.classList.toggle("present-mode");e.currentTarget.setAttribute("aria-pressed",String(on));e.currentTarget.textContent=on?"離開投影模式":"投影模式";});
+$("#present-toggle").addEventListener("click",e=>{const on=document.body.classList.toggle("present-mode");e.currentTarget.setAttribute("aria-pressed",String(on));e.currentTarget.textContent=on?"還原字級":"放大字級";});
 $("#reset-progress").addEventListener("click",()=>{progress={};save();$$('input[type="radio"],[data-check]').forEach(x=>x.checked=false);$("#audit-feedback").replaceChildren();toast("已清除此網站在本裝置的練習進度。");});
 })();
