@@ -3,11 +3,13 @@
 ## 目前範圍
 
 - 新的公開教材網站，不改動既有 codex-starter-guide。
-- Repository：預定 https://github.com/k1everwann/ai-life-lab
-- GitHub Pages：預定 https://k1everwann.github.io/ai-life-lab/
+- Repository： https://github.com/k1everwann/ai-life-lab
+- GitHub Pages： https://k1everwann.github.io/ai-life-lab/
 - Branch：main；Pages source：repository root。
 - 技術：原生 HTML、CSS、JavaScript；瀏覽無建置步驟。
-- 尚未發布：本記錄在首次上線後更新。
+- 已公開上線：GitHub Pages 首次 build 為 built，程式提交 dea991f273a4cf24b7a9b4f906ed537141073520。
+- 正式 HTTP 驗證：首頁、講師頁、JS、CSS、兩份 PDF 與完成品共 7 個端點皆為 200，SHA-256 與本機完全相符。
+- 公開首頁已在瀏覽器開啟，無 warning/error；新 repository 可見性為 PUBLIC。
 
 ## 內容與操作
 
@@ -43,7 +45,8 @@
 - 回復：將已確認可用的版本重新提交至 main，等待 Pages build 成功；避免 force push。
 - 故障：先查 Pages build/status，再查路徑大小寫、引用與瀏覽器 console；不要修改 Forge 私人服務。
 
-## 待完成
+## 交付狀態與開課前待辦
 
-- 建立並推送公開 repository，啟用 Pages，驗證公開網址與最終 commit。
+- 公開 repository 建立、main 推送、Pages 啟用及正式內容驗證已完成。
+- 本文件更新的提交另行推送後，確認 Pages 的最新 build commit 與 main 相符。
 - 真實學員試教與手機實機測試於開課前完成。
