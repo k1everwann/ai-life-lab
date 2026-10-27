@@ -12,6 +12,7 @@ function route(name) {
  const chosen = name === "computer" ? "computer" : "phone";
  $$("[data-route]").forEach(b => { const on = b.dataset.route === chosen; b.setAttribute("aria-selected", String(on)); b.tabIndex = on ? 0 : -1; });
  $("#phone-panel").hidden = chosen !== "phone"; $("#computer-panel").hidden = chosen !== "computer";progress.route = chosen;save();
+ const url=new URL(location.href);url.searchParams.set("route",chosen);history.replaceState(null,"",url);
 }
 $$("[data-route]").forEach(b => b.addEventListener("click", () => route(b.dataset.route)));
 $$("[data-select-route]").forEach(b => b.addEventListener("click", () => route(b.dataset.selectRoute)));
@@ -78,13 +79,14 @@ const prompts={
  gmail:"請透過 Gmail 查找最近七天本次可取得的信件，整理需要我回覆或處理的事項，附原信來源、期限與本次搜尋範圍。已讀不代表完成；沒有明確期限請標待確認。不宣稱涵蓋全部待辦。僅讀取與整理。",
  drive:"請透過 Google Drive，只讀取我指定的方案文件（請先向我要文件連結）。先確認日期、人數、幣別與每人／整團計價，再比較總額與包含項目。附文件來源，標記缺漏；沒有資料就不要猜。找到檔名但未讀到內容時請明說。僅讀取與整理。",
  budget:"虛構旅遊預算：同一天、四位成人的一日行程，全部以新台幣計價。方案 A 每人 800 元，另加整團交通 1,200 元，午餐費未提供。方案 B 整團 4,000 元，已含交通與午餐。請列出兩方案已知費用的計算式、比較條件與尚缺資訊；不要將未知費用當成零。",
+ feature:"請保留目前的標題與清單，新增「攜帶行動電源」。完成數與總項目數都要正確，取消勾選與全部重設仍要能用。只修改目前練習檔案，並列出需要我重新測試的步驟。",
  revision:"我勾選兩個項目後，畫面仍顯示完成 0 項。請檢查計數更新，修正後列出勾選、取消、全部重設三種測試步驟。保留我的標題與清單文字。"
 };
 async function copyText(text,message="已複製，可以貼到你的 AI 對話。") {
  try{await navigator.clipboard.writeText(text);toast(message);}
  catch{const dialog=document.createElement("dialog"),title=document.createElement("h3"),area=document.createElement("textarea"),close=document.createElement("button");title.textContent="請手動選取並複製";area.value=text;area.rows=10;area.setAttribute("aria-label","待複製的練習內容");close.textContent="關閉";close.className="button small";dialog.style.cssText="max-width:650px;width:90%;border:1px solid #cfd4dc;border-radius:16px;padding:25px";dialog.append(title,area,close);document.body.append(dialog);close.addEventListener("click",()=>dialog.close());dialog.addEventListener("close",()=>dialog.remove());dialog.showModal();area.focus();area.select();}
 }
-$$("[data-copy]").forEach(b=>b.addEventListener("click",()=>copyText(b.dataset.copy==="build"?$("#build-prompt").value:prompts[b.dataset.copy]||"")));
+$$("[data-copy]").forEach(b=>b.addEventListener("click",()=>{const content=b.dataset.copy==="build"?$("#build-prompt").value:prompts[b.dataset.copy]||"";if(!content){toast("請先填好至少三個項目，再組成製作需求。");return;}copyText(content);}));
 $("#copy-followup").addEventListener("click",()=>{const value=$("#phone-followup").value.trim();if(!value){toast("先寫下你想補充的一個要求。");return;}copyText(value,"已複製補充要求；回到同一個 AI 對話貼上，再核對修改結果。");});
 $("#share-route").addEventListener("click",()=>copyText("https://k1everwann.github.io/ai-life-lab/?route="+(progress.route==="computer"?"computer":"phone")+"#classroom","已複製這條路線的公開分享連結。"));
 const correct={q1:"contradicted",q2:"supported",q3:"unknown"};
@@ -99,19 +101,19 @@ $("#audit-form").addEventListener("submit",event=>{
 $("#check-budget").addEventListener("click",()=>{const raw=$("#budget-answer").value.trim(),n=Number(raw);$("#budget-feedback").textContent=!raw?"先輸入你計算的金額。":n===4400?"正確：800 × 4 ＋ 1,200 ＝ 4,400 元。這只是 A 的已知費用，午餐另計；不能把缺漏費用當零。":"再檢查：先算四人的費用，再加一次整團交通。午餐費目前未知。";});
 function makeBrief(){
  const title=$("#project-title").value.trim()||"我的生活清單",purpose=$("#project-purpose").value.trim()||"整理自己的生活事項",items=$("#project-items").value.split(/\r?\n/).map(x=>x.trim()).filter(Boolean).slice(0,20);
- if(items.length<3){toast("請至少填入三個清單項目。");return;}
- $("#build-prompt").value="請在新的練習資料夾製作一個單檔 index.html，名稱為「"+title+"」。\n用途："+purpose+"。\n清單項目："+items.join("、")+"。\n\n需求：\n1. 繁體中文，包含標題、用途與上述清單。\n2. 可勾選與取消，完成數即時更新。\n3. 提供「全部重設」按鈕，同步清除勾選與數量。\n4. 390px 手機寬度也可閱讀操作，按鈕與勾選區域容易點選。\n5. HTML、CSS、JavaScript 全放同一檔，不使用外部套件、網路字型、API 或登入。\n6. 第一版重新整理後可重設，請在畫面說明，不宣稱會保存。\n7. 只處理這個練習資料夾，不修改其他檔案，不部署上網。\n\n請提供完整程式，說明如何儲存、開啟，並列出勾選、取消、全部重設與窄螢幕四種親自測試的步驟。";
+ if(items.length<3){$("#build-prompt").value="";toast("請至少填入三個清單項目。");return;}
+ $("#build-prompt").value="請在新的練習資料夾製作一個單檔 index.html，名稱為「"+title+"」。\n用途："+purpose+"。\n清單項目："+items.join("、")+"。\n\n需求：\n1. 繁體中文，包含標題、用途與上述清單。\n2. 可勾選與取消，完成數即時更新。\n3. 提供「全部重設」按鈕，同步清除勾選與數量。\n4. 390px 手機寬度也可閱讀操作，按鈕與勾選區域容易點選。\n5. HTML、CSS、JavaScript 全放同一檔，不使用外部套件、網路字型、API 或登入。\n6. 第一版重新整理或關閉後不保留勾選，請在畫面說明。\n7. 只處理這個練習資料夾，不修改其他檔案，不部署上網。\n\n請提供完整程式，說明如何儲存、開啟，並列出勾選、取消、全部重設與窄螢幕四種親自測試的步驟。";
 }
 $("#brief-form").addEventListener("submit",e=>{e.preventDefault();makeBrief();});makeBrief();
 function download(name,content,type="text/plain;charset=utf-8"){const blob=new Blob([content],{type}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),10000);}
-$("#load-sample").addEventListener("click",async()=>{try{const r=await fetch("examples/my-checklist.html");if(!r.ok)throw new Error();$("#html-code").value=await r.text();$("#preview-status").textContent="已載入完成品範例。按「預覽我的網頁」查看並測試。";}catch{$("#preview-status").textContent="範例載入失敗，請開啟上方完成品連結，或貼入你的完整 HTML。";}});
+$("#load-sample").addEventListener("click",async()=>{try{const r=await fetch("examples/my-checklist.html");if(!r.ok)throw new Error();const sample=new DOMParser().parseFromString(await r.text(),"text/html");sample.querySelectorAll(".example-languages").forEach(n=>n.remove());$("#html-code").value="<!doctype html>\n"+sample.documentElement.outerHTML;$("#preview-status").textContent="已載入完成品範例。按「預覽我的網頁」查看並測試。";}catch{$("#preview-status").textContent="範例載入失敗，請開啟上方完成品連結，或貼入你的完整 HTML。";}});
 $("#run-preview").addEventListener("click",()=>{
  const code=$("#html-code").value.trim();if(!code){$("#preview-status").textContent="請先貼上 HTML 或載入完成品範例。";return;}
  const policy='<meta http-equiv="Content-Security-Policy" content="default-src \'none\'; style-src \'unsafe-inline\'; script-src \'unsafe-inline\'; img-src data:; connect-src \'none\'; frame-src \'none\'; object-src \'none\'; base-uri \'none\'; form-action \'none\'">';
  const safeCode=/<head(?:\s[^>]*)?>/i.test(code)?code.replace(/<head(?:\s[^>]*)?>/i,m=>m+policy):policy+code;
  $("#code-preview").srcdoc=safeCode;$("#preview-status").textContent="已更新隔離預覽。請實際勾選、取消及重設，確認數量一致。";
 });
-$("#download-code").addEventListener("click",()=>{const code=$("#html-code").value.trim();if(!code){toast("請先貼上 HTML 或載入範例。");return;}download("my-webpage.html",code,"text/html;charset=utf-8");toast("已送出下載；請確認檔案保存成功。");});
+$("#download-code").addEventListener("click",()=>{const code=$("#html-code").value.trim();if(!code){toast("請先貼上 HTML 或載入範例。");return;}download("index.html",code,"text/html;charset=utf-8");toast("已送出下載；請確認檔案保存成功。");});
 $$("[data-check]").forEach(b=>{b.checked=Boolean(progress[b.dataset.check]);b.addEventListener("change",()=>{progress[b.dataset.check]=b.checked;save();});});
 function makeCard(){
  const checks=$$("[data-check]").map(b=>(b.checked?"[已親自確認] ":"[尚未確認] ")+b.parentElement.textContent.trim()).join("\n");
@@ -121,6 +123,5 @@ $("#copy-card").addEventListener("click",async()=>{await copyText(makeCard(),"�
 $("#download-card").addEventListener("click",()=>{
  download("ai-life-takeaway.txt",makeCard());$("#card-status").textContent="已送出下載。請到瀏覽器下載清單或手機檔案中，開啟 ai-life-takeaway.txt 確認內容；未成功時改用複製。";toast("已送出下載；請確認帶走卡保存成功。");
 });
-$("#present-toggle").addEventListener("click",e=>{const on=document.body.classList.toggle("present-mode");e.currentTarget.setAttribute("aria-pressed",String(on));e.currentTarget.textContent=on?"還原字級":"放大字級";});
-$("#reset-progress").addEventListener("click",()=>{progress={};save();$$('input[type="radio"],[data-check]').forEach(x=>x.checked=false);$("#audit-feedback").replaceChildren();toast("已清除此網站在本裝置的練習進度。");});
+$("#reset-progress").addEventListener("click",()=>{progress={};save();$$('input[type="radio"],[data-check]').forEach(x=>x.checked=false);$("#audit-feedback").replaceChildren();toast("已清除此頁在本裝置的查核與驗收勾選；課後練習記錄請到課後頁另外清除。");});
 })();

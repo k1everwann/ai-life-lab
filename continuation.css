@@ -1,0 +1,22 @@
+.continuation-page .site-header{height:auto;min-height:60px;flex-wrap:wrap;padding-top:8px;padding-bottom:8px;gap:8px 20px}
+.continuation-page .site-header nav{flex-wrap:wrap;gap:8px 18px}
+.continuation-page .site-header nav a{display:inline-flex;align-items:center;min-height:44px}
+.continuation-page #main{margin-left:0;max-width:920px;margin-right:auto;margin-left:auto}
+.continuation-page .wrap{padding-left:28px;padding-right:28px}
+.continuation-page .section{padding-top:24px;padding-bottom:24px}
+.continuation-page h1{font-size:28px}
+.continuation-page h2{font-size:22px}
+.continuation-page pre{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--soft);border:1px solid var(--line);padding:16px;font:inherit;font-size:14px}
+.continuation-page code{overflow-wrap:anywhere}
+.continuation-page li{margin-bottom:9px}
+.continuation-page summary{cursor:pointer;min-height:44px;padding:10px 0;font-weight:600}
+.continuation-page details{border-bottom:1px solid var(--line);margin-bottom:12px}
+.continuation-page .checkpoint{display:flex;align-items:flex-start;gap:12px;min-height:48px;background:var(--soft);padding:12px;font-weight:500}
+.continuation-page .checkpoint input{margin-top:4px}
+.continuation-page .path-nav{display:flex;flex-wrap:wrap;gap:6px 18px;margin:16px 0}
+.continuation-page .path-nav a{display:inline-flex;align-items:center;min-height:44px}
+.continuation-page .progress-controls{border:1px solid var(--line);padding:16px;margin-top:18px}
+.continuation-page .progress-controls label{font-weight:400;min-height:44px;display:flex;align-items:center;gap:12px}
+.continuation-page .feedback{min-height:1.7em}
+.continuation-page .site-footer{max-width:920px;margin:auto;padding-top:24px;padding-bottom:24px}
+@media(max-width:600px){.continuation-page .brand{white-space:normal}.continuation-page .site-header nav{margin-left:0;width:100%}.continuation-page .wrap{padding-left:18px;padding-right:18px}.continuation-page h1{font-size:24px}.continuation-page h2{font-size:20px}}

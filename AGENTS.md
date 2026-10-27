@@ -1,6 +1,6 @@
 # AI Life Lab
 
-Public Traditional Chinese teaching materials for families and AI beginners.
+Public Traditional Chinese and English teaching materials for families and AI beginners.
 
 - Keep HTML, CSS, and JavaScript dependency-free. GitHub Pages serves the repository root.
 - Preserve two complete 60-minute alternative routes: phone and computer.
@@ -15,3 +15,5 @@ Public Traditional Chinese teaching materials for families and AI beginners.
 - Use DOM text APIs for visitor input. Preview HTML only in a sandbox without same-origin privileges.
 - Validate syntax, links, anchors, totals, quiz answers, schedules, PDFs, and browser interactions before publication.
 - Keep README.md as the entry point and HANDOFF.md as delivery and validation status.
+- Keep the Chinese and English lessons, dynamic prompts, feedback, examples, and after-class paths equivalent. Language switches stay visible on narrow screens and warn before discarding edited text or code. Keep learner input unchanged.
+- After-class progress is optional, shared between languages, and self-reported. Never imply a checked stage automatically verifies a learner's project.

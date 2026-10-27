@@ -1,0 +1,58 @@
+AI Life Lab | After-class learning log (blank template)
+
+This text file does not automatically record website checks or back up HTML.
+Fill it in with a text editor and save it. Use fictional or general content, not personal data or secrets.
+After-class practice is separate from the formal 60-minute lesson. Move on when ready, without a fixed schedule.
+
+Date (Asia/Taipei):
+Current stage: Find file / Make it yours / Small change / Test and restore / Optional project
+Project purpose (who uses it, and for what):
+Filename and folder location you can find again:
+At least three items:
+1.
+2.
+3.
+
+The one thing I changed:
+Backup filename before editing:
+My request (or manual steps without AI):
+Expected result:
+Actual result:
+
+Test results (write Passed / Failed / Not verified; an AI claim is not a test)
+- Reopen from the folder: topic, at least three items, and new change remain:
+- After resetting, check two items = 2:
+- Uncheck one = 1:
+- Reset all = 0, with no checks remaining:
+- Repeat once; results still correct:
+- About 390px: text wraps, buttons visible, no whole-page sideways scrolling:
+- Visible Tab focus, Space toggles checks, Enter activates reset:
+- Working backup opens:
+Test environment (browser / local file or preview address / viewport size):
+Real phone test (write Not verified if not performed):
+
+Recovery record
+Verified backup filename (such as index-good-YYYYMMDD-v1.html):
+Failed version saved as:
+Version restored and retest results:
+
+Optional project (choose one):
+Completion criterion 1:
+Completion criterion 2:
+Completion criterion 3:
+Results and unfinished work:
+
+For the “remember checks” challenge, also record:
+- Behavior before enabling:
+- Enabled: reload gives 2 / uncheck and reload gives 1 / reset and reload gives 0:
+- Reordering does not mix up checks; new items start unchecked:
+- Turning remembering off removes the record:
+- Blocked or damaged storage keeps controls usable and shows a clear message:
+- Clearing affects only this project's storage key:
+- Unverified items and help needed:
+
+Reminder: HTML backups, browser progress, and public publishing are different.
+This practice requires no paid plan, API key, or publishing. File backups do not back up browser progress.
+
+My next smallest step:
+Question for the instructor (action → actual result → expected result):

@@ -251,9 +251,6 @@ caption{text-align:left;color:var(--muted);padding:8px 0;font-size:11px}
 .instructor-content .breadcrumb,.instructor-content .eyebrow{font-size:12px}
 .instructor-content .prompt-box{margin:16px 0}
 .instructor-content .teacher-bullet{padding-left:10px}
-body.present-mode{font-size:18px}
-body.present-mode p,body.present-mode .message p,body.present-mode .project-story dd{font-size:17px}
-body.present-mode .caption,body.present-mode .site-footer p{font-size:13px}
 @media(max-width:1100px){
  :root{--sidebar:190px}
  .wrap{padding-left:28px;padding-right:28px}
@@ -372,3 +369,18 @@ body.present-mode .caption,body.present-mode .site-footer p{font-size:13px}
  a{color:#111}
  .instructor-content table{min-width:0}
 }
+
+/* Bilingual navigation remains available when the regular mobile menu collapses. */
+.site-header{height:auto;min-height:60px;flex-wrap:wrap;padding-top:8px;padding-bottom:8px;gap:12px}
+.language-switch{display:flex;flex:none;gap:2px;align-items:center;margin-left:0}
+.language-switch a{display:inline-flex;align-items:center;min-height:44px;padding:6px 10px;font-size:13px;text-decoration:none;white-space:nowrap;border:1px solid var(--line);color:var(--accent);border-radius:3px}
+.language-switch a[aria-current]{background:#eef1f5;font-weight:700;color:var(--ink)}
+.beginner-start{padding:20px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:20px 0}
+.beginner-start h3{font-size:20px}
+.beginner-terms{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0}
+.beginner-terms div{padding:12px;background:#f6f7f8}
+.beginner-terms dt{font-weight:700}.beginner-terms dd{margin:6px 0 0;font-size:14px}
+.beginner-start code{overflow-wrap:anywhere}
+@media(max-width:800px){.site-header .brand{font-size:15px}.site-header nav{gap:12px}}
+@media(max-width:540px){.site-header{padding:6px 12px;gap:6px 10px}.site-header .brand{flex:1 1 45%}.site-header .brand span{font-size:10px}.site-header .language-switch{display:flex;margin-left:auto}.language-switch a{font-size:12px;padding:5px 8px}.site-header>.button{margin-left:0}.beginner-terms{grid-template-columns:1fr}.beginner-start{padding:16px 0}}
+.language-warning{max-width:540px;width:calc(100% - 32px);border:1px solid var(--line);padding:24px;color:var(--ink)}.language-warning h2{font-size:22px}.language-warning .button{margin:6px 10px 0 0}.language-warning::backdrop{background:rgb(0 0 0 / .35)}

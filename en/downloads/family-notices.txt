@@ -1,0 +1,7 @@
+Fictional teaching data. Scenario date: 2026-11-02. All dates and times use Asia/Taipei.
+Notice A (Nov 2): Community nature observation is on Nov 8 (Sun), 09:00–12:00. Registration closes Nov 5 (Thu), 18:00. Register through the community form; success requires a confirmation email.
+Notice B (Nov 1, old): The craft class was originally Nov 7 (Sat), 10:00, in the first-floor classroom.
+Notice C (Nov 2, correction): Updates B to Nov 7 (Sat), 14:00, in the second-floor classroom. Reply by Nov 4 (Wed), 20:00, to say whether you can attend.
+Notice D (Nov 2): Collect the parcel at the designated store before Nov 6 (Fri), as stated in the notice. Opening hours and an exact final pickup time are not provided.
+
+Task: Use only notices A–D to draft tasks. Include what to do, the action deadline, activity time, source, and information to confirm. Corrections take priority. Say when information is missing. Organize only; do not execute tasks.
