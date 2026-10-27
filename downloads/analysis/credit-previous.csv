@@ -1,0 +1,11 @@
+row_id,posted_date,description,transaction_type,category_hint,amount,currency,related_row_id,note
+C0901,2026-09-03,Practice Grocer A,purchase,food,1200,TWD,,fictional
+C0902,2026-09-06,Practice Cafe B,purchase,food,800,TWD,,fictional
+C0903,2026-09-08,Practice Transit C,purchase,transport,600,TWD,,fictional
+C0904,2026-09-10,Practice Internet D,purchase,utilities,700,TWD,,fictional
+C0905,2026-09-12,Practice Media E,purchase,subscription,300,TWD,,fictional
+C0906,2026-09-15,Practice Store F,purchase,shopping,1500,TWD,,fictional
+C0907,2026-09-18,Practice Store F,refund,shopping,-500,TWD,,original_purchase_not_in_fixture
+C0908,2026-09-20,Practice Merchant X,purchase,,400,TWD,,category_unknown
+C0909,2026-09-25,Practice Card Payment,payment,,5000,TWD,,exclude_from_consumption
+C0910,2026-09-26,Practice Transfer,transfer,,1000,TWD,,exclude_from_consumption

@@ -1,0 +1,1319 @@
+{
+  "schemaVersion": 1,
+  "fictional": true,
+  "currency": "TWD",
+  "timezone": "Asia/Taipei",
+  "cases": [
+    {
+      "id": "credit",
+      "files": [
+        {
+          "path": "downloads/analysis/credit-previous.csv",
+          "label": {
+            "zh": "前月信用卡虛構資料（9月）",
+            "en": "Previous-month fictional card data (September)"
+          }
+        },
+        {
+          "path": "downloads/analysis/credit-current.csv",
+          "label": {
+            "zh": "本月信用卡虛構資料（10月）",
+            "en": "Current-month fictional card data (October)"
+          }
+        },
+        {
+          "path": "downloads/analysis/data-notes.txt",
+          "label": {
+            "zh": "資料字典（繁體中文）",
+            "en": "Data dictionary (Traditional Chinese)"
+          }
+        },
+        {
+          "path": "downloads/analysis/data-notes-en.txt",
+          "label": {
+            "zh": "資料字典（英文）",
+            "en": "Data dictionary (English)"
+          }
+        }
+      ],
+      "expected": {
+        "previous": 5000,
+        "current": 6700,
+        "delta": 1700,
+        "percent": 34,
+        "denominator": 5000,
+        "currentComplete": false,
+        "missingAmountRows": [
+          "C1012"
+        ],
+        "excludedRows": [
+          "C0909",
+          "C0910",
+          "C1010",
+          "C1011"
+        ],
+        "refundRows": [
+          "C0907",
+          "C1007"
+        ],
+        "unknownCategoryRows": [
+          "C0908",
+          "C1008"
+        ],
+        "canDetermineCause": "unknown",
+        "formulas": {
+          "previous": "1200 + 800 + 600 + 700 + 300 + 1500 - 500 + 400 = 5000",
+          "current": "1500 + 1200 + 600 + 700 + 300 + 2100 - 700 + 600 + 400 = 6700",
+          "delta": "6700 - 5000 = 1700",
+          "percent": "1700 / 5000 * 100 = 34"
+        },
+        "categories": [
+          {
+            "id": "food",
+            "previous": 2000,
+            "current": 2700,
+            "delta": 700,
+            "percent": 35,
+            "complete": false,
+            "rowIds": [
+              "C0901",
+              "C0902",
+              "C1001",
+              "C1002",
+              "C1012"
+            ]
+          },
+          {
+            "id": "transport",
+            "previous": 600,
+            "current": 600,
+            "delta": 0,
+            "percent": 0,
+            "complete": true,
+            "rowIds": [
+              "C0903",
+              "C1003"
+            ]
+          },
+          {
+            "id": "utilities",
+            "previous": 700,
+            "current": 700,
+            "delta": 0,
+            "percent": 0,
+            "complete": true,
+            "rowIds": [
+              "C0904",
+              "C1004"
+            ]
+          },
+          {
+            "id": "subscription",
+            "previous": 300,
+            "current": 300,
+            "delta": 0,
+            "percent": 0,
+            "complete": true,
+            "rowIds": [
+              "C0905",
+              "C1005"
+            ]
+          },
+          {
+            "id": "shopping",
+            "previous": 1000,
+            "current": 1400,
+            "delta": 400,
+            "percent": 40,
+            "complete": true,
+            "rowIds": [
+              "C0906",
+              "C0907",
+              "C1006",
+              "C1007"
+            ]
+          },
+          {
+            "id": "unknown",
+            "previous": 400,
+            "current": 600,
+            "delta": 200,
+            "percent": 50,
+            "complete": true,
+            "rowIds": [
+              "C0908",
+              "C1008"
+            ]
+          },
+          {
+            "id": "entertainment",
+            "previous": 0,
+            "current": 400,
+            "delta": 400,
+            "percent": null,
+            "complete": true,
+            "rowIds": [
+              "C1009"
+            ]
+          }
+        ]
+      },
+      "zh": {
+        "title": "這個月多花在哪裡？",
+        "hook": "同樣買菜、搭車、付訂閱，帳單怎麼變了？先分清消費、退款和繳卡費，再看有證據的差額。",
+        "question": "只看已知的入帳淨消費，前後月差多少？哪些類別值得再查？",
+        "referenceNote": "完全虛構的兩月信用卡資料，同時練習一般每月費用比較。這不是個人帳單，也不代表完整家庭生活成本。",
+        "sourceLabels": [
+          "C0901–C0910：2026年9月；C1001–C1012：2026年10月。",
+          "category_hint 是教學提供的分類，不靠商家名字猜；金額皆為新臺幣。"
+        ],
+        "shortPrompt": "請先只用2026年9月資料，按類別整理消費，列出已知淨消費與來源列。10月留到第二堂再比較。",
+        "followupPrompt": "我想改成比較兩月「已知入帳淨消費」。請依入帳月，購買納入、退款保留負號、繳卡費與轉帳排除；category_hint 空白的消費放待分類，不猜。缺漏金額不能當0。列類別前月／本月／差額，百分比用前月為分母，前月0時標不適用，附row_id。最後區分能確認的差額與還需證據的原因。",
+        "preparedResult": {
+          "label": "預備核對答案｜固定虛構資料的人工參考，不是本次AI回覆",
+          "summary": "前月已知淨消費 NT$5,000；本月已知小計 NT$6,700。已知差額 +NT$1,700（1,700÷5,000＝34%）。本月另有一筆缺價，不能把6,700與34%稱為完整總額及完整月份成長率。",
+          "findings": [
+            {
+              "text": "前月納入8列；本月納入9列已知金額及1列缺漏。繳卡費與轉帳共4列排除。",
+              "rowIds": [
+                "C0901",
+                "C0902",
+                "C0903",
+                "C0904",
+                "C0905",
+                "C0906",
+                "C0907",
+                "C0908",
+                "C1001",
+                "C1002",
+                "C1003",
+                "C1004",
+                "C1005",
+                "C1006",
+                "C1007",
+                "C1008",
+                "C1009",
+                "C1012",
+                "C0909",
+                "C0910",
+                "C1010",
+                "C1011"
+              ]
+            },
+            {
+              "text": "餐飲與食品已知金額2,000→2,700（+700，35%），但C1012尚缺金額，不能說餐飲總額已完整。",
+              "rowIds": [
+                "C0901",
+                "C0902",
+                "C1001",
+                "C1002",
+                "C1012"
+              ]
+            },
+            {
+              "text": "購物1,000→1,400（+400，40%）；退款保留負號。C1007雖對應9月交易，依本練習入帳月規則扣在10月。",
+              "rowIds": [
+                "C0906",
+                "C0907",
+                "C1006",
+                "C1007"
+              ]
+            },
+            {
+              "text": "待分類400→600（+200，50%），仍納入已知小計。娛樂0→400（+400），前月為0，百分比不適用。",
+              "rowIds": [
+                "C0908",
+                "C1008",
+                "C1009"
+              ]
+            },
+            {
+              "text": "交通600→600、固定生活費700→700、訂閱300→300，三類已知差額均0。已知差額700+400+200+400=1,700。",
+              "rowIds": [
+                "C0903",
+                "C1003",
+                "C0904",
+                "C1004",
+                "C0905",
+                "C1005"
+              ]
+            },
+            {
+              "text": "可能買更多、單價變動或少了折扣都只是原因假說；此表沒有數量與商品明細，不能選一個當事實。",
+              "rowIds": [
+                "C0901",
+                "C0902",
+                "C1001",
+                "C1002",
+                "C1012"
+              ]
+            }
+          ]
+        },
+        "checks": [
+          {
+            "id": "previous",
+            "type": "number",
+            "text": "前月排除付款與轉帳、扣掉退款後，已知淨消費是多少元？",
+            "expected": 5000,
+            "tolerance": 0.01,
+            "explanation": "前月8列已知消費合計5,000；C0909、C0910排除。"
+          },
+          {
+            "id": "current",
+            "type": "number",
+            "text": "本月可確認的已知小計是多少元？",
+            "expected": 6700,
+            "tolerance": 0.01,
+            "explanation": "9列已知消費合計6,700；C1012缺價，不能算成0或宣稱完整。"
+          },
+          {
+            "id": "delta",
+            "type": "number",
+            "text": "本月與前月已知金額差多少元？",
+            "expected": 1700,
+            "tolerance": 0.01,
+            "explanation": "6,700−5,000＝1,700。"
+          },
+          {
+            "id": "percent",
+            "type": "number",
+            "text": "用前月5,000作分母，已知金額增加百分之幾？",
+            "expected": 34,
+            "tolerance": 0.01,
+            "explanation": "1,700÷5,000×100＝34%，只比較已知金額。"
+          },
+          {
+            "id": "cause",
+            "type": "choice",
+            "text": "能否只憑這份表確認增加是因為物價上漲？",
+            "expected": "unknown",
+            "options": [
+              {
+                "value": "yes",
+                "label": "能，花費增加就是漲價"
+              },
+              {
+                "value": "unknown",
+                "label": "不能，還需要商品數量與單價等證據"
+              }
+            ],
+            "explanation": "金額差異是觀察；物價、購買數量與動機都需要額外證據。"
+          },
+          {
+            "id": "zero-base",
+            "type": "choice",
+            "text": "娛樂從前月0到本月400，百分比應如何表示？",
+            "expected": "not-applicable",
+            "options": [
+              {
+                "value": "100",
+                "label": "增加100%"
+              },
+              {
+                "value": "not-applicable",
+                "label": "不適用，前月分母為0"
+              }
+            ],
+            "explanation": "可報增加400元，不能除以0。"
+          }
+        ],
+        "unknowns": [
+          "C1012的金額；未補齊前只有已知小計。",
+          "C0908、C1008實際類別；保留待分類，不以名字猜。",
+          "消費增加原因；先提出假說，再查數量、單價或發票明細。"
+        ],
+        "nextStep": "保存一段「已知差額＋來源列＋未確認原因」，再挑餐飲或購物一類寫下想補查的證據。不需要提供真實帳單。"
+      },
+      "en": {
+        "title": "Where did the extra spending come from?",
+        "hook": "Groceries, transport, subscriptions—why did the bill change? Separate purchases, refunds, and card repayments before comparing supported differences.",
+        "question": "How much did known net consumption change between months, and which categories need another look?",
+        "referenceNote": "Two entirely fictional months of card data also teach ordinary monthly expense comparisons. This is not a personal statement or a complete household budget.",
+        "sourceLabels": [
+          "C0901–C0910: September 2026; C1001–C1012: October 2026.",
+          "category_hint provides teaching labels; do not guess from merchant names. All amounts are TWD."
+        ],
+        "shortPrompt": "Use September 2026 data only for now. Group consumption by category and show known net consumption with source rows. Leave October for comparison in lesson 2.",
+        "followupPrompt": "I want to compare known net consumption for both posting months. Include purchases and negative refunds; exclude card payments and transfers. Put consumption rows with blank category_hint in Unknown without guessing. Missing amounts are not zero. Show previous/current amounts and differences by category, using the previous amount as the percentage denominator; report Not applicable when it is zero. Cite row_id. Separate supported differences from possible causes that need evidence.",
+        "preparedResult": {
+          "label": "Prepared answer for checking | Human reference for fixed fictional data, not a live AI reply",
+          "summary": "Previous known net consumption is NT$5,000; the current known subtotal is NT$6,700. The known difference is +NT$1,700 (1,700÷5,000＝34%). One current amount is missing, so 6,700 and 34% are not the complete monthly total and growth rate.",
+          "findings": [
+            {
+              "text": "Include 8 previous rows; the current month has 9 included rows with known amounts and 1 missing amount. Exclude 4 payment/transfer rows.",
+              "rowIds": [
+                "C0901",
+                "C0902",
+                "C0903",
+                "C0904",
+                "C0905",
+                "C0906",
+                "C0907",
+                "C0908",
+                "C1001",
+                "C1002",
+                "C1003",
+                "C1004",
+                "C1005",
+                "C1006",
+                "C1007",
+                "C1008",
+                "C1009",
+                "C1012",
+                "C0909",
+                "C0910",
+                "C1010",
+                "C1011"
+              ]
+            },
+            {
+              "text": "Known food amounts change from 2,000 to 2,700 (+700, 35%), but C1012 is missing, so the food total is incomplete.",
+              "rowIds": [
+                "C0901",
+                "C0902",
+                "C1001",
+                "C1002",
+                "C1012"
+              ]
+            },
+            {
+              "text": "Shopping changes from 1,000 to 1,400 (+400, 40%). Keep refund signs. C1007 refers to a September purchase but reduces October under this exercise’s posting-month rule.",
+              "rowIds": [
+                "C0906",
+                "C0907",
+                "C1006",
+                "C1007"
+              ]
+            },
+            {
+              "text": "Unknown changes from 400 to 600 (+200, 50%) and stays in the known subtotal. Entertainment changes from 0 to 400 (+400); the percentage is not applicable because the previous value is zero.",
+              "rowIds": [
+                "C0908",
+                "C1008",
+                "C1009"
+              ]
+            },
+            {
+              "text": "Transport stays 600, utilities 700, and subscriptions 300; each known difference is zero. The known differences sum to 700+400+200+400=1,700.",
+              "rowIds": [
+                "C0903",
+                "C1003",
+                "C0904",
+                "C1004",
+                "C0905",
+                "C1005"
+              ]
+            },
+            {
+              "text": "Buying more, price changes, or fewer discounts are hypotheses. The table has no item quantities or detail, so none is established as the cause.",
+              "rowIds": [
+                "C0901",
+                "C0902",
+                "C1001",
+                "C1002",
+                "C1012"
+              ]
+            }
+          ]
+        },
+        "checks": [
+          {
+            "id": "previous",
+            "type": "number",
+            "text": "What is the previous known net consumption, after excluding payments/transfers and deducting refunds?",
+            "expected": 5000,
+            "tolerance": 0.01,
+            "explanation": "The 8 included previous rows total 5,000. Exclude C0909 and C0910."
+          },
+          {
+            "id": "current",
+            "type": "number",
+            "text": "What is the current subtotal of known amounts?",
+            "expected": 6700,
+            "tolerance": 0.01,
+            "explanation": "The 9 known consumption amounts total 6,700. C1012 is missing, not zero; the total is incomplete."
+          },
+          {
+            "id": "delta",
+            "type": "number",
+            "text": "How many TWD did the known amount increase?",
+            "expected": 1700,
+            "tolerance": 0.01,
+            "explanation": "6,700−5,000＝1,700."
+          },
+          {
+            "id": "percent",
+            "type": "number",
+            "text": "Using the previous 5,000 as the denominator, what is the percentage increase in known amounts?",
+            "expected": 34,
+            "tolerance": 0.01,
+            "explanation": "1,700÷5,000×100＝34%, comparing known amounts only."
+          },
+          {
+            "id": "cause",
+            "type": "choice",
+            "text": "Can this table alone establish that rising prices caused the increase?",
+            "expected": "unknown",
+            "options": [
+              {
+                "value": "yes",
+                "label": "Yes; higher spending proves higher prices"
+              },
+              {
+                "value": "unknown",
+                "label": "No; item quantities, unit prices, or other evidence are needed"
+              }
+            ],
+            "explanation": "The difference is observed; prices, quantities, and motives require additional evidence."
+          },
+          {
+            "id": "zero-base",
+            "type": "choice",
+            "text": "Entertainment changes from 0 to 400. How should the percentage be reported?",
+            "expected": "not-applicable",
+            "options": [
+              {
+                "value": "100",
+                "label": "Up 100%"
+              },
+              {
+                "value": "not-applicable",
+                "label": "Not applicable; the previous denominator is zero"
+              }
+            ],
+            "explanation": "Report an increase of 400 TWD; never divide by zero."
+          }
+        ],
+        "unknowns": [
+          "The amount for C1012; the current figure remains a known subtotal until it is supplied.",
+          "Actual categories for C0908 and C1008; keep them Unknown rather than guessing.",
+          "Why consumption increased; form a hypothesis, then check quantities, unit prices, or item details."
+        ],
+        "nextStep": "Save a short note with the known difference, source rows, and unconfirmed causes. Choose food or shopping and name the evidence you would request. No real statement is needed."
+      }
+    },
+    {
+      "id": "travel",
+      "files": [
+        {
+          "path": "downloads/analysis/travel-plan.csv",
+          "label": {
+            "zh": "兩日四人虛構行程",
+            "en": "Fictional two-day plan for four people"
+          }
+        }
+      ],
+      "expected": {
+        "knownBudget": 3800,
+        "fullBudget": null,
+        "participants": 4,
+        "overlapMinutes": 15,
+        "overlapRows": [
+          "T01",
+          "T02"
+        ],
+        "missingBudgetRows": [
+          "T05"
+        ],
+        "feasibility": "unknown",
+        "formulas": {
+          "knownBudget": "0*4 + 200*4 + 300*4 + 800 + 0*4 + 250*4 = 3800",
+          "overlapMinutes": "10:00 - 09:45 = 15"
+        },
+        "normalized": [
+          {
+            "rowId": "T01",
+            "amount": 0
+          },
+          {
+            "rowId": "T02",
+            "amount": 800
+          },
+          {
+            "rowId": "T03",
+            "amount": 1200
+          },
+          {
+            "rowId": "T04",
+            "amount": 800
+          },
+          {
+            "rowId": "T05",
+            "amount": null
+          },
+          {
+            "rowId": "T06",
+            "amount": 0
+          },
+          {
+            "rowId": "T07",
+            "amount": 1000
+          }
+        ],
+        "placeOrder": [
+          "P01",
+          "P02",
+          "P03",
+          "P04",
+          "P05",
+          "P06",
+          "P07"
+        ]
+      },
+      "zh": {
+        "title": "行程排得滿，真的走得完嗎？",
+        "hook": "一張漂亮的旅行地圖前，先把地點、時間與每人／整團費用整理對。找出時間打架與缺價，比多排景點更實用。",
+        "question": "四人兩日行程，已知活動與餐費多少？哪裡時間衝突，哪些資料還不能拿去導航？",
+        "referenceNote": "旅行資料整理的教學重現：按日期／地點看行程，未知或大致位置清楚標示，照片數不等於造訪次數。本例僅使用虛構地點與行程，示意順序不是實際地圖或最短路線。",
+        "sourceLabels": [
+          "T01–T04：第1日；T05–T07：第2日，共4人。",
+          "所有地點為虛構；place_id只是示意節點，沒有真實座標或地圖API。"
+        ],
+        "shortPrompt": "請把這份兩日旅行資料整理成每日行程，並算預算。",
+        "followupPrompt": "請先按day與start排序，附row_id。每人費用乘4、整團費用只算一次，缺價不要當0，分開已知小計與完整預算。找出時間重疊與未知交通時間；把來源列整理為地點清單，再做示意順序。未知地點不猜座標，不把順序當最短路線或已確認可行。",
+        "preparedResult": {
+          "label": "預備核對答案｜虛構行程的人工參考，不是AI實際導航",
+          "summary": "已知活動與餐費小計 NT$3,800；T05門票與部分交通費仍缺，不能稱整趟總預算。T01與T02重疊15分鐘；其餘空檔也不代表移動時間足夠。",
+          "findings": [
+            {
+              "text": "每人200×4=800；每人300×4=1,200；整團800只算一次；每人250×4=1,000，加上兩筆明確0元，已知共3,800。",
+              "rowIds": [
+                "T01",
+                "T02",
+                "T03",
+                "T04",
+                "T06",
+                "T07"
+              ]
+            },
+            {
+              "text": "T05門票空白，且接駁／公車未提供完整票價，不能用0補齊。",
+              "rowIds": [
+                "T04",
+                "T05",
+                "T07"
+              ]
+            },
+            {
+              "text": "第1日09:00–10:00與09:45–11:00重疊15分鐘，至少須調整一筆時間。",
+              "rowIds": [
+                "T01",
+                "T02"
+              ]
+            },
+            {
+              "text": "來源列→地點清單→每日示意順序：第1日P01→P02→P03→P04；第2日P05→P06→P07。它只表示資料排列，沒有距離、座標或導航驗證。",
+              "rowIds": [
+                "T01",
+                "T02",
+                "T03",
+                "T04",
+                "T05",
+                "T06",
+                "T07"
+              ]
+            },
+            {
+              "text": "照片未包含在此資料中；就算以後有照片，照片數也不能直接當成造訪次數。未知或大致位置應保留標記，不猜座標。",
+              "rowIds": [
+                "T01",
+                "T02",
+                "T03",
+                "T04",
+                "T05",
+                "T06",
+                "T07"
+              ]
+            }
+          ]
+        },
+        "checks": [
+          {
+            "id": "knownBudget",
+            "type": "number",
+            "text": "四人已知活動與餐費小計是多少元？",
+            "expected": 3800,
+            "tolerance": 0.01,
+            "explanation": "200×4＋300×4＋800＋250×4＝3,800；明確0元不增加總額，缺價不當0。"
+          },
+          {
+            "id": "overlapMinutes",
+            "type": "number",
+            "text": "T01與T02重疊幾分鐘？",
+            "expected": 15,
+            "tolerance": 0.01,
+            "explanation": "T02在09:45開始，T01到10:00才結束，重疊15分鐘。"
+          },
+          {
+            "id": "feasibility",
+            "type": "choice",
+            "text": "把時間重疊修正後，就能保證整趟行程可行嗎？",
+            "expected": "unknown",
+            "options": [
+              {
+                "value": "yes",
+                "label": "可以，表格沒有重疊就能走完"
+              },
+              {
+                "value": "unknown",
+                "label": "不能，移動時間與營業時間還未核實"
+              }
+            ],
+            "explanation": "順序表與示意圖沒有驗證真實位置、交通時間與營業時間。"
+          }
+        ],
+        "unknowns": [
+          "T05門票與未列出的車資。",
+          "全部虛構地點的真實位置不存在於資料中，不能導航或猜座標。",
+          "交通耗時與營業時間未核實；時間不重疊也不代表可行。"
+        ],
+        "nextStep": "挑一項衝突，寫下調整方案和仍待查的資料。保存「已知3,800＋缺價來源＋示意順序」；不要把這份虛構行程匯入真實導航。"
+      },
+      "en": {
+        "title": "A packed itinerary—but can you actually follow it?",
+        "hook": "Before making a beautiful travel map, organize places, times, and per-person versus group costs. Finding overlaps and missing prices matters more than adding stops.",
+        "question": "For four people over two days, what activity and meal costs are known? Where do times conflict, and what is still unsuitable for navigation?",
+        "referenceNote": "A teaching reconstruction of travel-data organization: view plans by date and place, label unknown or approximate locations, and distinguish photo counts from visit counts. This example uses fictional places; its schematic order is neither a real map nor a shortest route.",
+        "sourceLabels": [
+          "T01–T04: day 1; T05–T07: day 2; four participants.",
+          "Every place is fictional. place_id is a diagram node, without real coordinates or a map API."
+        ],
+        "shortPrompt": "Organize this two-day travel data into a daily itinerary and calculate the budget.",
+        "followupPrompt": "Sort by day and start, citing row_id. Multiply per-person prices by 4 and count each group price once. Do not treat missing prices as zero; separate the known subtotal from the full budget. Find overlaps and unknown travel times. Turn source rows into a place list and then a schematic order. Do not invent coordinates, call the order a shortest route, or claim feasibility.",
+        "preparedResult": {
+          "label": "Prepared answer for checking | Human reference for fictional plans, not AI navigation",
+          "summary": "Known activity and meal costs total NT$3,800. T05 lacks its ticket price and some transport fares are missing, so this is not the full trip budget. T01 and T02 overlap by 15 minutes; other gaps do not prove enough travel time.",
+          "findings": [
+            {
+              "text": "Per-person 200×4=800, per-person 300×4=1,200, group 800 counted once, and per-person 250×4=1,000. With two explicit zero-cost rows, the known subtotal is 3,800.",
+              "rowIds": [
+                "T01",
+                "T02",
+                "T03",
+                "T04",
+                "T06",
+                "T07"
+              ]
+            },
+            {
+              "text": "T05 has a blank ticket price, and shuttle/bus fares are incomplete. Do not fill them with zero.",
+              "rowIds": [
+                "T04",
+                "T05",
+                "T07"
+              ]
+            },
+            {
+              "text": "Day 1 has 09:00–10:00 and 09:45–11:00, an overlap of 15 minutes. At least one time needs adjustment.",
+              "rowIds": [
+                "T01",
+                "T02"
+              ]
+            },
+            {
+              "text": "Source rows → place list → daily schematic: day 1 P01→P02→P03→P04; day 2 P05→P06→P07. This is data ordering, with no verified distances, coordinates, or navigation.",
+              "rowIds": [
+                "T01",
+                "T02",
+                "T03",
+                "T04",
+                "T05",
+                "T06",
+                "T07"
+              ]
+            },
+            {
+              "text": "The fixture contains no photos. If photos are added later, their count is not a visit count. Keep unknown or approximate locations labeled; do not invent coordinates.",
+              "rowIds": [
+                "T01",
+                "T02",
+                "T03",
+                "T04",
+                "T05",
+                "T06",
+                "T07"
+              ]
+            }
+          ]
+        },
+        "checks": [
+          {
+            "id": "knownBudget",
+            "type": "number",
+            "text": "What is the known activity and meal subtotal for four people, in TWD?",
+            "expected": 3800,
+            "tolerance": 0.01,
+            "explanation": "200×4＋300×4＋800＋250×4＝3,800. Explicit zeros add nothing; missing prices are not zero."
+          },
+          {
+            "id": "overlapMinutes",
+            "type": "number",
+            "text": "How many minutes do T01 and T02 overlap?",
+            "expected": 15,
+            "tolerance": 0.01,
+            "explanation": "T02 starts at 09:45; T01 ends at 10:00. The overlap is 15 minutes."
+          },
+          {
+            "id": "feasibility",
+            "type": "choice",
+            "text": "After fixing the overlap, is the full itinerary guaranteed to be feasible?",
+            "expected": "unknown",
+            "options": [
+              {
+                "value": "yes",
+                "label": "Yes; no overlap means it is feasible"
+              },
+              {
+                "value": "unknown",
+                "label": "No; travel times and opening hours remain unverified"
+              }
+            ],
+            "explanation": "The order and diagram do not verify real locations, travel times, or opening hours."
+          }
+        ],
+        "unknowns": [
+          "The T05 ticket price and unlisted transport fares.",
+          "Real locations are not provided for these fictional places; there is no basis for navigation or guessed coordinates.",
+          "Travel durations and opening hours; no overlap does not prove feasibility."
+        ],
+        "nextStep": "Choose one conflict and write a proposed adjustment plus the remaining questions. Save the known 3,800, missing-price rows, and schematic order. Do not import this fictional plan into real navigation."
+      }
+    },
+    {
+      "id": "market",
+      "files": [
+        {
+          "path": "downloads/analysis/market-check.csv",
+          "label": {
+            "zh": "虛構市場成交量與待核資料",
+            "en": "Fictional market volumes and checks"
+          }
+        }
+      ],
+      "expected": {
+        "stockPrevious": 10000,
+        "stockCurrent": 12000,
+        "stockVolumeDelta": 2000,
+        "stockVolumePercent": 20,
+        "stockRows": [
+          "M01",
+          "M02"
+        ],
+        "futuresPrevious": 80,
+        "futuresCurrent": 100,
+        "futuresVolumeDelta": 20,
+        "futuresVolumePercent": 25,
+        "futuresRows": [
+          "M03",
+          "M04"
+        ],
+        "mixedUnitTotal": null,
+        "canAddUnits": "no",
+        "canInferDirection": "no",
+        "unverifiedRows": [
+          "M01",
+          "M02",
+          "M03",
+          "M04",
+          "M05",
+          "M06",
+          "M07"
+        ],
+        "incompatibleRows": [
+          "M05",
+          "M06"
+        ],
+        "missingRows": [
+          "M07"
+        ],
+        "formulas": {
+          "stockDelta": "12000 - 10000 = 2000 shares",
+          "stockPercent": "2000 / 10000 * 100 = 20",
+          "futuresDelta": "100 - 80 = 20 contracts",
+          "futuresPercent": "20 / 80 * 100 = 25"
+        }
+      },
+      "zh": {
+        "title": "市場數字變了，先確認比的是同一件事",
+        "hook": "一份報表有股數、口數、不同合約與空白。先挑能比較的兩組，再把不相容的列隔開，資料才有用。",
+        "question": "虛構股票與同一期貨合約的整月成交量各增加多少？哪些列不能混加或接成同一系列？",
+        "referenceNote": "完全虛構的公共市場報表練習；沒有個人帳戶、持倉、策略或交易損益。成交量整理比較不構成買賣結論。",
+        "sourceLabels": [
+          "M01/M02：同股票完整9月／10月成交股數。M03/M04：同202611期貨合約完整9月／10月成交口數。",
+          "M05單位不同，M06合約不同，M07缺值；全部SIM來源為虛構且標示待核。"
+        ],
+        "shortPrompt": "請比較這份市場資料前後月的變化。",
+        "followupPrompt": "請先比對instrument、metric、完整期間、unit與contract。只計算可比的M01/M02及M03/M04成交量差額與百分比，分母用各自前月。股與口分開；M05每lot股數不明、M06換合約、M07缺值與來源日期，逐列列待核。來源未核不得寫成可信證據，不推買賣方向、績效或變動原因。",
+        "preparedResult": {
+          "label": "預備核對答案｜虛構市場資料的算術與口徑檢查，不是即時行情",
+          "summary": "同股票成交量10,000→12,000股，增加2,000股（20%）；同一期貨合約80→100口，增加20口（25%）。這是兩組分開的成交量比較，不能合成一個總量或投資報酬。",
+          "findings": [
+            {
+              "text": "M01/M02的股票、monthly_volume、shares與完整月份口徑相同；12,000−10,000=2,000股，2,000÷10,000×100=20%。",
+              "rowIds": [
+                "M01",
+                "M02"
+              ]
+            },
+            {
+              "text": "M03/M04同為SYN-FUT-202611，模擬到期2026-11-18；100−80=20口，20÷80×100=25%。兩筆都是到期前的完整月份。",
+              "rowIds": [
+                "M03",
+                "M04"
+              ]
+            },
+            {
+              "text": "M05的lots沒有每lot股數定義，不能猜換算，更不能把同期間另一份報表當額外成交量加到M02。",
+              "rowIds": [
+                "M02",
+                "M05"
+              ]
+            },
+            {
+              "text": "M06改為SYN-FUT-202612，模擬到期2026-12-16；不能接到M03當同合約成長。若要跨合約連續資料，先定義合約選擇與轉倉方法。",
+              "rowIds": [
+                "M03",
+                "M06"
+              ]
+            },
+            {
+              "text": "M07數值與來源發布日空白，不當0、不沿用上一列。SIM-R01至SIM-R07都不是可驗證來源；算對也不等於資料可信。",
+              "rowIds": [
+                "M01",
+                "M02",
+                "M03",
+                "M04",
+                "M05",
+                "M06",
+                "M07"
+              ]
+            },
+            {
+              "text": "20%與25%表示各自成交量變化，不能證明價格方向、報酬率或原因，也不能把股與口相加。",
+              "rowIds": [
+                "M01",
+                "M02",
+                "M03",
+                "M04"
+              ]
+            }
+          ]
+        },
+        "checks": [
+          {
+            "id": "stockVolumeDelta",
+            "type": "number",
+            "text": "同股票整月成交量增加多少股？",
+            "expected": 2000,
+            "tolerance": 0.01,
+            "explanation": "12,000−10,000＝2,000股；來源M01/M02。"
+          },
+          {
+            "id": "futuresVolumeDelta",
+            "type": "number",
+            "text": "同一期貨合約整月成交量增加多少口？",
+            "expected": 20,
+            "tolerance": 0.01,
+            "explanation": "100−80＝20口；來源M03/M04，合約相同。"
+          },
+          {
+            "id": "stockVolumePercent",
+            "type": "number",
+            "text": "同股票成交量增加百分之幾？",
+            "expected": 20,
+            "tolerance": 0.01,
+            "explanation": "2,000÷10,000×100＝20%，不是報酬率。"
+          },
+          {
+            "id": "futuresVolumePercent",
+            "type": "number",
+            "text": "同一期貨合約成交量增加百分之幾？",
+            "expected": 25,
+            "tolerance": 0.01,
+            "explanation": "20÷80×100＝25%，不是持倉或交易績效。"
+          },
+          {
+            "id": "addUnits",
+            "type": "choice",
+            "text": "可以把本月12,000股與100口相加，稱為12,100的市場總量嗎？",
+            "expected": "no",
+            "options": [
+              {
+                "value": "yes",
+                "label": "可以，都是數字"
+              },
+              {
+                "value": "no",
+                "label": "不可以，單位和資料意義不同"
+              }
+            ],
+            "explanation": "股與口分屬不同單位，需分開報告。"
+          },
+          {
+            "id": "direction",
+            "type": "choice",
+            "text": "成交量增加能直接推出買賣方向嗎？",
+            "expected": "no",
+            "options": [
+              {
+                "value": "yes",
+                "label": "能，增加就應該買"
+              },
+              {
+                "value": "no",
+                "label": "不能，只完成了資料比較"
+              }
+            ],
+            "explanation": "此表不提供買賣結論；成交量變化本身也不證明原因。"
+          }
+        ],
+        "unknowns": [
+          "所有來源可信度與發布日期需回可驗證原始報表查核；此處只有虛構代碼。",
+          "M05的每lot股數與是否重複來源；M06的跨合約選擇／轉倉口徑。",
+          "M07數值與發布日期缺漏，不能補0。"
+        ],
+        "nextStep": "保存兩組算式與來源列，再寫三項待核事項。將「表內可計算」和「來源是否可信」分開，不使用私人帳戶或交易資料。"
+      },
+      "en": {
+        "title": "The numbers changed—are you comparing the same thing?",
+        "hook": "A report mixes shares, contracts, contract months, and blanks. Find two comparable pairs, then separate incompatible rows to make the data useful.",
+        "question": "How much did full-month volume change for the fictional stock and the same futures contract? Which rows cannot be added or joined into one series?",
+        "referenceNote": "Entirely fictional public-market reporting practice, without personal accounts, positions, strategies, or trading profit/loss. Organizing and comparing volume does not establish a buy/sell conclusion.",
+        "sourceLabels": [
+          "M01/M02: the same stock’s full September/October share volume. M03/M04: the same 202611 futures contract’s full September/October contract volume.",
+          "M05 changes units, M06 changes contracts, M07 is missing data; all SIM sources are fictional and unverified."
+        ],
+        "shortPrompt": "Compare the month-to-month changes in this market data.",
+        "followupPrompt": "First compare instrument, metric, full-period coverage, unit, and contract. Calculate volume differences and percentages only for comparable M01/M02 and M03/M04, using each previous month as its denominator. Keep shares separate from contracts. Flag M05’s undefined lot size, M06’s different contract, and M07’s missing value and source date. Unverified sources are not trusted evidence. Do not infer trading direction, performance, or causes.",
+        "preparedResult": {
+          "label": "Prepared answer for checking | Arithmetic and comparability checks on fictional data, not live prices",
+          "summary": "The same stock changes from 10,000 to 12,000 shares: +2,000 shares (20%). The same futures contract changes from 80 to 100 contracts: +20 contracts (25%). These are separate volume comparisons, not a combined total or investment return.",
+          "findings": [
+            {
+              "text": "M01/M02 match on stock, monthly_volume, shares, and full-month coverage: 12,000−10,000=2,000 shares; 2,000÷10,000×100=20%.",
+              "rowIds": [
+                "M01",
+                "M02"
+              ]
+            },
+            {
+              "text": "M03/M04 both use SYN-FUT-202611, with fictional expiry 2026-11-18: 100−80=20 contracts; 20÷80×100=25%. Both full months are before expiry.",
+              "rowIds": [
+                "M03",
+                "M04"
+              ]
+            },
+            {
+              "text": "M05 has lots without a shares-per-lot definition. Do not guess a conversion or add another report for the same period to M02 as extra activity.",
+              "rowIds": [
+                "M02",
+                "M05"
+              ]
+            },
+            {
+              "text": "M06 switches to SYN-FUT-202612, with fictional expiry 2026-12-16. Do not join it to M03 as same-contract growth. A continuous series needs an explicit contract-selection and roll method.",
+              "rowIds": [
+                "M03",
+                "M06"
+              ]
+            },
+            {
+              "text": "M07 lacks a value and publication date. Do not use zero or carry forward a value. SIM-R01 through SIM-R07 are not verifiable sources; correct arithmetic does not prove trustworthy data.",
+              "rowIds": [
+                "M01",
+                "M02",
+                "M03",
+                "M04",
+                "M05",
+                "M06",
+                "M07"
+              ]
+            },
+            {
+              "text": "20% and 25% describe separate volume changes, not price direction, returns, or causes. Shares and contracts cannot be added.",
+              "rowIds": [
+                "M01",
+                "M02",
+                "M03",
+                "M04"
+              ]
+            }
+          ]
+        },
+        "checks": [
+          {
+            "id": "stockVolumeDelta",
+            "type": "number",
+            "text": "How many shares did the stock’s monthly volume increase?",
+            "expected": 2000,
+            "tolerance": 0.01,
+            "explanation": "12,000−10,000＝2,000 shares; sources M01/M02."
+          },
+          {
+            "id": "futuresVolumeDelta",
+            "type": "number",
+            "text": "How many contracts did the same futures contract’s monthly volume increase?",
+            "expected": 20,
+            "tolerance": 0.01,
+            "explanation": "100−80＝20 contracts; M03/M04 use the same contract."
+          },
+          {
+            "id": "stockVolumePercent",
+            "type": "number",
+            "text": "What is the stock-volume percentage increase?",
+            "expected": 20,
+            "tolerance": 0.01,
+            "explanation": "2,000÷10,000×100＝20%; this is not a return."
+          },
+          {
+            "id": "futuresVolumePercent",
+            "type": "number",
+            "text": "What is the same-contract futures-volume percentage increase?",
+            "expected": 25,
+            "tolerance": 0.01,
+            "explanation": "20÷80×100＝25%; this is not a position or trading performance."
+          },
+          {
+            "id": "addUnits",
+            "type": "choice",
+            "text": "Can 12,000 shares and 100 contracts be added as a market total of 12,100?",
+            "expected": "no",
+            "options": [
+              {
+                "value": "yes",
+                "label": "Yes; both are numbers"
+              },
+              {
+                "value": "no",
+                "label": "No; the units and meanings differ"
+              }
+            ],
+            "explanation": "Report shares and contracts separately."
+          },
+          {
+            "id": "direction",
+            "type": "choice",
+            "text": "Does higher volume directly establish a buy/sell direction?",
+            "expected": "no",
+            "options": [
+              {
+                "value": "yes",
+                "label": "Yes; higher volume means buy"
+              },
+              {
+                "value": "no",
+                "label": "No; only a data comparison has been completed"
+              }
+            ],
+            "explanation": "This table establishes no trading conclusion or cause."
+          }
+        ],
+        "unknowns": [
+          "Source credibility and publication dates require verifiable original reports; this fixture has fictional IDs only.",
+          "M05’s lot definition and possible duplicate source; M06’s contract-selection/roll method.",
+          "M07’s missing value and publication date; neither can be filled with zero."
+        ],
+        "nextStep": "Save both formulas and source rows, then three checks still needed. Separate “computable within the table” from “trustworthy source,” without personal account or trading data."
+      }
+    }
+  ],
+  "lessons": {
+    "zh": [
+      {
+        "id": "lesson1",
+        "title": "第一堂：把一份生活資料整理成能核對的答案",
+        "objective": "用9月虛構信用卡資料，完成分類、已知總額、一次親自改寫的追問與保存；不要求連接器。",
+        "completionCriteria": [
+          "能說明消費、退款、繳卡費與轉帳的不同處理。",
+          "能算出9月5,000元，保留待分類與來源列。",
+          "完成一個自己的追問，並保存分析、來源與限制。"
+        ],
+        "segments": [
+          {
+            "minutes": 5,
+            "activity": "生活動機：看帳單總額，提出「錢花在哪裡？」；說明今天只用虛構9月資料。"
+          },
+          {
+            "minutes": 5,
+            "activity": "定義問題：依入帳月算淨消費，不是應繳帳款或完整生活成本；辨認資料範圍與金額單位。"
+          },
+          {
+            "minutes": 8,
+            "activity": "取得與讀資料：下載或貼上相同CSV，辨識row_id、類型、分類與金額。若示範連接器，只讀指定教學檔，確認讀到哪些列；未取得內容就用下載備案。"
+          },
+          {
+            "minutes": 7,
+            "activity": "先短問：學員送出簡短整理要求；無AI者讀預備草稿，指出需要補充的條件。"
+          },
+          {
+            "minutes": 8,
+            "activity": "分類與算術：購買納入、退款扣除、付款轉帳排除、空白類別保留待分類；先以紙筆或計算機核對。"
+          },
+          {
+            "minutes": 8,
+            "activity": "親自追問：學員改寫一個條件，例如保留退款負號、列來源或別猜類別；比較修改前後。"
+          },
+          {
+            "minutes": 12,
+            "activity": "核對預備答案：逐列對回來源，算出5,000元；說明AI整理與算術檢查是不同步驟，來源忠實與可信度也分開。"
+          },
+          {
+            "minutes": 7,
+            "activity": "保存與重開：複製分析到筆記或文字檔，保留來源列、規則、未知與實際驗證結果；重新開啟確認。"
+          }
+        ],
+        "saveChecklist": [
+          "我的問題與我自己改寫的追問",
+          "使用檔名、月份、row_id與分類規則",
+          "已知5,000元的算式、待分類與限制",
+          "我實際做過的檢查；未做者標未驗證"
+        ]
+      },
+      {
+        "id": "lesson2",
+        "title": "第二堂：比較兩月，再把方法帶到一個新情境",
+        "objective": "延續信用卡案例，計算差額、提出有待證明的原因假說，再選旅行或市場其中一案遷移。",
+        "completionCriteria": [
+          "能算已知差額1,700元與34%，說明缺價與前月0的限制。",
+          "能把原因假說與所需證據分開。",
+          "在旅行或市場其中一案完成一個可核對計算，保存來源與限制。"
+        ],
+        "segments": [
+          {
+            "minutes": 5,
+            "activity": "回顧與設定：重新開啟上一堂保存的分析；確認9月5,000元與規則。"
+          },
+          {
+            "minutes": 10,
+            "activity": "加入10月：辨認C1012缺價與跨月退款；算已知6,700、差1,700與前月分母5,000。"
+          },
+          {
+            "minutes": 8,
+            "activity": "短問再追問：先請比較兩月，學員親自補上缺漏、百分比分母或來源列其中一項；前月0改報不適用。"
+          },
+          {
+            "minutes": 10,
+            "activity": "原因與證據：拆開餐飲+700、購物+400、待分類+200、娛樂+400；每組選一個假說與所需證據，不把推測當結論。"
+          },
+          {
+            "minutes": 12,
+            "activity": "二選一遷移：旅行核對每人／整團、3,800元與15分鐘重疊；或市場核對同股票／同合約，算+2,000股與+20口。每組只選一案，不同時做完三案。"
+          },
+          {
+            "minutes": 8,
+            "activity": "同儕核對：互相指出來源列、算式、缺漏與可否推論；分開連接器讀取、AI整理、人工算術與來源可信度。"
+          },
+          {
+            "minutes": 7,
+            "activity": "保存與下一步：保留兩月比較、原因假說／證據、選修案結果和限制；重新開啟，寫下一項最小補查動作。"
+          }
+        ],
+        "saveChecklist": [
+          "已知金額比較，明確標示C1012仍缺價",
+          "百分比分母與前月0時的處理",
+          "一個原因假說及尚缺證據",
+          "旅行或市場結果、row_id、限制與下一步"
+        ]
+      }
+    ],
+    "en": [
+      {
+        "id": "lesson1",
+        "title": "Lesson 1: Turn one everyday dataset into a checkable answer",
+        "objective": "Use the fictional September card data to classify, total known amounts, rewrite one follow-up, and save the result. No connector is required.",
+        "completionCriteria": [
+          "Explain the different treatment of purchases, refunds, repayments, and transfers.",
+          "Calculate September’s 5,000 TWD while preserving Unknown categories and source rows.",
+          "Write a follow-up of your own and save the analysis, sources, and limits."
+        ],
+        "segments": [
+          {
+            "minutes": 5,
+            "activity": "Motivation: Look at a bill total and ask where the money went. Use only the fictional September data today."
+          },
+          {
+            "minutes": 5,
+            "activity": "Define the question: Net consumption by posting month, not the amount due or all living costs. Identify scope and currency."
+          },
+          {
+            "minutes": 8,
+            "activity": "Get and read data: Download or paste the same CSV. Find row_id, type, category, and amount. If demonstrating a connector, read only the designated teaching file and identify retrieved rows; use the download fallback if content is unavailable."
+          },
+          {
+            "minutes": 7,
+            "activity": "Ask briefly first: Learners send a short organizing request. Without AI, read a prepared draft and identify conditions it needs."
+          },
+          {
+            "minutes": 8,
+            "activity": "Classify and calculate: Include purchases, deduct refunds, exclude payments/transfers, and retain blank categories as Unknown. Check with paper or a calculator first."
+          },
+          {
+            "minutes": 8,
+            "activity": "Rewrite a follow-up: Each learner adds one condition, such as preserving refund signs, citing rows, or avoiding guessed categories. Compare before and after."
+          },
+          {
+            "minutes": 12,
+            "activity": "Check the prepared answer: Match results to source rows and reach 5,000 TWD. Separate AI organization from arithmetic, and source fidelity from credibility."
+          },
+          {
+            "minutes": 7,
+            "activity": "Save and reopen: Copy the analysis to a note or text file, keeping source rows, rules, unknowns, and actual checks. Reopen it to confirm it was saved."
+          }
+        ],
+        "saveChecklist": [
+          "My question and the follow-up I rewrote",
+          "Filename, month, row_id citations, and classification rules",
+          "The formula for the known 5,000, Unknown categories, and limits",
+          "Checks I actually performed; label the rest Not verified"
+        ]
+      },
+      {
+        "id": "lesson2",
+        "title": "Lesson 2: Compare two months, then transfer the method to one new situation",
+        "objective": "Extend the card example with differences and causal hypotheses, then choose either travel or market data for transfer.",
+        "completionCriteria": [
+          "Calculate the known 1,700 TWD difference and 34%, explaining missing values and zero denominators.",
+          "Separate a possible cause from the evidence it needs.",
+          "Complete a checkable calculation in either travel or market data and save its sources and limits."
+        ],
+        "segments": [
+          {
+            "minutes": 5,
+            "activity": "Review: Reopen the saved analysis from lesson 1; confirm September’s 5,000 and the rules."
+          },
+          {
+            "minutes": 10,
+            "activity": "Add October: Identify missing C1012 and the cross-month refund. Calculate the known 6,700, difference 1,700, and previous-month denominator 5,000."
+          },
+          {
+            "minutes": 8,
+            "activity": "Short question, then follow-up: First ask for a comparison. Each learner adds one condition about missing values, percentage denominators, or source rows. A zero previous amount means Not applicable."
+          },
+          {
+            "minutes": 10,
+            "activity": "Causes and evidence: Separate food +700, shopping +400, Unknown +200, and entertainment +400. Each group proposes one hypothesis and the evidence needed, without treating it as a conclusion."
+          },
+          {
+            "minutes": 12,
+            "activity": "Choose one transfer: Travel checks per-person/group units, 3,800 TWD, and a 15-minute overlap. Or market checks the same stock/contract and calculates +2,000 shares and +20 contracts. Each group chooses one case, not all three."
+          },
+          {
+            "minutes": 8,
+            "activity": "Peer check: Point to source rows, formulas, missing information, and inference limits. Distinguish connector retrieval, AI organization, manual arithmetic, and source credibility."
+          },
+          {
+            "minutes": 7,
+            "activity": "Save and continue: Keep the monthly comparison, hypothesis/evidence, selected case result, and limits. Reopen the record and choose one small next check."
+          }
+        ],
+        "saveChecklist": [
+          "Known-amount comparison explicitly noting missing C1012",
+          "Percentage denominator and treatment of a zero previous value",
+          "One causal hypothesis and missing evidence",
+          "Travel or market result, row_id citations, limits, and next step"
+        ]
+      }
+    ]
+  }
+}

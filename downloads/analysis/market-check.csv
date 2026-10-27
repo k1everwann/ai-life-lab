@@ -1,0 +1,8 @@
+row_id,instrument,metric,period_start,period_end,value,unit,currency,contract,expiry,source_id,source_published,source_status,unknown
+M01,SYN-STOCK-A,monthly_volume,2026-09-01,2026-09-30,10000,shares,NA,,,SIM-R01,2026-10-01,unverified,source_not_verified
+M02,SYN-STOCK-A,monthly_volume,2026-10-01,2026-10-31,12000,shares,NA,,,SIM-R02,2026-11-01,unverified,source_not_verified
+M03,SYN-FUT,monthly_volume,2026-09-01,2026-09-30,80,contracts,NA,SYN-FUT-202611,2026-11-18,SIM-R03,2026-10-01,unverified,source_not_verified
+M04,SYN-FUT,monthly_volume,2026-10-01,2026-10-31,100,contracts,NA,SYN-FUT-202611,2026-11-18,SIM-R04,2026-11-01,unverified,source_not_verified
+M05,SYN-STOCK-A,monthly_volume,2026-10-01,2026-10-31,12,lots,NA,,,SIM-R05,2026-11-01,unverified,lot_size_and_source_not_verified
+M06,SYN-FUT,monthly_volume,2026-10-01,2026-10-31,105,contracts,NA,SYN-FUT-202612,2026-12-16,SIM-R06,2026-11-01,unverified,different_contract_roll_method_and_source_not_verified
+M07,SYN-STOCK-A,monthly_volume,2026-10-01,2026-10-31,,shares,NA,,,SIM-R07,,unverified,value_source_date_and_source_not_verified

@@ -1,0 +1,29 @@
+.analysis-page #main{margin-left:auto;margin-right:auto;max-width:1120px}
+.analysis-page .section{padding-top:28px;padding-bottom:28px}
+.analysis-page .analysis-nav{display:flex;flex-wrap:wrap;gap:8px 22px;margin:16px 0}
+.analysis-nav a{display:inline-flex;align-items:center;min-height:44px}
+.analysis-page .case-lead{font-size:17px;max-width:850px}
+.analysis-page .analysis-case{border-top:1px solid var(--line);padding-top:28px;margin-top:28px;scroll-margin-top:80px}
+.analysis-page pre{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;font-size:14px;background:var(--soft);border:1px solid var(--line);padding:16px}
+.analysis-page summary{min-height:44px;padding:10px 0;cursor:pointer;font-weight:600}
+.analysis-page .analysis-source{margin:14px 0;border-bottom:1px solid var(--line)}
+.analysis-page .analysis-source table{font-size:13px;min-width:620px}
+.analysis-page .analysis-source th{white-space:nowrap}
+.analysis-page .analysis-source td{max-width:260px;overflow-wrap:anywhere}
+.analysis-page .analysis-checks{padding:18px;background:var(--soft);margin:20px 0}
+.analysis-page .analysis-checks label{margin-top:14px;font-size:15px}
+.analysis-page .analysis-checks input,.analysis-page .analysis-checks select{display:block;width:100%;max-width:480px;min-height:44px;margin:7px 0 16px;padding:9px;border:1px solid #bfc6cf;background:white;color:var(--ink)}
+.analysis-page .analysis-checks .feedback p{margin:7px 0}
+.analysis-page .analysis-result{margin-top:18px;border-left:3px solid var(--accent);padding:0 18px}
+.analysis-page .lesson-plan{margin:16px 0 24px}
+.analysis-page .lesson-plan h3{margin-top:20px}
+.analysis-page .lesson-plan table{min-width:0}
+.analysis-page .lesson-plan td:first-child{width:110px;white-space:nowrap}
+.analysis-page .map-sequence{display:flex;flex-wrap:wrap;gap:10px;list-style:none;padding:0}
+.analysis-page .map-sequence li{border:1px solid var(--line);padding:10px 14px;background:var(--soft)}
+.analysis-page .map-sequence button{background:transparent;border:0;color:var(--accent);text-decoration:underline;min-height:44px;padding:0;font:inherit;max-width:100%;overflow-wrap:anywhere}
+.analysis-page .map-sequence button[aria-pressed="true"]{font-weight:bold;color:var(--ink)}
+.analysis-page .note-actions{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}
+.analysis-entry{border-top:1px solid var(--line);padding-top:16px;margin-top:18px}
+.analysis-entry .text-link{font-size:16px}
+@media(max-width:540px){.analysis-page .wrap{padding-left:18px;padding-right:18px}.analysis-page .analysis-case{padding-top:20px}.analysis-page .analysis-checks{padding:14px}.analysis-page .lesson-plan td:first-child{width:85px}.analysis-page .map-sequence{display:block}.analysis-page .map-sequence li{margin:8px 0}}

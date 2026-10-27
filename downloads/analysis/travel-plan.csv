@@ -1,0 +1,8 @@
+row_id,day,start,end,place_id,place,transport,budget,unit,participants,currency,unknown
+T01,1,09:00,10:00,P01,Story Pavilion,walk,0,per_person,4,TWD,route_and_opening_hours_not_verified
+T02,1,09:45,11:00,P02,Paper Garden,walk,200,per_person,4,TWD,route_and_opening_hours_not_verified
+T03,1,11:30,12:30,P03,Cloud Cafe,walk,300,per_person,4,TWD,route_and_opening_hours_not_verified
+T04,1,13:00,14:00,P04,River Studio,shuttle,800,per_group,4,TWD,route_fare_and_opening_hours_not_verified
+T05,2,09:00,10:00,P05,Lantern Museum,bus,,per_person,4,TWD,ticket_price_route_fare_and_opening_hours_not_verified
+T06,2,10:30,11:30,P06,Star Square,walk,0,per_person,4,TWD,route_and_opening_hours_not_verified
+T07,2,12:00,13:00,P07,Paper Cafe,bus,250,per_person,4,TWD,route_fare_and_opening_hours_not_verified

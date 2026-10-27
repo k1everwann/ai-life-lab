@@ -1,0 +1,48 @@
+AI Life Lab | Everyday analysis data dictionary
+
+All four CSV files are entirely fictional teaching data. Merchants, places, securities, futures, contracts, and source IDs are invented. They do not represent personal accounts, real prices, or navigable locations. Scenario dates are fixed in September–November 2026, including simulated future dates; these are not current market observations. Dates and times use Asia/Taipei. All monetary amounts are TWD. Share counts, contract counts, and index points are not money. There are no real statements, coordinates, or API keys.
+
+Shared fields
+row_id: Keep this source-row identifier when citing evidence.
+Blank: Missing information, not zero. An explicit 0 is a known zero.
+currency: TWD for money; NA for non-monetary quantities.
+
+Card data: credit-previous.csv and credit-current.csv
+The question is net consumption by posting month, not the amount due, cash flow, or every living expense.
+posted_date: Posting date; previous month 2026-09, current month 2026-10. Deduct cross-month refunds in their posting month without rewriting the previous month.
+transaction_type: Include purchase and negative refund amounts. Exclude payment (card repayment) and transfer to avoid counting consumption twice.
+category_hint: Confirmed teaching labels. Use this field instead of guessing from merchant names.
+food, transport, utilities, subscription, shopping, and entertainment are the known categories. A blank category on a consumption row becomes unknown; retain its known amount in the subtotal. Excluded rows need no spending category.
+amount: Posted amount in TWD. Negative refunds reduce the specified category. C1012 has a missing amount; do not turn it into zero or infer a complete total.
+related_row_id: Original transaction if provided. C1007 refers to C0906. The original transaction for C0907 is outside the fixture; do not invent its date.
+note: Limits and context; fictional means invented data, amount_missing means a missing value.
+Category difference = current known subtotal - previous known subtotal.
+Percentage change = difference / previous known subtotal × 100. If the previous value is zero, report Not applicable; never divide by zero.
+Previous known net consumption is 5000. Current known subtotal is 6700; the difference is 1700, or 34% for known amounts only. One current amount is missing, so these are not a complete current-month total or full monthly growth rate.
+Category previous→current (difference): food 2000→2700 (+700; another current amount is missing); transport 600→600 (0); utilities 700→700 (0); subscription 300→300 (0); shopping 1000→1400 (+400); unknown 400→600 (+200); entertainment 0→400 (+400; percentage not applicable).
+Reasons for differences are hypotheses. Merchant text cannot prove inflation, consumption quantities, household size, or motives; item details, quantities, or other evidence are needed.
+
+Travel: travel-plan.csv
+Fictional two-day plan for four people. day is the day number; start/end are local start/end times. place_id identifies a sketch node, not a map-service location.
+place: Invented name. Do not generate real navigation or guessed coordinates.
+transport: Proposed mode, not a verified route. It does not include unlisted fares. Values: walk, shuttle, bus.
+budget: Listed activity or meal cost. Multiply per_person by participants (4); use per_group amounts once for the whole group.
+unknown: Unverified prices, routes, fares, or opening hours. Unlisted transport costs are not zero.
+Known amounts: T01 0, T02 800, T03 1200, T04 800, T06 0, T07 1000; subtotal 3800. T05 lacks a ticket price, and transport fares are incomplete. This is not the full trip budget.
+T01 09:00–10:00 overlaps T02 09:45–11:00 by 15 minutes. Fixing the overlap alone cannot prove feasibility while travel times and opening hours remain unverified.
+You can build a place list, daily order, questions to verify, and a schematic connection diagram. A real map needs verified real places and locations, which this fictional fixture does not provide.
+
+Market checks: market-check.csv
+Compare fictional public-market activity and check comparability and missing data. There are no positions, strategies, or trading profit/loss.
+metric: monthly_volume covers a full month. shares and contracts are quantities; lots has no defined shares-per-unit conversion here.
+period_start/end describe coverage, while source_published is the publication date. All source_status values are unverified. SIM-Rxx IDs are fictional labels, not evidence links.
+M01/M02 have the same stock, metric, unit, and full-month coverage: 10000→12000 shares, a difference of 2000 shares; 2000/10000×100=20%.
+M03/M04 have the same futures contract SYN-FUT-202611, metric, unit, and full-month coverage: 80→100 contracts, a difference of 20 contracts; 20/80×100=25%. The fictional expiry is 2026-11-18.
+These are arithmetic comparisons within a fictional fixture, not verified sources, investment performance, or buy/sell conclusions.
+M05 uses lots without a shares-per-lot definition. Do not add it to shares or guess a conversion. Do not add a report for the same period to M02 as extra activity.
+M06 is a different contract, SYN-FUT-202612, with a fictional expiry of 2026-12-16. Do not attach it to M03 as same-contract growth. A continuous series needs an explicit contract-selection/roll method.
+M07 lacks its value and source publication date. Do not replace them with zero or the previous row.
+Shares and contracts cannot be added together. The 20% and 25% figures are volume changes, not returns; they establish neither a trading direction nor a cause.
+The correct output includes formulas for the two comparable pairs and a row-cited verification list: source and publication date, coverage and metric, unit-conversion evidence, contract/expiry/roll method, and missing fields. Organizing and comparing data does not establish a buy/sell conclusion.
+
+Learning sequence: Start with a short question, have the learner rewrite one follow-up, then check the prepared result against source rows and arithmetic. A connector only reads within an authorized scope. It does not prove complete retrieval, correct AI classification, or correct mathematics. Without a connector, download or paste the same CSV files; a paid plan is not required.
