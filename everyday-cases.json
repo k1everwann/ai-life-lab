@@ -162,7 +162,7 @@
         "title": "這個月多花在哪裡？",
         "hook": "同樣買菜、搭車、付訂閱，帳單怎麼變了？先分清消費、退款和繳卡費，再看有證據的差額。",
         "question": "只看已知的入帳淨消費，前後月差多少？哪些類別值得再查？",
-        "referenceNote": "完全虛構的兩月信用卡資料，同時練習一般每月費用比較。這不是個人帳單，也不代表完整家庭生活成本。",
+        "referenceNote": "完全虛構的兩月信用卡資料，同時練習一般每月費用比較。這不是個人帳單，也不代表完整生活成本。",
         "sourceLabels": [
           "C0901–C0910：2026年9月；C1001–C1012：2026年10月。",
           "category_hint 是教學提供的分類，不靠商家名字猜；金額皆為新臺幣。"
@@ -329,7 +329,7 @@
         "title": "Where did the extra spending come from?",
         "hook": "Groceries, transport, subscriptions—why did the bill change? Separate purchases, refunds, and card repayments before comparing supported differences.",
         "question": "How much did known net consumption change between months, and which categories need another look?",
-        "referenceNote": "Two entirely fictional months of card data also teach ordinary monthly expense comparisons. This is not a personal statement or a complete household budget.",
+        "referenceNote": "Two entirely fictional months of card data also teach ordinary monthly expense comparisons. This is not a personal statement or a complete living-expense budget.",
         "sourceLabels": [
           "C0901–C0910: September 2026; C1001–C1012: October 2026.",
           "category_hint provides teaching labels; do not guess from merchant names. All amounts are TWD."
