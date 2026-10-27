@@ -1,0 +1,4 @@
+Fictional teaching data. Day trips for four adults on the same day. All amounts are in New Taiwan dollars (TWD).
+Plan A: NT$800 per person plus NT$1,200 transport for the whole group. Lunch cost is missing. Known cost = 800*4+1200 = NT$4,400.
+Plan B: NT$4,000 for the whole group, including transport and lunch. In the CSV, transport_group_total=0 means transport is included in the group price; it does not mean transport has an independent market price of zero.
+Compare known costs, included items, and missing information. Do not treat Plan A's unknown lunch cost as zero. This is not a live travel quote.

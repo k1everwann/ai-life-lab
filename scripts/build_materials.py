@@ -62,7 +62,7 @@ PAGES = [
 ["B 電腦製作網頁", "電腦與已能使用的 Codex、Claude Code 或程式 AI", "自己的 HTML、一次修改與實測紀錄"]])),
 ("h", "上課與分享入口"),
 ("p", URL),
-("p", "先開主頁，展示成果，再選 A 或 B。放大字級可提高閱讀字級；講師頁有流程、備案與下載。兩條路線是不同場次的備案，不要求一位講師同時教完兩套。"),
+("p", "先開主頁，展示成果，再選 A 或 B。講師頁有流程、備案與下載。兩條路線是不同場次的備案，不要求一位講師同時教完兩套。"),
 ("h", "備課先看三件事"),
 ("bullet", "確認學員設備與工具已可用，安裝登入在課前完成。"),
 ("bullet", "講師只用教學帳號與虛構資料示範連接器，不投影私人信箱。"),
@@ -155,7 +155,7 @@ PAGES = [
 ("h", "開課前與現場檢查"),
 ("bullet", "課前在桌面、手機與投影上試走主要流程。確認公開網址、PDF、範例與複製按鈕可使用。"),
 ("bullet", "共用七分鐘後選一條主課程；設備混合時，另一條提供自學指引或助教協助，不讓一位講師同時講兩套。"),
-("bullet", "依操作熟練度提供提示，避免以年齡判斷能力。可放大字級，讓操作員與查核員輪換。"),
+("bullet", "依操作熟練度提供提示，避免以年齡判斷能力。讓操作員與查核員輪換；需要時使用瀏覽器縮放。"),
 ("bullet", "網站不會自動保存自由輸入與 HTML。帶走卡含今天成果：可複製到備忘錄或下載 ai-life-takeaway.txt；請學員重新開啟確認。"),
 ("h", "素材採用與界線"),
 ("p", "課程方向參考個人 AI 工作坊筆記中的 Vibe Coding 與 Google Workspace 應用，並核對個人專案 README 與維護文件。公開版本只保留功能摘要，不包含私人筆記、帳號、主機資訊與原始資料。"),
@@ -223,7 +223,16 @@ def render_html(pages):
                 headers,rows=value
                 parts.append('<div class="table-scroll"><table><thead><tr>'+''.join(f"<th>{escape(x)}</th>" for x in headers)+'</tr></thead><tbody>'+''.join('<tr>'+''.join(f"<td>{escape(x)}</td>" for x in row)+'</tr>' for row in rows)+'</tbody></table></div>')
         parts.append("</section>");sections.append("\n".join(parts))
-    return '<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#ffffff"><title>講師備課｜AI 生活實驗室</title><link rel="stylesheet" href="styles.css?v=3"></head><body class="instructor-page"><header class="site-header"><a class="brand" href="index.html">AI 生活實驗室<span>講師備課</span></a><nav aria-label="主要導覽"><a href="index.html">學員教材</a><a href="https://github.com/k1everwann/ai-life-lab" target="_blank" rel="noopener">GitHub ↗</a></nav><a class="button small outline" href="index.html">返回教材</a></header><aside class="course-sidebar"><p class="sidebar-title">教案目錄</p><nav aria-label="講師教案目錄"><a href="#part-1">課程目標</a><a href="#part-2">成果展示講稿</a><a href="#part-3">A\u3000手機教案</a><a href="#part-4">通知與參考答案</a><a href="#part-5">連接器示範</a><a href="#part-6">B\u3000電腦教案</a><a href="#part-7">測試與故障備案</a><a href="#part-8">課前準備與來源</a><a href="index.html">返回學員教材</a></nav></aside><details class="mobile-toc"><summary>教案目錄</summary><nav aria-label="講師教案目錄"><a href="#part-1">課程目標</a><a href="#part-2">成果展示講稿</a><a href="#part-3">A\u3000手機教案</a><a href="#part-4">通知與參考答案</a><a href="#part-5">連接器示範</a><a href="#part-6">B\u3000電腦教案</a><a href="#part-7">測試與故障備案</a><a href="#part-8">課前準備與來源</a><a href="index.html">返回學員教材</a></nav></details><main class="wrap instructor-content"><div class="instructor-hero"><p class="breadcrumb">課程教材 / 講師備課</p><h1>雙路線教案與備課資料</h1><p class="lead">兩套各 60 分鐘教案，包含共同開場、實作、驗收與故障備案。依設備選擇手機生活應用或電腦網頁製作。</p><div class="copy-row"><a class="button" href="downloads/instructor-guide.pdf" target="_blank" rel="noopener">講師手冊 PDF</a><a class="button outline" href="downloads/student-cards.pdf" target="_blank" rel="noopener">學員速查卡 PDF</a></div><div class="overview-downloads"><a href="downloads/family-notices.txt" download>通知文字檔</a><span>·</span><a href="downloads/travel-budget.csv" download>預算 CSV</a><span>·</span><a href="downloads/travel-budget-notes.txt" download>預算資料說明</a></div></div>'+"\n".join(sections)+'</main><footer class="site-footer wrap"><p>內容核對 2026-10-25（Asia/Taipei）。練習為虛構資料；真實專案僅呈現經核實的功能摘要。</p><a href="index.html">返回學員教材</a></footer></body></html>'
+    html = '<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#ffffff"><title>講師備課｜AI 生活實驗室</title><link rel="stylesheet" href="styles.css?v=3"></head><body class="instructor-page"><header class="site-header"><a class="brand" href="index.html">AI 生活實驗室<span>講師備課</span></a><nav aria-label="主要導覽"><a href="index.html">學員教材</a><a href="https://github.com/k1everwann/ai-life-lab" target="_blank" rel="noopener">GitHub ↗</a></nav><a class="button small outline" href="index.html">返回教材</a></header><aside class="course-sidebar"><p class="sidebar-title">教案目錄</p><nav aria-label="講師教案目錄"><a href="#part-1">課程目標</a><a href="#part-2">成果展示講稿</a><a href="#part-3">A\u3000手機教案</a><a href="#part-4">通知與參考答案</a><a href="#part-5">連接器示範</a><a href="#part-6">B\u3000電腦教案</a><a href="#part-7">測試與故障備案</a><a href="#part-8">課前準備與來源</a><a href="index.html">返回學員教材</a></nav></aside><details class="mobile-toc"><summary>教案目錄</summary><nav aria-label="講師教案目錄"><a href="#part-1">課程目標</a><a href="#part-2">成果展示講稿</a><a href="#part-3">A\u3000手機教案</a><a href="#part-4">通知與參考答案</a><a href="#part-5">連接器示範</a><a href="#part-6">B\u3000電腦教案</a><a href="#part-7">測試與故障備案</a><a href="#part-8">課前準備與來源</a><a href="index.html">返回學員教材</a></nav></details><main class="wrap instructor-content"><div class="instructor-hero"><p class="breadcrumb">課程教材 / 講師備課</p><h1>雙路線教案與備課資料</h1><p class="lead">兩套各 60 分鐘教案，包含共同開場、實作、驗收與故障備案。依設備選擇手機生活應用或電腦網頁製作。</p><div class="copy-row"><a class="button" href="downloads/instructor-guide.pdf" target="_blank" rel="noopener">講師手冊 PDF</a><a class="button outline" href="downloads/student-cards.pdf" target="_blank" rel="noopener">學員速查卡 PDF</a></div><div class="overview-downloads"><a href="downloads/family-notices.txt" download>通知文字檔</a><span>·</span><a href="downloads/travel-budget.csv" download>預算 CSV</a><span>·</span><a href="downloads/travel-budget-notes.txt" download>預算資料說明</a></div></div>'+"\n".join(sections)+'</main><footer class="site-footer wrap"><p>內容核對 2026-10-25（Asia/Taipei）。練習為虛構資料；真實專案僅呈現經核實的功能摘要。</p><a href="index.html">返回學員教材</a></footer></body></html>'
+
+
+    html = html.replace('styles.css?v=3', 'styles.css?v=4')
+    html = html.replace('</head>', '<script src="language.js?v=4" defer></script><link rel="alternate" hreflang="en" href="en/instructor.html"></head>')
+    html = html.replace('</header>', '<div class="language-switch" role="group" aria-label="語言 / Language"><a href="instructor.html" data-language-switch="zh-Hant" lang="zh-Hant" aria-current="page">繁體中文</a><a href="en/instructor.html" data-language-switch="en" lang="en">English</a></div></header>', 1)
+    html = html.replace('<a href="index.html">學員教材</a>', '<a href="index.html">學員教材</a><a href="next-steps.html">課後練習</a>')
+    html = html.replace('</main>', '<section id="after-class"><h2>課後練習與新手帶領</h2><p>先在電腦路線的「第一次做網頁」確認教材、AI 工具、HTML 檔案與瀏覽器的位置。讓學員指出自己的檔案，再測試勾選 2→取消 1→重設 0。</p><p>「保存檔案」不等於「保存勾選進度」，本課第一版不保留勾選。用實際觀察提出修改；沒有出錯時，新增一項需求，不把範例錯誤說成實際結果。</p><p><a href="next-steps.html">課後練習</a>提供分關步驟、可複製需求、完成條件與復原方式，另有英文版。記錄看懂、備案練習與親自完成的差異，課後活動不占兩條各60分鐘的課時。</p><p>PDF 為繁體中文版；新增的新手引導、雙語與課後路徑以網站為準。英文完整教案可用上方 English 開啟。</p></section></main>')
+    return html
+
 
 def build():
     font=os.environ.get("AI_LAB_FONT",r"C:\Windows\Fonts\msjh.ttc")

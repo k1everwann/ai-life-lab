@@ -7,11 +7,13 @@ from decimal import Decimal
 import csv
 import importlib.util
 import json
+import os
 import re
 import subprocess
 import sys
 
 ROOT=Path(__file__).resolve().parents[1]
+NODE=os.environ.get("AI_LAB_NODE","node")
 errors=[]
 checks=[]
 class Doc(HTMLParser):
@@ -37,7 +39,8 @@ for file in ROOT.rglob("*.html"):
     if ".qa" in file.parts:continue
     doc=Doc();doc.feed(file.read_text(encoding="utf-8"));docs[file.resolve()]=doc
     if doc.duplicates:errors.append(f"{file.name}: duplicate IDs {doc.duplicates}")
-    if doc.lang!="zh-Hant":errors.append(f"{file.name}: missing Traditional Chinese lang")
+    expected_lang="en" if "en" in file.relative_to(ROOT).parts else "zh-Hant"
+    if doc.lang!=expected_lang:errors.append(f"{file.relative_to(ROOT)}: expected {expected_lang} lang")
 for file,doc in docs.items():
     for ref in doc.refs:
         parts=urlparse(ref)
@@ -47,6 +50,26 @@ for file,doc in docs.items():
         if parts.fragment and dest in docs and unquote(parts.fragment) not in docs[dest].ids:
             errors.append(f"{file.name}: missing anchor {ref}")
 checks.append(f"HTML local references and anchors: {len(docs)} pages")
+
+# Both languages must offer the complete activity, not just translated headings.
+for relative in ("index.html", "instructor.html", "next-steps.html", "examples/starter.html", "examples/my-checklist.html"):
+    zh=ROOT/relative; en=ROOT/"en"/relative
+    if not zh.is_file() or not en.is_file():
+        errors.append(f"Bilingual counterpart missing: {relative}");continue
+    for page in (zh,en):
+        content=page.read_text(encoding="utf-8")
+        if 'data-language-switch="zh-Hant"' not in content or 'data-language-switch="en"' not in content:
+            errors.append(f"{page.relative_to(ROOT)}: missing top language switch")
+for relative in ("index.html", "en/index.html"):
+    doc=docs.get((ROOT/relative).resolve())
+    required={"phone-panel","computer-panel","beginner-start","build-prompt","html-code","code-preview","takeaway"}
+    if not doc or not required.issubset(doc.ids):errors.append(f"{relative}: incomplete learner route")
+for relative in ("script.js", "en/script.js"):
+    code=(ROOT/relative).read_text(encoding="utf-8") if (ROOT/relative).is_file() else ""
+    if 'sandbox' not in (ROOT/relative.replace('script.js','index.html')).read_text(encoding="utf-8"):
+        errors.append(f"{relative}: preview sandbox missing")
+    if 'default-src' not in code or 'form-action' not in code:errors.append(f"{relative}: preview CSP missing")
+checks.append("Bilingual routes, top switches, beginner guidance, and preview boundaries")
 
 spec=importlib.util.spec_from_file_location("materials",ROOT/"scripts"/"build_materials.py")
 m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
@@ -75,6 +98,18 @@ a,b=rows
 total=Decimal(a["amount"])*Decimal(a["people"])+Decimal(a["transport_group_total"])
 if total!=4400 or Decimal(b["amount"])!=4000 or a["lunch_status"]!="unknown" or b["lunch_status"]!="included":errors.append("budget: incorrect amount or missing-cost handling")
 checks.append("Budget: A known cost 4400 TWD, B 4000 TWD, lunch uncertainty preserved")
+english_budget=ROOT/"en"/"downloads"/"travel-budget.csv"
+if english_budget.is_file():
+    english_rows=list(csv.DictReader(english_budget.open(encoding="utf-8",newline="")))
+    for original,translated in zip(rows,english_rows):
+        for key in ("amount","people","transport_group_total","lunch_status"):
+            if original.get(key)!=translated.get(key):errors.append(f"English budget changed {key}")
+    if len(english_rows)!=len(rows):errors.append("English budget row count differs")
+else:errors.append("English budget download missing")
+
+if (ROOT/"instructor.html").read_text(encoding="utf-8")!=m.render_html(m.PAGES):
+    errors.append("Instructor HTML differs from its generator")
+checks.append("Instructor web output matches generator; bilingual budget values agree")
 
 for file,expected in (("instructor-guide.pdf",8),("student-cards.pdf",2)):
     from pypdf import PdfReader
@@ -85,14 +120,14 @@ checks.append("PDFs: 8 instructor pages and 2 student pages, all contain text")
 
 for file in ROOT.rglob("*.js"):
     if ".qa" in file.parts:continue
-    result=subprocess.run(["node","--check",str(file)],capture_output=True,text=True)
+    result=subprocess.run([NODE,"--check",str(file)],capture_output=True,text=True)
     if result.returncode:errors.append(result.stderr)
 tmp=ROOT/".qa";tmp.mkdir(exist_ok=True)
 inline_count=0
 for file,doc in docs.items():
     for i,script in enumerate(doc.scripts):
         target=tmp/f"inline-{file.stem}-{i}.js";target.write_text(script,encoding="utf-8")
-        result=subprocess.run(["node","--check",str(target)],capture_output=True,text=True)
+        result=subprocess.run([NODE,"--check",str(target)],capture_output=True,text=True)
         if result.returncode:errors.append(result.stderr)
         inline_count+=1
 checks.append(f"JavaScript syntax including {inline_count} inline script")
