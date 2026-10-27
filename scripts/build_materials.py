@@ -1,4 +1,4 @@
-"""Build the public instructor page and two PDF teaching handouts."""
+"""Build the optional earlier workshop guide and its two PDF handouts."""
 from pathlib import Path
 from html import escape
 import os
@@ -232,6 +232,10 @@ def render_html(pages):
     html = html.replace('<a href="index.html">學員教材</a>', '<a href="index.html">學員教材</a><a href="next-steps.html">課後練習</a>')
     html = html.replace('</main>', '<section id="after-class"><h2>課後練習與新手帶領</h2><p>先在電腦路線的「第一次做網頁」確認教材、AI 工具、HTML 檔案與瀏覽器的位置。讓學員指出自己的檔案，再測試勾選 2→取消 1→重設 0。</p><p>「保存檔案」不等於「保存勾選進度」，本課第一版不保留勾選。用實際觀察提出修改；沒有出錯時，新增一項需求，不把範例錯誤說成實際結果。</p><p><a href="next-steps.html">課後練習</a>提供分關步驟、可複製需求、完成條件與復原方式，另有英文版。記錄看懂、備案練習與親自完成的差異，課後活動不占兩條各60分鐘的課時。</p><p>PDF 為繁體中文版；新增的新手引導、雙語與課後路徑以網站為準。英文完整教案可用上方 English 開啟。</p></section></main>')
     html = html.replace('</main>', '<section id="everyday-analysis"><h2>生活資料分析：連續兩堂各60分鐘</h2><p>另有信用卡月份差異、旅行規劃與市場成交量三個虛構案例。第一堂只用9月資料，辨認消費、退款、付款、分類與來源；第二堂加入10月，核對已知差額及缺漏，再從旅行或市場二選一遷移。</p><p>每堂的分段時間、完成條件、資料字典、短問與追問、預備答案與算式均在<a href="analysis.html#lessons">生活資料分析教案</a>。先用教學檔在實際AI工具確認連接器帳號及讀取範圍；無連接器可下載或貼上相同資料。</p><p>此為獨立新增的分析課；既有PDF仍是手機／網頁路線，分析兩堂以網站教案為準。旅行功能是經文件確認概念的虛構教學重現，沒有私人行程、照片、來源連結或真實地圖；不是正式服務截圖。</p></section></main>')
+    html = html.replace('instructor.html', 'workshop-instructor.html')
+    html = html.replace('index.html', 'practice.html')
+    html = html.replace('next-steps.html', 'web-project.html')
+    html = html.replace('<p class="breadcrumb">', '<p>課後選修教材：這是較早的手機／網頁雙路線教案。<a href="instructor.html">回本次小講座教案</a></p><p class="breadcrumb">', 1)
     return html
 
 
@@ -283,7 +287,7 @@ def build():
         doc=SimpleDocTemplate(str(dest),pagesize=A4,rightMargin=48,leftMargin=48,topMargin=57,bottomMargin=56,title="AI 生活實驗室 "+("講師手冊" if "instructor" in filename else "學員速查卡"),author="AI Life Lab")
         doc.build(flow,onFirstPage=footer,onLaterPages=footer)
         print(dest.name)
-    (ROOT/"instructor.html").write_text(render_html(PAGES),encoding="utf-8",newline="\n")
+    (ROOT/"workshop-instructor.html").write_text(render_html(PAGES),encoding="utf-8",newline="\n")
     make_pdf("instructor-guide.pdf",PAGES);make_pdf("student-cards.pdf",STUDENT)
 
 if __name__=="__main__":build()

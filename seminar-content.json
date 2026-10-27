@@ -1,0 +1,454 @@
+{
+  "version": 1,
+  "schedule": [
+    {
+      "key": "opening",
+      "minutes": 5
+    },
+    {
+      "key": "showcase",
+      "minutes": 12
+    },
+    {
+      "key": "gmail",
+      "minutes": 8
+    },
+    {
+      "key": "drive",
+      "minutes": 8
+    },
+    {
+      "key": "notion",
+      "minutes": 9
+    },
+    {
+      "key": "practice",
+      "minutes": 15
+    },
+    {
+      "key": "takeaway",
+      "minutes": 3
+    }
+  ],
+  "quiz": {
+    "key": "n1-context",
+    "sentence": "選手たちは汗（　）になって練習を続けた。",
+    "options": [
+      "まみれ",
+      "に限って",
+      "からこそ",
+      "に至って"
+    ],
+    "answer": "まみれ"
+  },
+  "home": {
+    "threshold": 28,
+    "temperatures": [
+      27,
+      30
+    ],
+    "humidity": 62
+  },
+  "market": {
+    "periods": [
+      "2026-09",
+      "2026-10"
+    ],
+    "stock": {
+      "values": [
+        12000,
+        15000
+      ],
+      "unitKey": "shares"
+    },
+    "futures": {
+      "values": [
+        320,
+        280
+      ],
+      "unitKey": "contracts"
+    }
+  },
+  "locales": {
+    "zh-Hant": {
+      "title": "AI 生活應用小講座",
+      "lead": "先看四個成品，再用 AI 做一份旅行準備清單。",
+      "meta": "零基礎 · 使用電腦 · 60 分鐘",
+      "nav": [
+        "看成品",
+        "認識接資料",
+        "動手做",
+        "帶走"
+      ],
+      "scheduleTitle": "這 60 分鐘怎麼進行？",
+      "scheduleLabels": {
+        "opening": "開場",
+        "showcase": "四個成品",
+        "gmail": "Gmail 示範",
+        "drive": "Drive 示範",
+        "notion": "Notion 示範",
+        "practice": "自己動手做",
+        "takeaway": "保存與帶走"
+      },
+      "minute": "分",
+      "showcaseTitle": "先看：同一個想法，可以做成什麼？",
+      "fiction": "虛構資料互動示意；講師現場展示自己的成品。",
+      "demoNames": {
+        "travel": "Travel",
+        "study": "Japanese N1",
+        "home": "Home",
+        "market": "TickForge"
+      },
+      "demoIntents": {
+        "travel": "原本想把行程放在一起；現在能從地圖查看每站的時間與安排。",
+        "study": "原本想釐清日語用法；現在能做一題、看解析，再加入複習。",
+        "home": "原本想知道家中環境；現在能查看感測值，依規則切換空調狀態。",
+        "market": "原本想看懂成交量變化；現在能把同商品、同單位的兩期資料放在一起比較。"
+      },
+      "travelHint": "按地圖上的一站，查看安排。",
+      "stops": [
+        {
+          "name": "雲岸車站",
+          "time": "09:00",
+          "detail": "集合，檢查車票與行李。"
+        },
+        {
+          "name": "風丘展館",
+          "time": "11:00",
+          "detail": "看展覽，預留一小時。"
+        },
+        {
+          "name": "星灣旅店",
+          "time": "待確認",
+          "detail": "抵達與入住時間還要向旅店確認。"
+        }
+      ],
+      "photo": "虛構景點圖片佔位",
+      "mapLabel": "三個虛構地點的路線示意，非真實地圖",
+      "studyHint": "固定教學示意 · 選一個能填入句子的用法。",
+      "quizCorrect": "答對了。",
+      "quizIncorrect": "再留意一下搭配，正解是「まみれ」。",
+      "quizExplanation": "「汗まみれ」指滿身是汗。「まみれ」接在汗、泥等名詞後，表示沾滿某物。「に限って」「からこそ」「に至って」都不能在這裡接成「汗（　）になって」。這題練習的是固定搭配「汗まみれ」。",
+      "reviewAdd": "加入本頁複習",
+      "reviewDone": "已加入本頁複習",
+      "reviewNote": "複習重點：汗まみれ＝滿身是汗。重開頁面後不保留。",
+      "homeHint": "規則：溫度達 28°C 就開啟空調。這是規則自動化，與 AI 生成文字不同。",
+      "temperature": "溫度",
+      "humidity": "濕度",
+      "aircon": "空調",
+      "on": "開啟",
+      "off": "關閉",
+      "homeCool": "換成 27°C",
+      "homeWarm": "換成 30°C",
+      "homeNote": "僅本頁模擬，未連接或控制設備。",
+      "marketHint": "選一種商品；股票與期貨分開比較。",
+      "products": {
+        "stock": "虛構股票 A",
+        "futures": "虛構期貨 B（同一合約）"
+      },
+      "units": {
+        "shares": "股",
+        "contracts": "口"
+      },
+      "period": "月份",
+      "volume": "成交量",
+      "change": "兩期差異",
+      "marketNote": "同一商品、同一單位；成交量不代表損益或投資績效。",
+      "connectTitle": "接資料：讓 AI 讀到你指定的內容",
+      "connectIntro": "在你自己的 AI 工具接上可用帳號與權限，再指定要讀的範圍。本網站不連接帳號。功能依工具、帳號與權限而異。",
+      "connectors": [
+        {
+          "key": "gmail",
+          "name": "Gmail",
+          "input": "指定信件",
+          "output": "時間、待辦與回覆草稿",
+          "prompt": "請從我指定的訂房信列出待辦與期限，附原信來源，再草擬一封詢問入住時間的回信。"
+        },
+        {
+          "key": "drive",
+          "name": "Google Drive",
+          "input": "指定文件與表格",
+          "output": "行程整理與差異比較",
+          "prompt": "請比較我指定的兩份行程文件，列出時間差異與缺漏，附文件來源。"
+        },
+        {
+          "key": "notion",
+          "name": "Notion",
+          "input": "指定的既有筆記",
+          "output": "計畫整理或頁面更新草稿",
+          "prompt": "請根據我指定的旅行筆記，整理出發前計畫並草擬更新內容，附筆記來源。"
+        }
+      ],
+      "input": "輸入",
+      "output": "結果",
+      "connectBoundary": "先讀取、整理成草稿。寄信或更新頁面，須由你核對後另行指示。",
+      "connectMore": "接資料功能說明（官方文件）",
+      "practiceTitle": "自己做：我的旅行準備清單",
+      "practiceIntro": "先用下面三段虛構資料練習，不必先連帳號。保留這個教材分頁，另開你已能使用的 AI 工具。",
+      "switchNotice": "先選好語言再輸入；切換語言或關閉頁面會清除未保存內容，請先複製保存。",
+      "sources": [
+        {
+          "key": "A",
+          "label": "A｜Gmail 訂房信（虛構）",
+          "text": "星灣旅店：2026/11/21 入住，11/22 退房。請於 11/18 18:00 前回覆抵達人數。信中沒有提供可辦理入住的時間。"
+        },
+        {
+          "key": "B",
+          "label": "B｜Drive 行程（虛構）",
+          "text": "2026/11/21 09:00 在雲岸車站集合。請於 11/19 20:00 前下載車票。集合時間不等於車票下載期限。"
+        },
+        {
+          "key": "C",
+          "label": "C｜Notion 準備筆記（虛構）",
+          "text": "請在 2026/11/20 晚上整理雨具與充電線，21:00 前完成。入住時間尚未確認，出發前要向旅店詢問；沒有記錄詢問的確切截止時間。"
+        }
+      ],
+      "steps": [
+        "在教材：複製資料與第一句問法",
+        "到 AI：送出，看第一版草稿",
+        "回教材寫要求，再到 AI 追問",
+        "回教材：核對，留下自己的成果"
+      ],
+      "firstPrompt": "請列出出發前待辦與期限，附來源。",
+      "copyInitial": "複製三段資料＋問句",
+      "step2": "切到你的 AI 工具，貼上並送出。讀完草稿，找一個你想改善的地方，再回到這裡。",
+      "followupLabel": "我想補充的一個要求",
+      "followupPlaceholder": "用自己的話，寫一個要求…",
+      "followupHint": "例如：依期限排序；或把不確定的資訊標成「待確認」。",
+      "copyFollowup": "複製我的追問",
+      "followupNext": "到同一個 AI 對話貼上追問並送出，再帶著修改後的回答回來核對。",
+      "checks": [
+        "每一項都找得到來源 A、B 或 C。",
+        "回覆人數期限是 11/18 18:00；下載車票是 11/19 20:00。",
+        "整理雨具與充電線期限是 11/20 21:00。",
+        "11/21 09:00 是集合時間；入住時間仍是待確認。"
+      ],
+      "checkIntro": "先對照原文，再查來源是否可信；真實資料還要核對寄件者、文件版本與發布日期。勾選只代表你的自我核對。",
+      "exampleTitle": "需要參考時：查看固定示範結果",
+      "exampleNote": "這是事先寫好的教學示範，不是即時 AI 回覆。尚無 AI 可用時，可以練習核對；請把紀錄標為「只看範例」。",
+      "example": "• 11/18 18:00 前：回覆抵達人數。來源 A。\n• 11/19 20:00 前：下載車票。來源 B。\n• 11/20 21:00 前：整理雨具與充電線。來源 C。\n• 出發前：向旅店確認可辦理入住的時間；詢問的確切截止時間待確認。來源 A、C。\n提醒：11/21 09:00 是集合時間（B）；可辦理入住的時間未提供（A）。",
+      "resultLabel": "貼上你核對後的成果",
+      "resultPlaceholder": "把核對過的清單貼在這裡；有缺漏就保留「待確認」。",
+      "modeLabel": "我今天做了哪一種練習？",
+      "modeOptions": {
+        "unrecorded": "尚未記錄",
+        "ai": "在自己的 AI 工具完成提問與追問",
+        "example": "只看範例並練習核對"
+      },
+      "takeawayTitle": "帶走：一份有來源的旅行準備清單",
+      "takeawayIntro": "保存成果、你的問句與核對紀錄。下次換成自己的資料，也沿用「先問 → 補一個要求 → 回來源核對」。",
+      "saveNotice": "本頁不會自動儲存。請複製到自己的文件，或下載文字檔後再離開。",
+      "copyRecord": "複製練習紀錄",
+      "download": "下載紀錄 .txt",
+      "next": "課後再練一次",
+      "instructor": "講師教案",
+      "copySuccess": "已複製，可以貼上。",
+      "copyManual": "無法自動複製。文字已放在下方，請全選後按 Ctrl+C（Mac：⌘C）。",
+      "manualLabel": "手動複製文字",
+      "emptyFollowup": "請先用自己的話寫一個補充要求。",
+      "emptyResult": "請先貼上核對後的成果，再保存紀錄。",
+      "downloadSuccess": "已建立文字檔下載；請確認下載位置。",
+      "recordTitle": "我的旅行準備清單｜練習紀錄",
+      "recordPrompt": "第一句問法",
+      "recordFollowup": "我的追問",
+      "recordChecks": "自我核對（勾選不等於驗證完成）",
+      "recordResult": "核對後的成果",
+      "checked": "已勾選",
+      "unchecked": "未勾選",
+      "notWritten": "未填寫",
+      "footer": "只練習一件事：把資料整理成可核對的下一步。",
+      "skip": "跳到主要內容",
+      "noscript": "JavaScript 未啟用：可閱讀下方資料、範例與所有案例；互動、複製與下載按鈕需啟用 JavaScript。你也可以手動選取文字複製。"
+    },
+    "en": {
+      "title": "Everyday AI: a short talk",
+      "lead": "See four finished projects, then use AI to make a travel preparation list.",
+      "meta": "For beginners · On a computer · 60 minutes",
+      "nav": [
+        "See projects",
+        "Connect data",
+        "Try it",
+        "Take it with you"
+      ],
+      "scheduleTitle": "How do the 60 minutes work?",
+      "scheduleLabels": {
+        "opening": "Welcome",
+        "showcase": "Four projects",
+        "gmail": "Gmail demo",
+        "drive": "Drive demo",
+        "notion": "Notion demo",
+        "practice": "Your practice",
+        "takeaway": "Save and take away"
+      },
+      "minute": "min",
+      "showcaseTitle": "First, see what an idea can become",
+      "fiction": "Interactive examples use fictional data; the instructor shows their own finished projects live.",
+      "demoNames": {
+        "travel": "Travel",
+        "study": "Japanese N1",
+        "home": "Home",
+        "market": "TickForge"
+      },
+      "demoIntents": {
+        "travel": "The aim was to keep an itinerary together. Now a map makes each stop’s time and plan easy to find.",
+        "study": "The aim was to understand Japanese usage. Now you can answer a question, read an explanation, and add it to review.",
+        "home": "The aim was to understand the home environment. Now sensor readings can trigger an air-conditioner rule.",
+        "market": "The aim was to understand changes in trading volume. Now two periods can be compared for the same product and unit."
+      },
+      "travelHint": "Choose a stop on the map to see its plan.",
+      "stops": [
+        {
+          "name": "Cloudshore Station",
+          "time": "09:00",
+          "detail": "Meet up and check tickets and luggage."
+        },
+        {
+          "name": "Windhill Gallery",
+          "time": "11:00",
+          "detail": "Visit the exhibition; allow one hour."
+        },
+        {
+          "name": "Starbay Inn",
+          "time": "To confirm",
+          "detail": "Confirm the arrival and check-in times with the inn."
+        }
+      ],
+      "photo": "Fictional destination image placeholder",
+      "mapLabel": "Schematic route between three fictional places; not a real map",
+      "studyHint": "Fixed teaching example · Choose the expression that fits the sentence.",
+      "quizCorrect": "Correct.",
+      "quizIncorrect": "Check the expression again. The answer is まみれ.",
+      "quizExplanation": "汗まみれ means covered in sweat. まみれ follows nouns such as sweat or mud to mean covered in that substance. に限って, からこそ, and に至って cannot complete 汗（　）になって here. This example practises the expression 汗まみれ.",
+      "reviewAdd": "Add to review on this page",
+      "reviewDone": "Added to review on this page",
+      "reviewNote": "Review: 汗まみれ = covered in sweat. This is not retained after reopening the page.",
+      "homeHint": "Rule: turn the air conditioner on at 28°C or above. This is rule-based automation, a different process from AI text generation.",
+      "temperature": "Temperature",
+      "humidity": "Humidity",
+      "aircon": "Air conditioner",
+      "on": "On",
+      "off": "Off",
+      "homeCool": "Try 27°C",
+      "homeWarm": "Try 30°C",
+      "homeNote": "Simulation on this page only; no device is connected or controlled.",
+      "marketHint": "Choose one product. Stocks and futures are compared separately.",
+      "products": {
+        "stock": "Fictional stock A",
+        "futures": "Fictional futures B (same contract)"
+      },
+      "units": {
+        "shares": "shares",
+        "contracts": "contracts"
+      },
+      "period": "Month",
+      "volume": "Trading volume",
+      "change": "Change between periods",
+      "marketNote": "Same product, same unit. Trading volume does not represent profit, loss, or investment performance.",
+      "connectTitle": "Connect data: let AI read what you specify",
+      "connectIntro": "Connect an available account and permissions in your own AI tool, then specify what it may read. This website does not connect accounts. Availability depends on the tool, account, and permissions.",
+      "connectors": [
+        {
+          "key": "gmail",
+          "name": "Gmail",
+          "input": "Selected emails",
+          "output": "Times, tasks, and a draft reply",
+          "prompt": "From my selected booking email, list tasks and deadlines with the original email source, then draft a reply asking about check-in time."
+        },
+        {
+          "key": "drive",
+          "name": "Google Drive",
+          "input": "Selected documents and spreadsheets",
+          "output": "An itinerary summary and differences",
+          "prompt": "Compare the two itinerary documents I specify. List time differences and missing information, with document sources."
+        },
+        {
+          "key": "notion",
+          "name": "Notion",
+          "input": "Selected existing notes",
+          "output": "An organised plan or a draft page update",
+          "prompt": "Use my selected travel notes to organise a preparation plan and draft an update, with note sources."
+        }
+      ],
+      "input": "Input",
+      "output": "Result",
+      "connectBoundary": "Read and organise a draft first. Sending email or updating a page needs a separate instruction after you check it.",
+      "connectMore": "Learn about connecting data (official guide)",
+      "practiceTitle": "Your turn: my travel preparation checklist",
+      "practiceIntro": "Practise with the three fictional excerpts below; no account connection is needed. Keep this lesson tab open and open an AI tool you can already use in another tab.",
+      "switchNotice": "Choose your language before typing. Switching languages or closing the page clears unsaved input; copy and save it first.",
+      "sources": [
+        {
+          "key": "A",
+          "label": "A | Gmail booking email (fictional)",
+          "text": "Starbay Inn: check in on 2026/11/21 and check out on 11/22. Reply with your party size by 11/18 at 18:00. The email does not give the time when check-in is available."
+        },
+        {
+          "key": "B",
+          "label": "B | Drive itinerary (fictional)",
+          "text": "Meet at Cloudshore Station on 2026/11/21 at 09:00. Download your tickets by 11/19 at 20:00. The meeting time is different from the ticket download deadline."
+        },
+        {
+          "key": "C",
+          "label": "C | Notion preparation note (fictional)",
+          "text": "Pack rain gear and charging cables on the evening of 2026/11/20, finishing by 21:00. Check-in time is still unconfirmed; ask the inn before departure. There is no exact deadline recorded for that enquiry."
+        }
+      ],
+      "steps": [
+        "In this lesson: copy the data and first question",
+        "In your AI tool: send it and read the first draft",
+        "Write a follow-up here, then send it to your AI",
+        "Back here: check sources and keep your result"
+      ],
+      "firstPrompt": "List the tasks and deadlines before departure, with sources.",
+      "copyInitial": "Copy three excerpts + question",
+      "step2": "Switch to your AI tool, paste, and send. Read the draft, find one thing you would improve, and return here.",
+      "followupLabel": "One requirement I want to add",
+      "followupPlaceholder": "Write one requirement in your own words…",
+      "followupHint": "For example: sort by deadline; or label uncertain details “to confirm”.",
+      "copyFollowup": "Copy my follow-up",
+      "followupNext": "Paste and send the follow-up in the same AI conversation. Return here with the revised answer to check it.",
+      "checks": [
+        "Each item can be traced to source A, B, or C.",
+        "Party size is due 11/18 at 18:00; tickets are due 11/19 at 20:00.",
+        "Rain gear and charging cables must be packed by 11/20 at 21:00.",
+        "11/21 at 09:00 is the meeting time; check-in time remains unconfirmed."
+      ],
+      "checkIntro": "Check against the original text, then consider whether the source is trustworthy. For real data, also check the sender, document version, and publication date. Ticking a box is your own self-check.",
+      "exampleTitle": "Need a reference? See the fixed example result",
+      "exampleNote": "This teaching example was written in advance; it is not a live AI response. Without an AI tool, you can practise checking it. Mark your record “Example only”.",
+      "example": "• By 11/18 at 18:00: reply with party size. Source A.\n• By 11/19 at 20:00: download tickets. Source B.\n• By 11/20 at 21:00: pack rain gear and charging cables. Source C.\n• Before departure: ask the inn when check-in is available; the exact enquiry deadline is to confirm. Sources A and C.\nReminder: 11/21 at 09:00 is the meeting time (B); the available check-in time is not given (A).",
+      "resultLabel": "Paste your checked result",
+      "resultPlaceholder": "Paste the checklist you have checked. Keep “to confirm” wherever information is missing.",
+      "modeLabel": "Which practice did I do today?",
+      "modeOptions": {
+        "unrecorded": "Not recorded yet",
+        "ai": "Asked and followed up in my own AI tool",
+        "example": "Example only: read and practised checking"
+      },
+      "takeawayTitle": "Take away a checklist with sources",
+      "takeawayIntro": "Keep your result, your questions, and your checks. With your own data next time, use the same sequence: ask → add one requirement → check the sources.",
+      "saveNotice": "This page does not save automatically. Copy your record into your own document or download a text file before leaving.",
+      "copyRecord": "Copy practice record",
+      "download": "Download record .txt",
+      "next": "Practise again after class",
+      "instructor": "Instructor guide",
+      "copySuccess": "Copied. You can paste it now.",
+      "copyManual": "Automatic copying was unavailable. The text is below: select all and press Ctrl+C (Mac: ⌘C).",
+      "manualLabel": "Text for manual copying",
+      "emptyFollowup": "First write one requirement in your own words.",
+      "emptyResult": "Paste your checked result before saving the record.",
+      "downloadSuccess": "A text-file download was created. Check your download location.",
+      "recordTitle": "My travel preparation checklist | Practice record",
+      "recordPrompt": "First question",
+      "recordFollowup": "My follow-up",
+      "recordChecks": "Self-checks (ticking does not verify completion)",
+      "recordResult": "Checked result",
+      "checked": "Ticked",
+      "unchecked": "Not ticked",
+      "notWritten": "Not written",
+      "footer": "Practise one thing: turn information into a next step you can check.",
+      "skip": "Skip to main content",
+      "noscript": "JavaScript is off. All examples, source excerpts, and the reference result are still readable. Interactive, copy, and download buttons need JavaScript. You can select and copy the text manually."
+    }
+  }
+}

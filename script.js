@@ -88,7 +88,7 @@ async function copyText(text,message="已複製，可以貼到你的 AI 對話�
 }
 $$("[data-copy]").forEach(b=>b.addEventListener("click",()=>{const content=b.dataset.copy==="build"?$("#build-prompt").value:prompts[b.dataset.copy]||"";if(!content){toast("請先填好至少三個項目，再組成製作需求。");return;}copyText(content);}));
 $("#copy-followup").addEventListener("click",()=>{const value=$("#phone-followup").value.trim();if(!value){toast("先寫下你想補充的一個要求。");return;}copyText(value,"已複製補充要求；回到同一個 AI 對話貼上，再核對修改結果。");});
-$("#share-route").addEventListener("click",()=>copyText("https://k1everwann.github.io/ai-life-lab/?route="+(progress.route==="computer"?"computer":"phone")+"#classroom","已複製這條路線的公開分享連結。"));
+$("#share-route").addEventListener("click",()=>copyText("https://k1everwann.github.io/ai-life-lab/practice.html?route="+(progress.route==="computer"?"computer":"phone")+"#classroom","已複製這條路線的公開分享連結。"));
 const correct={q1:"contradicted",q2:"supported",q3:"unknown"};
 const explanations={q1:"① 與原文矛盾：A 寫明 11/05 18:00 報名截止；11/08 是活動日。",q2:"② 有依據：C 更正為 11/07 14:00、二樓，應更新舊通知 B。",q3:"③ 目前無法判斷：D 沒有門市營業時間，22:00 是無依據的補充。"};
 if(progress.audit)for(const[name,value]of Object.entries(progress.audit)){const el=$('input[name="'+name+'"][value="'+value+'"]');if(el)el.checked=true;}

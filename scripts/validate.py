@@ -27,7 +27,7 @@ class Doc(HTMLParser):
             self.ids.add(a["id"])
         for key in ("href","src"):
             if key in a:self.refs.append(a[key])
-        if tag=="script" and "src" not in a:self.current_script=[]
+        if tag=="script" and "src" not in a and a.get("type", "text/javascript") in ("text/javascript", "application/javascript", "module"):self.current_script=[]
     def handle_data(self,data):
         if self.current_script is not None:self.current_script.append(data)
     def handle_endtag(self,tag):
@@ -52,7 +52,7 @@ for file,doc in docs.items():
 checks.append(f"HTML local references and anchors: {len(docs)} pages")
 
 # Both languages must offer the complete activity, not just translated headings.
-for relative in ("index.html", "instructor.html", "next-steps.html", "analysis.html", "examples/starter.html", "examples/my-checklist.html"):
+for relative in ("index.html", "instructor.html", "next-steps.html", "practice.html", "workshop-instructor.html", "web-project.html", "analysis.html", "examples/starter.html", "examples/my-checklist.html"):
     zh=ROOT/relative; en=ROOT/"en"/relative
     if not zh.is_file() or not en.is_file():
         errors.append(f"Bilingual counterpart missing: {relative}");continue
@@ -60,16 +60,16 @@ for relative in ("index.html", "instructor.html", "next-steps.html", "analysis.h
         content=page.read_text(encoding="utf-8")
         if 'data-language-switch="zh-Hant"' not in content or 'data-language-switch="en"' not in content:
             errors.append(f"{page.relative_to(ROOT)}: missing top language switch")
-for relative in ("index.html", "en/index.html"):
+for relative in ("practice.html", "en/practice.html"):
     doc=docs.get((ROOT/relative).resolve())
     required={"phone-panel","computer-panel","beginner-start","build-prompt","html-code","code-preview","takeaway"}
     if not doc or not required.issubset(doc.ids):errors.append(f"{relative}: incomplete learner route")
 for relative in ("script.js", "en/script.js"):
     code=(ROOT/relative).read_text(encoding="utf-8") if (ROOT/relative).is_file() else ""
-    if 'sandbox' not in (ROOT/relative.replace('script.js','index.html')).read_text(encoding="utf-8"):
+    if 'sandbox' not in (ROOT/relative.replace('script.js','practice.html')).read_text(encoding="utf-8"):
         errors.append(f"{relative}: preview sandbox missing")
     if 'default-src' not in code or 'form-action' not in code:errors.append(f"{relative}: preview CSP missing")
-checks.append("Bilingual routes, top switches, beginner guidance, and preview boundaries")
+checks.append("Bilingual seminar and optional workshops, language switches, and sandbox boundaries")
 
 spec=importlib.util.spec_from_file_location("materials",ROOT/"scripts"/"build_materials.py")
 m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
@@ -107,9 +107,20 @@ if english_budget.is_file():
     if len(english_rows)!=len(rows):errors.append("English budget row count differs")
 else:errors.append("English budget download missing")
 
-if (ROOT/"instructor.html").read_text(encoding="utf-8")!=m.render_html(m.PAGES):
-    errors.append("Instructor HTML differs from its generator")
-checks.append("Instructor web output matches generator; bilingual budget values agree")
+if (ROOT/"workshop-instructor.html").read_text(encoding="utf-8")!=m.render_html(m.PAGES):
+    errors.append("Optional workshop guide differs from its generator")
+companion_spec=importlib.util.spec_from_file_location("companion",ROOT/"scripts"/"build_companion_pages.py")
+companion=importlib.util.module_from_spec(companion_spec);companion_spec.loader.exec_module(companion)
+last=0
+for start,end,*_ in companion.SCHEDULE:
+    if start!=last or end<=start:errors.append("Seminar schedule has a gap or overlap")
+    last=end
+if last!=60:errors.append("Seminar must be 60 minutes")
+for lang in ("zh-Hant","en"):
+    directory=ROOT/"en" if lang=="en" else ROOT
+    for filename,render in (("instructor.html",companion.render_guide),("next-steps.html",companion.render_next)):
+        if (directory/filename).read_text(encoding="utf-8")!=render(lang):errors.append(f"{lang} {filename}: companion generator mismatch")
+checks.append("Seminar guides: equivalent bilingual 60-minute sequence; optional guide matches generator")
 
 for file,expected in (("instructor-guide.pdf",8),("student-cards.pdf",2)):
     from pypdf import PdfReader
@@ -152,6 +163,9 @@ checks.append("Focused public-content scan: no private topology, Notion URLs, or
 analysis_spec=importlib.util.spec_from_file_location("validate_analysis",ROOT/"scripts"/"validate_analysis.py")
 analysis_module=importlib.util.module_from_spec(analysis_spec);analysis_spec.loader.exec_module(analysis_module)
 analysis_module.validate()
+seminar_spec=importlib.util.spec_from_file_location("validate_seminar",ROOT/"scripts"/"validate_seminar.py")
+seminar_module=importlib.util.module_from_spec(seminar_spec);seminar_spec.loader.exec_module(seminar_module)
+seminar_module.validate()
 for msg in checks:print("PASS "+msg)
 if errors:
     for msg in errors:print("FAIL "+msg)

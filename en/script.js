@@ -51,7 +51,7 @@ const stories = {
   name:"Codex / Claude engineering starter guide", title:"Turn your own work into material someone else can learn from.", problem:"Git, APIs, and engineering terms can block a first encounter with AI coding tools.",
   method:"A public website and source code connect engineering ideas with browser-based Python / SQL and Google Workspace practice.",
   boundary:"Complete one small task today. Explore deeper engineering topics after class as needed.", start:"Keep your Build request, revisions, and Check your work results as material for next time.",
-  demo:'<span class="demo-label">Existing public material · Further learning</span><div class="demo-window"><h4>Choose your next step by interest.</h4><div class="guide-lines"><span>Git / GitHub: save changes and collaborate</span><span>Python / SQL: practice data processing</span><span>APIs / connectors: connect data and tools</span></div><a class="button small" href="next-steps.html">Open After-class practice →</a><a class="text-link" href="https://k1everwann.github.io/codex-starter-guide/" target="_blank" rel="noopener">Existing engineering guide (Traditional Chinese) ↗</a></div>'
+  demo:'<span class="demo-label">Existing public material · Further learning</span><div class="demo-window"><h4>Choose your next step by interest.</h4><div class="guide-lines"><span>Git / GitHub: save changes and collaborate</span><span>Python / SQL: practice data processing</span><span>APIs / connectors: connect data and tools</span></div><a class="button small" href="web-project.html">Open After-class practice →</a><a class="text-link" href="https://k1everwann.github.io/codex-starter-guide/" target="_blank" rel="noopener">Existing engineering guide (Traditional Chinese) ↗</a></div>'
  }
 };
 function showcase(key) {
@@ -88,7 +88,7 @@ async function copyText(text,message="Copied. You can paste this into your AI co
 }
 $$("[data-copy]").forEach(b=>b.addEventListener("click",()=>{const content=b.dataset.copy==="build"?$("#build-prompt").value:prompts[b.dataset.copy]||"";if(!content){toast("Enter at least three items and create your build request first.");return;}copyText(content);}));
 $("#copy-followup").addEventListener("click",()=>{const value=$("#phone-followup").value.trim();if(!value){toast("Write one follow-up requirement first.");return;}copyText(value,"Follow-up copied. Paste it into the same AI conversation, then check the revised result.");});
-$("#share-route").addEventListener("click",()=>copyText("https://k1everwann.github.io/ai-life-lab/en/?route="+(progress.route==="computer"?"computer":"phone")+"#classroom","Copied this route's public English share link."));
+$("#share-route").addEventListener("click",()=>copyText("https://k1everwann.github.io/ai-life-lab/en/practice.html?route="+(progress.route==="computer"?"computer":"phone")+"#classroom","Copied this route's public English share link."));
 const correct={q1:"contradicted",q2:"supported",q3:"unknown"};
 const explanations={q1:"① Contradicted: A says registration closes Nov 5, 18:00. Nov 8 is the activity date.",q2:"② Supported: C corrects the class to Nov 7, 14:00, second floor, replacing old notice B.",q3:"③ Cannot determine yet: D gives no store opening hours. The 22:00 claim has no source."};
 if(progress.audit)for(const[name,value]of Object.entries(progress.audit)){const el=$('input[name="'+name+'"][value="'+value+'"]');if(el)el.checked=true;}
