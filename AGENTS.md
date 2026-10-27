@@ -1,6 +1,6 @@
 # AI Life Lab
 
-Public Traditional Chinese and English teaching materials for families and AI beginners.
+Public Traditional Chinese and English teaching materials for a short talk on everyday AI, suitable for beginners.
 
 - Keep HTML, CSS, and JavaScript dependency-free. GitHub Pages serves the repository root.
 - Preserve two complete 60-minute alternative routes: phone and computer.
