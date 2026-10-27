@@ -5,6 +5,8 @@
   const data = JSON.parse(node.textContent);
   const lang = document.documentElement.lang;
   const t = data.locales[lang];
+  const course = document.getElementById("course-data");
+  const question = course ? JSON.parse(course.textContent).locales[lang].promptLesson.strong : t.firstPrompt;
   const $ = id => document.getElementById(id);
   const all = selector => [...document.querySelectorAll(selector)];
   const announce = (id, value) => { $(id).textContent = value; };
@@ -45,7 +47,7 @@
     const sign = change > 0 ? "+" : "";
     announce("market-change", `${t.change}: ${sign}${change.toLocaleString("en-US")} ${unit} (${sign}${Number(percent.toFixed(1))}%)`);
   });
-  const initial = () => `${t.sources.map(source => `${source.label}\n${source.text}`).join("\n\n")}\n\n${t.firstPrompt}`;
+  const initial = () => `${t.sources.map(source => `${source.label}\n${source.text}`).join("\n\n")}\n\n${question}`;
   async function copy(text, feedbackId) {
     $("copy-fallback").hidden = true;
     try {

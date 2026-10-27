@@ -15,11 +15,17 @@ class SeminarPage(HTMLParser):
         self.inputs = {}
         self.active_input = None
         self.demos = []
+        self.links = []
+        self.preview_sandbox = None
 
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
         if a.get('id'):
             self.ids.add(a['id'])
+        if tag == 'a':
+            self.links.append(a.get('href', ''))
+        if tag == 'iframe' and a.get('id') == 'checklist-preview':
+            self.preview_sandbox = a.get('sandbox')
         if tag == 'script' and a.get('id') == 'seminar-data':
             self.in_json = True
         if tag == 'textarea' and a.get('id') in ('learner-followup', 'learner-result'):
@@ -77,7 +83,22 @@ def validate():
     assert len(set(data['quiz']['options'])) == 4
     assert 'だらけ' not in data['quiz']['options'], 'Avoid a plausible second completion of 汗（ ）'
     assert min(data['home']['temperatures']) < data['home']['threshold'] <= max(data['home']['temperatures'])
-    required = {'showcase', 'principles', 'classroom', 'takeaway', 'copy-initial', 'learner-followup', 'copy-followup', 'learner-result', 'practice-mode', 'copy-record', 'download-record'}
+    course = json.loads((ROOT / 'course-content.json').read_text(encoding='utf-8'))
+    assert [row['minutes'] for row in course['schedule']] == [8, 24, 12, 13, 3]
+    assert shape(course['locales']['zh-Hant']) == shape(course['locales']['en'])
+    for locale in course['locales'].values():
+        assert len(locale['outcomes']) == 3
+        assert [lesson['key'] for lesson in locale['lessons']] == ['gmail', 'drive', 'notion']
+        assert [lesson['practiceAnswer'] for lesson in locale['lessons']] == [1, 2, 0]
+        for lesson in locale['lessons']:
+            assert len(lesson['steps']) == 4 and len(lesson['practiceChoices']) == 3
+            assert lesson['prompt'] and lesson['example'] and lesson['check']
+        assert '10:00' in locale['sourceD']['text'] and '20:00' in locale['sourceD']['text']
+        assert '09:00' in locale['lessons'][1]['example'] and '10:00' in locale['lessons'][1]['example']
+        choices = locale['mistakeExercise']['choices']
+        assert {choice['key'] for choice in choices if choice['correct']} == {'ticket', 'checkin'}
+        assert len(locale['continueSteps']) == 3
+    required = {'showcase', 'principles', 'classroom', 'tool', 'continue', 'takeaway', 'copy-initial', 'learner-followup', 'copy-followup', 'learner-result', 'practice-mode', 'copy-record', 'download-record', 'build-checklist', 'tool-title', 'tool-items', 'download-tool', 'check-mistakes'}
     for relative in ('index.html', 'en/index.html'):
         parser = SeminarPage()
         source = (ROOT / relative).read_text(encoding='utf-8')
@@ -86,9 +107,11 @@ def validate():
         assert required <= parser.ids, relative + ': incomplete single exercise'
         assert parser.demos == ['travel', 'study', 'home', 'market']
         assert parser.inputs == {'learner-followup': '', 'learner-result': ''}, 'Never prefill a learner answer as their work'
+        assert parser.preview_sandbox == 'allow-scripts', 'Keep downloaded-tool preview isolated'
+        assert not any('instructor.html' in link or 'next-steps.html' in link for link in parser.links), 'The main lesson must not send learners to a separate instructor or continuation page'
         assert 'script.js?' not in source, 'Do not load the earlier route-selection script'
         assert 'route-phone' not in source and 'route-computer' not in source
-    print('PASS seminar: one 60-minute sequence; four projects, three connectors, one four-step exercise')
+    print('PASS course: one complete 60-minute page; three worked app lessons, active source checks, and a usable checklist artifact')
     print('PASS seminar bilingual source: identical keys, embedded data, facts, and blank learner fields')
     print('PASS seminar checks: unknown check-in, distinct deadlines, stock +25%, futures -12.5%, unique quiz completion')
 

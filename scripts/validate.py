@@ -36,7 +36,7 @@ class Doc(HTMLParser):
 
 docs={}
 for file in ROOT.rglob("*.html"):
-    if ".qa" in file.parts:continue
+    if any(part in file.parts for part in (".qa", "templates")):continue
     doc=Doc();doc.feed(file.read_text(encoding="utf-8"));docs[file.resolve()]=doc
     if doc.duplicates:errors.append(f"{file.name}: duplicate IDs {doc.duplicates}")
     expected_lang="en" if "en" in file.relative_to(ROOT).parts else "zh-Hant"
@@ -109,18 +109,17 @@ else:errors.append("English budget download missing")
 
 if (ROOT/"workshop-instructor.html").read_text(encoding="utf-8")!=m.render_html(m.PAGES):
     errors.append("Optional workshop guide differs from its generator")
-companion_spec=importlib.util.spec_from_file_location("companion",ROOT/"scripts"/"build_companion_pages.py")
+companion_spec=importlib.util.spec_from_file_location("companion",ROOT/"scripts"/"build_course.py")
 companion=importlib.util.module_from_spec(companion_spec);companion_spec.loader.exec_module(companion)
-last=0
-for start,end,*_ in companion.SCHEDULE:
-    if start!=last or end<=start:errors.append("Seminar schedule has a gap or overlap")
-    last=end
-if last!=60:errors.append("Seminar must be 60 minutes")
+course=json.loads((ROOT/"course-content.json").read_text(encoding="utf-8"))
+demo_data=json.loads((ROOT/"seminar-content.json").read_text(encoding="utf-8"))
+if sum(row["minutes"] for row in course["schedule"])!=60:errors.append("Course must be 60 minutes")
 for lang in ("zh-Hant","en"):
     directory=ROOT/"en" if lang=="en" else ROOT
-    for filename,render in (("instructor.html",companion.render_guide),("next-steps.html",companion.render_next)):
-        if (directory/filename).read_text(encoding="utf-8")!=render(lang):errors.append(f"{lang} {filename}: companion generator mismatch")
-checks.append("Seminar guides: equivalent bilingual 60-minute sequence; optional guide matches generator")
+    if (directory/"index.html").read_text(encoding="utf-8")!=companion.render(lang,demo_data,course):errors.append(f"{lang}: homepage generator mismatch")
+    for filename,target in (("instructor.html","index.html"),("next-steps.html","index.html#continue")):
+        if (directory/filename).read_text(encoding="utf-8")!=companion.redirect(lang,target):errors.append(f"{lang} {filename}: same-page redirect mismatch")
+checks.append("One complete bilingual 60-minute course; earlier bookmarks return to the same lesson")
 
 for file,expected in (("instructor-guide.pdf",8),("student-cards.pdf",2)):
     from pypdf import PdfReader
