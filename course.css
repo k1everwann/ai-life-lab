@@ -1,0 +1,64 @@
+/* One continuous lesson, with worked inputs and outputs on the same page. */
+.course-page .site-header{position:sticky;top:0;z-index:25;border-bottom:1px solid var(--line)}
+.course-page .site-header nav{gap:18px}
+.course-page .chapter-strip{grid-template-columns:repeat(5,1fr)}
+.course-page .outcome-title{font-size:17px;margin:20px 0 6px}
+.course-page .intro ul{padding-left:23px;margin:8px 0 18px}
+.course-page li+li{margin-top:7px}
+.course-page .chapter-strip li+li,.course-page .seminar-schedule li+li{margin-top:0}
+.course-page .project-method{display:grid;grid-template-columns:1fr 1fr;gap:12px 22px;margin:18px 0 20px;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.project-method dt{font-size:12px;color:var(--accent);font-weight:650;margin-bottom:4px}
+.project-method dd{margin:0;font-size:14px;line-height:1.7}
+.course-page .app-lesson{margin-top:30px;padding-top:28px;border-top:1px solid var(--line)}
+.course-page .app-lesson>h3{font-size:21px}
+.lesson-goal{border-left:3px solid var(--accent);padding:10px 14px;background:#f5f8fc}
+.setup-guide{border:1px solid var(--line);padding:4px 18px 14px;margin-top:22px}
+.setup-guide summary{font-size:16px}
+.setup-guide ol,.app-lesson>ol{padding-left:23px}
+.worked-pair,.prompt-comparison{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin:24px 0}
+.worked-pair>div,.prompt-comparison>div{min-width:0}
+.worked-answer{border-left:1px solid var(--line);padding-left:22px}
+.source-note{margin:10px 0 18px;padding:12px 14px;background:#f6f7f9;border:1px solid #e5e8ed}
+.source-note h4{font-size:14px;margin-bottom:7px}.source-note p{font-size:14px;margin-bottom:0}
+.lesson-text{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;font-size:14px;line-height:1.8;margin:10px 0 16px;padding:14px;background:#f6f8fb;border:1px solid #e1e6ed;color:var(--ink)}
+.lesson-question{padding:14px 17px;border:1px solid var(--line);margin:22px 0;background:#fafbfc}
+.lesson-question legend{font-size:15px;padding:0 7px}
+.lesson-question label{display:flex;align-items:flex-start;gap:10px;font-size:14px;font-weight:400;padding:6px 0}
+.lesson-question input{margin-top:3px}.lesson-question .button{margin-top:12px}
+.course-page .practice-step{margin-top:22px;padding-top:22px}
+.course-page #tool-title{display:block;width:100%;margin-bottom:20px}
+.course-page #checklist-preview{width:100%;min-height:410px;border:1px solid #cbd3df;background:#fff;margin:12px 0 20px}
+.course-page #download-tool:disabled{cursor:not-allowed;opacity:.45;background:#f4f6f8}
+.continue-step{margin:24px 0;padding-top:14px;border-top:1px solid var(--line)}
+.glossary{display:grid;grid-template-columns:130px 1fr;gap:9px 18px;margin:16px 0}
+.glossary dt{font-weight:650}.glossary dd{margin:0}
+.course-page #continue details{margin-top:20px}
+.course-page .feedback{overflow-wrap:anywhere}
+html{scroll-padding-top:100px}
+@media(max-width:800px){
+ .course-page .site-header nav{gap:6px;flex-wrap:wrap;justify-content:space-between}
+ .course-page .chapter-strip{grid-template-columns:repeat(3,1fr)}
+ .course-page .chapter-strip li:nth-child(4){border-left:0}
+ .course-page .chapter-strip li:nth-child(n+4){border-top:1px solid var(--line)}
+ .worked-pair,.prompt-comparison{grid-template-columns:1fr;gap:15px}
+ .worked-answer{border-left:0;padding-left:0;border-top:1px solid var(--line);padding-top:16px}
+ html{scroll-padding-top:135px}
+}
+@media(max-width:520px){
+ .course-page .chapter-strip{grid-template-columns:1fr 1fr}
+ .course-page .chapter-strip li:nth-child(2n+1){border-left:0}
+ .course-page .chapter-strip li:nth-child(2n){border-left:1px solid var(--line)}
+ .course-page .chapter-strip li:nth-child(n+3){border-top:1px solid var(--line)}
+ .course-page .project-method{grid-template-columns:1fr;gap:13px}
+ .course-page .app-lesson>h3{font-size:19px}
+ .course-page .site-header nav a{font-size:11px}
+ .setup-guide{padding-left:12px;padding-right:12px}
+ .lesson-question{padding:12px}.lesson-text{padding:12px}
+ .glossary{grid-template-columns:1fr;gap:3px}.glossary dd{margin-bottom:13px}
+}
+@media print{
+ .course-page .site-header,.course-page .chapter-strip,.course-page button{display:none}
+ .course-page .worked-pair{grid-template-columns:1fr 1fr}
+ .course-page .demo-panel[hidden]{display:block!important}
+ .course-page #checklist-preview{display:none}
+}

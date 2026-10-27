@@ -1,26 +1,39 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="See four finished projects, then use AI to make a travel preparation list."><meta name="theme-color" content="#ffffff"><title>Everyday AI: a short talk</title><link rel="stylesheet" href="../styles.css?v=5"><link rel="stylesheet" href="../seminar.css?v=1"><script src="../seminar.js?v=1" defer></script><script src="../language.js?v=4" defer></script><link rel="alternate" hreflang="zh-Hant" href="../index.html"><link rel="alternate" hreflang="en" href="../en/index.html"></head>
-<body class="seminar-page"><a class="skip" href="#main">Skip to main content</a><header class="site-header"><a class="brand" href="#top">AI Life Lab</a><nav aria-label="Lesson navigation"><a href="#showcase">See projects</a><a href="#principles">Connect data</a><a href="#classroom">Try it</a><a href="#takeaway">Take it with you</a></nav><div class="language-switch" role="group" aria-label="語言 / Language"><a href="../index.html" data-language-switch="zh-Hant" lang="zh-Hant" >繁體中文</a><a href="../en/index.html" data-language-switch="en" lang="en" aria-current="page">English</a></div></header>
-<main id="main" class="seminar-main">
-<section id="top" class="wrap section intro"><p class="eyebrow">For beginners · On a computer · 60 minutes</p><h1>Everyday AI: a short talk</h1><p class="lead">See four finished projects, then use AI to make a travel preparation list.</p><ol class="chapter-strip"><li><a href="#showcase"><span>1</span>See projects</a></li><li><a href="#principles"><span>2</span>Connect data</a></li><li><a href="#classroom"><span>3</span>Try it</a></li><li><a href="#takeaway"><span>4</span>Take it with you</a></li></ol><details class="seminar-schedule"><summary>How do the 60 minutes work?</summary><ol><li><span>Welcome</span><b>5 min</b></li><li><span>Four projects</span><b>12 min</b></li><li><span>Gmail demo</span><b>8 min</b></li><li><span>Drive demo</span><b>8 min</b></li><li><span>Notion demo</span><b>9 min</b></li><li><span>Your practice</span><b>15 min</b></li><li><span>Save and take away</span><b>3 min</b></li></ol></details></section>
-<noscript><p class="wrap notice">JavaScript is off. All examples, source excerpts, and the reference result are still readable. Interactive, copy, and download buttons need JavaScript. You can select and copy the text manually.</p></noscript>
-<section id="showcase" class="wrap section"><p class="eyebrow">01 · See projects · 12 min</p><h2>First, see what an idea can become</h2><p class="muted">Interactive examples use fictional data; the instructor shows their own finished projects live.</p><div class="demo-switch" role="group" aria-label="Choose a project"><button type="button" data-demo="travel" aria-controls="demo-travel" aria-pressed="true">Travel</button><button type="button" data-demo="study" aria-controls="demo-study" aria-pressed="false">Japanese N1</button><button type="button" data-demo="home" aria-controls="demo-home" aria-pressed="false">Home</button><button type="button" data-demo="market" aria-controls="demo-market" aria-pressed="false">TickForge</button></div>
-<article id="demo-travel" class="demo-panel" aria-labelledby="travel-title"><h3 id="travel-title">Travel</h3><p>The aim was to keep an itinerary together. Now a map makes each stop’s time and plan easy to find.</p><p class="small-text">Choose a stop on the map to see its plan.</p><div class="travel-layout"><div class="route-map"><svg viewBox="0 0 600 210" role="img" aria-label="Schematic route between three fictional places; not a real map"><path d="M 65 50 C 220 45 230 185 390 155 S 540 90 555 60" fill="none" stroke="#b2c4db" stroke-width="5" stroke-dasharray="8 7"/><circle cx="65" cy="50" r="8" fill="#2458a6"/><circle cx="320" cy="148" r="8" fill="#2458a6"/><circle cx="555" cy="60" r="8" fill="#2458a6"/></svg><button type="button" data-stop="0" class="map-stop stop-0" aria-pressed="true"><span>09:00</span>Cloudshore Station</button><button type="button" data-stop="1" class="map-stop stop-1" aria-pressed="false"><span>11:00</span>Windhill Gallery</button><button type="button" data-stop="2" class="map-stop stop-2" aria-pressed="false"><span>To confirm</span>Starbay Inn</button></div><div class="travel-detail"><p id="travel-detail" aria-live="polite"><strong>09:00 Cloudshore Station</strong><br>Meet up and check tickets and luggage.</p><div class="photo-placeholder" role="img" aria-label="Fictional destination image placeholder"><span aria-hidden="true">▧</span> Fictional destination image placeholder</div></div></div></article>
-<article id="demo-study" class="demo-panel" aria-labelledby="study-title"><h3 id="study-title">Japanese N1</h3><p>The aim was to understand Japanese usage. Now you can answer a question, read an explanation, and add it to review.</p><p class="small-text">Fixed teaching example · Choose the expression that fits the sentence.</p><p class="japanese-question" lang="ja">選手たちは汗（　）になって練習を続けた。</p><div class="quiz-options" role="group" aria-label="Answer choices"><button type="button" data-answer="まみれ" lang="ja" aria-pressed="false">まみれ</button><button type="button" data-answer="に限って" lang="ja" aria-pressed="false">に限って</button><button type="button" data-answer="からこそ" lang="ja" aria-pressed="false">からこそ</button><button type="button" data-answer="に至って" lang="ja" aria-pressed="false">に至って</button></div><div id="quiz-feedback" class="feedback" aria-live="polite"></div><details class="quiz-reference"><summary>Read the explanation</summary><p>汗まみれ means covered in sweat. まみれ follows nouns such as sweat or mud to mean covered in that substance. に限って, からこそ, and に至って cannot complete 汗（　）になって here. This example practises the expression 汗まみれ.</p></details><button type="button" id="review-add" class="button outline" aria-pressed="false">Add to review on this page</button><p id="review-feedback" class="small-text" aria-live="polite"></p></article>
-<article id="demo-home" class="demo-panel" aria-labelledby="home-title"><h3 id="home-title">Home</h3><p>The aim was to understand the home environment. Now sensor readings can trigger an air-conditioner rule.</p><p>Rule: turn the air conditioner on at 28°C or above. This is rule-based automation, a different process from AI text generation.</p><dl class="sensor-grid" aria-live="polite"><div><dt>Temperature</dt><dd id="home-temp">27°C</dd></div><div><dt>Humidity</dt><dd>62%</dd></div><div><dt>Air conditioner</dt><dd id="home-ac">Off</dd></div></dl><div class="actions"><button type="button" data-temp="27" aria-pressed="true">Try 27°C</button><button type="button" data-temp="30" aria-pressed="false">Try 30°C</button></div><p class="small-text">Simulation on this page only; no device is connected or controlled.</p></article>
-<article id="demo-market" class="demo-panel" aria-labelledby="market-title"><h3 id="market-title">TickForge</h3><p>The aim was to understand changes in trading volume. Now two periods can be compared for the same product and unit.</p><label for="market-product">Choose one product. Stocks and futures are compared separately.</label><select id="market-product"><option value="stock">Fictional stock A</option><option value="futures">Fictional futures B (same contract)</option></select><div class="table-scroll"><table><thead><tr><th>Month</th><th>Trading volume</th></tr></thead><tbody><tr><td>2026-09</td><td id="market-value-0">12,000 shares</td></tr><tr><td>2026-10</td><td id="market-value-1">15,000 shares</td></tr></tbody></table></div><p id="market-change" class="market-change" aria-live="polite">Change between periods：+3,000 shares (+25%)</p><p class="small-text">Same product, same unit. Trading volume does not represent profit, loss, or investment performance.</p></article></section>
-<section id="principles" class="wrap section"><p class="eyebrow">02 · Connect data · 25 min</p><h2>Connect data: let AI read what you specify</h2><p>Connect an available account and permissions in your own AI tool, then specify what it may read. This website does not connect accounts. Availability depends on the tool, account, and permissions.</p><div class="connector-list"><article><h3>Gmail</h3><p class="small-text"><b>Input：</b>Selected emails<br><b>Result：</b>Times, tasks, and a draft reply</p><blockquote>From my selected booking email, list tasks and deadlines with the original email source, then draft a reply asking about check-in time.</blockquote></article><article><h3>Google Drive</h3><p class="small-text"><b>Input：</b>Selected documents and spreadsheets<br><b>Result：</b>An itinerary summary and differences</p><blockquote>Compare the two itinerary documents I specify. List time differences and missing information, with document sources.</blockquote></article><article><h3>Notion</h3><p class="small-text"><b>Input：</b>Selected existing notes<br><b>Result：</b>An organised plan or a draft page update</p><blockquote>Use my selected travel notes to organise a preparation plan and draft an update, with note sources.</blockquote></article></div><p class="notice">Read and organise a draft first. Sending email or updating a page needs a separate instruction after you check it.</p><a href="https://learn.chatgpt.com/docs/plugins" target="_blank" rel="noopener">Learn about connecting data (official guide) ↗</a></section>
-<section id="classroom" class="wrap section"><p class="eyebrow">03 · Try it · 15 min</p><h2>Your turn: my travel preparation checklist</h2><p>Practise with the three fictional excerpts below; no account connection is needed. Keep this lesson tab open and open an AI tool you can already use in another tab.</p><p class="notice">Choose your language before typing. Switching languages or closing the page clears unsaved input; copy and save it first.</p>
-<div class="practice-step"><h3><span class="step-number">1</span>In this lesson: copy the data and first question</h3><div class="source-list"><article class="source-excerpt" data-source="A"><h4>A | Gmail booking email (fictional)</h4><p>Starbay Inn: check in on 2026/11/21 and check out on 11/22. Reply with your party size by 11/18 at 18:00. The email does not give the time when check-in is available.</p></article><article class="source-excerpt" data-source="B"><h4>B | Drive itinerary (fictional)</h4><p>Meet at Cloudshore Station on 2026/11/21 at 09:00. Download your tickets by 11/19 at 20:00. The meeting time is different from the ticket download deadline.</p></article><article class="source-excerpt" data-source="C"><h4>C | Notion preparation note (fictional)</h4><p>Pack rain gear and charging cables on the evening of 2026/11/20, finishing by 21:00. Check-in time is still unconfirmed; ask the inn before departure. There is no exact deadline recorded for that enquiry.</p></article></div><blockquote id="first-prompt">List the tasks and deadlines before departure, with sources.</blockquote><button type="button" class="button" id="copy-initial">Copy three excerpts + question</button><p id="initial-feedback" class="feedback" aria-live="polite"></p></div>
-<div class="practice-step"><h3><span class="step-number">2</span>In your AI tool: send it and read the first draft</h3><p>Switch to your AI tool, paste, and send. Read the draft, find one thing you would improve, and return here.</p></div>
-<div class="practice-step"><h3><span class="step-number">3</span>Write a follow-up here, then send it to your AI</h3><label for="learner-followup">One requirement I want to add</label><textarea id="learner-followup" rows="3" maxlength="2000" placeholder="Write one requirement in your own words…" aria-describedby="followup-hint"></textarea><p id="followup-hint" class="small-text">For example: sort by deadline; or label uncertain details “to confirm”.</p><button type="button" class="button" id="copy-followup">Copy my follow-up</button><p id="followup-feedback" class="feedback" aria-live="polite"></p><p>Paste and send the follow-up in the same AI conversation. Return here with the revised answer to check it.</p></div>
-<div class="practice-step"><h3><span class="step-number">4</span>Back here: check sources and keep your result</h3><p>Check against the original text, then consider whether the source is trustworthy. For real data, also check the sender, document version, and publication date. Ticking a box is your own self-check.</p><div class="check-list"><label><input type="checkbox" data-check="0"><span>Each item can be traced to source A, B, or C.</span></label><label><input type="checkbox" data-check="1"><span>Party size is due 11/18 at 18:00; tickets are due 11/19 at 20:00.</span></label><label><input type="checkbox" data-check="2"><span>Rain gear and charging cables must be packed by 11/20 at 21:00.</span></label><label><input type="checkbox" data-check="3"><span>11/21 at 09:00 is the meeting time; check-in time remains unconfirmed.</span></label></div><details class="example-result"><summary>Need a reference? See the fixed example result</summary><p>This teaching example was written in advance; it is not a live AI response. Without an AI tool, you can practise checking it. Mark your record “Example only”.</p><pre>• By 11/18 at 18:00: reply with party size. Source A.
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="See four projects, then use your own data to make a checklist you can actually use."><title>Everyday AI: a short talk</title><link rel="stylesheet" href="../styles.css?v=5"><link rel="stylesheet" href="../seminar.css?v=2"><link rel="stylesheet" href="../course.css?v=1"><script src="../seminar.js?v=2" defer></script><script src="../course.js?v=1" defer></script><script src="../language.js?v=4" defer></script></head><body class="seminar-page course-page"><a class="skip" href="#main">Skip to main content</a><header class="site-header"><a class="brand" href="#top">AI Life Lab</a><nav aria-label="Course navigation"><a href="#showcase">See projects</a><a href="#principles">Connect data</a><a href="#classroom">Try it</a><a href="#tool">Build a checklist</a><a href="#continue">Keep practising</a></nav><div class="language-switch" role="group" aria-label="Language"><a href="../index.html" data-language-switch="zh-Hant" lang="zh-Hant">繁體中文</a><a href="index.html" data-language-switch="en" lang="en" aria-current="page">English</a></div></header><main id="main" class="seminar-main">
+<section id="top" class="wrap section intro"><p class="eyebrow">For beginners · On a computer · 60 minutes</p><h1>Everyday AI: a short talk</h1><p class="lead">See four projects, then use your own data to make a checklist you can actually use.</p><h2 class="outcome-title">What you will learn today</h2><ul><li>Specify an email, document, or note and ask AI for a draft task list with sources.</li><li>Add your own requirement, spot a wrong deadline or an invented detail, and correct it against the original.</li><li>Turn checked tasks into a travel checklist you can tick, test it, and save a usable copy.</li></ul><p class="small-text">Have a computer and an AI tool you can already sign in to and use. All teaching data is on this page; paste the text if you do not have connectors.</p><ol class="chapter-strip"><li><a href="#showcase"><span>1</span>See projects</a></li><li><a href="#principles"><span>2</span>Connect data</a></li><li><a href="#classroom"><span>3</span>Try it</a></li><li><a href="#tool"><span>4</span>Build a checklist</a></li><li><a href="#continue"><span>5</span>Keep practising</a></li></ol><details class="seminar-schedule"><summary>See the 60-minute plan</summary><ol><li><span>Four projects and how they work</span><b>8 min</b></li><li><span>Gmail / Drive / Notion</span><b>24 min</b></li><li><span>Ask, refine, and check</span><b>12 min</b></li><li><span>Build a usable checklist</span><b>13 min</b></li><li><span>Save and continue</span><b>3 min</b></li></ol></details></section>
+<noscript><p class="wrap notice">JavaScript is needed for interaction. You can still read every step, source, and worked result, and copy text manually.</p></noscript><section id="showcase" class="wrap section"><p class="eyebrow">01 · See projects · 8 min</p><h2>First, see what an idea can become</h2><p class="muted">Four project concepts, demonstrated with fictional data.</p><div class="demo-switch" role="group" aria-label="Choose a project"><button type="button" data-demo="travel" aria-controls="demo-travel" aria-pressed="true">Travel</button><button type="button" data-demo="study" aria-controls="demo-study" aria-pressed="false">Japanese N1</button><button type="button" data-demo="home" aria-controls="demo-home" aria-pressed="false">Home</button><button type="button" data-demo="market" aria-controls="demo-market" aria-pressed="false">TickForge</button></div>
+<article id="demo-travel" class="demo-panel" aria-labelledby="travel-title"><h3 id="travel-title">Travel</h3><p>The aim was to keep an itinerary together. Now a map makes each stop’s time and plan easy to find.</p><dl class="project-method"><div><dt>Source data</dt><dd>This example uses three fictional places, times, and plans. Your own itinerary text can be a starting point for the real use case.</dd></div><div><dt>What AI can help with</dt><dd>AI can help organise itinerary text into place, time, and activity. A person still needs to confirm missing times.</dd></div><div><dt>What the system does</dt><dd>Web code draws the map and buttons. Choosing a stop displays existing data; it does not ask AI live on this page.</dd></div><div><dt>Your first small step</dt><dd>Organise three stops and check each time and source. Today, use the information to make a travel preparation checklist.</dd></div></dl><p class="small-text">Choose a stop on the map to see its plan.</p><div class="travel-layout"><div class="route-map"><svg viewBox="0 0 600 210" role="img" aria-label="Schematic route between three fictional places; not a real map"><path d="M 65 50 C 220 45 230 185 390 155 S 540 90 555 60" fill="none" stroke="#b2c4db" stroke-width="5" stroke-dasharray="8 7"/><circle cx="65" cy="50" r="8" fill="#2458a6"/><circle cx="320" cy="148" r="8" fill="#2458a6"/><circle cx="555" cy="60" r="8" fill="#2458a6"/></svg><button type="button" data-stop="0" class="map-stop stop-0" aria-pressed="true"><span>09:00</span>Cloudshore Station</button><button type="button" data-stop="1" class="map-stop stop-1" aria-pressed="false"><span>11:00</span>Windhill Gallery</button><button type="button" data-stop="2" class="map-stop stop-2" aria-pressed="false"><span>To confirm</span>Starbay Inn</button></div><div class="travel-detail"><p id="travel-detail" aria-live="polite"><strong>09:00 Cloudshore Station</strong><br>Meet up and check tickets and luggage.</p></div></div></article>
+<article id="demo-study" class="demo-panel" aria-labelledby="study-title"><h3 id="study-title">Japanese N1</h3><p>The aim was to understand Japanese usage. Now you can answer a question, read an explanation, and add it to review.</p><dl class="project-method"><div><dt>Source data</dt><dd>One teaching sentence with fixed choices, an answer, and an explanation. The question is not generated live.</dd></div><div><dt>What AI can help with</dt><dd>AI can help draft questions and explanations, but a teacher or reliable learning material must check the usage and answer.</dd></div><div><dt>What the system does</dt><dd>Code compares your choice with a fixed answer and shows the explanation. “Add to review” marks a review item on this page only.</dd></div><div><dt>Your first small step</dt><dd>Answer one question, explain your choice, and keep an unfamiliar expression for review.</dd></div></dl><p class="small-text">Fixed teaching example · Choose the expression that fits the sentence.</p><p class="japanese-question" lang="ja">選手たちは汗（　）になって練習を続けた。</p><div class="quiz-options" role="group" aria-label="Answer choices"><button type="button" data-answer="まみれ" lang="ja" aria-pressed="false">まみれ</button><button type="button" data-answer="に限って" lang="ja" aria-pressed="false">に限って</button><button type="button" data-answer="からこそ" lang="ja" aria-pressed="false">からこそ</button><button type="button" data-answer="に至って" lang="ja" aria-pressed="false">に至って</button></div><div id="quiz-feedback" class="feedback" aria-live="polite"></div><details class="quiz-reference"><summary>Read the explanation</summary><p>汗まみれ means covered in sweat. まみれ follows nouns such as sweat or mud to mean covered in that substance. に限って, からこそ, and に至って cannot complete 汗（　）になって here. This example practises the expression 汗まみれ.</p></details><button type="button" id="review-add" class="button outline" aria-pressed="false">Add to review on this page</button><p id="review-feedback" class="small-text" aria-live="polite"></p></article>
+<article id="demo-home" class="demo-panel" aria-labelledby="home-title"><h3 id="home-title">Home</h3><p>The aim was to understand the home environment. Now sensor readings can trigger an air-conditioner rule.</p><dl class="project-method"><div><dt>Source data</dt><dd>This page uses fictional temperatures of 27°C and 30°C, and 62% humidity. It reads no home devices.</dd></div><div><dt>What AI can help with</dt><dd>AI can help explain readings or draft an automation rule. This page does not use AI to decide whether to turn the switch on.</dd></div><div><dt>What the system does</dt><dd>Code follows the fixed rule “on at 28°C or above”. It changes a simulated status and does not control an air conditioner.</dd></div><div><dt>Your first small step</dt><dd>Write one need as “if … then …”, then test a case where the condition holds and one where it does not.</dd></div></dl><p>Rule: turn the air conditioner on at 28°C or above. This is rule-based automation, a different process from AI text generation.</p><dl class="sensor-grid" aria-live="polite"><div><dt>Temperature</dt><dd id="home-temp">27°C</dd></div><div><dt>Humidity</dt><dd>62%</dd></div><div><dt>Air conditioner</dt><dd id="home-ac">Off</dd></div></dl><div class="actions"><button type="button" data-temp="27" aria-pressed="true">Try 27°C</button><button type="button" data-temp="30" aria-pressed="false">Try 30°C</button></div><p class="small-text">Simulation on this page only; no device is connected or controlled.</p></article>
+<article id="demo-market" class="demo-panel" aria-labelledby="market-title"><h3 id="market-title">TickForge</h3><p>The aim was to understand changes in trading volume. Now two periods can be compared for the same product and unit.</p><dl class="project-method"><div><dt>Source data</dt><dd>Fictional stock A: 12,000 → 15,000 shares. Fictional futures B: 320 → 280 contracts. Each compares September and October 2026.</dd></div><div><dt>What AI can help with</dt><dd>AI can help explain the comparison and missing information. Numbers, units, and calculations still need checking.</dd></div><div><dt>What the system does</dt><dd>Code calculates each product’s change and percentage separately. It never adds shares to contracts or represents profit or performance.</dd></div><div><dt>Your first small step</dt><dd>Choose two observations of the same product in the same unit. Calculate the difference and check whether the explanation matches.</dd></div></dl><label for="market-product">Choose one product. Stocks and futures are compared separately.</label><select id="market-product"><option value="stock">Fictional stock A</option><option value="futures">Fictional futures B (same contract)</option></select><div class="table-scroll"><table><thead><tr><th>Month</th><th>Trading volume</th></tr></thead><tbody><tr><td>2026-09</td><td id="market-value-0">12,000 shares</td></tr><tr><td>2026-10</td><td id="market-value-1">15,000 shares</td></tr></tbody></table></div><p id="market-change" class="market-change" aria-live="polite">Change between periods：+3,000 shares (+25%)</p><p class="small-text">Same product, same unit. Trading volume does not represent profit, loss, or investment performance.</p></article></section><section id="principles" class="wrap section"><p class="eyebrow">02 · Connect data · 24 min</p><h2>Give AI your data to get an answer about your situation</h2><p>Start with one email, file, or note. Each lesson below includes steps, paste-ready data, a worked result, and a small practice question.</p><details class="setup-guide" open><summary>Connecting an account for the first time: four steps</summary><ol><li>In ChatGPT, open Plugins and find Gmail, Google Drive, or Notion. In another AI tool, look for its app or connection settings.</li><li>Open the plugin details and install it. When asked to connect, sign in to the intended account and review the content and actions you are allowing.</li><li>Start a new chat, use the appropriate plugin, and specify the teaching email, file link, or note page. First ask AI to describe what it actually read.</li><li>Open the cited source to check it. If the source is unavailable, paste the teaching text below; practise the method before troubleshooting account settings.</li></ol><p class="source-ready">Connector demonstrations use a prepared teaching account. To repeat them yourself, first send an email containing A to your own teaching Gmail and confirm it is in the inbox; create B and D as Drive files and C as a Notion page, then specify the actual subject, date, or links. In class, you can use “Copy data + this request” below to practise with the text directly.</p><p>Setup varies by tool and account.</p><a href="https://learn.chatgpt.com/docs/plugins" target="_blank" rel="noopener">Official OpenAI plugin guide ↗</a></details><article class="app-lesson" id="lesson-gmail"><h3>Gmail: find the next action in one booking email</h3><p class="lesson-goal">What to complete：Find the required reply and deadline, then draft a question about check-in time. The result is a draft you can check.</p><ol><li>In your own AI tool, find the apps or plugins connection settings. If Gmail is available, choose the account and inspect the permitted scope. If it is unavailable, use the text-pasting alternative below.</li><li>Start another AI conversation. Identify the booking email, for example by a sender, subject, and date you have checked. This lesson uses fictional source A only, not your entire inbox.</li><li>Paste the prompt below and send it. In the draft, find the reply deadline, check-in date, and available check-in time. Check that these three have not been merged.</li><li>Open the original email cited in the answer and check each item. If the source is inaccessible or incomplete, paste the correct text and ask again. The draft has not been sent; sending needs your separate explicit instruction after checking.</li></ol><div class="worked-pair"><div><h4>Read the source</h4><div class="source-note"><h4>A | Gmail booking email (fictional)</h4><p>Starbay Inn: check in on 2026/11/21 and check out on 11/22. Reply with your party size by 11/18 at 18:00. The email does not give the time when check-in is available.</p></div><h4>A request to try</h4><pre class="lesson-text ">Read only my specified booking email A. List tasks and deadlines with sources, then draft a reply asking about check-in time. Mark missing information “to confirm”. Do not send it yet.</pre><button class="button" type="button" data-copy-lesson="gmail">Copy data + this request</button><p id="copy-gmail-status" class="feedback" role="status"></p></div><div class="worked-answer"><h4>Fixed example: email → task → draft reply</h4><p class="small-text">This is a prepared teaching example; your actual AI response may differ.</p><pre class="lesson-text ">[Fixed example result; not a live AI response]
+Task: reply with party size by 11/18 at 18:00. Source A.
+Stay dates: check in 11/21; check out 11/22. Source A.
+To confirm: when check-in is available. The actual party size is also not given.
+
+Draft reply:
+Hello, regarding the booking for 11/21, what is the earliest time we can check in that day? Thank you.
+
+The draft neither invents the party size nor sends a message. Replying with the party size remains a task.</pre><h4>Check against the source</h4><p>Find 11/18 at 18:00 in A: it is the deadline to reply with party size. 11/21 is the check-in date; the email gives no check-in hour such as 16:00. With real data, also check the sender and email date. An AI citation alone does not establish trustworthiness.</p></div></div><p class="small-text">Without a Gmail connection, manually paste one email you may use, with sensitive details removed, together with the prompt. In class, use fictional A above. Pasting text does not connect to or search your inbox.</p><fieldset class="lesson-question"><legend>Your turn to decide：An AI draft says “Check-in is available on 11/21 at 16:00.” What should you do?</legend><label><input type="radio" name="lesson-gmail" value="0"><span>Use it because inns usually allow afternoon check-in.</span></label><label><input type="radio" name="lesson-gmail" value="1"><span>Mark it “to confirm” and ask the inn. A provides only the check-in date.</span></label><label><input type="radio" name="lesson-gmail" value="2"><span>Change it to 11/18 at 18:00 because that is the only precise time in the email.</span></label><button class="button outline" type="button" data-check-lesson="gmail">See the answer and reason</button><p id="question-gmail-feedback" class="feedback" role="status"></p></fieldset></article><article class="app-lesson" id="lesson-drive"><h3>Google Drive: compare two itineraries and retain the current version</h3><p class="lesson-goal">What to complete：Identify the change in meeting time, distinguish current and old versions, and keep event times separate from preparation deadlines.</p><ol><li>Connect an available Google Drive account in your own AI tool and check the account and permitted scope. This lesson reads two specified teaching documents, not your entire drive.</li><li>In a new conversation, specify current itinerary B and old version D. State “Use B as current; D is for comparison only.” If the tool cannot read their contents, paste both texts.</li><li>Send the prompt and ask for an item-by-item comparison, separating the meeting time from the ticket download deadline. Seeing a filename does not prove the content was read; check that the answer cites the text.</li><li>Open B and D to verify times, version labels, and differences. If real version status is unclear, ask the document owner before choosing a version. Do not leave that decision to AI.</li></ol><div class="worked-pair"><div><h4>Read the source</h4><div class="source-note"><h4>D | Old Drive itinerary (fictional) | Version dated 2026/10/20 | Superseded by B</h4><p>Meet at Cloudshore Station on 2026/11/21 at 10:00. Download tickets by 11/19 at 20:00. This document is for version comparison only, not the current itinerary.</p></div><div class="source-note"><h4>B | Drive itinerary (fictional)</h4><p>Meet at Cloudshore Station on 2026/11/21 at 09:00. Download your tickets by 11/19 at 20:00. The meeting time is different from the ticket download deadline.</p></div><h4>A request to try</h4><pre class="lesson-text ">Compare only the specified itinerary B and old version D. Use B as current and D only for comparison. List the meeting-time change and current preparations, separate event times from task deadlines, and cite the documents.</pre><button class="button" type="button" data-copy-lesson="drive">Copy data + this request</button><p id="copy-drive-status" class="feedback" role="status"></p></div><div class="worked-answer"><h4>Fixed example: two documents → differences and current tasks</h4><p class="small-text">This is a prepared teaching example; your actual AI response may differ.</p><pre class="lesson-text ">[Fixed example result; not a live AI response]
+Meeting time: D says 11/21 at 10:00; B changes it to 11/21 at 09:00, one hour earlier. Use B now.
+Preparation task: download tickets by 11/19 at 20:00. This is unchanged between B and D; check B for the current arrangement.
+Do not label 11/21 at 09:00 as the ticket deadline: it is the meeting time.</pre><h4>Check against the source</h4><p>First confirm that the exercise explicitly designates B as current. Verify 09:00 in B, 10:00 in D, and the one-hour difference. The ticket download deadline remains 11/19 at 20:00. Finding a difference does not update a document or notify fellow travellers.</p></div></div><p class="small-text">Without a Drive connection, paste the relevant sections of B and D together, retaining the document name, version label, and source ID before each. Use only content you have permission to use; you do not need to make the whole file public.</p><fieldset class="lesson-question"><legend>Your turn to decide：After comparing B and D, which item belongs on the current task list?</legend><label><input type="radio" name="lesson-drive" value="0"><span>Download tickets by 11/21 at 10:00, using D’s time.</span></label><label><input type="radio" name="lesson-drive" value="1"><span>Download tickets by 11/21 at 09:00, using B’s meeting time.</span></label><label><input type="radio" name="lesson-drive" value="2"><span>Download tickets by 11/19 at 20:00; record the 11/21 at 09:00 meeting separately.</span></label><button class="button outline" type="button" data-check-lesson="drive">See the answer and reason</button><p id="question-drive-feedback" class="feedback" role="status"></p></fieldset></article><article class="app-lesson" id="lesson-notion"><h3>Notion: turn existing notes into a draft update</h3><p class="lesson-goal">What to complete：Read one specified note and organise known information, tasks, and open questions. Check the draft before deciding to create a page separately.</p><ol><li>Connect an available Notion account in your own AI tool. Check the account, workspace, and readable scope, granting access only to pages needed for this task. This lesson uses fictional note C.</li><li>In a new conversation, specify travel preparation note C. Ask only for a draft, with no page creation or update. If the note cannot be read, paste its text.</li><li>Send the prompt and read the three groups. Check that a stated deadline has not become a claim that the task is finished, and that open questions have not become invented answers.</li><li>Check each item against C. If you then want a page created, give a separate instruction naming the parent page, child-page title, and approved content. The tool needs write capability and permission. Do not count the page as created until you receive a result you can open.</li></ol><div class="worked-pair"><div><h4>Read the source</h4><div class="source-note"><h4>C | Notion preparation note (fictional)</h4><p>Pack rain gear and charging cables on the evening of 2026/11/20, finishing by 21:00. Check-in time is still unconfirmed; ask the inn before departure. There is no exact deadline recorded for that enquiry.</p></div><h4>A request to try</h4><pre class="lesson-text ">Using only my specified travel preparation note C, draft three groups: known information, tasks, and open questions. Cite the source. Known information does not mean completed work. Do not create or update pages yet.</pre><button class="button" type="button" data-copy-lesson="notion">Copy data + this request</button><p id="copy-notion-status" class="feedback" role="status"></p></div><div class="worked-answer"><h4>Fixed example: existing note → three-part draft</h4><p class="small-text">This is a prepared teaching example; your actual AI response may differ.</p><pre class="lesson-text ">[Fixed example result; not a live AI response]
+Known information: the note requires rain gear and charging cables to be ready by 11/20 at 21:00. Source C; completion is not recorded.
+Tasks: pack rain gear and charging cables; ask the inn about check-in time before departure. Source C.
+Open questions: when check-in is available and the exact deadline for asking the inn. Source C.
+
+[Example action instruction to use only after checking; this page does not execute it]
+Under my specified parent page “Learning practice”, where I have permission, create a child page named “Travel preparation checklist”. Use the draft I just checked and retain the open questions. If a page with that name exists, tell me first; do not overwrite it. Provide the resulting page for me to check.</pre><h4>Check against the source</h4><p>Known information means that the note states it, not that the rain gear is packed. C gives neither a check-in hour nor an exact enquiry deadline. Drafting, granting access, and actually creating a page are different steps.</p></div></div><p class="small-text">Without a Notion connection, paste C and the prompt into AI, check the answer, and copy it into your own notes yourself. Manual copying does not mean AI read or updated your Notion.</p><fieldset class="lesson-question"><legend>Your turn to decide：AI has provided an organised draft. Can you say the Notion child page has been created?</legend><label><input type="radio" name="lesson-notion" value="0"><span>No. Check the draft, separately specify the location and creation instruction, then open the result to verify it.</span></label><label><input type="radio" name="lesson-notion" value="1"><span>Yes. A draft that looks like a page counts as a finished page.</span></label><label><input type="radio" name="lesson-notion" value="2"><span>Yes. Connecting Notion means every answer is automatically saved there.</span></label><button class="button outline" type="button" data-check-lesson="notion">See the answer and reason</button><p id="question-notion-feedback" class="feedback" role="status"></p></fieldset></article></section><section id="classroom" class="wrap section"><p class="eyebrow">03 · Try it · 12 min</p><h2>Try it: turn travel details into useful next steps</h2><p>Complete one task: find what must be done before departure, when to do it, and what is still unknown.</p><h3>Start with one question, then improve the draft with your own requirement</h3><div class="prompt-comparison"><div><h4>This leaves AI guessing about your data and goal</h4><pre class="lesson-text ">Plan my trip.</pre></div><div><h4>Specify the material, result, and how to handle gaps</h4><pre class="lesson-text ">Using A, B, and C, list pre-departure tasks and deadlines, one task per line with its source, without a table. Mark missing information as to confirm and put reminders separately.</pre></div></div><ul><li>Specify which information to read so AI does not fill gaps from another itinerary or general assumptions.</li><li>Ask for tasks and deadlines so the result can be checked and used in a checklist.</li><li>Allow “to confirm” rather than forcing every missing field into a definite answer.</li></ul><div class="practice-step"><h3>1　Copy the data and question on this page</h3><p>Sources A, B, and C describe the same trip. Read them first, then give both the material and request to AI.</p><details><summary>Read the source A、B、C</summary><div class="source-note"><h4>A | Gmail booking email (fictional)</h4><p>Starbay Inn: check in on 2026/11/21 and check out on 11/22. Reply with your party size by 11/18 at 18:00. The email does not give the time when check-in is available.</p></div><div class="source-note"><h4>B | Drive itinerary (fictional)</h4><p>Meet at Cloudshore Station on 2026/11/21 at 09:00. Download your tickets by 11/19 at 20:00. The meeting time is different from the ticket download deadline.</p></div><div class="source-note"><h4>C | Notion preparation note (fictional)</h4><p>Pack rain gear and charging cables on the evening of 2026/11/20, finishing by 21:00. Check-in time is still unconfirmed; ask the inn before departure. There is no exact deadline recorded for that enquiry.</p></div></details><button type="button" id="copy-initial" class="button">Copy three excerpts + question</button><p id="initial-feedback" class="feedback" role="status"></p></div><div class="practice-step"><h3>2　Send it in your AI tool and read the draft</h3><p>Open your available AI tool in another tab, paste, and send. This page is the lesson; the AI response appears in your AI tool. Keep both tabs open.</p></div><div class="practice-step"><h3>3　Write one change you need, then ask in the same chat</h3><p>Read the draft and choose a useful change. Use the suggestions as a starting point and edit in your own words; they do not send anything for you.</p><ul><li>Sort by task deadline. Put items without an exact deadline last and retain “to confirm”.</li><li>Separate task deadlines from event times. Do not use the meeting time as the ticket download deadline.</li><li>Label each item A, B, or C and identify information the original text does not provide.</li></ul><label for="learner-followup">One requirement I want to add</label><textarea id="learner-followup" rows="3" maxlength="2000"></textarea><button type="button" id="copy-followup" class="button">Copy my follow-up</button><p id="followup-feedback" class="feedback" role="status"></p><p>Paste it into the same AI conversation, send, and return with the revised answer.</p></div><div class="practice-step"><h3>4　Check the sources and keep your own result</h3><h4>This fixed draft has two errors: select the two items that need correction</h4><pre class="lesson-text ">① Reply with party size by 11/18 at 18:00. (A)
+② Download tickets by 11/21 at 09:00. (B)
+③ Pack rain gear and charging cables by 11/20 at 21:00. (C)
+④ Check-in at Starbay Inn is available on 11/21 at 16:00. (A)
+
+This fixed practice draft deliberately contains errors. It is not your actual AI response.</pre><fieldset class="lesson-question"><legend>Select the statements that need correcting. Choose more than one if needed.</legend><label><input type="checkbox" data-mistake="party"><span>① Party-size reply deadline: 11/18 at 18:00</span></label><label><input type="checkbox" data-mistake="ticket"><span>② Ticket download deadline: 11/21 at 09:00</span></label><label><input type="checkbox" data-mistake="packing"><span>③ Packing deadline: 11/20 at 21:00</span></label><label><input type="checkbox" data-mistake="checkin"><span>④ Available check-in time: 11/21 at 16:00</span></label><button type="button" id="check-mistakes" class="button outline">Check the problems I found</button><p id="mistake-feedback" class="feedback" role="status"></p></fieldset><p>Check your actual AI response against the sources. Ticks are your own record.</p><div class="check-list"><label><input type="checkbox" data-check="0"><span>Each item can be traced to source A, B, or C.</span></label><label><input type="checkbox" data-check="1"><span>Party size is due 11/18 at 18:00; tickets are due 11/19 at 20:00.</span></label><label><input type="checkbox" data-check="2"><span>Rain gear and charging cables must be packed by 11/20 at 21:00.</span></label><label><input type="checkbox" data-check="3"><span>11/21 at 09:00 is the meeting time; check-in time remains unconfirmed.</span></label></div><details><summary>If needed, compare the complete reference list</summary><p>This teaching example was written in advance; it is not a live AI response. Without an AI tool, you can practise checking it. Mark your record “Example only”.</p><pre class="lesson-text ">• By 11/18 at 18:00: reply with party size. Source A.
 • By 11/19 at 20:00: download tickets. Source B.
 • By 11/20 at 21:00: pack rain gear and charging cables. Source C.
 • Before departure: ask the inn when check-in is available; the exact enquiry deadline is to confirm. Sources A and C.
-Reminder: 11/21 at 09:00 is the meeting time (B); the available check-in time is not given (A).</pre></details><label for="learner-result">Paste your checked result</label><textarea id="learner-result" rows="7" maxlength="20000" placeholder="Paste the checklist you have checked. Keep “to confirm” wherever information is missing."></textarea><label for="practice-mode">Which practice did I do today?</label><select id="practice-mode"><option value="unrecorded">Not recorded yet</option><option value="ai">Asked and followed up in my own AI tool</option><option value="example">Example only: read and practised checking</option></select></div></section>
-<section id="takeaway" class="wrap section"><p class="eyebrow">04 · Take it with you · 3 min</p><h2>Take away a checklist with sources</h2><p>Keep your result, your questions, and your checks. With your own data next time, use the same sequence: ask → add one requirement → check the sources.</p><p class="notice">This page does not save automatically. Copy your record into your own document or download a text file before leaving.</p><div class="actions"><button type="button" class="button" id="copy-record">Copy practice record</button><button type="button" class="button outline" id="download-record">Download record .txt</button></div><p id="record-feedback" class="feedback" aria-live="polite"></p><p class="footer-links"><a href="next-steps.html">Practise again after class →</a><a href="instructor.html">Instructor guide</a></p></section>
-</main><section id="copy-fallback" class="wrap manual-copy" hidden><label for="manual-copy">Text for manual copying</label><p>Automatic copying was unavailable. The text is below: select all and press Ctrl+C (Mac: ⌘C).</p><textarea id="manual-copy" rows="8" readonly></textarea></section><footer class="wrap seminar-footer">Practise one thing: turn information into a next step you can check.</footer><script id="seminar-data" type="application/json">{
+Reminder: 11/21 at 09:00 is the meeting time (B); the available check-in time is not given (A).</pre></details><label for="learner-result">Paste your checked result</label><textarea id="learner-result" rows="7" maxlength="20000"></textarea><label for="practice-mode">Which practice did I do today?</label><select id="practice-mode"><option value="unrecorded">Not recorded yet</option><option value="ai">Asked and followed up in my own AI tool</option><option value="example">Example only: read and practised checking</option></select></div></section><section id="tool" class="wrap section"><p class="eyebrow">04 · Build a checklist · 13 min</p><h2>Turn the list into a tool you can use</h2><p>Paste one checked task per line to make a checklist with ticks, a count, and reset. This step uses the website’s fixed template; AI helps organize the content.</p><label for="tool-title">Checklist name</label><input id="tool-title" type="text" maxlength="100" value="My travel preparation checklist"><label for="tool-items">Tasks, one per line</label><p class="small-text">After bringing in text, remove headings, reminders, and table separators. Keep actions only. Turn unknowns into tasks such as “Ask the inn about check-in time”.</p><textarea id="tool-items" rows="6" maxlength="12000" placeholder="Reply to the inn by 11/18 at 18:00
+Download tickets
+Confirm check-in time with the inn (to confirm)"></textarea><div class="actions"><button type="button" id="use-result" class="button outline">Bring in my result, then edit the tasks</button><button type="button" id="load-tool-example" class="button outline">Try it with the teaching example</button></div><div class="actions"><button type="button" id="build-checklist" class="button">Build and preview my checklist</button><button type="button" id="download-tool" class="button outline" disabled>Download my checklist webpage</button></div><p id="tool-status" class="feedback" role="status"></p><iframe id="checklist-preview" hidden title="My checklist preview" sandbox="allow-scripts" referrerpolicy="no-referrer"></iframe><h3>Try these three things before taking it away</h3><ol><li>Tick two tasks: the count becomes 2. Untick one: it becomes 1.</li><li>Use “Reset all”: the ticks and count both return to zero.</li><li>Download the HTML and reopen it in a browser. Check your name and tasks are present.</li></ol><p>Open the file from your browser’s downloads. You saved the checklist file; this first version does not retain ticks after a refresh.</p></section><section id="takeaway" class="wrap section"><h2>Save both the process and the finished tool</h2><p>The text record keeps your sources, request, follow-up, and checked result. The HTML is your checklist tool. Keep both so you can continue next time.</p><p class="notice">This page does not save input automatically. Copy or download your record before switching language, refreshing, or closing.</p><div class="actions"><button type="button" id="copy-record" class="button">Copy practice record</button><button type="button" id="download-record" class="button outline">Download record .txt</button></div><p id="record-feedback" class="feedback" role="status"></p></section><section id="continue" class="wrap section"><p class="eyebrow">05 · Keep practising · 3 min</p><h2>Try a small topic of your own at home</h2><p>Reuse today’s method. Change one source or add one requirement at a time. Choose one of these three directions.</p><article class="continue-step"><h3>1 | Replace the examples with three short excerpts of your own</h3><p>Choose one upcoming task and collect the necessary email, document, or note excerpts. Remove account details, personal data, and unnecessary content first. Retain source names, dates, and versions. Say when information is missing.</p><pre class="lesson-text ">Using only the information I provide below, list tasks and deadlines with sources. Mark information that is not stated “to confirm”.</pre><button type="button" class="button outline" data-copy-next="0">Copy this practice request</button><p id="next-0-status" class="feedback" role="status"></p></article><article class="continue-step"><h3>2 | Revise once, then turn the checked result into a checklist</h3><p>Return to the prompt practice on this page and write one requirement yourself. After checking the answer, put only correct tasks into the tool builder here and retain “to confirm” where needed. A fixed template assembles the webpage; it does not mean AI just wrote code for you.</p><pre class="lesson-text ">Revise this draft using the problems I identified. Retain each source and any open questions. First list what you changed.</pre><button type="button" class="button outline" data-copy-next="1">Copy this practice request</button><p id="next-1-status" class="feedback" role="status"></p></article><article class="continue-step"><h3>3 | Test, save, and use sources for the next update</h3><p>Tick two tasks and untick one; check that the completed count goes from 2 to 1. Test reset as well. Download and open the file to check that it works. Whether ticked progress is retained depends on the page’s stated behaviour and a reopen test. When the itinerary changes, update and check the source before updating the checklist.</p><pre class="lesson-text ">I am providing an updated source. List which tasks need changing, which are unaffected, and what remains unconfirmed. Cite old and new sources. Do not modify external systems for me yet.</pre><button type="button" class="button outline" data-copy-next="2">Copy this practice request</button><p id="next-2-status" class="feedback" role="status"></p></article><details><summary>Look up unfamiliar terms</summary><dl class="glossary"><dt>Prompt (your question)</dt><dd>The request you give AI. Start with the information scope and task, then add a requirement after reading the draft.</dd><dt>Source</dt><dd>The original email, document, or note behind an answer. A source ID helps you find the text but does not guarantee accuracy or credibility.</dd><dt>App or plugin connection</dt><dd>A capability that lets an AI tool read or act in another service within granted permissions. Availability varies; connecting alone does not perform a task.</dd><dt>Draft</dt><dd>Suggested content waiting for your review. An email draft has not been sent; a page draft has not been created; listing a task does not complete it.</dd><dt>Rule-based automation</dt><dd>Following a predefined condition, such as turning on at 28°C. This is a different mechanism from AI generating new text.</dd></dl></details><details><summary>Other material for when you want to go further</summary><p>These are separate extensions, not prerequisites for this talk.</p><ul><li><a href="analysis.html">Card spending, travel, and market data analysis</a></li><li><a href="practice.html?route=computer#classroom">The full optional AI webpage workshop</a></li><li><a href="web-project.html">Revise, test, and restore a webpage project</a></li></ul></details></section></main><section id="copy-fallback" class="wrap manual-copy" hidden><label for="manual-copy">Text for manual copying</label><p>Automatic copying was unavailable. The text is below: select all and press Ctrl+C (Mac: ⌘C).</p><textarea id="manual-copy" rows="8" readonly></textarea></section><footer class="wrap seminar-footer">One page, from understanding the examples to taking away your own small tool.</footer><script id="seminar-data" type="application/json">{
   "version": 1,
   "schedule": [
     {
@@ -472,5 +485,652 @@ Reminder: 11/21 at 09:00 is the meeting time (B); the available check-in time is
       "skip": "Skip to main content",
       "noscript": "JavaScript is off. All examples, source excerpts, and the reference result are still readable. Interactive, copy, and download buttons need JavaScript. You can select and copy the text manually."
     }
+  }
+}</script><script id="course-data" type="application/json">{
+  "version": 2,
+  "schedule": [
+    {
+      "key": "showcase",
+      "minutes": 8
+    },
+    {
+      "key": "connections",
+      "minutes": 24
+    },
+    {
+      "key": "practice",
+      "minutes": 12
+    },
+    {
+      "key": "build",
+      "minutes": 13
+    },
+    {
+      "key": "continue",
+      "minutes": 3
+    }
+  ],
+  "locales": {
+    "zh-Hant": {
+      "outcomes": [
+        "能指定一封信、一份文件或一則筆記，請 AI 整理有來源的待辦草稿。",
+        "能親自加一個要求，找出錯誤期限與猜出的資訊，回原文修正。",
+        "能把核對過的待辦做成可勾選的旅行準備小工具，測試後保存帶走。"
+      ],
+      "showcaseNotes": {
+        "travel": {
+          "data": "這個示意使用三個虛構地點、時間與安排；實際用途可以從你自己的行程文字開始。",
+          "ai": "AI 可協助把行程文字整理成「地點、時間、要做什麼」，缺的時間仍要由人確認。",
+          "system": "地圖與按鈕由網頁程式顯示；點地點只是切換既有資料，本頁沒有即時問 AI。",
+          "firstStep": "先整理三站行程，確認每站的時間和來源；今天用這些資料完成旅行準備清單。"
+        },
+        "study": {
+          "data": "一題教學句子、固定選項、答案與解析；不是即時產生的題目。",
+          "ai": "AI 可協助草擬題目和解釋，但用法與答案仍須經教材或教師核對。",
+          "system": "程式比對固定答案並顯示解析；「加入複習」只標記本頁的複習項目。",
+          "firstStep": "先做一題，說出為什麼選這個答案，再把不熟悉的搭配留作複習。"
+        },
+        "home": {
+          "data": "本頁用虛構溫度27°C／30°C和濕度62%，沒有讀取家中設備。",
+          "ai": "AI 可協助解釋數值或草擬自動化規則；本頁的開關判斷沒有使用 AI。",
+          "system": "程式照「溫度達28°C就開啟」執行固定規則，僅切換示意狀態，不控制空調。",
+          "firstStep": "把一個需求寫成「如果……就……」，再測試條件成立和不成立各一次。"
+        },
+        "market": {
+          "data": "虛構股票A：12,000→15,000股；虛構期貨B：320→280口。各自比較2026年9月與10月。",
+          "ai": "AI 可協助說明比較方法和缺漏；數字、單位與算式仍需核對。",
+          "system": "程式分別計算兩期差異與變動率，不把股和口相加，也不表示損益或績效。",
+          "firstStep": "先挑同一商品、同一單位的兩筆資料，手算差額，再看說明是否符合數字。"
+        }
+      },
+      "lessons": [
+        {
+          "key": "gmail",
+          "title": "Gmail：從一封訂房信找出下一步",
+          "goal": "找出要回覆的事項與期限，草擬詢問入住時間的回信；完成的是可核對草稿。",
+          "steps": [
+            "在你自己的 AI 工具，找到應用程式或外掛的連接設定。若提供 Gmail，選擇要使用的帳號並查看允許範圍；沒有此功能就用下方貼文字方式。",
+            "另開一個 AI 對話。明確指定這次要讀的訂房信，例如你核對過的寄件者、主旨與日期；本課只用虛構來源A，不搜尋整個信箱。",
+            "貼上下面的問句並送出。收到草稿後，先找「回覆期限」「入住日期」「入住時間」這三項，確認它們沒有被混成一個時間。",
+            "開啟回答所附的原信，逐項核對。看不到原信或內容不完整就貼上正確文字重問；草稿沒有寄出，寄信須在你核對後另行明確指示。"
+          ],
+          "prompt": "只讀我指定的訂房信A，列出待辦與期限，附來源；再草擬一封詢問入住時間的回信。未提供的資訊標待確認，先不要寄出。",
+          "exampleTitle": "固定示範：讀信 → 待辦 → 回覆草稿",
+          "example": "【固定示範結果；不是即時AI回答】\n待辦：11/18 18:00前回覆抵達人數。來源A。\n住宿日期：11/21入住、11/22退房。來源A。\n待確認：可辦理入住的時間；本次實際抵達人數也未提供。\n\n回覆草稿：\n您好，關於11/21的訂房，請問當天最早幾點可以辦理入住？謝謝。\n\n草稿沒有填入未知的人數，也沒有寄出。回覆人數這項待辦仍需處理。",
+          "check": "回到A找11/18 18:00；那是回覆人數的期限。11/21是入住日期，原信沒有16:00等入住時刻。真實操作還要核對寄件者與信件日期，不能因AI附了來源就直接相信。",
+          "alternate": "無法連接Gmail：手動複製一封你有權使用且已移除敏感資訊的信件文字，連同問句貼進AI。課堂直接使用上面的虛構A；這不等於已連接或搜尋你的信箱。",
+          "practiceQuestion": "AI草稿寫「11/21 16:00可以入住」，應該怎麼處理？",
+          "practiceChoices": [
+            "先採用，因為旅店通常下午入住。",
+            "改成待確認，向旅店確認；A只給了入住日期。",
+            "改成11/18 18:00，因為這是信中唯一精確時刻。"
+          ],
+          "practiceAnswer": 1,
+          "practiceExplanation": "選第二項。入住日期、回覆期限與可入住時刻是三件事。A沒有可入住時刻，不能靠常識或借用另一個期限補齊。"
+        },
+        {
+          "key": "drive",
+          "title": "Google Drive：比較兩份行程，保留目前版本",
+          "goal": "找出集合時間的改動，分清目前版與舊版，避免把活動時間當成準備期限。",
+          "steps": [
+            "在自己的AI工具連接可用的Google Drive，確認帳號及允許範圍。本課只讀兩份指定教學文件，不要求讀取整個雲端硬碟。",
+            "在新對話指定目前使用的行程B，以及標成舊版的D。明講「以B為目前版，D只供比較」；如果無法讀到內容，就貼上兩份文字。",
+            "貼上問句，要求AI逐項比較，並把集合時間和下載車票期限分開。看到檔名不等於內容已讀到，要確認回答引用了文件內文。",
+            "開啟B與D核對時間、版本標示和差異。若實際文件版本不明，先向文件負責人確認，再決定採用哪一份；不要讓AI自己選。"
+          ],
+          "prompt": "只比較指定行程B與舊版D，以B為目前版、D只供比較。列出集合時間的差異和現在要做的準備，分開活動時間與處理期限，附文件來源。",
+          "exampleTitle": "固定示範：兩份文件 → 差異與目前待辦",
+          "example": "【固定示範結果；不是即時AI回答】\n集合時間：D是11/21 10:00；B改為11/21 09:00，提早1小時。目前採B。\n準備待辦：11/19 20:00前下載車票。B、D這一項一致，仍以B核對現行安排。\n不要把11/21 09:00寫成下載車票期限；它是集合時間。",
+          "check": "先確認題目已指定B為目前版，再核對B的09:00、D的10:00及相差1小時。下載車票期限仍是11/19 20:00。比較出不同，不代表已改過文件或已通知同行者。",
+          "alternate": "無法連接Drive：將B與D的必要段落一起貼入AI，每段前保留檔名、版本標示和來源代號。只貼你有權使用的內容；不必公開整個檔案。",
+          "practiceQuestion": "比較完B與D，哪一項應進入目前的待辦清單？",
+          "practiceChoices": [
+            "11/21 10:00前下載車票，採用D的時間。",
+            "11/21 09:00前下載車票，採用B的集合時間。",
+            "11/19 20:00前下載車票，集合另記11/21 09:00。"
+          ],
+          "practiceAnswer": 2,
+          "practiceExplanation": "選第三項。兩份文件的下載期限相同；改動的是集合時間。以B為目前版，也要保留「活動時間」與「處理期限」的差別。"
+        },
+        {
+          "key": "notion",
+          "title": "Notion：把既有筆記整理成更新草稿",
+          "goal": "讀一則指定筆記，整理「已確認／待辦／待確認」，先核對，再決定是否另行建立頁面。",
+          "steps": [
+            "在自己的AI工具連接可用的Notion，確認帳號、工作區與可讀範圍，只授予這次需要的頁面權限；本課以虛構筆記C示範。",
+            "在新對話指定要讀的旅行準備筆記C。說明只整理草稿，不建立或更新任何頁面；讀不到指定內容就改貼文字。",
+            "送出下面問句，讀完三組結果。檢查「筆記寫了期限」是否被誤說成「事情已做完」，以及待確認內容有沒有被猜成答案。",
+            "回到C逐條核對。核對後若真的要建頁，再另行指定父頁、子頁名稱及採用內容，明確指示建立；工具須有寫入能力與權限。尚未收到可開啟的頁面結果，就不能當作已建立。"
+          ],
+          "prompt": "只根據我指定的旅行準備筆記C，整理成「已確認的資訊／待辦／待確認」草稿，附來源。已確認不代表已完成；先不要建立或更新頁面。",
+          "exampleTitle": "固定示範：既有筆記 → 三組整理草稿",
+          "example": "【固定示範結果；不是即時AI回答】\n已確認的資訊：筆記要求11/20 21:00前備妥雨具與充電線。來源C；並未記錄已完成。\n待辦：準備雨具與充電線；出發前向旅店詢問入住時間。來源C。\n待確認：可辦理入住的時間，以及詢問旅店的確切截止時間。來源C。\n\n【核對後才可另行使用的動作指令範例；本頁不會執行】\n請在我指定且有權限的父頁「教學練習」下，建立「旅行準備清單」子頁，使用我剛核對的草稿，保留待確認欄位。若有同名頁先告訴我，不要覆蓋。完成後提供頁面供我核對。",
+          "check": "「已確認」指筆記確實這樣寫，不表示雨具已準備好。C沒有可入住時刻，也沒有詢問的精確截止時間。整理草稿、授予權限和真正建立頁面，是不同步驟。",
+          "alternate": "無法連接Notion：把C的文字和問句貼入AI，核對後自行貼回自己的筆記。這是手動複製，並不表示AI已讀取或更新你的Notion。",
+          "practiceQuestion": "AI已給出整理草稿，可以說Notion子頁已建立嗎？",
+          "practiceChoices": [
+            "不可以。還要核對、另行指定位置與建立指令，並開啟結果確認。",
+            "可以。只要草稿看起來像頁面就算完成。",
+            "可以。連接過Notion就代表每次回答會自動存檔。"
+          ],
+          "practiceAnswer": 0,
+          "practiceExplanation": "選第一項。連接帳號只是取得允許的能力；回答中的草稿不會自動等於外部頁面。必須有明確動作指令、可用寫入權限及實際結果。"
+        }
+      ],
+      "promptLesson": {
+        "title": "先問一句，再用自己的要求改善草稿",
+        "weak": "幫我安排旅行。",
+        "strong": "請根據 A、B、C 列出出發前待辦與期限，一個待辦一行，保留來源，不用表格；未提供的資訊標待確認，提醒另外列出。",
+        "why": [
+          "說清楚讀哪份資料，避免AI用別的行程或常識補內容。",
+          "說清楚要「待辦與期限」，就能拿結果來核對與製作清單。",
+          "允許寫待確認，不逼AI把每個空格都猜成確定答案。"
+        ],
+        "followups": [
+          "請依處理期限排序；沒有確切期限的事項放最後，保留待確認。",
+          "請把處理期限與活動時間分開，不要把集合時間當作下載車票期限。",
+          "請在每項後面標A、B或C，並指出哪些資訊原文沒有提供。"
+        ]
+      },
+      "mistakeExercise": {
+        "title": "這份固定草稿有兩處錯誤：請選出應修改的兩項",
+        "draft": "① 11/18 18:00前回覆抵達人數。（A）\n② 11/21 09:00前下載車票。（B）\n③ 11/20 21:00前準備雨具與充電線。（C）\n④ 星灣旅店11/21 16:00可辦理入住。（A）\n\n這是故意放入錯誤的固定練習草稿，不是你的AI實際回覆。",
+        "choices": [
+          {
+            "key": "party",
+            "label": "① 回覆人數期限11/18 18:00",
+            "correct": false
+          },
+          {
+            "key": "ticket",
+            "label": "② 下載車票期限11/21 09:00",
+            "correct": true
+          },
+          {
+            "key": "packing",
+            "label": "③ 整理物品期限11/20 21:00",
+            "correct": false
+          },
+          {
+            "key": "checkin",
+            "label": "④ 可入住時間11/21 16:00",
+            "correct": true
+          }
+        ],
+        "explanation": "應選②、④。②把集合時間誤當下載期限，依B應改為11/19 20:00。④捏造16:00，A沒有提供入住時刻，應標待確認；C要求出發前向旅店詢問，但沒有精確詢問期限。①與③都符合來源，不必改。修正後仍要逐項核對來源，才能放入自己的小工具。"
+      },
+      "continueSteps": [
+        {
+          "title": "1｜換成自己的三小段資料",
+          "text": "挑一件近期的小事，準備相關信件、文件或筆記的必要段落；先移除帳號、個資和不必提供的內容。保留來源名稱、日期與版本，資料不足就先說不知道。",
+          "prompt": "請只根據下面我提供的資料，列出待辦與期限，附來源；沒有寫的資訊標待確認。"
+        },
+        {
+          "title": "2｜改一次，再把核對結果做成清單",
+          "text": "回本頁的提問練習，親自加一項需求。核對答案後，只把正確的待辦放入本頁小工具製作區；有缺漏的項目保留待確認。固定範本會組成網頁，不代表AI剛替你寫了程式。",
+          "prompt": "請根據我指出的問題修正這份草稿，保留每項來源與待確認資訊；先列出你改了哪裡。"
+        },
+        {
+          "title": "3｜測試、保存，下次從來源更新",
+          "text": "在小工具勾兩項、取消一項，確認完成數依序是2、1；再測試重設。下載後開啟檔案確認可用，是否保存勾選進度要以頁面實際說明與重開測試為準。行程變動時先更新來源、重新核對，再更新清單。",
+          "prompt": "我提供一份新的來源更新。請列出哪些待辦要改、哪些不受影響及仍待確認的內容，附新舊來源；先不要代我修改外部系統。"
+        }
+      ],
+      "glossary": [
+        {
+          "term": "提示詞（問句）",
+          "meaning": "你交給AI的要求。先說資料範圍與要做的事，看到草稿後再補一項條件。"
+        },
+        {
+          "term": "資料來源",
+          "meaning": "答案根據的原信、文件或筆記。來源代號方便找到原文；有代號不保證內容正確或可信。"
+        },
+        {
+          "term": "應用程式／外掛連接",
+          "meaning": "讓AI工具在授權範圍內讀取或操作其他服務的功能；各工具可用功能不同，連接本身不代表已執行任何事。"
+        },
+        {
+          "term": "草稿",
+          "meaning": "尚待你核對的建議內容。回信草稿尚未寄出；頁面草稿尚未建立；待辦列出來也不等於做完。"
+        },
+        {
+          "term": "規則自動化",
+          "meaning": "依預先寫好的條件執行，例如溫度達28°C就開啟；與AI生成一段新文字是不同機制。"
+        }
+      ],
+      "sourceD": {
+        "label": "D｜Drive舊版行程（虛構）｜版本日期2026/10/20｜已由B取代",
+        "text": "2026/11/21 10:00在雲岸車站集合。請於11/19 20:00前下載車票。此文件只供版本比較，勿當作現行行程。"
+      }
+    },
+    "en": {
+      "outcomes": [
+        "Specify an email, document, or note and ask AI for a draft task list with sources.",
+        "Add your own requirement, spot a wrong deadline or an invented detail, and correct it against the original.",
+        "Turn checked tasks into a travel checklist you can tick, test it, and save a usable copy."
+      ],
+      "showcaseNotes": {
+        "travel": {
+          "data": "This example uses three fictional places, times, and plans. Your own itinerary text can be a starting point for the real use case.",
+          "ai": "AI can help organise itinerary text into place, time, and activity. A person still needs to confirm missing times.",
+          "system": "Web code draws the map and buttons. Choosing a stop displays existing data; it does not ask AI live on this page.",
+          "firstStep": "Organise three stops and check each time and source. Today, use the information to make a travel preparation checklist."
+        },
+        "study": {
+          "data": "One teaching sentence with fixed choices, an answer, and an explanation. The question is not generated live.",
+          "ai": "AI can help draft questions and explanations, but a teacher or reliable learning material must check the usage and answer.",
+          "system": "Code compares your choice with a fixed answer and shows the explanation. “Add to review” marks a review item on this page only.",
+          "firstStep": "Answer one question, explain your choice, and keep an unfamiliar expression for review."
+        },
+        "home": {
+          "data": "This page uses fictional temperatures of 27°C and 30°C, and 62% humidity. It reads no home devices.",
+          "ai": "AI can help explain readings or draft an automation rule. This page does not use AI to decide whether to turn the switch on.",
+          "system": "Code follows the fixed rule “on at 28°C or above”. It changes a simulated status and does not control an air conditioner.",
+          "firstStep": "Write one need as “if … then …”, then test a case where the condition holds and one where it does not."
+        },
+        "market": {
+          "data": "Fictional stock A: 12,000 → 15,000 shares. Fictional futures B: 320 → 280 contracts. Each compares September and October 2026.",
+          "ai": "AI can help explain the comparison and missing information. Numbers, units, and calculations still need checking.",
+          "system": "Code calculates each product’s change and percentage separately. It never adds shares to contracts or represents profit or performance.",
+          "firstStep": "Choose two observations of the same product in the same unit. Calculate the difference and check whether the explanation matches."
+        }
+      },
+      "lessons": [
+        {
+          "key": "gmail",
+          "title": "Gmail: find the next action in one booking email",
+          "goal": "Find the required reply and deadline, then draft a question about check-in time. The result is a draft you can check.",
+          "steps": [
+            "In your own AI tool, find the apps or plugins connection settings. If Gmail is available, choose the account and inspect the permitted scope. If it is unavailable, use the text-pasting alternative below.",
+            "Start another AI conversation. Identify the booking email, for example by a sender, subject, and date you have checked. This lesson uses fictional source A only, not your entire inbox.",
+            "Paste the prompt below and send it. In the draft, find the reply deadline, check-in date, and available check-in time. Check that these three have not been merged.",
+            "Open the original email cited in the answer and check each item. If the source is inaccessible or incomplete, paste the correct text and ask again. The draft has not been sent; sending needs your separate explicit instruction after checking."
+          ],
+          "prompt": "Read only my specified booking email A. List tasks and deadlines with sources, then draft a reply asking about check-in time. Mark missing information “to confirm”. Do not send it yet.",
+          "exampleTitle": "Fixed example: email → task → draft reply",
+          "example": "[Fixed example result; not a live AI response]\nTask: reply with party size by 11/18 at 18:00. Source A.\nStay dates: check in 11/21; check out 11/22. Source A.\nTo confirm: when check-in is available. The actual party size is also not given.\n\nDraft reply:\nHello, regarding the booking for 11/21, what is the earliest time we can check in that day? Thank you.\n\nThe draft neither invents the party size nor sends a message. Replying with the party size remains a task.",
+          "check": "Find 11/18 at 18:00 in A: it is the deadline to reply with party size. 11/21 is the check-in date; the email gives no check-in hour such as 16:00. With real data, also check the sender and email date. An AI citation alone does not establish trustworthiness.",
+          "alternate": "Without a Gmail connection, manually paste one email you may use, with sensitive details removed, together with the prompt. In class, use fictional A above. Pasting text does not connect to or search your inbox.",
+          "practiceQuestion": "An AI draft says “Check-in is available on 11/21 at 16:00.” What should you do?",
+          "practiceChoices": [
+            "Use it because inns usually allow afternoon check-in.",
+            "Mark it “to confirm” and ask the inn. A provides only the check-in date.",
+            "Change it to 11/18 at 18:00 because that is the only precise time in the email."
+          ],
+          "practiceAnswer": 1,
+          "practiceExplanation": "Choose the second option. A check-in date, a reply deadline, and an available check-in hour are different facts. A gives no check-in hour; neither common practice nor another deadline can fill the gap."
+        },
+        {
+          "key": "drive",
+          "title": "Google Drive: compare two itineraries and retain the current version",
+          "goal": "Identify the change in meeting time, distinguish current and old versions, and keep event times separate from preparation deadlines.",
+          "steps": [
+            "Connect an available Google Drive account in your own AI tool and check the account and permitted scope. This lesson reads two specified teaching documents, not your entire drive.",
+            "In a new conversation, specify current itinerary B and old version D. State “Use B as current; D is for comparison only.” If the tool cannot read their contents, paste both texts.",
+            "Send the prompt and ask for an item-by-item comparison, separating the meeting time from the ticket download deadline. Seeing a filename does not prove the content was read; check that the answer cites the text.",
+            "Open B and D to verify times, version labels, and differences. If real version status is unclear, ask the document owner before choosing a version. Do not leave that decision to AI."
+          ],
+          "prompt": "Compare only the specified itinerary B and old version D. Use B as current and D only for comparison. List the meeting-time change and current preparations, separate event times from task deadlines, and cite the documents.",
+          "exampleTitle": "Fixed example: two documents → differences and current tasks",
+          "example": "[Fixed example result; not a live AI response]\nMeeting time: D says 11/21 at 10:00; B changes it to 11/21 at 09:00, one hour earlier. Use B now.\nPreparation task: download tickets by 11/19 at 20:00. This is unchanged between B and D; check B for the current arrangement.\nDo not label 11/21 at 09:00 as the ticket deadline: it is the meeting time.",
+          "check": "First confirm that the exercise explicitly designates B as current. Verify 09:00 in B, 10:00 in D, and the one-hour difference. The ticket download deadline remains 11/19 at 20:00. Finding a difference does not update a document or notify fellow travellers.",
+          "alternate": "Without a Drive connection, paste the relevant sections of B and D together, retaining the document name, version label, and source ID before each. Use only content you have permission to use; you do not need to make the whole file public.",
+          "practiceQuestion": "After comparing B and D, which item belongs on the current task list?",
+          "practiceChoices": [
+            "Download tickets by 11/21 at 10:00, using D’s time.",
+            "Download tickets by 11/21 at 09:00, using B’s meeting time.",
+            "Download tickets by 11/19 at 20:00; record the 11/21 at 09:00 meeting separately."
+          ],
+          "practiceAnswer": 2,
+          "practiceExplanation": "Choose the third option. The download deadline is the same in both documents; the meeting time changed. Using B as current still requires separating an event time from a task deadline."
+        },
+        {
+          "key": "notion",
+          "title": "Notion: turn existing notes into a draft update",
+          "goal": "Read one specified note and organise known information, tasks, and open questions. Check the draft before deciding to create a page separately.",
+          "steps": [
+            "Connect an available Notion account in your own AI tool. Check the account, workspace, and readable scope, granting access only to pages needed for this task. This lesson uses fictional note C.",
+            "In a new conversation, specify travel preparation note C. Ask only for a draft, with no page creation or update. If the note cannot be read, paste its text.",
+            "Send the prompt and read the three groups. Check that a stated deadline has not become a claim that the task is finished, and that open questions have not become invented answers.",
+            "Check each item against C. If you then want a page created, give a separate instruction naming the parent page, child-page title, and approved content. The tool needs write capability and permission. Do not count the page as created until you receive a result you can open."
+          ],
+          "prompt": "Using only my specified travel preparation note C, draft three groups: known information, tasks, and open questions. Cite the source. Known information does not mean completed work. Do not create or update pages yet.",
+          "exampleTitle": "Fixed example: existing note → three-part draft",
+          "example": "[Fixed example result; not a live AI response]\nKnown information: the note requires rain gear and charging cables to be ready by 11/20 at 21:00. Source C; completion is not recorded.\nTasks: pack rain gear and charging cables; ask the inn about check-in time before departure. Source C.\nOpen questions: when check-in is available and the exact deadline for asking the inn. Source C.\n\n[Example action instruction to use only after checking; this page does not execute it]\nUnder my specified parent page “Learning practice”, where I have permission, create a child page named “Travel preparation checklist”. Use the draft I just checked and retain the open questions. If a page with that name exists, tell me first; do not overwrite it. Provide the resulting page for me to check.",
+          "check": "Known information means that the note states it, not that the rain gear is packed. C gives neither a check-in hour nor an exact enquiry deadline. Drafting, granting access, and actually creating a page are different steps.",
+          "alternate": "Without a Notion connection, paste C and the prompt into AI, check the answer, and copy it into your own notes yourself. Manual copying does not mean AI read or updated your Notion.",
+          "practiceQuestion": "AI has provided an organised draft. Can you say the Notion child page has been created?",
+          "practiceChoices": [
+            "No. Check the draft, separately specify the location and creation instruction, then open the result to verify it.",
+            "Yes. A draft that looks like a page counts as a finished page.",
+            "Yes. Connecting Notion means every answer is automatically saved there."
+          ],
+          "practiceAnswer": 0,
+          "practiceExplanation": "Choose the first option. Connecting an account only makes permitted capabilities available. A draft answer is not automatically an external page. Creation needs an explicit instruction, available write permission, and an actual result."
+        }
+      ],
+      "promptLesson": {
+        "title": "Start with one question, then improve the draft with your own requirement",
+        "weak": "Plan my trip.",
+        "strong": "Using A, B, and C, list pre-departure tasks and deadlines, one task per line with its source, without a table. Mark missing information as to confirm and put reminders separately.",
+        "why": [
+          "Specify which information to read so AI does not fill gaps from another itinerary or general assumptions.",
+          "Ask for tasks and deadlines so the result can be checked and used in a checklist.",
+          "Allow “to confirm” rather than forcing every missing field into a definite answer."
+        ],
+        "followups": [
+          "Sort by task deadline. Put items without an exact deadline last and retain “to confirm”.",
+          "Separate task deadlines from event times. Do not use the meeting time as the ticket download deadline.",
+          "Label each item A, B, or C and identify information the original text does not provide."
+        ]
+      },
+      "mistakeExercise": {
+        "title": "This fixed draft has two errors: select the two items that need correction",
+        "draft": "① Reply with party size by 11/18 at 18:00. (A)\n② Download tickets by 11/21 at 09:00. (B)\n③ Pack rain gear and charging cables by 11/20 at 21:00. (C)\n④ Check-in at Starbay Inn is available on 11/21 at 16:00. (A)\n\nThis fixed practice draft deliberately contains errors. It is not your actual AI response.",
+        "choices": [
+          {
+            "key": "party",
+            "label": "① Party-size reply deadline: 11/18 at 18:00",
+            "correct": false
+          },
+          {
+            "key": "ticket",
+            "label": "② Ticket download deadline: 11/21 at 09:00",
+            "correct": true
+          },
+          {
+            "key": "packing",
+            "label": "③ Packing deadline: 11/20 at 21:00",
+            "correct": false
+          },
+          {
+            "key": "checkin",
+            "label": "④ Available check-in time: 11/21 at 16:00",
+            "correct": true
+          }
+        ],
+        "explanation": "Select ② and ④. Item ② mistakes the meeting time for the download deadline; B gives 11/19 at 20:00. Item ④ invents 16:00. A provides no check-in hour, so mark it “to confirm”. C requires asking before departure but gives no precise enquiry deadline. Items ① and ③ match their sources and do not need correction. Check every corrected item against its source before placing it in your tool."
+      },
+      "continueSteps": [
+        {
+          "title": "1 | Replace the examples with three short excerpts of your own",
+          "text": "Choose one upcoming task and collect the necessary email, document, or note excerpts. Remove account details, personal data, and unnecessary content first. Retain source names, dates, and versions. Say when information is missing.",
+          "prompt": "Using only the information I provide below, list tasks and deadlines with sources. Mark information that is not stated “to confirm”."
+        },
+        {
+          "title": "2 | Revise once, then turn the checked result into a checklist",
+          "text": "Return to the prompt practice on this page and write one requirement yourself. After checking the answer, put only correct tasks into the tool builder here and retain “to confirm” where needed. A fixed template assembles the webpage; it does not mean AI just wrote code for you.",
+          "prompt": "Revise this draft using the problems I identified. Retain each source and any open questions. First list what you changed."
+        },
+        {
+          "title": "3 | Test, save, and use sources for the next update",
+          "text": "Tick two tasks and untick one; check that the completed count goes from 2 to 1. Test reset as well. Download and open the file to check that it works. Whether ticked progress is retained depends on the page’s stated behaviour and a reopen test. When the itinerary changes, update and check the source before updating the checklist.",
+          "prompt": "I am providing an updated source. List which tasks need changing, which are unaffected, and what remains unconfirmed. Cite old and new sources. Do not modify external systems for me yet."
+        }
+      ],
+      "glossary": [
+        {
+          "term": "Prompt (your question)",
+          "meaning": "The request you give AI. Start with the information scope and task, then add a requirement after reading the draft."
+        },
+        {
+          "term": "Source",
+          "meaning": "The original email, document, or note behind an answer. A source ID helps you find the text but does not guarantee accuracy or credibility."
+        },
+        {
+          "term": "App or plugin connection",
+          "meaning": "A capability that lets an AI tool read or act in another service within granted permissions. Availability varies; connecting alone does not perform a task."
+        },
+        {
+          "term": "Draft",
+          "meaning": "Suggested content waiting for your review. An email draft has not been sent; a page draft has not been created; listing a task does not complete it."
+        },
+        {
+          "term": "Rule-based automation",
+          "meaning": "Following a predefined condition, such as turning on at 28°C. This is a different mechanism from AI generating new text."
+        }
+      ],
+      "sourceD": {
+        "label": "D | Old Drive itinerary (fictional) | Version dated 2026/10/20 | Superseded by B",
+        "text": "Meet at Cloudshore Station on 2026/11/21 at 10:00. Download tickets by 11/19 at 20:00. This document is for version comparison only, not the current itinerary."
+      }
+    }
+  }
+}</script><script id="course-ui" type="application/json">{
+  "zh-Hant": {
+    "title": "AI 生活應用小講座",
+    "lead": "先看四個成品，再學會用自己的資料，做出一份可勾選的準備清單。",
+    "nav": [
+      "看成品",
+      "接資料",
+      "跟著做",
+      "做出清單",
+      "繼續練"
+    ],
+    "meta": "零基礎 · 電腦操作 · 60 分鐘",
+    "outcomes": "今天會學會什麼",
+    "prepare": "準備一台電腦與你已登入、能使用的 AI 工具。教學資料都在本頁；沒有連接器也能用貼上文字跟著做。",
+    "schedule": "看看這 60 分鐘怎麼走",
+    "schedule_labels": [
+      "四個成品與做法",
+      "Gmail／Drive／Notion",
+      "自己提問、追問與核對",
+      "做出可勾選的小工具",
+      "保存與課後練習"
+    ],
+    "minute": "分鐘",
+    "role_labels": [
+      "需要的資料",
+      "AI 可以幫忙",
+      "系統負責",
+      "你可以先做"
+    ],
+    "connect_title": "把自己的資料交給 AI，才有自己的答案",
+    "connect_lead": "先從一封信、一份文件或一頁筆記開始。下面每一段都有做法、可貼上的資料、示範結果與小練習。",
+    "setup_title": "第一次接帳號，照這四步",
+    "setup": [
+      "在 ChatGPT 的「Plugins／外掛」頁找 Gmail、Google Drive 或 Notion；其他 AI 工具請找它的應用程式或連接設定。",
+      "開啟外掛詳情並安裝；有連接提示時，登入你要用的帳號，閱讀這次允許存取的內容與動作。",
+      "開始新對話，選用對應外掛，明確指定教學信件、文件連結或筆記頁；先請 AI 說明實際讀到了什麼。",
+      "打開回覆附的來源核對。找不到來源時，改貼本頁教學資料；先練會方法，再處理帳號設定。"
+    ],
+    "source_ready": "連接器示範使用事先準備好的教學帳號。自行重做時，先用教學 Gmail 寄一封內容為 A 的信給自己，確認收件匣看得到；B 與 D 建成 Drive 文件、C 建成 Notion 頁，再指定實際主旨、日期或連結。課堂也可直接按下方「複製資料＋這段問法」，用文字完成練習。",
+    "setup_source": "設定方式依工具與帳號而異。",
+    "official": "OpenAI 官方外掛說明",
+    "goal": "這一段要完成",
+    "source": "先看資料",
+    "prompt": "可以這樣問",
+    "copy_lesson": "複製資料＋這段問法",
+    "worked": "對照示範結果",
+    "fixed": "以下是事先寫好的教學示範；實際 AI 的回答可能不同。",
+    "check": "回來源確認",
+    "quiz": "換你判斷",
+    "check_answer": "看答案與理由",
+    "choose_first": "先選一個答案，再看理由。",
+    "correct": "答對了。",
+    "incorrect": "再對照一下來源。",
+    "practice_title": "跟著做：把旅行資料整理成可執行的下一步",
+    "practice_lead": "這次只做一件事：找出出發前要處理什麼、什麼時候做，以及哪些還不知道。",
+    "weak": "只說這句，AI 還不知道你的資料與目標",
+    "strong": "說清楚資料、成果與缺漏怎麼處理",
+    "step1": "1　在教材複製資料與問題",
+    "step1text": "下面的 A、B、C 是同一趟旅行。先讀過，再把資料和問題一起交給 AI。",
+    "step2": "2　到 AI 送出，讀第一版草稿",
+    "step2text": "另開你已能使用的 AI 工具，貼上並送出。這裡是教材；AI 的回答會出現在你的 AI 工具中。保留兩個分頁，方便切回來。",
+    "step3": "3　回來寫一個你需要的修改，再到同一個對話追問",
+    "step3text": "看草稿後，選你真的需要的改法。可參考下列方向，用自己的話修改；這些例子不會代替你送出。",
+    "followup_label": "我的補充要求",
+    "followup_copy": "複製我的追問",
+    "followup_next": "切到同一個 AI 對話貼上、送出，再帶著新回答回來。",
+    "step4": "4　回來源核對，留下你的結果",
+    "checks": "請對照你自己的 AI 回答核對；勾選只是自己的紀錄。",
+    "show_reference": "需要時，對照完整參考清單",
+    "mistake_check": "檢查我找到的問題",
+    "mistake_hint": "選出草稿中需要修正的敘述；可複選。",
+    "mistake_correct": "這兩項需要修正。",
+    "mistake_retry": "還有選項需要再對照來源。",
+    "tool_title": "把清單做成自己能用的小工具",
+    "tool_intro": "把已核對的待辦一行一項貼進來，產生可勾選、計數、重設的清單。這一步由網站的固定範本製作；AI 幫你整理內容。",
+    "tool_name": "清單名稱",
+    "tool_default": "我的旅行準備清單",
+    "tool_items": "待辦項目，每行一項",
+    "tool_items_hint": "帶入文字後，先刪掉標題、提醒與表格線，只留要做的事。需要確認的資訊可寫成「向旅店詢問入住時間」。",
+    "tool_imported": "已帶入文字；請先整理成一行一項的待辦，再產生清單。",
+    "tool_placeholder": "11/18 18:00 前回覆旅店人數\n下載車票\n向旅店確認入住時間（待確認）",
+    "use_result": "帶入核對結果，再整理待辦",
+    "sample_tool": "先用教學範例試做",
+    "build_tool": "產生並預覽清單",
+    "download_tool": "下載我的清單網頁",
+    "tool_empty": "請填清單名稱，並至少寫一項待辦。",
+    "tool_many": "先保留 30 項以內，讓第一版容易檢查。",
+    "tool_dirty": "內容已修改，請重新產生預覽後再下載。",
+    "tool_built": "清單已產生。請在下方試勾、取消與全部重設，再下載。",
+    "tool_no_result": "請先填入上方核對後的成果，或用教學範例試做。",
+    "tool_has_items": "項目欄已有內容；請自行修改，避免覆蓋你的文字。",
+    "sample_note": "已載入教學範例項目。這是試做，不代表完成了實際 AI 提問。",
+    "preview_title": "我的可勾選清單預覽",
+    "tool_check_title": "親自試這三件事，再帶走",
+    "tool_checks": [
+      "勾選兩項，完成數變成 2；取消一項，變成 1。",
+      "按「全部重設」，勾選與完成數一起歸零。",
+      "下載 HTML，在瀏覽器重新開啟，能看見自己的名稱與項目。"
+    ],
+    "tool_reopen": "下載後，到瀏覽器下載清單開啟檔案。保存的是清單檔；第一版重新整理不保留勾選進度。",
+    "save_title": "把過程與成品一起保存",
+    "save_text": "文字紀錄留下資料來源、問句、追問與核對結果；HTML 是你剛做好的清單工具。兩份都保存，下次才接得上。",
+    "continue_title": "回家後，換成自己的小題目",
+    "continue_intro": "沿用今天的方法，每次只換一份資料或加一個要求。三個方向可以擇一試做。",
+    "copy_next": "複製這個練習需求",
+    "terms": "不熟悉的詞，在這裡查",
+    "more": "想深入時，再看其他教材",
+    "more_text": "下面是獨立延伸，不是完成這場講座的前提。",
+    "analysis": "信用卡、旅行與市場資料分析",
+    "web": "用 AI 做網頁的完整選修",
+    "projects": "網頁作品的修改、測試與復原",
+    "footer": "同一頁，從看懂案例到帶走自己的小工具。",
+    "record_tip": "本頁不會自動保存輸入。切換語言、重新整理或關閉前，先下載或複製紀錄。",
+    "copied": "已複製，可以貼到你的 AI 工具。",
+    "artifact_count": "已完成",
+    "artifact_reset": "全部重設",
+    "artifact_note": "第一版不自動保存勾選進度；重新整理後會歸零。",
+    "artifact_source": "由固定範本產生的個人清單；內容由使用者提供。"
+  },
+  "en": {
+    "title": "Everyday AI: a short talk",
+    "lead": "See four projects, then use your own data to make a checklist you can actually use.",
+    "nav": [
+      "See projects",
+      "Connect data",
+      "Try it",
+      "Build a checklist",
+      "Keep practising"
+    ],
+    "meta": "For beginners · On a computer · 60 minutes",
+    "outcomes": "What you will learn today",
+    "prepare": "Have a computer and an AI tool you can already sign in to and use. All teaching data is on this page; paste the text if you do not have connectors.",
+    "schedule": "See the 60-minute plan",
+    "schedule_labels": [
+      "Four projects and how they work",
+      "Gmail / Drive / Notion",
+      "Ask, refine, and check",
+      "Build a usable checklist",
+      "Save and continue"
+    ],
+    "minute": "min",
+    "role_labels": [
+      "Source data",
+      "What AI can help with",
+      "What the system does",
+      "Your first small step"
+    ],
+    "connect_title": "Give AI your data to get an answer about your situation",
+    "connect_lead": "Start with one email, file, or note. Each lesson below includes steps, paste-ready data, a worked result, and a small practice question.",
+    "setup_title": "Connecting an account for the first time: four steps",
+    "setup": [
+      "In ChatGPT, open Plugins and find Gmail, Google Drive, or Notion. In another AI tool, look for its app or connection settings.",
+      "Open the plugin details and install it. When asked to connect, sign in to the intended account and review the content and actions you are allowing.",
+      "Start a new chat, use the appropriate plugin, and specify the teaching email, file link, or note page. First ask AI to describe what it actually read.",
+      "Open the cited source to check it. If the source is unavailable, paste the teaching text below; practise the method before troubleshooting account settings."
+    ],
+    "source_ready": "Connector demonstrations use a prepared teaching account. To repeat them yourself, first send an email containing A to your own teaching Gmail and confirm it is in the inbox; create B and D as Drive files and C as a Notion page, then specify the actual subject, date, or links. In class, you can use “Copy data + this request” below to practise with the text directly.",
+    "setup_source": "Setup varies by tool and account.",
+    "official": "Official OpenAI plugin guide",
+    "goal": "What to complete",
+    "source": "Read the source",
+    "prompt": "A request to try",
+    "copy_lesson": "Copy data + this request",
+    "worked": "Compare the worked result",
+    "fixed": "This is a prepared teaching example; your actual AI response may differ.",
+    "check": "Check against the source",
+    "quiz": "Your turn to decide",
+    "check_answer": "See the answer and reason",
+    "choose_first": "Choose an answer before checking the reason.",
+    "correct": "Correct.",
+    "incorrect": "Check the source again.",
+    "practice_title": "Try it: turn travel details into useful next steps",
+    "practice_lead": "Complete one task: find what must be done before departure, when to do it, and what is still unknown.",
+    "weak": "This leaves AI guessing about your data and goal",
+    "strong": "Specify the material, result, and how to handle gaps",
+    "step1": "1　Copy the data and question on this page",
+    "step1text": "Sources A, B, and C describe the same trip. Read them first, then give both the material and request to AI.",
+    "step2": "2　Send it in your AI tool and read the draft",
+    "step2text": "Open your available AI tool in another tab, paste, and send. This page is the lesson; the AI response appears in your AI tool. Keep both tabs open.",
+    "step3": "3　Write one change you need, then ask in the same chat",
+    "step3text": "Read the draft and choose a useful change. Use the suggestions as a starting point and edit in your own words; they do not send anything for you.",
+    "followup_label": "One requirement I want to add",
+    "followup_copy": "Copy my follow-up",
+    "followup_next": "Paste it into the same AI conversation, send, and return with the revised answer.",
+    "step4": "4　Check the sources and keep your own result",
+    "checks": "Check your actual AI response against the sources. Ticks are your own record.",
+    "show_reference": "If needed, compare the complete reference list",
+    "mistake_check": "Check the problems I found",
+    "mistake_hint": "Select the statements that need correcting. Choose more than one if needed.",
+    "mistake_correct": "These two statements need correction.",
+    "mistake_retry": "Some choices need another look at the source.",
+    "tool_title": "Turn the list into a tool you can use",
+    "tool_intro": "Paste one checked task per line to make a checklist with ticks, a count, and reset. This step uses the website’s fixed template; AI helps organize the content.",
+    "tool_name": "Checklist name",
+    "tool_default": "My travel preparation checklist",
+    "tool_items": "Tasks, one per line",
+    "tool_items_hint": "After bringing in text, remove headings, reminders, and table separators. Keep actions only. Turn unknowns into tasks such as “Ask the inn about check-in time”.",
+    "tool_imported": "Text brought in. Edit it into one action per line before building the checklist.",
+    "tool_placeholder": "Reply to the inn by 11/18 at 18:00\nDownload tickets\nConfirm check-in time with the inn (to confirm)",
+    "use_result": "Bring in my result, then edit the tasks",
+    "sample_tool": "Try it with the teaching example",
+    "build_tool": "Build and preview my checklist",
+    "download_tool": "Download my checklist webpage",
+    "tool_empty": "Enter a checklist name and at least one task.",
+    "tool_many": "Keep the first version to 30 tasks so it is easy to check.",
+    "tool_dirty": "The content changed. Rebuild the preview before downloading.",
+    "tool_built": "Your checklist is ready. Try ticking, unticking, and resetting below, then download it.",
+    "tool_no_result": "Fill in your checked result above, or try the teaching example.",
+    "tool_has_items": "The task field already has content. Edit it yourself to keep your words.",
+    "sample_note": "Teaching-example tasks loaded. This trial does not mean you completed an actual AI request.",
+    "preview_title": "My checklist preview",
+    "tool_check_title": "Try these three things before taking it away",
+    "tool_checks": [
+      "Tick two tasks: the count becomes 2. Untick one: it becomes 1.",
+      "Use “Reset all”: the ticks and count both return to zero.",
+      "Download the HTML and reopen it in a browser. Check your name and tasks are present."
+    ],
+    "tool_reopen": "Open the file from your browser’s downloads. You saved the checklist file; this first version does not retain ticks after a refresh.",
+    "save_title": "Save both the process and the finished tool",
+    "save_text": "The text record keeps your sources, request, follow-up, and checked result. The HTML is your checklist tool. Keep both so you can continue next time.",
+    "continue_title": "Try a small topic of your own at home",
+    "continue_intro": "Reuse today’s method. Change one source or add one requirement at a time. Choose one of these three directions.",
+    "copy_next": "Copy this practice request",
+    "terms": "Look up unfamiliar terms",
+    "more": "Other material for when you want to go further",
+    "more_text": "These are separate extensions, not prerequisites for this talk.",
+    "analysis": "Card spending, travel, and market data analysis",
+    "web": "The full optional AI webpage workshop",
+    "projects": "Revise, test, and restore a webpage project",
+    "footer": "One page, from understanding the examples to taking away your own small tool.",
+    "record_tip": "This page does not save input automatically. Copy or download your record before switching language, refreshing, or closing.",
+    "copied": "Copied. You can paste it into your AI tool.",
+    "artifact_count": "Completed",
+    "artifact_reset": "Reset all",
+    "artifact_note": "This first version does not save ticks automatically; refreshing resets them.",
+    "artifact_source": "A personal checklist made from a fixed template with content supplied by its user."
   }
 }</script></body></html>
