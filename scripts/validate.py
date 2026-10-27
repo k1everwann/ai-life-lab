@@ -52,7 +52,7 @@ for file,doc in docs.items():
 checks.append(f"HTML local references and anchors: {len(docs)} pages")
 
 # Both languages must offer the complete activity, not just translated headings.
-for relative in ("index.html", "instructor.html", "next-steps.html", "examples/starter.html", "examples/my-checklist.html"):
+for relative in ("index.html", "instructor.html", "next-steps.html", "analysis.html", "examples/starter.html", "examples/my-checklist.html"):
     zh=ROOT/relative; en=ROOT/"en"/relative
     if not zh.is_file() or not en.is_file():
         errors.append(f"Bilingual counterpart missing: {relative}");continue
@@ -149,6 +149,9 @@ for file in ROOT.rglob("*"):
     for pattern,label in patterns:
         if re.search(pattern,content):errors.append(f"{file.relative_to(ROOT)}: {label}")
 checks.append("Focused public-content scan: no private topology, Notion URLs, or high-signal secrets")
+analysis_spec=importlib.util.spec_from_file_location("validate_analysis",ROOT/"scripts"/"validate_analysis.py")
+analysis_module=importlib.util.module_from_spec(analysis_spec);analysis_spec.loader.exec_module(analysis_module)
+analysis_module.validate()
 for msg in checks:print("PASS "+msg)
 if errors:
     for msg in errors:print("FAIL "+msg)

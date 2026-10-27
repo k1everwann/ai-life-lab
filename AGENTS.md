@@ -17,3 +17,4 @@ Public Traditional Chinese and English teaching materials for families and AI be
 - Keep README.md as the entry point and HANDOFF.md as delivery and validation status.
 - Keep the Chinese and English lessons, dynamic prompts, feedback, examples, and after-class paths equivalent. Language switches stay visible on narrow screens and warn before discarding edited text or code. Keep learner input unchanged.
 - After-class progress is optional, shared between languages, and self-reported. Never imply a checked stage automatically verifies a learner's project.
+- Everyday analysis is a separate two-lesson course, 60 minutes per lesson. Lesson 1 uses September only; lesson 2 adds October. Keep unknown amounts distinct from zero and known subtotals distinct from complete totals. Public travel reconstructions use fictional data, with no private source links or real locations. Market exercises compare fictional public-style volume data, not account performance.
