@@ -1,39 +1,476 @@
 <!doctype html>
-<html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="A short talk on everyday AI: explore card spending, travel, and data comparisons, then practice asking, creating, and checking."><meta name="theme-color" content="#ffffff"><title>AI Life Lab | Course materials</title><link rel="stylesheet" href="../styles.css?v=5"><script src="script.js?v=4" defer></script><script src="../language.js" defer></script><link rel="stylesheet" href="../analysis.css?v=1"></head>
-<body class="course-page"><a class="skip" href="#main">Skip to main content</a>
-<header class="site-header"><a class="brand" href="#top">AI Life Lab<span>Everyday AI · A short talk</span></a><nav aria-label="Main navigation"><a href="#classroom">Class practice</a><a href="instructor.html">Instructor and downloads</a><a href="analysis.html">Everyday analysis</a><a href="next-steps.html">After-class practice</a></nav><div class="language-switch" role="group" aria-label="Language"><a href="../index.html" data-language-switch="zh-Hant" lang="zh-Hant">繁體中文</a><a href="index.html" data-language-switch="en" aria-current="page">English</a></div></header>
-<aside class="course-sidebar"><p class="sidebar-title">Course contents</p><nav aria-label="Course contents"><a href="#top">Overview</a><a href="#showcase">Project examples</a><a href="#principles">Basic principles</a><a href="#classroom" data-select-route="phone">A　Phone: everyday tasks</a><a href="#classroom" data-select-route="computer">B　Computer: build a webpage</a><a href="#takeaway">Takeaway card</a><a href="instructor.html">Instructor guide and downloads</a><a href="analysis.html">Everyday analysis</a><a href="next-steps.html">After-class practice</a></nav><div class="sidebar-note">AI beginners<br>60 minutes per route</div><a class="sidebar-source" href="https://github.com/k1everwann/ai-life-lab" target="_blank" rel="noopener">Source on GitHub ↗</a></aside>
-<details class="mobile-toc"><summary>Course contents</summary><nav aria-label="Course contents"><a href="#top">Overview</a><a href="#showcase">Project examples</a><a href="#principles">Basic principles</a><a href="#classroom" data-select-route="phone">A　Phone: everyday tasks</a><a href="#classroom" data-select-route="computer">B　Computer: build a webpage</a><a href="#takeaway">Takeaway card</a><a href="instructor.html">Instructor guide and downloads</a><a href="analysis.html">Everyday analysis</a><a href="next-steps.html">After-class practice</a></nav></details>
-<main id="main"><section id="top" class="course-overview wrap"><p class="breadcrumb">Course materials / AI basics</p><h1>Everyday AI: a short talk</h1><p class="lead">See what AI can help you do, then pick an everyday question and try it.</p><div class="overview-meta"><span>For: AI beginners</span><span>Bring: a phone or computer</span><span>Method: demonstration, practice, checking</span></div>
-<div class="analysis-entry"><h2>What would you like AI to help you understand?</h2><p>Choose a familiar problem. Use fictional data to practice a short request, a follow-up, source checks, and saving the result.</p><div class="table-scroll"><table><thead><tr><th>Everyday question</th><th>What you take away</th></tr></thead><tbody><tr><td><a href="analysis.html#credit">Where did my card spending go this month?</a></td><td>A category breakdown, known monthly differences, and missing-data notes.</td></tr><tr><td><a href="analysis.html#travel">Does this trip fit the time and budget?</a></td><td>Per-person/group cost checks, time conflicts, and a location sketch.</td></tr><tr><td><a href="analysis.html#market">What changed in stock and futures data?</a></td><td>Comparable volume changes, source rows, and unit/contract checks.</td></tr></tbody></table></div><p><a class="text-link" href="analysis.html#lessons">Everyday data analysis: two consecutive 60-minute lessons →</a></p></div>
-<div class="table-scroll overview-table"><table><caption class="sr-only">Course routes and entry points</caption><thead><tr><th>Route</th><th>What you will practice</th><th>Start</th></tr></thead><tbody><tr><td><strong>A　Phone: everyday tasks</strong><small>ChatGPT or an available text AI</small></td><td>Organize everyday notices, check a task list, and learn about email and cloud-drive connectors.</td><td><a href="#classroom" data-select-route="phone">Phone lesson →</a></td></tr><tr><td><strong>B　Computer: build a webpage</strong><small>Codex, Claude Code, or a coding AI</small></td><td>Write a Build request, create your own checklist webpage, revise it, and test it.</td><td><a href="#classroom" data-select-route="computer">Computer lesson →</a></td></tr></tbody></table></div>
-<p class="overview-downloads"><a href="instructor.html">English instructor guide</a><span>·</span><a href="../downloads/instructor-guide.pdf" target="_blank" rel="noopener">Instructor guide — Traditional Chinese PDF</a><span>·</span><a href="../downloads/student-cards.pdf" target="_blank" rel="noopener">Student cards — Traditional Chinese PDF</a></p></section>
-<section id="showcase" class="section wrap"><div class="section-heading"><div><p class="eyebrow">Shared opening · Project examples</p><h2>Start with something you want to do</h2></div><p>During the lesson, spend about 90 seconds each on investment research and the study website. Browse the other examples yourself. Find one small task you would like to complete.</p></div><p class="privacy-note"><strong>Public demonstration boundaries:</strong> These interactive examples are reconstructed with fictional data. They are not screenshots of private pages and do not embed or connect to private systems.</p><div class="showcase-tabs" role="tablist" aria-label="Project examples"><button id="show-market" role="tab" aria-selected="true" aria-controls="showcase-panel" data-showcase="market">Investment research</button><button id="show-study" role="tab" aria-selected="false" aria-controls="showcase-panel" data-showcase="study" tabindex="-1">Study website</button><button id="show-outfit" role="tab" aria-selected="false" aria-controls="showcase-panel" data-showcase="outfit" tabindex="-1">Daily outfits</button><button id="show-collection" role="tab" aria-selected="false" aria-controls="showcase-panel" data-showcase="collection" tabindex="-1">Books and screen stories</button><button id="show-guide" role="tab" aria-selected="false" aria-controls="showcase-panel" data-showcase="guide" tabindex="-1">Further learning</button></div><div id="showcase-panel" class="showcase-panel" role="tabpanel" aria-labelledby="show-market" tabindex="0"></div><p class="caption">Feature summaries were checked against project documentation on 2026-10-25. Today, you can start with a checking list or a three-question quiz of your own.</p></section>
-<section id="principles" class="principles-section"><div class="wrap section"><p class="eyebrow">Shared foundations</p><h2>Three basic ideas about AI</h2><div class="principle-grid"><article><span class="step-number">01</span><h3>Models generate content</h3><p>A model learns patterns from many examples and generates text or code from the material in front of it. A fluent answer can still contain invented details.</p></article><article><span class="step-number">02</span><h3>Tools get data or take actions</h3><p>You can paste text, provide files, or authorize a connector to find information. What it can read and do depends on its tools and permissions.</p></article><article><span class="step-number">03</span><h3>You decide whether the result is usable</h3><p>Read the original, check dates, calculate totals, and try the buttons. A generated list does not complete a registration. Generated code does not prove a feature works.</p></article></div><div class="context-lab"><div><h3>One piece of context can change the answer.</h3><p>“For tomorrow's activity, I should bring ___.” Choose a context and see a possible continuation.</p><div class="segmented" aria-label="Choose an activity context"><button data-context="picnic" aria-pressed="true">Park picnic</button><button data-context="library" aria-pressed="false">Library study</button><button data-context="unknown" aria-pressed="false">Not sure yet</button></div></div><div class="context-result" aria-live="polite"><strong id="context-answer">A picnic mat, water, and trash bags</strong><p id="context-note">Context helps produce suitable suggestions. Check the activity notice for the actual rules.</p><small>A fixed teaching example. It does not call AI or show internal model probabilities.</small></div></div><div class="flow-strip" aria-label="AI workflow"><span>Explain the request</span><b aria-hidden="true">→</b><span>Provide material</span><b aria-hidden="true">→</b><span>AI drafts a result</span><b aria-hidden="true">→</b><span>Check and revise</span></div></div></section>
-<section id="classroom" class="section wrap"><div class="section-heading"><div><p class="eyebrow">Class practice</p><h2>Choose your learning route</h2></div><p>Each route is a complete 60-minute lesson. Choose according to your device and preparation.</p></div><div class="route-switch" role="tablist" aria-label="Choose a lesson route"><button id="route-phone" role="tab" aria-controls="phone-panel" aria-selected="true" data-route="phone"><span>A</span><strong>I only have a phone</strong><small>Organize information and find tasks</small></button><button id="route-computer" role="tab" aria-controls="computer-panel" aria-selected="false" data-route="computer" tabindex="-1"><span>B</span><strong>I have a computer and an AI tool</strong><small>Build a small webpage of my own</small></button></div><div class="copy-row"><button id="share-route" class="button small outline">Copy this route's share link</button><a class="text-link" href="instructor.html">Both lesson plans and downloads →</a></div>
-<div id="phone-panel" role="tabpanel" aria-labelledby="route-phone" class="route-panel"><div class="route-intro"><div><p class="eyebrow">Route A · 60 minutes</p><h3>Phone: organize notices and verify information</h3><p>Use ChatGPT or another available text AI on your phone. The core exercise does not require access to private email. If Gmail or Google Drive connectors are available, learn how to retrieve information too.</p></div><a class="text-link" href="../downloads/student-cards.pdf" target="_blank" rel="noopener">Student cards — Traditional Chinese PDF ↗</a></div><details class="timeline"><summary>View this lesson's 60-minute schedule</summary><ol><li><b>0–7 min</b>Project examples and shared principles</li><li><b>7–15 min</b>Read notices and find mistakes in a draft</li><li><b>15–23 min</b>Start with a short request, spot gaps, add one requirement</li><li><b>23–38 min</b>Five phone steps and one revision</li><li><b>38–48 min</b>Gmail and Drive demonstrations, about five minutes each</li><li><b>48–55 min</b>Check originals, publishers, and the budget</li><li><b>55–60 min</b>Save your result and answer an individual exit question</li></ol></details>
-<div class="lesson-head"><span class="round-number">1</span><div><h3>Give AI material everyone can understand.</h3><p>All four notices below are fictional teaching data. The scenario date is fixed at 2026-11-02. All dates and times use Asia/Taipei.</p></div></div><div class="message-grid"><article class="message"><span class="tiny-tag">Notice A · Nov 2</span><h4>Community nature observation</h4><p>Activity: Nov 8 (Sun), 09:00–12:00. Registration deadline: Nov 5 (Thu), 18:00. Register through the community form. Registration is successful only after a confirmation email.</p></article><article class="message"><span class="tiny-tag">Notice B · Nov 1 · Old notice</span><h4>Craft class time</h4><p>Originally scheduled for Nov 7 (Sat), 10:00, in the first-floor classroom.</p></article><article class="message"><span class="tiny-tag">Notice C · Nov 2 · Correction</span><h4>Craft class rescheduled</h4><p>The Nov 1 notice is updated: Nov 7 (Sat), 14:00, now in the second-floor classroom. Reply by Nov 4 (Wed), 20:00, to say whether you can attend.</p></article><article class="message"><span class="tiny-tag">Notice D · Nov 2</span><h4>Order pickup reminder</h4><p>Collect the parcel at the designated store before Nov 6 (Fri), as stated in the notice. Store opening hours and an exact final pickup time are not provided.</p></article></div>
-<div class="practice-note"><strong>How can a 12-year-old participate?</strong><p>An instructor or parent operates ChatGPT. The child explains the request, makes choices, and checks the result. Without an adult operator, use the prepared draft on this page; no account is needed. <a href="https://help.openai.com/en/articles/8313401-is-chatgpt-safe-for-all-ages" target="_blank" rel="noopener">Official age guidance ↗</a></p></div><div class="copy-row"><button class="button" data-copy="phone-short">Copy notices + short task</button><button class="button outline" data-copy="notices">Copy notices only</button><a class="text-link" href="https://chatgpt.com/" target="_blank" rel="noopener">Open ChatGPT ↗</a></div>
-<details class="operation-guide" open><summary>First time using your phone for this? Follow these five steps</summary><ol><li><strong>Copy:</strong> Tap “Copy notices + short task” above and look for the copied message. If a manual-copy box appears, select and copy its text.</li><li><strong>Paste:</strong> Open an available AI conversation. Press and hold its message field, then choose Paste. Check that both the notices and task are present, then send.</li><li><strong>Return:</strong> After the reply, switch apps or tabs back to AI Life Lab. Keep the course tab open.</li><li><strong>Check and ask again:</strong> Compare with notices A–D, find errors or gaps, then use your follow-up requirement in the next step to request a revision.</li><li><strong>Keep your result:</strong> Copy the corrected list into “My checked result today” below. Then copy it to a notes app or download the takeaway card.</li></ol><a class="text-link" href="#my-completed">Go to saving your result →</a></details><p class="caption"><a href="downloads/family-notices.txt" download>Download notices as text</a> · <a href="downloads/travel-budget.csv" download>Download budget CSV</a> · <a href="downloads/travel-budget-notes.txt" download>Read the budget notes</a></p>
-<div class="lesson-head"><span class="round-number">2</span><div><h3>Start with one sentence, then clarify what you need.</h3><p>You do not need a long prompt at the start. Get a draft and see what needs more explanation.</p></div></div><div class="prompt-stages"><article><h4>① Ask for one thing</h4><p>Please organize notices A–D into a task list.</p><small>Use this with the four copied notices. Actual AI replies may vary.</small></article><article><h4>② See what is missing</h4><p>Are deadlines separate from activity dates? Was the correction used? Were unspecified opening hours invented as facts?</p><small>The checking questions below use a prepared draft with deliberate problems, not your current AI reply.</small></article><article><h4>③ Add one requirement yourself</h4><label for="phone-followup">What I most want AI to fix</label><textarea id="phone-followup" rows="3" maxlength="500">Please include the notice source for each task. Mark unspecified times as “to confirm”; do not guess.</textarea><button id="copy-followup" class="button small outline">Copy my follow-up requirement</button></article></div>
-<details class="answer-key"><summary>After one revision, view the combined task</summary><div class="prompt-box"><p>Use only notices A–D to draft tasks. Include what to do, the action deadline, activity time, source, and information to confirm. Corrections take priority over old notices. Separate activity dates from registration deadlines. Mark unspecified times or statuses as “to confirm”; do not invent them. Organize only: do not register, send replies, or pay.</p><button class="button small outline" data-copy="phone-full">Copy notices + combined task</button></div></details><div class="practice-note"><strong>Cannot use AI yet?</strong><p>Use the prepared draft below to judge and revise. In an adult-operated group, the child supplies the request and identifies sources while the adult sends it. Record platform operation separately when the learner did not do it personally.</p></div>
-<div class="lesson-head"><span class="round-number">3</span><div><h3>A neat answer still needs checking against the original.</h3><p>This draft deliberately contains problems. Choose a judgment for each statement, then read the explanation.</p></div></div><form id="audit-form" class="audit-form"><fieldset><legend>① You can wait until Nov 8 to register for nature observation.</legend><label><input type="radio" name="q1" value="supported" required> Supported</label><label><input type="radio" name="q1" value="contradicted"> Contradicted by the original</label><label><input type="radio" name="q1" value="unknown"> Cannot determine yet</label></fieldset><fieldset><legend>② The craft class is now Nov 7 at 14:00, on the second floor.</legend><label><input type="radio" name="q2" value="supported" required> Supported</label><label><input type="radio" name="q2" value="contradicted"> Contradicted by the original</label><label><input type="radio" name="q2" value="unknown"> Cannot determine yet</label></fieldset><fieldset><legend>③ The pickup store is open until 22:00 every day.</legend><label><input type="radio" name="q3" value="supported" required> Supported</label><label><input type="radio" name="q3" value="contradicted"> Contradicted by the original</label><label><input type="radio" name="q3" value="unknown"> Cannot determine yet</label></fieldset><button class="button" type="submit">Check my judgments</button><div id="audit-feedback" class="feedback" aria-live="polite"></div></form>
-<details class="answer-key"><summary>After practice, view the reference task list</summary><div class="table-scroll"><table><caption>Teaching reference answers; these actions have not actually been completed</caption><thead><tr><th>What to do</th><th>Action deadline</th><th>Activity time</th><th>Source / to confirm</th></tr></thead><tbody><tr><td>Register for nature observation using the form</td><td>Nov 5, 18:00</td><td>Nov 8, 09:00–12:00</td><td>A; success still requires a confirmation email</td></tr><tr><td>Reply about craft class attendance</td><td>Nov 4, 20:00</td><td>Nov 7, 14:00, second floor</td><td>C updates B; whether a reply was sent is unknown</td></tr><tr><td>Collect the parcel</td><td>Before Nov 6 as stated; exact time to confirm</td><td>Not applicable</td><td>D; check opening hours</td></tr></tbody></table></div></details>
-<div class="source-check"><h4>Check both faithful summaries and trustworthy originals.</h4><p>First ask whether AI faithfully summarized the source. Then ask where the original information came from. Claims in forwarded messages, screenshots, and emails may still need confirmation from the publisher.</p><ul><li>Rescheduled activity: return to the organizer's official notice and check the publication date and updated version.</li><li>An unknown message asks for payment or login: confirm using an official website or contact method you already know, rather than relying only on its links.</li><li>Stock information: check official company or exchange announcements, data timestamps, and units. Neither an AI summary nor a group rumor is announcement evidence.</li></ul><p><strong>Quick practice:</strong> AI correctly copied a forwarded message saying “the activity moved to the afternoon.” What is still missing?</p><details><summary>See how to judge it</summary><p>The organizer's official update is still missing. You can say what the forwarded text claims, but cannot use it alone to confirm that the activity really changed.</p></details></div>
-<div class="connector-section"><div><p class="eyebrow">Instructor demonstration · About five minutes each for Gmail / Drive</p><h3>The same method works with email and cloud-drive material.</h3><p>Check the connected account, allowed actions, and search scope first. Search results are not guaranteed complete. Finding a filename does not prove the file contents were read. Open and check the source.</p><p class="small-text">Mobile availability depends on account plan, region, plugins, and permissions. If connectors are unavailable, paste text or provide an accessible file to complete the same exercise.</p></div><div class="connector-prompts"><article><h4>Gmail: find recent matters that may need action</h4><p>From the emails accessible in this search for the last seven days, list matters needing my reply or action. Include original email sources, deadlines, and search scope. Read does not mean completed. Mark unclear deadlines “to confirm.” Read and organize only.</p><button class="button small outline" data-copy="gmail">Copy Gmail task</button></article><article><h4>Google Drive: compare travel plans</h4><p>Read only the plan documents I specify. First confirm dates, headcount, currency, and per-person or whole-group pricing. Compare totals and included items, cite document sources, and mark gaps without guessing.</p><button class="button small outline" data-copy="drive">Copy Drive task</button></article></div></div>
-<div class="budget-lab"><div><p class="eyebrow">Data exercise · Fictional data</p><h3>Does a lower-looking price mean a lower total?</h3><p>Two day trips for four adults on the same day, all in New Taiwan dollars. Plan A costs NT$800 per person plus NT$1,200 transport for the whole group. Plan B costs NT$4,000 for the whole group, including transport and lunch. Plan A's lunch cost is missing.</p><label for="budget-answer">Plan A's known total cost (NT$)</label><div class="inline-form"><input id="budget-answer" type="number" min="0" inputmode="numeric" placeholder="Enter an amount"><button id="check-budget" class="button small">Check</button></div><p id="budget-feedback" class="feedback" aria-live="polite"></p><button class="text-button" data-copy="budget">Copy budget data and task</button></div><div class="budget-cards"><div><small>Plan A · Known costs</small><strong>800 × 4 ＋ 1,200</strong><span>Lunch cost is missing</span></div><div><small>Plan B · Known total</small><strong>NT$ 4,000</strong><span>Includes transport and lunch</span></div></div></div></div>
-<div id="computer-panel" role="tabpanel" aria-labelledby="route-computer" class="route-panel" hidden><div class="route-intro"><div><p class="eyebrow">Route B · 60 minutes</p><h3>Computer: build a personal checklist webpage</h3><p>Use a prepared Codex, Claude Code, or another AI that generates code. VS Code is an editor; confirm that an AI tool is also available in your setup. Complete installation and login before class.</p></div><a class="text-link" href="examples/my-checklist.html" target="_blank" rel="noopener">Try the finished example first ↗</a></div>
-<section class="beginner-start" id="beginner-start"><h3>Your first webpage: four places and six steps</h3><p><strong>Build request:</strong> the words explaining what you want. <strong>AI conversation or coding tool:</strong> where you send that request. <strong>HTML file:</strong> a saved file containing the code, such as index.html. <strong>Browser:</strong> where you open and operate that file. The Build request box below contains instructions for AI; the preview box later needs complete HTML code.</p><ol><li>Create a new practice folder.</li><li>Fill in your title, purpose, and at least three items below. Choose “Create my Build request,” then “Copy Build request.”</li><li>Paste the Build request into your available AI tool and send it.</li><li>If the tool creates files, find its index.html in the practice folder. If it returns text, copy the complete HTML, from the document start to the final closing tag. Exclude surrounding explanation and Markdown fences such as <code>```html</code> and <code>```</code>.</li><li><strong>Save the file</strong> as UTF-8 plain text named <code>index.html</code>, rather than <code>index.html.txt</code>. In Windows Notepad, use Save As and choose “All files” for the file type; show filename extensions to check the result. In macOS TextEdit, choose “Make Plain Text” before saving. If a coding tool already created the HTML file, check its name and location.</li><li>Open index.html in a browser. Check two items, uncheck one, then reset everything: the count should be <strong>2 → 1 → 0</strong>. You can also paste the complete code into this lesson's preview later.</li></ol><p><strong>File saved:</strong> your HTML file exists and can be reopened. <strong>Keep checked progress:</strong> the webpage remembers checked items after reopening; our first example does not. <strong>Public website:</strong> other people can visit a published URL. Saving or previewing the file does not publish it.</p></section>
-<details class="timeline"><summary>View this lesson's 60-minute schedule</summary><ol><li><b>0–7 min</b>Project examples and shared principles</li><li><b>7–15 min</b>Try the example and write three requirements</li><li><b>15–23 min</b>Demonstrate generating, saving, and preview</li><li><b>23–38 min</b>Complete a first version that opens</li><li><b>38–48 min</b>Test it and request one revision from AI</li><li><b>48–55 min</b>Test narrow screens, checking, and reset with a partner</li><li><b>55–60 min</b>Save your work and explain its purpose and limits</li></ol></details>
-<div class="lesson-head"><span class="round-number">1</span><div><h3>Today's project: my everyday checklist.</h3><p>Choose travel packing, event preparation, a reading plan, or another small thing you actually want to organize.</p></div></div><div class="build-grid"><form id="brief-form" class="brief-form"><label for="project-title">Webpage title</label><input id="project-title" maxlength="50" value="My travel preparation checklist"><label for="project-purpose">What problem should it solve?</label><input id="project-purpose" maxlength="140" value="Quickly check that I have packed everything before leaving"><label for="project-items">Checklist items, one per line (at least three)</label><textarea id="project-items" rows="5" maxlength="1200">Confirm transport
-Prepare rain gear
-Bring a water bottle
-Check charging cables</textarea><button class="button" type="submit">Create my Build request</button></form><div class="brief-output"><span class="card-label">Build request to give AI</span><textarea id="build-prompt" rows="13" readonly aria-label="Build request content"></textarea><button class="button small" data-copy="build">Copy Build request</button><p class="caption">This only organizes your requirements. It does not call AI or create code for you. Paste this Build request into your AI tool; put its complete HTML result in the preview box later.</p></div></div>
-<div class="tool-steps"><article><b>Codex / Claude Code</b><p>Create a new practice folder and let the tool work only there. Paste the Build request, ask it to create index.html, then open the HTML file in a browser.</p></article><article><b>Alternative: a chat AI</b><p>Ask for complete HTML. Copy it into a plain-text editor and save the file as index.html. Check that its extension is not .html.txt, then open it in a browser.</p></article><article><b>Need a starter?</b><p>Download the starter, then ask AI to add checkboxes, a live count, and reset. Without AI, test the finished example first to understand what to check.</p><a class="text-link" href="examples/starter.html" download>Download starter HTML ↓</a></article></div>
-<div class="lesson-head"><span class="round-number">2</span><div><h3>Learning to request a revision is a skill too.</h3><p>Say what you did, what you saw, and what you expected. Then ask AI to fix it.</p></div></div><div class="prompt-box"><span class="card-label">A revision based on an observed problem</span><p><strong>Use this only if the issue actually occurs:</strong> After I check two items, the display still says 0 completed. Please fix the count update and list tests for checking, unchecking, and resetting everything. Keep my title and checklist text.</p><button class="button small outline" data-copy="revision">Copy revision request</button><p>If the count already works, make a real change instead: add “Bring a small towel” to my checklist, keep existing items and interactions, then tell me how to check the new total and reset.</p><button class="button small outline" data-copy="feature">Copy feature request</button></div>
-<div class="lesson-head"><span class="round-number">3</span><div><h3>Paste your HTML code and try the first version.</h3><p>This runs code in an isolated frame. Use only trusted practice code without private data. This site does not actively upload your code.</p></div></div><div class="preview-lab"><label for="html-code">Complete HTML code</label><textarea id="html-code" rows="8" spellcheck="false" placeholder="Paste the complete HTML generated by AI, or load the finished example"></textarea><div class="copy-row"><button id="load-sample" class="button outline">Load finished example</button><button id="run-preview" class="button">Preview my webpage</button><button id="download-code" class="button outline">Download my HTML file</button></div><p id="preview-status" class="feedback" aria-live="polite">No preview yet. Code stays in this page's memory and is not saved automatically.</p><iframe id="code-preview" title="Isolated HTML teaching preview" sandbox="allow-scripts" referrerpolicy="no-referrer"></iframe><p class="caption">Preview restricts external resources, pop-ups, and form submission. Test downloads and browser storage in a standalone webpage. This isolated preview does not replace a code security review.</p></div>
-<div class="acceptance"><h3>Check your work: try these four things yourself</h3><div class="checklist"><label><input type="checkbox" data-check="build-open"> I can reopen the HTML file and see my title and at least three items.</label><label><input type="checkbox" data-check="build-interact"> Checking, unchecking, and reset all show the correct count.</label><label><input type="checkbox" data-check="build-mobile"> Content and buttons remain readable in a narrow window.</label><label><input type="checkbox" data-check="build-revise"> I made one change of my own and tested it again.</label></div><p>save the file, open a preview, and publish a public website are separate steps. This lesson aims for a usable personal project. Remove private information before choosing how to share it publicly.</p></div></div></section>
-<section id="takeaway" class="takeaway-section"><div class="wrap section"><p class="eyebrow">Save your result and After-class practice</p><h2>Takeaway card</h2><div class="takeaway-grid"><div><label for="my-completed">My checked result today</label><textarea id="my-completed" maxlength="4000" rows="6" placeholder="Paste your corrected list here. Keep sources, deadlines, and information to confirm. Use fictional practice data only."></textarea><label for="my-next-task">What I want AI to help with next</label><textarea id="my-next-task" maxlength="500" rows="3" placeholder="For example: everyday notices, a stock-data checking list, or my own study quiz"></textarea><label for="my-check">How I will check the result</label><textarea id="my-check" maxlength="500" rows="3" placeholder="For example: compare the notice, then confirm with the organizer; check stock dates and units against official announcements"></textarea><div class="copy-row"><button id="copy-card" class="button outline">Copy takeaway card for my notes</button><button id="download-card" class="button">Download my takeaway card</button></div><p id="card-status" class="feedback" aria-live="polite"></p><details class="operation-guide"><summary>Where do I find it after copying or downloading?</summary><ul><li>Copy: open your phone's notes app, create a note, press and hold to paste, and confirm it has saved.</li><li>Download: look in your browser's downloads or your phone's Files downloads folder. Open ai-life-takeaway.txt. The location depends on phone and browser settings.</li><li>Before leaving, reopen the note or downloaded file to confirm your result is really there. If you cannot find a download, use copying instead.</li></ul></details><p class="caption">Results, follow-up requests, and free text are not uploaded or saved automatically. Copy or download them before closing. Checkbox and checking-question progress stay only in this browser.</p></div><div class="takeaway-aside"><h3>Remember these four questions.</h3><ol><li>What do I want to complete?</li><li>Which material should it use?</li><li>If information is missing, will it say so?</li><li>What will I check myself?</li></ol><a href="../downloads/student-cards.pdf" class="text-link" target="_blank" rel="noopener">Student cards — Traditional Chinese PDF ↗</a><a href="../downloads/instructor-guide.pdf" class="text-link" target="_blank" rel="noopener">Both routes — Traditional Chinese PDF ↗</a><a href="instructor.html" class="text-link">English instructor guide and fallback plans →</a><a href="next-steps.html" class="text-link">After-class practice →</a></div></div></div></section>
-<section class="resources wrap"><h2>Keep learning</h2><div class="resource-links"><a href="next-steps.html"><strong>After-class practice →</strong><span>Choose a small next step and keep checking your results.</span></a><a href="https://k1everwann.github.io/codex-starter-guide/" target="_blank" rel="noopener"><strong>Engineering starter guide ↗</strong><span>Explore Git, Python, data, and connectors when you need them. External material may be in Traditional Chinese.</span></a><a href="https://learn.chatgpt.com/docs/use-chatgpt" target="_blank" rel="noopener"><strong>Official ChatGPT guidance ↗</strong><span>Learn about supplying material, using tools, and checking results.</span></a><a href="https://code.claude.com/docs/en/quickstart" target="_blank" rel="noopener"><strong>Official Claude Code quickstart ↗</strong><span>Prepare tools before the computer lesson.</span></a></div></section></main>
-<footer class="site-footer wrap"><p><strong>AI Life Lab</strong>　Requests, material, practice, and verification.</p><p>This course site does not connect to email or cloud drives or collect your input. An instructor or parent demonstrates AI for learners below the platform's permitted age; learners use this page for judgment practice.</p><p><a href="https://github.com/k1everwann/ai-life-lab" target="_blank" rel="noopener">Website source ↗</a> · Content checked 2026-10-25 (Asia/Taipei) · <button id="reset-progress" class="text-button">Clear practice progress on this device</button></p></footer><div id="toast" role="status" aria-live="polite"></div></body></html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="See four finished projects, then use AI to make a travel preparation list."><meta name="theme-color" content="#ffffff"><title>Everyday AI: a short talk</title><link rel="stylesheet" href="../styles.css?v=5"><link rel="stylesheet" href="../seminar.css?v=1"><script src="../seminar.js?v=1" defer></script><script src="../language.js?v=4" defer></script><link rel="alternate" hreflang="zh-Hant" href="../index.html"><link rel="alternate" hreflang="en" href="../en/index.html"></head>
+<body class="seminar-page"><a class="skip" href="#main">Skip to main content</a><header class="site-header"><a class="brand" href="#top">AI Life Lab</a><nav aria-label="Lesson navigation"><a href="#showcase">See projects</a><a href="#principles">Connect data</a><a href="#classroom">Try it</a><a href="#takeaway">Take it with you</a></nav><div class="language-switch" role="group" aria-label="語言 / Language"><a href="../index.html" data-language-switch="zh-Hant" lang="zh-Hant" >繁體中文</a><a href="../en/index.html" data-language-switch="en" lang="en" aria-current="page">English</a></div></header>
+<main id="main" class="seminar-main">
+<section id="top" class="wrap section intro"><p class="eyebrow">For beginners · On a computer · 60 minutes</p><h1>Everyday AI: a short talk</h1><p class="lead">See four finished projects, then use AI to make a travel preparation list.</p><ol class="chapter-strip"><li><a href="#showcase"><span>1</span>See projects</a></li><li><a href="#principles"><span>2</span>Connect data</a></li><li><a href="#classroom"><span>3</span>Try it</a></li><li><a href="#takeaway"><span>4</span>Take it with you</a></li></ol><details class="seminar-schedule"><summary>How do the 60 minutes work?</summary><ol><li><span>Welcome</span><b>5 min</b></li><li><span>Four projects</span><b>12 min</b></li><li><span>Gmail demo</span><b>8 min</b></li><li><span>Drive demo</span><b>8 min</b></li><li><span>Notion demo</span><b>9 min</b></li><li><span>Your practice</span><b>15 min</b></li><li><span>Save and take away</span><b>3 min</b></li></ol></details></section>
+<noscript><p class="wrap notice">JavaScript is off. All examples, source excerpts, and the reference result are still readable. Interactive, copy, and download buttons need JavaScript. You can select and copy the text manually.</p></noscript>
+<section id="showcase" class="wrap section"><p class="eyebrow">01 · See projects · 12 min</p><h2>First, see what an idea can become</h2><p class="muted">Interactive examples use fictional data; the instructor shows their own finished projects live.</p><div class="demo-switch" role="group" aria-label="Choose a project"><button type="button" data-demo="travel" aria-controls="demo-travel" aria-pressed="true">Travel</button><button type="button" data-demo="study" aria-controls="demo-study" aria-pressed="false">Japanese N1</button><button type="button" data-demo="home" aria-controls="demo-home" aria-pressed="false">Home</button><button type="button" data-demo="market" aria-controls="demo-market" aria-pressed="false">TickForge</button></div>
+<article id="demo-travel" class="demo-panel" aria-labelledby="travel-title"><h3 id="travel-title">Travel</h3><p>The aim was to keep an itinerary together. Now a map makes each stop’s time and plan easy to find.</p><p class="small-text">Choose a stop on the map to see its plan.</p><div class="travel-layout"><div class="route-map"><svg viewBox="0 0 600 210" role="img" aria-label="Schematic route between three fictional places; not a real map"><path d="M 65 50 C 220 45 230 185 390 155 S 540 90 555 60" fill="none" stroke="#b2c4db" stroke-width="5" stroke-dasharray="8 7"/><circle cx="65" cy="50" r="8" fill="#2458a6"/><circle cx="320" cy="148" r="8" fill="#2458a6"/><circle cx="555" cy="60" r="8" fill="#2458a6"/></svg><button type="button" data-stop="0" class="map-stop stop-0" aria-pressed="true"><span>09:00</span>Cloudshore Station</button><button type="button" data-stop="1" class="map-stop stop-1" aria-pressed="false"><span>11:00</span>Windhill Gallery</button><button type="button" data-stop="2" class="map-stop stop-2" aria-pressed="false"><span>To confirm</span>Starbay Inn</button></div><div class="travel-detail"><p id="travel-detail" aria-live="polite"><strong>09:00 Cloudshore Station</strong><br>Meet up and check tickets and luggage.</p><div class="photo-placeholder" role="img" aria-label="Fictional destination image placeholder"><span aria-hidden="true">▧</span> Fictional destination image placeholder</div></div></div></article>
+<article id="demo-study" class="demo-panel" aria-labelledby="study-title"><h3 id="study-title">Japanese N1</h3><p>The aim was to understand Japanese usage. Now you can answer a question, read an explanation, and add it to review.</p><p class="small-text">Fixed teaching example · Choose the expression that fits the sentence.</p><p class="japanese-question" lang="ja">選手たちは汗（　）になって練習を続けた。</p><div class="quiz-options" role="group" aria-label="Answer choices"><button type="button" data-answer="まみれ" lang="ja" aria-pressed="false">まみれ</button><button type="button" data-answer="に限って" lang="ja" aria-pressed="false">に限って</button><button type="button" data-answer="からこそ" lang="ja" aria-pressed="false">からこそ</button><button type="button" data-answer="に至って" lang="ja" aria-pressed="false">に至って</button></div><div id="quiz-feedback" class="feedback" aria-live="polite"></div><details class="quiz-reference"><summary>Read the explanation</summary><p>汗まみれ means covered in sweat. まみれ follows nouns such as sweat or mud to mean covered in that substance. に限って, からこそ, and に至って cannot complete 汗（　）になって here. This example practises the expression 汗まみれ.</p></details><button type="button" id="review-add" class="button outline" aria-pressed="false">Add to review on this page</button><p id="review-feedback" class="small-text" aria-live="polite"></p></article>
+<article id="demo-home" class="demo-panel" aria-labelledby="home-title"><h3 id="home-title">Home</h3><p>The aim was to understand the home environment. Now sensor readings can trigger an air-conditioner rule.</p><p>Rule: turn the air conditioner on at 28°C or above. This is rule-based automation, a different process from AI text generation.</p><dl class="sensor-grid" aria-live="polite"><div><dt>Temperature</dt><dd id="home-temp">27°C</dd></div><div><dt>Humidity</dt><dd>62%</dd></div><div><dt>Air conditioner</dt><dd id="home-ac">Off</dd></div></dl><div class="actions"><button type="button" data-temp="27" aria-pressed="true">Try 27°C</button><button type="button" data-temp="30" aria-pressed="false">Try 30°C</button></div><p class="small-text">Simulation on this page only; no device is connected or controlled.</p></article>
+<article id="demo-market" class="demo-panel" aria-labelledby="market-title"><h3 id="market-title">TickForge</h3><p>The aim was to understand changes in trading volume. Now two periods can be compared for the same product and unit.</p><label for="market-product">Choose one product. Stocks and futures are compared separately.</label><select id="market-product"><option value="stock">Fictional stock A</option><option value="futures">Fictional futures B (same contract)</option></select><div class="table-scroll"><table><thead><tr><th>Month</th><th>Trading volume</th></tr></thead><tbody><tr><td>2026-09</td><td id="market-value-0">12,000 shares</td></tr><tr><td>2026-10</td><td id="market-value-1">15,000 shares</td></tr></tbody></table></div><p id="market-change" class="market-change" aria-live="polite">Change between periods：+3,000 shares (+25%)</p><p class="small-text">Same product, same unit. Trading volume does not represent profit, loss, or investment performance.</p></article></section>
+<section id="principles" class="wrap section"><p class="eyebrow">02 · Connect data · 25 min</p><h2>Connect data: let AI read what you specify</h2><p>Connect an available account and permissions in your own AI tool, then specify what it may read. This website does not connect accounts. Availability depends on the tool, account, and permissions.</p><div class="connector-list"><article><h3>Gmail</h3><p class="small-text"><b>Input：</b>Selected emails<br><b>Result：</b>Times, tasks, and a draft reply</p><blockquote>From my selected booking email, list tasks and deadlines with the original email source, then draft a reply asking about check-in time.</blockquote></article><article><h3>Google Drive</h3><p class="small-text"><b>Input：</b>Selected documents and spreadsheets<br><b>Result：</b>An itinerary summary and differences</p><blockquote>Compare the two itinerary documents I specify. List time differences and missing information, with document sources.</blockquote></article><article><h3>Notion</h3><p class="small-text"><b>Input：</b>Selected existing notes<br><b>Result：</b>An organised plan or a draft page update</p><blockquote>Use my selected travel notes to organise a preparation plan and draft an update, with note sources.</blockquote></article></div><p class="notice">Read and organise a draft first. Sending email or updating a page needs a separate instruction after you check it.</p><a href="https://learn.chatgpt.com/docs/plugins" target="_blank" rel="noopener">Learn about connecting data (official guide) ↗</a></section>
+<section id="classroom" class="wrap section"><p class="eyebrow">03 · Try it · 15 min</p><h2>Your turn: my travel preparation checklist</h2><p>Practise with the three fictional excerpts below; no account connection is needed. Keep this lesson tab open and open an AI tool you can already use in another tab.</p><p class="notice">Choose your language before typing. Switching languages or closing the page clears unsaved input; copy and save it first.</p>
+<div class="practice-step"><h3><span class="step-number">1</span>In this lesson: copy the data and first question</h3><div class="source-list"><article class="source-excerpt" data-source="A"><h4>A | Gmail booking email (fictional)</h4><p>Starbay Inn: check in on 2026/11/21 and check out on 11/22. Reply with your party size by 11/18 at 18:00. The email does not give the time when check-in is available.</p></article><article class="source-excerpt" data-source="B"><h4>B | Drive itinerary (fictional)</h4><p>Meet at Cloudshore Station on 2026/11/21 at 09:00. Download your tickets by 11/19 at 20:00. The meeting time is different from the ticket download deadline.</p></article><article class="source-excerpt" data-source="C"><h4>C | Notion preparation note (fictional)</h4><p>Pack rain gear and charging cables on the evening of 2026/11/20, finishing by 21:00. Check-in time is still unconfirmed; ask the inn before departure. There is no exact deadline recorded for that enquiry.</p></article></div><blockquote id="first-prompt">List the tasks and deadlines before departure, with sources.</blockquote><button type="button" class="button" id="copy-initial">Copy three excerpts + question</button><p id="initial-feedback" class="feedback" aria-live="polite"></p></div>
+<div class="practice-step"><h3><span class="step-number">2</span>In your AI tool: send it and read the first draft</h3><p>Switch to your AI tool, paste, and send. Read the draft, find one thing you would improve, and return here.</p></div>
+<div class="practice-step"><h3><span class="step-number">3</span>Write a follow-up here, then send it to your AI</h3><label for="learner-followup">One requirement I want to add</label><textarea id="learner-followup" rows="3" maxlength="2000" placeholder="Write one requirement in your own words…" aria-describedby="followup-hint"></textarea><p id="followup-hint" class="small-text">For example: sort by deadline; or label uncertain details “to confirm”.</p><button type="button" class="button" id="copy-followup">Copy my follow-up</button><p id="followup-feedback" class="feedback" aria-live="polite"></p><p>Paste and send the follow-up in the same AI conversation. Return here with the revised answer to check it.</p></div>
+<div class="practice-step"><h3><span class="step-number">4</span>Back here: check sources and keep your result</h3><p>Check against the original text, then consider whether the source is trustworthy. For real data, also check the sender, document version, and publication date. Ticking a box is your own self-check.</p><div class="check-list"><label><input type="checkbox" data-check="0"><span>Each item can be traced to source A, B, or C.</span></label><label><input type="checkbox" data-check="1"><span>Party size is due 11/18 at 18:00; tickets are due 11/19 at 20:00.</span></label><label><input type="checkbox" data-check="2"><span>Rain gear and charging cables must be packed by 11/20 at 21:00.</span></label><label><input type="checkbox" data-check="3"><span>11/21 at 09:00 is the meeting time; check-in time remains unconfirmed.</span></label></div><details class="example-result"><summary>Need a reference? See the fixed example result</summary><p>This teaching example was written in advance; it is not a live AI response. Without an AI tool, you can practise checking it. Mark your record “Example only”.</p><pre>• By 11/18 at 18:00: reply with party size. Source A.
+• By 11/19 at 20:00: download tickets. Source B.
+• By 11/20 at 21:00: pack rain gear and charging cables. Source C.
+• Before departure: ask the inn when check-in is available; the exact enquiry deadline is to confirm. Sources A and C.
+Reminder: 11/21 at 09:00 is the meeting time (B); the available check-in time is not given (A).</pre></details><label for="learner-result">Paste your checked result</label><textarea id="learner-result" rows="7" maxlength="20000" placeholder="Paste the checklist you have checked. Keep “to confirm” wherever information is missing."></textarea><label for="practice-mode">Which practice did I do today?</label><select id="practice-mode"><option value="unrecorded">Not recorded yet</option><option value="ai">Asked and followed up in my own AI tool</option><option value="example">Example only: read and practised checking</option></select></div></section>
+<section id="takeaway" class="wrap section"><p class="eyebrow">04 · Take it with you · 3 min</p><h2>Take away a checklist with sources</h2><p>Keep your result, your questions, and your checks. With your own data next time, use the same sequence: ask → add one requirement → check the sources.</p><p class="notice">This page does not save automatically. Copy your record into your own document or download a text file before leaving.</p><div class="actions"><button type="button" class="button" id="copy-record">Copy practice record</button><button type="button" class="button outline" id="download-record">Download record .txt</button></div><p id="record-feedback" class="feedback" aria-live="polite"></p><p class="footer-links"><a href="next-steps.html">Practise again after class →</a><a href="instructor.html">Instructor guide</a></p></section>
+</main><section id="copy-fallback" class="wrap manual-copy" hidden><label for="manual-copy">Text for manual copying</label><p>Automatic copying was unavailable. The text is below: select all and press Ctrl+C (Mac: ⌘C).</p><textarea id="manual-copy" rows="8" readonly></textarea></section><footer class="wrap seminar-footer">Practise one thing: turn information into a next step you can check.</footer><script id="seminar-data" type="application/json">{
+  "version": 1,
+  "schedule": [
+    {
+      "key": "opening",
+      "minutes": 5
+    },
+    {
+      "key": "showcase",
+      "minutes": 12
+    },
+    {
+      "key": "gmail",
+      "minutes": 8
+    },
+    {
+      "key": "drive",
+      "minutes": 8
+    },
+    {
+      "key": "notion",
+      "minutes": 9
+    },
+    {
+      "key": "practice",
+      "minutes": 15
+    },
+    {
+      "key": "takeaway",
+      "minutes": 3
+    }
+  ],
+  "quiz": {
+    "key": "n1-context",
+    "sentence": "選手たちは汗（　）になって練習を続けた。",
+    "options": [
+      "まみれ",
+      "に限って",
+      "からこそ",
+      "に至って"
+    ],
+    "answer": "まみれ"
+  },
+  "home": {
+    "threshold": 28,
+    "temperatures": [
+      27,
+      30
+    ],
+    "humidity": 62
+  },
+  "market": {
+    "periods": [
+      "2026-09",
+      "2026-10"
+    ],
+    "stock": {
+      "values": [
+        12000,
+        15000
+      ],
+      "unitKey": "shares"
+    },
+    "futures": {
+      "values": [
+        320,
+        280
+      ],
+      "unitKey": "contracts"
+    }
+  },
+  "locales": {
+    "zh-Hant": {
+      "title": "AI 生活應用小講座",
+      "lead": "先看四個成品，再用 AI 做一份旅行準備清單。",
+      "meta": "零基礎 · 使用電腦 · 60 分鐘",
+      "nav": [
+        "看成品",
+        "認識接資料",
+        "動手做",
+        "帶走"
+      ],
+      "scheduleTitle": "這 60 分鐘怎麼進行？",
+      "scheduleLabels": {
+        "opening": "開場",
+        "showcase": "四個成品",
+        "gmail": "Gmail 示範",
+        "drive": "Drive 示範",
+        "notion": "Notion 示範",
+        "practice": "自己動手做",
+        "takeaway": "保存與帶走"
+      },
+      "minute": "分",
+      "showcaseTitle": "先看：同一個想法，可以做成什麼？",
+      "fiction": "虛構資料互動示意；講師現場展示自己的成品。",
+      "demoNames": {
+        "travel": "Travel",
+        "study": "Japanese N1",
+        "home": "Home",
+        "market": "TickForge"
+      },
+      "demoIntents": {
+        "travel": "原本想把行程放在一起；現在能從地圖查看每站的時間與安排。",
+        "study": "原本想釐清日語用法；現在能做一題、看解析，再加入複習。",
+        "home": "原本想知道家中環境；現在能查看感測值，依規則切換空調狀態。",
+        "market": "原本想看懂成交量變化；現在能把同商品、同單位的兩期資料放在一起比較。"
+      },
+      "travelHint": "按地圖上的一站，查看安排。",
+      "stops": [
+        {
+          "name": "雲岸車站",
+          "time": "09:00",
+          "detail": "集合，檢查車票與行李。"
+        },
+        {
+          "name": "風丘展館",
+          "time": "11:00",
+          "detail": "看展覽，預留一小時。"
+        },
+        {
+          "name": "星灣旅店",
+          "time": "待確認",
+          "detail": "抵達與入住時間還要向旅店確認。"
+        }
+      ],
+      "photo": "虛構景點圖片佔位",
+      "mapLabel": "三個虛構地點的路線示意，非真實地圖",
+      "studyHint": "固定教學示意 · 選一個能填入句子的用法。",
+      "quizCorrect": "答對了。",
+      "quizIncorrect": "再留意一下搭配，正解是「まみれ」。",
+      "quizExplanation": "「汗まみれ」指滿身是汗。「まみれ」接在汗、泥等名詞後，表示沾滿某物。「に限って」「からこそ」「に至って」都不能在這裡接成「汗（　）になって」。這題練習的是固定搭配「汗まみれ」。",
+      "reviewAdd": "加入本頁複習",
+      "reviewDone": "已加入本頁複習",
+      "reviewNote": "複習重點：汗まみれ＝滿身是汗。重開頁面後不保留。",
+      "homeHint": "規則：溫度達 28°C 就開啟空調。這是規則自動化，與 AI 生成文字不同。",
+      "temperature": "溫度",
+      "humidity": "濕度",
+      "aircon": "空調",
+      "on": "開啟",
+      "off": "關閉",
+      "homeCool": "換成 27°C",
+      "homeWarm": "換成 30°C",
+      "homeNote": "僅本頁模擬，未連接或控制設備。",
+      "marketHint": "選一種商品；股票與期貨分開比較。",
+      "products": {
+        "stock": "虛構股票 A",
+        "futures": "虛構期貨 B（同一合約）"
+      },
+      "units": {
+        "shares": "股",
+        "contracts": "口"
+      },
+      "period": "月份",
+      "volume": "成交量",
+      "change": "兩期差異",
+      "marketNote": "同一商品、同一單位；成交量不代表損益或投資績效。",
+      "connectTitle": "接資料：讓 AI 讀到你指定的內容",
+      "connectIntro": "在你自己的 AI 工具接上可用帳號與權限，再指定要讀的範圍。本網站不連接帳號。功能依工具、帳號與權限而異。",
+      "connectors": [
+        {
+          "key": "gmail",
+          "name": "Gmail",
+          "input": "指定信件",
+          "output": "時間、待辦與回覆草稿",
+          "prompt": "請從我指定的訂房信列出待辦與期限，附原信來源，再草擬一封詢問入住時間的回信。"
+        },
+        {
+          "key": "drive",
+          "name": "Google Drive",
+          "input": "指定文件與表格",
+          "output": "行程整理與差異比較",
+          "prompt": "請比較我指定的兩份行程文件，列出時間差異與缺漏，附文件來源。"
+        },
+        {
+          "key": "notion",
+          "name": "Notion",
+          "input": "指定的既有筆記",
+          "output": "計畫整理或頁面更新草稿",
+          "prompt": "請根據我指定的旅行筆記，整理出發前計畫並草擬更新內容，附筆記來源。"
+        }
+      ],
+      "input": "輸入",
+      "output": "結果",
+      "connectBoundary": "先讀取、整理成草稿。寄信或更新頁面，須由你核對後另行指示。",
+      "connectMore": "接資料功能說明（官方文件）",
+      "practiceTitle": "自己做：我的旅行準備清單",
+      "practiceIntro": "先用下面三段虛構資料練習，不必先連帳號。保留這個教材分頁，另開你已能使用的 AI 工具。",
+      "switchNotice": "先選好語言再輸入；切換語言或關閉頁面會清除未保存內容，請先複製保存。",
+      "sources": [
+        {
+          "key": "A",
+          "label": "A｜Gmail 訂房信（虛構）",
+          "text": "星灣旅店：2026/11/21 入住，11/22 退房。請於 11/18 18:00 前回覆抵達人數。信中沒有提供可辦理入住的時間。"
+        },
+        {
+          "key": "B",
+          "label": "B｜Drive 行程（虛構）",
+          "text": "2026/11/21 09:00 在雲岸車站集合。請於 11/19 20:00 前下載車票。集合時間不等於車票下載期限。"
+        },
+        {
+          "key": "C",
+          "label": "C｜Notion 準備筆記（虛構）",
+          "text": "請在 2026/11/20 晚上整理雨具與充電線，21:00 前完成。入住時間尚未確認，出發前要向旅店詢問；沒有記錄詢問的確切截止時間。"
+        }
+      ],
+      "steps": [
+        "在教材：複製資料與第一句問法",
+        "到 AI：送出，看第一版草稿",
+        "回教材寫要求，再到 AI 追問",
+        "回教材：核對，留下自己的成果"
+      ],
+      "firstPrompt": "請列出出發前待辦與期限，附來源。",
+      "copyInitial": "複製三段資料＋問句",
+      "step2": "切到你的 AI 工具，貼上並送出。讀完草稿，找一個你想改善的地方，再回到這裡。",
+      "followupLabel": "我想補充的一個要求",
+      "followupPlaceholder": "用自己的話，寫一個要求…",
+      "followupHint": "例如：依期限排序；或把不確定的資訊標成「待確認」。",
+      "copyFollowup": "複製我的追問",
+      "followupNext": "到同一個 AI 對話貼上追問並送出，再帶著修改後的回答回來核對。",
+      "checks": [
+        "每一項都找得到來源 A、B 或 C。",
+        "回覆人數期限是 11/18 18:00；下載車票是 11/19 20:00。",
+        "整理雨具與充電線期限是 11/20 21:00。",
+        "11/21 09:00 是集合時間；入住時間仍是待確認。"
+      ],
+      "checkIntro": "先對照原文，再查來源是否可信；真實資料還要核對寄件者、文件版本與發布日期。勾選只代表你的自我核對。",
+      "exampleTitle": "需要參考時：查看固定示範結果",
+      "exampleNote": "這是事先寫好的教學示範，不是即時 AI 回覆。尚無 AI 可用時，可以練習核對；請把紀錄標為「只看範例」。",
+      "example": "• 11/18 18:00 前：回覆抵達人數。來源 A。\n• 11/19 20:00 前：下載車票。來源 B。\n• 11/20 21:00 前：整理雨具與充電線。來源 C。\n• 出發前：向旅店確認可辦理入住的時間；詢問的確切截止時間待確認。來源 A、C。\n提醒：11/21 09:00 是集合時間（B）；可辦理入住的時間未提供（A）。",
+      "resultLabel": "貼上你核對後的成果",
+      "resultPlaceholder": "把核對過的清單貼在這裡；有缺漏就保留「待確認」。",
+      "modeLabel": "我今天做了哪一種練習？",
+      "modeOptions": {
+        "unrecorded": "尚未記錄",
+        "ai": "在自己的 AI 工具完成提問與追問",
+        "example": "只看範例並練習核對"
+      },
+      "takeawayTitle": "帶走：一份有來源的旅行準備清單",
+      "takeawayIntro": "保存成果、你的問句與核對紀錄。下次換成自己的資料，也沿用「先問 → 補一個要求 → 回來源核對」。",
+      "saveNotice": "本頁不會自動儲存。請複製到自己的文件，或下載文字檔後再離開。",
+      "copyRecord": "複製練習紀錄",
+      "download": "下載紀錄 .txt",
+      "next": "課後再練一次",
+      "instructor": "講師教案",
+      "copySuccess": "已複製，可以貼上。",
+      "copyManual": "無法自動複製。文字已放在下方，請全選後按 Ctrl+C（Mac：⌘C）。",
+      "manualLabel": "手動複製文字",
+      "emptyFollowup": "請先用自己的話寫一個補充要求。",
+      "emptyResult": "請先貼上核對後的成果，再保存紀錄。",
+      "downloadSuccess": "已建立文字檔下載；請確認下載位置。",
+      "recordTitle": "我的旅行準備清單｜練習紀錄",
+      "recordPrompt": "第一句問法",
+      "recordFollowup": "我的追問",
+      "recordChecks": "自我核對（勾選不等於驗證完成）",
+      "recordResult": "核對後的成果",
+      "checked": "已勾選",
+      "unchecked": "未勾選",
+      "notWritten": "未填寫",
+      "footer": "只練習一件事：把資料整理成可核對的下一步。",
+      "skip": "跳到主要內容",
+      "noscript": "JavaScript 未啟用：可閱讀下方資料、範例與所有案例；互動、複製與下載按鈕需啟用 JavaScript。你也可以手動選取文字複製。"
+    },
+    "en": {
+      "title": "Everyday AI: a short talk",
+      "lead": "See four finished projects, then use AI to make a travel preparation list.",
+      "meta": "For beginners · On a computer · 60 minutes",
+      "nav": [
+        "See projects",
+        "Connect data",
+        "Try it",
+        "Take it with you"
+      ],
+      "scheduleTitle": "How do the 60 minutes work?",
+      "scheduleLabels": {
+        "opening": "Welcome",
+        "showcase": "Four projects",
+        "gmail": "Gmail demo",
+        "drive": "Drive demo",
+        "notion": "Notion demo",
+        "practice": "Your practice",
+        "takeaway": "Save and take away"
+      },
+      "minute": "min",
+      "showcaseTitle": "First, see what an idea can become",
+      "fiction": "Interactive examples use fictional data; the instructor shows their own finished projects live.",
+      "demoNames": {
+        "travel": "Travel",
+        "study": "Japanese N1",
+        "home": "Home",
+        "market": "TickForge"
+      },
+      "demoIntents": {
+        "travel": "The aim was to keep an itinerary together. Now a map makes each stop’s time and plan easy to find.",
+        "study": "The aim was to understand Japanese usage. Now you can answer a question, read an explanation, and add it to review.",
+        "home": "The aim was to understand the home environment. Now sensor readings can trigger an air-conditioner rule.",
+        "market": "The aim was to understand changes in trading volume. Now two periods can be compared for the same product and unit."
+      },
+      "travelHint": "Choose a stop on the map to see its plan.",
+      "stops": [
+        {
+          "name": "Cloudshore Station",
+          "time": "09:00",
+          "detail": "Meet up and check tickets and luggage."
+        },
+        {
+          "name": "Windhill Gallery",
+          "time": "11:00",
+          "detail": "Visit the exhibition; allow one hour."
+        },
+        {
+          "name": "Starbay Inn",
+          "time": "To confirm",
+          "detail": "Confirm the arrival and check-in times with the inn."
+        }
+      ],
+      "photo": "Fictional destination image placeholder",
+      "mapLabel": "Schematic route between three fictional places; not a real map",
+      "studyHint": "Fixed teaching example · Choose the expression that fits the sentence.",
+      "quizCorrect": "Correct.",
+      "quizIncorrect": "Check the expression again. The answer is まみれ.",
+      "quizExplanation": "汗まみれ means covered in sweat. まみれ follows nouns such as sweat or mud to mean covered in that substance. に限って, からこそ, and に至って cannot complete 汗（　）になって here. This example practises the expression 汗まみれ.",
+      "reviewAdd": "Add to review on this page",
+      "reviewDone": "Added to review on this page",
+      "reviewNote": "Review: 汗まみれ = covered in sweat. This is not retained after reopening the page.",
+      "homeHint": "Rule: turn the air conditioner on at 28°C or above. This is rule-based automation, a different process from AI text generation.",
+      "temperature": "Temperature",
+      "humidity": "Humidity",
+      "aircon": "Air conditioner",
+      "on": "On",
+      "off": "Off",
+      "homeCool": "Try 27°C",
+      "homeWarm": "Try 30°C",
+      "homeNote": "Simulation on this page only; no device is connected or controlled.",
+      "marketHint": "Choose one product. Stocks and futures are compared separately.",
+      "products": {
+        "stock": "Fictional stock A",
+        "futures": "Fictional futures B (same contract)"
+      },
+      "units": {
+        "shares": "shares",
+        "contracts": "contracts"
+      },
+      "period": "Month",
+      "volume": "Trading volume",
+      "change": "Change between periods",
+      "marketNote": "Same product, same unit. Trading volume does not represent profit, loss, or investment performance.",
+      "connectTitle": "Connect data: let AI read what you specify",
+      "connectIntro": "Connect an available account and permissions in your own AI tool, then specify what it may read. This website does not connect accounts. Availability depends on the tool, account, and permissions.",
+      "connectors": [
+        {
+          "key": "gmail",
+          "name": "Gmail",
+          "input": "Selected emails",
+          "output": "Times, tasks, and a draft reply",
+          "prompt": "From my selected booking email, list tasks and deadlines with the original email source, then draft a reply asking about check-in time."
+        },
+        {
+          "key": "drive",
+          "name": "Google Drive",
+          "input": "Selected documents and spreadsheets",
+          "output": "An itinerary summary and differences",
+          "prompt": "Compare the two itinerary documents I specify. List time differences and missing information, with document sources."
+        },
+        {
+          "key": "notion",
+          "name": "Notion",
+          "input": "Selected existing notes",
+          "output": "An organised plan or a draft page update",
+          "prompt": "Use my selected travel notes to organise a preparation plan and draft an update, with note sources."
+        }
+      ],
+      "input": "Input",
+      "output": "Result",
+      "connectBoundary": "Read and organise a draft first. Sending email or updating a page needs a separate instruction after you check it.",
+      "connectMore": "Learn about connecting data (official guide)",
+      "practiceTitle": "Your turn: my travel preparation checklist",
+      "practiceIntro": "Practise with the three fictional excerpts below; no account connection is needed. Keep this lesson tab open and open an AI tool you can already use in another tab.",
+      "switchNotice": "Choose your language before typing. Switching languages or closing the page clears unsaved input; copy and save it first.",
+      "sources": [
+        {
+          "key": "A",
+          "label": "A | Gmail booking email (fictional)",
+          "text": "Starbay Inn: check in on 2026/11/21 and check out on 11/22. Reply with your party size by 11/18 at 18:00. The email does not give the time when check-in is available."
+        },
+        {
+          "key": "B",
+          "label": "B | Drive itinerary (fictional)",
+          "text": "Meet at Cloudshore Station on 2026/11/21 at 09:00. Download your tickets by 11/19 at 20:00. The meeting time is different from the ticket download deadline."
+        },
+        {
+          "key": "C",
+          "label": "C | Notion preparation note (fictional)",
+          "text": "Pack rain gear and charging cables on the evening of 2026/11/20, finishing by 21:00. Check-in time is still unconfirmed; ask the inn before departure. There is no exact deadline recorded for that enquiry."
+        }
+      ],
+      "steps": [
+        "In this lesson: copy the data and first question",
+        "In your AI tool: send it and read the first draft",
+        "Write a follow-up here, then send it to your AI",
+        "Back here: check sources and keep your result"
+      ],
+      "firstPrompt": "List the tasks and deadlines before departure, with sources.",
+      "copyInitial": "Copy three excerpts + question",
+      "step2": "Switch to your AI tool, paste, and send. Read the draft, find one thing you would improve, and return here.",
+      "followupLabel": "One requirement I want to add",
+      "followupPlaceholder": "Write one requirement in your own words…",
+      "followupHint": "For example: sort by deadline; or label uncertain details “to confirm”.",
+      "copyFollowup": "Copy my follow-up",
+      "followupNext": "Paste and send the follow-up in the same AI conversation. Return here with the revised answer to check it.",
+      "checks": [
+        "Each item can be traced to source A, B, or C.",
+        "Party size is due 11/18 at 18:00; tickets are due 11/19 at 20:00.",
+        "Rain gear and charging cables must be packed by 11/20 at 21:00.",
+        "11/21 at 09:00 is the meeting time; check-in time remains unconfirmed."
+      ],
+      "checkIntro": "Check against the original text, then consider whether the source is trustworthy. For real data, also check the sender, document version, and publication date. Ticking a box is your own self-check.",
+      "exampleTitle": "Need a reference? See the fixed example result",
+      "exampleNote": "This teaching example was written in advance; it is not a live AI response. Without an AI tool, you can practise checking it. Mark your record “Example only”.",
+      "example": "• By 11/18 at 18:00: reply with party size. Source A.\n• By 11/19 at 20:00: download tickets. Source B.\n• By 11/20 at 21:00: pack rain gear and charging cables. Source C.\n• Before departure: ask the inn when check-in is available; the exact enquiry deadline is to confirm. Sources A and C.\nReminder: 11/21 at 09:00 is the meeting time (B); the available check-in time is not given (A).",
+      "resultLabel": "Paste your checked result",
+      "resultPlaceholder": "Paste the checklist you have checked. Keep “to confirm” wherever information is missing.",
+      "modeLabel": "Which practice did I do today?",
+      "modeOptions": {
+        "unrecorded": "Not recorded yet",
+        "ai": "Asked and followed up in my own AI tool",
+        "example": "Example only: read and practised checking"
+      },
+      "takeawayTitle": "Take away a checklist with sources",
+      "takeawayIntro": "Keep your result, your questions, and your checks. With your own data next time, use the same sequence: ask → add one requirement → check the sources.",
+      "saveNotice": "This page does not save automatically. Copy your record into your own document or download a text file before leaving.",
+      "copyRecord": "Copy practice record",
+      "download": "Download record .txt",
+      "next": "Practise again after class",
+      "instructor": "Instructor guide",
+      "copySuccess": "Copied. You can paste it now.",
+      "copyManual": "Automatic copying was unavailable. The text is below: select all and press Ctrl+C (Mac: ⌘C).",
+      "manualLabel": "Text for manual copying",
+      "emptyFollowup": "First write one requirement in your own words.",
+      "emptyResult": "Paste your checked result before saving the record.",
+      "downloadSuccess": "A text-file download was created. Check your download location.",
+      "recordTitle": "My travel preparation checklist | Practice record",
+      "recordPrompt": "First question",
+      "recordFollowup": "My follow-up",
+      "recordChecks": "Self-checks (ticking does not verify completion)",
+      "recordResult": "Checked result",
+      "checked": "Ticked",
+      "unchecked": "Not ticked",
+      "notWritten": "Not written",
+      "footer": "Practise one thing: turn information into a next step you can check.",
+      "skip": "Skip to main content",
+      "noscript": "JavaScript is off. All examples, source excerpts, and the reference result are still readable. Interactive, copy, and download buttons need JavaScript. You can select and copy the text manually."
+    }
+  }
+}</script></body></html>
