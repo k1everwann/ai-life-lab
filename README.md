@@ -5,6 +5,10 @@
 - [繁體中文](https://k1everwann.github.io/ai-life-lab/)
 - [English](https://k1everwann.github.io/ai-life-lab/en/)
 
+## 操作截圖
+
+教材附 11 張實際介面截圖：第一次貼上與追問、Gmail／Drive／Notion 各課的貼文字練習、公開服務入口，以及 HTML 工作區。圖片放在對應操作旁，支援大圖與鍵盤關閉；英文版提供英文說明，圖中介面為繁中。截圖日期、來源與更新方式見 [截圖來源](assets/walkthrough/README.md)。連接器圖片只到公開介紹入口，不代表已完成帳號授權。
+
 ## 在同一頁可以練什麼
 
 1. M01–M03：第一次操作 AI、只改一項要求、核對來源與版本。

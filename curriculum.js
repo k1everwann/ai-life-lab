@@ -10,6 +10,19 @@
   const say = (id, text) => { $(id).textContent = text; };
   const byKey = key => modules.find(module => module.id === key);
   const article = key => $(byKey(key).anchor);
+  const imageDialog = $("screenshot-dialog");
+  let imageTrigger = null;
+  all("[data-screenshot]").forEach(link => link.addEventListener("click", event => {
+    if (!imageDialog || typeof imageDialog.showModal !== "function") return;
+    event.preventDefault();
+    imageTrigger = link;
+    const image = link.querySelector("img");
+    $("screenshot-large").src = image.src;
+    $("screenshot-large").alt = image.alt;
+    $("screenshot-caption").textContent = image.alt;
+    imageDialog.showModal();
+  }));
+  imageDialog?.addEventListener("close", () => imageTrigger?.focus());
   const drafts = new Map();
   function capture(key) {
     return {request:$("question-"+key).value,result:$("result-"+key).value,mode:$("mode-"+key).value,code:$("code-"+key)?.value || ""};
