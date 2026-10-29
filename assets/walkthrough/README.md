@@ -13,3 +13,5 @@ Captured on 2026-10-29 using the browser screenshot API. These are actual UI cap
 The public Gmail search did not expose a verified Gmail connector entry, only other products. Do not substitute those products or imply OAuth has been tested. The directory picture explains where to search and the lesson retains a text-only path.
 
 To refresh: capture only a signed-out or fictional teaching view, inspect each image for private data, update its date, dimensions, bilingual captions and source here, rebuild with `scripts/build_course.py`, run `scripts/validate.py`, and check both languages and image enlargement in the browser. Do not replace these with screenshots of private projects or accounts.
+
+Readability audit correction (2026-10-29): replaced the mistaken M08 page-header crop with a verified 1280×720 viewport capture showing code, preview/download buttons and rendered result. The exact saved bytes were visually inspected. Image URLs now include content hashes to invalidate stale cached screenshots.

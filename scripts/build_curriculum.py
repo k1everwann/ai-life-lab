@@ -39,7 +39,7 @@ UI = {
             ['90 分鐘', '看成品 8 → 準備／先試 7 → M02／M03 核心 20 → Gmail／Drive／Notion 擇一 35 → 自己練 15 → 保存 5'],
             ['120 分鐘', '看成品 8 → 準備／先試 7 → M03 核心 20 → M08 首版 35 → M09 修改／測試 25 → M12 選題／起步 20 → 保存 5']],
         'glossary': '遇到不熟悉的詞', 'terms': [('提示詞／要求', '你交給 AI 的問題、資料與希望得到的結果。'), ('來源', '答案所依據的原始信件、文件、筆記或資料列。'), ('外掛／連接器', '讓 AI 在你允許的範圍讀取或操作其他服務的功能。'), ('HTML', '瀏覽器可以開啟的網頁檔案；副檔名是 .html。'), ('預覽／部署', '預覽是先測試；部署是放到網站供人使用。下載檔案不會自動公開。')],
-        'code': '程式碼工作區', 'codetext': '把自己的 AI 產生的完整 HTML 貼在這裡。預覽會封鎖外部連線，僅供本頁測試；只有你另行下載、公開才會產生檔案或網站。請使用本課虛構資料。',
+        'code': '程式碼工作區', 'codetext': 'HTML 是可由瀏覽器開啟的網頁程式碼。把 AI 產生的完整程式碼貼在這裡，再按預覽試用。這裡不會發布網站；請只使用本課虛構資料。',
         'codeinput': '完整 HTML 程式碼', 'preview': '更新隔離預覽', 'codedownload': '下載這份 HTML', 'emptycode': '請先貼上完整 HTML。',
         'previewready': '預覽已更新。請實際操作，再比對預期結果；預覽不保留輸入或勾選。',
         'downloadready': '已開始下載。到瀏覽器下載清單開啟 HTML，確認檔案與功能；這不代表已公開上線。',
@@ -83,7 +83,7 @@ UI = {
             ['90 min', 'Projects 8 → preparation / entry task 7 → M02 / M03 core 20 → choose Gmail, Drive OR Notion 35 → own task 15 → save 5'],
             ['120 min', 'Projects 8 → preparation / entry task 7 → M03 core 20 → M08 first version 35 → M09 change / test 25 → M12 project starter 20 → save 5']],
         'glossary': 'Look up an unfamiliar word', 'terms': [('Prompt / request', 'The question, material, and desired result you give AI.'), ('Source', 'The original email, document, note, or data row supporting an answer.'), ('Plugin / connector', 'A feature that lets AI read or act in another service within your permissions.'), ('HTML', 'A webpage file a browser can open, with a .html extension.'), ('Preview / deploy', 'Preview to test; deploy to make a website available. Downloading a file does not publish it.')],
-        'code': 'Code workspace', 'codetext': 'Paste the complete HTML produced by your AI. The preview blocks external connections and only runs here for testing. Download or publish separately to create a file or site. Use the fictional lesson data.',
+        'code': 'Code workspace', 'codetext': 'HTML is the code a browser opens as a webpage. Paste the complete code from your AI, then preview and test it here. This does not publish a website. Use only the fictional lesson material.',
         'codeinput': 'Complete HTML code', 'preview': 'Update isolated preview', 'codedownload': 'Download this HTML', 'emptycode': 'Paste complete HTML first.',
         'previewready': 'Preview updated. Try the controls and compare with your expected result. Updating the preview resets its inputs and ticks.',
         'downloadready': 'Download started. Open the HTML from your browser downloads and check the file and behavior. It has not been published.',
@@ -114,9 +114,7 @@ def workspace(module, lang, prefix, t):
     key = module['id']
     if key not in ('M08', 'M09'):
         return ''
-    out = '<section class="code-workspace"><h3>' + t['code'] + '</h3>' + p(t['codetext'])
-    if key == 'M09':
-        out += p(t['filehelp']) + '<a download href="' + prefix + 'downloads/curriculum/broken-checklist-' + lang + '.html">' + t['broken'] + '</a> · <a download href="' + prefix + 'downloads/curriculum/correct-checklist-' + lang + '.html">' + t['correct'] + '</a>'
+    out = '<section id="workspace-'+key+'" class="code-workspace"><h3>' + t['code'] + '</h3>' + p(t['codetext'])
     out += '<label for="code-' + key + '">' + t['codeinput'] + '</label><textarea id="code-' + key + '" data-code rows="10" spellcheck="false" maxlength="150000"></textarea><div class="actions">'
     out += button(t['preview'], f'data-preview="{key}"') + button(t['codedownload'], f'data-code-download="{key}"')
     out += '</div><p role="status" id="code-status-' + key + '"></p><iframe hidden id="preview-' + key + '" title="' + t['codeframe'] + '" sandbox="allow-scripts" referrerpolicy="no-referrer"></iframe></section>'

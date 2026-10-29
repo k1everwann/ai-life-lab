@@ -29,7 +29,8 @@ Make a complete HTML checklist for these three tasks, with CSS and JavaScript in
 2. Copy the code into this page’s Complete HTML code field without the surrounding triple backticks. Select Update isolated preview.
 3. In the preview, check two items, uncheck one, then reset. Counts should be 2/3, 1/3, and 0/3.
 4. Select Download this HTML. Open the file from your browser downloads and check that reopening starts at 0/3.
-5. In the same AI chat send: “Change only Bring a water bottle to Bring a notebook; give me complete updated HTML.” Paste the new code into the workspace, update the preview, and try again.
+5. In the same AI chat send: “Change only Bring a water bottle to Bring a notebook; give me complete updated HTML.” Paste the new code into the workspace, update the preview, and test checking, unchecking, and reset again.
+6. Select Download this HTML again and save the new version as departure-v2.html, keeping the first version. Reopen the new file and confirm the third task is Bring a notebook and the initial count is 0/3.
 
 After trying: compare a possible result
 
@@ -39,7 +40,7 @@ Check these parts of your result
 
 Check two for 2/3, uncheck one for 1/3, reset for 0/3.
 Reopening starts at 0/3; this exercise does not save progress.
-The revised version changes only the third task to Bring a notebook; counting still works.
+The revised version changes only the third task to Bring a notebook; counting still works. Keep the first version, save departure-v2.html separately, and reopen it to check the initial 0/3.
 
 Try a different situation yourself
 

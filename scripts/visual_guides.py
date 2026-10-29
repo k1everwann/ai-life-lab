@@ -1,5 +1,7 @@
 """Real public-UI screenshots with bilingual, task-local instructions."""
 from html import escape
+import hashlib
+from pathlib import Path
 
 SHOTS = {
  'start': ('chat-start-zh.jpg',1280,720, '先找到輸入框', 'Find the message box', '這是未登入的 ChatGPT 首頁。中央「問問 ChatGPT」是輸入框；左側「新對話」可開始另一個題目。', 'This is the signed-out ChatGPT home screen. The central “Ask ChatGPT” box accepts your message; “New chat” on the left starts a different topic.'),
@@ -9,7 +11,7 @@ SHOTS = {
  'directory': ('plugins-directory-zh.jpg',900,350, '從外掛程式目錄找服務', 'Find the service in the plugin directory', '左側選「外掛程式」，右上角輸入服務名稱搜尋。先核對服務名稱與開發者；名字包含 Gmail 的其他產品，不等於 Gmail 連接器。找不到時先做貼文字練習。', 'Select “Plugins” on the left and search at the top right. Check the service and developer: a different product with Gmail in its name is not the Gmail connector. If unavailable, use the text exercise first.'),
  'drive': ('drive-entry-zh.jpg',635,205, '確認是 Google Drive，再繼續', 'Check that this is Google Drive', '這是公開的 Google Drive 服務介紹頁。「安裝外掛程式」會引導登入；這張圖還沒有完成連線。登入後依實際畫面核對帳號與存取範圍。', 'This is the public Google Drive listing. “Install plugin” leads to sign-in; this image does not show a completed connection. After signing in, check the account and requested access on your own screen.'),
  'notion': ('notion-entry-zh.jpg',635,245, '確認是 Notion，再繼續', 'Check that this is Notion', '這是公開的 Notion 服務介紹頁。「安裝外掛程式」會引導登入；這張圖還沒有選工作區或授權頁面。後續依實際畫面，只選這次要練習的內容。', 'This is the public Notion listing. “Install plugin” leads to sign-in; no workspace or page access has been selected here. Follow your own screen and choose only the material for this exercise.'),
- 'preview': ('html-preview-zh.jpg',800,640, '程式碼貼上方，操作結果看下方', 'Paste code above; test the result below', '上方大欄位放完整 HTML；按「更新隔離預覽」後，下方才出現網頁。請真的勾選項目，確認數字會變。圖中使用教材的參考修正版示範位置，不是你的 AI 必須產生的版型。', 'Paste the complete HTML in the large field, then select “Update isolated preview”. The webpage appears below. Click its checkboxes and check the count. This image uses the prepared reference fix to show the controls; your AI may produce a different layout.'),
+ 'preview': ('html-preview-zh.jpg',1280,720, '程式碼貼上方，操作結果看下方', 'Paste code above; test the result below', '上方大欄位放完整 HTML；按「更新隔離預覽」後，下方才出現網頁。請真的勾選項目，確認數字會變。圖中使用教材的參考修正版示範位置，不是你的 AI 必須產生的版型。', 'Paste the complete HTML in the large field, then select “Update isolated preview”. The webpage appears below. Click its checkboxes and check the count. This image uses the prepared reference fix to show the controls; your AI may produce a different layout.'),
 }
 
 for key,file,h,zh,en in (
@@ -21,7 +23,7 @@ for key,file,h,zh,en in (
 def figure(key,lang,prefix,show_title=True):
     file,w,h,zh,en,zhtext,entext=SHOTS[key]
     title,text=(en,entext) if lang=='en' else (zh,zhtext)
-    url=prefix+'assets/walkthrough/'+file
+    url=prefix+'assets/walkthrough/'+file+'?v='+hashlib.sha256((Path(__file__).resolve().parents[1]/'assets/walkthrough'/file).read_bytes()).hexdigest()[:12]
     zoom='View larger image' if lang=='en' else '查看大圖'
     return '<figure class="walkthrough-shot"><figcaption>'+('<strong>'+escape(title)+'</strong>' if show_title else '')+'<p>'+escape(text)+'</p></figcaption><a class="screenshot-link" href="'+url+'" target="_blank" rel="noopener" data-screenshot aria-label="'+escape(zoom+': '+title,quote=True)+'"><img src="'+url+'" width="'+str(w)+'" height="'+str(h)+'" loading="lazy" alt="'+escape(title+' — '+text,quote=True)+'"><span>'+zoom+' ↗</span></a></figure>'
 

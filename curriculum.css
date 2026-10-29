@@ -17,3 +17,5 @@
 .image-pan{max-width:100%;overflow:auto;border:1px solid #d4dce7}#screenshot-large{width:auto;max-width:none;min-width:100%}
 
 .curriculum-page .lesson-mode{font-size:15px;line-height:1.8;margin:12px 0 18px;color:#465469}.lesson-mode a{display:inline-block}.visual-guide .visual-step{background:#fff;margin:10px 0}.visual-step .walkthrough-shot{margin:0}.visual-guide>h3{margin:0 0 12px}.visual-guide .common-visuals{margin:0}.visual-step summary{line-height:1.7}.visual-step[open]>summary{color:#194c96}
+
+.debug-files{border-left:3px solid #2458a6;background:#f6f8fb;padding:12px 16px;margin:18px 0}.debug-files p{margin:0;font-size:15px}.debug-files .actions{margin:10px 0 0}.debug-files a{font-size:15px;min-height:44px;display:inline-flex;align-items:center}.resume-help p{font-size:15px}

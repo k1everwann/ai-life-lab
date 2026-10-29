@@ -3,6 +3,7 @@ import hashlib
 import json
 from html import escape as esc
 from pathlib import Path
+from lesson_tools import debug_links, resume_help
 from visual_guides import chat_guide, connection_guide, figure, note, zoom_dialog
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -77,7 +78,7 @@ def render_module(module, lang, modules, prefix):
     from build_curriculum import UI, p, pre, listing, button, workspace
     t=UI[lang]; l=LABELS[lang]; c=module['locales'][lang]; key=module['id']; idx=modules.index(module)
     def copy(kind, label=None):
-        return button(label or l['copy'],f'data-copy-module="{key}" data-copy-kind="{kind}"')+f'<p id="copy-{key}-{kind}" role="status"></p>'
+        return button(('Copy broken code and request' if lang=='en' else '複製故障程式碼與要求') if key=='M09' else (label or l['copy']),f'data-copy-module="{key}" data-copy-kind="{kind}"')+f'<p id="copy-{key}-{kind}" role="status"></p>'
     out=f'<article id="{module["anchor"]}" class="module wrap section" data-module="{key}">'
     out+=p(l['lesson'].format(n=idx+1)+' · '+str(module['minutes'])+' '+l['minutes'],'eyebrow')+'<h1 tabindex="-1">'+esc(c['title'])+'</h1>'+p(c.get('why',c['goal']),'lead')
     if c.get('connection'):
@@ -85,8 +86,10 @@ def render_module(module, lang, modules, prefix):
     out+='<div class="outcome"><strong>'+l['outcome']+'</strong>'+p(c['goal'])+'<div class="example-result"><span>'+l['sample']+'</span>'+p(c.get('outcome',c['expected']))+'</div>'+p(l['samplehint'],'small-text')+'</div>'
     out+='<div class="lesson-shortcuts"><a class="button" href="#do-'+key+'">'+l['follow']+'</a>'+button(l['quick'],f'data-jump-independent="{key}"')+'</div>'
     out+=f'<section class="guided learning-step" id="do-{key}"><h2>1. {l["follow"]}</h2>'+p(l['where'],'eyebrow')+listing(c['steps'],'ol')
+    if key=='M09':out+=debug_links(lang,prefix,'guided')
     out+='<div class="exercise-material"><h3>'+l['source']+'</h3>'+pre(c['source'])+'<h3>'+l['prompt']+'</h3>'+pre(c['prompt'])+'</div>'
     out+='<div class="actions">'+copy('guided')+'<a class="button outline" href="https://chatgpt.com/" target="_blank" rel="noopener">'+l['open']+'</a></div>'+p(l['copynote'],'small-text')
+    if key in ('M08','M09'):out+='<p><a href="#workspace-'+key+'">'+('I have the code — go to the preview workspace ↓' if lang=='en' else '已拿到程式碼？前往貼上與預覽 ↓')+'</a></p>'
     out+=chat_guide(lang,prefix,key)
     out+='<details class="reference"><summary>'+l['reference']+'</summary>'+pre(c['expected'])+'</details><h3>'+l['check']+'</h3>'+listing(c['checks'])
     out+='<details><summary>'+l['trouble']+'</summary>'+p(l['troubletext'])+'</details></section>'
@@ -97,10 +100,9 @@ def render_module(module, lang, modules, prefix):
     if c.get('followup'):
         f=c['followup'];out+=pre(f['source'])+pre(f['prompt'])+copy('followup')+'<details><summary>'+l['reference']+'</summary>'+pre(f['expected'])+'</details>'
     out+=f'<details class="independent" id="independent-{key}"><summary>{l["own"]}</summary>'+p(l['ownhint'])+pre(c['independent']['task'])
-    if key=='M09':
-        out+='<p><a download href="'+prefix+'downloads/curriculum/reset-bug-'+lang+'.html">'+('Download the reset exercise' if lang=='en' else '下載這題的練習檔')+'</a></p>'
+    if key=='M09':out+=debug_links(lang,prefix,'independent')
     out+=copy('independent',t['copytask'])+'<details><summary>'+l['reference']+'</summary>'+pre(c['independent']['expected'])+'</details></details></section>'
-    out+='<section class="learning-step"><h2>3. '+l['finish']+'</h2>'+p(l['finishnote'])+'<details class="module-record"><summary>'+l['record']+'</summary>'+p(l['savehint'],'small-text')
+    out+='<section class="learning-step"><h2>3. '+l['finish']+'</h2>'+p(l['finishnote'])+resume_help(lang)+'<details class="module-record"><summary>'+l['record']+'</summary>'+p(l['savehint'],'small-text')
     out+=f'<label for="exercise-{key}">{t["exercise"]}</label><select id="exercise-{key}">'+''.join(f'<option value="{v}">{label}</option>' for v,label in zip(('guided','independent','challenge','connection') if c.get('connection') else ('guided','independent','challenge'),t['exercise_types']+['Connected account' if lang=='en' else '連線練習']))+'</select>'
     out+=f'<label for="mode-{key}">{t["mode"]}</label><select id="mode-{key}">'+''.join(f'<option value="{i}">{label}</option>' for i,label in enumerate(t['modes']))+'</select>'
     out+=f'<label for="question-{key}">{t["question"]}</label><textarea id="question-{key}" rows="3" maxlength="12000"></textarea><label for="result-{key}">{t["result"]}</label><textarea id="result-{key}" rows="4" maxlength="30000" placeholder="{t["placeholder"]}"></textarea>'
@@ -112,8 +114,7 @@ def render_module(module, lang, modules, prefix):
     if c.get('connection'):
         f=c['connection'];out+=f'<details class="connection" id="connection-{key}"><summary>'+esc(f['title'])+'</summary>'+p(l['connectnote'])+'<a href="#connection-guide">'+l['setup']+'</a>'+connection_guide(lang,prefix,key)+listing(f['steps'],'ol')+pre(f['source'])+pre(f['prompt'])+copy('connection',l['connectcopy'])+'<details><summary>'+l['reference']+'</summary>'+pre(f['expected'])+'</details></details>'
     out+=f'<details class="challenge" id="challenge-{key}"><summary>{l["challenge"]}</summary>'+p(c['challenge']['task'])+pre(c['challenge']['source'])+pre(c['challenge']['prompt'])
-    if key=='M09':
-        out+='<p><a download href="'+prefix+'downloads/curriculum/search-reset-bug-'+lang+'.html">'+('Download the search exercise' if lang=='en' else '下載搜尋功能練習檔')+'</a></p>'
+    if key=='M09':out+=debug_links(lang,prefix,'challenge')
     out+=copy('challenge')+'<details><summary>'+l['reference']+'</summary>'+pre(c['challenge']['expected'])+'</details></details>'
     if key=='M07':
         out+='<details><summary>'+t['lab7']+'</summary><a download href="'+prefix+'downloads/curriculum/monthly-spending.csv">'+('Download sample CSV' if lang=='en' else '下載範例表格 CSV')+'</a><div class="actions">'+button(t['strict'],'data-threshold="strict" aria-pressed="true"')+button(t['inclusive'],'data-threshold="inclusive" aria-pressed="false"')+'</div><p id="threshold-result" role="status"></p></details>'
@@ -129,7 +130,7 @@ def render_module(module, lang, modules, prefix):
     return out+'</nav></article>'
 
 def render(lang):
-    from build_curriculum import UI, p, listing, button
+    from build_curriculum import UI, p, listing, button, checklist_fixture, reset_fixture, search_fixture
     t=UI[lang]; l=LABELS[lang]; en=lang=='en'; prefix='../' if en else ''
     modules=json.loads((ROOT/'curriculum-content.json').read_text(encoding='utf-8'))['modules']
     html=f'<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="{esc(l["intro"],quote=True)}"><title>{t["title"]} · AI Life Lab</title>'
@@ -149,7 +150,7 @@ def render(lang):
         html+='</ol>'
     html+='</section><section class="wrap section" id="connection-guide" data-view="setup"><h1 tabindex="-1">'+l['setup']+'</h1>'+p(l['setupintro'])+connection_guide(lang,prefix)+listing(l['setupsteps'],'ol')+p(l['unavailable'])+'<a href="https://developers.openai.com/training/walkthroughs/plugins-and-skills" target="_blank" rel="noopener">'+l['official']+'</a><div class="actions"><a href="#lesson-gmail">Gmail</a><a href="#lesson-drive">Google Drive</a><a href="#lesson-notion">Notion</a><button id="return-to-connection" type="button">'+('Back to my exercise' if en else '返回剛才的練習')+'</button></div></section>'
     html+=''.join(render_module(m,lang,modules,prefix) for m in modules)
-    html+='<section class="wrap section" id="continue" data-view="continue"><span id="takeaway"></span><h1 tabindex="-1">'+l['continue']+'</h1>'+p(l['continuedesc'])+listing(l['nextideas'])+p(l['savehint'])+button(t['saveall'],'id="download-all-records"')+'<p id="all-record-status" role="status"></p><a href="#course-map">'+l['home']+'</a></section><noscript>'+p(t['noscript'])+'</noscript></main>'
+    html+='<section class="wrap section" id="continue" data-view="continue"><span id="takeaway"></span><h1 tabindex="-1">'+l['continue']+'</h1>'+p(l['continuedesc'])+resume_help(lang)+listing(l['nextideas'])+p(l['savehint'])+button(t['saveall'],'id="download-all-records"')+'<p id="all-record-status" role="status"></p><a href="#course-map">'+l['home']+'</a></section><noscript>'+p(t['noscript'])+'</noscript></main>'
     html+='<section class="copy-fallback wrap" id="copy-fallback" hidden><label for="manual-copy">'+t['manual']+'</label><textarea id="manual-copy" rows="8" readonly></textarea>'+button(t['copyreturn'],'id="copy-return"')+'</section><footer class="learning-footer">'+('Fictional practice material · Do the exercises in your own AI tool.' if en else '練習採用虛構資料 · 請在自己的 AI 工具操作')+'</footer>'
-    payload={'modules':[{**{k:m[k] for k in ('id','anchor','minutes','needs')},**m['locales'][lang]} for m in modules], 'ui':t}
+    payload={'modules':[{**{k:m[k] for k in ('id','anchor','minutes','needs')},**m['locales'][lang]} for m in modules], 'ui':t,'debugFixtures':{'guided':checklist_fixture(lang,True),'independent':reset_fixture(lang,True),'challenge':search_fixture(lang,True)}}
     return html+zoom_dialog(lang)+'<script id="curriculum-data" type="application/json">'+json.dumps(payload,ensure_ascii=False).replace('</',r'<\/')+'</script></body></html>\n'

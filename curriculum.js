@@ -2,7 +2,7 @@
   "use strict";
   const node = document.getElementById("curriculum-data");
   if (!node) return;
-  const {modules, ui} = JSON.parse(node.textContent);
+  const {modules, ui, debugFixtures} = JSON.parse(node.textContent);
   const lang = document.documentElement.lang;
   const en = lang === "en";
   const $ = id => document.getElementById(id);
@@ -72,7 +72,7 @@
     const view = chosen ? "lesson" : target === "connection-guide" ? "setup" : target === "continue" ? "continue" : "home";
     all("#main > [data-view]").forEach(el=>{el.hidden=el.dataset.view!==view;});
     document.body.dataset.view=view;
-    document.querySelector(".skip").href=chosen ? "#"+chosen.anchor : "#top";
+    document.querySelector(".skip").href=chosen ? "#"+chosen.anchor : view==="setup" ? "#connection-guide" : view==="continue" ? "#continue" : "#top";
     if(chosen) lastLesson = target.startsWith("connection-") ? target : chosen.anchor;
     all(".module-list a, .lesson-sidebar a, .mobile-lessons a").forEach(link => {
       if (chosen && link.hash === `#${chosen.anchor}`) link.setAttribute("aria-current", "location");
@@ -93,6 +93,14 @@
   }
   window.addEventListener("hashchange", () => route(true));
   route(Boolean(location.hash));
+  document.querySelector(".skip").addEventListener("click", event => {
+    event.preventDefault();
+    const target = document.querySelector(document.querySelector(".skip").getAttribute("href"));
+    const heading = target.querySelector("h1,h2");
+    heading.setAttribute("tabindex","-1");
+    heading.focus({preventScroll:true});
+    target.scrollIntoView();
+  });
   all("[data-jump-challenge]").forEach(button => button.addEventListener("click", () => {
     const key = button.dataset.jumpChallenge;
     $("challenge-"+key).open = true;
@@ -132,9 +140,12 @@
     const m = byKey(button.dataset.copyModule);
     const kind = button.dataset.copyKind;
     setExercise(m.id,kind === "followup" ? "guided" : kind);
-    const text = kind === "connection" ? m.connection.prompt : kind === "followup" ? [m.followup.source,m.followup.prompt].join("\n\n") : kind === "independent" ? m.independent.task : kind === "challenge"
+    let text = kind === "connection" ? m.connection.prompt : kind === "followup" ? [m.followup.source,m.followup.prompt].join("\n\n") : kind === "independent" ? m.independent.task : kind === "challenge"
       ? [m.challenge.task, m.challenge.source, m.challenge.prompt].join("\n\n")
       : [m.source, m.prompt].join("\n\n");
+    if (m.id === "M09" && debugFixtures[kind]) {
+      text += "\n\n" + (en ? "Complete broken HTML source:\n" : "故障 HTML（完整原始碼）：\n") + debugFixtures[kind];
+    }
     copy(text, `copy-${m.id}-${kind}`);
   }));
   all("[data-check-quiz]").forEach(button => button.addEventListener("click", () => {
