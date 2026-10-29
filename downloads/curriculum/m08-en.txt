@@ -1,0 +1,68 @@
+M08 Ask AI to build a small webpage
+
+Actually request AI-generated HTML, save it, reopen it, and test your first version.
+
+All lesson data is fictional. This site does not call AI or connect your accounts. Paste the exercise into your own AI tool.
+
+Try this first
+
+Show your own AI request and generated HTML. Check two items, uncheck one, and reset. Using only this site's template does not complete AI creation.
+
+When can I skip the instructions?
+
+If you already have your own generated file and can save and test it, go to the search challenge.
+
+Teaching data
+
+Fictional checklist: title 'Before departure'; tasks in order: 'Download tickets', 'Confirm meeting location', 'Bring a water bottle'. No network or progress saving; reopening starts at 0/3.
+
+Your first request
+
+Generate a complete standalone HTML file from the source, including CSS and JavaScript. No external libraries, network, or tracking. Preserve the three tasks and order. Each task needs a checkbox with a clickable label. Display n/3 completed. A reset button clears all checks and returns the count to zero. Support narrow screens, keyboard focus, and keyboard checking. Clearly state 'Progress is not saved; reopening resets it.' Clear checked states on initialization; do not use localStorage. Return complete HTML and a short saving instruction.
+
+1. Create a local ai-practice folder. Submit the source and prompt to a code-capable AI tool and save your request.
+2. Obtain complete code from <!doctype html> through </html>. If it contains omissions or 'same as above,' ask for the entire standalone file.
+3. Paste it into a plain-text editor without Markdown triple backticks. Save as checklist.html in UTF-8. In Windows Notepad select all files and check that it is not checklist.html.txt.
+4. Open the file in a browser. Check the first two items: 2/3. Uncheck the first: 1/3. Reset: 0/3. Verify all original labels, narrow the window, and use Tab and Space to operate it.
+5. Close the file tab and reopen it: expect 0/3. If it fails, report steps, expected result, and actual result to AI; save a corrected version and retest.
+6. Make your own change from 'Bring a water bottle' to 'Bring a notebook.' Ask AI to change only that item. Save checklist-v2.html and verify the labels and 2→1→0 again.
+
+Compare the reference result
+
+Deliver your own request, the complete AI-generated HTML, and a test record. Version one has the three source tasks; operations yield 2/3→1/3→0/3; reopening yields 0/3. Version two changes only the third task to Bring a notebook and retains correct counting. Appearance and code may differ from examples. This site's fixed generator does not replace this work.
+
+Do it yourself: a new situation
+
+New fictional checklist: 'Reading preparation', with 'Choose an article' and 'Write three questions'. Write your own request for another HTML file without progress saving, save study.html, and test checking, unchecking, reset, and reopening.
+
+Initial 0/2; both checked 2/2; uncheck one 1/2; reset 0/2; reopen 0/2. Provide your own request and actual generated file. Task labels must not become explanatory paragraphs.
+
+Take the challenge
+
+Add search without changing the counting scope. First paste your completed full HTML. If you do not have a file, complete the guided task first. Confirm the current complete version in the same AI chat before submitting the new requirement; do not assume AI can see your local file.
+
+Three fictional tasks: Download tickets, Confirm meeting location, Bring a notebook. Search changes visibility only; the count includes all three tasks. Reset clears every checkbox and the search.
+
+Add text search to my complete HTML using these rules. Preserve existing features and no progress saving. List test expectations first, then provide the complete file.
+
+Check Download tickets and Bring a notebook: 2/3. Search 'tickets': only one item is visible, count remains 2/3. Uncheck it: 1/3. Clear search: Bring a notebook is still checked. Reset: all three visible and 0/3.
+
+Show these results when you finish
+
+Retained my own AI request and complete HTML file.
+Correct extension; file can be closed and reopened.
+Tested 2→1→0 on both initial and personally modified versions; reopening resets.
+
+Check one key idea
+
+What completes this lesson's AI creation requirement?
+
+Write a request, obtain AI-generated HTML, save and test it
+Only operate this site's fixed template
+Only read the reference answer
+
+Write a request, obtain AI-generated HTML, save and test it
+
+Actual generation, saving, and testing are required. A template can demonstrate behavior but cannot replace that evidence.
+
+Text and code are not saved automatically or uploaded. Download your record first. Next time, open the text file and paste your work back into the module. Save before changing language too.

@@ -34,7 +34,7 @@
           "data": "這個示意使用三個虛構地點、時間與安排；實際用途可以從你自己的行程文字開始。",
           "ai": "AI 可協助把行程文字整理成「地點、時間、要做什麼」，缺的時間仍要由人確認。",
           "system": "地圖與按鈕由網頁程式顯示；點地點只是切換既有資料，本頁沒有即時問 AI。",
-          "firstStep": "先整理三站行程，確認每站的時間和來源；今天用這些資料完成旅行準備清單。"
+          "firstStep": "先整理三站行程，確認時間和來源；再加一項雨天限制，檢查哪些安排需要更新。"
         },
         "study": {
           "data": "一題教學句子、固定選項、答案與解析；不是即時產生的題目。",
@@ -226,7 +226,7 @@
           "data": "This example uses three fictional places, times, and plans. Your own itinerary text can be a starting point for the real use case.",
           "ai": "AI can help organise itinerary text into place, time, and activity. A person still needs to confirm missing times.",
           "system": "Web code draws the map and buttons. Choosing a stop displays existing data; it does not ask AI live on this page.",
-          "firstStep": "Organise three stops and check each time and source. Today, use the information to make a travel preparation checklist."
+          "firstStep": "Organise three stops and check times and sources. Add a rainy-day constraint and check which arrangements need updating."
         },
         "study": {
           "data": "One teaching sentence with fixed choices, an answer, and an explanation. The question is not generated live.",

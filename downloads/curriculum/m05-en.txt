@@ -1,0 +1,69 @@
+M05 Google Drive: find files and compare options
+
+Read specified file contents, compare the same group size and currency, and preserve unknown costs.
+
+All lesson data is fictional. This site does not call AI or connect your accounts. Paste the exercise into your own AI tool.
+
+Try this first
+
+Compare 600 per person with 2200 for 4 people. Which known transport subtotal is lower, and is the complete cost known?
+
+When can I skip the instructions?
+
+Go to the different-currency challenge if you can read the specified files, align comparison scope, and show sources and unknowns.
+
+Teaching data
+
+Fictional teaching files; both for 2026/11/21, 4 people, TWD.
+[AI Lab] Approved option A: transport 600 per person; lodging 2400 for four; breakfast included.
+[AI Lab] Approved option B: transport 2200 for four; lodging 2600 for four; breakfast extra, price not provided.
+
+Your first request
+
+Read only the contents of [AI Lab] Approved option A and Approved option B. Compare transport, lodging, breakfast, known subtotal, and unknown costs for 2026/11/21, 4 people, TWD. Show formulas and sources. Do not treat unknown as zero; state if contents cannot be read.
+
+1. The instructor first creates the two files in a dedicated teaching Drive using the source titles and contents. Obtain their actual links and verify access. Follow the shared guide to check plugin and account availability.
+2. Add the actual teaching-file links to scope the request precisely. Without a connection, paste the source and request comparison of pasted text only; record connection as pending.
+3. Confirm AI read the transport and breakfast fields. A filename or search snippet alone is insufficient. Check each field in both original files.
+4. Calculate A's transport as 600×4 before adding lodging. B already gives a group transport price. Ask which unknown costs prevent a complete cheaper-option claim.
+5. Save the table, formulas, file versions, and reading method.
+
+Compare the reference result
+
+A: transport 600×4=2400; lodging 2400; breakfast included; total for the supplied scope 4800 TWD. B: transport 2200; lodging 2600; known subtotal 4800 TWD plus unknown breakfast cost. Known subtotals match. Do not treat B's breakfast as zero or claim its complete cost is lower.
+
+Do it yourself: a new situation
+
+New fictional file C: 2 people, TWD, tickets 350 per person, double room 1800, breakfast included. D: tickets 600 for two, double room 1900, breakfast included. Both for 2026/12/01; comparison scope is tickets, room, and breakfast only. Compare independently and cite the sources.
+
+C: 350×2+1800=2500. D: 600+1900=2500 TWD. Totals match under the same scope; this does not establish equal service quality.
+
+Take the challenge
+
+Handle different group sizes and currencies without inventing a conversion.
+
+Fictional option E: 2026/11/21, 3 people, 150 USD total, transport and lodging included, breakfast unspecified. F: same date, 4 people, 4800 TWD total, transport, lodging, and breakfast included. No exchange rate is supplied.
+
+State what can be calculated, why direct comparison is invalid, and what information is missing. Do not fetch an external exchange rate or recommend an option.
+
+E is 50 USD per person; F is 1200 TWD per person. Group size, currency, and breakfast coverage differ, so a price ranking is unsupported. Obtain quotes for the same group size, an agreed exchange rate and date, and breakfast costs and inclusion terms.
+
+Show these results when you finish
+
+Verified file contents; filenames alone were not evidence of reading.
+Aligned per-person/group pricing, group size, date, and currency.
+Did not replace unknown breakfast cost with zero; retained formulas and sources.
+
+Check one key idea
+
+What does B's 4800 TWD represent?
+
+A known subtotal; breakfast cost is still unknown
+A complete total including everything
+The price per person
+
+A known subtotal; breakfast cost is still unknown
+
+4800 includes only the supplied transport and lodging costs.
+
+Text and code are not saved automatically or uploaded. Download your record first. Next time, open the text file and paste your work back into the module. Save before changing language too.

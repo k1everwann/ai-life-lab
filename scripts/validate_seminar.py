@@ -98,21 +98,20 @@ def validate():
         choices = locale['mistakeExercise']['choices']
         assert {choice['key'] for choice in choices if choice['correct']} == {'ticket', 'checkin'}
         assert len(locale['continueSteps']) == 3
-    required = {'showcase', 'principles', 'classroom', 'tool', 'continue', 'takeaway', 'copy-initial', 'learner-followup', 'copy-followup', 'learner-result', 'practice-mode', 'copy-record', 'download-record', 'build-checklist', 'tool-title', 'tool-items', 'download-tool', 'check-mistakes'}
+    curriculum = json.loads((ROOT / 'curriculum-content.json').read_text(encoding='utf-8'))
+    required = {'showcase', 'course-map', 'continue', 'takeaway', 'download-all-records', 'code-M08', 'code-M09', 'preview-M08', 'preview-M09'} | {item['anchor'] for item in curriculum['modules']}
     for relative in ('index.html', 'en/index.html'):
         parser = SeminarPage()
         source = (ROOT / relative).read_text(encoding='utf-8')
         parser.feed(source)
-        assert json.loads(''.join(parser.json_text)) == data, relative + ': embedded JSON drift'
-        assert required <= parser.ids, relative + ': incomplete single exercise'
+        assert required <= parser.ids, relative + ': incomplete modular course'
         assert parser.demos == ['travel', 'study', 'home', 'market']
-        assert parser.inputs == {'learner-followup': '', 'learner-result': ''}, 'Never prefill a learner answer as their work'
-        assert parser.preview_sandbox == 'allow-scripts', 'Keep downloaded-tool preview isolated'
+        assert 'sandbox="allow-scripts"' in source and 'allow-same-origin' not in source, 'Keep code previews isolated'
         assert not any('instructor.html' in link or 'next-steps.html' in link for link in parser.links), 'The main lesson must not send learners to a separate instructor or continuation page'
         assert 'script.js?' not in source, 'Do not load the earlier route-selection script'
         assert 'route-phone' not in source and 'route-computer' not in source
-    print('PASS course: one complete 60-minute page; three worked app lessons, active source checks, and a usable checklist artifact')
-    print('PASS seminar bilingual source: identical keys, embedded data, facts, and blank learner fields')
+    print('PASS course: one bilingual modular page with all lesson anchors and isolated code previews')
+    print('PASS seminar bilingual source: identical keys and established fictional facts')
     print('PASS seminar checks: unknown check-in, distinct deadlines, stock +25%, futures -12.5%, unique quiz completion')
 
 if __name__ == '__main__':
