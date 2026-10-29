@@ -3,6 +3,7 @@ import hashlib
 import json
 from html import escape as esc
 from pathlib import Path
+from visual_guides import chat_guide, connection_guide, figure, note, zoom_dialog
 
 ROOT = Path(__file__).resolve().parents[1]
 LABELS = {
@@ -84,8 +85,11 @@ def render_module(module, lang, modules, prefix):
     out+=f'<section class="guided learning-step" id="do-{key}"><h2>1. {l["follow"]}</h2>'+p(l['where'],'eyebrow')+listing(c['steps'],'ol')
     out+='<div class="exercise-material"><h3>'+l['source']+'</h3>'+pre(c['source'])+'<h3>'+l['prompt']+'</h3>'+pre(c['prompt'])+'</div>'
     out+='<div class="actions">'+copy('guided')+'<a class="button outline" href="https://chatgpt.com/" target="_blank" rel="noopener">'+l['open']+'</a></div>'+p(l['copynote'],'small-text')
+    out+=chat_guide(lang,prefix,key)
     out+='<details class="reference"><summary>'+l['reference']+'</summary>'+pre(c['expected'])+'</details><h3>'+l['check']+'</h3>'+listing(c['checks'])
     out+='<details><summary>'+l['trouble']+'</summary>'+p(l['troubletext'])+'</details></section>'
+    if key in ('M08','M09'):
+        out+='<details class="preview-guide"><summary>'+('Where do I paste code and test it?' if lang=='en' else '程式碼要貼哪裡？怎麼看預覽？')+'</summary>'+figure('preview',lang,prefix)+note(lang)+'</details>'
     out+=workspace(module,lang,prefix,t)
     out+='<section class="learning-step"><h2>2. '+l['change']+'</h2>'
     if c.get('followup'):
@@ -104,7 +108,7 @@ def render_module(module, lang, modules, prefix):
     out+=button(t['download'],f'data-download-record="{key}"')+f'<p id="record-{key}-status" role="status"></p></details><a download href="{prefix}downloads/curriculum/{key.lower()}-{lang}.txt">{t["material"]}</a></section>'
     out+='<section class="learning-step further"><h2>'+l['advanced']+'</h2>'
     if c.get('connection'):
-        f=c['connection'];out+=f'<details class="connection" id="connection-{key}"><summary>'+esc(f['title'])+'</summary>'+p(l['connectnote'])+'<a href="#connection-guide">'+l['setup']+'</a>'+listing(f['steps'],'ol')+pre(f['source'])+pre(f['prompt'])+copy('connection',l['connectcopy'])+'<details><summary>'+l['reference']+'</summary>'+pre(f['expected'])+'</details></details>'
+        f=c['connection'];out+=f'<details class="connection" id="connection-{key}"><summary>'+esc(f['title'])+'</summary>'+p(l['connectnote'])+'<a href="#connection-guide">'+l['setup']+'</a>'+connection_guide(lang,prefix,key)+listing(f['steps'],'ol')+pre(f['source'])+pre(f['prompt'])+copy('connection',l['connectcopy'])+'<details><summary>'+l['reference']+'</summary>'+pre(f['expected'])+'</details></details>'
     out+=f'<details class="challenge" id="challenge-{key}"><summary>{l["challenge"]}</summary>'+p(c['challenge']['task'])+pre(c['challenge']['source'])+pre(c['challenge']['prompt'])
     if key=='M09':
         out+='<p><a download href="'+prefix+'downloads/curriculum/search-reset-bug-'+lang+'.html">'+('Download the search exercise' if lang=='en' else '下載搜尋功能練習檔')+'</a></p>'
@@ -141,9 +145,9 @@ def render(lang):
             m=modules[idx];c=m['locales'][lang]
             html+='<li><a href="#'+m['anchor']+'"><span class="module-number">'+f'{idx+1:02}'+'</span><span><strong>'+esc(c['title'])+'</strong><span class="module-summary">'+esc(c['goal'])+'</span></span><span aria-hidden="true">→</span></a></li>'
         html+='</ol>'
-    html+='</section><section class="wrap section" id="connection-guide" data-view="setup"><h1 tabindex="-1">'+l['setup']+'</h1>'+p(l['setupintro'])+listing(l['setupsteps'],'ol')+p(l['unavailable'])+'<a href="https://developers.openai.com/training/walkthroughs/plugins-and-skills" target="_blank" rel="noopener">'+l['official']+'</a><div class="actions"><a href="#lesson-gmail">Gmail</a><a href="#lesson-drive">Google Drive</a><a href="#lesson-notion">Notion</a><button id="return-to-connection" type="button">'+('Back to my exercise' if en else '返回剛才的練習')+'</button></div></section>'
+    html+='</section><section class="wrap section" id="connection-guide" data-view="setup"><h1 tabindex="-1">'+l['setup']+'</h1>'+p(l['setupintro'])+connection_guide(lang,prefix)+listing(l['setupsteps'],'ol')+p(l['unavailable'])+'<a href="https://developers.openai.com/training/walkthroughs/plugins-and-skills" target="_blank" rel="noopener">'+l['official']+'</a><div class="actions"><a href="#lesson-gmail">Gmail</a><a href="#lesson-drive">Google Drive</a><a href="#lesson-notion">Notion</a><button id="return-to-connection" type="button">'+('Back to my exercise' if en else '返回剛才的練習')+'</button></div></section>'
     html+=''.join(render_module(m,lang,modules,prefix) for m in modules)
     html+='<section class="wrap section" id="continue" data-view="continue"><span id="takeaway"></span><h1 tabindex="-1">'+l['continue']+'</h1>'+p(l['continuedesc'])+listing(l['nextideas'])+p(l['savehint'])+button(t['saveall'],'id="download-all-records"')+'<p id="all-record-status" role="status"></p><a href="#course-map">'+l['home']+'</a></section><noscript>'+p(t['noscript'])+'</noscript></main>'
     html+='<section class="copy-fallback wrap" id="copy-fallback" hidden><label for="manual-copy">'+t['manual']+'</label><textarea id="manual-copy" rows="8" readonly></textarea>'+button(t['copyreturn'],'id="copy-return"')+'</section><footer class="learning-footer">'+('Fictional practice material · Do the exercises in your own AI tool.' if en else '練習採用虛構資料 · 請在自己的 AI 工具操作')+'</footer>'
     payload={'modules':[{**{k:m[k] for k in ('id','anchor','minutes','needs')},**m['locales'][lang]} for m in modules], 'ui':t}
-    return html+'<script id="curriculum-data" type="application/json">'+json.dumps(payload,ensure_ascii=False).replace('</',r'<\/')+'</script></body></html>\n'
+    return html+zoom_dialog(lang)+'<script id="curriculum-data" type="application/json">'+json.dumps(payload,ensure_ascii=False).replace('</',r'<\/')+'</script></body></html>\n'
