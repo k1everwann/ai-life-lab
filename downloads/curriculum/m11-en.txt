@@ -1,0 +1,66 @@
+M11 Adapt content for a different audience or language
+
+Change tone and length while preserving dates, time zone, amounts, actions, and unknowns.
+
+All lesson data is fictional. This site does not call AI or connect your accounts. Paste the exercise into your own AI tool.
+
+Try this first
+
+Turn L1 into a short Chinese notice and an English version, then verify each key fact. Fluency is not proof of accuracy.
+
+When can I skip the instructions?
+
+Go to the spoken-script challenge if both versions and your fact comparison preserve unknowns and original names.
+
+Teaching data
+
+Fictional notice L1: 雲岸共學 takes place on 2026/11/21 at 09:00 (Asia/Taipei), at 雲樓A室; 300 TWD per person. Reply whether attending by 2026/11/18 18:00 (Asia/Taipei). Lunch costs extra; its price is undecided. Neither activity nor venue has an approved English name.
+
+Your first request
+
+Using L1, write a short Chinese notice and an English version for attendees. Distinguish activity time and reply deadline. Preserve price, per-person unit, time zone, and unknown lunch cost. Keep activity and venue names in Chinese without claiming an official translation. Include a fact comparison.
+
+1. Extract six fields that cannot change: activity date/time, venue, per-person fee, reply deadline, lunch limitation, and name status.
+2. Submit source and prompt for both versions. Verify each field against the source rather than checking fluency alone.
+3. Follow up: 'Make Chinese friendlier and English shorter without removing the deadline, time zone, or unknown lunch cost.' Compare before and after.
+4. Save the source, both versions, and comparison. Keep uncertain proper names in the original language and mark them for confirmation.
+
+Compare the reference result
+
+Chinese: 『雲岸共學』11/21 09:00於雲樓A室舉行，每人300 TWD；請於11/18 18:00前回覆。日期皆2026年，時間皆Asia/Taipei；午餐另計、價格待確認。 English: Join 雲岸共學 at 雲樓A室 on 2026/11/21 at 09:00 (Asia/Taipei), 300 TWD per person. Reply by 2026/11/18 18:00 (Asia/Taipei). Lunch costs extra; the price is unconfirmed. All six fields agree, with no invented official names.
+
+Do it yourself: a new situation
+
+New fictional L2: 紙上散步 at Room B on 2026/12/03 15:00 (Asia/Taipei); free; register by 12/01 12:00 (Asia/Taipei); materials provision unknown. No official English activity name. Write both language versions and a fact comparison independently.
+
+Chinese preserves 12/03 15:00, B室, free admission, 12/01 12:00 registration deadline, and unknown materials. English example: 紙上散步 is at Room B on 2026/12/03 at 15:00 (Asia/Taipei), free of charge. Register by 2026/12/01 12:00 (Asia/Taipei). Materials provision is unconfirmed. Free admission does not imply included materials.
+
+Take the challenge
+
+Make a two-sentence spoken script while retaining limitations.
+
+Fictional L3: online exchange 2026/12/10 19:00 (Asia/Taipei); register by 12/08 17:00 (Asia/Taipei); 200 TWD per person; access link not yet provided.
+
+Write two sentences each in Chinese and English: activity and price first, then deadline and missing link. Do not invent a URL.
+
+Chinese: 12月10日19:00有線上交流，每人200 TWD。請於12月8日17:00前報名，參加連結待提供；以上日期皆2026年，時間皆Asia/Taipei。 English: The online exchange is on 2026/12/10 at 19:00 (Asia/Taipei), at 200 TWD per person. Register by 2026/12/08 17:00 (Asia/Taipei); the access link has not been provided. Wording can vary; time zone and missing-link status cannot be dropped.
+
+Show these results when you finish
+
+Completed both language versions.
+Dates, times, units, limitations, and unknowns match field by field.
+Did not turn invented proper-name translations into official names.
+
+Check one key idea
+
+May L1's English version say lunch is included?
+
+No; the source says extra cost with price undecided
+Yes, because there is an admission fee
+Yes, to keep English short
+
+No; the source says extra cost with price undecided
+
+Rewriting may shorten wording but cannot change what is included.
+
+Text and code are not saved automatically or uploaded. Download your record first. Next time, open the text file and paste your work back into the module. Save before changing language too.

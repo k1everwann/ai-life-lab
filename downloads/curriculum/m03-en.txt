@@ -1,0 +1,70 @@
+M03 Read, compare, and verify sources
+
+Find evidence for each conclusion and separate confirmed facts, missing data, and conflicts.
+
+All lesson data is fictional. This site does not call AI or connect your accounts. Paste the exercise into your own AI tool.
+
+Try this first
+
+Which meeting time in B and D is valid? Can the newer E replace B? Answer using source wording.
+
+When can I skip the instructions?
+
+Go to independent practice if you can explain the selection, unresolved issues, and who needs to confirm them.
+
+Teaching data
+
+Fictional data; time zone Asia/Taipei.
+D | issued 10/20: meet at Cloudbank Station on 2026/11/21 at 10:00.
+B | organizer approved 10/25: replaces D; meet at Cloudbank Station on 2026/11/21 at 09:00; download tickets by 11/19 19:00; check-in undecided.
+E | discussion draft 10/28: suggests meeting on 11/21 at 08:30; not approved.
+F | shuttle note: departs 11/21 at 09:30; approval status not stated.
+
+Your first request
+
+For each item, list conclusion, supporting source wording, confirmed / missing / conflict, and selection reason. Distinguish meeting, download deadline, and departure. Do not judge credibility only by date or filename.
+
+1. Mark the issue date, approval status, and replacement relationship for each source.
+2. Submit the sources and prompt to AI; request a source ID for every conclusion.
+3. Check the original text: B explicitly replaces D; E is newer but unapproved; F is a departure time, not a meeting time.
+4. Ask which items still need organizer confirmation. Save the source comparison and questions.
+
+Compare the reference result
+
+Currently approved meeting: 2026/11/21 09:00 at Cloudbank Station (B explicitly replaces D), 1 hour earlier than D's 10:00. Download deadline: 11/19 19:00 (B), not the meeting. E's 08:30 is unapproved and cannot replace B. F's 09:30 is a departure note whose validity needs organizer confirmation; it is not automatically a conflict with the 09:00 meeting. Check-in is missing.
+
+Do it yourself: a new situation
+
+Fictional P: approved 10/26, registration limit 20 people. Q: draft 10/29 suggests 30, unapproved. R: contact message 10/28 says 'limit 25' without stating whether it replaces P. List the approved value and unresolved issues.
+
+Known approved value: 20 (P). The 30-person value is a draft. The 25-person message differs from P, but authority and replacement are unclear. Ask the decision owner; do not assert that 25 or 30 is the final valid limit.
+
+Take the challenge
+
+Preserve uncertainty when no current approved version is available.
+
+Fictional V1: valid through 2026/10/20; fee 300 TWD. V2: draft dated 2026/10/28; proposed fee 350 TWD, unapproved. Inquiry date: 2026/10/29.
+
+Can today's fee be confirmed? State the limitations of both documents and the evidence needed.
+
+The current fee cannot be confirmed. V1 expired; V2 is newer but unapproved. Obtain the current approved fee notice, effective dates, and publisher confirmation. Neither 300 nor 350 can be presented as confirmed.
+
+Show these results when you finish
+
+Every conclusion has a source ID and verification reason.
+Newer was not equated with credible; times with different purposes were not mixed.
+Missing information and organizer questions remain visible.
+
+Check one key idea
+
+Why use B's 09:00 in this exercise?
+
+B is approved and explicitly replaces D
+B has a shorter filename
+Every newer document is valid
+
+B is approved and explicitly replaces D
+
+Approval and replacement support the choice. A newer date alone is insufficient.
+
+Text and code are not saved automatically or uploaded. Download your record first. Next time, open the text file and paste your work back into the module. Save before changing language too.

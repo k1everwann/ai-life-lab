@@ -1,0 +1,70 @@
+M01 Complete your first AI task
+
+Send a request on a computer, verify the deadline and unknowns, and save a result you can reopen.
+
+All lesson data is fictional. This site does not call AI or connect your accounts. Paste the exercise into your own AI tool.
+
+Try this first
+
+Before reading the steps, open a new chat, turn the notice below into one action, identify its source and an unknown, and save it.
+
+When can I skip the instructions?
+
+Skip to independent practice if you can show the submitted request, correct deadline, unknown, and reopened record.
+
+Teaching data
+
+Fictional teaching notice A1
+Activity date: 2026/11/21.
+Reply whether you will attend by 2026/11/18 18:00 (Asia/Taipei).
+The meeting location has not been announced.
+
+Your first request
+
+Using only notice A1, write one action with its deadline and source. List one item that needs confirmation. Do not guess.
+
+1. Keep this lesson tab open. Open another browser tab and visit an AI tool you can use. Sign in using its interface. If access is unavailable, observe a demonstration and record hands-on work as pending.
+2. Start a new chat in the AI tool and find its message input. Return to this lesson, copy the source, switch back to the AI tool, paste it, then paste the prompt.
+3. Check that the text is complete, then use the tool's send control. Wait for its answer. This happens in the AI tool; copying text in this lesson does not submit it.
+4. Return to the lesson and compare: the reply deadline is 11/18 18:00, not the activity date 11/21. The location remains unknown. If needed, ask: 'Correct this using A1; do not guess the location.'
+5. Return to this lesson. Paste your submitted request into the request field and the answer, source A1, and verification into the result and verification field. Select Download this lesson record, then open the downloaded text file from the browser download list and check its contents. You may also save a copy in your practice folder.
+
+Compare the reference result
+
+Action: reply whether you will attend by 2026/11/18 18:00 (Asia/Taipei); source A1. To confirm: meeting location. The activity date, 2026/11/21, is not the reply deadline. Wording may differ; facts must match.
+
+Do it yourself: a new situation
+
+New fictional source A2: reading activity on 2026/12/03; choose a topic by 12/01 12:00 (Asia/Taipei); classroom undecided. In a new chat, write the action and unknown, and save a second record.
+
+Choose a topic by 12/01 12:00; source A2; classroom to confirm; activity on 12/03. Actually save and reopen it; reading this answer alone is not hands-on completion.
+
+Take the challenge
+
+Make a two-sentence note for a partner, preserving the deadline and unknown.
+
+Fictional A3: sharing session on 2026/12/05; submit a topic by 12/02 17:00 (Asia/Taipei); 5 minutes per speaker; venue undecided.
+
+Rewrite A3 in two sentences. Put the action and deadline in the first; put the activity date, speaking time, and unknown in the second.
+
+Submit your topic by 2026/12/02 17:00 (Asia/Taipei). The session is on 12/05, with 5 minutes per speaker; the venue is to be confirmed.
+
+Show these results when you finish
+
+Submitted a request in an AI tool and can distinguish it from the lesson tab.
+Deadline, source, and unknown match A1.
+Saved and reopened the record; unperformed operations are marked pending.
+
+Check one key idea
+
+What is A1's reply deadline?
+
+2026/11/18 18:00 (Asia/Taipei)
+2026/11/21
+When the location is announced
+
+2026/11/18 18:00 (Asia/Taipei)
+
+A1 explicitly says 11/18 18:00. The activity date, 11/21, is a different field.
+
+Text and code are not saved automatically or uploaded. Download your record first. Next time, open the text file and paste your work back into the module. Save before changing language too.

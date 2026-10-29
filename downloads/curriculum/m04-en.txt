@@ -1,0 +1,71 @@
+M04 Gmail: find actions and draft replies
+
+Read specified teaching emails and produce actions and an unsent reply.
+
+All lesson data is fictional. This site does not call AI or connect your accounts. Paste the exercise into your own AI tool.
+
+Try this first
+
+Find the valid deadline in the specified thread and identify the original evidence. State whether you read connected mail or practiced with pasted text.
+
+When can I skip the instructions?
+
+Skip the basics if you can use an available plugin to read the specified thread, verify the original, and distinguish drafting from sending. Pasted text completes only the organization exercise.
+
+Teaching data
+
+All emails below are fictional teaching material, not your actual inbox.
+Subject: [AI Lab] Cloudbank activity confirmation
+G1 | body version date 2026/10/27 | Organizer: reply whether attending by 11/18 18:00 (Asia/Taipei); meeting location undecided.
+G2 | body version date 2026/10/28 | Same organizer replies: reply deadline changes to 11/18 17:00; all else unchanged.
+Learner decision for this exercise: will attend; wants to ask about the meeting location. These are fictional version dates inside the email body, not actual receipt dates; sending/receipt occurs when the lesson is prepared.
+
+Your first request
+
+Read only the teaching thread with subject [AI Lab] Cloudbank activity confirmation, received on [enter the actual preparation date], including updates. List the valid deadline, action, sources, and unknowns. Draft a reply saying I will attend and asking about the meeting location. Output text in this chat only; do not create a Gmail draft or send. If mail cannot be read, say so; do not claim you searched.
+
+1. Connected route: the instructor first prepares G1 and G2 as one thread in a dedicated teaching account and verifies the subject and actual receipt date, then replaces the date placeholder with that date; fictional body dates are not receipt-date filters. Follow the shared connection guide to check Gmail plugin availability and the permitted account. If unsupported by the account or plan, paste the text and record connection as pending.
+2. For the connected route, submit the scoped request. For pasted-text practice, submit the source too and replace the mail-reading instruction with 'Organize only the text pasted below.'
+3. Open the source thread returned by the tool and verify G1 and G2. A search snippet or an inaccessible source does not complete original-email verification.
+4. Check the deadline is 11/18 17:00, the reply says you will attend, and it asks about the location. Do not invent a location or treat read mail as answered mail.
+5. Save the draft and source record, labeled 'chat draft, not sent.' Sending requires a separate explicit decision; this lesson ends at the draft.
+
+Compare the reference result
+
+Action: reply that you will attend by 11/18 17:00 (Asia/Taipei); G2 replaces G1's 18:00. Unknown: meeting location. Draft: 'Hello, I will attend the Cloudbank activity. When will the meeting location be announced? Thank you.' Status: chat text only; no Gmail draft created and nothing sent.
+
+Do it yourself: a new situation
+
+New fictional H1: subject [AI Lab] Book pickup confirmation; fictional body version date 2026/11/02; confirm pickup by 11/05 12:00 (Asia/Taipei); location undecided. Your decision: you can pick it up. Independently write an action and reply using pasted text. To practice a connection, ask the instructor to prepare this email in the teaching account first, then scope reading by subject and actual preparation/receipt date, not the fictional body date.
+
+Confirm by 11/05 12:00; source H1; location unknown. Draft: 'I can pick it up. Please let me know the pickup location. Thank you.' Unsent. Without evidence of connected reading, label this pasted-text practice.
+
+Take the challenge
+
+Separate a partial reply from a schedule update.
+
+Fictional thread: J1 organizer says meet 2026/11/07 09:00 and asks for attendance and meal choice. J2 organizer changes meeting to 10:00; all else unchanged. J3 learner replies only 'I will attend.' Meal choice remains unanswered. Time zone Asia/Taipei.
+
+List the current arrangement, completed reply, and remaining reply. Draft a question without guessing the meal choice.
+
+Meet 11/07 10:00 (J2); attendance answered (J3); meal unanswered. Attendance alone does not complete everything. Ask the learner 'Which meal would you like?' Do not fill in or send a choice before receiving it.
+
+Show these results when you finish
+
+The search scope and source thread are explicit, including the update.
+Connected reading and pasted text are recorded separately.
+Deadline and draft are verified and the unsent status is clear.
+
+Check one key idea
+
+After pasting G1 and G2 into AI, what can you claim?
+
+Pasted-text organization is complete; Gmail connection is unverified
+Gmail is successfully connected
+The email was sent
+
+Pasted-text organization is complete; Gmail connection is unverified
+
+Organizing text, reading an account, and sending mail are different operations.
+
+Text and code are not saved automatically or uploaded. Download your record first. Next time, open the text file and paste your work back into the module. Save before changing language too.

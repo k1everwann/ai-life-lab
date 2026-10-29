@@ -1,0 +1,68 @@
+M09 Test, debug, and restore a tool
+
+Reproduce a counting bug, apply a minimal fix, test, and retain a restorable version.
+
+All lesson data is fictional. This site does not call AI or connect your accounts. Paste the exercise into your own AI tool.
+
+Try this first
+
+In the broken checklist, check only the first item. Expected 1; what actually appears? Report reproducible steps, not just 'broken.'
+
+When can I skip the instructions?
+
+Go to independent practice if you can show reproduction, cause, minimal fix, 2→1→0 regression, and restoration evidence.
+
+Teaching data
+
+Fictional broken exercise file: downloads/curriculum/broken-checklist-en.html; working reference: downloads/curriculum/correct-checklist-en.html.
+The faulty count uses checkboxes.slice(1), omitting the first checkbox. Tasks in order: Download tickets, Confirm meeting location, Bring a water bottle. Count every item without changing task labels.
+
+Your first request
+
+I will paste the broken HTML. First explain why checking only the first item shows 0 instead of 1, and checking the first two shows 1 instead of 2. Fix only the counting scope that omits the first item through slice(1). Provide complete corrected HTML and the minimal difference. Preserve labels, reset, and no progress saving. List regression tests.
+
+1. Download the broken and working reference files into your practice folder. Preserve the working file as baseline.html. Open it first and verify first two checked→2, first unchecked→1, reset→0.
+2. Open the broken file and reset. Check only the first item: expected 1/3, actual 0/3. Check the second too: expected 2/3, actual 1/3. Record filename, sequence, expected, and actual results.
+3. Open the broken file in a text editor and send its complete HTML and the prompt to AI. Verify that the fix removes .slice(1) from the counting scope rather than adding 1 to the display.
+4. Save as fixed.html. Test first two checked 2/3→uncheck first 1/3→reset 0/3, then first alone 1/3. Verify original labels, narrow-window use, and keyboard operation.
+5. Rehearse restoration: copy baseline.html to restore-check.html, open it, and retest 2→1→0. Save the bug report, fixed version, backup, and test results.
+
+Compare the reference result
+
+Cause: slice(1) skips index 0. Fix: count the full checkboxes collection by removing .slice(1). Do not add 1, because no checks must yield 0. Corrected results: first alone 1/3; first two 2/3; uncheck first 1/3; reset 0/3. The restored copy also passes 2→1→0.
+
+Do it yourself: a new situation
+
+Download the fictional independent-task bug file downloads/curriculum/reset-bug-en.html and save a copy before testing. Its two reading tasks are Choose an article and Write three questions. It starts at 0/2; checking both gives 2/2. Reset clears the checks but still displays 2/2. This specific file defines updateCount(), but reset clears checks without calling it. Open this file in a text editor and send its complete contents with your reproduction report to AI. Request a minimal fix, save separately, and retest. Download correct-reset-en.html for comparison; do not apply the change to unrelated code with an unknown structure.
+
+Reproduce: reopen→check both→reset. Expected unchecked and 0/2; actual unchecked and 2/2. Call updateCount() after clearing checks. Test 2→reset 0→check first 1. Do not merely hide the incorrect number.
+
+Take the challenge
+
+Download the fixed search/reset bug exercise search-reset-bug-en.html, preserve the original, and save a working copy. Reproduce the uncleared hidden item, send the full code to AI for a minimal fix, and run regression tests.
+
+Fictional bug file: downloads/curriculum/search-reset-bug-en.html; reference fix: downloads/curriculum/correct-search-reset-en.html. Tasks in order: Download tickets, Confirm meeting location, Bring a water bottle. The count includes all items; search changes visibility only; reset must clear every checkbox and search. Intentional bug: reset clears only currently visible items before clearing search, leaving hidden checked items checked.
+
+I will paste this broken HTML. Explain and reproduce: check the first and third items for 2/3; search tickets so only the first is visible, still 2/3; reset should show all items at 0/3, but actually shows all at 1/3 with the third still checked. Fix only reset so it traverses all checkboxes rather than just visible ones. Preserve search and counting scope. Return the complete fixed file, minimal difference, and regression steps.
+
+Reproduction: check items 1 and 3→2/3; search tickets→one visible, still 2/3; reset→all visible but 1/3, with the third still checked. After the fix, the same sequence must reset to all visible and 0/3, clearing the hidden third item too. Then check the first two 2/3→uncheck first 1/3→reset 0/3. Search still changes only visibility, not counting scope. Change the reset clearing scope to all checkboxes; do not delete the third item or force the display to zero while leaving it checked. Preserve the original and reopen it if restoration is needed.
+
+Show these results when you finish
+
+Retained a tested working backup.
+Another person can reproduce the bug from my report.
+Tested 2→1→0 on the minimal fix and restored copy.
+
+Check one key idea
+
+Why not add 1 to every faulty count?
+
+No checked items would show 1, masking the bug and creating another
+Three items are too few
+The labels are too short
+
+No checked items would show 1, masking the bug and creating another
+
+Fix the omitted counting scope instead of applying a constant to every state.
+
+Text and code are not saved automatically or uploaded. Download your record first. Next time, open the text file and paste your work back into the module. Save before changing language too.

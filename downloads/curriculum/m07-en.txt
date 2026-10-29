@@ -1,0 +1,74 @@
+M07 Tables: understand monthly changes
+
+Recalculate totals and changes, distinguishing greater than, at least, refunds, and unknowns.
+
+All lesson data is fictional. This site does not call AI or connect your accounts. Paste the exercise into your own AI tool.
+
+Try this first
+
+Calculate both monthly totals from six rows. Predict the category count when 'increase greater than 50' becomes 'increase at least 50.'
+
+When can I skip the instructions?
+
+Go to the challenge if you can recalculate differences, percentage denominator, and boundaries, and explain why missing is not zero.
+
+Teaching data
+
+Fictional spending; purchase-month basis; all TWD. Positive values are spending; negatives are refunds.
+ID,Month,Category,Amount
+S01,2026-09,Meals,1200
+S02,2026-09,Transport,400
+S03,2026-09,Services,500
+O01,2026-10,Meals,1350
+O02,2026-10,Transport,450
+O03,2026-10,Services,550
+
+Your first request
+
+Using only these six rows, calculate September and October totals, October minus September, and difference divided by September total as a percentage rounded to 1 decimal. Show category differences and source IDs. First select increases >50, then >=50; explain whether totals change. Do not guess causes.
+
+1. Manually calculate September 1200+400+500 and October 1350+450+550 and record your prediction.
+2. Submit the six rows and prompt. Use a calculator to check both totals and 250÷2100×100.
+3. Check category increases: meals 150, transport 50, services 50. Apply >50, then change only the condition to >=50; observe 1 category becoming 3.
+4. Follow up: 'Add an October meals refund of -100, assigned to October purchase month; recalculate.' Keep the original six rows and add a refund row instead of overwriting 1350.
+5. Save the data scope, formulas, threshold results, and refund results. Describe numeric changes without claiming price rises or behavior changes.
+
+Compare the reference result
+
+Original six rows: September 2100; October 2350; increase 250; 250÷2100×100≈11.9%. Categories: meals +150, transport +50, services +50. >50 selects meals only, 1 category; >=50 selects 3. Monthly totals do not change. After an October meals refund of -100: October 2250, increase 150, 150÷2100×100≈7.1%; net meals 1250, with all three categories +50.
+
+Do it yourself: a new situation
+
+New fictional TWD data: September books 300, transport 200; October books 360, transport 240. Calculate monthly totals and percentage change, then compare category increases >40 and >=40.
+
+September 500; October 600; increase 100, 20.0%. Books +60, transport +40. >40 selects 1 category; >=40 selects 2. Thresholds do not change totals.
+
+Take the challenge
+
+Handle missing amounts, a zero baseline, and different currencies together.
+
+Fictional category data: September courses 0 TWD, meals 100 TWD; October courses 200 TWD, meals amount missing, books 10 USD. No exchange rate; do not guess amounts.
+
+List known subtotals by currency, unknowns, and valid differences. Can the courses percentage be calculated? Can a complete October total or overall percentage change be claimed?
+
+September known TWD total is 100. October known TWD subtotal is 200 with meals unknown; the separate 10 USD cannot be added directly. Courses increase by 200, but percentage change is undefined with a zero baseline. The complete October total and overall percentage change are unconfirmed; a known subtotal is not a complete total.
+
+Show these results when you finish
+
+Independently checked 2100→2350, +250, and 11.9%.
+>50 selects 1 category; >=50 selects 3; original data unchanged.
+Refund results are 2250, +150, 7.1%; missing remains distinct from zero.
+
+Check one key idea
+
+How many original categories meet 'at least 50'?
+
+3 categories; totals unchanged
+1 category; totals increase
+2 categories because equality is excluded
+
+3 categories; totals unchanged
+
+At least includes equality, so 150, 50, and 50 all qualify. Filtering does not change the original totals.
+
+Text and code are not saved automatically or uploaded. Download your record first. Next time, open the text file and paste your work back into the module. Save before changing language too.

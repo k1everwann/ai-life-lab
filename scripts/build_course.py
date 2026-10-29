@@ -102,7 +102,7 @@ def showcase(lang, base, extra, c):
         html = html.replace(target, target + block, 1)
     return html
 
-def render(lang, data, course):
+def legacy_render(lang, data, course):
     en = lang == 'en'
     t, x, c = data['locales'][lang], course['locales'][lang], COPY[lang]
     prefix = '../' if en else ''
@@ -141,12 +141,19 @@ def render(lang, data, course):
         html += '<script id="' + identifier + '" type="application/json">' + json.dumps(value, ensure_ascii=False, indent=2).replace('</', '<\\/') + '</script>'
     return html + '</body></html>\n'
 
+def render(lang, data, course):
+    from build_curriculum import render as render_curriculum
+    return render_curriculum(lang, data, course, showcase, COPY[lang])
+
+
 def redirect(lang, target):
     en = lang == 'en'
     title = 'The complete lesson is on one page' if en else '完整講座已整合在同一頁'
     return f'''<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0;url={target}"><link rel="canonical" href="index.html"><title>{title}</title></head><body><h1>{title}</h1><a href="{target}">{'Open the complete lesson' if en else '開啟完整講座'}</a><nav aria-label="Language"><a href="{'../' if en else ''}index.html" data-language-switch="zh-Hant" lang="zh-Hant">繁體中文</a><a href="{'' if en else 'en/'}index.html" data-language-switch="en" lang="en">English</a></nav></body></html>\n'''
 
 def build():
+    from build_curriculum import write_materials
+    write_materials()
     data = json.loads((ROOT / 'seminar-content.json').read_text(encoding='utf-8'))
     course = json.loads((ROOT / 'course-content.json').read_text(encoding='utf-8'))
     for lang in ('zh-Hant', 'en'):

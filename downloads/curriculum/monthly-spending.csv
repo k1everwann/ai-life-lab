@@ -1,0 +1,7 @@
+row_id,month,category,amount_twd
+S01,2026-09,Meals,1200
+S02,2026-09,Transport,400
+S03,2026-09,Services,500
+O01,2026-10,Meals,1350
+O02,2026-10,Transport,450
+O03,2026-10,Services,550

@@ -4,9 +4,10 @@
   let edited = false;
   const track = event => {
     const el = event.target;
-    if (el.matches('textarea:not([readonly]), input[type="text"], input:not([type])')) edited = true;
+    if (el.matches('textarea:not([readonly]), input, select')) edited = true;
   };
   document.addEventListener("input", track);
+  document.addEventListener("change", track);
   document.querySelectorAll("[data-language-switch]").forEach(link => {
     const current = link.dataset.languageSwitch === document.documentElement.lang;
     if (current) link.setAttribute("aria-current", "page");

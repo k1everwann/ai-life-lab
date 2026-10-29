@@ -1,0 +1,73 @@
+M12 Choose, verify, and share a useful project
+
+Choose one small project, make a personal change, and let a partner operate and verify it from your instructions.
+
+All lesson data is fictional. This site does not call AI or connect your accounts. Paste the exercise into your own AI tool.
+
+Try this first
+
+Choose a direction and write one sentence stating the user's task, input, and observable success. Existing projects should face a new requirement.
+
+When can I skip the instructions?
+
+Go to the source-change challenge if you have sources, a personal change, tests, and a partner walkthrough record. Public deployment is optional.
+
+Teaching data
+
+All four are public fictional reconstructions; choose one.
+Travel: T1 organizer approval: meet 2026/11/21 09:00 at Cloudbank Station; download tickets by 11/19 19:00 (Asia/Taipei); check-in undecided. Goal: source-traceable itinerary/actions.
+N1: original practice, not official exam questions. Q1 確認しないことには、返事ができない。 Rule: ないことには means 'unless you first…you cannot…'. Q2 忙しいとはいえ、確認は必要だ。 Rule: とはいえ means 'although…nevertheless…'. Goal: two verifiable study cards, without exam-outcome claims.
+Home: simulation of sensor-driven air-conditioning rules: >=28°C generates an activation request; E1=27, E2=28, E3=missing, E2 redelivery; deduplicate by ID. Goal: results table or simulator, no device connection.
+TickForge: fictional trading volume, not account performance. K1 | D1 | volume100; K1 | D2 | volume130; K2 | D1 | volume0; K2 | D2 | volume20. Goal: compare volume changes; no trading advice or trading connection.
+
+Your first request
+
+I choose [enter one: Travel, N1, Home, or TickForge]. Using only that source, define the smallest artifact, inputs, verifiable result, and three acceptance steps, then build version one. Preserve unknowns and use no private data. If making HTML, provide a complete saveable file. If starting with text or a table, clearly label it as not yet a webpage. Do not deploy or connect external systems.
+
+1. Choose one direction and retain its starter data. Web projects require M08/M09 skills, analysis can use M07, and rules can use M10. Completing every lesson is unnecessary.
+2. Write your own one-sentence requirement and submit the prompt. Travel: three-field checklist; N1: sentence/meaning/self-test cards; Home: event-by-event results; TickForge: differences and percentages table.
+3. Verify version one against the reference below. A webpage must actually be saved, opened, and operated. A text-only artifact should honestly be labeled a text prototype.
+4. Add one personal requirement and save before/after versions: e.g., a Travel source column, N1 answer reveal, Home duplicate notice, or TickForge zero-baseline note. Write expectations before testing.
+5. Write handoff instructions: how to open, input, perform one action, verify the result, understand data limits, and restore. Ask someone uninvolved in building to follow them and record actual results. Without a partner, mark the walkthrough pending.
+6. Save requirements, source, artifact, change, tests, handoff, and unresolved issues. These are project evidence; self-reported checkmarks do not verify the work.
+
+Compare the reference result
+
+Travel: download deadline 11/19 19:00; meet 11/21 09:00 at Cloudbank Station; check-in unknown; all 2026/Asia/Taipei, source T1. Do not guess check-in. N1: Q1 'Unless I check first, I cannot reply'; Q2 'Although busy, checking is still necessary'; meanings match supplied rules and allow an answer before reveal. Home: E1 no request, E2 one simulated request, E3 unknown, duplicate E2 skipped; total 1, explicitly no real device control. TickForge: K1 +30, 30÷100=30.0%; K2 +20 with percentage undefined due to zero baseline; neither infinite growth nor profit. Each route also needs a personal change, tests, and handoff record; unfinished parts remain pending.
+
+Do it yourself: a new situation
+
+Choose one fresh fictional set and independently make version two. Travel: T2, meet 2026/12/05 10:00 at Cloud Tower, register by 12/03 16:00, transport unknown, Asia/Taipei. N1: Q3 準備しないことには、始められない。 uses 'unless first…cannot…'; Q4 短いとはいえ、内容は豊富だ。 uses 'although…nevertheless…'. Home: F1=28, F2=29, F3 missing, F1 redelivery, using >=28 and ID deduplication. TickForge: K3 D1 volume200/D2 volume150; K4 D1 volume0/D2 volume0. Use only the selected data and save one test.
+
+Travel: register 12/03 16:00; meet 12/05 10:00 at Cloud Tower; transport unknown. N1: Q3 cannot start without preparing first; Q4 although short, the content is rich. Home: F1 and F2 each generate one simulated request; missing unknown, duplicate skipped; total 2. TickForge: K3 -50, -25.0%; K4 difference0, percentage still undefined (0÷0), not 0%. Verify only your chosen route without mixing version-one data.
+
+Take the challenge
+
+Add an update or counterexample to your chosen artifact, retaining a restorable version.
+
+All fictional; choose one. Travel: organizer-approved T3 replaces T1's download deadline with 2026/11/19 18:00; all else unchanged. N1: Q5 忙しいとはいえ、確認は不要だ。 Here 不要 means unnecessary; do not reuse Q2's 'still necessary'. Home: new E4 temperature is text 'sensor error'; only numeric values are accepted. TickForge: a duplicate K1 D2 volume130 row is added; full key is code+date; do not sum duplicate rows twice.
+
+Save the original first. Apply my chosen update or counterexample. List what should change, what should not, expected results, and restoration steps, then produce a new version. Do not treat missing or duplicate data as a normal new value.
+
+Travel: only download changes to 18:00; meeting remains09:00 and check-in unknown. N1 Q5: 'Although busy, checking is unnecessary'; reflect the difference between 不要 and 必要 instead of copying Q2. Home E4 invalid/unknown, 0 requests, not converted to0°C. TickForge: retain the identical key/value row once; K1 remains100→130,+30,30.0%. Conflicting values under one key require confirmation. Restore by reopening the saved prior version and rerunning its original cases.
+
+Show these results when you finish
+
+A small artifact with traceable fictional sources.
+My personal change has before/after versions and actual tests.
+Handoff instructions are executable; pending partner walkthroughs are explicitly marked.
+Text prototypes, actual HTML, simulation, and external operations are distinct; unperformed work is not claimed complete.
+
+Check one key idea
+
+For TickForge's 0→20, what is the percentage change?
+
+Undefined due to zero baseline; absolute change is +20
++20%
+Infinite profit
+
+Undefined due to zero baseline; absolute change is +20
+
+The percentage denominator is zero. This measures volume, not account profit.
+
+Text and code are not saved automatically or uploaded. Download your record first. Next time, open the text file and paste your work back into the module. Save before changing language too.

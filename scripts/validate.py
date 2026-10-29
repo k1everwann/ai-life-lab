@@ -39,7 +39,7 @@ for file in ROOT.rglob("*.html"):
     if any(part in file.parts for part in (".qa", "templates")):continue
     doc=Doc();doc.feed(file.read_text(encoding="utf-8"));docs[file.resolve()]=doc
     if doc.duplicates:errors.append(f"{file.name}: duplicate IDs {doc.duplicates}")
-    expected_lang="en" if "en" in file.relative_to(ROOT).parts else "zh-Hant"
+    expected_lang="en" if "en" in file.relative_to(ROOT).parts or file.name.endswith('-en.html') else "zh-Hant"
     if doc.lang!=expected_lang:errors.append(f"{file.relative_to(ROOT)}: expected {expected_lang} lang")
 for file,doc in docs.items():
     for ref in doc.refs:
@@ -113,13 +113,12 @@ companion_spec=importlib.util.spec_from_file_location("companion",ROOT/"scripts"
 companion=importlib.util.module_from_spec(companion_spec);companion_spec.loader.exec_module(companion)
 course=json.loads((ROOT/"course-content.json").read_text(encoding="utf-8"))
 demo_data=json.loads((ROOT/"seminar-content.json").read_text(encoding="utf-8"))
-if sum(row["minutes"] for row in course["schedule"])!=60:errors.append("Course must be 60 minutes")
 for lang in ("zh-Hant","en"):
     directory=ROOT/"en" if lang=="en" else ROOT
     if (directory/"index.html").read_text(encoding="utf-8")!=companion.render(lang,demo_data,course):errors.append(f"{lang}: homepage generator mismatch")
     for filename,target in (("instructor.html","index.html"),("next-steps.html","index.html#continue")):
         if (directory/filename).read_text(encoding="utf-8")!=companion.redirect(lang,target):errors.append(f"{lang} {filename}: same-page redirect mismatch")
-checks.append("One complete bilingual 60-minute course; earlier bookmarks return to the same lesson")
+checks.append("Bilingual modular course generated consistently; earlier bookmarks return to the same page")
 
 for file,expected in (("instructor-guide.pdf",8),("student-cards.pdf",2)):
     from pypdf import PdfReader
@@ -165,6 +164,9 @@ analysis_module.validate()
 seminar_spec=importlib.util.spec_from_file_location("validate_seminar",ROOT/"scripts"/"validate_seminar.py")
 seminar_module=importlib.util.module_from_spec(seminar_spec);seminar_spec.loader.exec_module(seminar_module)
 seminar_module.validate()
+curriculum_spec=importlib.util.spec_from_file_location("validate_curriculum",ROOT/"scripts"/"validate_curriculum.py")
+curriculum_module=importlib.util.module_from_spec(curriculum_spec);curriculum_spec.loader.exec_module(curriculum_module)
+curriculum_module.validate()
 for msg in checks:print("PASS "+msg)
 if errors:
     for msg in errors:print("FAIL "+msg)
