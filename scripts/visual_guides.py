@@ -16,23 +16,28 @@ for key,file,h,zh,en in (
  ('gmail-paste','gmail-paste-zh.jpg',280,'這課的郵件，貼上後會長這樣','This lesson’s email, pasted into ChatGPT'),
  ('drive-paste','drive-paste-zh.jpg',280,'這課的兩個方案，貼上後會長這樣','This lesson’s two plans, pasted into ChatGPT'),
  ('notion-paste','notion-paste-zh.jpg',250,'這課的筆記，貼上後會長這樣','This lesson’s notes, pasted into ChatGPT')):
-    SHOTS[key]=(file,635,h,zh,en,'按上方「複製資料與要求」，切到 ChatGPT 的新對話，點輸入框後按 Ctrl+V（Mac：⌘V）。文字較長可在框內捲動；確認資料與要求都在，再按右下向上箭頭。這是貼文字練習，尚未連接帳號，也不會寄信或建立文件。','Use “Copy material and request”, switch to a new ChatGPT conversation, click the message box and press Ctrl+V (Mac: ⌘V). Scroll inside the box to check that both parts are present, then send with the upward arrow at the bottom right. This is a text exercise: no account is connected, and no email is sent or document created.')
+    SHOTS[key]=(file,635,h,zh,en,'在 ChatGPT 新對話的輸入框按 Ctrl+V（Mac：⌘V）。確認資料與要求都貼上後，按右下角的向上箭頭送出；長文字可在框內捲動。','In a new ChatGPT conversation, click the message box and press Ctrl+V (Mac: ⌘V). Check that both the material and request are present, then send with the upward arrow at the bottom right. Scroll inside the box to read long drafts.')
 
-def figure(key,lang,prefix):
+def figure(key,lang,prefix,show_title=True):
     file,w,h,zh,en,zhtext,entext=SHOTS[key]
     title,text=(en,entext) if lang=='en' else (zh,zhtext)
     url=prefix+'assets/walkthrough/'+file
     zoom='View larger image' if lang=='en' else '查看大圖'
-    return '<figure class="walkthrough-shot"><figcaption><strong>'+escape(title)+'</strong><p>'+escape(text)+'</p></figcaption><a class="screenshot-link" href="'+url+'" target="_blank" rel="noopener" data-screenshot aria-label="'+escape(zoom+': '+title,quote=True)+'"><img src="'+url+'" width="'+str(w)+'" height="'+str(h)+'" loading="lazy" alt="'+escape(title+' — '+text,quote=True)+'"><span>'+zoom+' ↗</span></a></figure>'
+    return '<figure class="walkthrough-shot"><figcaption>'+('<strong>'+escape(title)+'</strong>' if show_title else '')+'<p>'+escape(text)+'</p></figcaption><a class="screenshot-link" href="'+url+'" target="_blank" rel="noopener" data-screenshot aria-label="'+escape(zoom+': '+title,quote=True)+'"><img src="'+url+'" width="'+str(w)+'" height="'+str(h)+'" loading="lazy" alt="'+escape(title+' — '+text,quote=True)+'"><span>'+zoom+' ↗</span></a></figure>'
 
 def note(lang):
     return '<p class="screenshot-note">'+('Real screenshots · 2026-10-29 · Traditional Chinese interface, with English instructions. The screen may vary by account or version. Examples contain fictional data.' if lang=='en' else '實際截圖 · 2026-10-29 · 畫面可能依帳號與版本不同。示範只使用虛構資料。')+'</p>'
 
 def chat_guide(lang,prefix,key):
-    first=key=='M01'
-    shot={'M04':'gmail-paste','M05':'drive-paste','M06':'notion-paste'}.get(key,'paste')
-    title='See the first conversation, step by step' if lang=='en' else '第一次操作？從開啟畫面看到收到回答'
-    return '<div class="visual-guide">'+figure(shot,lang,prefix)+'<details'+(' open' if first else '')+'><summary>'+title+'</summary>'+figure('start',lang,prefix)+figure('answer',lang,prefix)+figure('followup',lang,prefix)+'</details>'+note(lang)+'</div>'
+    en=lang=='en'
+    steps=[('start','開啟 ChatGPT，找到輸入框','Open ChatGPT and find the message box'),('paste','貼上資料，送出要求','Paste the material and send'),('answer','核對回答中的日期與資訊','Check dates and facts in the response'),('followup','在同一段對話追問','Ask for a change in the same conversation')]
+    panels=''.join('<details class="visual-step" name="visual-'+key+'"'+(' open' if key=='M01' and i==0 else '')+'><summary>'+str(i+1)+'. '+(english if en else chinese)+'</summary>'+figure(shot,lang,prefix,False)+'</details>' for i,(shot,chinese,english) in enumerate(steps))
+    if key=='M01':
+        return '<div class="visual-guide"><h3>'+('Follow the pictures, one step at a time' if en else '看圖操作，一次看一步')+'</h3>'+panels+note(lang)+'</div>'
+    shot={'M04':'gmail-paste','M05':'drive-paste','M06':'notion-paste'}.get(key)
+    title='Need help with the controls? See the Lesson 1 example' if en else '不知道在哪裡操作？看第 1 課的圖解'
+    return '<div class="visual-guide">'+(figure(shot,lang,prefix) if shot else '')+'<details class="common-visuals"><summary>'+title+'</summary>'+panels+note(lang)+'</details>'+(note(lang) if shot else '')+'</div>'
+
 
 def connection_guide(lang,prefix,key=None):
     keys={'M04':['directory'],'M05':['drive'],'M06':['notion']}.get(key,['directory','drive','notion'])
