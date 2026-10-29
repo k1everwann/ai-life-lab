@@ -1,44 +1,54 @@
-M10 Rules and automation: repeat a workflow
+Let repeated tasks follow a rule
 
-Test boundaries, missing values, and deduplication with simulated sensor events; separate rules from external actions.
+Before automating a reminder, spell out when it should and should not happen.
 
-All lesson data is fictional. This site does not call AI or connect your accounts. Paste the exercise into your own AI tool.
+What you will make
 
-Try this first
+Get a row-by-row simulation explaining the temperature rule.
 
-For temperature >=28°C, what happens at 27, 28, 29, and missing? May the same event send a second notification?
+Example result
 
-When can I skip the instructions?
+At least 28°C: 2 simulated start requests.
+Above 28°C: 1 request; repeated events do not trigger again.
 
-Go to the retry challenge if you can show normal, boundary, missing, and duplicate cases and identify that external control has not occurred.
+This is a prepared example. Your AI may use different wording.
 
-Teaching data
+Follow along
 
-Fictional Home sensor-event simulation; no device connection. The application direction uses real sensor data to drive air-conditioning rules; this lesson reconstructs only the logic.
-Rule: receive event→check whether event_id was processed→validate numeric temperature→if >=28°C, record one 'air-conditioning activation request (simulated)' and one notification; below 28 makes no request; missing means unknown, no control. Record each new event's result; the same ID creates no further request or notification.
-Events in order: E01,27; E02,28; E03,29; E04,missing; E02,28 (redelivery).
+Work in your own AI tool
 
-Your first request
+Practice material
 
-Simulate only these rules. In order, show event_id, temperature, decision, simulated request count, notification count, and reason. Track processed IDs. Do not connect an air conditioner or set a schedule. Identify deterministic rules, where AI can help, and external actions not performed.
+Fictional temperature readings for text simulation; no equipment connection.
+Rule: at 28°C or above, create one simulated air-conditioner start request and one notification. Below 28°C, do nothing. With no temperature, do nothing for now. If an event ID has already been processed, do not process it again.
+In order: E01: 27°C; E02: 28°C; E03: 29°C; E04: no temperature; E02: 28°C (the same event sent again).
 
-1. Write predictions for the four temperatures, noting that 28 is included in >=28.
-2. Submit rules and events to AI for sequential simulation. Check whether redelivered E02 incorrectly triggers again.
-3. Temporarily change the condition to >28. Predict that only E02's boundary decision changes. Run a fresh batch, compare, then restore >=28. Start each batch with an empty processed-ID set.
-4. Draw or write the flow: event→deduplicate→validate→compare→simulated request or unknown→record. Distinguish AI writing specifications, code evaluating conditions, and actual device control.
-5. Save the five result rows and rule version. This simulation does not prove that a schedule exists or a device was controlled.
+Request for AI
 
-Compare the reference result
+Try the rules below. For each row show temperature, whether it produces a simulated start request, whether it notifies, and one reason. Do not process a repeated event twice. Use text simulation only.
+
+1. Paste the rules, five readings, and request into AI to get a trial table.
+2. Check that 28 and 29 degrees each produce one request and notification; the missing reading produces no action.
+3. Then send: “Change the rule to above 28 degrees and rerun these five events from an empty record.” See whether the 28-degree event stops triggering.
+4. Compare the two versions: 2 requests first, then 1. This tests a rule; it does not connect to real equipment.
+
+After trying: compare a possible result
 
 E01 27: no activation, 0 requests/0 notifications. E02 28: simulated activation, 1/1. E03 29: simulated activation, 1/1. E04 missing: unknown, 0/0. Redelivered E02: skipped, 0 new requests/0 new notifications. Total 2 requests and 2 notifications. A fresh >28 batch activates only E03, total 1; restoring >=28 gives 2. Comparison and deduplication are rules; AI can help write and explain them. No actual device was controlled.
 
-Do it yourself: a new situation
+Check these parts of your result
+
+At least 28 includes 28; above 28 does not.
+Missing readings cause no action; repeated event IDs cause no new notification.
+This is text simulation, not actual air-conditioner control.
+
+Try a different situation yourself
 
 New fictional rule and events: humidity >=70% produces one dehumidification reminder, simulation only; deduplicate by ID and mark missing as unknown. In order: H01,69; H02,70; H03,71; H04,missing; H02,70 redelivery. List each result independently.
 
 H01 no reminder; H02 one; H03 one; H04 unknown, none; duplicate H02 skipped. Total 2 reminders. 70 qualifies; missing is not 0%.
 
-Take the challenge
+Try a more involved task
 
 Specify failure retries and cooldown state explicitly.
 
@@ -48,22 +58,6 @@ Simulate state only. List attempts, success/failure, deduplication, and notifica
 
 R1: 2 attempts, succeeds and notifies once at 10:01; redelivery 10:02 skipped. R2: 1 successful attempt, no notification because only 2 minutes have passed. R3: 2 failed attempts, then stop and refer to a person; no success state or success notification. Total 5 attempts, 2 successful events, 1 notification. No unlimited retries.
 
-Show these results when you finish
+Save your work and continue later
 
-Correct results for 27, 28, 29, and missing.
-Redelivery of E02 creates no additional action.
-Clearly separated simulation, deterministic rules, AI help, and actual device control.
-
-Check one key idea
-
-Under >=28°C, what should happen when temperature is missing?
-
-Mark unknown and make no control request
-Treat it as 0°C
-Treat it as 28°C and activate
-
-Mark unknown and make no control request
-
-Missing data cannot be compared and must not silently become zero or the threshold.
-
-Text and code are not saved automatically or uploaded. Download your record first. Next time, open the text file and paste your work back into the module. Save before changing language too.
+Save the AI response in your own notes and add one sentence about what you changed. You can also use the optional record below.

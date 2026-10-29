@@ -1,18 +1,23 @@
-M07 Tables: understand monthly changes
+Tables: where did this month’s money go?
 
-Recalculate totals and changes, distinguishing greater than, at least, refunds, and unknowns.
+Let AI group the numbers, then check a few important totals yourself.
 
-All lesson data is fictional. This site does not call AI or connect your accounts. Paste the exercise into your own AI tool.
+What you will make
 
-Try this first
+Get monthly totals, category differences, and a readable spending summary.
 
-Calculate both monthly totals from six rows. Predict the category count when 'increase greater than 50' becomes 'increase at least 50.'
+Example result
 
-When can I skip the instructions?
+September 2100 → October 2350 TWD.
+Up 250, about 11.9%; meals increased by 150.
 
-Go to the challenge if you can recalculate differences, percentage denominator, and boundaries, and explain why missing is not zero.
+This is a prepared example. Your AI may use different wording.
 
-Teaching data
+Follow along
+
+Work in your own AI tool
+
+Practice material
 
 Fictional spending; purchase-month basis; all TWD. Positive values are spending; negatives are refunds.
 ID,Month,Category,Amount
@@ -23,27 +28,32 @@ O01,2026-10,Meals,1350
 O02,2026-10,Transport,450
 O03,2026-10,Services,550
 
-Your first request
+Request for AI
 
-Using only these six rows, calculate September and October totals, October minus September, and difference divided by September total as a percentage rounded to 1 decimal. Show category differences and source IDs. First select increases >50, then >=50; explain whether totals change. Do not guess causes.
+Using these six rows, calculate September and October totals, the increase, and percentage increase to 1 decimal. Show the change in each category. First find categories with an increase greater than 50.
 
-1. Manually calculate September 1200+400+500 and October 1350+450+550 and record your prediction.
-2. Submit the six rows and prompt. Use a calculator to check both totals and 250÷2100×100.
-3. Check category increases: meals 150, transport 50, services 50. Apply >50, then change only the condition to >=50; observe 1 category becoming 3.
-4. Follow up: 'Add an October meals refund of -100, assigned to October purchase month; recalculate.' Keep the original six rows and add a refund row instead of overwriting 1350.
-5. Save the data scope, formulas, threshold results, and refund results. Describe numeric changes without claiming price rises or behavior changes.
+1. Paste the six rows and request into AI to get a spending summary.
+2. Use a calculator to check September 2100, October 2350, and an increase of 250.
+3. Then send: “Change greater than 50 to at least 50. Which categories appear?” Watch the result change from 1 category to 3.
+4. Try: “Add an October meals refund of -100 and recalculate.” October should become 2250. Save the explanation you find clearest.
 
-Compare the reference result
+After trying: compare a possible result
 
 Original six rows: September 2100; October 2350; increase 250; 250÷2100×100≈11.9%. Categories: meals +150, transport +50, services +50. >50 selects meals only, 1 category; >=50 selects 3. Monthly totals do not change. After an October meals refund of -100: October 2250, increase 150, 150÷2100×100≈7.1%; net meals 1250, with all three categories +50.
 
-Do it yourself: a new situation
+Check these parts of your result
+
+The original totals are 2100 and 2350: an increase of 250, about 11.9%.
+Greater than 50 selects meals; at least 50 selects all three categories.
+After the -100 refund, October is 2250: up 150, about 7.1%.
+
+Try a different situation yourself
 
 New fictional TWD data: September books 300, transport 200; October books 360, transport 240. Calculate monthly totals and percentage change, then compare category increases >40 and >=40.
 
 September 500; October 600; increase 100, 20.0%. Books +60, transport +40. >40 selects 1 category; >=40 selects 2. Thresholds do not change totals.
 
-Take the challenge
+Try a more involved task
 
 Handle missing amounts, a zero baseline, and different currencies together.
 
@@ -53,22 +63,6 @@ List known subtotals by currency, unknowns, and valid differences. Can the cours
 
 September known TWD total is 100. October known TWD subtotal is 200 with meals unknown; the separate 10 USD cannot be added directly. Courses increase by 200, but percentage change is undefined with a zero baseline. The complete October total and overall percentage change are unconfirmed; a known subtotal is not a complete total.
 
-Show these results when you finish
+Save your work and continue later
 
-Independently checked 2100→2350, +250, and 11.9%.
->50 selects 1 category; >=50 selects 3; original data unchanged.
-Refund results are 2250, +150, 7.1%; missing remains distinct from zero.
-
-Check one key idea
-
-How many original categories meet 'at least 50'?
-
-3 categories; totals unchanged
-1 category; totals increase
-2 categories because equality is excluded
-
-3 categories; totals unchanged
-
-At least includes equality, so 150, 50, and 50 all qualify. Filtering does not change the original totals.
-
-Text and code are not saved automatically or uploaded. Download your record first. Next time, open the text file and paste your work back into the module. Save before changing language too.
+Save the AI response in your own notes and add one sentence about what you changed. You can also use the optional record below.

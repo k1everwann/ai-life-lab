@@ -1,46 +1,55 @@
-M04 Gmail: find actions and draft replies
+Gmail: understand a message and draft a reply
 
-Read specified teaching emails and produce actions and an unsent reply.
+For invitations, confirmations, or questions, pull out the key point and reply in your own voice.
 
-All lesson data is fictional. This site does not call AI or connect your accounts. Paste the exercise into your own AI tool.
+What you will make
 
-Try this first
+Get a reply draft that confirms attendance and asks about the location.
 
-Find the valid deadline in the specified thread and identify the original evidence. State whether you read connected mail or practiced with pasted text.
+Example result
 
-When can I skip the instructions?
+Hello, I’ll be attending on 11/21!
+When will the meeting location be announced? Thank you.
 
-Skip the basics if you can use an available plugin to read the specified thread, verify the original, and distinguish drafting from sending. Pasted text completes only the organization exercise.
+This is a prepared example. Your AI may use different wording.
 
-Teaching data
+Follow along
 
-All emails below are fictional teaching material, not your actual inbox.
-Subject: [AI Lab] Cloudbank activity confirmation
-G1 | body version date 2026/10/27 | Organizer: reply whether attending by 11/18 18:00 (Asia/Taipei); meeting location undecided.
-G2 | body version date 2026/10/28 | Same organizer replies: reply deadline changes to 11/18 17:00; all else unchanged.
-Learner decision for this exercise: will attend; wants to ask about the meeting location. These are fictional version dates inside the email body, not actual receipt dates; sending/receipt occurs when the lesson is prepared.
+Work in your own AI tool
 
-Your first request
+Practice material
 
-Read only the teaching thread with subject [AI Lab] Cloudbank activity confirmation, received on [enter the actual preparation date], including updates. List the valid deadline, action, sources, and unknowns. Draft a reply saying I will attend and asking about the meeting location. Output text in this chat only; do not create a Gmail draft or send. If mail cannot be read, say so; do not claim you searched.
+Fictional practice email
+Subject: Cloudbank activity confirmation
+Hello! Please reply by 2026/11/18 17:00 (Asia/Taipei) to say whether you will attend the activity on 11/21. The meeting location will be announced later.
+Your decision: you will attend and would like to ask about the location.
 
-1. Connected route: the instructor first prepares G1 and G2 as one thread in a dedicated teaching account and verifies the subject and actual receipt date, then replaces the date placeholder with that date; fictional body dates are not receipt-date filters. Follow the shared connection guide to check Gmail plugin availability and the permitted account. If unsupported by the account or plan, paste the text and record connection as pending.
-2. For the connected route, submit the scoped request. For pasted-text practice, submit the source too and replace the mail-reading instruction with 'Organize only the text pasted below.'
-3. Open the source thread returned by the tool and verify G1 and G2. A search snippet or an inaccessible source does not complete original-email verification.
-4. Check the deadline is 11/18 17:00, the reply says you will attend, and it asks about the location. Do not invent a location or treat read mail as answered mail.
-5. Save the draft and source record, labeled 'chat draft, not sent.' Sending requires a separate explicit decision; this lesson ends at the draft.
+Request for AI
 
-Compare the reference result
+List what I need to do in this email, then write a polite three-sentence reply: I will attend and would like to ask about the meeting location. Give me a text draft first.
 
-Action: reply that you will attend by 11/18 17:00 (Asia/Taipei); G2 replaces G1's 18:00. Unknown: meeting location. Draft: 'Hello, I will attend the Cloudbank activity. When will the meeting location be announced? Thank you.' Status: chat text only; no Gmail draft created and nothing sent.
+1. Paste the sample email and request into AI. This step does not need a Gmail connection.
+2. Read the draft and check that it says you will attend and asks about the location.
+3. Then send: “Make it friendlier and just two sentences, without sounding too formal.”
+4. Save the version you like. This reply text has not been sent. Open the optional connection exercise to practice reading a real message.
 
-Do it yourself: a new situation
+After trying: compare a possible result
 
-New fictional H1: subject [AI Lab] Book pickup confirmation; fictional body version date 2026/11/02; confirm pickup by 11/05 12:00 (Asia/Taipei); location undecided. Your decision: you can pick it up. Independently write an action and reply using pasted text. To practice a connection, ask the instructor to prepare this email in the teaching account first, then scope reading by subject and actual preparation/receipt date, not the fictional body date.
+Action: reply by 11/18 17:00. A possible draft: “Hello, I’ll be attending on 11/21! When will the meeting location be announced? Thank you.” Wording can vary as long as it expresses your decision.
 
-Confirm by 11/05 12:00; source H1; location unknown. Draft: 'I can pick it up. Please let me know the pickup location. Thank you.' Unsent. Without evidence of connected reading, label this pasted-text practice.
+Check these parts of your result
 
-Take the challenge
+The reply says you will attend and asks about the meeting location.
+The activity is 11/21; the reply is due by 11/18 17:00.
+The draft has not been sent; you can adjust its tone first.
+
+Try a different situation yourself
+
+Try a different fictional email: “Please confirm by 11/05 12:00 whether you can collect your books. We will send the pickup location later.” You can collect them. Write your own short request for help replying.
+
+For example: “Hello, I can collect the books. Please let me know the pickup location. Thank you!” Remember to reply by 11/05 12:00.
+
+Try a more involved task
 
 Separate a partial reply from a schedule update.
 
@@ -50,22 +59,19 @@ List the current arrangement, completed reply, and remaining reply. Draft a ques
 
 Meet 11/07 10:00 (J2); attendance answered (J3); meal unanswered. Attendance alone does not complete everything. Ask the learner 'Which meal would you like?' Do not fill in or send a choice before receiving it.
 
-Show these results when you finish
+Optional: ask AI to read one Gmail message you choose
 
-The search scope and source thread are explicit, including the update.
-Connected reading and pasted text are recorded separately.
-Deadline and draft are verified and the unsent status is clear.
+Prepare a practice message you may use, with no personal or confidential information. You can send the fictional email to yourself in a practice account, using a distinctive subject such as “AI practice – activity confirmation.” Note the actual sending date.
 
-Check one key idea
+Use Gmail to read this practice email: subject [enter the exact subject], sending date [enter the actual date]. If several match, list them for me to choose. Read it, summarize my action, and write a reply in this chat only. Do not send it or create a Gmail draft.
 
-After pasting G1 and G2 into AI, what can you claim?
+Look for available Plugins or connected apps in your AI tool, find Gmail, and follow the connection flow for your practice account. Review the requested access. Availability depends on the tool, plan, and workspace.
+Replace the subject and date in the request with your details. Select the Gmail plugin in the conversation and send the request.
+Open the original-message link AI returns to check that it read the intended email, then review the reply.
+If the service is unavailable or cannot read the email, return to pasted-text practice. Text organization alone does not establish a connection.
 
-Pasted-text organization is complete; Gmail connection is unverified
-Gmail is successfully connected
-The email was sent
+You can open the specified original message, and AI has read its content and produced a chat draft. The email has not been sent.
 
-Pasted-text organization is complete; Gmail connection is unverified
+Save your work and continue later
 
-Organizing text, reading an account, and sending mail are different operations.
-
-Text and code are not saved automatically or uploaded. Download your record first. Next time, open the text file and paste your work back into the module. Save before changing language too.
+Save the AI response in your own notes and add one sentence about what you changed. You can also use the optional record below.

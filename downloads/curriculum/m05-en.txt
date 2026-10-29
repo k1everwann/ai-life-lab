@@ -1,44 +1,53 @@
-M05 Google Drive: find files and compare options
+Google Drive: compare two options side by side
 
-Read specified file contents, compare the same group size and currency, and preserve unknown costs.
+When information sits in separate documents, ask AI to extract the same fields so differences are easier to see.
 
-All lesson data is fictional. This site does not call AI or connect your accounts. Paste the exercise into your own AI tool.
+What you will make
 
-Try this first
+Get a comparison table for two four-person options and a short explanation for companions.
 
-Compare 600 per person with 2200 for 4 people. Which known transport subtotal is lower, and is the complete cost known?
+Example result
 
-When can I skip the instructions?
+A: 4800 TWD, breakfast included.
+B: known subtotal 4800 TWD, plus breakfast.
 
-Go to the different-currency challenge if you can read the specified files, align comparison scope, and show sources and unknowns.
+This is a prepared example. Your AI may use different wording.
 
-Teaching data
+Follow along
 
-Fictional teaching files; both for 2026/11/21, 4 people, TWD.
-[AI Lab] Approved option A: transport 600 per person; lodging 2400 for four; breakfast included.
-[AI Lab] Approved option B: transport 2200 for four; lodging 2600 for four; breakfast extra, price not provided.
+Work in your own AI tool
 
-Your first request
+Practice material
 
-Read only the contents of [AI Lab] Approved option A and Approved option B. Compare transport, lodging, breakfast, known subtotal, and unknown costs for 2026/11/21, 4 people, TWD. Show formulas and sources. Do not treat unknown as zero; state if contents cannot be read.
+Fictional trip options for the same day, 4 people, all prices in TWD.
+A: transport 600 per person; accommodation 2400 for four; breakfast included.
+B: transport 2200 for four; accommodation 2600 for four; breakfast extra, price not yet provided.
 
-1. The instructor first creates the two files in a dedicated teaching Drive using the source titles and contents. Obtain their actual links and verify access. Follow the shared guide to check plugin and account availability.
-2. Add the actual teaching-file links to scope the request precisely. Without a connection, paste the source and request comparison of pasted text only; record connection as pending.
-3. Confirm AI read the transport and breakfast fields. A filename or search snippet alone is insufficient. Check each field in both original files.
-4. Calculate A's transport as 600×4 before adding lodging. B already gives a group transport price. Ask which unknown costs prevent a complete cheaper-option claim.
-5. Save the table, formulas, file versions, and reading method.
+Request for AI
 
-Compare the reference result
+Make a four-person cost table for A and B: transport, accommodation, breakfast, and known subtotal. Multiply per-person prices by 4; mark missing prices “to confirm.”
 
-A: transport 600×4=2400; lodging 2400; breakfast included; total for the supplied scope 4800 TWD. B: transport 2200; lodging 2600; known subtotal 4800 TWD plus unknown breakfast cost. Known subtotals match. Do not treat B's breakfast as zero or claim its complete cost is lower.
+1. Paste both excerpts and the request into AI to get a comparison table.
+2. Check that A’s transport is 600×4 and B’s breakfast is still to confirm.
+3. Then send: “Explain the differences in three sentences for my travel companions.”
+4. Save the table or short explanation. Try the optional connection exercise to read your own Drive documents directly.
 
-Do it yourself: a new situation
+After trying: compare a possible result
+
+A: transport 2400 + accommodation 2400 = 4800 TWD including breakfast. B: transport 2200 + accommodation 2600 = known subtotal 4800 TWD, plus breakfast. A short explanation: “Both currently list 4800 TWD. A includes breakfast, but B charges extra. Let’s ask about B’s breakfast price before deciding.”
+
+Check these parts of your result
+
+A’s transport is 600×4 = 2400; B’s 2200 already covers four people.
+Both known subtotals are 4800 TWD; B still needs breakfast added.
+
+Try a different situation yourself
 
 New fictional file C: 2 people, TWD, tickets 350 per person, double room 1800, breakfast included. D: tickets 600 for two, double room 1900, breakfast included. Both for 2026/12/01; comparison scope is tickets, room, and breakfast only. Compare independently and cite the sources.
 
 C: 350×2+1800=2500. D: 600+1900=2500 TWD. Totals match under the same scope; this does not establish equal service quality.
 
-Take the challenge
+Try a more involved task
 
 Handle different group sizes and currencies without inventing a conversion.
 
@@ -48,22 +57,19 @@ State what can be calculated, why direct comparison is invalid, and what informa
 
 E is 50 USD per person; F is 1200 TWD per person. Group size, currency, and breakfast coverage differ, so a price ranking is unsupported. Obtain quotes for the same group size, an agreed exchange rate and date, and breakfast costs and inclusion terms.
 
-Show these results when you finish
+Optional: read your own Drive practice documents
 
-Verified file contents; filenames alone were not evidence of reading.
-Aligned per-person/group pricing, group size, date, and currency.
-Did not replace unknown breakfast cost with zero; retained formulas and sources.
+Create two blank Google Docs in your Drive named “AI practice – option A” and “AI practice – option B.” Paste each option’s fictional data into its matching document and copy both links.
 
-Check one key idea
+Use Google Drive to read these practice documents: [A link], [B link]. Compare transport, accommodation, breakfast, and known subtotal for four people in a table. Do not edit the documents. If you cannot read their contents, tell me.
 
-What does B's 4800 TWD represent?
+Open both documents yourself to confirm their text is saved and your account can read them.
+Connect Google Drive through available Plugins or connected apps in your AI tool, using the account with access.
+Put both links into the request, select the Drive plugin, and send it.
+Compare the table with the original documents. If reading fails, continue with pasted text from the main exercise.
 
-A known subtotal; breakfast cost is still unknown
-A complete total including everything
-The price per person
+AI reads prices from your two specified documents and produces A at 4800 and B at a known 4800 plus breakfast, without changing the documents.
 
-A known subtotal; breakfast cost is still unknown
+Save your work and continue later
 
-4800 includes only the supplied transport and lodging costs.
-
-Text and code are not saved automatically or uploaded. Download your record first. Next time, open the text file and paste your work back into the module. Save before changing language too.
+Save the AI response in your own notes and add one sentence about what you changed. You can also use the optional record below.

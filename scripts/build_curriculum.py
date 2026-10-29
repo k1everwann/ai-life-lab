@@ -122,82 +122,21 @@ def workspace(module, lang, prefix, t):
     out += '</div><p role="status" id="code-status-' + key + '"></p><iframe hidden id="preview-' + key + '" title="' + t['codeframe'] + '" sandbox="allow-scripts" referrerpolicy="no-referrer"></iframe></section>'
     return out
 
-def render_module(module, lang, modules, prefix):
-    t = UI[lang]; c = module['locales'][lang]; key = module['id']
-    needs = ' · '.join('<a href="#' + item['anchor'] + '">' + item['id'] + ' ' + esc(item['locales'][lang]['title']) + '</a>' for item in modules if item['id'] in module['needs']) or t['none']
-    out = f'<article id="{module["anchor"]}" class="module wrap section" data-module="{key}"><p class="eyebrow">{t["current"]} {key} · {module["minutes"]} {t["minutes"]}</p><h2 tabindex="-1">{esc(c["title"])}</h2>' + p(c['goal'], 'module-goal')
-    if key=='M01':out+='<a class="button outline" href="https://chatgpt.com/" target="_blank" rel="noopener">'+t['aitool']+'</a>'+p(t['aitoolnote'],'small-text')
-    if key in ('M04','M05','M06'):out+='<a href="#connection-guide">'+t['setup']+'</a>'
-    out += '<p class="small-text">' + t['needs'] + '：' + needs + '</p>' + p(t['proof'], 'small-text')
-    out += '<section class="entry-task"><h3>' + t['quick'] + '</h3>' + p(c['quick']) + '<details><summary>' + t['skip'] + '</summary>' + p(c['skip']) + '</details><div class="actions">' + button(t['jumpown'], f'data-jump-independent="{key}"') + button(t['jump'], f'data-jump-challenge="{key}"') + '</div></section>'
-    out += '<details class="guided" open><summary>' + t['guide'] + '</summary>' + p(t['fiction'], 'small-text') + '<h3>' + t['source'] + '</h3>' + pre(c['source']) + '<h3>' + t['prompt'] + '</h3>' + pre(c['prompt']) + button(t['copy'], f'data-copy-module="{key}" data-copy-kind="guided"') + '<p id="copy-' + key + '-guided" role="status"></p>' + listing(c['steps'], 'ol')
-    out += '<details class="reference"><summary>' + t['expected'] + '</summary>' + p(t['fixed'], 'small-text') + pre(c['expected']) + '</details>'
-    if c.get('followup'):
-        f=c['followup'];out+='<h3>'+t['followup']+'</h3>'+pre(f['source'])+pre(f['prompt'])+button(t['copy'],f'data-copy-module="{key}" data-copy-kind="followup"')+f'<p id="copy-{key}-followup" role="status"></p><details><summary>'+t['expected']+'</summary>'+pre(f['expected'])+'</details>'
-    out+='</details>'
-    out += f'<details class="independent" id="independent-{key}"><summary>' + t['independent'] + '</summary>' + pre(c['independent']['task']) + button(t['copytask'], f'data-copy-module="{key}" data-copy-kind="independent"') + '<p id="copy-' + key + '-independent" role="status"></p><details><summary>' + t['expected'] + '</summary>' + pre(c['independent']['expected']) + '</details></details>'
-    if key=='M09':
-        links='<p><a download href="'+prefix+'downloads/curriculum/reset-bug-'+lang+'.html">'+('Download independent reset bug' if lang=='en' else '下載獨立題：重設故障版')+'</a> · <a download href="'+prefix+'downloads/curriculum/correct-reset-'+lang+'.html">'+('Download reset reference fix' if lang=='en' else '下載重設參考修正版')+'</a></p>'
-        needle=f'<details class="independent" id="independent-{key}"><summary>'+t['independent']+'</summary>'
-        out=out.replace(needle,needle+links)
-    out += f'<details class="challenge" id="challenge-{key}"><summary>{t["challenge"]}</summary>' + p(c['challenge']['task']) + pre(c['challenge']['source']) + pre(c['challenge']['prompt']) + button(t['copy'], f'data-copy-module="{key}" data-copy-kind="challenge"') + '<p id="copy-' + key + '-challenge" role="status"></p><details><summary>' + t['expected'] + '</summary>' + pre(c['challenge']['expected']) + '</details></details>'
-    if key=='M09':
-        links='<p><a download href="'+prefix+'downloads/curriculum/search-reset-bug-'+lang+'.html">'+('Download search/reset bug' if lang=='en' else '下載挑戰題：搜尋重設故障版')+'</a> · <a download href="'+prefix+'downloads/curriculum/correct-search-reset-'+lang+'.html">'+('Download search/reset reference fix' if lang=='en' else '下載搜尋重設參考修正版')+'</a></p>'
-        needle=f'<details class="challenge" id="challenge-{key}"><summary>'+t['challenge']+'</summary>'
-        out=out.replace(needle,needle+links)
-    if key == 'M07':
-        out += '<section class="experiment"><h3>' + t['lab7'] + '</h3><a download href="'+prefix+'downloads/curriculum/monthly-spending.csv">'+('Download the six-row CSV' if lang=='en' else '下載六筆月份資料 CSV')+'</a><div class="actions">' + button(t['strict'], 'data-threshold="strict" aria-pressed="true"') + button(t['inclusive'], 'data-threshold="inclusive" aria-pressed="false"') + '</div><p id="threshold-result" role="status"></p></section>'
-    if key == 'M10':
-        out += '<section class="experiment"><h3>' + t['lab10'] + '</h3><label for="sensor-reading">' + t['sensor'] + '</label><select id="sensor-reading">' + ''.join('<option value="' + v + '">' + label + '</option>' for v, label in zip(('27','28','29','missing'), t['temps'])) + '</select><div class="actions">' + button(t['simulate'], 'id="simulate-rule"') + button(t['repeat'], 'id="repeat-rule" disabled') + button(t['reset'], 'id="reset-rule"') + '</div><p id="rule-result" role="status"></p><p id="rule-count" role="status"></p></section>'
-    out += workspace(module, lang, prefix, t)
-    q = c['quiz']
-    out += '<fieldset class="lesson-question"><legend>' + t['quiz'] + '：' + esc(q['question']) + '</legend>' + ''.join(f'<label><input type="radio" name="quiz-{key}" value="{i}"><span>{esc(choice)}</span></label>' for i, choice in enumerate(q['choices'])) + button(t['answer'], f'data-check-quiz="{key}"') + f'<p id="quiz-{key}-feedback" role="status"></p></fieldset>'
-    out += '<section class="module-record"><h3>' + t['checks'] + '</h3>' + p(t['self'], 'small-text')
-    for kind in ('guided','independent','challenge'):
-        checks=c['checks'] if kind=='guided' else t['other_checks']
-        out+=f'<div data-evidence-kind="{kind}"'+(' hidden' if kind!='guided' else '')+'>'
-        if kind!='guided':out+=p(c[kind]['expected'],'evidence-reference')
-        out+=''.join(f'<label class="check-line"><input type="checkbox" data-evidence="{i}"><span>{esc(check)}</span></label>' for i,check in enumerate(checks))+'</div>'
-    out += f'<h3>{t["record"]}</h3><label for="exercise-{key}">{t["exercise"]}</label><select id="exercise-{key}">' + ''.join(f'<option value="{value}">{label}</option>' for value,label in zip(('guided','independent','challenge'),t['exercise_types'])) + f'</select><label for="mode-{key}">{t["mode"]}</label><select id="mode-{key}">' + ''.join(f'<option value="{i}">{label}</option>' for i,label in enumerate(t['modes'])) + '</select>'
-    out += f'<label for="question-{key}">{t["question"]}</label><textarea id="question-{key}" rows="3" maxlength="12000"></textarea><label for="result-{key}">{t["result"]}</label><textarea id="result-{key}" rows="5" maxlength="30000" placeholder="{t["placeholder"]}"></textarea>'
-    out += '<div class="actions">' + button(t['download'], f'data-download-record="{key}"') + f'<a download href="{prefix}downloads/curriculum/{key.lower()}-{lang}.txt">{t["material"]}</a></div><p id="record-{key}-status" role="status"></p></section>'
-    index = modules.index(module)
-    out += '<nav class="module-pager" aria-label="' + t['current'] + '">'
-    if index: out += '<a href="#' + modules[index-1]['anchor'] + '">← ' + t['previous'] + ' ' + modules[index-1]['id'] + '</a>'
-    out += '<a href="#course-map">' + t['back'] + '</a>'
-    if index+1<len(modules): out += '<a href="#' + modules[index+1]['anchor'] + '">' + t['next'] + ' ' + modules[index+1]['id'] + ' →</a>'
-    return out + '</nav></article>'
-
 def lesson_text(module, lang):
-    t=UI[lang]; c=module['locales'][lang]
-    lines=[f'{module["id"]} {c["title"]}', c['goal'], t['fiction'], t['quick'], c['quick'], t['skip'], c['skip'], t['source'], c['source'], t['prompt'], c['prompt'], '\n'.join(f'{i}. {s}' for i,s in enumerate(c['steps'],1)), t['expected'], c['expected'], t['independent'], c['independent']['task'], c['independent']['expected'], t['challenge'], c['challenge']['task'], c['challenge']['source'], c['challenge']['prompt'], c['challenge']['expected'], t['checks'], '\n'.join(c['checks']), t['quiz'], c['quiz']['question'], '\n'.join(c['quiz']['choices']), c['quiz']['choices'][c['quiz']['answer']], c['quiz']['explanation'], t['savenote']]
-    if c.get('followup'):lines[14:14]=[t['followup'],c['followup']['source'],c['followup']['prompt'],c['followup']['expected']]
+    from learning_layout import LABELS
+    t=UI[lang]; l=LABELS[lang]; c=module['locales'][lang]
+    lines=[c['title'],c['why'],l['outcome'],c['goal'],l['sample'],c['outcome'],l['samplehint'],l['follow'],l['where'],l['source'],c['source'],l['prompt'],c['prompt'],'\n'.join(f'{i}. {step}' for i,step in enumerate(c['steps'],1)),l['reference'],c['expected'],l['check'],'\n'.join(c['checks'])]
+    if c.get('followup'):
+        f=c['followup'];lines.extend([l['change'],f['source'],f['prompt'],f['expected']])
+    lines.extend([l['own'],c['independent']['task'],c['independent']['expected'],l['challenge'],c['challenge']['task'],c['challenge']['source'],c['challenge']['prompt'],c['challenge']['expected']])
+    if c.get('connection'):
+        f=c['connection'];lines.extend([f['title'],f['source'],f['prompt'],'\n'.join(f['steps']),f['expected']])
+    lines.extend([l['finish'],l['finishnote']])
     return '\n\n'.join(lines)+'\n'
 
-def render(lang, demo, oldcourse, showcase, oldcopy):
-    data=json.loads((ROOT/'curriculum-content.json').read_text(encoding='utf-8'))
-    t=UI[lang]; modules=data['modules']; en=lang=='en'; prefix='../' if en else ''
-    links=[('showcase',t['nav'][0]),('course-map',t['nav'][1]),('continue',t['nav'][2])]
-    html=f'<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="{esc(t["lead"],quote=True)}"><title>{t["title"]} · AI Life Lab</title><link rel="stylesheet" href="{prefix}styles.css?v=5"><link rel="stylesheet" href="{prefix}seminar.css?v=2"><link rel="stylesheet" href="{prefix}curriculum.css?v=1"><script src="{prefix}curriculum.js?v=1" defer></script><script src="{prefix}language.js?v=4" defer></script></head><body class="seminar-page curriculum-page"><a class="skip" href="#main">' + ('Skip to content' if en else '跳到主要內容') + '</a><header class="site-header"><a class="brand" href="#top">AI Life Lab</a><nav aria-label="' + ('Course navigation' if en else '課程導覽') + '">' + ''.join('<a href="#'+key+'">'+label+'</a>' for key,label in links) + '</nav><div class="language-switch" role="group" aria-label="Language"><a href="'+('../' if en else '')+'index.html" data-language-switch="zh-Hant" lang="zh-Hant">繁體中文</a><a href="'+('' if en else 'en/')+'index.html" data-language-switch="en" lang="en">English</a></div></header><main id="main">'
-    html+='<section class="wrap section intro" id="top">'+p(t['meta'],'eyebrow')+'<h1>'+t['title']+'</h1>'+p(t['lead'],'lead')+'<div class="actions"><a class="button" href="#lesson-start">'+t['start']+'</a><a href="#course-map">'+t['nav'][1]+'</a></div><details><summary>'+t['plans']+'</summary>'+p(t['plantext'])+'<ul>'+''.join('<li><strong>'+row[0]+'</strong><br>'+row[1]+'</li>' for row in t['plansrows'])+'</ul></details></section><noscript>'+p(t['noscript'],'wrap notice')+'</noscript>'
-    html+=showcase(lang,demo['locales'][lang],oldcourse['locales'][lang],oldcopy)
-    html+='<section class="wrap section" id="course-map"><h2>'+t['map']+'</h2>'+p(t['mapnote'])
-    for group, bounds in zip(t['groups'],((0,3),(3,7),(7,10),(10,12))):
-        html+='<h3>'+group+'</h3><ol class="module-list">'
-        for m in modules[bounds[0]:bounds[1]]:
-            c=m['locales'][lang]
-            html+='<li><a href="#'+m['anchor']+'"><span class="module-number">'+m['id']+'</span><span><strong>'+esc(c['title'])+'</strong><span class="module-summary">'+esc(c['goal'])+'</span></span><span class="module-time">'+str(m['minutes'])+' '+t['minutes']+'</span></a></li>'
-        html+='</ol>'
-    html+='<details id="connection-guide"><summary>'+t['setup']+'</summary>'+p(t['setuptext'])+'<a href="https://learn.chatgpt.com/docs/plugins" target="_blank" rel="noopener">'+t['official']+'</a> · <a href="https://developers.openai.com/training/walkthroughs/plugins-and-skills" target="_blank" rel="noopener">Plugins and skills</a></details><details><summary>'+t['glossary']+'</summary><dl>'+''.join('<dt>'+esc(term)+'</dt><dd>'+esc(value)+'</dd>' for term,value in t['terms'])+'</dl></details></section>'
-    html+=''.join(render_module(m,lang,modules,prefix) for m in modules)
-    html+='<section class="wrap section" id="continue"><span id="takeaway"></span><h2>'+t['save']+'</h2>'+p(t['savenote'],'notice')+button(t['saveall'],'id="download-all-records"')+'<p id="all-record-status" role="status"></p><a href="#course-map">'+t['back']+'</a><details><summary>'+t['extensions']+'</summary>'+p(t['extensionnote'])+'<ul><li><a href="analysis.html">'+('Extended analysis data' if en else '更多生活分析資料')+'</a></li><li><a href="web-project.html">'+('More webpage tests' if en else '更多網頁修改與測試')+'</a></li><li><a href="practice.html?route=computer#classroom">'+('Earlier workshop' if en else '舊版工作坊練習')+'</a></li></ul></details></section></main><section class="wrap" id="copy-fallback" hidden><label for="manual-copy">'+t['manual']+'</label><textarea id="manual-copy" rows="8" readonly></textarea></section><footer class="wrap seminar-footer">AI Life Lab · '+t['fiction']+'</footer>'
-    payload={'modules':[{**{k:m[k] for k in ('id','anchor','minutes','needs')}, **m['locales'][lang]} for m in modules], 'ui':t, 'showcase':demo}
-    html=html.replace('<textarea id="manual-copy" rows="8" readonly></textarea>','<textarea id="manual-copy" rows="8" readonly></textarea>'+button(t['copyreturn'],'id="copy-return"'))
-    for filename,version in (('curriculum.js','1'),('curriculum.css','1'),('language.js','4')):
-        digest=hashlib.sha256((ROOT/filename).read_bytes()).hexdigest()[:12]
-        html=html.replace(filename+'?v='+version,filename+'?v='+digest)
-    html+='<script id="curriculum-data" type="application/json">'+json.dumps(payload,ensure_ascii=False).replace('</',r'<\/')+'</script></body></html>\n'
-    return html
+def render(lang, demo=None, oldcourse=None, showcase=None, oldcopy=None):
+    from learning_layout import render as render_lessons
+    return render_lessons(lang)
 
 def write_materials():
     data=json.loads((ROOT/'curriculum-content.json').read_text(encoding='utf-8'))

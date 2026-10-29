@@ -99,13 +99,14 @@ def validate():
         assert {choice['key'] for choice in choices if choice['correct']} == {'ticket', 'checkin'}
         assert len(locale['continueSteps']) == 3
     curriculum = json.loads((ROOT / 'curriculum-content.json').read_text(encoding='utf-8'))
-    required = {'showcase', 'course-map', 'continue', 'takeaway', 'download-all-records', 'code-M08', 'code-M09', 'preview-M08', 'preview-M09'} | {item['anchor'] for item in curriculum['modules']}
+    required = {'course-map', 'continue', 'takeaway', 'download-all-records', 'code-M08', 'code-M09', 'preview-M08', 'preview-M09'} | {item['anchor'] for item in curriculum['modules']}
     for relative in ('index.html', 'en/index.html'):
         parser = SeminarPage()
         source = (ROOT / relative).read_text(encoding='utf-8')
         parser.feed(source)
         assert required <= parser.ids, relative + ': incomplete modular course'
-        assert parser.demos == ['travel', 'study', 'home', 'market']
+        assert parser.demos == [], 'Project demonstrations belong to the live talk, not the lesson website'
+        assert 'showcase' not in json.loads(source.split('<script id="curriculum-data" type="application/json">')[1].split('</script>')[0])
         assert 'sandbox="allow-scripts"' in source and 'allow-same-origin' not in source, 'Keep code previews isolated'
         assert not any('instructor.html' in link or 'next-steps.html' in link for link in parser.links), 'The main lesson must not send learners to a separate instructor or continuation page'
         assert 'script.js?' not in source, 'Do not load the earlier route-selection script'

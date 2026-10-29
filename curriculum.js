@@ -2,7 +2,7 @@
   "use strict";
   const node = document.getElementById("curriculum-data");
   if (!node) return;
-  const {modules, ui, showcase} = JSON.parse(node.textContent);
+  const {modules, ui} = JSON.parse(node.textContent);
   const lang = document.documentElement.lang;
   const en = lang === "en";
   const $ = id => document.getElementById(id);
@@ -10,12 +10,34 @@
   const say = (id, text) => { $(id).textContent = text; };
   const byKey = key => modules.find(module => module.id === key);
   const article = key => $(byKey(key).anchor);
+  const drafts = new Map();
+  function capture(key) {
+    return {request:$("question-"+key).value,result:$("result-"+key).value,mode:$("mode-"+key).value,code:$("code-"+key)?.value || ""};
+  }
   function setExercise(key,kind) {
+    const current=article(key).dataset.exercise || "guided";
+    if(current!==kind){
+      drafts.set(key+":"+current,capture(key));
+      const saved=drafts.get(key+":"+kind) || {request:"",result:"",mode:"0",code:""};
+      $("question-"+key).value=saved.request;
+      $("result-"+key).value=saved.result;
+      $("mode-"+key).value=saved.mode;
+      if($("code-"+key)){
+        $("code-"+key).value=saved.code;
+        $("preview-"+key).hidden=true;
+        $("preview-"+key).removeAttribute("srcdoc");
+        say("code-status-"+key,en?"Exercise changed. Update the preview to test this code.":"已切換練習，請更新預覽再測試這份程式碼。");
+      }
+    }
+    article(key).dataset.exercise=kind;
     $("exercise-"+key).value=kind;
     article(key).querySelectorAll("[data-evidence-kind]").forEach(group=>{group.hidden=group.dataset.evidenceKind!==kind;});
   }
   modules.forEach(m=>$("exercise-"+m.id).addEventListener("change",event=>setExercise(m.id,event.target.value)));
-  const aliases = {"classroom":"lesson-start", "tool":"lesson-build", "principles":"course-map"};
+  const aliases = {"classroom":"lesson-start", "tool":"lesson-build", "principles":"course-map", "showcase":"course-map", "takeaway":"continue"};
+  let lastLesson = "lesson-gmail";
+  all('.connection a[href="#connection-guide"]').forEach(link=>link.addEventListener("click",()=>{lastLesson=link.closest("details").id;}));
+  $("return-to-connection").addEventListener("click",()=>{location.hash=lastLesson;});
 
   function route(focus = false) {
     let hash=location.hash.slice(1);
@@ -29,26 +51,32 @@
       if (parent) chosen = byKey(parent.dataset.module);
     }
     all("[data-module]").forEach(el => { el.hidden = !chosen || el.dataset.module !== chosen.id; });
-    all(".module-list a").forEach(link => {
+    const view = chosen ? "lesson" : target === "connection-guide" ? "setup" : target === "continue" ? "continue" : "home";
+    all("#main > [data-view]").forEach(el=>{el.hidden=el.dataset.view!==view;});
+    document.body.dataset.view=view;
+    document.querySelector(".skip").href=chosen ? "#"+chosen.anchor : "#top";
+    if(chosen) lastLesson = target.startsWith("connection-") ? target : chosen.anchor;
+    all(".module-list a, .lesson-sidebar a, .mobile-lessons a").forEach(link => {
       if (chosen && link.hash === `#${chosen.anchor}`) link.setAttribute("aria-current", "location");
       else link.removeAttribute("aria-current");
     });
-    if (chosen && /^(challenge|independent)-/.test(target)) $(target).open = true;
+    if (chosen && /^(challenge|independent|connection)-/.test(target)) $(target).open = true;
+    document.querySelector(".mobile-lessons").open=false;
     if (chosen && focus) {
-      const heading = article(chosen.id).querySelector("h2");
+      const heading = element===article(chosen.id) ? element.querySelector("h1") : element?.querySelector("summary,h2,h3") || article(chosen.id).querySelector("h1");
+      heading.setAttribute("tabindex","-1");
       heading.focus({preventScroll:true});
-      (/^(challenge|independent)-/.test(target) ? $(target) : article(chosen.id)).scrollIntoView();
+      (element || article(chosen.id)).scrollIntoView();
     } else if (focus && element) {
       const heading=element.querySelector("h1,h2,h3,summary");
       if (heading) { heading.setAttribute("tabindex","-1"); heading.focus({preventScroll:true}); }
       element.scrollIntoView();
-    } else if (aliases[hash]) $(target)?.scrollIntoView();
+    } else if (focus) $("top").scrollIntoView();
   }
   window.addEventListener("hashchange", () => route(true));
   route(Boolean(location.hash));
   all("[data-jump-challenge]").forEach(button => button.addEventListener("click", () => {
     const key = button.dataset.jumpChallenge;
-    article(key).querySelector(".guided").open = false;
     $("challenge-"+key).open = true;
     setExercise(key,"challenge");
     $("challenge-"+key).querySelector("summary").focus();
@@ -56,7 +84,6 @@
   }));
   all("[data-jump-independent]").forEach(button => button.addEventListener("click", () => {
     const key=button.dataset.jumpIndependent;
-    article(key).querySelector(".guided").open=false;
     $("independent-"+key).open=true;
     setExercise(key,"independent");
     $("independent-"+key).querySelector("summary").focus();
@@ -87,7 +114,7 @@
     const m = byKey(button.dataset.copyModule);
     const kind = button.dataset.copyKind;
     setExercise(m.id,kind === "followup" ? "guided" : kind);
-    const text = kind === "followup" ? [m.followup.source,m.followup.prompt].join("\n\n") : kind === "independent" ? m.independent.task : kind === "challenge"
+    const text = kind === "connection" ? m.connection.prompt : kind === "followup" ? [m.followup.source,m.followup.prompt].join("\n\n") : kind === "independent" ? m.independent.task : kind === "challenge"
       ? [m.challenge.task, m.challenge.source, m.challenge.prompt].join("\n\n")
       : [m.source, m.prompt].join("\n\n");
     copy(text, `copy-${m.id}-${kind}`);
@@ -106,21 +133,22 @@
     document.body.append(link); link.click(); link.remove();
     window.setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
-  function record(m) {
-    const request = $(`question-${m.id}`).value.trim();
-    const result = $(`result-${m.id}`).value.trim();
-    const mode = Number($(`mode-${m.id}`).value);
-    const kind=$("exercise-"+m.id).value;
+  function record(m, kind=$("exercise-"+m.id).value) {
+    const saved=kind===$("exercise-"+m.id).value?capture(m.id):drafts.get(m.id+":"+kind);
+    if(!saved) return null;
+    const request = saved.request.trim();
+    const result = saved.result.trim();
+    const mode = Number(saved.mode);
     const boxes = [...article(m.id).querySelectorAll(`[data-evidence-kind="${kind}"] [data-evidence]`)];
-    const code = $(`code-${m.id}`)?.value.trim() || "";
+    const code = saved.code.trim();
     if (!request && !result && !code && !mode && !boxes.some(box => box.checked)) return null;
-    const typeIndex=["guided","independent","challenge"].indexOf(kind);
-    const source=kind==="independent"?m.independent.task:kind==="challenge"?m.challenge.source:m.source;
-    const prompt=kind==="independent"?m.independent.task:kind==="challenge"?m.challenge.prompt:[m.prompt,m.followup?[m.followup.source,m.followup.prompt].join("\n\n"):""].filter(Boolean).join("\n\n");
+    const typeIndex=["guided","independent","challenge","connection"].indexOf(kind);
+    const source=kind==="connection"?m.connection?.source:kind==="independent"?m.independent.task:kind==="challenge"?m.challenge.source:m.source;
+    const prompt=kind==="connection"?m.connection?.prompt:kind==="independent"?m.independent.task:kind==="challenge"?m.challenge.prompt:[m.prompt,m.followup?[m.followup.source,m.followup.prompt].join("\n\n"):""].filter(Boolean).join("\n\n");
     return [
-      `${m.id} ${m.title}`, `${ui.exercise}\n${ui.exercise_types[typeIndex]}`, `${ui.mode}\n${ui.modes[mode]}`, `${ui.source}\n${source}`,
+      `${m.id} ${m.title}`, `${ui.exercise}\n${ui.exercise_types[typeIndex] || (en?"Connected account":"連線練習")}`, `${ui.mode}\n${ui.modes[mode]}`, `${ui.source}\n${source || "—"}`,
       `${ui.prompt}\n${prompt}`, `${ui.question}\n${request || "—"}`,
-      `${ui.result}\n${result || "—"}`, kind!=="guided"?`${ui.expected}\n${m[kind].expected}`:"", `${ui.checks}\n${boxes.map(box => `${box.checked?"[x]":"[ ]"} ${(kind==="guided"?m.checks:ui.other_checks)[Number(box.dataset.evidence)]}`).join("\n")}`,
+      `${ui.result}\n${result || "—"}`, kind!=="guided"&&m[kind]?`${ui.expected}\n${m[kind].expected}`:"", `${ui.checks}\n${boxes.map(box => `${box.checked?"[x]":"[ ]"} ${(kind==="guided"?m.checks:ui.other_checks)[Number(box.dataset.evidence)]}`).join("\n")}`,
       code ? `${ui.codeinput}\n${code}` : "", ui.self
     ].filter(Boolean).join("\n\n");
   }
@@ -132,7 +160,7 @@
     say(`record-${key}-status`, ui.recordsaved);
   }));
   $("download-all-records").addEventListener("click", () => {
-    const texts = modules.map(record).filter(Boolean);
+    const texts = modules.flatMap(m=>["guided","independent","challenge","connection"].map(kind=>record(m,kind))).filter(Boolean);
     if (!texts.length) { say("all-record-status", ui.emptyrecord); return; }
     download(texts.join("\n\n====================\n\n"), `ai-life-lab-my-records-${lang}.txt`, "text/plain;charset=utf-8");
     say("all-record-status", ui.recordsaved);
@@ -201,36 +229,5 @@
   });
   ruleCount();
 
-  // Existing fictional project demonstrations remain local fixed interactions.
-  const t = showcase.locales[lang];
-  function showDemo(key) {
-    all("[data-demo]").forEach(button => button.setAttribute("aria-pressed",String(button.dataset.demo===key)));
-    all(".demo-panel").forEach(panel=>{panel.hidden=panel.id!==`demo-${key}`;});
-  }
-  all("[data-demo]").forEach(button=>button.addEventListener("click",()=>showDemo(button.dataset.demo)));
-  showDemo("travel");
-  all("[data-stop]").forEach(button=>button.addEventListener("click",()=>{
-    const stop=t.stops[Number(button.dataset.stop)];
-    all("[data-stop]").forEach(b=>b.setAttribute("aria-pressed",String(b===button)));
-    const strong=document.createElement("strong"); strong.textContent=`${stop.time} ${stop.name}`;
-    $("travel-detail").replaceChildren(strong,document.createElement("br"),document.createTextNode(stop.detail));
-  }));
-  all("[data-answer]").forEach(button=>button.addEventListener("click",()=>{
-    all("[data-answer]").forEach(b=>b.setAttribute("aria-pressed",String(b===button)));
-    say("quiz-feedback",`${button.dataset.answer===showcase.quiz.answer?t.quizCorrect:t.quizIncorrect} ${t.quizExplanation}`);
-  }));
-  $("review-add").addEventListener("click",()=>{
-    $("review-add").setAttribute("aria-pressed","true"); $("review-add").textContent=t.reviewDone; say("review-feedback",t.reviewNote);
-  });
-  all("[data-temp]").forEach(button=>button.addEventListener("click",()=>{
-    all("[data-temp]").forEach(b=>b.setAttribute("aria-pressed",String(b===button)));
-    const temperature=Number(button.dataset.temp);
-    say("home-temp",`${temperature}°C`); say("home-ac",temperature>=showcase.home.threshold?t.on:t.off);
-  }));
-  $("market-product").addEventListener("change",event=>{
-    const item=showcase.market[event.target.value]; const unit=t.units[item.unitKey];
-    item.values.forEach((value,i)=>say(`market-value-${i}`,`${value.toLocaleString("en-US")} ${unit}`));
-    const difference=item.values[1]-item.values[0]; const sign=difference>0?"+":"";
-    say("market-change",`${t.change}: ${sign}${difference.toLocaleString("en-US")} ${unit} (${sign}${Number((difference/item.values[0]*100).toFixed(1))}%)`);
-  });
+
 })();

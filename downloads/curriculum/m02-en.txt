@@ -1,49 +1,59 @@
-M02 Change one thing and verify the result
+Plans changed: ask AI to update them
 
-Update only the affected field, preserving unchanged facts and unknowns.
+When a time, location, or headcount changes, you do not have to rewrite everything.
 
-All lesson data is fictional. This site does not call AI or connect your accounts. Paste the exercise into your own AI tool.
+What you will make
 
-Try this first
+Get a reminder with an updated ticket deadline and the original meeting details.
 
-Predict first: if the ticket deadline changes from 20:00 to 19:00, what changes and which two fields must stay the same?
+Example result
 
-When can I skip the instructions?
+Download tickets by 11/19 19:00.
+Meet on 11/21 at 09:00 at Cloudbank Station.
 
-Go to the challenge if your before, update, and after records show one correct change and two unchanged fields.
+This is a prepared example. Your AI may use different wording.
 
-Teaching data
+Follow along
+
+Work in your own AI tool
+
+Practice material
 
 Fictional B0; time zone Asia/Taipei: download tickets by 2026/11/19 20:00; meet at Cloudbank Station on 2026/11/21 at 09:00; check-in time not provided.
 
-Your first request
+Request for AI
 
-Using B0 only, list ticket deadline, meeting, and check-in with a source for each. Mark missing values to confirm; do not guess. This is the first version before any update.
+Organize these departure details into three lines: ticket download, meeting, and check-in. Write “to confirm” for anything not provided.
 
-1. Write your prediction: ticket deadline moves 1 hour earlier; meeting and check-in information stay unchanged.
-2. Submit B0 and the first prompt, then save the initial answer. Next copy B1 and the request from the second-turn follow-up into the same AI chat and send them before comparing the updated result.
-3. Compare dates and times. If the meeting changed too, ask: 'B1 only changes the download deadline. Restore unsupported changes.'
-4. Save three records: the B0 result, B1 update, and verified final result. Mark the changed field.
+1. Paste the data and request below into AI to get your three-line reminder.
+2. Paste the second-round data and request into the same chat to change the download deadline to 19:00.
+3. Compare the versions: download is one hour earlier, while the meeting stays at 09:00.
+4. Save the updated version you want to use. You can also ask to turn it into a checklist.
 
-Compare the reference result
+After trying: compare a possible result
 
-First turn, B0: ticket download deadline 2026/11/19 20:00; meeting 2026/11/21 09:00 at Cloudbank Station; check-in not provided, to confirm. All sourced to B0, time zone Asia/Taipei. B1 has not been applied yet; 19:00 is not the answer for this turn.
+The first version has a download deadline of 11/19 20:00; the update changes it to 19:00. Meeting remains 11/21 09:00 at Cloudbank Station; check-in is to confirm.
 
-Round two: change one thing
+Check these parts of your result
 
-Fictional B1: the organizer confirms that only the ticket download deadline changes to 2026/11/19 19:00 (Asia/Taipei). Everything else follows B0.
+The download deadline moves from 20:00 to 19:00, one hour earlier.
+Meeting remains 11/21 09:00; check-in remains to confirm.
 
-Apply B1 to your previous B0 result. Show before / after / reason, changing only source-supported fields and preserving unchanged facts and unknowns.
+Now make it work for you
 
-Ticket deadline: 11/19 20:00 → 19:00, 1 hour earlier, supported by B1. Meeting: 11/21 09:00 at Cloudbank Station → unchanged, supported by B0. Check-in: not provided → to confirm; no new data. All dates are in 2026, Asia/Taipei.
+Update: the organizer changes the ticket download deadline to 2026/11/19 19:00 (Asia/Taipei). Everything else stays the same.
 
-Do it yourself: a new situation
+Update the three-line reminder, changing only the download deadline to 19:00.
+
+Download tickets by 11/19 19:00. Meet on 11/21 at 09:00 at Cloudbank Station. Check-in: to confirm.
+
+Try a different situation yourself
 
 New fictional R0: report due 2026/12/04 16:00; discussion 12/06 10:00; room undecided. R1: the owner confirms the report deadline changes to 15:00; everything else stays the same. Time zone Asia/Taipei. Make a before/after comparison yourself.
 
 Report deadline 12/04 16:00 → 15:00, 1 hour earlier; discussion remains 12/06 10:00; room remains to confirm.
 
-Take the challenge
+Try a more involved task
 
 Identify the conflict without choosing an unsupported deadline.
 
@@ -53,22 +63,6 @@ List the conflict, common facts, and who should confirm the answer. Do not treat
 
 Shared fact: download is due on 2026/11/19. Conflict: 19:00 versus 18:30, a 30-minute difference; the valid deadline is unconfirmed. Ask the organizer's decision owner which notice is valid and whether it replaces the other. Do not claim 18:30 is officially adopted.
 
-Show these results when you finish
+Save your work and continue later
 
-Only the download deadline changed.
-The 09:00 meeting and unconfirmed check-in remain.
-Saved both versions and personal verification notes.
-
-Check one key idea
-
-After applying B1, what is the check-in time?
-
-To confirm; the source does not provide it
-19:00
-09:00
-
-To confirm; the source does not provide it
-
-Those times refer to different actions and cannot fill the missing check-in time.
-
-Text and code are not saved automatically or uploaded. Download your record first. Next time, open the text file and paste your work back into the module. Save before changing language too.
+Save the AI response in your own notes and add one sentence about what you changed. You can also use the optional record below.
