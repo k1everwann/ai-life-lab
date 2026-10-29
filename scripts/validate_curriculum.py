@@ -40,7 +40,10 @@ def validate():
         visited.add(m['id'])
         assert shape(m['locales']['zh-Hant'])==shape(m['locales']['en']),f'{m["id"]}: bilingual structure'
         for lang,c in m['locales'].items():
-            assert all(c.get(k) for k in ('title','goal','quick','skip','source','prompt','expected','checks'))
+            assert all(c.get(k) for k in ('title','goal','why','outcome','quick','skip','source','prompt','expected','checks'))
+            assert ('connection' in c)==(m['id'] in ('M04','M05','M06'))
+            if c.get('connection'):
+                assert all(c['connection'].get(k) for k in ('title','source','prompt','steps','expected'))
             assert 3<=len(c['steps'])<=7
             assert c['independent']['task'] and c['independent']['expected']
             assert all(c['challenge'][k] for k in ('task','source','prompt','expected'))
@@ -55,6 +58,7 @@ def validate():
         page=Page();page.feed((ROOT/('en/index.html' if lang=='en' else 'index.html')).read_text(encoding='utf-8'))
         embedded=json.loads(''.join(page.data))
         assert len(embedded['modules'])==12
+        assert 'showcase' not in embedded, 'Embedded private-project simulations have been retired'
         for m,e in zip(modules,embedded['modules']):
             assert e['id']==m['id'] and e['source']==m['locales'][lang]['source']
         assert len(page.user_fields)==26 and not any(''.join(x).strip() for x in page.user_fields),'Learner text/code must start blank'

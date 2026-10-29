@@ -1,18 +1,23 @@
-M06 Notion: turn notes into a reusable plan
+Notion: turn rough notes into a plan
 
-Read a specified page and verify a draft; if writing occurs, verify its destination and result.
+After a meeting or chat, organize rough notes into actions before putting them in your notes app.
 
-All lesson data is fictional. This site does not call AI or connect your accounts. Paste the exercise into your own AI tool.
+What you will make
 
-Try this first
+Get a reading-group action table with tasks, owners, and deadlines.
 
-Sort N1 into confirmed facts, actions, and questions. State whether anything has actually been written to Notion.
+Example result
 
-When can I skip the instructions?
+T01 | Xiaohe | Choose three articles by 11/18.
+T02 | Me | Confirm the venue by 11/19.
 
-Go to independent practice if you can read the page, verify a draft, and distinguish draft / awaiting write / written. If you wrote it, show the destination page.
+This is a prepared example. Your AI may use different wording.
 
-Teaching data
+Follow along
+
+Work in your own AI tool
+
+Practice material
 
 Fictional teaching page: [AI Lab] Reading group start N1
 Activity: 2026/11/21 14:00 (Asia/Taipei), 6 people.
@@ -20,27 +25,32 @@ T01: Xiaohe to choose three articles by 11/18, incomplete.
 T02: confirm venue by 11/19, owner undecided, incomplete.
 Budget undecided.
 
-Your first request
+Request for AI
 
-Read only the specified teaching page [AI Lab] Reading group start N1. Organize confirmed facts, actions, and questions, with sources. Preserve IDs T01/T02. Output a draft in this chat only; do not create pages or change databases. Do not guess missing values.
+Organize these notes into activity details, an action table, and things to discuss. Use ID, task, owner, deadline, and progress as columns; mark missing details “to confirm.”
 
-1. The instructor prepares the source page in a dedicated teaching Notion workspace and a separate writable practice parent page. Obtain actual links and verify access. Follow the shared connection guide to check plugin availability. Without a connection, paste the source and request text organization only; record connection as pending.
-2. Add the actual source-page link to the request and ask AI to read before organizing. Check the original time, deadlines, T02's missing owner, and unknown budget.
-3. Verify the chat draft. Nothing has been written to Notion yet; status is 'draft.' Saving this version completes the organization part.
-4. Optional writing: once the practice destination and content are confirmed, explicitly ask to create a page under that practice parent with the verified content, using its actual link. Otherwise retain 'awaiting write.'
-5. If writing is executed, open the returned page and verify parent, title, and T01/T02. Mark 'written' only after successful, verifiable execution. On failure or missing permission, retain the draft and actual error.
+1. Paste the notes and request into AI to get a draft plan.
+2. Read the task table: choosing articles and confirming the venue should be separate tasks.
+3. Then send: “I will take responsibility for T02, confirming the venue. Update only that item.”
+4. Copy the plan you like into your notes. Try the optional connection exercise to put it in an actual Notion page.
 
-Compare the reference result
+After trying: compare a possible result
 
-Confirmed: 11/21 14:00, 6 people (N1). Actions: T01 Xiaohe chooses three articles by 11/18, incomplete; T02 confirm venue by 11/19, owner to confirm, incomplete. Questions: T02 owner, venue, budget. Without execution this remains a chat draft; a written result requires actual destination-page verification.
+Activity: 11/21 14:00, 6 people. T01: Xiaohe chooses three articles by 11/18, incomplete. T02: confirm venue by 11/19, incomplete; after your follow-up its owner is “me.” Still to discuss: venue and budget. This stays in the AI chat until you copy it into your notes.
 
-Do it yourself: a new situation
+Check these parts of your result
+
+Choosing articles and confirming the venue are separate tasks.
+After the follow-up, only T02’s owner becomes “me”; its deadline stays 11/19.
+The budget remains to discuss; no amount is invented.
+
+Try a different situation yourself
 
 New fictional N2: sharing session 2026/12/02 15:00 (Asia/Taipei); T10 Aqing prepares slides by 12/01, in progress; T11 venue confirmation completed, venue Cloud Tower room A; participant count unknown. Produce the three-part draft using pasted text; do not write it back.
 
 Confirmed: 12/02 15:00, Cloud Tower room A, T11 completed. Action: T10 Aqing prepares slides by 12/01, in progress. Question: participant count. Status: draft, not written back.
 
-Take the challenge
+Try a more involved task
 
 Simulate ID-based updates and this-week filtering without creating duplicates.
 
@@ -50,22 +60,19 @@ Simulate a database table only: apply updates by ID and list incomplete items th
 
 There are 3 rows after updating, with T01 completed. Only T02 is incomplete this week; owner remains to confirm. T03 is next week and is excluded. Repeating the update leaves 3 rows, without a second T01. This is a text simulation, not a created database.
 
-Show these results when you finish
+Optional: put the plan in your own Notion
 
-Verified source and three-part draft match.
-Missing owner and budget were not guessed.
-Draft, awaiting write, and written statuses match actual evidence.
+In your Notion practice area, create “AI practice – reading group,” paste this lesson’s fictional notes, and copy the page link. Create a separate blank parent page, “AI practice – results,” for the organized version.
 
-Check one key idea
+Use Notion to read this page: [practice page link]. Organize activity details and an action table. Show the draft in chat first without changing the page.
 
-After AI lists a plan in chat, has a Notion page been created?
+Connect Notion through available Plugins or connected apps in your AI tool. Use the actual permission flow to allow your practice pages, and confirm you can open them yourself.
+Insert the source-page link, select the Notion plugin, and send the request. Review the draft against your notes.
+To save it to Notion, send a separate request: “Under [results parent link], create Reading group plan and write the complete draft we just reviewed.” This is the step that creates a page.
+Open the returned page and check its title, tasks, and location. Without write access, copy the draft to your practice page yourself.
 
-That is unproven; actual writing and destination verification are needed
-It has definitely been created
-A title alone proves it exists
+Reading produces a chat draft. An actual new Notion page exists only after you separately request writing and it succeeds.
 
-That is unproven; actual writing and destination verification are needed
+Save your work and continue later
 
-Generating text and writing to an external page are different actions.
-
-Text and code are not saved automatically or uploaded. Download your record first. Next time, open the text file and paste your work back into the module. Save before changing language too.
+Save the AI response in your own notes and add one sentence about what you changed. You can also use the optional record below.

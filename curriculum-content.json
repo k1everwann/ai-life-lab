@@ -8,20 +8,19 @@
       "needs": [],
       "locales": {
         "zh-Hant": {
-          "title": "第一次讓 AI 完成一件事",
-          "goal": "在電腦送出一個問題，核對期限與未知，保存能重開的結果。",
-          "quick": "先不看步驟：開新對話，把下方通知整理成一項待辦，指出來源與未知，保存結果。",
-          "skip": "能展示已送出的問題、正確期限、未知及重新開啟的紀錄，就可跳到獨立練習。",
+          "title": "把活動通知變成待辦",
+          "goal": "得到一項有期限的待辦，以及一句可以傳給朋友的提醒。",
+          "quick": "先試下方的小任務；已經熟悉的話，可以直接換題練習。",
+          "skip": "依自己的進度，選擇跟著做、換題練習或進一步挑戰。",
           "source": "虛構教學通知 A1\n活動日期：2026/11/21。\n請於2026/11/18 18:00（Asia/Taipei）前回覆是否參加。\n集合地點尚未公布。",
-          "prompt": "只根據通知 A1，寫一項待辦，包含動作、期限、來源；再列一項待確認資訊。不要補猜。",
+          "prompt": "將下方通知整理成一項待辦：要做什麼、何時以前完成。另列還沒公布的資訊。",
           "steps": [
-            "保留本教材分頁；另開瀏覽器分頁，進入你可使用的 AI 工具。依畫面完成登入；無法使用者先觀察示範，實作記為待補。",
-            "在 AI 工具開啟新對話，找到訊息輸入區。回教材複製來源文字，切回 AI 貼入，再貼入問題。",
-            "檢查輸入文字完整後，按工具畫面的送出控制；等回答出現。這一步是在 AI 工具完成，不是按教材的複製按鈕。",
-            "切回教材，比對回答：回覆期限是11/18 18:00，不是活動日11/21；集合地點仍未知。若不符，追問『請依A1修正，不要猜地點』。",
-            "回到本頁，把實際送出的問題貼到「我實際送出的要求」，把回答、來源A1與核對結果貼到「我的結果與核對方式」。按「下載這課操作紀錄」，從瀏覽器下載清單開啟剛下載的文字檔，確認內容都在；可另存到自己的練習資料夾。"
+            "另開分頁，進入你平常使用的 AI 工具並登入。教材留在原分頁，方便回來複製。",
+            "複製下方「練習資料」與「給AI要求」，一起貼進AI對話並送出。",
+            "讀完回答，再送出：「改成一句可以傳給朋友的提醒，語氣親切一點。」",
+            "看看短句有沒有留下11/18 18:00的回覆期限；喜歡的版本可複製到筆記，或用本頁的紀錄區保存。"
           ],
-          "expected": "待辦：於2026/11/18 18:00（Asia/Taipei）前回覆是否參加；來源A1。待確認：集合地點。活動日2026/11/21不是回覆期限。文字表達可不同，事實必須一致。",
+          "expected": "回覆期限仍是11/18 18:00，活動日是11/21。親切版可以是：「記得在11/18傍晚6點前回覆要不要參加11/21的活動喔！集合地點等主辦公布。」",
           "independent": {
             "task": "新資料（虛構）A2：2026/12/03讀書活動；12/01 12:00（Asia/Taipei）前選一個主題；教室未定。另開新對話，寫待辦及未知，保存為第二份紀錄。",
             "expected": "12/01 12:00前選一個主題；來源A2；教室待確認；活動日12/03。需實際保存並重開，只有看答案不算操作完成。"
@@ -33,9 +32,8 @@
             "expected": "請於2026/12/02 17:00（Asia/Taipei）前繳交題目。分享會在12/05，每人5分鐘，場地待確認。"
           },
           "checks": [
-            "已在AI工具送出問題，能辨認教材與AI兩個位置。",
-            "期限、來源及未知均與A1一致。",
-            "紀錄已保存且能重新開啟；未操作的部分標為待補。"
+            "回覆期限是11/18 18:00，不是活動日11/21。",
+            "短版仍有要做的事，沒有自行加上集合地點。"
           ],
           "quiz": {
             "question": "A1的回覆期限是哪個？",
@@ -46,23 +44,24 @@
             ],
             "answer": 0,
             "explanation": "A1明寫11/18 18:00；11/21是活動日，不能互換。"
-          }
+          },
+          "outcome": "11/18 18:00前回覆是否參加。\n11/21活動；集合地點等主辦公布。",
+          "why": "收到活動、借書或報名通知時，先知道自己接下來要做什麼。"
         },
         "en": {
-          "title": "Complete your first AI task",
-          "goal": "Send a request on a computer, verify the deadline and unknowns, and save a result you can reopen.",
-          "quick": "Before reading the steps, open a new chat, turn the notice below into one action, identify its source and an unknown, and save it.",
-          "skip": "Skip to independent practice if you can show the submitted request, correct deadline, unknown, and reopened record.",
+          "title": "Turn an invitation into a to-do",
+          "goal": "Get a dated to-do and a short reminder you can send to a friend.",
+          "quick": "Try the task below first. If you already know how, move on to an independent practice.",
+          "skip": "Choose the guided steps, a new practice, or a deeper challenge at your own pace.",
           "source": "Fictional teaching notice A1\nActivity date: 2026/11/21.\nReply whether you will attend by 2026/11/18 18:00 (Asia/Taipei).\nThe meeting location has not been announced.",
-          "prompt": "Using only notice A1, write one action with its deadline and source. List one item that needs confirmation. Do not guess.",
+          "prompt": "Turn this notice into one to-do: what to do and by when. List any details that have not been announced.",
           "steps": [
-            "Keep this lesson tab open. Open another browser tab and visit an AI tool you can use. Sign in using its interface. If access is unavailable, observe a demonstration and record hands-on work as pending.",
-            "Start a new chat in the AI tool and find its message input. Return to this lesson, copy the source, switch back to the AI tool, paste it, then paste the prompt.",
-            "Check that the text is complete, then use the tool's send control. Wait for its answer. This happens in the AI tool; copying text in this lesson does not submit it.",
-            "Return to the lesson and compare: the reply deadline is 11/18 18:00, not the activity date 11/21. The location remains unknown. If needed, ask: 'Correct this using A1; do not guess the location.'",
-            "Return to this lesson. Paste your submitted request into the request field and the answer, source A1, and verification into the result and verification field. Select Download this lesson record, then open the downloaded text file from the browser download list and check its contents. You may also save a copy in your practice folder."
+            "Open your usual AI tool in another browser tab and sign in. Keep this lesson open so you can return to it.",
+            "Copy the practice text and request below, paste both into the AI chat, and send them.",
+            "Read the answer, then send: “Make this one friendly reminder I can send to a friend.”",
+            "Check that the shorter version keeps the 11/18 18:00 reply deadline. Copy your favorite version to notes or save it in this lesson’s record area."
           ],
-          "expected": "Action: reply whether you will attend by 2026/11/18 18:00 (Asia/Taipei); source A1. To confirm: meeting location. The activity date, 2026/11/21, is not the reply deadline. Wording may differ; facts must match.",
+          "expected": "The reply deadline remains 11/18 18:00; the activity is on 11/21. A friendly version: “Remember to reply by 6 pm on 11/18 about joining the 11/21 activity! We’re waiting for the organizer to announce the meeting location.”",
           "independent": {
             "task": "New fictional source A2: reading activity on 2026/12/03; choose a topic by 12/01 12:00 (Asia/Taipei); classroom undecided. In a new chat, write the action and unknown, and save a second record.",
             "expected": "Choose a topic by 12/01 12:00; source A2; classroom to confirm; activity on 12/03. Actually save and reopen it; reading this answer alone is not hands-on completion."
@@ -74,9 +73,8 @@
             "expected": "Submit your topic by 2026/12/02 17:00 (Asia/Taipei). The session is on 12/05, with 5 minutes per speaker; the venue is to be confirmed."
           },
           "checks": [
-            "Submitted a request in an AI tool and can distinguish it from the lesson tab.",
-            "Deadline, source, and unknown match A1.",
-            "Saved and reopened the record; unperformed operations are marked pending."
+            "The reply deadline is 11/18 18:00, not the activity date of 11/21.",
+            "The short version keeps the action and does not invent a meeting location."
           ],
           "quiz": {
             "question": "What is A1's reply deadline?",
@@ -87,7 +85,9 @@
             ],
             "answer": 0,
             "explanation": "A1 explicitly says 11/18 18:00. The activity date, 11/21, is a different field."
-          }
+          },
+          "outcome": "Reply by 11/18 18:00 about attending.\nActivity: 11/21; meeting location to be announced.",
+          "why": "When you receive an invitation or sign-up notice, find the next thing you need to do."
         }
       }
     },
@@ -100,19 +100,19 @@
       ],
       "locales": {
         "zh-Hant": {
-          "title": "改一處，確認結果跟著變",
-          "goal": "只更新受影響欄位，保留不變資訊與未知。",
-          "quick": "先預測：車票期限20:00改19:00後，哪一項改變？哪兩項不應跟著改？",
-          "skip": "能交出更新前、更新內容與更新後，正確指出一改兩不改，可直接挑戰。",
+          "title": "事情改了，請 AI 幫你更新",
+          "goal": "得到一份只更新下載期限、保留原集合安排的提醒。",
+          "quick": "先試下方的小任務；已經熟悉的話，可以直接換題練習。",
+          "skip": "依自己的進度，選擇跟著做、換題練習或進一步挑戰。",
           "source": "虛構B0，時間Asia/Taipei：2026/11/19 20:00前下載車票；2026/11/21 09:00在雲岸車站集合；入住時間未提供。",
-          "prompt": "只依B0列出下載期限、集合、入住三欄，每欄附來源；缺值標待確認，不補猜。這是更新前的第一版。",
+          "prompt": "把這段出發資訊整理成三行：下載車票、集合、入住。沒提供的就寫「待確認」。",
           "steps": [
-            "先把預測寫下：下載期限提早1小時；集合與入住不變。",
-            "先複製B0與第一輪問題送給AI，保存初版。接著複製本課「第二輪追問」的B1與要求，貼到同一個AI對話送出，才比對更新結果。",
-            "比對兩版的日期與時間。若集合也改了，追問『B1只改下載期限；請還原沒有依據的修改』。",
-            "把三份文字保存：B0初版、B1更新、核對後結果；標示變動欄位。"
+            "把下方資料與要求一起貼到 AI，先取得三行提醒。",
+            "將「第二輪追問」的資料與要求貼到同一段對話，告訴 AI 下載期限改成19:00。",
+            "比較兩版：下載期限應提早一小時，集合時間仍是09:00。",
+            "留下你要使用的新版本；想更順手，可以再要求改成勾選清單。"
           ],
-          "expected": "第一輪B0：下載期限2026/11/19 20:00；集合2026/11/21 09:00、雲岸車站；入住時間未提供，待確認。來源皆B0，時間Asia/Taipei。此刻尚未套用B1，19:00不是這一輪的答案。",
+          "expected": "第一版下載期限11/19 20:00；更新後為19:00。集合仍是11/21 09:00雲岸車站，入住待確認。",
           "independent": {
             "task": "新資料（虛構）R0：2026/12/04 16:00前交報告；12/06 10:00討論；會議室未定。R1：負責人確認交報告改15:00，其餘不變。時間Asia/Taipei。請自行製作三欄前後對照。",
             "expected": "交報告12/04 16:00→15:00，提早1小時；討論12/06 10:00不變；會議室仍待確認。"
@@ -124,9 +124,8 @@
             "expected": "共同：兩份下載期限都在2026/11/19；確切時間待確認。衝突：19:00與18:30相差30分鐘；有效截止時間待確認。向主辦決策窗口確認哪份有效及是否取代另一份；不能聲稱18:30已被正式採用。"
           },
           "checks": [
-            "只有下載期限改變。",
-            "集合09:00與入住待確認均保留。",
-            "保存前後版本與自己的核對註記。"
+            "下載期限從20:00改為19:00，提早一小時。",
+            "集合仍是11/21 09:00；入住時間仍待確認。"
           ],
           "quiz": {
             "question": "B1套用後，入住時間應寫什麼？",
@@ -139,25 +138,27 @@
             "explanation": "兩個時間各有用途，不能用來補猜入住時間。"
           },
           "followup": {
-            "source": "虛構B1：主辦者確認只把下載車票期限改為2026/11/19 19:00（Asia/Taipei），其餘依B0。",
-            "prompt": "請在剛才B0結果套用B1，列更新前／更新後／改變原因，只改有來源支持的欄位，保留不變資訊與未知。",
-            "expected": "下載期限：11/19 20:00→19:00，提早1小時，依B1。集合：11/21 09:00雲岸車站→相同，依B0。入住：未提供→待確認，沒有新資料。全部為2026年、Asia/Taipei。"
-          }
+            "source": "更新：主辦把下載車票期限改為2026/11/19 19:00（Asia/Taipei），其餘不變。",
+            "prompt": "請更新剛才的三行提醒，只把下載期限改成19:00。",
+            "expected": "下載車票：11/19 19:00前。集合：11/21 09:00，雲岸車站。入住：待確認。"
+          },
+          "outcome": "下載車票：11/19 19:00前。\n集合：11/21 09:00，雲岸車站。",
+          "why": "時間、地點或人數臨時改變時，不用把整份內容重新寫一遍。"
         },
         "en": {
-          "title": "Change one thing and verify the result",
-          "goal": "Update only the affected field, preserving unchanged facts and unknowns.",
-          "quick": "Predict first: if the ticket deadline changes from 20:00 to 19:00, what changes and which two fields must stay the same?",
-          "skip": "Go to the challenge if your before, update, and after records show one correct change and two unchanged fields.",
+          "title": "Plans changed: ask AI to update them",
+          "goal": "Get a reminder with an updated ticket deadline and the original meeting details.",
+          "quick": "Try the task below first. If you already know how, move on to an independent practice.",
+          "skip": "Choose the guided steps, a new practice, or a deeper challenge at your own pace.",
           "source": "Fictional B0; time zone Asia/Taipei: download tickets by 2026/11/19 20:00; meet at Cloudbank Station on 2026/11/21 at 09:00; check-in time not provided.",
-          "prompt": "Using B0 only, list ticket deadline, meeting, and check-in with a source for each. Mark missing values to confirm; do not guess. This is the first version before any update.",
+          "prompt": "Organize these departure details into three lines: ticket download, meeting, and check-in. Write “to confirm” for anything not provided.",
           "steps": [
-            "Write your prediction: ticket deadline moves 1 hour earlier; meeting and check-in information stay unchanged.",
-            "Submit B0 and the first prompt, then save the initial answer. Next copy B1 and the request from the second-turn follow-up into the same AI chat and send them before comparing the updated result.",
-            "Compare dates and times. If the meeting changed too, ask: 'B1 only changes the download deadline. Restore unsupported changes.'",
-            "Save three records: the B0 result, B1 update, and verified final result. Mark the changed field."
+            "Paste the data and request below into AI to get your three-line reminder.",
+            "Paste the second-round data and request into the same chat to change the download deadline to 19:00.",
+            "Compare the versions: download is one hour earlier, while the meeting stays at 09:00.",
+            "Save the updated version you want to use. You can also ask to turn it into a checklist."
           ],
-          "expected": "First turn, B0: ticket download deadline 2026/11/19 20:00; meeting 2026/11/21 09:00 at Cloudbank Station; check-in not provided, to confirm. All sourced to B0, time zone Asia/Taipei. B1 has not been applied yet; 19:00 is not the answer for this turn.",
+          "expected": "The first version has a download deadline of 11/19 20:00; the update changes it to 19:00. Meeting remains 11/21 09:00 at Cloudbank Station; check-in is to confirm.",
           "independent": {
             "task": "New fictional R0: report due 2026/12/04 16:00; discussion 12/06 10:00; room undecided. R1: the owner confirms the report deadline changes to 15:00; everything else stays the same. Time zone Asia/Taipei. Make a before/after comparison yourself.",
             "expected": "Report deadline 12/04 16:00 → 15:00, 1 hour earlier; discussion remains 12/06 10:00; room remains to confirm."
@@ -169,9 +170,8 @@
             "expected": "Shared fact: download is due on 2026/11/19. Conflict: 19:00 versus 18:30, a 30-minute difference; the valid deadline is unconfirmed. Ask the organizer's decision owner which notice is valid and whether it replaces the other. Do not claim 18:30 is officially adopted."
           },
           "checks": [
-            "Only the download deadline changed.",
-            "The 09:00 meeting and unconfirmed check-in remain.",
-            "Saved both versions and personal verification notes."
+            "The download deadline moves from 20:00 to 19:00, one hour earlier.",
+            "Meeting remains 11/21 09:00; check-in remains to confirm."
           ],
           "quiz": {
             "question": "After applying B1, what is the check-in time?",
@@ -184,10 +184,12 @@
             "explanation": "Those times refer to different actions and cannot fill the missing check-in time."
           },
           "followup": {
-            "source": "Fictional B1: the organizer confirms that only the ticket download deadline changes to 2026/11/19 19:00 (Asia/Taipei). Everything else follows B0.",
-            "prompt": "Apply B1 to your previous B0 result. Show before / after / reason, changing only source-supported fields and preserving unchanged facts and unknowns.",
-            "expected": "Ticket deadline: 11/19 20:00 → 19:00, 1 hour earlier, supported by B1. Meeting: 11/21 09:00 at Cloudbank Station → unchanged, supported by B0. Check-in: not provided → to confirm; no new data. All dates are in 2026, Asia/Taipei."
-          }
+            "source": "Update: the organizer changes the ticket download deadline to 2026/11/19 19:00 (Asia/Taipei). Everything else stays the same.",
+            "prompt": "Update the three-line reminder, changing only the download deadline to 19:00.",
+            "expected": "Download tickets by 11/19 19:00. Meet on 11/21 at 09:00 at Cloudbank Station. Check-in: to confirm."
+          },
+          "outcome": "Download tickets by 11/19 19:00.\nMeet on 11/21 at 09:00 at Cloudbank Station.",
+          "why": "When a time, location, or headcount changes, you do not have to rewrite everything."
         }
       }
     },
@@ -200,19 +202,19 @@
       ],
       "locales": {
         "zh-Hant": {
-          "title": "讀資料、比較版本、回來源核對",
-          "goal": "為每個結論找到依據，分開確定、缺漏與衝突。",
-          "quick": "下方B與D何者是有效集合時間？較新的E可以直接取代B嗎？用原文理由回答。",
-          "skip": "能指出採用依據、未解衝突與需要確認的發布者，可直接做獨立題。",
+          "title": "把零散訊息整理成一份安排",
+          "goal": "得到一份把確定安排與待詢問事項分開的行程表。",
+          "quick": "先試下方的小任務；已經熟悉的話，可以直接換題練習。",
+          "skip": "依自己的進度，選擇跟著做、換題練習或進一步挑戰。",
           "source": "虛構資料，時間Asia/Taipei。\nD｜10/20發布：2026/11/21 10:00雲岸車站集合。\nB｜10/25主辦核准：取代D；2026/11/21 09:00雲岸車站集合；11/19 19:00前下載車票；入住未定。\nE｜10/28討論草稿：建議11/21 08:30集合，尚未核准。\nF｜接駁筆記：11/21 09:30發車；未註明核准狀態。",
-          "prompt": "逐項列結論、來源原句、確定／缺漏／衝突、採用理由。區分集合、下載期限與發車。不要只靠日期或檔名判斷可信度。",
+          "prompt": "請把四則訊息整理成「要做的事／時間／備註」表格。主辦已確認的安排放前面，建議或還要問的事放後面。",
           "steps": [
-            "先標出每份資料的發布日、核准狀態與取代關係。",
-            "將來源與問題一起交給AI，要求每項結論附來源代號。",
-            "回原文核對：B明確取代D；E雖新但未核准；F是發車而非集合時間。",
-            "追問『哪些仍須向主辦確認？』，保存來源對照與待確認清單。"
+            "把四則訊息與要求一起貼到 AI，取得第一版表格。",
+            "回頭看主辦訊息B：集合是09:00，E的08:30仍是建議。看看表格有沒有分開。",
+            "接著送出：「改成出門前看的三行提醒，最後列一個要問主辦的問題。」",
+            "讀讀短版，確認你一眼能找到集合時間與下載期限，再保存想用的版本。"
           ],
-          "expected": "目前核准集合：2026/11/21 09:00雲岸車站（B明確取代D）；目前09:00比舊版10:00提早1小時。下載：11/19 19:00（B），不是集合時間。E的08:30仍是未核准建議，不能取代B。F的09:30是發車筆記，須向主辦確認有效性；不能直接當成與09:00集合衝突。入住缺漏。",
+          "expected": "目前集合是11/21 09:00雲岸車站，11/19 19:00前下載車票。08:30只是草稿建議；09:30接駁是否確定、入住時間都可以再問主辦。",
           "independent": {
             "task": "虛構P：10/26核准，報名上限20人。Q：10/29草稿，建議30人，未核准。R：10/28窗口留言『上限25人』，未說是否取代P。請列目前核准值與未解事項。",
             "expected": "已知核准值20人（P）；30人是草稿；25人留言與P不同但權限／取代關係不明，需向決策者確認，不能宣稱最後有效上限必為25或30。"
@@ -224,9 +226,8 @@
             "expected": "無法確認當前費用。V1已過期；V2較新但未核准。需取得當前核准的費用通知、適用日期及發布者確認；不能選300或350作為已確認值。"
           },
           "checks": [
-            "每個結論有來源代號與核對理由。",
-            "沒有把較新等同可信，也沒有混合不同時間用途。",
-            "保留缺漏及需向主辦確認的事項。"
+            "集合採用主辦確認的09:00；08:30仍是建議。",
+            "09:30是接駁發車筆記，不能當成集合時間。"
           ],
           "quiz": {
             "question": "為什麼本題採用B的09:00？",
@@ -237,22 +238,24 @@
             ],
             "answer": 0,
             "explanation": "採用理由是核准與取代關係；更新日期本身不充分。"
-          }
+          },
+          "outcome": "集合：11/21 09:00，雲岸車站。\n車票：11/19 19:00前下載；接駁時間再問主辦。",
+          "why": "群組裡有人改時間、有人提建議時，讓 AI 幫你找出目前要照做的安排。"
         },
         "en": {
-          "title": "Read, compare, and verify sources",
-          "goal": "Find evidence for each conclusion and separate confirmed facts, missing data, and conflicts.",
-          "quick": "Which meeting time in B and D is valid? Can the newer E replace B? Answer using source wording.",
-          "skip": "Go to independent practice if you can explain the selection, unresolved issues, and who needs to confirm them.",
+          "title": "Bring scattered messages into one plan",
+          "goal": "Get a schedule that separates confirmed plans from questions to ask.",
+          "quick": "Try the task below first. If you already know how, move on to an independent practice.",
+          "skip": "Choose the guided steps, a new practice, or a deeper challenge at your own pace.",
           "source": "Fictional data; time zone Asia/Taipei.\nD | issued 10/20: meet at Cloudbank Station on 2026/11/21 at 10:00.\nB | organizer approved 10/25: replaces D; meet at Cloudbank Station on 2026/11/21 at 09:00; download tickets by 11/19 19:00; check-in undecided.\nE | discussion draft 10/28: suggests meeting on 11/21 at 08:30; not approved.\nF | shuttle note: departs 11/21 at 09:30; approval status not stated.",
-          "prompt": "For each item, list conclusion, supporting source wording, confirmed / missing / conflict, and selection reason. Distinguish meeting, download deadline, and departure. Do not judge credibility only by date or filename.",
+          "prompt": "Turn these four messages into a table: action / time / note. Put organizer-confirmed arrangements first, then suggestions and questions.",
           "steps": [
-            "Mark the issue date, approval status, and replacement relationship for each source.",
-            "Submit the sources and prompt to AI; request a source ID for every conclusion.",
-            "Check the original text: B explicitly replaces D; E is newer but unapproved; F is a departure time, not a meeting time.",
-            "Ask which items still need organizer confirmation. Save the source comparison and questions."
+            "Paste the four messages and request into AI to get a table.",
+            "Look back at organizer message B: the meeting is 09:00; E’s 08:30 is a suggestion. Check that the table keeps them separate.",
+            "Then send: “Make this three lines I can read before leaving, followed by one question for the organizer.”",
+            "Check that you can quickly find the meeting time and ticket deadline, then save your preferred version."
           ],
-          "expected": "Currently approved meeting: 2026/11/21 09:00 at Cloudbank Station (B explicitly replaces D), 1 hour earlier than D's 10:00. Download deadline: 11/19 19:00 (B), not the meeting. E's 08:30 is unapproved and cannot replace B. F's 09:30 is a departure note whose validity needs organizer confirmation; it is not automatically a conflict with the 09:00 meeting. Check-in is missing.",
+          "expected": "Meet on 11/21 at 09:00 at Cloudbank Station; download tickets by 11/19 19:00. 08:30 is only a draft suggestion. You can ask the organizer about the 09:30 shuttle and check-in time.",
           "independent": {
             "task": "Fictional P: approved 10/26, registration limit 20 people. Q: draft 10/29 suggests 30, unapproved. R: contact message 10/28 says 'limit 25' without stating whether it replaces P. List the approved value and unresolved issues.",
             "expected": "Known approved value: 20 (P). The 30-person value is a draft. The 25-person message differs from P, but authority and replacement are unclear. Ask the decision owner; do not assert that 25 or 30 is the final valid limit."
@@ -264,9 +267,8 @@
             "expected": "The current fee cannot be confirmed. V1 expired; V2 is newer but unapproved. Obtain the current approved fee notice, effective dates, and publisher confirmation. Neither 300 nor 350 can be presented as confirmed."
           },
           "checks": [
-            "Every conclusion has a source ID and verification reason.",
-            "Newer was not equated with credible; times with different purposes were not mixed.",
-            "Missing information and organizer questions remain visible."
+            "Use the organizer-confirmed 09:00 meeting; 08:30 remains a suggestion.",
+            "09:30 is a shuttle departure note, not the meeting time."
           ],
           "quiz": {
             "question": "Why use B's 09:00 in this exercise?",
@@ -277,7 +279,9 @@
             ],
             "answer": 0,
             "explanation": "Approval and replacement support the choice. A newer date alone is insufficient."
-          }
+          },
+          "outcome": "Meet: 11/21 09:00, Cloudbank Station.\nTickets: download by 11/19 19:00; ask about the shuttle.",
+          "why": "When a group chat mixes changes and suggestions, ask AI to pull out the arrangements to follow."
         }
       }
     },
@@ -291,23 +295,22 @@
       ],
       "locales": {
         "zh-Hant": {
-          "title": "Gmail：找該處理的信，寫回覆草稿",
-          "goal": "讀取指定教學郵件，整理待辦與尚未寄出的回覆。",
-          "quick": "找出指定信串的最新有效期限，指出原信依據；說明你是實際讀信或貼文字練習。",
-          "skip": "能透過可用外掛讀取指定信串並回原信核對，分清草稿與寄出，可跳基礎步驟；貼文字只完成整理部分。",
-          "source": "以下全為虛構教學郵件，不是你的實際收件匣。\n信串主旨：[AI Lab] 雲岸活動確認\nG1｜內文標示2026/10/27｜主辦：請於11/18 18:00（Asia/Taipei）前回覆是否參加；集合地點待定。\nG2｜內文標示2026/10/28｜同一主辦回覆：回覆期限改11/18 17:00，其餘不變。\n學員本次決定：會參加；希望詢問集合地點。 以上日期是虛構內文版本日期，並非實際收件日期；實際寄送／收到時間依課前準備當天。",
-          "prompt": "只讀取主旨為[AI Lab] 雲岸活動確認、實際收件日期為【填入課前準備當天日期】的指定教學信串，包含更新回覆。列出有效期限、待辦、來源及未知，草擬我會參加且詢問集合地點的回覆。只在對話輸出草稿，不建立Gmail草稿、不寄出。若無法讀信，明確說明；不要聲稱已搜尋。",
+          "title": "Gmail：讀懂一封信，寫好回覆",
+          "goal": "得到一封表達參加意願、詢問集合地點的回覆草稿。",
+          "quick": "先試下方的小任務；已經熟悉的話，可以直接換題練習。",
+          "skip": "依自己的進度，選擇跟著做、換題練習或進一步挑戰。",
+          "source": "虛構練習郵件\n主旨：雲岸活動確認\n您好！請於2026/11/18 17:00（Asia/Taipei）前回覆是否參加11/21的活動。集合地點稍後公布。\n你的決定：會參加，希望先詢問集合地點。",
+          "prompt": "請整理這封信需要我做的事，並替我寫三句禮貌回覆：我會參加，也想詢問集合地點。先給我文字草稿。",
           "steps": [
-            "連線路線：先由講師在專用教學帳號準備G1、G2為同一信串，核對主旨與實際收件日期，再把問題中的日期佔位文字替換成該日期；內文虛構日期不作收件搜尋條件，再依共用連線指引確認Gmail外掛可用及允許的帳號。帳號／方案不支援時改貼文字，紀錄『連線待補』。",
-            "連線路線送出問題並限定信串；貼文字路線把來源與問題一起送出，將問題的讀信指令改成『只整理下方貼上的文字』。",
-            "打開工具回傳的來源信串，核對G1與G2原文。若只有搜尋摘要或無法開來源，不能算讀信核對完成。",
-            "檢查草稿是11/18 17:00、會參加、詢問地點；沒有捏造地點，也沒有把已讀當成已回覆。",
-            "保存草稿與來源紀錄，狀態寫『對話草稿，未寄出』。寄出是另一次明確決定，本課停在草稿。"
+            "把下方郵件文字與要求一起貼到 AI；這一步不需要 Gmail 帳號連線。",
+            "讀一遍草稿，看看有沒有表達「會參加」與詢問集合地點。",
+            "接著送出：「改得更親切，縮成兩句，不用太正式。」",
+            "挑選你喜歡的版本保存。這是供你使用的回覆文字，尚未寄出；想練真正讀信再展開進階連線。"
           ],
-          "expected": "待辦：11/18 17:00（Asia/Taipei）前回覆參加，依G2取代G1的18:00。未知：集合地點。草稿：『您好，我會參加雲岸活動。請問集合地點何時公布？謝謝。』狀態：僅對話草稿，未建立Gmail草稿、未寄出。",
+          "expected": "待辦：11/18 17:00前回覆是否參加。回覆可以是：「您好，我會參加11/21的活動！請問集合地點什麼時候會公布？謝謝。」語氣可以不同，能清楚表達你的意思就好。",
           "independent": {
-            "task": "新虛構郵件H1：主旨[AI Lab] 借書確認；內文虛構版本日2026/11/02，11/05 12:00（Asia/Taipei）前確認領取；領取地點未定。你的決定：可領取。先用貼文字路線獨立寫待辦與回覆；要練連線則請講師先在教學帳號準備該信並限定主旨及實際課前準備收件日讀取，不用內文版本日篩收件日。",
-            "expected": "待辦11/05 12:00前確認；來源H1；地點未知。草稿『我可領取，請告知領取地點，謝謝。』未寄出。沒有真實讀信證據時標示貼文字練習。"
+            "task": "試試另一封虛構郵件：「請於11/05 12:00前確認是否來領書，領取地點稍後通知。」你的決定是可以領取。自己寫一句要求，請AI協助回覆。",
+            "expected": "例如：「您好，我可以來領書，請再告訴我領取地點，謝謝！」並記得在11/05 12:00前回覆。"
           },
           "challenge": {
             "task": "把部分回覆與改期分開處理。",
@@ -316,39 +319,52 @@
             "expected": "集合11/07 10:00（J2）；參加已回覆（J3）；餐點未回覆。不能把參加回覆當成全部完成。可問學員『你要選什麼餐點？』；未取得選擇前不代填、不寄出。"
           },
           "checks": [
-            "搜尋範圍與來源信串明確，讀到更新回覆。",
-            "分別記錄實際連線或貼文字，不混稱。",
-            "期限與草稿已核對，未寄出狀態明確。"
+            "回覆清楚表達會參加，並詢問集合地點。",
+            "活動是11/21；需在11/18 17:00前回覆。",
+            "草稿尚未寄出，可以先改成自己的口氣。"
           ],
           "quiz": {
-            "question": "把G1、G2貼給AI後，可以宣稱什麼？",
+            "question": "你想讓回覆自然一點，可以怎麼追問？",
             "choices": [
-              "已完成貼文字整理，Gmail連線尚未驗證",
-              "已成功連接Gmail",
-              "信已寄出"
+              "改成像平常傳訊息的語氣，保留我要表達的兩件事",
+              "不用讀草稿就直接寄出",
+              "把活動日期改掉"
             ],
             "answer": 0,
-            "explanation": "內容整理、讀取帳號及寄信是三種不同操作。"
+            "explanation": "告訴AI想改的語氣，同時保留你原本要表達的內容。"
+          },
+          "outcome": "您好，我會參加11/21的活動！\n請問集合地點什麼時候會公布？謝謝。",
+          "why": "遇到邀請、確認或詢問信時，先抓重點，再用自己的口氣回覆。",
+          "connection": {
+            "title": "進階選做：請 AI 讀你指定的一封 Gmail",
+            "source": "準備一封你有權使用、沒有個資或機密的練習信。可以在自己的練習帳號寄一封範例給自己，主旨自訂為「AI練習－活動確認」，內文用本課虛構郵件；記下實際寄信日期。",
+            "prompt": "請用Gmail讀取我指定的這封練習信：主旨【填入完整主旨】，寄信日期【填入實際日期】。若找到多封，先列出讓我選。讀取後整理待辦並寫回覆草稿，只放在對話，不寄出、不建立Gmail草稿。",
+            "steps": [
+              "在你使用的AI工具找可用的Plugins／外掛或連接應用程式，搜尋Gmail，依畫面連接你要用的練習帳號並查看授權範圍。是否支援取決於工具、方案與工作區。",
+              "把下方要求中的主旨與日期換成你的資料；在對話選用Gmail外掛，再送出要求。",
+              "打開AI提供的原信連結，確認它讀的是那一封；再看回覆草稿是否符合你的意思。",
+              "若無此服務或讀不到信，就回到貼文字練習；不要把整理文字誤當成已連線。"
+            ],
+            "expected": "你能開到指定原信，AI讀過內容並在對話寫出草稿。信尚未寄出。"
           }
         },
         "en": {
-          "title": "Gmail: find actions and draft replies",
-          "goal": "Read specified teaching emails and produce actions and an unsent reply.",
-          "quick": "Find the valid deadline in the specified thread and identify the original evidence. State whether you read connected mail or practiced with pasted text.",
-          "skip": "Skip the basics if you can use an available plugin to read the specified thread, verify the original, and distinguish drafting from sending. Pasted text completes only the organization exercise.",
-          "source": "All emails below are fictional teaching material, not your actual inbox.\nSubject: [AI Lab] Cloudbank activity confirmation\nG1 | body version date 2026/10/27 | Organizer: reply whether attending by 11/18 18:00 (Asia/Taipei); meeting location undecided.\nG2 | body version date 2026/10/28 | Same organizer replies: reply deadline changes to 11/18 17:00; all else unchanged.\nLearner decision for this exercise: will attend; wants to ask about the meeting location. These are fictional version dates inside the email body, not actual receipt dates; sending/receipt occurs when the lesson is prepared.",
-          "prompt": "Read only the teaching thread with subject [AI Lab] Cloudbank activity confirmation, received on [enter the actual preparation date], including updates. List the valid deadline, action, sources, and unknowns. Draft a reply saying I will attend and asking about the meeting location. Output text in this chat only; do not create a Gmail draft or send. If mail cannot be read, say so; do not claim you searched.",
+          "title": "Gmail: understand a message and draft a reply",
+          "goal": "Get a reply draft that confirms attendance and asks about the location.",
+          "quick": "Try the task below first. If you already know how, move on to an independent practice.",
+          "skip": "Choose the guided steps, a new practice, or a deeper challenge at your own pace.",
+          "source": "Fictional practice email\nSubject: Cloudbank activity confirmation\nHello! Please reply by 2026/11/18 17:00 (Asia/Taipei) to say whether you will attend the activity on 11/21. The meeting location will be announced later.\nYour decision: you will attend and would like to ask about the location.",
+          "prompt": "List what I need to do in this email, then write a polite three-sentence reply: I will attend and would like to ask about the meeting location. Give me a text draft first.",
           "steps": [
-            "Connected route: the instructor first prepares G1 and G2 as one thread in a dedicated teaching account and verifies the subject and actual receipt date, then replaces the date placeholder with that date; fictional body dates are not receipt-date filters. Follow the shared connection guide to check Gmail plugin availability and the permitted account. If unsupported by the account or plan, paste the text and record connection as pending.",
-            "For the connected route, submit the scoped request. For pasted-text practice, submit the source too and replace the mail-reading instruction with 'Organize only the text pasted below.'",
-            "Open the source thread returned by the tool and verify G1 and G2. A search snippet or an inaccessible source does not complete original-email verification.",
-            "Check the deadline is 11/18 17:00, the reply says you will attend, and it asks about the location. Do not invent a location or treat read mail as answered mail.",
-            "Save the draft and source record, labeled 'chat draft, not sent.' Sending requires a separate explicit decision; this lesson ends at the draft."
+            "Paste the sample email and request into AI. This step does not need a Gmail connection.",
+            "Read the draft and check that it says you will attend and asks about the location.",
+            "Then send: “Make it friendlier and just two sentences, without sounding too formal.”",
+            "Save the version you like. This reply text has not been sent. Open the optional connection exercise to practice reading a real message."
           ],
-          "expected": "Action: reply that you will attend by 11/18 17:00 (Asia/Taipei); G2 replaces G1's 18:00. Unknown: meeting location. Draft: 'Hello, I will attend the Cloudbank activity. When will the meeting location be announced? Thank you.' Status: chat text only; no Gmail draft created and nothing sent.",
+          "expected": "Action: reply by 11/18 17:00. A possible draft: “Hello, I’ll be attending on 11/21! When will the meeting location be announced? Thank you.” Wording can vary as long as it expresses your decision.",
           "independent": {
-            "task": "New fictional H1: subject [AI Lab] Book pickup confirmation; fictional body version date 2026/11/02; confirm pickup by 11/05 12:00 (Asia/Taipei); location undecided. Your decision: you can pick it up. Independently write an action and reply using pasted text. To practice a connection, ask the instructor to prepare this email in the teaching account first, then scope reading by subject and actual preparation/receipt date, not the fictional body date.",
-            "expected": "Confirm by 11/05 12:00; source H1; location unknown. Draft: 'I can pick it up. Please let me know the pickup location. Thank you.' Unsent. Without evidence of connected reading, label this pasted-text practice."
+            "task": "Try a different fictional email: “Please confirm by 11/05 12:00 whether you can collect your books. We will send the pickup location later.” You can collect them. Write your own short request for help replying.",
+            "expected": "For example: “Hello, I can collect the books. Please let me know the pickup location. Thank you!” Remember to reply by 11/05 12:00."
           },
           "challenge": {
             "task": "Separate a partial reply from a schedule update.",
@@ -357,19 +373,33 @@
             "expected": "Meet 11/07 10:00 (J2); attendance answered (J3); meal unanswered. Attendance alone does not complete everything. Ask the learner 'Which meal would you like?' Do not fill in or send a choice before receiving it."
           },
           "checks": [
-            "The search scope and source thread are explicit, including the update.",
-            "Connected reading and pasted text are recorded separately.",
-            "Deadline and draft are verified and the unsent status is clear."
+            "The reply says you will attend and asks about the meeting location.",
+            "The activity is 11/21; the reply is due by 11/18 17:00.",
+            "The draft has not been sent; you can adjust its tone first."
           ],
           "quiz": {
-            "question": "After pasting G1 and G2 into AI, what can you claim?",
+            "question": "How can you ask for a more natural reply?",
             "choices": [
-              "Pasted-text organization is complete; Gmail connection is unverified",
-              "Gmail is successfully connected",
-              "The email was sent"
+              "Use an everyday messaging tone while keeping my two main points",
+              "Send it without reading the draft",
+              "Change the activity date"
             ],
             "answer": 0,
-            "explanation": "Organizing text, reading an account, and sending mail are different operations."
+            "explanation": "Describe the tone you want while keeping your original meaning."
+          },
+          "outcome": "Hello, I’ll be attending on 11/21!\nWhen will the meeting location be announced? Thank you.",
+          "why": "For invitations, confirmations, or questions, pull out the key point and reply in your own voice.",
+          "connection": {
+            "title": "Optional: ask AI to read one Gmail message you choose",
+            "source": "Prepare a practice message you may use, with no personal or confidential information. You can send the fictional email to yourself in a practice account, using a distinctive subject such as “AI practice – activity confirmation.” Note the actual sending date.",
+            "prompt": "Use Gmail to read this practice email: subject [enter the exact subject], sending date [enter the actual date]. If several match, list them for me to choose. Read it, summarize my action, and write a reply in this chat only. Do not send it or create a Gmail draft.",
+            "steps": [
+              "Look for available Plugins or connected apps in your AI tool, find Gmail, and follow the connection flow for your practice account. Review the requested access. Availability depends on the tool, plan, and workspace.",
+              "Replace the subject and date in the request with your details. Select the Gmail plugin in the conversation and send the request.",
+              "Open the original-message link AI returns to check that it read the intended email, then review the reply.",
+              "If the service is unavailable or cannot read the email, return to pasted-text practice. Text organization alone does not establish a connection."
+            ],
+            "expected": "You can open the specified original message, and AI has read its content and produced a chat draft. The email has not been sent."
           }
         }
       }
@@ -383,20 +413,19 @@
       ],
       "locales": {
         "zh-Hant": {
-          "title": "Google Drive：找文件、比較方案",
-          "goal": "讀到指定文件內文，以相同人數與幣別比較，保留未知費用。",
-          "quick": "每人600與4人共2200，哪個已知小計較低？是否已能判斷完整費用？",
-          "skip": "能讀取指定文件、對齊口徑、附來源與未知，可直接做不同幣別挑戰。",
-          "source": "虛構教學文件，皆適用2026/11/21、4人、TWD。\n[AI Lab] 方案A核准版：交通每人600；四人住宿共2400；含早餐。\n[AI Lab] 方案B核准版：交通四人共2200；四人住宿共2600；早餐另計，價格未提供。",
-          "prompt": "只讀取指定的[AI Lab] 方案A核准版與方案B核准版內文。以2026/11/21、4人、TWD比較交通、住宿、早餐、已知小計、未知費用，列算式與來源。不能把未知當零；讀不到內文就說明。",
+          "title": "Google Drive：把兩個方案放在一起比較",
+          "goal": "得到兩個四人方案的費用比較表，以及給同行朋友的短說明。",
+          "quick": "先試下方的小任務；已經熟悉的話，可以直接換題練習。",
+          "skip": "依自己的進度，選擇跟著做、換題練習或進一步挑戰。",
+          "source": "虛構出遊方案：同一天、4人、金額都是TWD。\n方案A：交通每人600；四人住宿共2400；含早餐。\n方案B：交通四人共2200；四人住宿共2600；早餐另計，價格還沒提供。",
+          "prompt": "請把方案A和B整理成四人費用比較表，列交通、住宿、早餐及已知小計。每人價要乘以4；沒寫的費用請留「待確認」。",
           "steps": [
-            "講師先在專用教學Drive建立兩份文件，標題及內文使用來源文字；學員取得兩份文件的實際連結並確認可開啟。依共用指引確認可用外掛與帳號。",
-            "把實際教學文件連結加入問題以精確指定；若無連線，改貼來源並要求『只比較貼上的文字』，註記連線待補。",
-            "確認AI讀到交通與早餐欄位；只找到檔名或摘要不算完成。回兩份文件逐欄核對。",
-            "先把A交通換算為600×4，再加住宿；B使用整組交通價。追問『哪些費用還未知，所以不能斷言較便宜？』。",
-            "保存比較表、算式、文件版本及讀取方式。"
+            "把下方兩段資料與要求一起貼到 AI，先看比較表。",
+            "看A的交通是否算成600×4，再看B的早餐是否留待確認。",
+            "接著送出：「改成三句給同行朋友看的說明，說明兩案差在哪裡。」",
+            "保留比較表或短版，想直接讀自己的 Drive 文件，再試進階連線。"
           ],
-          "expected": "A交通600×4=2400、住宿2400、早餐已含，依已提供項目合計4800 TWD。B交通2200、住宿2600，已知小計4800 TWD，另有未知早餐費。兩者已知小計相同，不能把B早餐當0或宣稱B完整費用較低。",
+          "expected": "A：交通2400、住宿2400，含早餐，合計4800 TWD。B：交通2200、住宿2600，已知小計4800 TWD，還要加早餐。給朋友的說法可以是：「兩案目前列出的費用都是4800元。A已含早餐，B的早餐另計。我們可以先問B早餐多少錢，再決定。」",
           "independent": {
             "task": "新虛構文件C：2人，TWD，每人票價350，雙人房1800，含早餐。D：2人票共600，雙人房1900，含早餐。同為2026/12/01且本題比較範圍僅票、房、早餐。請自行比較並標示來源。",
             "expected": "C：350×2+1800=2500；D：600+1900=2500 TWD；同口徑合計相同。不能從此推論服務品質相同。"
@@ -408,9 +437,8 @@
             "expected": "E每人50 USD；F每人1200 TWD。人數、幣別與早餐包含範圍不同，無法直接判斷高低；需同人數報價、約定匯率及日期、早餐費與包含條件。"
           },
           "checks": [
-            "確實核對內文，沒有把檔名當讀取證據。",
-            "每人／整組、人數、日期、幣別一致。",
-            "未知早餐費未補成零；保留算式及來源。"
+            "A交通是600×4＝2400；B交通2200已是四人價。",
+            "兩案已知小計都是4800 TWD，B還要加早餐。"
           ],
           "quiz": {
             "question": "B的4800 TWD代表什麼？",
@@ -421,23 +449,36 @@
             ],
             "answer": 0,
             "explanation": "4800只包含來源已提供的交通與住宿。"
+          },
+          "outcome": "方案A：4800 TWD，含早餐。\n方案B：已知4800 TWD，早餐另計。",
+          "why": "文件分散在不同地方時，請 AI 摘出同一組欄位，較容易看出差別。",
+          "connection": {
+            "title": "進階選做：讀取自己的 Drive 練習文件",
+            "source": "在自己的Google Drive建立兩份空白Google文件，分別命名為「AI練習－方案A」「AI練習－方案B」。把本課A、B各自的虛構資料貼入對應文件，取得兩份文件連結。",
+            "prompt": "請用Google Drive讀取這兩份練習文件：【A連結】、【B連結】。依內文比較四人交通、住宿、早餐與已知小計，給我一張表；不要修改文件。若無法讀到內文，請直接告訴我。",
+            "steps": [
+              "先自己打開兩份文件，確認內文已存好且帳號有讀取權限。",
+              "在AI工具可用的Plugins／外掛或連接應用程式中連接Google Drive，確認使用的是有權限的帳號。",
+              "將兩個連結填入下方要求，選用Drive外掛後送出。",
+              "回兩份原文件看看數字與比較表是否一致。讀取不成功時，用主練習的貼文字方式繼續。"
+            ],
+            "expected": "AI從你指定的兩份文件讀到價格，整理出A共4800、B已知4800另加早餐的比較表，沒有修改原文件。"
           }
         },
         "en": {
-          "title": "Google Drive: find files and compare options",
-          "goal": "Read specified file contents, compare the same group size and currency, and preserve unknown costs.",
-          "quick": "Compare 600 per person with 2200 for 4 people. Which known transport subtotal is lower, and is the complete cost known?",
-          "skip": "Go to the different-currency challenge if you can read the specified files, align comparison scope, and show sources and unknowns.",
-          "source": "Fictional teaching files; both for 2026/11/21, 4 people, TWD.\n[AI Lab] Approved option A: transport 600 per person; lodging 2400 for four; breakfast included.\n[AI Lab] Approved option B: transport 2200 for four; lodging 2600 for four; breakfast extra, price not provided.",
-          "prompt": "Read only the contents of [AI Lab] Approved option A and Approved option B. Compare transport, lodging, breakfast, known subtotal, and unknown costs for 2026/11/21, 4 people, TWD. Show formulas and sources. Do not treat unknown as zero; state if contents cannot be read.",
+          "title": "Google Drive: compare two options side by side",
+          "goal": "Get a comparison table for two four-person options and a short explanation for companions.",
+          "quick": "Try the task below first. If you already know how, move on to an independent practice.",
+          "skip": "Choose the guided steps, a new practice, or a deeper challenge at your own pace.",
+          "source": "Fictional trip options for the same day, 4 people, all prices in TWD.\nA: transport 600 per person; accommodation 2400 for four; breakfast included.\nB: transport 2200 for four; accommodation 2600 for four; breakfast extra, price not yet provided.",
+          "prompt": "Make a four-person cost table for A and B: transport, accommodation, breakfast, and known subtotal. Multiply per-person prices by 4; mark missing prices “to confirm.”",
           "steps": [
-            "The instructor first creates the two files in a dedicated teaching Drive using the source titles and contents. Obtain their actual links and verify access. Follow the shared guide to check plugin and account availability.",
-            "Add the actual teaching-file links to scope the request precisely. Without a connection, paste the source and request comparison of pasted text only; record connection as pending.",
-            "Confirm AI read the transport and breakfast fields. A filename or search snippet alone is insufficient. Check each field in both original files.",
-            "Calculate A's transport as 600×4 before adding lodging. B already gives a group transport price. Ask which unknown costs prevent a complete cheaper-option claim.",
-            "Save the table, formulas, file versions, and reading method."
+            "Paste both excerpts and the request into AI to get a comparison table.",
+            "Check that A’s transport is 600×4 and B’s breakfast is still to confirm.",
+            "Then send: “Explain the differences in three sentences for my travel companions.”",
+            "Save the table or short explanation. Try the optional connection exercise to read your own Drive documents directly."
           ],
-          "expected": "A: transport 600×4=2400; lodging 2400; breakfast included; total for the supplied scope 4800 TWD. B: transport 2200; lodging 2600; known subtotal 4800 TWD plus unknown breakfast cost. Known subtotals match. Do not treat B's breakfast as zero or claim its complete cost is lower.",
+          "expected": "A: transport 2400 + accommodation 2400 = 4800 TWD including breakfast. B: transport 2200 + accommodation 2600 = known subtotal 4800 TWD, plus breakfast. A short explanation: “Both currently list 4800 TWD. A includes breakfast, but B charges extra. Let’s ask about B’s breakfast price before deciding.”",
           "independent": {
             "task": "New fictional file C: 2 people, TWD, tickets 350 per person, double room 1800, breakfast included. D: tickets 600 for two, double room 1900, breakfast included. Both for 2026/12/01; comparison scope is tickets, room, and breakfast only. Compare independently and cite the sources.",
             "expected": "C: 350×2+1800=2500. D: 600+1900=2500 TWD. Totals match under the same scope; this does not establish equal service quality."
@@ -449,9 +490,8 @@
             "expected": "E is 50 USD per person; F is 1200 TWD per person. Group size, currency, and breakfast coverage differ, so a price ranking is unsupported. Obtain quotes for the same group size, an agreed exchange rate and date, and breakfast costs and inclusion terms."
           },
           "checks": [
-            "Verified file contents; filenames alone were not evidence of reading.",
-            "Aligned per-person/group pricing, group size, date, and currency.",
-            "Did not replace unknown breakfast cost with zero; retained formulas and sources."
+            "A’s transport is 600×4 = 2400; B’s 2200 already covers four people.",
+            "Both known subtotals are 4800 TWD; B still needs breakfast added."
           ],
           "quiz": {
             "question": "What does B's 4800 TWD represent?",
@@ -462,6 +502,20 @@
             ],
             "answer": 0,
             "explanation": "4800 includes only the supplied transport and lodging costs."
+          },
+          "outcome": "A: 4800 TWD, breakfast included.\nB: known subtotal 4800 TWD, plus breakfast.",
+          "why": "When information sits in separate documents, ask AI to extract the same fields so differences are easier to see.",
+          "connection": {
+            "title": "Optional: read your own Drive practice documents",
+            "source": "Create two blank Google Docs in your Drive named “AI practice – option A” and “AI practice – option B.” Paste each option’s fictional data into its matching document and copy both links.",
+            "prompt": "Use Google Drive to read these practice documents: [A link], [B link]. Compare transport, accommodation, breakfast, and known subtotal for four people in a table. Do not edit the documents. If you cannot read their contents, tell me.",
+            "steps": [
+              "Open both documents yourself to confirm their text is saved and your account can read them.",
+              "Connect Google Drive through available Plugins or connected apps in your AI tool, using the account with access.",
+              "Put both links into the request, select the Drive plugin, and send it.",
+              "Compare the table with the original documents. If reading fails, continue with pasted text from the main exercise."
+            ],
+            "expected": "AI reads prices from your two specified documents and produces A at 4800 and B at a known 4800 plus breakfast, without changing the documents."
           }
         }
       }
@@ -475,20 +529,19 @@
       ],
       "locales": {
         "zh-Hant": {
-          "title": "Notion：把筆記整理成可繼續的計畫",
-          "goal": "先讀指定頁並核對草稿；若實際寫入，確認目的頁與執行結果。",
-          "quick": "把N1分成已確認、待辦、待確認三類，說明目前是否有任何內容已寫回Notion。",
-          "skip": "能讀指定頁並核對草稿，區分草稿／待寫入／已寫入，可直接做獨立題；有寫入者須展示目的頁。",
+          "title": "Notion：把隨手筆記變成計畫",
+          "goal": "得到一份列出事情、負責人與期限的讀書會待辦表。",
+          "quick": "先試下方的小任務；已經熟悉的話，可以直接換題練習。",
+          "skip": "依自己的進度，選擇跟著做、換題練習或進一步挑戰。",
           "source": "虛構教學頁：[AI Lab] 讀書會起步 N1\n活動：2026/11/21 14:00（Asia/Taipei），6人。\nT01：小禾於11/18前選三篇文章，未完成。\nT02：11/19前確認場地，負責人未定，未完成。\n預算尚未決定。",
-          "prompt": "只讀取指定教學頁[AI Lab] 讀書會起步 N1，整理已確認、待辦、待確認；每項附來源，保留T01/T02識別碼。只在對話產生草稿，不建立頁面、不改資料庫；缺值不要猜。",
+          "prompt": "請把這份筆記整理成活動資訊、待辦表、還要討論的事。待辦表列編號、事情、負責人、期限、進度；沒寫的先留「待確認」。",
           "steps": [
-            "講師先在專用教學Notion建立來源頁，另備可寫入的練習父頁；提供實際連結並確認學員權限。依共用連線指引確認外掛可用。無連線則貼來源並改成只整理文字，記錄連線待補。",
-            "將來源頁實際連結加入問題，要求先讀再整理。回原頁核對時間、兩項期限、T02缺負責人與預算未知。",
-            "核對對話草稿；此刻沒有寫回Notion，狀態是『草稿』。保存此版即可完成整理部分。",
-            "選做寫入：若練習目的地與內容都已確認，明確指示『在這個練習父頁下新建一頁，寫入剛核對的內容』並附實際父頁連結；尚未決定就保留待寫入。",
-            "若執行寫入，開啟工具回傳的新頁，核對父頁、標題及T01/T02；只有成功且可查證才標示已寫入。失敗或無權限就保留草稿及實際錯誤。"
+            "把下方筆記與要求一起貼到 AI，取得計畫草稿。",
+            "讀一遍待辦表，看看「選文章」與「確認場地」是不是分成兩項。",
+            "接著送出：「我來負責T02確認場地，請只更新這一項。」",
+            "把滿意的計畫複製到筆記保存。想放到真正的 Notion 頁面，再試進階連線。"
           ],
-          "expected": "已確認：11/21 14:00、6人（N1）。待辦：T01小禾11/18前選三篇文章，未完成；T02於11/19前確認場地，負責人待確認，未完成。待確認：T02負責人、場地、預算。未執行寫入時只能稱對話草稿；執行者須有實際目的頁核對紀錄。",
+          "expected": "活動：11/21 14:00，6人。T01：小禾11/18前選三篇文章，未完成。T02：11/19前確認場地，未完成；追問後負責人改成「我」。還要討論：場地與預算。這份內容先留在AI對話裡，可自行複製到筆記。",
           "independent": {
             "task": "新虛構筆記N2：2026/12/02 15:00（Asia/Taipei）分享會；T10阿青12/01前準備投影片，進行中；T11場地確認已完成，場地為雲樓A室；人數未知。先用貼文字完成三類草稿，不寫回。",
             "expected": "已確認12/02 15:00、雲樓A室、T11已完成；待辦T10阿青12/01前準備投影片，進行中；待確認人數。狀態是未寫回的草稿。"
@@ -500,9 +553,9 @@
             "expected": "更新後共3列，T01已完成；本週未完成只顯示T02，負責人待確認。T03下週，不入本週篩選。重複同一更新仍3列，不新增第二個T01。這是文字模擬，未建立實際資料庫。"
           },
           "checks": [
-            "來源與三類草稿核對一致。",
-            "缺負責人／預算沒有猜測。",
-            "草稿、待寫入與實際已寫入的狀態符合操作證據。"
+            "選文章與確認場地分成兩項，不混在一起。",
+            "追問後只有T02負責人改成「我」，期限仍11/19。",
+            "預算仍待討論，不能自行加上金額。"
           ],
           "quiz": {
             "question": "AI在對話列出計畫後，Notion頁是否已建立？",
@@ -513,23 +566,36 @@
             ],
             "answer": 0,
             "explanation": "產生文字與寫入外部頁面是不同動作。"
+          },
+          "outcome": "T01｜小禾｜11/18前選三篇文章。\nT02｜我｜11/19前確認場地。",
+          "why": "會議或聊天後的筆記很亂時，先整理成待辦，再放進你使用的筆記工具。",
+          "connection": {
+            "title": "進階選做：把計畫放進自己的 Notion",
+            "source": "在自己的Notion練習區建立一頁「AI練習－讀書會」，貼上本課虛構筆記並複製頁面連結。再建立一個空白父頁「AI練習－成果」，準備放整理後的版本。",
+            "prompt": "請用Notion讀取這頁：【練習頁連結】。整理活動資訊與待辦表，先在對話給我看，不修改頁面。",
+            "steps": [
+              "在AI工具可用的Plugins／外掛或連接應用程式中連接Notion，依實際授權畫面允許使用你的練習頁；先自己確認頁面能開啟。",
+              "填入來源連結，選用Notion外掛送出下方要求，看看草稿是否符合筆記。",
+              "想真正存進Notion時，再送出：「請在【成果父頁連結】下建立『讀書會計畫』，寫入剛才這份完整草稿。」這一步才會新增頁面。",
+              "打開回傳的新頁連結，查看標題、待辦與放置位置。沒有寫入權限時，可自行把草稿複製到練習頁。"
+            ],
+            "expected": "讀取階段只有對話草稿；你另外要求寫入且成功後，才會有可開啟的新Notion頁面。"
           }
         },
         "en": {
-          "title": "Notion: turn notes into a reusable plan",
-          "goal": "Read a specified page and verify a draft; if writing occurs, verify its destination and result.",
-          "quick": "Sort N1 into confirmed facts, actions, and questions. State whether anything has actually been written to Notion.",
-          "skip": "Go to independent practice if you can read the page, verify a draft, and distinguish draft / awaiting write / written. If you wrote it, show the destination page.",
+          "title": "Notion: turn rough notes into a plan",
+          "goal": "Get a reading-group action table with tasks, owners, and deadlines.",
+          "quick": "Try the task below first. If you already know how, move on to an independent practice.",
+          "skip": "Choose the guided steps, a new practice, or a deeper challenge at your own pace.",
           "source": "Fictional teaching page: [AI Lab] Reading group start N1\nActivity: 2026/11/21 14:00 (Asia/Taipei), 6 people.\nT01: Xiaohe to choose three articles by 11/18, incomplete.\nT02: confirm venue by 11/19, owner undecided, incomplete.\nBudget undecided.",
-          "prompt": "Read only the specified teaching page [AI Lab] Reading group start N1. Organize confirmed facts, actions, and questions, with sources. Preserve IDs T01/T02. Output a draft in this chat only; do not create pages or change databases. Do not guess missing values.",
+          "prompt": "Organize these notes into activity details, an action table, and things to discuss. Use ID, task, owner, deadline, and progress as columns; mark missing details “to confirm.”",
           "steps": [
-            "The instructor prepares the source page in a dedicated teaching Notion workspace and a separate writable practice parent page. Obtain actual links and verify access. Follow the shared connection guide to check plugin availability. Without a connection, paste the source and request text organization only; record connection as pending.",
-            "Add the actual source-page link to the request and ask AI to read before organizing. Check the original time, deadlines, T02's missing owner, and unknown budget.",
-            "Verify the chat draft. Nothing has been written to Notion yet; status is 'draft.' Saving this version completes the organization part.",
-            "Optional writing: once the practice destination and content are confirmed, explicitly ask to create a page under that practice parent with the verified content, using its actual link. Otherwise retain 'awaiting write.'",
-            "If writing is executed, open the returned page and verify parent, title, and T01/T02. Mark 'written' only after successful, verifiable execution. On failure or missing permission, retain the draft and actual error."
+            "Paste the notes and request into AI to get a draft plan.",
+            "Read the task table: choosing articles and confirming the venue should be separate tasks.",
+            "Then send: “I will take responsibility for T02, confirming the venue. Update only that item.”",
+            "Copy the plan you like into your notes. Try the optional connection exercise to put it in an actual Notion page."
           ],
-          "expected": "Confirmed: 11/21 14:00, 6 people (N1). Actions: T01 Xiaohe chooses three articles by 11/18, incomplete; T02 confirm venue by 11/19, owner to confirm, incomplete. Questions: T02 owner, venue, budget. Without execution this remains a chat draft; a written result requires actual destination-page verification.",
+          "expected": "Activity: 11/21 14:00, 6 people. T01: Xiaohe chooses three articles by 11/18, incomplete. T02: confirm venue by 11/19, incomplete; after your follow-up its owner is “me.” Still to discuss: venue and budget. This stays in the AI chat until you copy it into your notes.",
           "independent": {
             "task": "New fictional N2: sharing session 2026/12/02 15:00 (Asia/Taipei); T10 Aqing prepares slides by 12/01, in progress; T11 venue confirmation completed, venue Cloud Tower room A; participant count unknown. Produce the three-part draft using pasted text; do not write it back.",
             "expected": "Confirmed: 12/02 15:00, Cloud Tower room A, T11 completed. Action: T10 Aqing prepares slides by 12/01, in progress. Question: participant count. Status: draft, not written back."
@@ -541,9 +607,9 @@
             "expected": "There are 3 rows after updating, with T01 completed. Only T02 is incomplete this week; owner remains to confirm. T03 is next week and is excluded. Repeating the update leaves 3 rows, without a second T01. This is a text simulation, not a created database."
           },
           "checks": [
-            "Verified source and three-part draft match.",
-            "Missing owner and budget were not guessed.",
-            "Draft, awaiting write, and written statuses match actual evidence."
+            "Choosing articles and confirming the venue are separate tasks.",
+            "After the follow-up, only T02’s owner becomes “me”; its deadline stays 11/19.",
+            "The budget remains to discuss; no amount is invented."
           ],
           "quiz": {
             "question": "After AI lists a plan in chat, has a Notion page been created?",
@@ -554,6 +620,20 @@
             ],
             "answer": 0,
             "explanation": "Generating text and writing to an external page are different actions."
+          },
+          "outcome": "T01 | Xiaohe | Choose three articles by 11/18.\nT02 | Me | Confirm the venue by 11/19.",
+          "why": "After a meeting or chat, organize rough notes into actions before putting them in your notes app.",
+          "connection": {
+            "title": "Optional: put the plan in your own Notion",
+            "source": "In your Notion practice area, create “AI practice – reading group,” paste this lesson’s fictional notes, and copy the page link. Create a separate blank parent page, “AI practice – results,” for the organized version.",
+            "prompt": "Use Notion to read this page: [practice page link]. Organize activity details and an action table. Show the draft in chat first without changing the page.",
+            "steps": [
+              "Connect Notion through available Plugins or connected apps in your AI tool. Use the actual permission flow to allow your practice pages, and confirm you can open them yourself.",
+              "Insert the source-page link, select the Notion plugin, and send the request. Review the draft against your notes.",
+              "To save it to Notion, send a separate request: “Under [results parent link], create Reading group plan and write the complete draft we just reviewed.” This is the step that creates a page.",
+              "Open the returned page and check its title, tasks, and location. Without write access, copy the draft to your practice page yourself."
+            ],
+            "expected": "Reading produces a chat draft. An actual new Notion page exists only after you separately request writing and it succeeds."
           }
         }
       }
@@ -567,18 +647,17 @@
       ],
       "locales": {
         "zh-Hant": {
-          "title": "表格：看懂每月差異",
-          "goal": "重算總額與差額，分清大於、至少、退款與未知。",
-          "quick": "用六列資料算兩月總額；把『增加超過50』改成『增加至少50』，先預測符合類別數。",
-          "skip": "能重算差額、百分比分母與邊界，並說明缺值不能當零，可直接挑戰。",
+          "title": "表格：看看這個月多花在哪裡",
+          "goal": "得到每月總額、各分類差異與一句看得懂的花費小結。",
+          "quick": "先試下方的小任務；已經熟悉的話，可以直接換題練習。",
+          "skip": "依自己的進度，選擇跟著做、換題練習或進一步挑戰。",
           "source": "虛構消費資料；消費月口徑、全部TWD，正值支出，負值退款。\nID,月份,分類,金額\nS01,2026-09,餐食,1200\nS02,2026-09,交通,400\nS03,2026-09,服務,500\nO01,2026-10,餐食,1350\nO02,2026-10,交通,450\nO03,2026-10,服務,550",
-          "prompt": "只用這六列，算9月及10月總額、10月減9月差額、差額÷9月總額的百分比（四捨五入1位）。列各分類差額及來源ID。先找增加>50的類別，再改成>=50；說明總額是否改變。不要猜成因。",
+          "prompt": "請用這六列算9月、10月總額、增加金額與百分比（小數1位），再列各分類多花多少。先找「增加超過50元」的分類。",
           "steps": [
-            "先手算9月1200+400+500及10月1350+450+550，寫下預測。",
-            "把六列與問題交給AI；用計算機核對兩月總額與250÷2100×100。",
-            "核對分類差額：餐食150、交通50、服務50。先用>50，再只改條件為>=50，觀察1類變3類。",
-            "追問『新增10月餐食退款-100，消費月歸10月；重新計算』。保留原六列與新增列，避免直接覆蓋1350。",
-            "保存資料範圍、算式、門檻前後及退款後結果；只說數字變動，不宣稱漲價或習慣改變。"
+            "把六列資料與要求一起貼到 AI，取得每月花費小結。",
+            "用計算機看看9月是否2100、10月是否2350，多250元。",
+            "接著送出：「把超過50元改成至少50元，哪些分類會列出來？」看結果從1類變成3類。",
+            "再試：「新增一筆10月餐食退款-100元，請重新計算。」10月應變2250元；保存你覺得最好懂的說明。"
           ],
           "expected": "原六列：9月2100，10月2350，增加250；250÷2100×100≈11.9%。分類：餐食+150、交通+50、服務+50。>50只有餐食1類；>=50共3類，兩月總額不變。新增10月餐食退款-100後：10月2250，增加150，150÷2100×100≈7.1%；餐食淨1250，三類各+50。",
           "independent": {
@@ -592,9 +671,9 @@
             "expected": "9月已知TWD合計100；10月已知TWD小計200，餐食未知，另有10 USD不能直接相加。課程差額+200，但基期0，百分比不適用。10月完整總額與整體增幅無法確認，不能用已知小計當完整總額。"
           },
           "checks": [
-            "2100→2350、+250、11.9%均已獨立核算。",
-            ">50一類、>=50三類，沒有改動原資料。",
-            "退款後2250、+150、7.1%；缺值與零保持不同。"
+            "原六列總額是2100與2350，差250，約11.9%。",
+            "超過50元只有餐食；至少50元則三類都符合。",
+            "新增-100退款後，10月變2250，增加150，約7.1%。"
           ],
           "quiz": {
             "question": "原六列改用『至少50』後，符合幾類？",
@@ -605,21 +684,22 @@
             ],
             "answer": 0,
             "explanation": "至少包含等於；150、50、50都符合。篩選門檻不改變原總額。"
-          }
+          },
+          "outcome": "9月2100元 → 10月2350元。\n多250元，增加約11.9%；餐食多150元。",
+          "why": "不必逐列找數字，請 AI 幫你彙整，再自己確認幾個重要加總。"
         },
         "en": {
-          "title": "Tables: understand monthly changes",
-          "goal": "Recalculate totals and changes, distinguishing greater than, at least, refunds, and unknowns.",
-          "quick": "Calculate both monthly totals from six rows. Predict the category count when 'increase greater than 50' becomes 'increase at least 50.'",
-          "skip": "Go to the challenge if you can recalculate differences, percentage denominator, and boundaries, and explain why missing is not zero.",
+          "title": "Tables: where did this month’s money go?",
+          "goal": "Get monthly totals, category differences, and a readable spending summary.",
+          "quick": "Try the task below first. If you already know how, move on to an independent practice.",
+          "skip": "Choose the guided steps, a new practice, or a deeper challenge at your own pace.",
           "source": "Fictional spending; purchase-month basis; all TWD. Positive values are spending; negatives are refunds.\nID,Month,Category,Amount\nS01,2026-09,Meals,1200\nS02,2026-09,Transport,400\nS03,2026-09,Services,500\nO01,2026-10,Meals,1350\nO02,2026-10,Transport,450\nO03,2026-10,Services,550",
-          "prompt": "Using only these six rows, calculate September and October totals, October minus September, and difference divided by September total as a percentage rounded to 1 decimal. Show category differences and source IDs. First select increases >50, then >=50; explain whether totals change. Do not guess causes.",
+          "prompt": "Using these six rows, calculate September and October totals, the increase, and percentage increase to 1 decimal. Show the change in each category. First find categories with an increase greater than 50.",
           "steps": [
-            "Manually calculate September 1200+400+500 and October 1350+450+550 and record your prediction.",
-            "Submit the six rows and prompt. Use a calculator to check both totals and 250÷2100×100.",
-            "Check category increases: meals 150, transport 50, services 50. Apply >50, then change only the condition to >=50; observe 1 category becoming 3.",
-            "Follow up: 'Add an October meals refund of -100, assigned to October purchase month; recalculate.' Keep the original six rows and add a refund row instead of overwriting 1350.",
-            "Save the data scope, formulas, threshold results, and refund results. Describe numeric changes without claiming price rises or behavior changes."
+            "Paste the six rows and request into AI to get a spending summary.",
+            "Use a calculator to check September 2100, October 2350, and an increase of 250.",
+            "Then send: “Change greater than 50 to at least 50. Which categories appear?” Watch the result change from 1 category to 3.",
+            "Try: “Add an October meals refund of -100 and recalculate.” October should become 2250. Save the explanation you find clearest."
           ],
           "expected": "Original six rows: September 2100; October 2350; increase 250; 250÷2100×100≈11.9%. Categories: meals +150, transport +50, services +50. >50 selects meals only, 1 category; >=50 selects 3. Monthly totals do not change. After an October meals refund of -100: October 2250, increase 150, 150÷2100×100≈7.1%; net meals 1250, with all three categories +50.",
           "independent": {
@@ -633,9 +713,9 @@
             "expected": "September known TWD total is 100. October known TWD subtotal is 200 with meals unknown; the separate 10 USD cannot be added directly. Courses increase by 200, but percentage change is undefined with a zero baseline. The complete October total and overall percentage change are unconfirmed; a known subtotal is not a complete total."
           },
           "checks": [
-            "Independently checked 2100→2350, +250, and 11.9%.",
-            ">50 selects 1 category; >=50 selects 3; original data unchanged.",
-            "Refund results are 2250, +150, 7.1%; missing remains distinct from zero."
+            "The original totals are 2100 and 2350: an increase of 250, about 11.9%.",
+            "Greater than 50 selects meals; at least 50 selects all three categories.",
+            "After the -100 refund, October is 2250: up 150, about 7.1%."
           ],
           "quiz": {
             "question": "How many original categories meet 'at least 50'?",
@@ -646,7 +726,9 @@
             ],
             "answer": 0,
             "explanation": "At least includes equality, so 150, 50, and 50 all qualify. Filtering does not change the original totals."
-          }
+          },
+          "outcome": "September 2100 → October 2350 TWD.\nUp 250, about 11.9%; meals increased by 150.",
+          "why": "Let AI group the numbers, then check a few important totals yourself."
         }
       }
     },
@@ -660,21 +742,20 @@
       ],
       "locales": {
         "zh-Hant": {
-          "title": "請 AI 做一個真正的小網頁",
-          "goal": "實際請AI產生HTML，保存、重開並測試自己的第一版。",
-          "quick": "展示你自己的AI需求與產生的HTML，勾兩項後取消一項，再重設；只有本站範本不算完成AI製作。",
-          "skip": "已有自己的AI產生檔且能完成保存與測試，可直接加搜尋挑戰。",
+          "title": "請 AI 做一張可勾選的小網頁",
+          "goal": "得到一個可下載、可開啟、能勾選與重設的清單網頁。",
+          "quick": "先試下方的小任務；已經熟悉的話，可以直接換題練習。",
+          "skip": "依自己的進度，選擇跟著做、換題練習或進一步挑戰。",
           "source": "虛構清單：標題『出發前檢查』；三項任務依序為『下載車票』『確認集合地點』『帶水壺』。本題不用網路、不保存進度；重新開啟時回到0/3。",
-          "prompt": "請依來源產生一個完整、可獨立開啟的HTML檔，包含CSS和JavaScript，不用外部套件、網路或追蹤。保留三項文字與順序；每項有可點文字的核取方塊；顯示已完成n/3；重設按鈕取消全部勾選並歸零。窄螢幕能操作，鍵盤能聚焦與勾選。頁面明寫『不保存進度，重新開啟歸零』，初始化清除勾選；不要使用localStorage。只回傳完整HTML，另用短句說明如何保存。",
+          "prompt": "請依下方三項任務做一個完整HTML清單，CSS與JavaScript放在同一檔，不用外部套件或網路。每項可勾選，顯示已完成n/3，附重設按鈕。手機與鍵盤都能操作。不要保存進度，重新開啟清為0/3，頁面也寫明這點。請給完整程式碼，不要省略。",
           "steps": [
-            "建立本機練習資料夾ai-practice；把來源與問題送給能產生程式碼的AI，保存自己的提問。",
-            "取得從<!doctype html>到</html>的完整程式碼。若有省略號或『其餘同上』，要求補齊可單獨執行的完整檔案。",
-            "用純文字編輯器貼上程式碼，不含Markdown的三個反引號。另存為checklist.html、UTF-8；Windows記事本選所有檔案，確認不是checklist.html.txt。",
-            "用瀏覽器開啟檔案，勾前兩項應2/3，取消第一項應1/3，按重設應0/3。核對三項原文字，縮窄視窗並用Tab與空白鍵操作。",
-            "關閉檔案分頁後重新開啟，應0/3。若不符，把操作、預期、實際回報AI修正，保存新版本並重測。",
-            "自己將『帶水壺』改成『帶筆記本』，請AI只改該項；另存checklist-v2.html，重新核對文字與2→1→0。"
+            "把「練習資料」與「給AI要求」貼到自己的AI，取得完整HTML程式碼。",
+            "複製程式碼，貼到本頁「完整 HTML 程式碼」欄，不含開頭與結尾的三個反引號；按「更新隔離預覽」。",
+            "在預覽勾兩項、取消一項，再按重設：數字應依序是2/3、1/3、0/3。",
+            "按「下載這份 HTML」，從瀏覽器下載清單開啟檔案，看看重新開啟是否回到0/3。",
+            "回同一個AI對話送出：「只把帶水壺改成帶筆記本，給我完整新版HTML。」把新版貼回工作區、更新預覽，再試一次。"
           ],
-          "expected": "交付物是自己向AI提出需求後得到的完整HTML、提問紀錄與測試紀錄。初版三項符合來源；操作2/3→1/3→0/3；重開0/3。第二版只有第三項改成帶筆記本，計數仍正確。畫面可不同，不要求程式碼與教材相同；本站固定產生器不替代此步。",
+          "expected": "你會得到一個可開啟的HTML檔：三項任務可勾選，完成數會跟著變，重設與重新開啟回到0/3。新版把「帶水壺」換成「帶筆記本」。配色和排版可以不同，重點是你真的能用。",
           "independent": {
             "task": "新虛構清單：『讀書準備』，任務『選一篇文章』『記下三個問題』。自行寫需求請AI產生另一個不保存進度的HTML，保存study.html並測勾選、取消、重設及重開。",
             "expected": "初始0/2；兩項全勾2/2；取消一項1/2；重設0/2；重開0/2。需有自己的需求與實際產生檔，任務文字不得變成解說段落。"
@@ -686,37 +767,38 @@
             "expected": "先勾下載車票與帶筆記本為2/3；搜尋『車票』只顯示一項，計數仍2/3；取消可見項後1/3；清除搜尋可看見帶筆記本仍勾選；重設後三項可見且0/3。"
           },
           "checks": [
-            "保留自己的AI提問與完整HTML檔。",
-            "保存副檔名正確，可關閉後重開。",
-            "初版及個人修改版都實測2→1→0，重開歸零。"
+            "勾兩項顯示2/3，取消一項1/3，重設0/3。",
+            "重新開啟回到0/3；此練習不保存進度。",
+            "修改版只有第三項改成「帶筆記本」，計數仍正常。"
           ],
           "quiz": {
-            "question": "什麼才完成本課的AI製作部分？",
+            "question": "想把清單中的一項改掉，可以怎麼說？",
             "choices": [
-              "自己提出需求，取得AI產生的HTML並保存測試",
-              "只操作本站固定範本",
-              "只讀參考答案"
+              "只把「帶水壺」改成「帶筆記本」，其他功能保留，給我完整HTML",
+              "全部重做，不用說明想改什麼",
+              "只改畫面上看到的數字"
             ],
             "answer": 0,
-            "explanation": "本課要求實際產碼、保存及測試；範本可示範，但不能替代這些證據。"
-          }
+            "explanation": "指出要改哪一處，AI比較容易保留你已經喜歡的其他部分。"
+          },
+          "outcome": "文字示意：☑ 下載車票　☑ 確認集合地點　☐ 帶水壺\n已完成2/3；取消一項變1/3，重設回0/3。",
+          "why": "要出門清單、讀書清單或簡單活動工具時，可以先請 AI 做一個小版本。"
         },
         "en": {
-          "title": "Ask AI to build a small webpage",
-          "goal": "Actually request AI-generated HTML, save it, reopen it, and test your first version.",
-          "quick": "Show your own AI request and generated HTML. Check two items, uncheck one, and reset. Using only this site's template does not complete AI creation.",
-          "skip": "If you already have your own generated file and can save and test it, go to the search challenge.",
+          "title": "Ask AI to make a clickable checklist",
+          "goal": "Get a downloadable checklist webpage that opens, checks items, and resets.",
+          "quick": "Try the task below first. If you already know how, move on to an independent practice.",
+          "skip": "Choose the guided steps, a new practice, or a deeper challenge at your own pace.",
           "source": "Fictional checklist: title 'Before departure'; tasks in order: 'Download tickets', 'Confirm meeting location', 'Bring a water bottle'. No network or progress saving; reopening starts at 0/3.",
-          "prompt": "Generate a complete standalone HTML file from the source, including CSS and JavaScript. No external libraries, network, or tracking. Preserve the three tasks and order. Each task needs a checkbox with a clickable label. Display n/3 completed. A reset button clears all checks and returns the count to zero. Support narrow screens, keyboard focus, and keyboard checking. Clearly state 'Progress is not saved; reopening resets it.' Clear checked states on initialization; do not use localStorage. Return complete HTML and a short saving instruction.",
+          "prompt": "Make a complete HTML checklist for these three tasks, with CSS and JavaScript in the same file and no external libraries or network. Each task can be checked. Show n/3 completed and a reset button. Support phones and keyboards. Do not save progress: reopening clears it to 0/3, and the page must say so. Give me the complete code without omissions.",
           "steps": [
-            "Create a local ai-practice folder. Submit the source and prompt to a code-capable AI tool and save your request.",
-            "Obtain complete code from <!doctype html> through </html>. If it contains omissions or 'same as above,' ask for the entire standalone file.",
-            "Paste it into a plain-text editor without Markdown triple backticks. Save as checklist.html in UTF-8. In Windows Notepad select all files and check that it is not checklist.html.txt.",
-            "Open the file in a browser. Check the first two items: 2/3. Uncheck the first: 1/3. Reset: 0/3. Verify all original labels, narrow the window, and use Tab and Space to operate it.",
-            "Close the file tab and reopen it: expect 0/3. If it fails, report steps, expected result, and actual result to AI; save a corrected version and retest.",
-            "Make your own change from 'Bring a water bottle' to 'Bring a notebook.' Ask AI to change only that item. Save checklist-v2.html and verify the labels and 2→1→0 again."
+            "Paste the Practice material and Request for AI into your AI tool to get complete HTML code.",
+            "Copy the code into this page’s Complete HTML code field without the surrounding triple backticks. Select Update isolated preview.",
+            "In the preview, check two items, uncheck one, then reset. Counts should be 2/3, 1/3, and 0/3.",
+            "Select Download this HTML. Open the file from your browser downloads and check that reopening starts at 0/3.",
+            "In the same AI chat send: “Change only Bring a water bottle to Bring a notebook; give me complete updated HTML.” Paste the new code into the workspace, update the preview, and try again."
           ],
-          "expected": "Deliver your own request, the complete AI-generated HTML, and a test record. Version one has the three source tasks; operations yield 2/3→1/3→0/3; reopening yields 0/3. Version two changes only the third task to Bring a notebook and retains correct counting. Appearance and code may differ from examples. This site's fixed generator does not replace this work.",
+          "expected": "You get an HTML file that opens in your browser: three checkable tasks, a count that updates, and reset and reopening both return to 0/3. The new version replaces Bring a water bottle with Bring a notebook. Colors and layout may vary; what matters is that you can use it.",
           "independent": {
             "task": "New fictional checklist: 'Reading preparation', with 'Choose an article' and 'Write three questions'. Write your own request for another HTML file without progress saving, save study.html, and test checking, unchecking, reset, and reopening.",
             "expected": "Initial 0/2; both checked 2/2; uncheck one 1/2; reset 0/2; reopen 0/2. Provide your own request and actual generated file. Task labels must not become explanatory paragraphs."
@@ -728,20 +810,22 @@
             "expected": "Check Download tickets and Bring a notebook: 2/3. Search 'tickets': only one item is visible, count remains 2/3. Uncheck it: 1/3. Clear search: Bring a notebook is still checked. Reset: all three visible and 0/3."
           },
           "checks": [
-            "Retained my own AI request and complete HTML file.",
-            "Correct extension; file can be closed and reopened.",
-            "Tested 2→1→0 on both initial and personally modified versions; reopening resets."
+            "Check two for 2/3, uncheck one for 1/3, reset for 0/3.",
+            "Reopening starts at 0/3; this exercise does not save progress.",
+            "The revised version changes only the third task to Bring a notebook; counting still works."
           ],
           "quiz": {
-            "question": "What completes this lesson's AI creation requirement?",
+            "question": "How can you request a change to one checklist item?",
             "choices": [
-              "Write a request, obtain AI-generated HTML, save and test it",
-              "Only operate this site's fixed template",
-              "Only read the reference answer"
+              "Change only Bring a water bottle to Bring a notebook, keep the features, and give complete HTML",
+              "Redo everything without explaining what to change",
+              "Change only the number on screen"
             ],
             "answer": 0,
-            "explanation": "Actual generation, saving, and testing are required. A template can demonstrate behavior but cannot replace that evidence."
-          }
+            "explanation": "Naming the specific change helps AI keep the other parts you already like."
+          },
+          "outcome": "Text illustration: ☑ Download tickets  ☑ Confirm meeting location  ☐ Bring a water bottle\n2/3 completed; uncheck one for 1/3, reset for 0/3.",
+          "why": "For packing, reading, or simple event tools, start by asking AI for a small working version."
         }
       }
     },
@@ -754,20 +838,21 @@
       ],
       "locales": {
         "zh-Hant": {
-          "title": "改壞了怎麼辦：測試、除錯、復原",
-          "goal": "重現計數錯誤，做最小修正，測試並保留可復原版本。",
-          "quick": "開故障清單只勾第一項：預期1，實際是多少？用可重現步驟報告，不只說『壞了』。",
-          "skip": "能提供錯誤步驟、原因、最小修正、2→1→0回歸與復原證據，可直接做獨立題。",
-          "source": "虛構故障練習檔：downloads/curriculum/broken-checklist-zh-Hant.html；對照可用檔：downloads/curriculum/correct-checklist-zh-Hant.html。\n故障計數只看checkboxes.slice(1)，因此漏掉第一個核取方塊。三項依序為下載車票、確認集合地點、帶水壺。修正目標是統計全部項目，不改任務文字。",
-          "prompt": "我會貼上故障HTML。請先說明為何只勾第一項顯示0而應為1、勾前兩項顯示1而應為2。只修正計數範圍中slice(1)漏第一項的問題，提供完整修正版與最小差異；保留文字、重設及不保存進度。請列回歸測試。",
+          "title": "網頁不對勁，怎麼請 AI 修好",
+          "goal": "得到一份計數正確的修正版HTML，並保留可回頭使用的原檔。",
+          "quick": "先試下方的小任務；已經熟悉的話，可以直接換題練習。",
+          "skip": "依自己的進度，選擇跟著做、換題練習或進一步挑戰。",
+          "source": "虛構故障清單有三項：下載車票、確認集合地點、帶水壺。\n故障檔：downloads/curriculum/broken-checklist-zh-Hant.html\n可用對照檔：downloads/curriculum/correct-checklist-zh-Hant.html\n已知問題：第一項有打勾，完成數卻沒有增加。",
+          "prompt": "我會貼上故障HTML。只勾第一項時應顯示1/3，卻是0/3；勾前兩項應是2/3，卻是1/3。請找出原因，只修正計數問題，保留原有文字、重設與重開歸零。給我完整修正版，並簡短說明改了哪裡。",
           "steps": [
-            "下載本課故障檔及可用對照檔到練習資料夾；保留可用對照檔為baseline.html，不直接覆寫。先開baseline確認前兩項→2、取消第一項→1、重設→0。",
-            "開故障檔，先重設，再只勾第一項：預期1/3、實際0/3；再勾第二項：預期2/3、實際1/3。記下檔名、順序、預期及實際。",
-            "以純文字編輯器開故障檔，把完整HTML及問題送給AI。核對修正只移除計數範圍的.slice(1)，不是把顯示值硬加1。",
-            "另存fixed.html並測前兩項2/3→取消第一項1/3→重設0/3；再單勾第一項1/3。核對原文字、窄視窗及鍵盤操作。",
-            "復原演練：把baseline.html複製為restore-check.html，開啟並重測2→1→0。保存故障報告、修正版、備份與測試結果。"
+            "按「下載故障版清單」及「下載參考修正版」，保留兩份原檔。",
+            "用瀏覽器開故障檔，先勾第一項，再勾第二項：會看到錯誤的0/3、1/3。",
+            "用純文字編輯器開故障檔，把完整程式碼與「給AI要求」貼給自己的AI。",
+            "把AI修正後的完整HTML貼到本頁「完整 HTML 程式碼」，按「更新隔離預覽」。",
+            "試第一項單勾、前兩項、取消第一項、重設：應是1/3、2/3、1/3、0/3。按「下載這份 HTML」留下修正版。",
+            "另開保留的參考修正版，練習回到可用的版本。"
           ],
-          "expected": "故障根因：slice(1)跳過索引0。修正：計數時使用完整checkboxes，移除.slice(1)。不是在結果加1，因為全未勾應0。修正版單勾第一項1/3、前兩項2/3、取消第一項1/3、重設0/3；復原副本也通過2→1→0。",
+          "expected": "程式只從第二項開始數，所以漏掉第一項。修正應移除計數中的.slice(1)，讓全部核取方塊都列入。修好後：只勾第一項1/3，勾前兩項2/3，取消第一項1/3，重設0/3。不能一律加1，否則全部沒勾也會顯示1。",
           "independent": {
             "task": "下載獨立題虛構故障檔downloads/curriculum/reset-bug-zh-Hant.html，另存副本再測。兩項讀書任務為「選文章」「寫三個問題」，起始0/2，勾兩項2/2；按重設後兩個勾都清掉，數字卻仍2/2。此指定檔確實定義updateCount()，但reset只清勾而未呼叫它。以文字編輯器開啟此檔，把完整內容與你的重現報告交給AI，要求最小修正，另存後重測；可下載correct-reset-zh-Hant.html對照，不套用到不明結構的其他程式。",
             "expected": "重現：重開→勾兩項→重設；預期未勾且0/2，實際未勾但2/2。清勾後加updateCount()；測2→重設0→再勾第一項1。不能只隱藏錯誤數字。"
@@ -779,9 +864,9 @@
             "expected": "故障重現：勾1與3→2/3；搜車票→只1項可見、仍2/3；重設→全顯但1/3（第三仍勾）。修正後同樣操作，重設必須全顯且0/3，隱藏的第三項也已清除。再勾前兩項2/3→取消第一項1/3→重設0/3；搜尋仍只改顯示、不改計數範圍。修正只將reset清除範圍改為全部checkbox，不刪除第三項或硬把數字設0來掩蓋殘留勾選。保留原檔，需復原時重新開啟它。"
           },
           "checks": [
-            "保留已測過的可用備份。",
-            "錯誤報告可讓另一人依步驟重現。",
-            "最小修正與復原副本都實測2→1→0。"
+            "第一項單獨勾選時顯示1/3，不再被漏掉。",
+            "勾前兩項2/3，取消第一項1/3，重設0/3。",
+            "不能一律加1；全部沒勾時必須是0/3。"
           ],
           "quiz": {
             "question": "為什麼不能把故障計數一律加1？",
@@ -792,23 +877,26 @@
             ],
             "answer": 0,
             "explanation": "應修正被漏掉的計數範圍，不能用常數補償所有狀態。"
-          }
+          },
+          "outcome": "修正前：只勾第一項，卻顯示0/3。\n修正後：只勾第一項，正確顯示1/3。",
+          "why": "AI 做出的工具偶爾會出錯。說清楚「我做了什麼、發生什麼」，比較容易修到問題。"
         },
         "en": {
-          "title": "Test, debug, and restore a tool",
-          "goal": "Reproduce a counting bug, apply a minimal fix, test, and retain a restorable version.",
-          "quick": "In the broken checklist, check only the first item. Expected 1; what actually appears? Report reproducible steps, not just 'broken.'",
-          "skip": "Go to independent practice if you can show reproduction, cause, minimal fix, 2→1→0 regression, and restoration evidence.",
-          "source": "Fictional broken exercise file: downloads/curriculum/broken-checklist-en.html; working reference: downloads/curriculum/correct-checklist-en.html.\nThe faulty count uses checkboxes.slice(1), omitting the first checkbox. Tasks in order: Download tickets, Confirm meeting location, Bring a water bottle. Count every item without changing task labels.",
-          "prompt": "I will paste the broken HTML. First explain why checking only the first item shows 0 instead of 1, and checking the first two shows 1 instead of 2. Fix only the counting scope that omits the first item through slice(1). Provide complete corrected HTML and the minimal difference. Preserve labels, reset, and no progress saving. List regression tests.",
+          "title": "Something is wrong: ask AI to fix it",
+          "goal": "Get corrected HTML with accurate counting while keeping the original file.",
+          "quick": "Try the task below first. If you already know how, move on to an independent practice.",
+          "skip": "Choose the guided steps, a new practice, or a deeper challenge at your own pace.",
+          "source": "The fictional checklist has three tasks: Download tickets, Confirm meeting location, Bring a water bottle.\nBroken file: downloads/curriculum/broken-checklist-en.html\nWorking comparison: downloads/curriculum/correct-checklist-en.html\nKnown issue: checking the first item does not increase the completed count.",
+          "prompt": "I will paste broken HTML. Checking only the first item should show 1/3 but shows 0/3; checking the first two should show 2/3 but shows 1/3. Find the cause and fix only the counting issue. Keep the text, reset, and zero-on-reopen behavior. Give complete corrected code and briefly explain the change.",
           "steps": [
-            "Download the broken and working reference files into your practice folder. Preserve the working file as baseline.html. Open it first and verify first two checked→2, first unchecked→1, reset→0.",
-            "Open the broken file and reset. Check only the first item: expected 1/3, actual 0/3. Check the second too: expected 2/3, actual 1/3. Record filename, sequence, expected, and actual results.",
-            "Open the broken file in a text editor and send its complete HTML and the prompt to AI. Verify that the fix removes .slice(1) from the counting scope rather than adding 1 to the display.",
-            "Save as fixed.html. Test first two checked 2/3→uncheck first 1/3→reset 0/3, then first alone 1/3. Verify original labels, narrow-window use, and keyboard operation.",
-            "Rehearse restoration: copy baseline.html to restore-check.html, open it, and retest 2→1→0. Save the bug report, fixed version, backup, and test results."
+            "Select Download the broken checklist and Download the reference fix. Keep both originals.",
+            "Open the broken file in a browser. Check the first item, then the second: it incorrectly shows 0/3 and 1/3.",
+            "Open the broken file in a plain-text editor. Paste its complete code and the Request for AI into your AI tool.",
+            "Paste AI’s complete corrected HTML into this page’s Complete HTML code field and select Update isolated preview.",
+            "Try the first item alone, the first two, unchecking the first, and reset: expect 1/3, 2/3, 1/3, and 0/3. Select Download this HTML to keep the fix.",
+            "Open the retained reference fix separately, practicing a return to a working version."
           ],
-          "expected": "Cause: slice(1) skips index 0. Fix: count the full checkboxes collection by removing .slice(1). Do not add 1, because no checks must yield 0. Corrected results: first alone 1/3; first two 2/3; uncheck first 1/3; reset 0/3. The restored copy also passes 2→1→0.",
+          "expected": "The code starts counting from the second item, skipping the first. Remove .slice(1) from the counting expression so every checkbox is included. After repair: first item alone 1/3, first two 2/3, uncheck the first 1/3, reset 0/3. Always adding 1 would incorrectly show 1 when nothing is checked.",
           "independent": {
             "task": "Download the fictional independent-task bug file downloads/curriculum/reset-bug-en.html and save a copy before testing. Its two reading tasks are Choose an article and Write three questions. It starts at 0/2; checking both gives 2/2. Reset clears the checks but still displays 2/2. This specific file defines updateCount(), but reset clears checks without calling it. Open this file in a text editor and send its complete contents with your reproduction report to AI. Request a minimal fix, save separately, and retest. Download correct-reset-en.html for comparison; do not apply the change to unrelated code with an unknown structure.",
             "expected": "Reproduce: reopen→check both→reset. Expected unchecked and 0/2; actual unchecked and 2/2. Call updateCount() after clearing checks. Test 2→reset 0→check first 1. Do not merely hide the incorrect number."
@@ -820,9 +908,9 @@
             "expected": "Reproduction: check items 1 and 3→2/3; search tickets→one visible, still 2/3; reset→all visible but 1/3, with the third still checked. After the fix, the same sequence must reset to all visible and 0/3, clearing the hidden third item too. Then check the first two 2/3→uncheck first 1/3→reset 0/3. Search still changes only visibility, not counting scope. Change the reset clearing scope to all checkboxes; do not delete the third item or force the display to zero while leaving it checked. Preserve the original and reopen it if restoration is needed."
           },
           "checks": [
-            "Retained a tested working backup.",
-            "Another person can reproduce the bug from my report.",
-            "Tested 2→1→0 on the minimal fix and restored copy."
+            "The first item alone shows 1/3 and is no longer skipped.",
+            "First two checked: 2/3; uncheck the first: 1/3; reset: 0/3.",
+            "Do not always add 1; with nothing checked the count must be 0/3."
           ],
           "quiz": {
             "question": "Why not add 1 to every faulty count?",
@@ -833,7 +921,9 @@
             ],
             "answer": 0,
             "explanation": "Fix the omitted counting scope instead of applying a constant to every state."
-          }
+          },
+          "outcome": "Before: checking only the first item incorrectly shows 0/3.\nAfter: checking only the first item correctly shows 1/3.",
+          "why": "AI-made tools can have bugs. Describing what you did and what happened makes repairs easier."
         }
       }
     },
@@ -847,18 +937,17 @@
       ],
       "locales": {
         "zh-Hant": {
-          "title": "規則與自動化：讓流程重複做",
-          "goal": "以模擬感測事件驗證邊界、缺值與去重，分清規則和外部動作。",
-          "quick": "規則是溫度>=28°C：27、28、29、缺值各會發生什麼？同一事件重送可不可以再發通知？",
-          "skip": "能交出正常、邊界、缺值、重複四種結果，並指出外部控制尚未執行，可直接做重試挑戰。",
-          "source": "虛構Home感測事件模擬，不連接設備。原應用方向是真實感測資料驅動空調規則；本課只重現邏輯。\n規格：收到事件→檢查event_id是否已處理→驗證溫度為數字→若>=28°C，記一筆『空調啟動請求（模擬）』及通知；低於28不請求；缺值記未知、不控制。每個新事件記處理結果，同ID不再產生請求或通知。\n依序事件：E01,27；E02,28；E03,29；E04,缺值；E02,28（重送）。",
-          "prompt": "只模擬上述規則，依序列event_id、溫度、判定、模擬請求數、通知數、原因。記住已處理ID。不要真的連接空調或設定排程。說明哪些是確定性規則、AI可協助什麼、哪些外部動作未執行。",
+          "title": "讓重複的事照規則做",
+          "goal": "得到一張逐筆說明溫度規則結果的模擬表。",
+          "quick": "先試下方的小任務；已經熟悉的話，可以直接換題練習。",
+          "skip": "依自己的進度，選擇跟著做、換題練習或進一步挑戰。",
+          "source": "虛構溫度紀錄，只做文字模擬，不連接設備。\n規則：溫度達28°C或以上，產生一筆「模擬空調啟動請求」並通知一次。低於28°C不動作；沒有溫度就先不動作。同一編號已處理過，就不要再做一次。\n依序收到：E01：27°C；E02：28°C；E03：29°C；E04：沒有溫度；E02：28°C（同一筆重送）。",
+          "prompt": "請依下方規則試算，每筆列溫度、是否產生模擬啟動請求、是否通知，以及一句原因。重送的同一筆不要重複處理。只做文字模擬。",
           "steps": [
-            "先手寫四個溫度的預測，圈出28是邊界而不是大於28。",
-            "把規格與事件交給AI逐筆模擬；檢查重送E02有沒有再次觸發。",
-            "將條件暫改成>28，預測只有E02的邊界判定會改；重跑新的一批模擬後對照，再還原>=28。每批從空的已處理ID集合開始。",
-            "畫出或寫出流程：事件→去重→驗值→比較→模擬請求／未知→記錄。區分AI寫規格、程式判條件與真正執行設備控制。",
-            "保存五列結果及版本。這份模擬不是已建立排程或已控制設備的證據。"
+            "把下方規則、五筆資料與要求一起貼到 AI，取得試跑表。",
+            "看28度與29度各有一次請求及通知；缺溫度的那筆先不動作。",
+            "接著送出：「改成超過28度才啟動，從空白紀錄重新跑這五筆。」看看28度那筆是否改為不啟動。",
+            "把兩版放一起看：第一次共2次，改後共1次。這裡試的是規則，沒有連接真實設備。"
           ],
           "expected": "E01 27：不啟動，0請求0通知。E02 28：模擬啟動，1請求1通知。E03 29：模擬啟動，1請求1通知。E04缺值：未知，0請求0通知。重送E02：略過，0新增請求0新增通知。合計2請求2通知。>28的新批次僅E03啟動，合計1；還原>=28回到2。比較及去重是規則；AI可協助撰寫與解釋，未真正控制設備。",
           "independent": {
@@ -872,9 +961,9 @@
             "expected": "R1共2次嘗試，10:01成功並通知1；10:02重送略過。R2嘗試1次成功，但距上次通知2分鐘，冷卻中不通知。R3嘗試2次皆失敗，停止並交人工，未記成功、無成功通知。總嘗試5次、成功事件2個、通知1筆；不能無限重試。"
           },
           "checks": [
-            "27／28／29／缺值四種結果正確。",
-            "同E02重送沒有新增動作。",
-            "模擬、確定性規則、AI協助及實際設備控制分清楚。"
+            "達28度包含28；超過28度則不包含28。",
+            "缺少溫度不動作，同一編號重送不再通知。",
+            "這是文字模擬，沒有啟動真實空調。"
           ],
           "quiz": {
             "question": "規格>=28°C，溫度缺值時應如何？",
@@ -885,21 +974,22 @@
             ],
             "answer": 0,
             "explanation": "缺值無法比較，不能偷偷轉成0或門檻值。"
-          }
+          },
+          "outcome": "達28°C就啟動：共2次模擬請求。\n改成超過28°C：共1次；重送不再觸發。",
+          "why": "想讓系統自動提醒時，先把「什麼時候做、什麼時候不做」講清楚。"
         },
         "en": {
-          "title": "Rules and automation: repeat a workflow",
-          "goal": "Test boundaries, missing values, and deduplication with simulated sensor events; separate rules from external actions.",
-          "quick": "For temperature >=28°C, what happens at 27, 28, 29, and missing? May the same event send a second notification?",
-          "skip": "Go to the retry challenge if you can show normal, boundary, missing, and duplicate cases and identify that external control has not occurred.",
-          "source": "Fictional Home sensor-event simulation; no device connection. The application direction uses real sensor data to drive air-conditioning rules; this lesson reconstructs only the logic.\nRule: receive event→check whether event_id was processed→validate numeric temperature→if >=28°C, record one 'air-conditioning activation request (simulated)' and one notification; below 28 makes no request; missing means unknown, no control. Record each new event's result; the same ID creates no further request or notification.\nEvents in order: E01,27; E02,28; E03,29; E04,missing; E02,28 (redelivery).",
-          "prompt": "Simulate only these rules. In order, show event_id, temperature, decision, simulated request count, notification count, and reason. Track processed IDs. Do not connect an air conditioner or set a schedule. Identify deterministic rules, where AI can help, and external actions not performed.",
+          "title": "Let repeated tasks follow a rule",
+          "goal": "Get a row-by-row simulation explaining the temperature rule.",
+          "quick": "Try the task below first. If you already know how, move on to an independent practice.",
+          "skip": "Choose the guided steps, a new practice, or a deeper challenge at your own pace.",
+          "source": "Fictional temperature readings for text simulation; no equipment connection.\nRule: at 28°C or above, create one simulated air-conditioner start request and one notification. Below 28°C, do nothing. With no temperature, do nothing for now. If an event ID has already been processed, do not process it again.\nIn order: E01: 27°C; E02: 28°C; E03: 29°C; E04: no temperature; E02: 28°C (the same event sent again).",
+          "prompt": "Try the rules below. For each row show temperature, whether it produces a simulated start request, whether it notifies, and one reason. Do not process a repeated event twice. Use text simulation only.",
           "steps": [
-            "Write predictions for the four temperatures, noting that 28 is included in >=28.",
-            "Submit rules and events to AI for sequential simulation. Check whether redelivered E02 incorrectly triggers again.",
-            "Temporarily change the condition to >28. Predict that only E02's boundary decision changes. Run a fresh batch, compare, then restore >=28. Start each batch with an empty processed-ID set.",
-            "Draw or write the flow: event→deduplicate→validate→compare→simulated request or unknown→record. Distinguish AI writing specifications, code evaluating conditions, and actual device control.",
-            "Save the five result rows and rule version. This simulation does not prove that a schedule exists or a device was controlled."
+            "Paste the rules, five readings, and request into AI to get a trial table.",
+            "Check that 28 and 29 degrees each produce one request and notification; the missing reading produces no action.",
+            "Then send: “Change the rule to above 28 degrees and rerun these five events from an empty record.” See whether the 28-degree event stops triggering.",
+            "Compare the two versions: 2 requests first, then 1. This tests a rule; it does not connect to real equipment."
           ],
           "expected": "E01 27: no activation, 0 requests/0 notifications. E02 28: simulated activation, 1/1. E03 29: simulated activation, 1/1. E04 missing: unknown, 0/0. Redelivered E02: skipped, 0 new requests/0 new notifications. Total 2 requests and 2 notifications. A fresh >28 batch activates only E03, total 1; restoring >=28 gives 2. Comparison and deduplication are rules; AI can help write and explain them. No actual device was controlled.",
           "independent": {
@@ -913,9 +1003,9 @@
             "expected": "R1: 2 attempts, succeeds and notifies once at 10:01; redelivery 10:02 skipped. R2: 1 successful attempt, no notification because only 2 minutes have passed. R3: 2 failed attempts, then stop and refer to a person; no success state or success notification. Total 5 attempts, 2 successful events, 1 notification. No unlimited retries."
           },
           "checks": [
-            "Correct results for 27, 28, 29, and missing.",
-            "Redelivery of E02 creates no additional action.",
-            "Clearly separated simulation, deterministic rules, AI help, and actual device control."
+            "At least 28 includes 28; above 28 does not.",
+            "Missing readings cause no action; repeated event IDs cause no new notification.",
+            "This is text simulation, not actual air-conditioner control."
           ],
           "quiz": {
             "question": "Under >=28°C, what should happen when temperature is missing?",
@@ -926,7 +1016,9 @@
             ],
             "answer": 0,
             "explanation": "Missing data cannot be compared and must not silently become zero or the threshold."
-          }
+          },
+          "outcome": "At least 28°C: 2 simulated start requests.\nAbove 28°C: 1 request; repeated events do not trigger again.",
+          "why": "Before automating a reminder, spell out when it should and should not happen."
         }
       }
     },
@@ -940,17 +1032,17 @@
       ],
       "locales": {
         "zh-Hant": {
-          "title": "同一份內容，換人與換語言也看得懂",
-          "goal": "改寫語氣與長度，同時維持日期、時區、金額、動作與未知。",
-          "quick": "將L1寫成中文短版與英文版，再逐項核對關鍵事實；不以流暢當作正確。",
-          "skip": "能交出兩版與事實對照，保留未知和原名，可直接做口語稿挑戰。",
+          "title": "把同一段話，說給不同的人聽",
+          "goal": "得到中文與英文各一版短通知，並能調整成適合朋友的語氣。",
+          "quick": "先試下方的小任務；已經熟悉的話，可以直接換題練習。",
+          "skip": "依自己的進度，選擇跟著做、換題練習或進一步挑戰。",
           "source": "虛構通知L1：『雲岸共學』活動於2026/11/21 09:00（Asia/Taipei）在雲樓A室舉行；費用每人300 TWD；請於2026/11/18 18:00（Asia/Taipei）前回覆參加；午餐另計，價格未定。活動與場地無核准英文名稱。",
-          "prompt": "依L1寫給參加者的中文短版與英文版，清楚分開活動時間與回覆期限。保留金額、每人單位、時區、午餐未知；活動與場地保留原中文名稱，不自行宣稱官方譯名。附事實對照表。",
+          "prompt": "請把下方資訊寫成中文與英文短通知，讓參加者快速看到時間、地點、費用與回覆期限。活動與場地名稱保留原文；午餐另計也要保留。",
           "steps": [
-            "先從來源列六個不能改的欄位：活動日期時間、場地、每人費用、回覆期限、午餐限制、名稱狀態。",
-            "把來源與問題交給AI產生兩版；回來源逐欄核對，不只檢查語句通順。",
-            "追問『中文改得更親切、英文更簡短，但不得刪掉期限、時區與午餐未知』，比對修改前後。",
-            "保存來源、兩版與核對表；不確定的專有名詞留原文與待確認。"
+            "把活動資訊與要求一起貼到 AI，讀讀兩種語言的通知。",
+            "接著送出：「中文更像傳給朋友的訊息，英文再短一點。」",
+            "看看改寫後的日期與300 TWD／人有沒有變，午餐是否仍寫另計。",
+            "選出你喜歡的版本保存；遇到不懂的英文，可以追問「請用中文解釋這一句」。"
           ],
           "expected": "中文：『雲岸共學』11/21 09:00於雲樓A室舉行，每人300 TWD；請於11/18 18:00前回覆。日期皆2026年，時間皆Asia/Taipei；午餐另計、價格待確認。英文：Join 雲岸共學 at 雲樓A室 on 2026/11/21 at 09:00 (Asia/Taipei), 300 TWD per person. Reply by 2026/11/18 18:00 (Asia/Taipei). Lunch costs extra; the price is unconfirmed. 核對：兩版六欄一致，沒有新造官方名稱。",
           "independent": {
@@ -964,9 +1056,9 @@
             "expected": "中：12月10日19:00有線上交流，每人200 TWD。請於12月8日17:00前報名，參加連結待提供；以上日期皆2026年，時間皆Asia/Taipei。英：The online exchange is on 2026/12/10 at 19:00 (Asia/Taipei), at 200 TWD per person. Register by 2026/12/08 17:00 (Asia/Taipei); the access link has not been provided. 可調整句型，但不能漏時區或填入虛構連結。"
           },
           "checks": [
-            "兩個語言版本皆完成。",
-            "日期、時間、單位、限制與未知逐欄相同。",
-            "專有名詞未擅自變成官方譯名。"
+            "兩版活動日、回覆期限與300 TWD／人的金額一致。",
+            "午餐仍是另計、價格未定，不變成已含餐。",
+            "活動與場地名稱保留原文，完整通知保留Asia/Taipei時區。"
           ],
           "quiz": {
             "question": "L1英文版可以說午餐已包含嗎？",
@@ -977,20 +1069,22 @@
             ],
             "answer": 0,
             "explanation": "改寫可以縮短措辭，不能更改包含範圍。"
-          }
+          },
+          "outcome": "11/21 09:00一起參加「雲岸共學」，每人300 TWD。\nJoin 雲岸共學 on 11/21 at 09:00; 300 TWD per person.\n（節錄；完整通知另含回覆期限與午餐說明）",
+          "why": "通知太長、語氣太硬，或要傳給不同語言的朋友時，可以請 AI 換個說法。"
         },
         "en": {
-          "title": "Adapt content for a different audience or language",
-          "goal": "Change tone and length while preserving dates, time zone, amounts, actions, and unknowns.",
-          "quick": "Turn L1 into a short Chinese notice and an English version, then verify each key fact. Fluency is not proof of accuracy.",
-          "skip": "Go to the spoken-script challenge if both versions and your fact comparison preserve unknowns and original names.",
+          "title": "Say the same thing for a different audience",
+          "goal": "Get short Chinese and English notices and adjust their tone for friends.",
+          "quick": "Try the task below first. If you already know how, move on to an independent practice.",
+          "skip": "Choose the guided steps, a new practice, or a deeper challenge at your own pace.",
           "source": "Fictional notice L1: 雲岸共學 takes place on 2026/11/21 at 09:00 (Asia/Taipei), at 雲樓A室; 300 TWD per person. Reply whether attending by 2026/11/18 18:00 (Asia/Taipei). Lunch costs extra; its price is undecided. Neither activity nor venue has an approved English name.",
-          "prompt": "Using L1, write a short Chinese notice and an English version for attendees. Distinguish activity time and reply deadline. Preserve price, per-person unit, time zone, and unknown lunch cost. Keep activity and venue names in Chinese without claiming an official translation. Include a fact comparison.",
+          "prompt": "Write short Chinese and English notices from these details. Make the time, place, price, and reply deadline easy to find. Keep activity and venue names in their original form and keep the extra lunch cost.",
           "steps": [
-            "Extract six fields that cannot change: activity date/time, venue, per-person fee, reply deadline, lunch limitation, and name status.",
-            "Submit source and prompt for both versions. Verify each field against the source rather than checking fluency alone.",
-            "Follow up: 'Make Chinese friendlier and English shorter without removing the deadline, time zone, or unknown lunch cost.' Compare before and after.",
-            "Save the source, both versions, and comparison. Keep uncertain proper names in the original language and mark them for confirmation."
+            "Paste the activity details and request into AI and read both notices.",
+            "Then send: “Make the Chinese sound like a message to a friend, and make the English shorter.”",
+            "Check that the dates and 300 TWD per person did not change, and lunch still costs extra.",
+            "Save the versions you like. For unfamiliar English, ask: “Explain this sentence in Chinese.”"
           ],
           "expected": "Chinese: 『雲岸共學』11/21 09:00於雲樓A室舉行，每人300 TWD；請於11/18 18:00前回覆。日期皆2026年，時間皆Asia/Taipei；午餐另計、價格待確認。 English: Join 雲岸共學 at 雲樓A室 on 2026/11/21 at 09:00 (Asia/Taipei), 300 TWD per person. Reply by 2026/11/18 18:00 (Asia/Taipei). Lunch costs extra; the price is unconfirmed. All six fields agree, with no invented official names.",
           "independent": {
@@ -1004,9 +1098,9 @@
             "expected": "Chinese: 12月10日19:00有線上交流，每人200 TWD。請於12月8日17:00前報名，參加連結待提供；以上日期皆2026年，時間皆Asia/Taipei。 English: The online exchange is on 2026/12/10 at 19:00 (Asia/Taipei), at 200 TWD per person. Register by 2026/12/08 17:00 (Asia/Taipei); the access link has not been provided. Wording can vary; time zone and missing-link status cannot be dropped."
           },
           "checks": [
-            "Completed both language versions.",
-            "Dates, times, units, limitations, and unknowns match field by field.",
-            "Did not turn invented proper-name translations into official names."
+            "Both versions keep the same activity date, reply deadline, and 300 TWD per-person price.",
+            "Lunch remains extra with its price unconfirmed, not included.",
+            "Keep original activity and venue names and Asia/Taipei in the full notice."
           ],
           "quiz": {
             "question": "May L1's English version say lunch is included?",
@@ -1017,7 +1111,9 @@
             ],
             "answer": 0,
             "explanation": "Rewriting may shorten wording but cannot change what is included."
-          }
+          },
+          "outcome": "11/21 09:00一起參加「雲岸共學」，每人300 TWD。\nJoin 雲岸共學 on 11/21 at 09:00; 300 TWD per person.\n(Excerpt; the full notice also includes the reply deadline and lunch details.)",
+          "why": "When a notice is too long, too formal, or needs another language, ask AI to change how it is written."
         }
       }
     },
@@ -1030,90 +1126,88 @@
       ],
       "locales": {
         "zh-Hant": {
-          "title": "自選專題與交接：把自己的需求做成作品",
-          "goal": "從四方向選一個小作品，加入自己的修改，讓同伴依說明操作及核對。",
-          "quick": "選一個方向，用一句話寫使用者要做什麼、輸入是什麼、怎樣知道成功。已有作品者用新需求接受驗證。",
-          "skip": "能提供來源、自己的修改、測試與同伴試走紀錄，可直接做來源變更挑戰；公開部署不是必需。",
-          "source": "四組皆為公開虛構重現，選一組即可。\nTravel：T1主辦核准2026/11/21 09:00雲岸車站集合；11/19 19:00（Asia/Taipei）前下載車票；入住未定。目標：來源可追溯的行程／待辦。\nN1：自編練習，非正式試題。Q1『確認しないことには、返事ができない。』規則：ないことには表『如果不先…就不能…』。Q2『忙しいとはいえ、確認は必要だ。』規則：とはいえ表『雖說…但是…』。目標：兩題可核對的學習卡，不宣稱考試成效。\nHome：模擬真感測空調規則，>=28°C產生啟動請求；E1=27、E2=28、E3=缺值、E2重送；依ID去重。目標：結果表或模擬器，不接設備。\nTickForge：虛構成交量，非帳戶績效。K1｜D1｜成交量100；K1｜D2｜成交量130；K2｜D1｜成交量0；K2｜D2｜成交量20。目標：比較成交量變動，不提供交易建議或連接交易。",
-          "prompt": "我選【填入Travel、N1、Home或TickForge一個】。只依對應來源，先列最小作品、輸入、可核對結果與三個驗收步驟，再製作第一版。缺資料請保留未知，不引用私人資料。若要HTML，請提供完整可保存檔案；如果先做文字／表格，清楚標示尚未做網頁。不要部署或連接外部系統。",
+          "title": "做一個你下週就用得到的小作品",
+          "goal": "得到一份自己的生活小作品，例如購物清單加準備順序。",
+          "quick": "先試下方的小任務；已經熟悉的話，可以直接換題練習。",
+          "skip": "依自己的進度，選擇跟著做、換題練習或進一步挑戰。",
+          "source": "虛構範例：週六四人一起在家吃晚餐。\n希望18:30開飯，準備番茄義大利麵、沙拉與水果。\n家裡已有義大利麵和橄欖油；其他食材要買。\n需求：幫我做購物清單與簡單準備順序，不用計算預算。",
+          "prompt": "請用下方需求與資料，做一份簡單可用的第一版。先用文字清單呈現，不用做網站。完成後問我最想調整哪一處。",
           "steps": [
-            "選一方向並保留對應起步資料。網頁作品先具備M08/M09能力，分析型可用M07，規則型可用M10；不要求上完全部課。",
-            "自行寫一句最小需求後送出問題。Travel做三欄清單；N1做句子／意思／自測卡；Home做逐事件結果；TickForge做差額與百分比表。",
-            "用下方參考結果驗收第一版。若是網頁，要實際保存、開啟並操作；只有文字就誠實標示文字原型。",
-            "加入一項自己的需求並保存前後版：例如Travel加來源欄、N1加顯示答案、Home加重複提示、TickForge加零基期註記。先寫預期再測。",
-            "寫交接說明：如何開啟、輸入、一次操作、預期結果、資料限制、如何復原。請未參與製作的同伴照做，記錄實際結果；無同伴則標示待試走。",
-            "保存需求、來源、成品、修改、測試、交接與剩餘問題。這是作品證據，不以自評勾選代表已驗證。"
+            "想一件下週會做的事：準備聚餐、整理書單、安排練習都可以；也可以直接用下方範例。",
+            "把需求與資料一起貼到 AI，取得第一版。",
+            "看完後改一處，例如增加人數、換成表格、縮短成手機容易看的版本。",
+            "拿成品走一遍實際情境：照著它準備時，還少哪一項？請 AI 補好，再存到你找得到的地方。"
           ],
-          "expected": "Travel：下載期限11/19 19:00、集合11/21 09:00雲岸車站、入住未知，均2026年／Asia/Taipei，附T1；不得猜入住。N1：Q1『如果不先確認，就無法回覆』；Q2『雖然忙，仍有必要確認』；句型與來源規則一致，答案顯示前可自答。Home：E1不請求、E2一筆模擬請求、E3未知、重送E2略過，共1筆；明示未控制真設備。TickForge：K1增加30，30÷100=30.0%；K2增加20，基期0，百分比不適用；不能稱無限成長或獲利。每條路線另須有自己的修改、測試與交接紀錄；沒有完成的部分標待補。",
+          "expected": "第一版可以分成「要買」與「怎麼準備」。要買：番茄、沙拉蔬菜、水果及建議配料；已有的義大利麵和橄欖油另列。準備順序可以先洗切蔬果，再煮醬、煮麵，最後拌沙拉。AI補充的份量是建議，你可依食量調整。",
           "independent": {
-            "task": "選一組全新虛構資料，獨立做第二版。Travel：T2，2026/12/05 10:00雲樓集合，12/03 16:00前報名，交通方式未知，Asia/Taipei。N1：Q3『準備しないことには、始められない。』沿用『不先…就不能…』；Q4『短いとはいえ、内容は豊富だ。』沿用『雖說…但是…』。Home：F1=28、F2=29、F3缺值、F1重送，>=28及依ID去重。TickForge：K3 D1量200／D2量150，K4 D1量0／D2量0。僅使用所選資料，保存一項測試。",
-            "expected": "Travel：12/03 16:00報名、12/05 10:00雲樓集合、交通未知。N1：Q3不先準備就無法開始；Q4雖然短但內容豐富。Home：F1、F2各1筆模擬請求，缺值未知，重送略過，共2。TickForge：K3差-50、-25.0%；K4差0、百分比仍不適用（0÷0），不是0%。四選一核對即可，不混用第一版資料。"
+            "task": "換成你自己的小需求，例如一週讀書安排或出門準備。先給三項必要資訊，請AI做第一版，再改一個條件。不要貼私人或機密資料。",
+            "expected": "沒有唯一答案。你能說出它幫你省掉哪一步，並照著成品完成一次小操作，就有了可以繼續改善的起點。"
           },
           "challenge": {
-            "task": "對選定作品加入更新或反例，保留可復原版本。",
-            "source": "全虛構、四選一。Travel：T3主辦核准取代T1的下載期限，改2026/11/19 18:00，其餘不變。N1：Q5『忙しいとはいえ、確認は不要だ。』其中不要=不需要，不能套Q2的『仍有必要』。Home：新E4溫度文字『sensor error』，規格只接受數字。TickForge：新增K1 D2量130的相同列，完整鍵為代號+日期，重複列不重複加總。",
-            "prompt": "先保存原版，依我選的來源更新或加入反例。列出應改、不應改、預期結果與復原方法，再產生新版本；不要把缺值或重複資料當正常新值。",
-            "expected": "Travel只有下載改18:00，集合09:00與入住未知不變。N1 Q5是『雖然忙，確認卻不需要』，必須反映不要與必要的差異，不能照抄Q2答案。Home E4無效／未知，0請求，不轉0°C。TickForge相同鍵相同值的重複列只保留一次，K1仍100→130、+30、30.0%；若同鍵不同值則待確認。復原時重開保存的前版並重測原案例。"
+            "task": "讓別人也能使用你的成品。",
+            "source": "沿用你剛做的作品；如果用晚餐範例，新增條件：改成六人，其中一人不吃乳製品。",
+            "prompt": "請依新條件更新我的作品，先列這次改了什麼，再給完整新版。補一段給第一次使用的人看的簡短說明。",
+            "expected": "晚餐範例需調整六人份建議，乳製品另外提供或改用不含乳製品的配料。保留原版，請同伴讀新版說明，看看能否自己開始；有卡住的地方就再改。"
           },
           "checks": [
-            "有一個小範圍作品及可追溯的虛構來源。",
-            "本人修改有前後版本與實際測試。",
-            "交接說明可執行；同伴尚未試走時明確標示。",
-            "清楚分開文字原型、實際HTML、模擬與外部操作；未做的部分不稱完成。"
+            "成品有直接可用的內容，不只是教你如何規劃。",
+            "已有的義大利麵與橄欖油，不必重複列為必買。",
+            "新增條件後，相關項目跟著改；AI建議份量可依需求調整。"
           ],
           "quiz": {
-            "question": "TickForge的0→20，百分比應寫什麼？",
+            "question": "怎樣的題目適合當第一個小作品？",
             "choices": [
-              "不適用：基期為0；差額是+20",
-              "+20%",
-              "獲利無限大"
+              "我下週會用到，而且能先做出一個簡單版本",
+              "必須一次做完整套大型系統",
+              "一定得從指定品牌或專案選一個"
             ],
             "answer": 0,
-            "explanation": "百分比分母為0不能計算；這是成交量，也不是帳戶獲利。"
-          }
+            "explanation": "從熟悉、範圍小的需求開始，比較容易試用，也比較知道下一步想改什麼。"
+          },
+          "outcome": "週六晚餐｜要買：番茄、沙拉蔬菜、水果。\n先洗切蔬果 → 煮醬與麵 → 拌沙拉，18:30開飯。",
+          "why": "把前面學到的提問、修改與試用，用在你真的想省時間的小事情上。"
         },
         "en": {
-          "title": "Choose, verify, and share a useful project",
-          "goal": "Choose one small project, make a personal change, and let a partner operate and verify it from your instructions.",
-          "quick": "Choose a direction and write one sentence stating the user's task, input, and observable success. Existing projects should face a new requirement.",
-          "skip": "Go to the source-change challenge if you have sources, a personal change, tests, and a partner walkthrough record. Public deployment is optional.",
-          "source": "All four are public fictional reconstructions; choose one.\nTravel: T1 organizer approval: meet 2026/11/21 09:00 at Cloudbank Station; download tickets by 11/19 19:00 (Asia/Taipei); check-in undecided. Goal: source-traceable itinerary/actions.\nN1: original practice, not official exam questions. Q1 確認しないことには、返事ができない。 Rule: ないことには means 'unless you first…you cannot…'. Q2 忙しいとはいえ、確認は必要だ。 Rule: とはいえ means 'although…nevertheless…'. Goal: two verifiable study cards, without exam-outcome claims.\nHome: simulation of sensor-driven air-conditioning rules: >=28°C generates an activation request; E1=27, E2=28, E3=missing, E2 redelivery; deduplicate by ID. Goal: results table or simulator, no device connection.\nTickForge: fictional trading volume, not account performance. K1 | D1 | volume100; K1 | D2 | volume130; K2 | D1 | volume0; K2 | D2 | volume20. Goal: compare volume changes; no trading advice or trading connection.",
-          "prompt": "I choose [enter one: Travel, N1, Home, or TickForge]. Using only that source, define the smallest artifact, inputs, verifiable result, and three acceptance steps, then build version one. Preserve unknowns and use no private data. If making HTML, provide a complete saveable file. If starting with text or a table, clearly label it as not yet a webpage. Do not deploy or connect external systems.",
+          "title": "Make something you can use next week",
+          "goal": "Get a small piece of work for your own life, such as a shopping list and preparation order.",
+          "quick": "Try the task below first. If you already know how, move on to an independent practice.",
+          "skip": "Choose the guided steps, a new practice, or a deeper challenge at your own pace.",
+          "source": "Fictional example: four people having dinner at home on Saturday.\nAim to eat at 18:30. Make tomato pasta, salad, and fruit.\nPasta and olive oil are already at home; other ingredients need buying.\nNeed: a shopping list and a simple preparation order. No budget calculation needed.",
+          "prompt": "Use the needs and data below to make a simple, usable first version as a text checklist. No website needed. Then ask what I most want to adjust.",
           "steps": [
-            "Choose one direction and retain its starter data. Web projects require M08/M09 skills, analysis can use M07, and rules can use M10. Completing every lesson is unnecessary.",
-            "Write your own one-sentence requirement and submit the prompt. Travel: three-field checklist; N1: sentence/meaning/self-test cards; Home: event-by-event results; TickForge: differences and percentages table.",
-            "Verify version one against the reference below. A webpage must actually be saved, opened, and operated. A text-only artifact should honestly be labeled a text prototype.",
-            "Add one personal requirement and save before/after versions: e.g., a Travel source column, N1 answer reveal, Home duplicate notice, or TickForge zero-baseline note. Write expectations before testing.",
-            "Write handoff instructions: how to open, input, perform one action, verify the result, understand data limits, and restore. Ask someone uninvolved in building to follow them and record actual results. Without a partner, mark the walkthrough pending.",
-            "Save requirements, source, artifact, change, tests, handoff, and unresolved issues. These are project evidence; self-reported checkmarks do not verify the work."
+            "Choose something you will do next week: prepare a meal with friends, organize books, or plan practice. You can also use the sample below.",
+            "Paste your need and data into AI to get a first version.",
+            "Change one thing after reading it: add people, use a table, or make it shorter for a phone.",
+            "Walk through the real situation with your result. What is still missing? Ask AI to improve it and save it somewhere you can find again."
           ],
-          "expected": "Travel: download deadline 11/19 19:00; meet 11/21 09:00 at Cloudbank Station; check-in unknown; all 2026/Asia/Taipei, source T1. Do not guess check-in. N1: Q1 'Unless I check first, I cannot reply'; Q2 'Although busy, checking is still necessary'; meanings match supplied rules and allow an answer before reveal. Home: E1 no request, E2 one simulated request, E3 unknown, duplicate E2 skipped; total 1, explicitly no real device control. TickForge: K1 +30, 30÷100=30.0%; K2 +20 with percentage undefined due to zero baseline; neither infinite growth nor profit. Each route also needs a personal change, tests, and handoff record; unfinished parts remain pending.",
+          "expected": "A first version can have “Buy” and “Prepare” sections. Buy tomatoes, salad vegetables, fruit, and suggested extras; list the pasta and olive oil separately as already available. Wash and chop produce, prepare sauce, cook pasta, then mix the salad. Any quantities added by AI are suggestions you can adjust to appetites.",
           "independent": {
-            "task": "Choose one fresh fictional set and independently make version two. Travel: T2, meet 2026/12/05 10:00 at Cloud Tower, register by 12/03 16:00, transport unknown, Asia/Taipei. N1: Q3 準備しないことには、始められない。 uses 'unless first…cannot…'; Q4 短いとはいえ、内容は豊富だ。 uses 'although…nevertheless…'. Home: F1=28, F2=29, F3 missing, F1 redelivery, using >=28 and ID deduplication. TickForge: K3 D1 volume200/D2 volume150; K4 D1 volume0/D2 volume0. Use only the selected data and save one test.",
-            "expected": "Travel: register 12/03 16:00; meet 12/05 10:00 at Cloud Tower; transport unknown. N1: Q3 cannot start without preparing first; Q4 although short, the content is rich. Home: F1 and F2 each generate one simulated request; missing unknown, duplicate skipped; total 2. TickForge: K3 -50, -25.0%; K4 difference0, percentage still undefined (0÷0), not 0%. Verify only your chosen route without mixing version-one data."
+            "task": "Use your own small need, such as a weekly reading plan or a packing list. Provide three necessary details, ask AI for a first version, then change one condition. Do not paste private or confidential information.",
+            "expected": "There is no single correct answer. If you can explain which step it saves and use it for one small action, you have a useful starting point."
           },
           "challenge": {
-            "task": "Add an update or counterexample to your chosen artifact, retaining a restorable version.",
-            "source": "All fictional; choose one. Travel: organizer-approved T3 replaces T1's download deadline with 2026/11/19 18:00; all else unchanged. N1: Q5 忙しいとはいえ、確認は不要だ。 Here 不要 means unnecessary; do not reuse Q2's 'still necessary'. Home: new E4 temperature is text 'sensor error'; only numeric values are accepted. TickForge: a duplicate K1 D2 volume130 row is added; full key is code+date; do not sum duplicate rows twice.",
-            "prompt": "Save the original first. Apply my chosen update or counterexample. List what should change, what should not, expected results, and restoration steps, then produce a new version. Do not treat missing or duplicate data as a normal new value.",
-            "expected": "Travel: only download changes to 18:00; meeting remains09:00 and check-in unknown. N1 Q5: 'Although busy, checking is unnecessary'; reflect the difference between 不要 and 必要 instead of copying Q2. Home E4 invalid/unknown, 0 requests, not converted to0°C. TickForge: retain the identical key/value row once; K1 remains100→130,+30,30.0%. Conflicting values under one key require confirmation. Restore by reopening the saved prior version and rerunning its original cases."
+            "task": "Make your result easy for someone else to use.",
+            "source": "Use the work you just made. For the dinner example, change to six people, including one who avoids dairy.",
+            "prompt": "Update my work for this new condition. Say what changed, then give the complete new version. Add a short explanation for a first-time user.",
+            "expected": "For dinner, adjust suggested quantities for six and offer dairy separately or use dairy-free alternatives. Keep the original. Ask a companion to read the new instructions and try starting; improve any confusing parts."
           },
           "checks": [
-            "A small artifact with traceable fictional sources.",
-            "My personal change has before/after versions and actual tests.",
-            "Handoff instructions are executable; pending partner walkthroughs are explicitly marked.",
-            "Text prototypes, actual HTML, simulation, and external operations are distinct; unperformed work is not claimed complete."
+            "The result contains usable content, not only advice on how to plan.",
+            "Pasta and olive oil are already available; they need not be listed as required purchases.",
+            "Relevant details change with new conditions; adjust AI-suggested quantities to your needs."
           ],
           "quiz": {
-            "question": "For TickForge's 0→20, what is the percentage change?",
+            "question": "What makes a good first small project?",
             "choices": [
-              "Undefined due to zero baseline; absolute change is +20",
-              "+20%",
-              "Infinite profit"
+              "Something I will use next week and can start with a simple version",
+              "It must be a complete large system",
+              "It must come from a fixed brand or project"
             ],
             "answer": 0,
-            "explanation": "The percentage denominator is zero. This measures volume, not account profit."
-          }
+            "explanation": "A small, familiar need is easier to try out and gives you a clearer idea of what to improve next."
+          },
+          "outcome": "Saturday dinner | Buy tomatoes, salad vegetables, and fruit.\nWash and chop → prepare sauce and pasta → mix salad; eat at 18:30.",
+          "why": "Use asking, revising, and trying things out on a task where you actually want to save time."
         }
       }
     }

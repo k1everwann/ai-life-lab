@@ -1,41 +1,53 @@
-M11 Adapt content for a different audience or language
+Say the same thing for a different audience
 
-Change tone and length while preserving dates, time zone, amounts, actions, and unknowns.
+When a notice is too long, too formal, or needs another language, ask AI to change how it is written.
 
-All lesson data is fictional. This site does not call AI or connect your accounts. Paste the exercise into your own AI tool.
+What you will make
 
-Try this first
+Get short Chinese and English notices and adjust their tone for friends.
 
-Turn L1 into a short Chinese notice and an English version, then verify each key fact. Fluency is not proof of accuracy.
+Example result
 
-When can I skip the instructions?
+11/21 09:00一起參加「雲岸共學」，每人300 TWD。
+Join 雲岸共學 on 11/21 at 09:00; 300 TWD per person.
+(Excerpt; the full notice also includes the reply deadline and lunch details.)
 
-Go to the spoken-script challenge if both versions and your fact comparison preserve unknowns and original names.
+This is a prepared example. Your AI may use different wording.
 
-Teaching data
+Follow along
+
+Work in your own AI tool
+
+Practice material
 
 Fictional notice L1: 雲岸共學 takes place on 2026/11/21 at 09:00 (Asia/Taipei), at 雲樓A室; 300 TWD per person. Reply whether attending by 2026/11/18 18:00 (Asia/Taipei). Lunch costs extra; its price is undecided. Neither activity nor venue has an approved English name.
 
-Your first request
+Request for AI
 
-Using L1, write a short Chinese notice and an English version for attendees. Distinguish activity time and reply deadline. Preserve price, per-person unit, time zone, and unknown lunch cost. Keep activity and venue names in Chinese without claiming an official translation. Include a fact comparison.
+Write short Chinese and English notices from these details. Make the time, place, price, and reply deadline easy to find. Keep activity and venue names in their original form and keep the extra lunch cost.
 
-1. Extract six fields that cannot change: activity date/time, venue, per-person fee, reply deadline, lunch limitation, and name status.
-2. Submit source and prompt for both versions. Verify each field against the source rather than checking fluency alone.
-3. Follow up: 'Make Chinese friendlier and English shorter without removing the deadline, time zone, or unknown lunch cost.' Compare before and after.
-4. Save the source, both versions, and comparison. Keep uncertain proper names in the original language and mark them for confirmation.
+1. Paste the activity details and request into AI and read both notices.
+2. Then send: “Make the Chinese sound like a message to a friend, and make the English shorter.”
+3. Check that the dates and 300 TWD per person did not change, and lunch still costs extra.
+4. Save the versions you like. For unfamiliar English, ask: “Explain this sentence in Chinese.”
 
-Compare the reference result
+After trying: compare a possible result
 
 Chinese: 『雲岸共學』11/21 09:00於雲樓A室舉行，每人300 TWD；請於11/18 18:00前回覆。日期皆2026年，時間皆Asia/Taipei；午餐另計、價格待確認。 English: Join 雲岸共學 at 雲樓A室 on 2026/11/21 at 09:00 (Asia/Taipei), 300 TWD per person. Reply by 2026/11/18 18:00 (Asia/Taipei). Lunch costs extra; the price is unconfirmed. All six fields agree, with no invented official names.
 
-Do it yourself: a new situation
+Check these parts of your result
+
+Both versions keep the same activity date, reply deadline, and 300 TWD per-person price.
+Lunch remains extra with its price unconfirmed, not included.
+Keep original activity and venue names and Asia/Taipei in the full notice.
+
+Try a different situation yourself
 
 New fictional L2: 紙上散步 at Room B on 2026/12/03 15:00 (Asia/Taipei); free; register by 12/01 12:00 (Asia/Taipei); materials provision unknown. No official English activity name. Write both language versions and a fact comparison independently.
 
 Chinese preserves 12/03 15:00, B室, free admission, 12/01 12:00 registration deadline, and unknown materials. English example: 紙上散步 is at Room B on 2026/12/03 at 15:00 (Asia/Taipei), free of charge. Register by 2026/12/01 12:00 (Asia/Taipei). Materials provision is unconfirmed. Free admission does not imply included materials.
 
-Take the challenge
+Try a more involved task
 
 Make a two-sentence spoken script while retaining limitations.
 
@@ -45,22 +57,6 @@ Write two sentences each in Chinese and English: activity and price first, then 
 
 Chinese: 12月10日19:00有線上交流，每人200 TWD。請於12月8日17:00前報名，參加連結待提供；以上日期皆2026年，時間皆Asia/Taipei。 English: The online exchange is on 2026/12/10 at 19:00 (Asia/Taipei), at 200 TWD per person. Register by 2026/12/08 17:00 (Asia/Taipei); the access link has not been provided. Wording can vary; time zone and missing-link status cannot be dropped.
 
-Show these results when you finish
+Save your work and continue later
 
-Completed both language versions.
-Dates, times, units, limitations, and unknowns match field by field.
-Did not turn invented proper-name translations into official names.
-
-Check one key idea
-
-May L1's English version say lunch is included?
-
-No; the source says extra cost with price undecided
-Yes, because there is an admission fee
-Yes, to keep English short
-
-No; the source says extra cost with price undecided
-
-Rewriting may shorten wording but cannot change what is included.
-
-Text and code are not saved automatically or uploaded. Download your record first. Next time, open the text file and paste your work back into the module. Save before changing language too.
+Save the AI response in your own notes and add one sentence about what you changed. You can also use the optional record below.
