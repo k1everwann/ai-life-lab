@@ -59,6 +59,10 @@ def validate():
         embedded=json.loads(''.join(page.data))
         assert len(embedded['modules'])==12
         assert 'showcase' not in embedded, 'Embedded private-project simulations have been retired'
+        fixture_files={'guided':'broken-checklist','independent':'reset-bug','challenge':'search-reset-bug'}
+        for kind,name in fixture_files.items():
+            expected=(ROOT/'downloads/curriculum'/f'{name}-{lang}.html').read_text(encoding='utf-8')
+            assert embedded['debugFixtures'][kind]==expected,f'{lang}/{kind}: copied debugging source differs from downloadable file'
         for m,e in zip(modules,embedded['modules']):
             assert e['id']==m['id'] and e['source']==m['locales'][lang]['source']
         assert len(page.user_fields)==26 and not any(''.join(x).strip() for x in page.user_fields),'Learner text/code must start blank'

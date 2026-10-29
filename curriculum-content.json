@@ -128,7 +128,7 @@
             "集合仍是11/21 09:00；入住時間仍待確認。"
           ],
           "quiz": {
-            "question": "B1套用後，入住時間應寫什麼？",
+            "question": "套用第二輪的下載期限更新後，入住時間應寫什麼？",
             "choices": [
               "待確認，來源未提供",
               "19:00",
@@ -174,7 +174,7 @@
             "Meeting remains 11/21 09:00; check-in remains to confirm."
           ],
           "quiz": {
-            "question": "After applying B1, what is the check-in time?",
+            "question": "After the second-round ticket-deadline update, what is the check-in time?",
             "choices": [
               "To confirm; the source does not provide it",
               "19:00",
@@ -307,7 +307,7 @@
             "接著送出：「改得更親切，縮成兩句，不用太正式。」",
             "挑選你喜歡的版本保存。這是供你使用的回覆文字，尚未寄出；想練真正讀信再展開進階連線。"
           ],
-          "expected": "待辦：11/18 17:00前回覆是否參加。回覆可以是：「您好，我會參加11/21的活動！請問集合地點什麼時候會公布？謝謝。」語氣可以不同，能清楚表達你的意思就好。",
+          "expected": "待辦：2026/11/18 17:00（Asia/Taipei）前回覆是否參加。第一輪三句版：「您好，我會參加11/21的活動！請問集合地點什麼時候會公布？謝謝。」第二輪兩句版：「您好，我會參加11/21的活動！請問集合地點什麼時候會公布，謝謝。」兩版都表達會參加並詢問集合地點；縮短後仍保留原意，草稿尚未寄出。",
           "independent": {
             "task": "試試另一封虛構郵件：「請於11/05 12:00前確認是否來領書，領取地點稍後通知。」你的決定是可以領取。自己寫一句要求，請AI協助回覆。",
             "expected": "例如：「您好，我可以來領書，請再告訴我領取地點，謝謝！」並記得在11/05 12:00前回覆。"
@@ -321,7 +321,7 @@
           "checks": [
             "回覆清楚表達會參加，並詢問集合地點。",
             "活動是11/21；需在11/18 17:00前回覆。",
-            "草稿尚未寄出，可以先改成自己的口氣。"
+            "第二輪回覆是兩句，仍表達會參加並詢問集合地點；草稿尚未寄出。"
           ],
           "quiz": {
             "question": "你想讓回覆自然一點，可以怎麼追問？",
@@ -361,7 +361,7 @@
             "Then send: “Make it friendlier and just two sentences, without sounding too formal.”",
             "Save the version you like. This reply text has not been sent. Open the optional connection exercise to practice reading a real message."
           ],
-          "expected": "Action: reply by 11/18 17:00. A possible draft: “Hello, I’ll be attending on 11/21! When will the meeting location be announced? Thank you.” Wording can vary as long as it expresses your decision.",
+          "expected": "Action: reply by 2026/11/18 17:00 (Asia/Taipei). First-round three-sentence draft: “Hello, I’ll be attending on 11/21! When will the meeting location be announced? Thank you.” Second-round two-sentence draft: “Hello, I’ll be attending on 11/21! Could you let me know when the meeting location will be announced, please?” Both confirm attendance and ask about the location. Shortening preserves the meaning; neither draft has been sent.",
           "independent": {
             "task": "Try a different fictional email: “Please confirm by 11/05 12:00 whether you can collect your books. We will send the pickup location later.” You can collect them. Write your own short request for help replying.",
             "expected": "For example: “Hello, I can collect the books. Please let me know the pickup location. Thank you!” Remember to reply by 11/05 12:00."
@@ -375,7 +375,7 @@
           "checks": [
             "The reply says you will attend and asks about the meeting location.",
             "The activity is 11/21; the reply is due by 11/18 17:00.",
-            "The draft has not been sent; you can adjust its tone first."
+            "The second-round reply has two sentences, still confirms attendance, and asks about the location; it has not been sent."
           ],
           "quiz": {
             "question": "How can you ask for a more natural reply?",
@@ -753,7 +753,8 @@
             "複製程式碼，貼到本頁「完整 HTML 程式碼」欄，不含開頭與結尾的三個反引號；按「更新隔離預覽」。",
             "在預覽勾兩項、取消一項，再按重設：數字應依序是2/3、1/3、0/3。",
             "按「下載這份 HTML」，從瀏覽器下載清單開啟檔案，看看重新開啟是否回到0/3。",
-            "回同一個AI對話送出：「只把帶水壺改成帶筆記本，給我完整新版HTML。」把新版貼回工作區、更新預覽，再試一次。"
+            "回同一個AI對話送出：「只把帶水壺改成帶筆記本，給我完整新版HTML。」把新版貼回工作區、更新預覽，再測勾選、取消與重設。",
+            "再次按「下載這份 HTML」，把新版另存為departure-v2.html並保留首版；重開新版，確認第三項是「帶筆記本」且起始為0/3。"
           ],
           "expected": "你會得到一個可開啟的HTML檔：三項任務可勾選，完成數會跟著變，重設與重新開啟回到0/3。新版把「帶水壺」換成「帶筆記本」。配色和排版可以不同，重點是你真的能用。",
           "independent": {
@@ -769,7 +770,7 @@
           "checks": [
             "勾兩項顯示2/3，取消一項1/3，重設0/3。",
             "重新開啟回到0/3；此練習不保存進度。",
-            "修改版只有第三項改成「帶筆記本」，計數仍正常。"
+            "修改版只有第三項改成「帶筆記本」，計數仍正常；已保留首版，另存departure-v2.html並重開確認起始0/3。"
           ],
           "quiz": {
             "question": "想把清單中的一項改掉，可以怎麼說？",
@@ -796,7 +797,8 @@
             "Copy the code into this page’s Complete HTML code field without the surrounding triple backticks. Select Update isolated preview.",
             "In the preview, check two items, uncheck one, then reset. Counts should be 2/3, 1/3, and 0/3.",
             "Select Download this HTML. Open the file from your browser downloads and check that reopening starts at 0/3.",
-            "In the same AI chat send: “Change only Bring a water bottle to Bring a notebook; give me complete updated HTML.” Paste the new code into the workspace, update the preview, and try again."
+            "In the same AI chat send: “Change only Bring a water bottle to Bring a notebook; give me complete updated HTML.” Paste the new code into the workspace, update the preview, and test checking, unchecking, and reset again.",
+            "Select Download this HTML again and save the new version as departure-v2.html, keeping the first version. Reopen the new file and confirm the third task is Bring a notebook and the initial count is 0/3."
           ],
           "expected": "You get an HTML file that opens in your browser: three checkable tasks, a count that updates, and reset and reopening both return to 0/3. The new version replaces Bring a water bottle with Bring a notebook. Colors and layout may vary; what matters is that you can use it.",
           "independent": {
@@ -812,7 +814,7 @@
           "checks": [
             "Check two for 2/3, uncheck one for 1/3, reset for 0/3.",
             "Reopening starts at 0/3; this exercise does not save progress.",
-            "The revised version changes only the third task to Bring a notebook; counting still works."
+            "The revised version changes only the third task to Bring a notebook; counting still works. Keep the first version, save departure-v2.html separately, and reopen it to check the initial 0/3."
           ],
           "quiz": {
             "question": "How can you request a change to one checklist item?",
@@ -845,20 +847,20 @@
           "source": "虛構故障清單有三項：下載車票、確認集合地點、帶水壺。\n故障檔：downloads/curriculum/broken-checklist-zh-Hant.html\n可用對照檔：downloads/curriculum/correct-checklist-zh-Hant.html\n已知問題：第一項有打勾，完成數卻沒有增加。",
           "prompt": "我會貼上故障HTML。只勾第一項時應顯示1/3，卻是0/3；勾前兩項應是2/3，卻是1/3。請找出原因，只修正計數問題，保留原有文字、重設與重開歸零。給我完整修正版，並簡短說明改了哪裡。",
           "steps": [
-            "按「下載故障版清單」及「下載參考修正版」，保留兩份原檔。",
+            "按「下載故障原檔」及「下載參考修正版」，保留兩份原檔。",
             "用瀏覽器開故障檔，先勾第一項，再勾第二項：會看到錯誤的0/3、1/3。",
-            "用純文字編輯器開故障檔，把完整程式碼與「給AI要求」貼給自己的AI。",
+            "按「複製故障程式碼與要求」，把完整故障HTML與修正要求直接貼到自己的AI並送出。",
             "把AI修正後的完整HTML貼到本頁「完整 HTML 程式碼」，按「更新隔離預覽」。",
             "試第一項單勾、前兩項、取消第一項、重設：應是1/3、2/3、1/3、0/3。按「下載這份 HTML」留下修正版。",
             "另開保留的參考修正版，練習回到可用的版本。"
           ],
           "expected": "程式只從第二項開始數，所以漏掉第一項。修正應移除計數中的.slice(1)，讓全部核取方塊都列入。修好後：只勾第一項1/3，勾前兩項2/3，取消第一項1/3，重設0/3。不能一律加1，否則全部沒勾也會顯示1。",
           "independent": {
-            "task": "下載獨立題虛構故障檔downloads/curriculum/reset-bug-zh-Hant.html，另存副本再測。兩項讀書任務為「選文章」「寫三個問題」，起始0/2，勾兩項2/2；按重設後兩個勾都清掉，數字卻仍2/2。此指定檔確實定義updateCount()，但reset只清勾而未呼叫它。以文字編輯器開啟此檔，把完整內容與你的重現報告交給AI，要求最小修正，另存後重測；可下載correct-reset-zh-Hant.html對照，不套用到不明結構的其他程式。",
+            "task": "開啟獨立題虛構故障網頁，並下載downloads/curriculum/reset-bug-zh-Hant.html保留原檔。兩項讀書任務為「選文章」「寫三個問題」，起始0/2，勾兩項2/2；按重設後兩個勾都清掉，數字卻仍2/2。此指定檔確實定義updateCount()，但reset只清勾而未呼叫它。按這題的「複製故障程式碼與要求」，直接貼到自己的AI，補上你的重現報告並要求最小修正。把完整修正版貼回工作區測試，下載另存後重開再測；可下載correct-reset-zh-Hant.html對照，不套用到不明結構的其他程式。",
             "expected": "重現：重開→勾兩項→重設；預期未勾且0/2，實際未勾但2/2。清勾後加updateCount()；測2→重設0→再勾第一項1。不能只隱藏錯誤數字。"
           },
           "challenge": {
-            "task": "下載固定搜尋／重設故障檔search-reset-bug-zh-Hant.html，保留原檔並另存副本。先重現隱藏項未清除，再把完整程式碼交AI最小修正，最後回歸測試。",
+            "task": "開啟固定搜尋／重設故障網頁，下載search-reset-bug-zh-Hant.html保留原檔。先重現隱藏項未清除，再按這題的「複製故障程式碼與要求」直接貼到自己的AI，補上重現結果並要求最小修正。把完整修正版貼回工作區，下載另存副本，最後重開並依下方步驟回歸測試。",
             "source": "虛構故障檔：downloads/curriculum/search-reset-bug-zh-Hant.html；對照檔：downloads/curriculum/correct-search-reset-zh-Hant.html。三項依序為下載車票、確認集合地點、帶水壺。計數應包含全部項目；搜尋只影響顯示；重設應清除所有勾選及搜尋。刻意錯誤：重設只清除目前可見項，隨後清搜尋，因此原先隱藏的勾選仍保留。",
             "prompt": "我會貼上這份故障HTML。先說明並重現：勾第一與第三項為2/3；搜尋「車票」只見第一項但仍2/3；按重設預期全顯且0/3，實際全顯但1/3、第三項仍勾。請只修正reset，讓它遍歷所有核取方塊而非僅可見項，保留搜尋及計數範圍。回傳完整修正版與最小差異，列回歸步驟。",
             "expected": "故障重現：勾1與3→2/3；搜車票→只1項可見、仍2/3；重設→全顯但1/3（第三仍勾）。修正後同樣操作，重設必須全顯且0/3，隱藏的第三項也已清除。再勾前兩項2/3→取消第一項1/3→重設0/3；搜尋仍只改顯示、不改計數範圍。修正只將reset清除範圍改為全部checkbox，不刪除第三項或硬把數字設0來掩蓋殘留勾選。保留原檔，需復原時重新開啟它。"
@@ -889,20 +891,20 @@
           "source": "The fictional checklist has three tasks: Download tickets, Confirm meeting location, Bring a water bottle.\nBroken file: downloads/curriculum/broken-checklist-en.html\nWorking comparison: downloads/curriculum/correct-checklist-en.html\nKnown issue: checking the first item does not increase the completed count.",
           "prompt": "I will paste broken HTML. Checking only the first item should show 1/3 but shows 0/3; checking the first two should show 2/3 but shows 1/3. Find the cause and fix only the counting issue. Keep the text, reset, and zero-on-reopen behavior. Give complete corrected code and briefly explain the change.",
           "steps": [
-            "Select Download the broken checklist and Download the reference fix. Keep both originals.",
+            "Select Download the original file and Download the reference fix. Keep both originals.",
             "Open the broken file in a browser. Check the first item, then the second: it incorrectly shows 0/3 and 1/3.",
-            "Open the broken file in a plain-text editor. Paste its complete code and the Request for AI into your AI tool.",
+            "Select Copy broken code and request. Paste the complete broken HTML and repair request directly into your AI tool and send them.",
             "Paste AI’s complete corrected HTML into this page’s Complete HTML code field and select Update isolated preview.",
             "Try the first item alone, the first two, unchecking the first, and reset: expect 1/3, 2/3, 1/3, and 0/3. Select Download this HTML to keep the fix.",
             "Open the retained reference fix separately, practicing a return to a working version."
           ],
           "expected": "The code starts counting from the second item, skipping the first. Remove .slice(1) from the counting expression so every checkbox is included. After repair: first item alone 1/3, first two 2/3, uncheck the first 1/3, reset 0/3. Always adding 1 would incorrectly show 1 when nothing is checked.",
           "independent": {
-            "task": "Download the fictional independent-task bug file downloads/curriculum/reset-bug-en.html and save a copy before testing. Its two reading tasks are Choose an article and Write three questions. It starts at 0/2; checking both gives 2/2. Reset clears the checks but still displays 2/2. This specific file defines updateCount(), but reset clears checks without calling it. Open this file in a text editor and send its complete contents with your reproduction report to AI. Request a minimal fix, save separately, and retest. Download correct-reset-en.html for comparison; do not apply the change to unrelated code with an unknown structure.",
+            "task": "Open the fictional independent-task bug webpage and download downloads/curriculum/reset-bug-en.html to keep the original. Its two reading tasks are Choose an article and Write three questions. It starts at 0/2; checking both gives 2/2. Reset clears the checks but still displays 2/2. This specific file defines updateCount(), but reset clears checks without calling it. Select this exercise’s Copy broken code and request button, paste directly into your AI tool, add your reproduction report, and request a minimal fix. Test the complete repaired HTML in the workspace, download it as a separate file, then reopen and retest. Download correct-reset-en.html for comparison; do not apply the change to unrelated code with an unknown structure.",
             "expected": "Reproduce: reopen→check both→reset. Expected unchecked and 0/2; actual unchecked and 2/2. Call updateCount() after clearing checks. Test 2→reset 0→check first 1. Do not merely hide the incorrect number."
           },
           "challenge": {
-            "task": "Download the fixed search/reset bug exercise search-reset-bug-en.html, preserve the original, and save a working copy. Reproduce the uncleared hidden item, send the full code to AI for a minimal fix, and run regression tests.",
+            "task": "Open the prepared search/reset bug webpage and download search-reset-bug-en.html to preserve the original. Reproduce the uncleared hidden item. Select this exercise’s Copy broken code and request button, paste directly into your AI tool, add the observed result, and request a minimal fix. Paste the complete repaired HTML into the workspace, download a separate working copy, then reopen it and run the regression steps below.",
             "source": "Fictional bug file: downloads/curriculum/search-reset-bug-en.html; reference fix: downloads/curriculum/correct-search-reset-en.html. Tasks in order: Download tickets, Confirm meeting location, Bring a water bottle. The count includes all items; search changes visibility only; reset must clear every checkbox and search. Intentional bug: reset clears only currently visible items before clearing search, leaving hidden checked items checked.",
             "prompt": "I will paste this broken HTML. Explain and reproduce: check the first and third items for 2/3; search tickets so only the first is visible, still 2/3; reset should show all items at 0/3, but actually shows all at 1/3 with the third still checked. Fix only reset so it traverses all checkboxes rather than just visible ones. Preserve search and counting scope. Return the complete fixed file, minimal difference, and regression steps.",
             "expected": "Reproduction: check items 1 and 3→2/3; search tickets→one visible, still 2/3; reset→all visible but 1/3, with the third still checked. After the fix, the same sequence must reset to all visible and 0/3, clearing the hidden third item too. Then check the first two 2/3→uncheck first 1/3→reset 0/3. Search still changes only visibility, not counting scope. Change the reset clearing scope to all checkboxes; do not delete the third item or force the display to zero while leaving it checked. Preserve the original and reopen it if restoration is needed."
