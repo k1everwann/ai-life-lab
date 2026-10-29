@@ -10,6 +10,11 @@
   const say = (id, text) => { $(id).textContent = text; };
   const byKey = key => modules.find(module => module.id === key);
   const article = key => $(byKey(key).anchor);
+  all(".visual-step > summary").forEach(summary => summary.addEventListener("click", () => {
+    requestAnimationFrame(() => {
+      if (summary.parentElement.open) summary.parentElement.scrollIntoView({block:"start", behavior:"instant"});
+    });
+  }));
   const imageDialog = $("screenshot-dialog");
   let imageTrigger = null;
   all("[data-screenshot]").forEach(link => link.addEventListener("click", event => {

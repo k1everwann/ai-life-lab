@@ -80,6 +80,8 @@ def render_module(module, lang, modules, prefix):
         return button(label or l['copy'],f'data-copy-module="{key}" data-copy-kind="{kind}"')+f'<p id="copy-{key}-{kind}" role="status"></p>'
     out=f'<article id="{module["anchor"]}" class="module wrap section" data-module="{key}">'
     out+=p(l['lesson'].format(n=idx+1)+' · '+str(module['minutes'])+' '+l['minutes'],'eyebrow')+'<h1 tabindex="-1">'+esc(c['title'])+'</h1>'+p(c.get('why',c['goal']),'lead')
+    if c.get('connection'):
+        out+='<p class="lesson-mode">'+('Start with the sample text; no account connection is needed. ' if lang=='en' else '先貼上範例文字練習，不需要連接帳號。')+'<a href="#connection-'+key+'">'+('Want to connect your account? →' if lang=='en' else '想連接自己的帳號？→')+'</a></p>'
     out+='<div class="outcome"><strong>'+l['outcome']+'</strong>'+p(c['goal'])+'<div class="example-result"><span>'+l['sample']+'</span>'+p(c.get('outcome',c['expected']))+'</div>'+p(l['samplehint'],'small-text')+'</div>'
     out+='<div class="lesson-shortcuts"><a class="button" href="#do-'+key+'">'+l['follow']+'</a>'+button(l['quick'],f'data-jump-independent="{key}"')+'</div>'
     out+=f'<section class="guided learning-step" id="do-{key}"><h2>1. {l["follow"]}</h2>'+p(l['where'],'eyebrow')+listing(c['steps'],'ol')
