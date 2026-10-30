@@ -1,10 +1,10 @@
-Turn an invitation into a to-do
+Build a team for a school puzzle event
 
-When you receive an invitation or sign-up notice, find the next thing you need to do.
+Invite teammates with a clear reply deadline, without confusing it with the event date.
 
 What you will make
 
-Get a dated to-do and a short reminder you can send to a friend.
+Make a sign-up reminder so teammates know what to do next.
 
 Example result
 
@@ -15,12 +15,12 @@ This is a prepared example. Your AI may use different wording.
 
 Follow along
 
-Work in your own AI tool
+AI is operated by an eligible learner or an adult instructor
 
 Practice material
 
 Fictional teaching notice A1
-Activity date: 2026/11/21.
+School puzzle event date: 2026/11/21.
 Reply whether you will attend by 2026/11/18 18:00 (Asia/Taipei).
 The meeting location has not been announced.
 
@@ -28,7 +28,7 @@ Request for AI
 
 Turn this notice into one to-do: what to do and by when. List any details that have not been announced.
 
-1. Open your usual AI tool in another browser tab and sign in. Keep this lesson open so you can return to it.
+1. Use an AI tool you are eligible to use, or give your request to the instructor to operate. Without an account, open the classroom exercise to edit and check a prepared result.
 2. Copy the practice text and request below, paste both into the AI chat, and send them.
 3. Read the answer, then send: “Make this one friendly reminder I can send to a friend.”
 4. Check that the shorter version keeps the 11/18 18:00 reply deadline. Copy your favorite version to notes or save it in this lesson’s record area.
@@ -44,20 +44,31 @@ The short version keeps the action and does not invent a meeting location.
 
 Try a different situation yourself
 
-New fictional source A2: reading activity on 2026/12/03; choose a topic by 12/01 12:00 (Asia/Taipei); classroom undecided. In a new chat, write the action and unknown, and save a second record.
+Using A1, write a reminder for a teammate seeing the notice for the first time. Choose the tone and save a second version.
 
-Choose a topic by 12/01 12:00; source A2; classroom to confirm; activity on 12/03. Actually save and reopen it; reading this answer alone is not hands-on completion.
+Keep the 11/18 18:00 reply deadline, 11/21 event, and unconfirmed meeting place; include at least one change you chose.
 
 Try a more involved task
 
-Make a two-sentence note for a partner, preserving the deadline and unknown.
+Shorten the reminder to 40 English words for teammates who already know the event.
 
-Fictional A3: sharing session on 2026/12/05; submit a topic by 12/02 17:00 (Asia/Taipei); 5 minutes per speaker; venue undecided.
+Fictional teaching notice A1
+School puzzle event date: 2026/11/21.
+Reply whether you will attend by 2026/11/18 18:00 (Asia/Taipei).
+The meeting location has not been announced.
 
-Rewrite A3 in two sentences. Put the action and deadline in the first; put the activity date, speaking time, and unknown in the second.
+Write a teammate reminder of at most 40 English words. Keep the reply action, 11/18 18:00 deadline, and unknown meeting place; you may omit the event date. Explain what you omitted and why.
 
-Submit your topic by 2026/12/02 17:00 (Asia/Taipei). The session is on 12/05, with 5 minutes per speaker; the venue is to be confirmed.
+Example: “Reply by 11/18 18:00 to say whether you will join. Meeting place to be announced.” Explain that the known event date was omitted; restore it for a new teammate.
+
+Classroom task: adult demo / prepared-material review
+
+Read the prepared materials here. Rewrite the reminder on paper in your own teammate-friendly voice. Circle 11/18 18:00 and check that no meeting place was invented.
+
+What to check
+
+Change at least one part of the tone; preserve the 11/18 18:00 reply deadline, 11/21 event date, and unannounced place.
 
 Save your work and continue later
 
-Save the AI response in your own notes and add one sentence about what you changed. You can also use the optional record below.
+Save your work and explain what you chose to change and how you checked it. Credit AI, prepared material, or peer help. Open your downloaded file once.

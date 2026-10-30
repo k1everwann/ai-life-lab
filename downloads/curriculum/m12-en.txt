@@ -1,64 +1,72 @@
-Make something you can use next week
+Make something you will use next week
 
-Use asking, revising, and trying things out on a task where you actually want to save time.
+Combine asking, revising, and trying to make something you actually want to use.
 
 What you will make
 
-Get a small piece of work for your own life, such as a shopping list and preparation order.
+Choose a small need, make a usable result, and ask a partner to try it.
 
 Example result
 
-Saturday dinner | Buy tomatoes, salad vegetables, and fruit.
-Wash and chop → prepare sauce and pasta → mix salad; eat at 18:30.
+Board-game meetup | Two games, pen and paper available.
+14:00 explain rules → game durations to confirm → 15:50 tidy → 16:00 finish.
 
 This is a prepared example. Your AI may use different wording.
 
 Follow along
 
-Work in your own AI tool
+AI is operated by an eligible learner or an adult instructor
 
 Practice material
 
-Fictional example: four people having dinner at home on Saturday.
-Aim to eat at 18:30. Make tomato pasta, salad, and fruit.
-Pasta and olive oil are already at home; other ingredients need buying.
-Need: a shopping list and a simple preparation order. No budget calculation needed.
+Fictional example: 3 people play board games in the club room on Saturday, 14:00–16:00.
+Two board games and pen and paper are already available; need a preparation checklist and activity sequence.
+Explain rules first, play, then leave 10 minutes for tidying up.
+Game durations are not provided. No website or budget calculation is needed.
 
 Request for AI
 
-Use the needs and data below to make a simple, usable first version as a text checklist. No website needed. Then ask what I most want to adjust.
+Make an “Already available / Prepare / Activity sequence” checklist from the data. Mark unknown times instead of inventing game durations; label additional items as suggestions. Give a usable first version, then ask what I want to change.
 
-1. Choose something you will do next week: prepare a meal with friends, organize books, or plan practice. You can also use the sample below.
-2. Paste your need and data into AI to get a first version.
-3. Change one thing after reading it: add people, use a table, or make it shorter for a phone.
-4. Walk through the real situation with your result. What is still missing? Ask AI to improve it and save it somewhere you can find again.
+1. Choose a practice checklist, reading tracker, club activity pack, or another small need. You may use the board-game example.
+2. Give three necessary details and your request to AI or the instructor for a usable result.
+3. Change one condition yourself, such as 3 people to 5. Request a complete revision and a description of what changed.
+4. Ask a partner to try the first step, identify one obstacle, and fix it. Keep the original and revised versions.
 
 After trying: compare a possible result
 
-A first version can have “Buy” and “Prepare” sections. Buy tomatoes, salad vegetables, fruit, and suggested extras; list the pasta and olive oil separately as already available. Wash and chop produce, prepare sauce, cook pasta, then mix the salad. Any quantities added by AI are suggestions you can adjust to appetites.
+Already available: two board games, pen and paper. Suggested preparation might include drinking water. Sequence: start explaining rules at 14:00 → play after confirming game durations → tidy up at 15:50 → finish at 16:00. Game durations are unknown; do not invent finish times for each game.
 
 Check these parts of your result
 
-The result contains usable content, not only advice on how to plan.
-Pasta and olive oil are already available; they need not be listed as required purchases.
-Relevant details change with new conditions; adjust AI-suggested quantities to your needs.
+The result has directly usable content, not just planning advice.
+The two games and pen and paper are available; do not require buying them again.
+Game durations are unknown; do not invent finish times. Update details affected by new conditions.
 
 Try a different situation yourself
 
-Use your own small need, such as a weekly reading plan or a packing list. Provide three necessary details, ask AI for a first version, then change one condition. Do not paste private or confidential information.
+Use your own small need. Write three necessary details and one criterion for usefulness. Obtain a result and personally change one thing.
 
-There is no single correct answer. If you can explain which step it saves and use it for one small action, you have a useful starting point.
+There is no single answer. Use the work for one small action and explain your change. Use fictional data, not private photos, names, or account details.
 
 Try a more involved task
 
-Make your result easy for someone else to use.
+Add instructions for someone joining for the first time.
 
-Use the work you just made. For the dinner example, change to six people, including one who avoids dairy.
+Use your work; for the board-game example, add a companion unfamiliar with the rules. All other conditions remain unchanged.
 
-Update my work for this new condition. Say what changed, then give the complete new version. Add a short explanation for a first-time user.
+Add “How to start for the first time” without inventing game rules. Ask a partner to follow the first step, then fix one obstacle.
 
-For dinner, adjust suggested quantities for six and offer dairy separately or use dairy-free alternatives. Keep the original. Ask a companion to read the new instructions and try starting; improve any confusing parts.
+For example, choose a game, take out its rulebook, and check everyone understands before starting. Use original instructions for unknown rules. The partner can find the first step, and the author keeps both versions.
+
+Classroom task: adult demo / prepared-material review
+
+Read the prepared materials here. Change the board-game group from 3 to 5 people yourself, marking that each game’s player limit must be checked again. Ask a partner to find the first step in the revision and keep both versions.
+
+What to check
+
+Group changed to 5; game player limits remain to confirm, with no invented rules. A partner can find the first step; original and revision are kept.
 
 Save your work and continue later
 
-Save the AI response in your own notes and add one sentence about what you changed. You can also use the optional record below.
+Save your work and explain what you chose to change and how you checked it. Credit AI, prepared material, or peer help. Open your downloaded file once.

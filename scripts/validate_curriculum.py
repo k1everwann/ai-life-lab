@@ -46,6 +46,7 @@ def validate():
                 assert all(c['connection'].get(k) for k in ('title','source','prompt','steps','expected'))
             assert 3<=len(c['steps'])<=7
             assert c['independent']['task'] and c['independent']['expected']
+            assert c['classroom']['task'] and c['classroom']['expected'], f'{m["id"]}: no-account path missing'
             assert all(c['challenge'][k] for k in ('task','source','prompt','expected'))
             assert 0<=c['quiz']['answer']<len(c['quiz']['choices'])
             assert c['quiz']['answer']==m['locales']['zh-Hant']['quiz']['answer']
@@ -59,6 +60,8 @@ def validate():
         embedded=json.loads(''.join(page.data))
         assert len(embedded['modules'])==12
         assert 'showcase' not in embedded, 'Embedded private-project simulations have been retired'
+        for key,name in {'M08':'correct-checklist','M09':'broken-checklist','M09fixed':'correct-checklist'}.items():
+            assert embedded['preparedFixtures'][key]==(ROOT/'downloads/curriculum'/f'{name}-{lang}.html').read_text(encoding='utf-8'),f'{key}: prepared code differs from teaching file'
         fixture_files={'guided':'broken-checklist','independent':'reset-bug','challenge':'search-reset-bug'}
         for kind,name in fixture_files.items():
             expected=(ROOT/'downloads/curriculum'/f'{name}-{lang}.html').read_text(encoding='utf-8')

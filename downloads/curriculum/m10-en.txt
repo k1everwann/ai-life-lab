@@ -1,10 +1,10 @@
-Let repeated tasks follow a rule
+Design automatic fan rules for a model room
 
 Before automating a reminder, spell out when it should and should not happen.
 
 What you will make
 
-Get a row-by-row simulation explaining the temperature rule.
+Try fan rules against five fictional sensor readings without connecting real devices.
 
 Example result
 
@@ -15,12 +15,12 @@ This is a prepared example. Your AI may use different wording.
 
 Follow along
 
-Work in your own AI tool
+AI is operated by an eligible learner or an adult instructor
 
 Practice material
 
-Fictional temperature readings for text simulation; no equipment connection.
-Rule: at 28°C or above, create one simulated air-conditioner start request and one notification. Below 28°C, do nothing. With no temperature, do nothing for now. If an event ID has already been processed, do not process it again.
+Model-room fan scenario. Fictional temperature readings for text simulation; no equipment connection.
+Rule: at 28°C or above, create one simulated model-room fan start request and one notification. Below 28°C, do nothing. With no temperature, do nothing for now. If an event ID has already been processed, do not process it again.
 In order: E01: 27°C; E02: 28°C; E03: 29°C; E04: no temperature; E02: 28°C (the same event sent again).
 
 Request for AI
@@ -40,7 +40,7 @@ Check these parts of your result
 
 At least 28 includes 28; above 28 does not.
 Missing readings cause no action; repeated event IDs cause no new notification.
-This is text simulation, not actual air-conditioner control.
+This is text simulation, not actual model-room fan control.
 
 Try a different situation yourself
 
@@ -50,14 +50,22 @@ H01 no reminder; H02 one; H03 one; H04 unknown, none; duplicate H02 skipped. Tot
 
 Try a more involved task
 
-Specify failure retries and cooldown state explicitly.
+Add a 5-minute notification cooldown.
 
-Fictional simulation, Asia/Taipei. Rules: >=28 creates a request; at most 2 attempts per ID including the first; only success marks the event processed and allows notification; persistent failure goes to a person. Other events within 5 minutes after a successful notification may create requests but no notification. R1 at 10:00, 28°C: first attempt fails, retry succeeds 10:01. R1 redelivered 10:02. R2 at 10:03, 29°C: succeeds. R3 at 10:07, 28°C: both attempts fail.
+Fictional model room simulation, Asia/Taipei: >=28°C creates a simulated fan request; check each new reading. After a successful notification, suppress further notifications for less than 5 minutes, but still create qualifying requests. R1 at 10:00 is 28°C; R2 at 10:03 is 29°C; R3 at 10:05 is 28°C. Assume all requests succeed, with no redeliveries.
 
-Simulate state only. List attempts, success/failure, deduplication, and notifications in order. Do not retry any external service.
+List request, notification, and reason for each event. Add only the cooldown rule; do not operate devices.
 
-R1: 2 attempts, succeeds and notifies once at 10:01; redelivery 10:02 skipped. R2: 1 successful attempt, no notification because only 2 minutes have passed. R3: 2 failed attempts, then stop and refer to a person; no success state or success notification. Total 5 attempts, 2 successful events, 1 notification. No unlimited retries.
+R1 requests and notifies; R2 requests but does not notify, only 3 minutes later; R3 requests and notifies, exactly 5 minutes after 10:00. Total 3 requests and 2 notifications; no devices connected.
+
+Classroom task: adult demo / prepared-material review
+
+Read the prepared materials here. Draw a decision table for the five events. Change “at least 28°C” to “above 28°C” yourself and identify the changed result; missing and repeated events still cause no action.
+
+What to check
+
+E01 27: no activation, 0 requests/0 notifications. E02 28: simulated activation, 1/1. E03 29: simulated activation, 1/1. E04 missing: unknown, 0/0. Redelivered E02: skipped, 0 new requests/0 new notifications. Total 2 requests and 2 notifications. A fresh >28 batch activates only E03, total 1; restoring >=28 gives 2. Comparison and deduplication are rules; AI can help write and explain them. No actual device was controlled.
 
 Save your work and continue later
 
-Save the AI response in your own notes and add one sentence about what you changed. You can also use the optional record below.
+Save your work and explain what you chose to change and how you checked it. Credit AI, prepared material, or peer help. Open your downloaded file once.

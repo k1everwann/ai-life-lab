@@ -1,10 +1,10 @@
-Tables: where did this month’s money go?
+School fair preparation: where did spending rise?
 
-Let AI group the numbers, then check a few important totals yourself.
+When preparing an event, check AI’s spending summary with a calculator rather than guessing.
 
 What you will make
 
-Get monthly totals, category differences, and a readable spending summary.
+Check two months of preparation spending and find the largest category increase.
 
 Example result
 
@@ -15,11 +15,11 @@ This is a prepared example. Your AI may use different wording.
 
 Follow along
 
-Work in your own AI tool
+AI is operated by an eligible learner or an adult instructor
 
 Practice material
 
-Fictional spending; purchase-month basis; all TWD. Positive values are spending; negatives are refunds.
+Context: monthly school fair preparation accounts. Meals are food trials, Transport is delivery travel, and Services is event support. Fictional spending; purchase-month basis; all TWD. Positive values are spending; negatives are refunds.
 ID,Month,Category,Amount
 S01,2026-09,Meals,1200
 S02,2026-09,Transport,400
@@ -55,14 +55,22 @@ September 500; October 600; increase 100, 20.0%. Books +60, transport +40. >40 s
 
 Try a more involved task
 
-Handle missing amounts, a zero baseline, and different currencies together.
+Focus on whether a missing amount prevents a complete total.
 
 Fictional category data: September courses 0 TWD, meals 100 TWD; October courses 200 TWD, meals amount missing, books 10 USD. No exchange rate; do not guess amounts.
 
-List known subtotals by currency, unknowns, and valid differences. Can the courses percentage be calculated? Can a complete October total or overall percentage change be claimed?
+Answer only: may October’s missing meals amount be treated as zero? Can the known 200 TWD subtotal and separately listed 10 USD be called a complete October total? No zero-baseline percentage calculation is needed.
 
 September known TWD total is 100. October known TWD subtotal is 200 with meals unknown; the separate 10 USD cannot be added directly. Courses increase by 200, but percentage change is undefined with a zero baseline. The complete October total and overall percentage change are unconfirmed; a known subtotal is not a complete total.
 
+Classroom task: adult demo / prepared-material review
+
+Read the prepared materials here. Check 2100 and 2350 with a calculator. Personally change “greater than 50” to “at least 50” and circle the qualifying categories again.
+
+What to check
+
+September 2100 and October 2350; Meals +150, Transport +50, Services +50. Greater than 50 selects Meals only; at least 50 selects all three without changing totals.
+
 Save your work and continue later
 
-Save the AI response in your own notes and add one sentence about what you changed. You can also use the optional record below.
+Save your work and explain what you chose to change and how you checked it. Credit AI, prepared material, or peer help. Open your downloaded file once.

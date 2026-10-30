@@ -2,6 +2,8 @@
 
 Public Traditional Chinese and English teaching materials for everyday AI, with flexible modules for different prior experience.
 
+- Current audience: ages 12–18 in one mixed-age class. Use shared creative/student-life tasks with freely chosen challenges, never age-based ability labels. Each lesson needs an account-independent prepared-material path, a learner-chosen change, a verifiable check and a saved result. Adults operate ChatGPT for under-13 learners; eligible minors need parent/guardian permission. Do not treat prepared code or adult demonstrations as learner-generated AI output. Connector exercises are optional adult demonstrations or practice by eligible users.
+
 - Keep HTML, CSS, and JavaScript dependency-free. GitHub Pages serves the repository root.
 - The homepage is a pool of twelve task-based bilingual modules, with a persistent lesson directory and one selected lesson visible at a time; project demonstrations belong to the instructor’s live presentation and must not be embedded in the website. Do not assume one ability level or lock navigation. Each lesson starts with an everyday use and a concrete sample result, then short actions. Further challenges, quizzes and records are optional disclosures, not prerequisites. Do not split learner and instructor content into different pages or link to instructor.html/next-steps.html from the main lesson. Keep earlier phone/computer workshops in practice.html as optional material.
 - Label fictional exercises, prepared outputs, and reconstructed project demos.

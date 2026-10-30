@@ -1,67 +1,73 @@
-Gmail: understand a message and draft a reply
+Reply to a board-game club invitation
 
-For invitations, confirmations, or questions, pull out the key point and reply in your own voice.
+When you want to join but have a question, use your own decision to guide the draft.
 
 What you will make
 
-Get a reply draft that confirms attendance and asks about the location.
+Write a two-sentence reply draft with your attendance decision and a specific question.
 
 Example result
 
-Hello, I’ll be attending on 11/21!
-When will the meeting location be announced? Thank you.
+Thanks for inviting me; I will join on 11/21!
+Should I bring a board game? (Unsent draft)
 
 This is a prepared example. Your AI may use different wording.
 
 Follow along
 
-Work in your own AI tool
+AI is operated by an eligible learner or an adult instructor
 
 Practice material
 
-Fictional practice email
-Subject: Cloudbank activity confirmation
-Hello! Please reply by 2026/11/18 17:00 (Asia/Taipei) to say whether you will attend the activity on 11/21. The meeting location will be announced later.
-Your decision: you will attend and would like to ask about the location.
+Fictional email | Subject: Board-game club collaboration
+Join our activity on 2026/11/21. Reply by 11/18 17:00 (Asia/Taipei). It does not say whether participants must bring a board game.
+Your decision: you will attend and want to ask whether to bring a game.
 
 Request for AI
 
-List what I need to do in this email, then write a polite three-sentence reply: I will attend and would like to ask about the meeting location. Give me a text draft first.
+Use my decision to draft two sentences: say I will attend, then ask whether to bring a board game. Provide a draft only; do not send it.
 
-1. Paste the sample email and request into AI. This step does not need a Gmail connection.
-2. Read the draft and check that it says you will attend and asks about the location.
-3. Then send: “Make it friendlier and just two sentences, without sounding too formal.”
-4. Save the version you like. This reply text has not been sent. Open the optional connection exercise to practice reading a real message.
+1. Give the fictional email and your decision to AI or the instructor; no email connection is needed.
+2. Check that the draft says you will attend and asks about bringing a game.
+3. Choose a change such as a friendlier or more formal tone, keeping your decision.
+4. Save your two-sentence version, marked “Draft — not sent.”
 
 After trying: compare a possible result
 
-Action: reply by 2026/11/18 17:00 (Asia/Taipei). First-round three-sentence draft: “Hello, I’ll be attending on 11/21! When will the meeting location be announced? Thank you.” Second-round two-sentence draft: “Hello, I’ll be attending on 11/21! Could you let me know when the meeting location will be announced, please?” Both confirm attendance and ask about the location. Shortening preserves the meaning; neither draft has been sent.
+Example: “Thanks for inviting me; I will join the activity on 11/21! Should I bring a board game?” Do not answer for the other club; no email has been sent.
 
 Check these parts of your result
 
-The reply says you will attend and asks about the meeting location.
-The activity is 11/21; the reply is due by 11/18 17:00.
-The second-round reply has two sentences, still confirms attendance, and asks about the location; it has not been sent.
+Clearly says you will attend.
+Bringing a game remains a question, not a promise from the other club; draft is unsent.
 
 Try a different situation yourself
 
-Try a different fictional email: “Please confirm by 11/05 12:00 whether you can collect your books. We will send the pickup location later.” You can collect them. Write your own short request for help replying.
+Change your decision to being unable to attend but wanting to ask about a future session. Write your own request and save another draft.
 
-For example: “Hello, I can collect the books. Please let me know the pickup location. Thank you!” Remember to reply by 11/05 12:00.
+Clearly declines this session and asks about another without inventing dates; still unsent.
 
 Try a more involved task
 
-Separate a partial reply from a schedule update.
+Add one thing you are willing to help with.
 
-Fictional thread: J1 organizer says meet 2026/11/07 09:00 and asks for attendance and meal choice. J2 organizer changes meeting to 10:00; all else unchanged. J3 learner replies only 'I will attend.' Meal choice remains unanswered. Time zone Asia/Taipei.
+Use the original invitation; you also decide you can help clear tables afterward.
 
-List the current arrangement, completed reply, and remaining reply. Draft a question without guessing the meal choice.
+Add one offer to help after the two-sentence draft. Do not assume acceptance or commit teammates.
 
-Meet 11/07 10:00 (J2); attendance answered (J3); meal unanswered. Attendance alone does not complete everything. Ask the learner 'Which meal would you like?' Do not fill in or send a choice before receiving it.
+Example: “I can also help clear the tables afterward if needed.” It is your offer, not a commitment by others.
 
-Optional: ask AI to read one Gmail message you choose
+Classroom task: adult demo / prepared-material review
 
-Prepare a practice message you may use, with no personal or confidential information. You can send the fictional email to yourself in a practice account, using a distinctive subject such as “AI practice – activity confirmation.” Note the actual sending date.
+Read the prepared materials here. Personally change the tone of one part of the prepared reply. With a partner, check the attendance decision and question about bringing a game, and label it unsent.
+
+What to check
+
+Example: “Thanks for inviting me; I will join the activity on 11/21! Should I bring a board game?” Do not answer for the other club; no email has been sent.
+
+Instructor extension: ask AI to read one Gmail message you choose
+
+An eligible adult operates an authorized practice account here; students do not need to register or connect accounts. Prepare a practice message you may use, with no personal or confidential information. You can send the fictional email to yourself in a practice account, using a distinctive subject such as “AI practice – activity confirmation.” Note the actual sending date.
 
 Use Gmail to read this practice email: subject [enter the exact subject], sending date [enter the actual date]. If several match, list them for me to choose. Read it, summarize my action, and write a reply in this chat only. Do not send it or create a Gmail draft.
 
@@ -74,4 +80,4 @@ You can open the specified original message, and AI has read its content and pro
 
 Save your work and continue later
 
-Save the AI response in your own notes and add one sentence about what you changed. You can also use the optional record below.
+Save your work and explain what you chose to change and how you checked it. Credit AI, prepared material, or peer help. Open your downloaded file once.
