@@ -56,6 +56,7 @@
     }
     article(key).dataset.exercise=kind;
     $("exercise-"+key).value=kind;
+    if($("workspace-task-"+key))say("workspace-task-"+key,ui.exercise_types[["guided","independent","challenge"].indexOf(kind)] || "");
     updateEvidence(key);
   }
   modules.forEach(m=>$("exercise-"+m.id).addEventListener("change",event=>setExercise(m.id,event.target.value)));
@@ -139,6 +140,9 @@
     } else if (focus) $("top").scrollIntoView();
   }
   window.addEventListener("hashchange", () => route(true));
+  all(".mobile-lessons a").forEach(link=>link.addEventListener("click",()=>{
+    document.querySelector(".mobile-lessons").open=false;
+  }));
   route(Boolean(location.hash));
   document.querySelector(".skip").addEventListener("click", event => {
     event.preventDefault();
@@ -187,7 +191,7 @@
     const m = byKey(button.dataset.copyModule);
     const kind = button.dataset.copyKind;
     setExercise(m.id,kind === "followup" ? "guided" : kind);
-    let text = kind === "connection" ? m.connection.prompt : kind === "followup" ? [m.followup.source,m.followup.prompt].join("\n\n") : kind === "independent" ? m.independent.task : kind === "challenge"
+    let text = kind === "connection" ? m.connection.prompt : kind === "followup" ? [m.followup.source,m.followup.prompt].filter(Boolean).join("\n\n") : kind === "independent" ? [m.independent.source,m.independent.task].join("\n\n") : kind === "challenge"
       ? [m.challenge.task, m.challenge.source, m.challenge.prompt].join("\n\n")
       : [m.source, m.prompt].join("\n\n");
     if (m.id === "M09" && debugFixtures[kind]) {
@@ -218,9 +222,9 @@
     const evidence=kind==='guided' && mode===1 ? 'classroom' : kind;
     const boxes = [...article(m.id).querySelectorAll(`[data-evidence-kind="${evidence}"] [data-evidence]`)];
     const code = saved.code.trim();
-    if (!request && !result && !code && !mode && !boxes.some(box => box.checked)) return null;
+    if (!request && !result && !code) return null;
     const typeIndex=["guided","independent","challenge","connection"].indexOf(kind);
-    const source=kind==="connection"?m.connection?.source:kind==="independent"?m.independent.task:kind==="challenge"?m.challenge.source:m.source;
+    const source=kind==="connection"?m.connection?.source:kind==="independent"?m.independent.source:kind==="challenge"?m.challenge.source:m.source;
     const prompt=kind==="connection"?m.connection?.prompt:kind==="independent"?m.independent.task:kind==="challenge"?m.challenge.prompt:[m.prompt,m.followup?[m.followup.source,m.followup.prompt].join("\n\n"):""].filter(Boolean).join("\n\n");
     return [
       `${m.id} ${m.title}`, `${ui.exercise}\n${ui.exercise_types[typeIndex] || (en?"Connected account":"連線練習")}`, `${ui.mode}\n${ui.modes[mode]}`, `${ui.source}\n${source || "—"}`,
@@ -255,9 +259,11 @@
   all("[data-code-download]").forEach(button => button.addEventListener("click", () => {
     const key = button.dataset.codeDownload;
     const code = $(`code-${key}`).value.trim();
-    if (!code) { say(`code-status-${key}`, ui.emptycode); return; }
-    download(code, `my-tool-${key.toLowerCase()}.html`, "text/html;charset=utf-8");
+    if (!code) { say(`code-status-${key}`, ui.emptycode); say(`code-download-status-${key}`, ui.emptycode); return; }
+    const kind=article(key).dataset.exercise || "guided";
+    download(code, `my-tool-${key.toLowerCase()}-${kind}.html`, "text/html;charset=utf-8");
     say(`code-status-${key}`, ui.downloadready);
+    say(`code-download-status-${key}`, ui.downloadready);
   }));
   all("[data-code]").forEach(field => field.addEventListener("input", () => {
     const key = field.id.replace("code-", "");

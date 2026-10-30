@@ -1,25 +1,19 @@
-School fair preparation: where did spending rise?
+Find what increased in the budget
 
-When preparing an event, check AI’s spending summary with a calculator rather than guessing.
+Open this lesson: https://k1everwann.github.io/ai-life-lab/en/index.html#lesson-analysis
 
-What you will make
+Compare two months of spending and check the increase.
 
-Check two months of preparation spending and find the largest category increase.
-
-Example result
+Prepared example result
 
 September 2100 → October 2350 TWD.
 Up 250, about 11.9%; meals increased by 150.
 
-This is a prepared example. Your AI may use different wording.
-
-Follow along
-
-Use ChatGPT or your usual AI tool
+1. Make a first version
 
 Practice material
 
-Context: monthly school fair preparation accounts. Meals are food trials, Transport is delivery travel, and Services is event support. Fictional spending; purchase-month basis; all TWD. Positive values are spending; negatives are refunds.
+School-fair preparation spending, grouped by the month it happened. Amounts are in TWD; negatives are refunds.
 ID,Month,Category,Amount
 S01,2026-09,Meals,1200
 S02,2026-09,Transport,400
@@ -32,45 +26,62 @@ Request for AI
 
 Using these six rows, calculate September and October totals, the increase, and percentage increase to 1 decimal. Show the change in each category. First find categories with an increase greater than 50.
 
-1. Paste the six rows and request into AI to get a spending summary.
-2. Use a calculator to check September 2100, October 2350, and an increase of 250.
-3. Then send: “Change greater than 50 to at least 50. Which categories appear?” Watch the result change from 1 category to 3.
-4. Try: “Add an October meals refund of -100 and recalculate.” October should become 2250. Save the explanation you find clearest.
+1. Select “Copy material and request” below.
+2. Paste into a new AI conversation and send.
+3. Return and check the points below. Ask AI to correct any errors.
 
-After trying: compare a possible result
+See a reference answer
 
 Original six rows: September 2100; October 2350; increase 250; 250÷2100×100≈11.9%. Categories: meals +150, transport +50, services +50. >50 selects meals only, 1 category; >=50 selects 3. Monthly totals do not change. After an October meals refund of -100: October 2250, increase 150, 150÷2100×100≈7.1%; net meals 1250, with all three categories +50.
 
-Check these parts of your result
+Check these points
 
-The original totals are 2100 and 2350: an increase of 250, about 11.9%.
-Greater than 50 selects meals; at least 50 selects all three categories.
-After the -100 refund, October is 2250: up 150, about 7.1%.
+September: TWD 2,100. October: TWD 2,350. Increase: TWD 250.
+250 ÷ 2,100 × 100% ≈ 11.9%.
+Only Meals increased by more than 50; all three categories increased by at least 50.
 
-Try a different situation yourself
+2. Change one thing and check
 
-New fictional TWD data: September books 300, transport 200; October books 360, transport 240. Calculate monthly totals and percentage change, then compare category increases >40 and >=40.
+Continue the same AI conversation. Use the request below or choose a change of your own.
+
+Change “increase greater than TWD 50” to “increase of at least TWD 50”. List the matching categories again without changing the totals.
+
+Meals alone becomes Meals, Transport, and Services. The overall increase is still TWD 250.
+
+3. Save your work
+
+Save the final response in your notes. Add what you changed and how you checked it.
+
+Try a different task
+
+September: books TWD 300, transport TWD 200.
+October: books TWD 360, transport TWD 240.
+
+Calculate both totals, the increase, and the percentage. Compare which categories increased by more than 40 versus at least 40.
 
 September 500; October 600; increase 100, 20.0%. Books +60, transport +40. >40 selects 1 category; >=40 selects 2. Thresholds do not change totals.
 
 Try a more involved task
 
-Focus on whether a missing amount prevents a complete total.
+What changes after a refund?
 
-Fictional category data: September courses 0 TWD, meals 100 TWD; October courses 200 TWD, meals amount missing, books 10 USD. No exchange rate; do not guess amounts.
+School-fair preparation spending, grouped by the month it happened. Amounts are in TWD; negatives are refunds.
+ID,Month,Category,Amount
+S01,2026-09,Meals,1200
+S02,2026-09,Transport,400
+S03,2026-09,Services,500
+O01,2026-10,Meals,1350
+O02,2026-10,Transport,450
+O03,2026-10,Services,550
 
-Answer only: may October’s missing meals amount be treated as zero? Can the known 200 TWD subtotal and separately listed 10 USD be called a complete October total? No zero-baseline percentage calculation is needed.
+Add an October Meals refund of −TWD 100. Recalculate October’s total, the increase from September, its percentage, and the categories increasing by more than TWD 50.
 
-September known TWD total is 100. October known TWD subtotal is 200 with meals unknown; the separate 10 USD cannot be added directly. Courses increase by 200, but percentage change is undefined with a zero baseline. The complete October total and overall percentage change are unconfirmed; a known subtotal is not a complete total.
+October becomes TWD 2,250: up 150, about 7.1%. Each category rises by exactly 50, so none increases by more than 50.
 
 Classroom task: adult demo / prepared-material review
 
-Read the prepared materials here. Check 2100 and 2350 with a calculator. Personally change “greater than 50” to “at least 50” and circle the qualifying categories again.
+Use the prepared result below. Choose one detail to change, edit it yourself, and explain how you checked it. You can use the change in step 2 as a starting point.
 
 What to check
 
-September 2100 and October 2350; Meals +150, Transport +50, Services +50. Greater than 50 selects Meals only; at least 50 selects all three without changing totals.
-
-Save your work and continue later
-
-Save your result and note what you changed and how you checked it.
+Meals alone becomes Meals, Transport, and Services. The overall increase is still TWD 250.

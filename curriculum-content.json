@@ -8,28 +8,28 @@
       "needs": [],
       "locales": {
         "zh-Hant": {
-          "title": "組一隊參加校園解謎",
-          "goal": "做出一張報名提醒，讓隊友知道現在要做什麼。",
+          "title": "寫一則揪團提醒",
+          "goal": "把活動資料變成一則可以貼給隊友的提醒。",
           "quick": "先做出一份可用的成果，再自己決定要不要加一個功能。",
           "skip": "自由選「先做出來」或「再加一個功能」，隨時可換；不按年齡分組。",
           "source": "虛構教學通知 A1\n校園解謎活動日期：2026/11/21。\n請於2026/11/18 18:00（Asia/Taipei）前回覆是否參加。\n集合地點尚未公布。",
-          "prompt": "將下方通知整理成一項待辦：要做什麼、何時以前完成。另列還沒公布的資訊。",
+          "prompt": "依資料寫三行：我要做的事、回覆截止時間、還要問什麼。資料沒寫的請標「待確認」。",
           "steps": [
-            "開啟 ChatGPT 或你慣用的 AI 工具，新增對話。",
-            "複製下方「練習資料」與「給AI要求」，一起貼進AI對話並送出。",
-            "讀完回答，再送出：「改成一句可以傳給朋友的提醒，語氣親切一點。」",
-            "看看短句有沒有留下11/18 18:00的回覆期限；喜歡的版本可複製到筆記，或用本頁的紀錄區保存。"
+            "按下方「複製資料與要求」。",
+            "貼到 AI 的新對話，送出。",
+            "回來核對下方重點；有錯就請 AI 修正。"
           ],
-          "expected": "回覆期限仍是11/18 18:00，活動日是11/21。親切版可以是：「記得在11/18傍晚6點前回覆要不要參加11/21的活動喔！集合地點等主辦公布。」",
+          "expected": "要做：組隊參加 11/21 校園解謎，回覆是否參加。\n截止：2026/11/18 18:00（台北時間）。\n待確認：集合地點。",
           "independent": {
-            "task": "沿用A1，替第一次看到通知的隊友寫一則提醒；自己決定語氣，保存第二版。",
-            "expected": "保留11/18 18:00回覆、11/21活動、集合地點未定；至少有一處由你決定的改寫。"
+            "task": "替隊友寫一則提醒，分成「要做、截止、待確認」三行。自己選一種語氣。",
+            "expected": "保留11/18 18:00回覆、11/21活動、集合地點未定；至少有一處由你決定的改寫。",
+            "source": "虛構教學通知 A1\n校園解謎活動日期：2026/11/21。\n請於2026/11/18 18:00（Asia/Taipei）前回覆是否參加。\n集合地點尚未公布。"
           },
           "challenge": {
-            "task": "把提醒縮成40個中文字內，給已知道活動內容的隊友。",
+            "task": "更短，還能看懂嗎？",
             "source": "虛構教學通知 A1\n校園解謎活動日期：2026/11/21。\n請於2026/11/18 18:00（Asia/Taipei）前回覆是否參加。\n集合地點尚未公布。",
-            "prompt": "請寫40個中文字內的隊友提醒，保留回覆動作、11/18 18:00期限與集合地點未定；活動日可省略。另說明省掉哪項資訊及原因。",
-            "expected": "例如「11/18 18:00前回覆是否參加，集合地點待公布。」另註：對象已知活動內容，省略11/21活動日；若給新隊友，應補回。"
+            "prompt": "給已知道活動內容的隊友，寫一則 40 個中文字以內的提醒。一定要有回覆截止時間與集合地點待確認。",
+            "expected": "保留「11/18 18:00 前回覆」與「地點待確認」，沒有新增地點。"
           },
           "checks": [
             "回覆期限是11/18 18:00，不是活動日11/21。",
@@ -48,33 +48,38 @@
           "outcome": "11/18 18:00前回覆是否參加。\n11/21活動；集合地點等主辦公布。",
           "why": "想約隊友一起參加，先說清楚何時回覆；不要把活動日當報名期限。",
           "classroom": {
-            "task": "先看本區預備材料。用紙筆將預備提醒改得更像你會傳給隊友的話，圈出11/18 18:00，再檢查地點有沒有被亂補。",
-            "expected": "至少改一處語氣；11/18 18:00回覆期限、11/21活動日及地點待公布均保留。"
+            "task": "使用下方預備結果，自己決定改一處、動手修改，再說明怎麼檢查。可以從第 2 步的修改開始。",
+            "expected": "仍有 11/18 18:00 的截止時間；沒有替集合地點編答案。"
+          },
+          "followup": {
+            "source": "",
+            "prompt": "改成一則親切、可以貼給隊友的短訊息。保留報名截止時間；集合地點仍寫「待確認」。",
+            "expected": "仍有 11/18 18:00 的截止時間；沒有替集合地點編答案。"
           }
         },
         "en": {
-          "title": "Build a team for a school puzzle event",
-          "goal": "Make a sign-up reminder so teammates know what to do next.",
+          "title": "Write a team reminder",
+          "goal": "Turn event details into a reminder you can share with teammates.",
           "quick": "Make a usable first version, then choose whether to add a feature.",
           "skip": "Choose “Make it work” or “Add a feature” and switch at any time; age does not decide the level.",
           "source": "Fictional teaching notice A1\nSchool puzzle event date: 2026/11/21.\nReply whether you will attend by 2026/11/18 18:00 (Asia/Taipei).\nThe meeting location has not been announced.",
-          "prompt": "Turn this notice into one to-do: what to do and by when. List any details that have not been announced.",
+          "prompt": "Write three lines: what I need to do, the reply deadline, and what I still need to ask. Mark missing details “to confirm”.",
           "steps": [
-            "Open ChatGPT or your usual AI tool and start a new conversation.",
-            "Copy the practice text and request below, paste both into the AI chat, and send them.",
-            "Read the answer, then send: “Make this one friendly reminder I can send to a friend.”",
-            "Check that the shorter version keeps the 11/18 18:00 reply deadline. Copy your favorite version to notes or save it in this lesson’s record area."
+            "Select “Copy material and request” below.",
+            "Paste into a new AI conversation and send.",
+            "Return and check the points below. Ask AI to correct any errors."
           ],
-          "expected": "The reply deadline remains 11/18 18:00; the activity is on 11/21. A friendly version: “Remember to reply by 6 pm on 11/18 about joining the 11/21 activity! We’re waiting for the organizer to announce the meeting location.”",
+          "expected": "Action: form a team for the November 21 campus puzzle event and reply about joining.\nDeadline: 2026/11/18, 18:00 (Taipei time).\nTo confirm: meeting place.",
           "independent": {
-            "task": "Using A1, write a reminder for a teammate seeing the notice for the first time. Choose the tone and save a second version.",
-            "expected": "Keep the 11/18 18:00 reply deadline, 11/21 event, and unconfirmed meeting place; include at least one change you chose."
+            "task": "Write a reminder with three lines: action, deadline, and to confirm. Choose your own tone.",
+            "expected": "Keep the 11/18 18:00 reply deadline, 11/21 event, and unconfirmed meeting place; include at least one change you chose.",
+            "source": "Fictional teaching notice A1\nSchool puzzle event date: 2026/11/21.\nReply whether you will attend by 2026/11/18 18:00 (Asia/Taipei).\nThe meeting location has not been announced."
           },
           "challenge": {
-            "task": "Shorten the reminder to 40 English words for teammates who already know the event.",
+            "task": "Can you make it shorter?",
             "source": "Fictional teaching notice A1\nSchool puzzle event date: 2026/11/21.\nReply whether you will attend by 2026/11/18 18:00 (Asia/Taipei).\nThe meeting location has not been announced.",
-            "prompt": "Write a teammate reminder of at most 40 English words. Keep the reply action, 11/18 18:00 deadline, and unknown meeting place; you may omit the event date. Explain what you omitted and why.",
-            "expected": "Example: “Reply by 11/18 18:00 to say whether you will join. Meeting place to be announced.” Explain that the known event date was omitted; restore it for a new teammate."
+            "prompt": "Write a reminder of no more than 40 English words for teammates who already know the event. Keep the reply deadline and the unconfirmed meeting place.",
+            "expected": "It keeps “reply by November 18 at 18:00” and “meeting place to confirm”, without inventing a place."
           },
           "checks": [
             "The reply deadline is 11/18 18:00, not the activity date of 11/21.",
@@ -93,8 +98,13 @@
           "outcome": "Reply by 11/18 18:00 about attending.\nActivity: 11/21; meeting location to be announced.",
           "why": "Invite teammates with a clear reply deadline, without confusing it with the event date.",
           "classroom": {
-            "task": "Read the prepared materials here. Rewrite the reminder on paper in your own teammate-friendly voice. Circle 11/18 18:00 and check that no meeting place was invented.",
-            "expected": "Change at least one part of the tone; preserve the 11/18 18:00 reply deadline, 11/21 event date, and unannounced place."
+            "task": "Use the prepared result below. Choose one detail to change, edit it yourself, and explain how you checked it. You can use the change in step 2 as a starting point.",
+            "expected": "The November 18, 18:00 deadline stays. No meeting place is invented."
+          },
+          "followup": {
+            "source": "",
+            "prompt": "Make it a friendly, short message for teammates. Keep the reply deadline and leave the meeting place as “to confirm”.",
+            "expected": "The November 18, 18:00 deadline stays. No meeting place is invented."
           }
         }
       }
@@ -108,28 +118,28 @@
       ],
       "locales": {
         "zh-Hant": {
-          "title": "彩排改時間，只更新該改的地方",
-          "goal": "做出新版社團舞台行程，讓人看出哪一項改了。",
+          "title": "活動改時間，更新通知",
+          "goal": "只改變動的時間，保留其他正確資訊。",
           "quick": "先做出一份可用的成果，再自己決定要不要加一個功能。",
           "skip": "自由選「先做出來」或「再加一個功能」，隨時可換；不按年齡分組。",
           "source": "虛構B0，時間Asia/Taipei：2026/11/21彩排15:00、正式演出16:00；音響設備未定。",
           "prompt": "整理成三行：彩排、正式演出、音響設備；沒提供的寫待確認。",
           "steps": [
-            "把資料與要求交給AI，取得三行行程。",
-            "送出第二輪追問，只將彩排改為14:30。",
-            "用筆圈出唯一改動：15:00變14:30；正式演出仍是16:00。",
-            "保存新版；在檔名或紙上標示版本，讓隊友分得出新舊。"
+            "按下方「複製資料與要求」。",
+            "貼到 AI 的新對話，送出。",
+            "回來核對下方重點；有錯就請 AI 修正。"
           ],
-          "expected": "彩排由11/21 15:00改為14:30，提早30分鐘；正式演出仍為16:00，音響設備待確認。",
+          "expected": "彩排：2026/11/21 15:00。\n演出：同日 16:00。\n音響設備：待確認。",
           "independent": {
-            "task": "沿用新版，改成隊友能勾選的準備清單；自己決定清單文字，不能新增未確認的安排。",
-            "expected": "彩排14:30、正式演出16:00；音響設備待確認。形式改變，事實不變。"
+            "task": "把已更新的資料整理成待辦清單，每項包含事項與時間。沒有時間的請標待確認。",
+            "expected": "彩排14:30、正式演出16:00；音響設備待確認。形式改變，事實不變。",
+            "source": "虛構B0，時間Asia/Taipei：2026/11/21彩排14:30、正式演出16:00；音響設備未定。"
           },
           "challenge": {
-            "task": "加一欄「改了／沒變」。",
-            "source": "沿用B0與主辦確認的14:30更新。",
-            "prompt": "列舊版、新版、改了／沒變三欄，未定的設備仍保留未定。",
-            "expected": "彩排15:00→14:30標改了；演出16:00→16:00標沒變；設備待確認→待確認標沒變。"
+            "task": "做一張修改前後對照表",
+            "source": "虛構B0，時間Asia/Taipei：2026/11/21彩排15:00、正式演出16:00；音響設備未定。",
+            "prompt": "主辦人確認彩排由 15:00 改成 14:30。請列「項目、原內容、新內容、是否改動」；演出時間和音響資訊不變。",
+            "expected": "只有彩排改動；演出仍為 16:00，音響仍待確認。"
           },
           "checks": [
             "彩排15:00→14:30，提早30分鐘。",
@@ -146,40 +156,40 @@
             "explanation": "本次只改彩排，正式演出16:00保留。"
           },
           "followup": {
-            "source": "主辦確認：2026/11/21彩排改為14:30（Asia/Taipei），其餘不變。",
-            "prompt": "只更新彩排時間，再列出這次改了什麼。",
-            "expected": "彩排15:00→14:30；正式演出16:00與音響設備待確認均不變。"
+            "source": "主辦人已確認：彩排改成 2026/11/21 14:30。其他資訊不變。",
+            "prompt": "只更新彩排時間，重新列出三行通知。",
+            "expected": "彩排 14:30；演出 16:00；音響仍待確認。"
           },
           "outcome": "新版｜11/21彩排14:30；正式演出16:00。\n音響設備待確認。",
           "why": "臨時改一項安排時，其他資訊不應一起被改掉。",
           "classroom": {
-            "task": "先看本區預備材料。紙上寫原版彩排15:00，再親自改為14:30；用不同記號標出必須保留的演出16:00和設備待確認。",
-            "expected": "彩排由11/21 15:00改為14:30，提早30分鐘；正式演出仍為16:00，音響設備待確認。"
+            "task": "使用下方預備結果，自己決定改一處、動手修改，再說明怎麼檢查。可以從第 2 步的修改開始。",
+            "expected": "彩排 14:30；演出 16:00；音響仍待確認。"
           }
         },
         "en": {
-          "title": "Rehearsal changed: update only what changed",
-          "goal": "Make a revised club performance schedule that shows what changed.",
+          "title": "Update a changed event time",
+          "goal": "Change one time without changing the other details.",
           "quick": "Make a usable first version, then choose whether to add a feature.",
           "skip": "Choose “Make it work” or “Add a feature” and switch at any time; age does not decide the level.",
           "source": "Fictional B0; time zone Asia/Taipei: on 2026/11/21, rehearsal at 15:00 and performance at 16:00; sound equipment undecided.",
           "prompt": "Make three lines: rehearsal, performance, sound equipment. Mark missing details as to confirm.",
           "steps": [
-            "Give the data and request to AI for a three-line schedule.",
-            "Send the second-round request, changing only rehearsal to 14:30.",
-            "Circle the only change: 15:00 becomes 14:30; performance stays at 16:00.",
-            "Save the revision and label its version on paper or in the filename so teammates can tell versions apart."
+            "Select “Copy material and request” below.",
+            "Paste into a new AI conversation and send.",
+            "Return and check the points below. Ask AI to correct any errors."
           ],
-          "expected": "Rehearsal on 11/21 moves from 15:00 to 14:30, 30 minutes earlier. Performance remains 16:00; sound equipment is to confirm.",
+          "expected": "Rehearsal: 2026/11/21 at 15:00.\nPerformance: 16:00 on the same day.\nSound equipment: to confirm.",
           "independent": {
-            "task": "Turn the revision into a teammate checklist. Choose your own wording without adding unconfirmed arrangements.",
-            "expected": "Rehearsal 14:30, performance 16:00; equipment to confirm. Format changes; facts do not."
+            "task": "Turn the updated details into a checklist with a task and time on each line. Mark missing times “to confirm”.",
+            "expected": "Rehearsal 14:30, performance 16:00; equipment to confirm. Format changes; facts do not.",
+            "source": "Fictional B0; time zone Asia/Taipei: on 2026/11/21, rehearsal at 14:30 and performance at 16:00; sound equipment undecided."
           },
           "challenge": {
-            "task": "Add a changed / unchanged column.",
-            "source": "Use B0 and the organizer-confirmed 14:30 update.",
-            "prompt": "Show old version, new version, and changed / unchanged. Keep equipment unconfirmed.",
-            "expected": "Rehearsal 15:00 → 14:30: changed. Performance 16:00 → 16:00: unchanged. Equipment to confirm → to confirm: unchanged."
+            "task": "Show before and after",
+            "source": "Fictional B0; time zone Asia/Taipei: on 2026/11/21, rehearsal at 15:00 and performance at 16:00; sound equipment undecided.",
+            "prompt": "The organizer confirmed rehearsal moves from 15:00 to 14:30. Make a table with item, old detail, new detail, and whether it changed. Leave performance and sound details unchanged.",
+            "expected": "Only rehearsal changes. Performance stays at 16:00; sound equipment remains unconfirmed."
           },
           "checks": [
             "Rehearsal 15:00 → 14:30, 30 minutes earlier.",
@@ -196,15 +206,15 @@
             "explanation": "Only rehearsal changes. Performance remains 16:00."
           },
           "followup": {
-            "source": "Organizer confirms: rehearsal on 2026/11/21 moves to 14:30 (Asia/Taipei); everything else stays the same.",
-            "prompt": "Update only rehearsal, then state what changed.",
-            "expected": "Rehearsal 15:00 → 14:30; performance 16:00 and unconfirmed equipment remain unchanged."
+            "source": "The organizer confirmed: rehearsal moves to 2026/11/21 at 14:30. Everything else stays the same.",
+            "prompt": "Update only the rehearsal time and show the three-line notice again.",
+            "expected": "Rehearsal: 14:30. Performance: 16:00. Sound equipment: still to confirm."
           },
           "outcome": "Revised | 11/21 rehearsal 14:30; performance 16:00.\nSound equipment to confirm.",
           "why": "Changing one arrangement should not accidentally change everything else.",
           "classroom": {
-            "task": "Read the prepared materials here. Write the original 15:00 rehearsal on paper, change it yourself to 14:30, and mark the unchanged 16:00 performance and unconfirmed equipment.",
-            "expected": "Rehearsal on 11/21 moves from 15:00 to 14:30, 30 minutes earlier. Performance remains 16:00; sound equipment is to confirm."
+            "task": "Use the prepared result below. Choose one detail to change, edit it yourself, and explain how you checked it. You can use the change in step 2 as a starting point.",
+            "expected": "Rehearsal: 14:30. Performance: 16:00. Sound equipment: still to confirm."
           }
         }
       }
@@ -218,28 +228,28 @@
       ],
       "locales": {
         "zh-Hant": {
-          "title": "群組消息哪一則能相信？",
-          "goal": "為校園遊戲賽做一張有來源的賽程卡，分開已確認與待詢問。",
+          "title": "消息不同，該信哪一份？",
+          "goal": "找出已確認的消息，把還不確定的事列出來。",
           "quick": "先做出一份可用的成果，再自己決定要不要加一個功能。",
           "skip": "自由選「先做出來」或「再加一個功能」，隨時可換；不按年齡分組。",
           "source": "虛構資料，時間Asia/Taipei。\nD｜10/20發布：2026/11/21 10:00社團教室報到。\nB｜10/25主辦核准：取代D；2026/11/21 09:00社團教室報到；11/19 19:00前提交隊名；賽制未定。\nE｜10/28討論草稿：建議11/21 08:30報到，尚未核准。\nF｜開賽筆記：11/21 09:30開始；未註明核准狀態。",
           "prompt": "請把四則訊息整理成「要做的事／時間／備註」表格。主辦已確認的安排放前面，建議或還要問的事放後面。",
           "steps": [
-            "把四則訊息與要求一起貼到 AI，取得第一版表格。",
-            "回頭看主辦訊息B：報到是09:00，E的08:30仍是建議。看看表格有沒有分開。",
-            "自行選一項待確認資訊，寫一句能問清楚的問題；在表格每行加上來源代號。",
-            "確認你一眼能找到報到時間與提交隊名期限，再保存賽程卡。"
+            "按下方「複製資料與要求」。",
+            "貼到 AI 的新對話，送出。",
+            "回來核對下方重點；有錯就請 AI 修正。"
           ],
           "expected": "目前報到是11/21 09:00社團教室，11/19 19:00前提交隊名。08:30只是草稿建議；09:30開賽是否確定、賽制內容都要再問主辦。",
           "independent": {
-            "task": "隊友說「E日期最新，所以08:30才對」。用資料寫一句回覆並標來源，不猜誰說了算。",
-            "expected": "B明確核准並取代D，09:00為已確認報到；E的08:30只是建議，最新不等於有效。"
+            "task": "隊友說「E 比較新，所以 08:30 集合」。請用兩句話解釋是否能這樣判斷，並指出來源。",
+            "expected": "B明確核准並取代D，09:00為已確認報到；E的08:30只是建議，最新不等於有效。",
+            "source": "虛構資料，時間Asia/Taipei。\nD｜10/20發布：2026/11/21 10:00社團教室報到。\nB｜10/25主辦核准：取代D；2026/11/21 09:00社團教室報到；11/19 19:00前提交隊名；賽制未定。\nE｜10/28討論草稿：建議11/21 08:30報到，尚未核准。\nF｜開賽筆記：11/21 09:30開始；未註明核准狀態。"
           },
           "challenge": {
-            "task": "加一欄「還缺什麼證據」。",
-            "source": "沿用四則虛構訊息D、B、E、F。",
-            "prompt": "只對E與F各寫一句要問主辦的問題，指出需要哪項確認；不要自行採用未確認時間。",
-            "expected": "E：08:30建議是否已核准並取代B？F：09:30開賽是否已確認？原已確認報到仍是09:00。"
+            "task": "把不確定的事變成問題",
+            "source": "虛構資料，時間Asia/Taipei。\nD｜10/20發布：2026/11/21 10:00社團教室報到。\nB｜10/25主辦核准：取代D；2026/11/21 09:00社團教室報到；11/19 19:00前提交隊名；賽制未定。\nE｜10/28討論草稿：建議11/21 08:30報到，尚未核准。\nF｜開賽筆記：11/21 09:30開始；未註明核准狀態。",
+            "prompt": "針對 E 與 F，各寫一個要問主辦人的問題。問題要說清楚想確認哪個時間、是否已核准。",
+            "expected": "E：08:30 報到是否已正式核准？F：09:30 遊戲開始是否已核准，且是否影響 B 的 09:00 報到？"
           },
           "checks": [
             "報到採用主辦確認的09:00；08:30仍是建議。",
@@ -258,33 +268,38 @@
           "outcome": "報到：11/21 09:00，社團教室。\n隊名：11/19 19:00前提交；開賽時間再問主辦。",
           "why": "群組有人轉傳、有人提建議時，先分清楚哪些可以照做。",
           "classroom": {
-            "task": "先看本區預備材料。假設隊友把賽程卡寫成08:30報到，親自改正這一處並標來源B；替未確認的09:30開賽寫一個問題。",
-            "expected": "把08:30改為09:00，標來源B；詢問09:30開賽是否已確認。"
+            "task": "使用下方預備結果，自己決定改一處、動手修改，再說明怎麼檢查。可以從第 2 步的修改開始。",
+            "expected": "09:00 報到來自 B；08:30 只是 E 的草稿；09:30 是 F 的遊戲開始時間，是否核准仍待確認。"
+          },
+          "followup": {
+            "source": "",
+            "prompt": "請在每項資訊後加上來源代號。不要把較新的草稿當成已確認通知。",
+            "expected": "09:00 報到來自 B；08:30 只是 E 的草稿；09:30 是 F 的遊戲開始時間，是否核准仍待確認。"
           }
         },
         "en": {
-          "title": "Which group message can you trust?",
-          "goal": "Make a source-backed school game schedule separating confirmed facts from questions.",
+          "title": "Check conflicting messages",
+          "goal": "Separate confirmed details from things you still need to ask.",
           "quick": "Make a usable first version, then choose whether to add a feature.",
           "skip": "Choose “Make it work” or “Add a feature” and switch at any time; age does not decide the level.",
           "source": "Fictional data; time zone Asia/Taipei.\nD | issued 10/20: check in at the club room on 2026/11/21 at 10:00.\nB | organizer approved 10/25: replaces D; check in at the club room on 2026/11/21 at 09:00; submit a team name by 11/19 19:00; game format undecided.\nE | discussion draft 10/28: suggests check-in on 11/21 at 08:30; not approved.\nF | game-start note: starts 11/21 at 09:30; approval status not stated.",
           "prompt": "Turn these four messages into a table: action / time / note. Put organizer-confirmed arrangements first, then suggestions and questions.",
           "steps": [
-            "Paste the four messages and request into AI to get a table.",
-            "Look back at organizer message B: the check-in is 09:00; E’s 08:30 is a suggestion. Check that the table keeps them separate.",
-            "Choose one unconfirmed detail, write a question that would resolve it, and add a source ID to each table row.",
-            "Check that check-in time and the team-name submission deadline are easy to find, then save the schedule card."
+            "Select “Copy material and request” below.",
+            "Paste into a new AI conversation and send.",
+            "Return and check the points below. Ask AI to correct any errors."
           ],
           "expected": "Meet on 11/21 at 09:00 at the club room; submit a team name by 11/19 19:00. 08:30 is only a draft suggestion. You can ask the organizer about the 09:30 game-start and game format.",
           "independent": {
-            "task": "A teammate says “E is newest, so 08:30 is correct.” Write a source-based response without guessing authority.",
-            "expected": "B is approved and replaces D, so check-in is confirmed at 09:00. E suggests 08:30; newest does not mean valid."
+            "task": "A teammate says, “E is newer, so we meet at 08:30.” Explain in two sentences whether this is justified, citing the source letters.",
+            "expected": "B is approved and replaces D, so check-in is confirmed at 09:00. E suggests 08:30; newest does not mean valid.",
+            "source": "Fictional data; time zone Asia/Taipei.\nD | issued 10/20: check in at the club room on 2026/11/21 at 10:00.\nB | organizer approved 10/25: replaces D; check in at the club room on 2026/11/21 at 09:00; submit a team name by 11/19 19:00; game format undecided.\nE | discussion draft 10/28: suggests check-in on 11/21 at 08:30; not approved.\nF | game-start note: starts 11/21 at 09:30; approval status not stated."
           },
           "challenge": {
-            "task": "Add a “What evidence is missing?” column.",
-            "source": "Use the four fictional messages D, B, E, F.",
-            "prompt": "For E and F, write one question each for the organizer, specifying what needs confirmation. Do not adopt unconfirmed times.",
-            "expected": "E: Was the 08:30 suggestion approved to replace B? F: Is the 09:30 game start confirmed? Confirmed check-in remains 09:00."
+            "task": "Turn uncertainty into questions",
+            "source": "Fictional data; time zone Asia/Taipei.\nD | issued 10/20: check in at the club room on 2026/11/21 at 10:00.\nB | organizer approved 10/25: replaces D; check in at the club room on 2026/11/21 at 09:00; submit a team name by 11/19 19:00; game format undecided.\nE | discussion draft 10/28: suggests check-in on 11/21 at 08:30; not approved.\nF | game-start note: starts 11/21 at 09:30; approval status not stated.",
+            "prompt": "Write one question for the organizer about E and one about F. Specify which time needs confirmation and whether it has been approved.",
+            "expected": "E: Is 08:30 check-in officially approved? F: Is the 09:30 game start approved, and does it change B’s 09:00 check-in?"
           },
           "checks": [
             "Use the organizer-confirmed 09:00 check-in; 08:30 remains a suggestion.",
@@ -303,8 +318,13 @@
           "outcome": "Check-in: 11/21 09:00, the club room.\nTeam name: submit by 11/19 19:00; ask about the game start.",
           "why": "When a group mixes forwarded messages and suggestions, find what you can actually act on.",
           "classroom": {
-            "task": "Read the prepared materials here. Suppose a teammate wrote check-in as 08:30. Correct that detail yourself and label source B, then write a question about the unconfirmed 09:30 game start.",
-            "expected": "Change 08:30 to 09:00 and label source B; ask whether the 09:30 game start is confirmed."
+            "task": "Use the prepared result below. Choose one detail to change, edit it yourself, and explain how you checked it. You can use the change in step 2 as a starting point.",
+            "expected": "The 09:00 check-in comes from B; 08:30 is only a draft in E; F says games start at 09:30, but approval is unconfirmed."
+          },
+          "followup": {
+            "source": "",
+            "prompt": "Add the source letter after each detail. Do not treat a newer draft as a confirmed notice.",
+            "expected": "The 09:00 check-in comes from B; 08:30 is only a draft in E; F says games start at 09:30, but approval is unconfirmed."
           }
         }
       }
@@ -319,28 +339,28 @@
       ],
       "locales": {
         "zh-Hant": {
-          "title": "回覆桌遊社的合作邀請",
-          "goal": "寫一封有參加決定、也有具體問題的兩句回覆草稿。",
+          "title": "回覆一封社團邀請",
+          "goal": "寫好回覆草稿，再調整語氣。",
           "quick": "先做出一份可用的成果，再自己決定要不要加一個功能。",
           "skip": "自由選「先做出來」或「再加一個功能」，隨時可換；不按年齡分組。",
           "source": "虛構郵件｜主旨：桌遊社合作邀請\n歡迎參加2026/11/21的合作活動，請於11/18 17:00（Asia/Taipei）前回覆。是否需自備桌遊尚未說明。\n你的決定：會參加，想問是否需自備桌遊。",
           "prompt": "依我的決定寫兩句回覆：表示會參加，再問是否需自備桌遊。只提供草稿，不寄信。",
           "steps": [
-            "把虛構郵件與你的決定交給AI，不需要連接郵件帳號。",
-            "確認草稿確實表示會參加，也有提出自備桌遊的問題。",
-            "自己選擇一處改寫，例如更親切或更正式，保留原本的參加決定。",
-            "保存你選定的兩句版本，標示「草稿，尚未寄出」。"
+            "按下方「複製資料與要求」。",
+            "貼到 AI 的新對話，送出。",
+            "回來核對下方重點；有錯就請 AI 修正。"
           ],
           "expected": "例如：「謝謝邀請，我會參加11/21的合作活動！想請問需要自備桌遊嗎？」不能替對方回答，也沒有寄信。",
           "independent": {
-            "task": "改成你無法參加，但想詢問是否還有下一場；自行寫要求並保存另一份草稿。",
-            "expected": "明確說這次無法參加，詢問下一場而不捏造日期；仍未寄出。"
+            "task": "這次無法參加。寫兩句回覆：婉拒，並詢問下一次活動；不要編造日期，也不要寄出。",
+            "expected": "明確說這次無法參加，詢問下一場而不捏造日期；仍未寄出。",
+            "source": "虛構郵件｜主旨：桌遊社合作邀請\n歡迎參加2026/11/21的合作活動，請於11/18 17:00（Asia/Taipei）前回覆。是否需自備桌遊尚未說明。\n你的決定：會參加，想問是否需自備桌遊。"
           },
           "challenge": {
-            "task": "加一句你願意協助的事情。",
-            "source": "沿用原邀請；你另決定願意協助活動後收拾桌面。",
-            "prompt": "在兩句草稿後加一句協助提議，不保證對方已接受，也不替其他隊友答應。",
-            "expected": "例如「如果需要，我也可以協助結束後收拾桌面。」由自己提出，未替別人承諾。"
+            "task": "加上你願意幫忙的事",
+            "source": "虛構郵件｜主旨：桌遊社合作邀請\n歡迎參加2026/11/21的合作活動，請於11/18 17:00（Asia/Taipei）前回覆。是否需自備桌遊尚未說明。\n你的決定：會參加，想問是否需自備桌遊。",
+            "prompt": "寫三句回覆草稿：我會參加、詢問是否需要自備桌遊、願意協助收拾。不要加上未提及的承諾，也不要寄出。",
+            "expected": "三個意思都有；沒有自行答應帶某款遊戲，也沒有實際寄信。"
           },
           "checks": [
             "有明確表示會參加。",
@@ -359,45 +379,49 @@
           "outcome": "謝謝邀請，我會參加11/21的活動！\n想請問需要自備桌遊嗎？（未寄出的草稿）",
           "why": "想參加也有疑問時，用自己的決定讓AI幫你寫清楚。",
           "connection": {
-            "title": "講師進階示範：請 AI 讀你指定的一封 Gmail",
-            "source": "本區由符合條件的成人使用已獲授權的練習帳號操作，學生不需註冊或連接帳號。準備一封你有權使用、沒有個資或機密的練習信。可以在自己的練習帳號寄一封範例給自己，主旨自訂為「AI練習－活動確認」，內文用本課虛構郵件；記下實際寄信日期。",
-            "prompt": "請用Gmail讀取我指定的這封練習信：主旨【填入完整主旨】，寄信日期【填入實際日期】。若找到多封，先列出讓我選。讀取後整理待辦並寫回覆草稿，只放在對話，不寄出、不建立Gmail草稿。",
+            "title": "用 Gmail 讀一封信",
+            "source": "準備：在教學帳號放一封本課的虛構邀請信，記下完整主旨與寄信日期。",
+            "prompt": "請用 Gmail 讀取練習信：主旨【填主旨】，寄信日期【填日期】。找到多封時先讓我選。列出要做的事並寫回覆草稿，只放在對話中，不寄出或建立 Gmail 草稿。",
             "steps": [
-              "在你使用的AI工具找可用的Plugins／外掛或連接應用程式，搜尋Gmail，依畫面連接你要用的練習帳號並查看授權範圍。是否支援取決於工具、方案與工作區。",
-              "把下方要求中的主旨與日期換成你的資料；在對話選用Gmail外掛，再送出要求。",
-              "打開AI提供的原信連結，確認它讀的是那一封；再看回覆草稿是否符合你的意思。",
-              "若無此服務或讀不到信，就回到貼文字練習；不要把整理文字誤當成已連線。"
+              "依「連接帳號」說明接好 Gmail。",
+              "複製下方要求，把【主旨】和【日期】換成實際內容，在 AI 對話選用 Gmail 後送出。",
+              "打開原信核對。這次只寫草稿，不寄信。"
             ],
-            "expected": "你能開到指定原信，AI讀過內容並在對話寫出草稿。信尚未寄出。"
+            "expected": "讀的是指定那封信；草稿留在 AI 對話，信件尚未寄出。"
           },
           "classroom": {
-            "task": "先看本區預備材料。在預備回覆上親自改一處語氣；與同伴核對仍有參加決定和自備桌遊的問題，標記草稿未寄出。",
-            "expected": "例如：「謝謝邀請，我會參加11/21的合作活動！想請問需要自備桌遊嗎？」不能替對方回答，也沒有寄信。"
+            "task": "使用下方預備結果，自己決定改一處、動手修改，再說明怎麼檢查。可以從第 2 步的修改開始。",
+            "expected": "語氣變自然，但沒有自行答應帶特定桌遊，也沒有寄出信件。"
+          },
+          "followup": {
+            "source": "",
+            "prompt": "保留「會參加」和「詢問是否需要自備桌遊」，改成更像同學之間會說的兩句話。",
+            "expected": "語氣變自然，但沒有自行答應帶特定桌遊，也沒有寄出信件。"
           }
         },
         "en": {
-          "title": "Reply to a board-game club invitation",
-          "goal": "Write a two-sentence reply draft with your attendance decision and a specific question.",
+          "title": "Reply to a club invitation",
+          "goal": "Draft a reply, then make it sound like you.",
           "quick": "Make a usable first version, then choose whether to add a feature.",
           "skip": "Choose “Make it work” or “Add a feature” and switch at any time; age does not decide the level.",
           "source": "Fictional email | Subject: Board-game club collaboration\nJoin our activity on 2026/11/21. Reply by 11/18 17:00 (Asia/Taipei). It does not say whether participants must bring a board game.\nYour decision: you will attend and want to ask whether to bring a game.",
           "prompt": "Use my decision to draft two sentences: say I will attend, then ask whether to bring a board game. Provide a draft only; do not send it.",
           "steps": [
-            "Give the fictional email and your decision to AI; no email connection is needed.",
-            "Check that the draft says you will attend and asks about bringing a game.",
-            "Choose a change such as a friendlier or more formal tone, keeping your decision.",
-            "Save your two-sentence version, marked “Draft — not sent.”"
+            "Select “Copy material and request” below.",
+            "Paste into a new AI conversation and send.",
+            "Return and check the points below. Ask AI to correct any errors."
           ],
           "expected": "Example: “Thanks for inviting me; I will join the activity on 11/21! Should I bring a board game?” Do not answer for the other club; no email has been sent.",
           "independent": {
-            "task": "Change your decision to being unable to attend but wanting to ask about a future session. Write your own request and save another draft.",
-            "expected": "Clearly declines this session and asks about another without inventing dates; still unsent."
+            "task": "This time I cannot attend. Draft two sentences declining and asking about the next event. Do not invent a date or send the email.",
+            "expected": "Clearly declines this session and asks about another without inventing dates; still unsent.",
+            "source": "Fictional email | Subject: Board-game club collaboration\nJoin our activity on 2026/11/21. Reply by 11/18 17:00 (Asia/Taipei). It does not say whether participants must bring a board game.\nYour decision: you will attend and want to ask whether to bring a game."
           },
           "challenge": {
-            "task": "Add one thing you are willing to help with.",
-            "source": "Use the original invitation; you also decide you can help clear tables afterward.",
-            "prompt": "Add one offer to help after the two-sentence draft. Do not assume acceptance or commit teammates.",
-            "expected": "Example: “I can also help clear the tables afterward if needed.” It is your offer, not a commitment by others."
+            "task": "Offer one way to help",
+            "source": "Fictional email | Subject: Board-game club collaboration\nJoin our activity on 2026/11/21. Reply by 11/18 17:00 (Asia/Taipei). It does not say whether participants must bring a board game.\nYour decision: you will attend and want to ask whether to bring a game.",
+            "prompt": "Draft three sentences: I will attend, ask whether I need to bring a board game, and offer to help clean up. Add no other promises and do not send.",
+            "expected": "All three points are present; no particular game is promised and no email is sent."
           },
           "checks": [
             "Clearly says you will attend.",
@@ -416,20 +440,24 @@
           "outcome": "Thanks for inviting me; I will join on 11/21!\nShould I bring a board game? (Unsent draft)",
           "why": "When you want to join but have a question, use your own decision to guide the draft.",
           "connection": {
-            "title": "Instructor extension: ask AI to read one Gmail message you choose",
-            "source": "An eligible adult operates an authorized practice account here; students do not need to register or connect accounts. Prepare a practice message you may use, with no personal or confidential information. You can send the fictional email to yourself in a practice account, using a distinctive subject such as “AI practice – activity confirmation.” Note the actual sending date.",
-            "prompt": "Use Gmail to read this practice email: subject [enter the exact subject], sending date [enter the actual date]. If several match, list them for me to choose. Read it, summarize my action, and write a reply in this chat only. Do not send it or create a Gmail draft.",
+            "title": "Read an email with Gmail",
+            "source": "Prepare: place this lesson’s fictional invitation in a teaching account. Note its exact subject and sending date.",
+            "prompt": "Use Gmail to read this practice email: subject [enter subject], sent on [enter date]. If several match, let me choose. List the actions and draft a reply in this conversation only. Do not send it or create a Gmail draft.",
             "steps": [
-              "Look for available Plugins or connected apps in your AI tool, find Gmail, and follow the connection flow for your practice account. Review the requested access. Availability depends on the tool, plan, and workspace.",
-              "Replace the subject and date in the request with your details. Select the Gmail plugin in the conversation and send the request.",
-              "Open the original-message link AI returns to check that it read the intended email, then review the reply.",
-              "If the service is unavailable or cannot read the email, return to pasted-text practice. Text organization alone does not establish a connection."
+              "Connect Gmail using the account connection guide.",
+              "Copy the request below, replace [subject] and [date], select Gmail in your AI conversation, and send.",
+              "Open the original email to check. This exercise drafts a reply without sending it."
             ],
-            "expected": "You can open the specified original message, and AI has read its content and produced a chat draft. The email has not been sent."
+            "expected": "The correct email was read. The draft stays in the AI conversation; no email was sent."
           },
           "classroom": {
-            "task": "Read the prepared materials here. Personally change the tone of one part of the prepared reply. With a partner, check the attendance decision and question about bringing a game, and label it unsent.",
-            "expected": "Example: “Thanks for inviting me; I will join the activity on 11/21! Should I bring a board game?” Do not answer for the other club; no email has been sent."
+            "task": "Use the prepared result below. Choose one detail to change, edit it yourself, and explain how you checked it. You can use the change in step 2 as a starting point.",
+            "expected": "The tone changes. No particular game is promised and no email is sent."
+          },
+          "followup": {
+            "source": "",
+            "prompt": "Keep my acceptance and question about whether I need to bring a board game. Rewrite it as two natural sentences between classmates.",
+            "expected": "The tone changes. No particular game is promised and no email is sent."
           }
         }
       }
@@ -443,28 +471,28 @@
       ],
       "locales": {
         "zh-Hant": {
-          "title": "四人桌遊日下午怎麼選？",
-          "goal": "比較兩個方案，分清楚已知費用與還要問的費用。",
+          "title": "選一個不超支的活動",
+          "goal": "算出已知費用，找出還沒問清楚的價格。",
           "quick": "先做出一份可用的成果，再自己決定要不要加一個功能。",
           "skip": "自由選「先做出來」或「再加一個功能」，隨時可換；不按年齡分組。",
           "source": "虛構桌遊日下午方案：同一天、4人，金額都是TWD。\nA：每人150元，材料全組200元。\nB：全組760元，材料另計，價格未提供。",
           "prompt": "做一張四人費用比較表，列計算式、已知小計、未知費用；先不要斷言哪個完整總額較便宜。",
           "steps": [
-            "把兩個方案與要求交給AI，取得比較表。",
-            "用計算機核對A為150×4+200=800；B已知760，材料未知。",
-            "自己加一個選擇條件，例如全組最多800元，請AI更新比較。",
-            "保存表格及一句「決定前還要問什麼」，不要把未知當0。"
+            "按下方「複製資料與要求」。",
+            "貼到 AI 的新對話，送出。",
+            "回來核對下方重點；有錯就請 AI 修正。"
           ],
           "expected": "A共800 TWD。B已知小計760 TWD，另加未知材料費，不能確認完整總額或斷言B比較便宜。",
           "independent": {
-            "task": "用這兩案寫三句給隊友看的建議：A費用、B限制、下一個要問的問題。",
-            "expected": "A800；B已知760且材料另計未知；詢問B材料費，沒有直接宣稱B比較便宜。"
+            "task": "用三句話說明：A 的已知總額、B 的已知費用、還要向 B 問什麼。",
+            "expected": "A800；B已知760且材料另計未知；詢問B材料費，沒有直接宣稱B比較便宜。",
+            "source": "虛構桌遊日下午方案：同一天、4人，金額都是TWD。\nA：每人150元，材料全組200元。\nB：全組760元，材料另計，價格未提供。"
           },
           "challenge": {
-            "task": "加一個800元的預算篩選。",
-            "source": "沿用A與B；四人全組預算最多800 TWD。",
-            "prompt": "標出符合預算、待確認的方案；B材料費最多多少才仍在預算內？",
-            "expected": "A符合；B待確認，材料費須不超過40 TWD才符合。40是可接受上限，不是已確認報價。"
+            "task": "算出還能花多少",
+            "source": "虛構桌遊日下午方案：同一天、4人，金額都是TWD。\nA：每人150元，材料全組200元。\nB：全組760元，材料另計，價格未提供。",
+            "prompt": "四人總預算 800 元。B 已知團體費 760 元：材料費最多多少才不超支？目前能不能確定 B 比 A 便宜？",
+            "expected": "材料費最多 40 元。實際材料費還不知道，不能確定 B 比 A 便宜。"
           },
           "checks": [
             "A的150是每人，需乘4；材料200是全組。",
@@ -483,45 +511,49 @@
           "outcome": "A：150×4+200=800 TWD。\nB：已知760 TWD，材料費待確認。",
           "why": "看起來便宜的方案可能少算一項，先問清楚再選。",
           "connection": {
-            "title": "講師進階示範：讀取自己的 Drive 練習文件",
-            "source": "本區由符合條件的成人使用已獲授權的練習帳號操作，學生不需註冊或連接帳號。在自己的Google Drive建立兩份空白Google文件，分別命名為「AI練習－方案A」「AI練習－方案B」。把本課A、B各自的虛構資料貼入對應文件，取得兩份文件連結。",
-            "prompt": "請用Google Drive讀取這兩份虛構練習文件：【A連結】、【B連結】。比較四人參加費、材料費與已知小計；不要修改文件，讀不到內文就直接說明。",
+            "title": "用 Google Drive 比較兩份文件",
+            "source": "準備：在教學 Drive 放兩份文件，分別貼入本課 A、B 方案，取得兩份文件連結。",
+            "prompt": "請用 Google Drive 讀取這兩份練習文件：【A 連結】、【B 連結】。比較四人的費用，分開列出已知金額與未知費用。不要修改文件；讀不到就告訴我。",
             "steps": [
-              "先自己打開兩份文件，確認內文已存好且帳號有讀取權限。",
-              "在AI工具可用的Plugins／外掛或連接應用程式中連接Google Drive，確認使用的是有權限的帳號。",
-              "將兩個連結填入下方要求，選用Drive外掛後送出。",
-              "回兩份原文件看看數字與比較表是否一致。讀取不成功時，用主練習的貼文字方式繼續。"
+              "依「連接帳號」說明接好 Google Drive。",
+              "把兩份文件連結填進下方要求，選用 Google Drive 後送出。",
+              "開啟原文件，核對 A 的 800 元與 B 的 760 元另加未知材料費。"
             ],
-            "expected": "A共800 TWD。B已知小計760 TWD，另加未知材料費，不能確認完整總額或斷言B比較便宜。"
+            "expected": "A 是 800 元；B 是已知 760 元再加未知材料費。原文件沒有被修改。"
           },
           "classroom": {
-            "task": "先看本區預備材料。把預備比較改成兩句給隊友看的話；親自算150×4+200，圈出B仍缺的材料費。",
-            "expected": "A共800 TWD。B已知小計760 TWD，另加未知材料費，不能確認完整總額或斷言B比較便宜。"
+            "task": "使用下方預備結果，自己決定改一處、動手修改，再說明怎麼檢查。可以從第 2 步的修改開始。",
+            "expected": "A 合計 800 元，剛好符合；B 還不知道材料費，不能先說一定較便宜。"
+          },
+          "followup": {
+            "source": "這次四人的總預算是 800 元。",
+            "prompt": "加入預算後，說明哪個方案已知能負擔，哪個還要詢價。",
+            "expected": "A 合計 800 元，剛好符合；B 還不知道材料費，不能先說一定較便宜。"
           }
         },
         "en": {
-          "title": "Choose a board-game afternoon for four",
-          "goal": "Compare two plans, separating known costs from costs you still need to ask about.",
+          "title": "Choose an activity within budget",
+          "goal": "Compare known costs and spot a price you still need.",
           "quick": "Make a usable first version, then choose whether to add a feature.",
           "skip": "Choose “Make it work” or “Add a feature” and switch at any time; age does not decide the level.",
           "source": "Fictional board-game afternoon plans: same day, 4 people, all TWD.\nA: 150 per person plus 200 materials for the group.\nB: 760 for the group; materials cost extra, price not provided.",
           "prompt": "Make a four-person comparison with calculations, known subtotals, and unknown costs. Do not yet claim which complete total is cheaper.",
           "steps": [
-            "Give both plans and the request to AI for a comparison table.",
-            "Use a calculator: A is 150×4+200=800; B is known 760 with materials unknown.",
-            "Choose a condition such as a group budget of at most 800 and request an updated comparison.",
-            "Save the table and one question to ask before deciding; unknown is not zero."
+            "Select “Copy material and request” below.",
+            "Paste into a new AI conversation and send.",
+            "Return and check the points below. Ask AI to correct any errors."
           ],
           "expected": "A totals 800 TWD. B has a known subtotal of 760 TWD plus unknown materials; its complete total and whether it is cheaper are unconfirmed.",
           "independent": {
-            "task": "Write three sentences for teammates: A’s cost, B’s limitation, and the next question to ask.",
-            "expected": "A is 800; B is known 760 plus unknown materials; ask for B’s materials cost without claiming it is cheaper."
+            "task": "Use three sentences: A’s known total, B’s known cost, and what you need to ask B.",
+            "expected": "A is 800; B is known 760 plus unknown materials; ask for B’s materials cost without claiming it is cheaper.",
+            "source": "Fictional board-game afternoon plans: same day, 4 people, all TWD.\nA: 150 per person plus 200 materials for the group.\nB: 760 for the group; materials cost extra, price not provided."
           },
           "challenge": {
-            "task": "Add an 800 budget filter.",
-            "source": "Use A and B; the four-person group has a budget of at most 800 TWD.",
-            "prompt": "Mark which plan meets the budget and which needs confirmation. What is the maximum B materials cost that would fit?",
-            "expected": "A qualifies. B needs confirmation: materials must cost no more than 40 TWD. That is an acceptable limit, not a confirmed quote."
+            "task": "Find the remaining budget",
+            "source": "Fictional board-game afternoon plans: same day, 4 people, all TWD.\nA: 150 per person plus 200 materials for the group.\nB: 760 for the group; materials cost extra, price not provided.",
+            "prompt": "The four-person budget is TWD 800. B’s known group fee is TWD 760. What is the maximum materials fee? Can we already say B is cheaper than A?",
+            "expected": "The maximum materials fee is TWD 40. The actual fee is unknown, so B is not yet known to be cheaper."
           },
           "checks": [
             "A is 150 per person ×4; materials 200 is for the group.",
@@ -540,20 +572,24 @@
           "outcome": "A: 150×4+200=800 TWD.\nB: known 760 TWD; materials to confirm.",
           "why": "An apparently cheaper plan may leave out a cost. Ask before choosing.",
           "connection": {
-            "title": "Instructor extension: read your own Drive practice documents",
-            "source": "An eligible adult operates an authorized practice account here; students do not need to register or connect accounts. Create two blank Google Docs in your Drive named “AI practice – option A” and “AI practice – option B.” Paste each option’s fictional data into its matching document and copy both links.",
-            "prompt": "Use Google Drive to read these fictional practice documents: [A link], [B link]. Compare four-person admission, materials, and known subtotals. Do not edit; say if contents are inaccessible.",
+            "title": "Compare two Google Drive documents",
+            "source": "Prepare: put plans A and B in separate documents in a teaching Drive. Copy both document links.",
+            "prompt": "Use Google Drive to read these practice documents: [A link] and [B link]. Compare costs for four people, separating known amounts from unknown fees. Do not edit the documents. Tell me if you cannot read them.",
             "steps": [
-              "Open both documents yourself to confirm their text is saved and your account can read them.",
-              "Connect Google Drive through available Plugins or connected apps in your AI tool, using the account with access.",
-              "Put both links into the request, select the Drive plugin, and send it.",
-              "Compare the table with the original documents. If reading fails, continue with pasted text from the main exercise."
+              "Connect Google Drive using the account connection guide.",
+              "Put both document links into the request below, select Google Drive, and send.",
+              "Open the originals. Check A’s TWD 800 and B’s TWD 760 plus unknown materials."
             ],
-            "expected": "A totals 800 TWD. B has a known subtotal of 760 TWD plus unknown materials; its complete total and whether it is cheaper are unconfirmed."
+            "expected": "A costs TWD 800. B has a known TWD 760 fee plus unknown materials. The original documents are unchanged."
           },
           "classroom": {
-            "task": "Read the prepared materials here. Rewrite the comparison as two sentences for teammates. Calculate 150×4+200 yourself and circle B’s missing materials cost.",
-            "expected": "A totals 800 TWD. B has a known subtotal of 760 TWD plus unknown materials; its complete total and whether it is cheaper are unconfirmed."
+            "task": "Use the prepared result below. Choose one detail to change, edit it yourself, and explain how you checked it. You can use the change in step 2 as a starting point.",
+            "expected": "A totals TWD 800 and fits. B has an unknown materials fee, so it is not yet known to be cheaper."
+          },
+          "followup": {
+            "source": "The total budget for all four people is TWD 800.",
+            "prompt": "Use this budget to explain which option is known to fit and which needs a price check.",
+            "expected": "A totals TWD 800 and fits. B has an unknown materials fee, so it is not yet known to be cheaper."
           }
         }
       }
@@ -567,28 +603,28 @@
       ],
       "locales": {
         "zh-Hant": {
-          "title": "把30秒短片拆成做得到的任務",
-          "goal": "把分鏡與道具工作分開，做出有負責人和期限的待辦表。",
+          "title": "把短片點子變成分工表",
+          "goal": "整理誰做什麼、何時完成，再更新一項分工。",
           "quick": "先做出一份可用的成果，再自己決定要不要加一個功能。",
           "skip": "自由選「先做出來」或「再加一個功能」，隨時可換；不按年齡分組。",
-          "source": "虛構教學頁：[AI Lab] 30秒校園短片起步 N1\n活動：2026/11/21 14:00（Asia/Taipei），6人。\nT01：小禾於11/18前畫三格分鏡，未完成。\nT02：11/19前準備紙製道具，負責人未定，未完成。\n預算尚未決定。",
+          "source": "虛構教學頁：[AI Lab] 30秒校園短片起步 N1\n活動：2026/11/21 14:00（Asia/Taipei），6人。\nT01：小禾於11/18前畫三格畫面草圖，未完成。\nT02：11/19前準備紙製道具，負責人未定，未完成。\n預算尚未決定。",
           "prompt": "請把這份筆記整理成活動資訊、待辦表、還要討論的事。待辦表列編號、事情、負責人、期限、進度；沒寫的先留「待確認」。",
           "steps": [
-            "把下方筆記與要求一起貼到 AI，取得計畫草稿。",
-            "讀一遍待辦表，看看「畫分鏡」與「準備紙製道具」是不是分成兩項。",
-            "接著送出：「我來負責T02準備紙製道具，請只更新這一項。」",
-            "把滿意的計畫複製到筆記保存。想放到真正的 Notion 頁面，再試進階連線。"
+            "按下方「複製資料與要求」。",
+            "貼到 AI 的新對話，送出。",
+            "回來核對下方重點；有錯就請 AI 修正。"
           ],
-          "expected": "活動：11/21 14:00，6人。T01：小禾11/18前畫三格分鏡，未完成。T02：11/19前準備紙製道具，未完成；追問後負責人改成「我」。還要討論：場地與預算。這份內容先留在AI對話裡，可自行複製到筆記。",
+          "expected": "活動：11/21 14:00，6 人拍短片。\nT01：小禾畫三格畫面草圖，11/18 前完成，目前未完成。\nT02：做紙製道具，11/19 前完成，負責人待確認，目前未完成。\n預算與地點：待確認。",
           "independent": {
-            "task": "沿用T01與T02，自行寫一句要求只把T01期限改成11/17；保留其他欄位。",
-            "expected": "T01期限為11/17，其他資訊不變；只有原本兩筆任務，沒有重複新增。"
+            "task": "將 T01 截止日改成 11/17，重新列出分工表。T02 和其他資訊不變。",
+            "expected": "T01期限為11/17，其他資訊不變；只有原本兩筆任務，沒有重複新增。",
+            "source": "虛構教學頁：[AI Lab] 30秒校園短片起步 N1\n活動：2026/11/21 14:00（Asia/Taipei），6人。\nT01：小禾於11/18前畫三格畫面草圖，未完成。\nT02：11/19前準備紙製道具，負責人未定，未完成。\n預算尚未決定。\nT02 已改由我負責。"
           },
           "challenge": {
-            "task": "加一個「只看未完成」的篩選。",
-            "source": "沿用T01與T02；更新T01為已完成，T02仍未完成。",
-            "prompt": "先依ID更新T01狀態，再列出未完成清單；保留完整表，不能刪除已完成任務。",
-            "expected": "完整表仍有T01、T02兩筆；未完成清單只顯示T02。篩選不等於刪除。"
+            "task": "只看還沒完成的事",
+            "source": "虛構教學頁：[AI Lab] 30秒校園短片起步 N1\n活動：2026/11/21 14:00（Asia/Taipei），6人。\nT01：小禾於11/18前畫三格畫面草圖，未完成。\nT02：11/19前準備紙製道具，負責人未定，未完成。\n預算尚未決定。\nT02 已改由我負責。",
+            "prompt": "T01 已完成。先更新完整分工表，再另外列出未完成項目；不要刪除 T01。",
+            "expected": "完整表保留 T01 並標完成；未完成清單只列 T02。"
           },
           "checks": [
             "畫分鏡與準備紙製道具分成兩項，不混在一起。",
@@ -605,48 +641,52 @@
             "answer": 0,
             "explanation": "產生文字與寫入外部頁面是不同動作。"
           },
-          "outcome": "T01｜小禾｜11/18前畫三格分鏡。\nT02｜我｜11/19前準備紙製道具。",
+          "outcome": "T01｜小禾｜11/18前畫三格畫面草圖。\nT02｜我｜11/19前準備紙製道具。",
           "why": "想一起做作品時，先知道誰做哪一件；不用拍攝或上傳真人影像。",
           "connection": {
-            "title": "講師進階示範：把計畫放進自己的 Notion",
-            "source": "本區由符合條件的成人使用已獲授權的練習帳號操作，學生不需註冊或連接帳號。在自己的Notion練習區建立一頁「AI練習－30秒校園短片」，貼上本課虛構筆記並複製頁面連結。再建立一個空白父頁「AI練習－成果」，準備放整理後的版本。",
-            "prompt": "請用Notion讀取這頁：【練習頁連結】。整理活動資訊與待辦表，先在對話給我看，不修改頁面。",
+            "title": "用 Notion 整理一頁筆記",
+            "source": "準備：在教學 Notion 建一頁，貼入本課短片筆記，再複製頁面連結。",
+            "prompt": "請用 Notion 讀取這頁：【筆記連結】。整理活動資訊、分工與待確認事項，先在對話給我看，不修改頁面。",
             "steps": [
-              "在AI工具可用的Plugins／外掛或連接應用程式中連接Notion，依實際授權畫面允許使用你的練習頁；先自己確認頁面能開啟。",
-              "填入來源連結，選用Notion外掛送出下方要求，看看草稿是否符合筆記。",
-              "想真正存進Notion時，再送出：「請在【成果父頁連結】下建立『30秒校園短片計畫』，寫入剛才這份完整草稿。」這一步才會新增頁面。",
-              "打開回傳的新頁連結，查看標題、待辦與放置位置。沒有寫入權限時，可自行把草稿複製到練習頁。"
+              "依「連接帳號」說明接好 Notion，允許讀取練習頁。",
+              "填入筆記連結，選用 Notion 後送出，核對整理結果。",
+              "想存回 Notion：先確認支援建立頁面，再說「請在【目的頁連結】下建立一頁，存入這份整理結果」。完成後開啟新頁核對；無法建立時可自行貼上。"
             ],
-            "expected": "讀取階段只有對話草稿；你另外要求寫入且成功後，才會有可開啟的新Notion頁面。"
+            "expected": "讀取時只得到對話中的整理結果；另行要求建立且成功後，才會有新的 Notion 頁面。"
           },
           "classroom": {
-            "task": "先看本區預備材料，以來源N1尚未指派的T02為起點。紙上接手T02，把負責人改為「我」；核對T01與原期限不變，仍只有兩筆任務。",
-            "expected": "T02負責人由未定改為「我」，期限11/19不變；T01仍由小禾於11/18前畫三格分鏡。"
+            "task": "使用下方預備結果，自己決定改一處、動手修改，再說明怎麼檢查。可以從第 2 步的修改開始。",
+            "expected": "T02 的負責人是「我」；T01、兩個截止日與狀態都不變。"
+          },
+          "followup": {
+            "source": "T02 改由我負責。",
+            "prompt": "只更新 T02 的負責人，其他內容不變。",
+            "expected": "T02 的負責人是「我」；T01、兩個截止日與狀態都不變。"
           }
         },
         "en": {
-          "title": "Turn a 30-second film into doable tasks",
-          "goal": "Separate storyboarding and props into a task table with owners and deadlines.",
+          "title": "Turn a video idea into a task list",
+          "goal": "List who does what and by when, then change one assignment.",
           "quick": "Make a usable first version, then choose whether to add a feature.",
           "skip": "Choose “Make it work” or “Add a feature” and switch at any time; age does not decide the level.",
-          "source": "Fictional teaching page: [AI Lab] 30-second school film start N1\nActivity: 2026/11/21 14:00 (Asia/Taipei), 6 people.\nT01: Xiaohe to draw three storyboard panels by 11/18, incomplete.\nT02: prepare paper props by 11/19, owner undecided, incomplete.\nBudget undecided.",
+          "source": "Fictional teaching page: [AI Lab] 30-second school film start N1\nActivity: 2026/11/21 14:00 (Asia/Taipei), 6 people.\nT01: Xiaohe to draw three scene sketches by 11/18, incomplete.\nT02: prepare paper props by 11/19, owner undecided, incomplete.\nBudget undecided.",
           "prompt": "Organize these notes into activity details, an action table, and things to discuss. Use ID, task, owner, deadline, and progress as columns; mark missing details “to confirm.”",
           "steps": [
-            "Paste the notes and request into AI to get a draft plan.",
-            "Read the task table: storyboarding and preparing paper props should be separate tasks.",
-            "Then send: “I will take responsibility for T02, preparing paper props. Update only that item.”",
-            "Copy the plan you like into your notes. Try the optional connection exercise to put it in an actual Notion page."
+            "Select “Copy material and request” below.",
+            "Paste into a new AI conversation and send.",
+            "Return and check the points below. Ask AI to correct any errors."
           ],
-          "expected": "Activity: 11/21 14:00, 6 people. T01: Xiaohe draws three storyboard panels by 11/18, incomplete. T02: prepare paper props by 11/19, incomplete; after your follow-up its owner is “me.” Still to discuss: venue and budget. This stays in the AI chat until you copy it into your notes.",
+          "expected": "Activity: six people making a video on November 21 at 14:00.\nT01: Xiaohe draws three scene sketches by November 18; not done.\nT02: make paper props by November 19; owner to confirm; not done.\nBudget and location: to confirm.",
           "independent": {
-            "task": "Using T01 and T02, write a request to change only T01’s deadline to 11/17; keep other fields.",
-            "expected": "T01 is due 11/17; other details remain unchanged. There are still two tasks, with no duplicates."
+            "task": "Move T01’s deadline to November 17 and show the task list again. Keep T02 and everything else unchanged.",
+            "expected": "T01 is due 11/17; other details remain unchanged. There are still two tasks, with no duplicates.",
+            "source": "Fictional teaching page: [AI Lab] 30-second school film start N1\nActivity: 2026/11/21 14:00 (Asia/Taipei), 6 people.\nT01: Xiaohe to draw three storyboard panels by 11/18, incomplete.\nT02: prepare paper props by 11/19, owner undecided, incomplete.\nBudget undecided.\nT02 is now assigned to me."
           },
           "challenge": {
-            "task": "Add an “unfinished only” filter.",
-            "source": "Use T01 and T02; mark T01 completed and keep T02 unfinished.",
-            "prompt": "Update T01 by ID, then show unfinished tasks. Keep the full table; do not delete completed tasks.",
-            "expected": "The full table still contains T01 and T02. The unfinished list shows only T02. Filtering is not deletion."
+            "task": "Show what still needs doing",
+            "source": "Fictional teaching page: [AI Lab] 30-second school film start N1\nActivity: 2026/11/21 14:00 (Asia/Taipei), 6 people.\nT01: Xiaohe to draw three storyboard panels by 11/18, incomplete.\nT02: prepare paper props by 11/19, owner undecided, incomplete.\nBudget undecided.\nT02 is now assigned to me.",
+            "prompt": "T01 is finished. Update the full task list, then show unfinished tasks separately. Keep T01 in the full list.",
+            "expected": "T01 remains in the full list as done. Only T02 appears in the unfinished list."
           },
           "checks": [
             "Storyboarding and preparing paper props are separate tasks.",
@@ -663,23 +703,27 @@
             "answer": 0,
             "explanation": "Generating text and writing to an external page are different actions."
           },
-          "outcome": "T01 | Xiaohe | Draw three storyboard panels by 11/18.\nT02 | Me | Prepare paper props by 11/19.",
+          "outcome": "T01 | Xiaohe | Draw three scene sketches by 11/18.\nT02 | Me | Prepare paper props by 11/19.",
           "why": "When creating together, agree who does what; no filming or uploading real people is needed.",
           "connection": {
-            "title": "Instructor extension: put the plan in your own Notion",
-            "source": "An eligible adult operates an authorized practice account here; students do not need to register or connect accounts. In your Notion practice area, create “AI practice – 30-second school film,” paste this lesson’s fictional notes, and copy the page link. Create a separate blank parent page, “AI practice – results,” for the organized version.",
-            "prompt": "Use Notion to read this page: [practice page link]. Organize activity details and an action table. Show the draft in chat first without changing the page.",
+            "title": "Organize a Notion note",
+            "source": "Prepare: create a teaching Notion page with this lesson’s film notes, then copy its link.",
+            "prompt": "Use Notion to read this page: [note link]. Organize the activity, tasks, and unknowns. Show the result in this conversation first without editing the page.",
             "steps": [
-              "Connect Notion through available Plugins or connected apps in your AI tool. Use the actual permission flow to allow your practice pages, and confirm you can open them yourself.",
-              "Insert the source-page link, select the Notion plugin, and send the request. Review the draft against your notes.",
-              "To save it to Notion, send a separate request: “Under [results parent link], create 30-second school film plan and write the complete draft we just reviewed.” This is the step that creates a page.",
-              "Open the returned page and check its title, tasks, and location. Without write access, copy the draft to your practice page yourself."
+              "Connect Notion using the account connection guide and allow access to the practice page.",
+              "Insert the note link, select Notion, send, and check the result.",
+              "To save in Notion, first check that page creation is supported. Then ask: “Create a page under [destination page link] with this result.” Open and check the new page. If creation is unavailable, paste it yourself."
             ],
-            "expected": "Reading produces a chat draft. An actual new Notion page exists only after you separately request writing and it succeeds."
+            "expected": "Reading produces a result in the conversation. A new Notion page exists only after you separately request creation and it succeeds."
           },
           "classroom": {
-            "task": "Read the prepared materials here, starting from N1 where T02 is unassigned. Take ownership of T02 on paper by writing “me”; check that T01 and deadlines remain unchanged, with only two tasks.",
-            "expected": "T02 owner changes from undecided to “me”, still due 11/19. T01 remains Xiaohe’s three storyboard panels due 11/18."
+            "task": "Use the prepared result below. Choose one detail to change, edit it yourself, and explain how you checked it. You can use the change in step 2 as a starting point.",
+            "expected": "T02 is assigned to me. T01, both deadlines, and the task statuses stay the same."
+          },
+          "followup": {
+            "source": "I will take responsibility for T02.",
+            "prompt": "Update only the owner of T02. Leave everything else unchanged.",
+            "expected": "T02 is assigned to me. T01, both deadlines, and the task statuses stay the same."
           }
         }
       }
@@ -693,33 +737,33 @@
       ],
       "locales": {
         "zh-Hant": {
-          "title": "園遊會準備，錢多花在哪裡？",
-          "goal": "核對兩個月的準備費，找出增加最多的分類。",
+          "title": "活動花費，哪裡變多了？",
+          "goal": "比較兩個月的花費，核對增加的金額。",
           "quick": "先做出一份可用的成果，再自己決定要不要加一個功能。",
           "skip": "自由選「先做出來」或「再加一個功能」，隨時可換；不按年齡分組。",
-          "source": "情境：園遊會準備月記帳。餐食是餐點試作、交通是往返運送、服務是活動支援。 虛構消費資料；消費月口徑、全部TWD，正值支出，負值退款。\nID,月份,分類,金額\nS01,2026-09,餐食,1200\nS02,2026-09,交通,400\nS03,2026-09,服務,500\nO01,2026-10,餐食,1350\nO02,2026-10,交通,450\nO03,2026-10,服務,550",
+          "source": "園遊會準備花費，依花費月份記錄；單位為新臺幣，負數代表退款。\nID,月份,分類,金額\nS01,2026-09,餐食,1200\nS02,2026-09,交通,400\nS03,2026-09,服務,500\nO01,2026-10,餐食,1350\nO02,2026-10,交通,450\nO03,2026-10,服務,550",
           "prompt": "請用這六列算9月、10月總額、增加金額與百分比（小數1位），再列各分類多花多少。先找「增加超過50元」的分類。",
           "steps": [
-            "把六列資料與要求一起貼到 AI，取得每月花費小結。",
-            "用計算機看看9月是否2100、10月是否2350，多250元。",
-            "接著送出：「把超過50元改成至少50元，哪些分類會列出來？」看結果從1類變成3類。",
-            "再試：「新增一筆10月餐食退款-100元，請重新計算。」10月應變2250元；保存你覺得最好懂的說明。"
+            "按下方「複製資料與要求」。",
+            "貼到 AI 的新對話，送出。",
+            "回來核對下方重點；有錯就請 AI 修正。"
           ],
           "expected": "原六列：9月2100，10月2350，增加250；250÷2100×100≈11.9%。分類：餐食+150、交通+50、服務+50。>50只有餐食1類；>=50共3類，兩月總額不變。新增10月餐食退款-100後：10月2250，增加150，150÷2100×100≈7.1%；餐食淨1250，三類各+50。",
           "independent": {
-            "task": "新虛構資料（TWD）：9月書籍300、交通200；10月書籍360、交通240。算兩月總額與增幅，再比較分類增加>40及>=40。",
-            "expected": "9月500、10月600、增加100、20.0%；書籍+60、交通+40。>40為1類，>=40為2類；總額不隨門檻改變。"
+            "task": "算出兩月總額、增加金額與百分比。比較「增加超過 40 元」和「增加至少 40 元」會選到哪些類別。",
+            "expected": "9月500、10月600、增加100、20.0%；書籍+60、交通+40。>40為1類，>=40為2類；總額不隨門檻改變。",
+            "source": "9 月：書籍 300 元、交通 200 元。\n10 月：書籍 360 元、交通 240 元。幣別均為新臺幣。"
           },
           "challenge": {
-            "task": "只判斷缺值會不會影響完整總額。",
-            "source": "虛構，逐分類比較：9月課程0 TWD、餐食100 TWD；10月課程200 TWD、餐食金額缺漏、書籍10 USD。沒有匯率；不能補猜金額。",
-            "prompt": "只回答：10月餐食缺值可以當0嗎？已知TWD小計200與另列10 USD，可以當10月完整總額嗎？不必計算零基期百分比。",
-            "expected": "9月已知TWD合計100；10月已知TWD小計200，餐食未知，另有10 USD不能直接相加。課程差額+200，但基期0，百分比不適用。10月完整總額與整體增幅無法確認，不能用已知小計當完整總額。"
+            "task": "退款會改變結果嗎？",
+            "source": "園遊會準備花費，依花費月份記錄；單位為新臺幣，負數代表退款。\nID,月份,分類,金額\nS01,2026-09,餐食,1200\nS02,2026-09,交通,400\nS03,2026-09,服務,500\nO01,2026-10,餐食,1350\nO02,2026-10,交通,450\nO03,2026-10,服務,550",
+            "prompt": "新增一筆 10 月餐食退款 −100 元。重新算 10 月總額、相較 9 月增加多少與百分比，再列增加超過 50 元的類別。",
+            "expected": "10 月為 2,250 元，增加 150 元，約 7.1%。三類都只增加 50 元，因此沒有任何類別增加超過 50 元。"
           },
           "checks": [
-            "原六列總額是2100與2350，差250，約11.9%。",
-            "超過50元只有餐食；至少50元則三類都符合。",
-            "新增-100退款後，10月變2250，增加150，約7.1%。"
+            "9 月 2,100 元；10 月 2,350 元；多 250 元。",
+            "250 ÷ 2,100 × 100% ≈ 11.9%。",
+            "增加超過 50 元只有餐食；至少 50 元則有三類。"
           ],
           "quiz": {
             "question": "原六列改用『至少50』後，符合幾類？",
@@ -734,38 +778,43 @@
           "outcome": "9月2100元 → 10月2350元。\n多250元，增加約11.9%；餐食多150元。",
           "why": "籌備活動想知道錢花到哪裡，用計算機核對AI的彙整，不靠感覺猜。",
           "classroom": {
-            "task": "先看本區預備材料。用計算機核對2100與2350；親自把「超過50」改成「至少50」，重新圈選符合的分類。",
-            "expected": "9月2100、10月2350；餐食+150、交通+50、服務+50。「超過50」只有餐食；改成「至少50」三類都符合，總額不變。"
+            "task": "使用下方預備結果，自己決定改一處、動手修改，再說明怎麼檢查。可以從第 2 步的修改開始。",
+            "expected": "由只有餐食，變成餐食、交通、服務三類；增加總額仍為 250 元。"
+          },
+          "followup": {
+            "source": "",
+            "prompt": "把「增加超過 50 元」改成「增加至少 50 元」。重新列出符合條件的類別，總額不變。",
+            "expected": "由只有餐食，變成餐食、交通、服務三類；增加總額仍為 250 元。"
           }
         },
         "en": {
-          "title": "School fair preparation: where did spending rise?",
-          "goal": "Check two months of preparation spending and find the largest category increase.",
+          "title": "Find what increased in the budget",
+          "goal": "Compare two months of spending and check the increase.",
           "quick": "Make a usable first version, then choose whether to add a feature.",
           "skip": "Choose “Make it work” or “Add a feature” and switch at any time; age does not decide the level.",
-          "source": "Context: monthly school fair preparation accounts. Meals are food trials, Transport is delivery travel, and Services is event support. Fictional spending; purchase-month basis; all TWD. Positive values are spending; negatives are refunds.\nID,Month,Category,Amount\nS01,2026-09,Meals,1200\nS02,2026-09,Transport,400\nS03,2026-09,Services,500\nO01,2026-10,Meals,1350\nO02,2026-10,Transport,450\nO03,2026-10,Services,550",
+          "source": "School-fair preparation spending, grouped by the month it happened. Amounts are in TWD; negatives are refunds.\nID,Month,Category,Amount\nS01,2026-09,Meals,1200\nS02,2026-09,Transport,400\nS03,2026-09,Services,500\nO01,2026-10,Meals,1350\nO02,2026-10,Transport,450\nO03,2026-10,Services,550",
           "prompt": "Using these six rows, calculate September and October totals, the increase, and percentage increase to 1 decimal. Show the change in each category. First find categories with an increase greater than 50.",
           "steps": [
-            "Paste the six rows and request into AI to get a spending summary.",
-            "Use a calculator to check September 2100, October 2350, and an increase of 250.",
-            "Then send: “Change greater than 50 to at least 50. Which categories appear?” Watch the result change from 1 category to 3.",
-            "Try: “Add an October meals refund of -100 and recalculate.” October should become 2250. Save the explanation you find clearest."
+            "Select “Copy material and request” below.",
+            "Paste into a new AI conversation and send.",
+            "Return and check the points below. Ask AI to correct any errors."
           ],
           "expected": "Original six rows: September 2100; October 2350; increase 250; 250÷2100×100≈11.9%. Categories: meals +150, transport +50, services +50. >50 selects meals only, 1 category; >=50 selects 3. Monthly totals do not change. After an October meals refund of -100: October 2250, increase 150, 150÷2100×100≈7.1%; net meals 1250, with all three categories +50.",
           "independent": {
-            "task": "New fictional TWD data: September books 300, transport 200; October books 360, transport 240. Calculate monthly totals and percentage change, then compare category increases >40 and >=40.",
-            "expected": "September 500; October 600; increase 100, 20.0%. Books +60, transport +40. >40 selects 1 category; >=40 selects 2. Thresholds do not change totals."
+            "task": "Calculate both totals, the increase, and the percentage. Compare which categories increased by more than 40 versus at least 40.",
+            "expected": "September 500; October 600; increase 100, 20.0%. Books +60, transport +40. >40 selects 1 category; >=40 selects 2. Thresholds do not change totals.",
+            "source": "September: books TWD 300, transport TWD 200.\nOctober: books TWD 360, transport TWD 240."
           },
           "challenge": {
-            "task": "Focus on whether a missing amount prevents a complete total.",
-            "source": "Fictional category data: September courses 0 TWD, meals 100 TWD; October courses 200 TWD, meals amount missing, books 10 USD. No exchange rate; do not guess amounts.",
-            "prompt": "Answer only: may October’s missing meals amount be treated as zero? Can the known 200 TWD subtotal and separately listed 10 USD be called a complete October total? No zero-baseline percentage calculation is needed.",
-            "expected": "September known TWD total is 100. October known TWD subtotal is 200 with meals unknown; the separate 10 USD cannot be added directly. Courses increase by 200, but percentage change is undefined with a zero baseline. The complete October total and overall percentage change are unconfirmed; a known subtotal is not a complete total."
+            "task": "What changes after a refund?",
+            "source": "School-fair preparation spending, grouped by the month it happened. Amounts are in TWD; negatives are refunds.\nID,Month,Category,Amount\nS01,2026-09,Meals,1200\nS02,2026-09,Transport,400\nS03,2026-09,Services,500\nO01,2026-10,Meals,1350\nO02,2026-10,Transport,450\nO03,2026-10,Services,550",
+            "prompt": "Add an October Meals refund of −TWD 100. Recalculate October’s total, the increase from September, its percentage, and the categories increasing by more than TWD 50.",
+            "expected": "October becomes TWD 2,250: up 150, about 7.1%. Each category rises by exactly 50, so none increases by more than 50."
           },
           "checks": [
-            "The original totals are 2100 and 2350: an increase of 250, about 11.9%.",
-            "Greater than 50 selects meals; at least 50 selects all three categories.",
-            "After the -100 refund, October is 2250: up 150, about 7.1%."
+            "September: TWD 2,100. October: TWD 2,350. Increase: TWD 250.",
+            "250 ÷ 2,100 × 100% ≈ 11.9%.",
+            "Only Meals increased by more than 50; all three categories increased by at least 50."
           ],
           "quiz": {
             "question": "How many original categories meet 'at least 50'?",
@@ -780,8 +829,13 @@
           "outcome": "September 2100 → October 2350 TWD.\nUp 250, about 11.9%; meals increased by 150.",
           "why": "When preparing an event, check AI’s spending summary with a calculator rather than guessing.",
           "classroom": {
-            "task": "Read the prepared materials here. Check 2100 and 2350 with a calculator. Personally change “greater than 50” to “at least 50” and circle the qualifying categories again.",
-            "expected": "September 2100 and October 2350; Meals +150, Transport +50, Services +50. Greater than 50 selects Meals only; at least 50 selects all three without changing totals."
+            "task": "Use the prepared result below. Choose one detail to change, edit it yourself, and explain how you checked it. You can use the change in step 2 as a starting point.",
+            "expected": "Meals alone becomes Meals, Transport, and Services. The overall increase is still TWD 250."
+          },
+          "followup": {
+            "source": "",
+            "prompt": "Change “increase greater than TWD 50” to “increase of at least TWD 50”. List the matching categories again without changing the totals.",
+            "expected": "Meals alone becomes Meals, Transport, and Services. The overall increase is still TWD 250."
           }
         }
       }
@@ -796,35 +850,33 @@
       ],
       "locales": {
         "zh-Hant": {
-          "title": "做一張社團出場清單網頁",
-          "goal": "得到一個可下載、可開啟、能勾選與重設的清單網頁。",
+          "title": "做一個可以勾選的清單",
+          "goal": "用文字描述需求，做出能勾選、計數、重設的小網頁。",
           "quick": "先做出一份可用的成果，再自己決定要不要加一個功能。",
           "skip": "自由選「先做出來」或「再加一個功能」，隨時可換；不按年齡分組。",
           "source": "虛構清單：標題「社團出場清單」；三項固定依序為「帶道具」「確認音樂」「帶水壺」。本題不用網路、不保存進度；重新開啟時回到0/3。",
-          "prompt": "請依下方三項任務做一個完整HTML清單，CSS與JavaScript放在同一檔，不用外部套件或網路。每項可勾選，顯示已完成n/3，附重設按鈕。手機與鍵盤都能操作。不要保存進度，重新開啟清為0/3，頁面也寫明這點。請給完整程式碼，不要省略。",
+          "prompt": "請把這三項做成一個 HTML 網頁：每項可勾選，顯示完成幾項，並有重設按鈕。所有程式放在同一檔，不需下載套件或連網，手機與鍵盤都能操作。重新開啟從 0/3 開始，頁面要說明不保存進度。請給我完整程式碼。",
           "steps": [
-            "把資料與要求貼到 AI，取得完整 HTML 程式碼。",
-            "複製程式碼，貼到本頁「完整 HTML 程式碼」欄，不含開頭與結尾的三個反引號；按「更新隔離預覽」。",
-            "在預覽勾兩項、取消一項，再按重設：數字應依序是2/3、1/3、0/3。",
-            "按「下載這份 HTML」，從瀏覽器下載清單開啟檔案，看看重新開啟是否回到0/3。",
-            "自行寫一處修改，例如「只把標題改成週五社團出場清單，三項任務不變，給完整新版HTML。」交給AI，再貼回預覽測試。",
-            "下載新版另存為departure-v2.html並保留首版；重開新版，確認你改的標題與起始0/3。"
+            "複製下方資料與要求，貼到 AI 的新對話送出。",
+            "複製 AI 回傳的完整程式碼，貼到下方「貼上程式碼」；不要帶入前後的 ```。",
+            "按「預覽網頁」，試勾兩項、取消一項，再按重設。"
           ],
-          "expected": "得到能開啟的HTML：三項可勾選、計數會更新，重設與重開回到0/3。新版只把標題改為「週五社團出場清單」，三項任務不變。配色可不同，功能必須實測。",
+          "expected": "剛開啟是 0/3；勾兩項是 2/3；取消一項是 1/3；重設回到 0/3。重新開啟網頁時，也從 0/3 開始。",
           "independent": {
-            "task": "新虛構清單：『讀書準備』，任務『選一篇文章』『記下三個問題』。自行寫需求請AI產生另一個不保存進度的HTML，保存study.html並測勾選、取消、重設及重開。",
-            "expected": "初始0/2；兩項全勾2/2；取消一項1/2；重設0/2；重開0/2。需有自己的需求與實際產生檔，任務文字不得變成解說段落。"
+            "task": "做成單一 HTML 網頁，兩項可勾選、顯示完成數、有重設按鈕。不要使用外部套件。請給完整程式碼。",
+            "expected": "剛開啟為 0/2；勾兩項為 2/2；取消一項為 1/2；重設與重新開啟都是 0/2。",
+            "source": "閱讀清單只有兩項：「選一篇文章」、「記下三個問題」。不需記住上次勾選。"
           },
           "challenge": {
-            "task": "加搜尋但不改變完成計數口徑。先貼上你已完成的完整HTML；尚未有檔案者先完成主練習。在同一AI對話確認目前完整版本，再貼下方新需求，不假設AI看得到本機檔案。",
-            "source": "虛構三項：帶道具、確認音樂、帶水壺。搜尋只影響顯示；計數仍統計全部三項；重設清除全部勾選及搜尋。",
-            "prompt": "在我的完整HTML加上文字搜尋，依來源規則；保留原功能與不保存進度。先列測試預期再提供完整檔案。",
-            "expected": "先勾帶道具與帶水壺為2/3；搜尋『道具』只顯示一項，計數仍2/3；取消可見項後1/3；清除搜尋可看見帶水壺仍勾選；重設後三項可見且0/3。"
+            "task": "清單加一個搜尋框",
+            "source": "虛構清單：標題「社團出場清單」；三項固定依序為「帶道具」「確認音樂」「帶水壺」。本題不用網路、不保存進度；重新開啟時回到0/3。",
+            "prompt": "做一個三項清單網頁，加入搜尋。搜尋只改變看見哪些項目；完成數仍計算全部三項。重設要取消所有項目，包括搜尋時看不到的項目。請給完整 HTML，不使用外部套件。",
+            "expected": "勾第一、第三項為 2/3。搜尋「道具」只看到第一項，仍為 2/3；按重設後為 0/3；清除搜尋，三項都未勾選。"
           },
           "checks": [
-            "勾兩項顯示2/3，取消一項1/3，重設0/3。",
-            "重新開啟回到0/3；此練習不保存進度。",
-            "新版只有標題改為「週五社團出場清單」，三項與計數不變；保留首版，另存departure-v2.html並重開確認0/3。"
+            "每個項目都能勾選和取消。",
+            "勾兩項是 2/3；取消一項是 1/3；重設是 0/3。",
+            "關閉後重新開啟，從 0/3 開始。"
           ],
           "quiz": {
             "question": "想只改清單標題，可以怎麼說？",
@@ -839,40 +891,43 @@
           "outcome": "文字示意：☑ 帶道具　☑ 確認音樂　☐ 帶水壺\n已完成2/3；取消一項變1/3，重設回0/3。",
           "why": "做一個真的能勾、能重設的小工具，再用自己的需求改一處。",
           "classroom": {
-            "task": "載入本區預備HTML：這是教材預製示例，不是你已用AI生成的作品。勾前兩項、取消第一項、重設，記錄2/3→1/3→0/3；自己寫一句改標題的要求交給講師，預覽講師提供的新版並核對三項不變。無裝置時在紙上畫三個方框，執行同樣操作與計數。",
-            "expected": "操作紀錄符合2/3→1/3→0/3；有自己寫的修改要求，並標明測的是預備HTML／講師提供的新版。紙上版標記尚未執行程式。"
+            "task": "載入預備程式並預覽，測試勾選和重設。在程式碼中找到標題，換成自己的標題，再預覽測試。",
+            "expected": "貼上新版並按「預覽網頁」。標題改了；勾兩項仍是 2/3，重設仍是 0/3。"
+          },
+          "followup": {
+            "source": "",
+            "prompt": "把頁面標題改成「週五社團出發清單」，其他功能不變。請給我完整 HTML。",
+            "expected": "貼上新版並按「預覽網頁」。標題改了；勾兩項仍是 2/3，重設仍是 0/3。"
           }
         },
         "en": {
-          "title": "Build a club performance checklist webpage",
-          "goal": "Get a downloadable checklist webpage that opens, checks items, and resets.",
+          "title": "Build a clickable checklist",
+          "goal": "Describe a webpage that lets you tick items, count them, and reset.",
           "quick": "Make a usable first version, then choose whether to add a feature.",
           "skip": "Choose “Make it work” or “Add a feature” and switch at any time; age does not decide the level.",
           "source": "Fictional checklist titled “Club performance checklist”; three items in order: “Bring props”, “Check the music”, “Bring a water bottle”. No network access or saved progress; reopening starts at 0/3.",
-          "prompt": "Make a complete HTML checklist for these three tasks, with CSS and JavaScript in the same file and no external libraries or network. Each task can be checked. Show n/3 completed and a reset button. Support phones and keyboards. Do not save progress: reopening clears it to 0/3, and the page must say so. Give me the complete code without omissions.",
+          "prompt": "Make an HTML webpage for these three items. Each can be ticked; show how many are complete and add a reset button. Put all code in one file with no downloads or internet needed. Support phones and keyboards. Reopening starts at 0/3; explain on the page that progress is not saved. Return the complete code.",
           "steps": [
-            "Paste the material and request into AI to get the complete HTML code.",
-            "Copy the code into this page’s Complete HTML code field without the surrounding triple backticks. Select Update isolated preview.",
-            "In the preview, check two items, uncheck one, then reset. Counts should be 2/3, 1/3, and 0/3.",
-            "Select Download this HTML. Open the file from your browser downloads and check that reopening starts at 0/3.",
-            "Write one change yourself, such as “Change only the title to Friday club performance checklist; keep the three items and return the full HTML.” Give it to AI, then preview and test it.",
-            "Download the revision as departure-v2.html and keep the first version. Reopen it and check your changed title and starting count of 0/3."
+            "Copy the material and request below into a new AI conversation.",
+            "Copy the complete code from the answer into “Paste your code” below, without the surrounding ``` marks.",
+            "Select “Preview webpage”. Tick two items, untick one, then reset."
           ],
-          "expected": "Get HTML that opens, with three checkable items and an updating count; reset and reopening return to 0/3. The revision changes only the title to “Friday club performance checklist”, keeping all three items. Colors may vary; test the functions.",
+          "expected": "The page starts at 0/3. Tick two items: 2/3. Untick one: 1/3. Reset: 0/3. Reopening the page also starts at 0/3.",
           "independent": {
-            "task": "New fictional checklist: 'Reading preparation', with 'Choose an article' and 'Write three questions'. Write your own request for another HTML file without progress saving, save study.html, and test checking, unchecking, reset, and reopening.",
-            "expected": "Initial 0/2; both checked 2/2; uncheck one 1/2; reset 0/2; reopen 0/2. Provide your own request and actual generated file. Task labels must not become explanatory paragraphs."
+            "task": "Build a single HTML webpage with two checkboxes, a completion count, and a reset button. Use no external libraries. Return the complete code.",
+            "expected": "Start at 0/2; tick both for 2/2; untick one for 1/2. Resetting or reopening returns to 0/2.",
+            "source": "A reading checklist has two items: “Choose an article” and “Write down three questions”. It does not need to remember previous ticks."
           },
           "challenge": {
-            "task": "Add search without changing the counting scope. First paste your completed full HTML. If you do not have a file, complete the guided task first. Confirm the current complete version in the same AI chat before submitting the new requirement; do not assume AI can see your local file.",
-            "source": "Three fictional tasks: Bring props, Check the music, Bring a water bottle. Search changes visibility only; the count includes all three tasks. Reset clears every checkbox and the search.",
-            "prompt": "Add text search to my complete HTML using these rules. Preserve existing features and no progress saving. List test expectations first, then provide the complete file.",
-            "expected": "Check Bring props and Bring a water bottle: 2/3. Search 'props': only one item is visible, count remains 2/3. Uncheck it: 1/3. Clear search: Bring a water bottle is still checked. Reset: all three visible and 0/3."
+            "task": "Add a search box",
+            "source": "Fictional checklist titled “Club performance checklist”; three items in order: “Bring props”, “Check the music”, “Bring a water bottle”. No network access or saved progress; reopening starts at 0/3.",
+            "prompt": "Build the three-item checklist with search. Search changes only which items are visible; the count still covers all three. Reset clears every item, including hidden ones. Return complete HTML without external libraries.",
+            "expected": "Tick the first and third items: 2/3. Search “props”: only the first is visible, still 2/3. Reset: 0/3. Clear the search: all three are unticked."
           },
           "checks": [
-            "Check two for 2/3, uncheck one for 1/3, reset for 0/3.",
-            "Reopening starts at 0/3; this exercise does not save progress.",
-            "Only the title changes to “Friday club performance checklist”; items and counting stay the same. Keep the first version, save departure-v2.html separately, and reopen to check 0/3."
+            "Every item can be ticked and unticked.",
+            "Two ticks show 2/3; unticking one shows 1/3; reset shows 0/3.",
+            "Closing and reopening starts again at 0/3."
           ],
           "quiz": {
             "question": "How can you request a change to only the checklist title?",
@@ -887,8 +942,13 @@
           "outcome": "Text illustration: ☑ Bring props  ☑ Check the music  ☐ Bring a water bottle\n2/3 completed; uncheck one for 1/3, reset for 0/3.",
           "why": "Make a tool you can actually check and reset, then change it with your own request.",
           "classroom": {
-            "task": "Load the prepared HTML here: it is a teaching fixture, not something you have generated with AI. Check the first two items, uncheck the first, and reset; record 2/3 → 1/3 → 0/3. Write your own title-change request for the instructor, preview the supplied revision, and check that all three items stay unchanged. Without a device, draw three boxes on paper and perform the same actions and counts.",
-            "expected": "Record 2/3 → 1/3 → 0/3, your own change request, and that you tested prepared HTML / an instructor-supplied revision. Mark paper-only work as code not executed."
+            "task": "Load the prepared code and preview it. Test ticking and reset. In the code, find the title and change it to a title you choose; preview and test again.",
+            "expected": "Paste the new code and select “Preview webpage”. The title changes; two ticks still show 2/3 and reset returns to 0/3."
+          },
+          "followup": {
+            "source": "",
+            "prompt": "Change the page title to “Friday club checklist”. Keep every feature and return the complete HTML.",
+            "expected": "Paste the new code and select “Preview webpage”. The title changes; two ticks still show 2/3 and reset returns to 0/3."
           }
         }
       }
@@ -902,35 +962,33 @@
       ],
       "locales": {
         "zh-Hant": {
-          "title": "明明勾了，為什麼清單沒算？",
-          "goal": "得到一份計數正確的修正版HTML，並保留可回頭使用的原檔。",
+          "title": "清單壞了，請 AI 幫忙修",
+          "goal": "說清楚怎麼出錯，再實際測試修好的版本。",
           "quick": "先做出一份可用的成果，再自己決定要不要加一個功能。",
           "skip": "自由選「先做出來」或「再加一個功能」，隨時可換；不按年齡分組。",
-          "source": "虛構故障清單有三項：帶道具、確認音樂、帶水壺。\n故障檔：downloads/curriculum/broken-checklist-zh-Hant.html\n可用對照檔：downloads/curriculum/correct-checklist-zh-Hant.html\n已知問題：第一項有打勾，完成數卻沒有增加。",
-          "prompt": "我會貼上故障HTML。只勾第一項時應顯示1/3，卻是0/3；勾前兩項應是2/3，卻是1/3。請找出原因，只修正計數問題，保留原有文字、重設與重開歸零。給我完整修正版，並簡短說明改了哪裡。",
+          "source": "三項清單：「帶道具、確認音樂、帶水壺」。\n已知問題：只勾第一項，完成數卻還是 0/3。\n下方複製按鈕會一起帶入故障程式碼。",
+          "prompt": "只勾第一項時，應顯示 1/3，現在卻顯示 0/3。請修好計數，保留原有功能，給我完整 HTML，再用一句話說明原因。",
           "steps": [
-            "按「下載故障原檔」及「下載參考修正版」，保留兩份原檔。",
-            "用瀏覽器開故障檔，先勾第一項，再勾第二項：會看到錯誤的0/3、1/3。",
-            "按「複製故障程式碼與要求」，把完整故障HTML與修正要求直接貼到AI並送出。",
-            "把AI修正後的完整HTML貼到本頁「完整 HTML 程式碼」，按「更新隔離預覽」。",
-            "試第一項單勾、前兩項、取消第一項、重設：應是1/3、2/3、1/3、0/3。按「下載這份 HTML」留下修正版。",
-            "另開保留的參考修正版，練習回到可用的版本。"
+            "開啟下方「故障網頁」，只勾第一項，確認問題。",
+            "按「複製故障程式碼與要求」，貼到 AI 的新對話送出。",
+            "把 AI 修好的完整程式碼貼到下方，按「預覽網頁」，重新測試。"
           ],
-          "expected": "程式只從第二項開始數，所以漏掉第一項。修正應移除計數中的.slice(1)，讓全部核取方塊都列入。修好後：只勾第一項1/3，勾前兩項2/3，取消第一項1/3，重設0/3。不能一律加1，否則全部沒勾也會顯示1。",
+          "expected": "原程式漏算第一個勾選項目。修正後，只勾第一項是 1/3；再勾第二項是 2/3；取消第一項是 1/3；重設是 0/3。",
           "independent": {
-            "task": "開啟獨立題虛構故障網頁，並下載downloads/curriculum/reset-bug-zh-Hant.html保留原檔。兩項讀書任務為「選文章」「寫三個問題」，起始0/2，勾兩項2/2；按重設後兩個勾都清掉，數字卻仍2/2。此指定檔確實定義updateCount()，但reset只清勾而未呼叫它。按這題的「複製故障程式碼與要求」，交給AI或講師操作，補上你的重現報告並要求最小修正。把完整修正版貼回工作區測試，下載另存後重開再測；可下載correct-reset-zh-Hant.html對照，不套用到不明結構的其他程式。",
-            "expected": "重現：重開→勾兩項→重設；預期未勾且0/2，實際未勾但2/2。清勾後加updateCount()；測2→重設0→再勾第一項1。不能只隱藏錯誤數字。"
+            "task": "請修好重設後的計數，保留原有功能，給我完整 HTML。再告訴我如何測試。",
+            "expected": "勾兩項為 2/2。按重設後，勾選和數字都清空，顯示 0/2。",
+            "source": "閱讀清單有兩項。勾完顯示 2/2；按重設後，勾選已清除，數字卻仍是 2/2。複製時會包含完整故障程式碼。"
           },
           "challenge": {
-            "task": "開啟固定搜尋／重設故障網頁，下載search-reset-bug-zh-Hant.html保留原檔。先重現隱藏項未清除，再按這題的「複製故障程式碼與要求」交給AI或講師操作，補上重現結果並要求最小修正。把完整修正版貼回工作區，下載另存副本，最後重開並依下方步驟回歸測試。",
-            "source": "虛構故障檔：downloads/curriculum/search-reset-bug-zh-Hant.html；對照檔：downloads/curriculum/correct-search-reset-zh-Hant.html。三項依序為帶道具、確認音樂、帶水壺。計數應包含全部項目；搜尋只影響顯示；重設應清除所有勾選及搜尋。刻意錯誤：重設只清除目前可見項，隨後清搜尋，因此原先隱藏的勾選仍保留。",
-            "prompt": "我會貼上這份故障HTML。先說明並重現：勾第一與第三項為2/3；搜尋「道具」只見第一項但仍2/3；按重設預期全顯且0/3，實際全顯但1/3、第三項仍勾。請只修正reset，讓它遍歷所有核取方塊而非僅可見項，保留搜尋及計數範圍。回傳完整修正版與最小差異，列回歸步驟。",
-            "expected": "故障重現：勾1與3→2/3；搜道具→只1項可見、仍2/3；重設→全顯但1/3（第三仍勾）。修正後同樣操作，重設必須全顯且0/3，隱藏的第三項也已清除。再勾前兩項2/3→取消第一項1/3→重設0/3；搜尋仍只改顯示、不改計數範圍。修正只將reset清除範圍改為全部checkbox，不刪除第三項或硬把數字設0來掩蓋殘留勾選。保留原檔，需復原時重新開啟它。"
+            "task": "找出搜尋時才出現的錯誤",
+            "source": "清單含「帶道具、確認音樂、帶水壺」與搜尋功能。複製時包含完整故障程式碼。",
+            "prompt": "勾第一和第三項，再搜尋「道具」。按重設後應為 0/3，現在卻是 1/3。請修好它，保留搜尋與計數功能，給我完整 HTML。",
+            "expected": "修好後重設為 0/3；清除搜尋，三項都沒勾選。"
           },
           "checks": [
-            "第一項單獨勾選時顯示1/3，不再被漏掉。",
-            "勾前兩項2/3，取消第一項1/3，重設0/3。",
-            "不能一律加1；全部沒勾時必須是0/3。"
+            "只勾第一項，數字變成 1/3。",
+            "再勾第二項為 2/3；取消第一項為 1/3。",
+            "按重設後，全部取消勾選，數字是 0/3。"
           ],
           "quiz": {
             "question": "為什麼不能把故障計數一律加1？",
@@ -945,40 +1003,43 @@
           "outcome": "修正前：只勾第一項，卻顯示0/3。\n修正後：只勾第一項，正確顯示1/3。",
           "why": "遇到網頁故障，先說清楚做了什麼、預期什麼、實際看到什麼。",
           "classroom": {
-            "task": "載入本區預備故障HTML：這是刻意有錯的教材示例。只勾「帶道具」會錯顯0/3；寫下「預期1/3、實際0/3」，自己寫修正要求交給講師。取得參考修正版後，親自試單勾1/3、雙勾2/3、取消1/3、重設0/3；這是測試預備程式，不宣稱自己已生成程式。無裝置時在紙上更正錯誤計數，說明仍未執行程式。",
-            "expected": "能分開故障的0/3與正確的1/3，保留自己的修正要求與四步測試紀錄；紙上核對不算程式已修復。"
+            "task": "載入故障程式並預覽。只勾第一項，描述哪裡不對。再載入參考修正版，重新測試下方四種操作。",
+            "expected": "原程式漏算第一個勾選項目。修正後，只勾第一項是 1/3；再勾第二項是 2/3；取消第一項是 1/3；重設是 0/3。"
+          },
+          "followup": {
+            "source": "",
+            "prompt": "把修好清單的「全部重設」按鈕改成「重新準備」，其他功能不變。請給我完整 HTML。",
+            "expected": "用新版再測：只勾第一項是 1/3；按「重新準備」後回到 0/3。"
           }
         },
         "en": {
-          "title": "I checked it: why did the count not change?",
-          "goal": "Get corrected HTML with accurate counting while keeping the original file.",
+          "title": "Ask AI to fix a broken checklist",
+          "goal": "Describe how a bug happens, then test the fix.",
           "quick": "Make a usable first version, then choose whether to add a feature.",
           "skip": "Choose “Make it work” or “Add a feature” and switch at any time; age does not decide the level.",
-          "source": "The fictional checklist has three tasks: Bring props, Check the music, Bring a water bottle.\nBroken file: downloads/curriculum/broken-checklist-en.html\nWorking comparison: downloads/curriculum/correct-checklist-en.html\nKnown issue: checking the first item does not increase the completed count.",
-          "prompt": "I will paste broken HTML. Checking only the first item should show 1/3 but shows 0/3; checking the first two should show 2/3 but shows 1/3. Find the cause and fix only the counting issue. Keep the text, reset, and zero-on-reopen behavior. Give complete corrected code and briefly explain the change.",
+          "source": "Three items: Bring props, Check music, Bring water bottle.\nKnown bug: ticking only the first item still shows 0/3.\nThe copy button below includes the complete broken code.",
+          "prompt": "Ticking only the first item should show 1/3, but it shows 0/3. Fix the count, keep the existing features, and return the complete HTML. Explain the cause in one sentence.",
           "steps": [
-            "Select Download the original file and Download the reference fix. Keep both originals.",
-            "Open the broken file in a browser. Check the first item, then the second: it incorrectly shows 0/3 and 1/3.",
-            "Select Copy broken code and request. Paste the complete broken HTML and repair request directly into AI and send them.",
-            "Paste AI’s complete corrected HTML into this page’s Complete HTML code field and select Update isolated preview.",
-            "Try the first item alone, the first two, unchecking the first, and reset: expect 1/3, 2/3, 1/3, and 0/3. Select Download this HTML to keep the fix.",
-            "Open the retained reference fix separately, practicing a return to a working version."
+            "Open the “Broken webpage” below and tick only the first item to see the bug.",
+            "Select “Copy broken code and request”, paste into a new AI conversation, and send.",
+            "Paste AI’s complete fixed code below, select “Preview webpage”, and test again."
           ],
-          "expected": "The code starts counting from the second item, skipping the first. Remove .slice(1) from the counting expression so every checkbox is included. After repair: first item alone 1/3, first two 2/3, uncheck the first 1/3, reset 0/3. Always adding 1 would incorrectly show 1 when nothing is checked.",
+          "expected": "The original code leaves the first checkbox out of the count. After fixing: first item only = 1/3; add the second = 2/3; untick the first = 1/3; reset = 0/3.",
           "independent": {
-            "task": "Open the fictional independent-task bug webpage and download downloads/curriculum/reset-bug-en.html to keep the original. Its two reading tasks are Choose an article and Write three questions. It starts at 0/2; checking both gives 2/2. Reset clears the checks but still displays 2/2. This specific file defines updateCount(), but reset clears checks without calling it. Select this exercise’s Copy broken code and request button, paste directly into your AI tool, add your reproduction report, and request a minimal fix. Test the complete repaired HTML in the workspace, download it as a separate file, then reopen and retest. Download correct-reset-en.html for comparison; do not apply the change to unrelated code with an unknown structure.",
-            "expected": "Reproduce: reopen→check both→reset. Expected unchecked and 0/2; actual unchecked and 2/2. Call updateCount() after clearing checks. Test 2→reset 0→check first 1. Do not merely hide the incorrect number."
+            "task": "Fix the count after reset, preserve the existing features, and return the complete HTML. Explain how to test it.",
+            "expected": "Two ticks show 2/2. Reset clears both ticks and returns the count to 0/2.",
+            "source": "The reading checklist has two items. Both ticked shows 2/2. Reset clears the ticks but the count stays at 2/2. Copying includes the complete broken code."
           },
           "challenge": {
-            "task": "Open the prepared search/reset bug webpage and download search-reset-bug-en.html to preserve the original. Reproduce the uncleared hidden item. Select this exercise’s Copy broken code and request button, paste directly into your AI tool, add the observed result, and request a minimal fix. Paste the complete repaired HTML into the workspace, download a separate working copy, then reopen it and run the regression steps below.",
-            "source": "Fictional bug file: downloads/curriculum/search-reset-bug-en.html; reference fix: downloads/curriculum/correct-search-reset-en.html. Tasks in order: Bring props, Check the music, Bring a water bottle. The count includes all items; search changes visibility only; reset must clear every checkbox and search. Intentional bug: reset clears only currently visible items before clearing search, leaving hidden checked items checked.",
-            "prompt": "I will paste this broken HTML. Explain and reproduce: check the first and third items for 2/3; search props so only the first is visible, still 2/3; reset should show all items at 0/3, but actually shows all at 1/3 with the third still checked. Fix only reset so it traverses all checkboxes rather than just visible ones. Preserve search and counting scope. Return the complete fixed file, minimal difference, and regression steps.",
-            "expected": "Reproduction: check items 1 and 3→2/3; search props→one visible, still 2/3; reset→all visible but 1/3, with the third still checked. After the fix, the same sequence must reset to all visible and 0/3, clearing the hidden third item too. Then check the first two 2/3→uncheck first 1/3→reset 0/3. Search still changes only visibility, not counting scope. Change the reset clearing scope to all checkboxes; do not delete the third item or force the display to zero while leaving it checked. Preserve the original and reopen it if restoration is needed."
+            "task": "Find a bug that appears during search",
+            "source": "The checklist has Bring props, Check music, Bring water bottle, and search. Copying includes the complete broken code.",
+            "prompt": "Tick the first and third items, then search for “props”. Reset should show 0/3, but shows 1/3. Fix this while preserving search and counting. Return the complete HTML.",
+            "expected": "Reset shows 0/3. Clearing the search reveals all three items unticked."
           },
           "checks": [
-            "The first item alone shows 1/3 and is no longer skipped.",
-            "First two checked: 2/3; uncheck the first: 1/3; reset: 0/3.",
-            "Do not always add 1; with nothing checked the count must be 0/3."
+            "Ticking only the first item shows 1/3.",
+            "Adding the second shows 2/3; unticking the first shows 1/3.",
+            "Reset clears all ticks and returns the count to 0/3."
           ],
           "quiz": {
             "question": "Why not add 1 to every faulty count?",
@@ -993,8 +1054,13 @@
           "outcome": "Before: checking only the first item incorrectly shows 0/3.\nAfter: checking only the first item correctly shows 1/3.",
           "why": "When a page breaks, describe what you did, what you expected, and what actually happened.",
           "classroom": {
-            "task": "Load the prepared broken HTML here; it is an intentionally faulty teaching fixture. Checking only “Bring props” incorrectly shows 0/3. Write “expected 1/3, actual 0/3” and your own repair request for the instructor. Test the supplied reference fix: one checked 1/3, two 2/3, uncheck one 1/3, reset 0/3. This tests prepared code; it does not claim you generated it. Without a device, correct the counts on paper and note that no code was run.",
-            "expected": "Distinguish faulty 0/3 from correct 1/3; keep your own repair request and four-step test record. Paper checks do not mean code was repaired."
+            "task": "Load the broken code and preview it. Tick only the first item and describe the bug. Then load the reference fix and repeat all four checks.",
+            "expected": "The original code leaves the first checkbox out of the count. After fixing: first item only = 1/3; add the second = 2/3; untick the first = 1/3; reset = 0/3."
+          },
+          "followup": {
+            "source": "",
+            "prompt": "Rename the fixed checklist’s “Reset all” button to “Start again”. Keep every feature and return the complete HTML.",
+            "expected": "Test the new version: the first item alone shows 1/3; “Start again” returns it to 0/3."
           }
         }
       }
@@ -1009,95 +1075,105 @@
       ],
       "locales": {
         "zh-Hant": {
-          "title": "替模型房間設計自動風扇規則",
-          "goal": "用五筆虛構感測紀錄試跑風扇規則，不連接真實設備。",
+          "title": "設計一個溫度提醒",
+          "goal": "用幾筆溫度資料，測試何時該提醒、何時不該提醒。",
           "quick": "先做出一份可用的成果，再自己決定要不要加一個功能。",
           "skip": "自由選「先做出來」或「再加一個功能」，隨時可換；不按年齡分組。",
-          "source": "模型房間風扇情境。虛構溫度紀錄，只做文字模擬，不連接設備。\n規則：溫度達28°C或以上，產生一筆「模擬風扇啟動請求」並通知一次。低於28°C不動作；沒有溫度就先不動作。同一編號已處理過，就不要再做一次。\n依序收到：E01：27°C；E02：28°C；E03：29°C；E04：沒有溫度；E02：28°C（同一筆重送）。",
-          "prompt": "請依下方規則試算，每筆列溫度、是否產生模擬啟動請求、是否通知，以及一句原因。重送的同一筆不要重複處理。只做文字模擬。",
+          "source": "這是模型房間的提醒練習，不會控制真實設備。\n規則：溫度達 28°C 就提醒；同一筆資料只處理一次；缺溫度時標「待確認」。\n依序收到：E01＝27°C、E02＝28°C、E03＝29°C、E04＝缺資料、E02＝28°C（重複收到）。",
+          "prompt": "逐筆列出：資料編號、是否提醒、原因。最後算出提醒幾次。",
           "steps": [
-            "把下方規則、五筆資料與要求一起貼到 AI，取得試跑表。",
-            "看28度與29度各有一次請求及通知；缺溫度的那筆先不動作。",
-            "接著送出：「改成超過28度才啟動，從空白紀錄重新跑這五筆。」看看28度那筆是否改為不啟動。",
-            "把兩版放一起看：第一次共2次，改後共1次。這裡試的是規則，沒有連接真實設備。"
+            "按下方「複製資料與要求」。",
+            "貼到 AI 的新對話，送出。",
+            "回來核對下方重點；有錯就請 AI 修正。"
           ],
-          "expected": "E01 27：不啟動，0請求0通知。E02 28：模擬啟動，1請求1通知。E03 29：模擬啟動，1請求1通知。E04缺值：未知，0請求0通知。重送E02：略過，0新增請求0新增通知。合計2請求2通知。>28的新批次僅E03啟動，合計1；還原>=28回到2。比較及去重是規則；AI可協助撰寫與解釋，未真正控制設備。",
+          "expected": "E01 不提醒。E02、E03 各提醒一次。E04 標待確認，不提醒。最後一筆 E02 已處理過，不再提醒。共 2 次。",
           "independent": {
-            "task": "新虛構事件與規則：濕度>=70%發一筆除濕提醒（只模擬）；依ID去重，缺值記未知。依序H01,69；H02,70；H03,71；H04,缺值；H02,70重送。自行列逐筆結果。",
-            "expected": "H01不提醒；H02提醒1；H03提醒1；H04未知不提醒；重送H02略過。合計2筆提醒。70必須符合；缺值不是0%。"
+            "task": "逐筆判斷要不要提醒，寫出原因，算出提醒總次數。",
+            "expected": "H02、H03 各提醒一次，共 2 次。H01、H04 和重複 H02 不增加提醒。",
+            "source": "濕度達 70% 就提醒；同一筆資料只處理一次；缺資料不提醒。\n依序收到：H01＝69%、H02＝70%、H03＝71%、H04＝缺資料、H02＝70%（重複）。"
           },
           "challenge": {
-            "task": "加一個5分鐘提醒冷卻。",
-            "source": "虛構模型房間模擬，時間Asia/Taipei：>=28°C產生模擬風扇請求；收到新事件都先判斷溫度。成功提醒後不足5分鐘不再提醒，但符合條件仍產生請求。R1 10:00為28°C；R2 10:03為29°C；R3 10:05為28°C。所有請求均假定成功，無重送。",
-            "prompt": "逐筆列是否請求、是否提醒、原因。只新增冷卻規則，不操作設備。",
-            "expected": "R1請求並提醒；R2請求但距上次提醒3分鐘，不提醒；R3請求，距10:00正好5分鐘可提醒。共3筆請求、2次提醒；未連設備。"
+            "task": "不要每分鐘都提醒",
+            "source": "三筆不同資料：10:00＝28°C、10:03＝29°C、10:05＝28°C。開始前沒有提醒過。",
+            "prompt": "溫度達 28°C 時可提醒，但距離上次提醒滿 5 分鐘才能再提醒。依序判斷三筆資料，列出提醒時間。",
+            "expected": "10:00 提醒；10:03 不提醒；10:05 剛好滿 5 分鐘，可以提醒。共 2 次。"
           },
           "checks": [
-            "達28度包含28；超過28度則不包含28。",
-            "缺少溫度不動作，同一編號重送不再通知。",
-            "這是文字模擬，沒有啟動真實模型房間風扇。"
+            "28°C 會提醒，27°C 不會。",
+            "重複收到 E02，不再增加提醒。",
+            "缺資料不當成 0°C；總共提醒 2 次。"
           ],
           "quiz": {
-            "question": "規格>=28°C，溫度缺值時應如何？",
+            "question": "缺少溫度資料時，應該怎麼處理？",
             "choices": [
-              "標示未知，不發控制請求",
-              "當0°C",
-              "當28°C啟動"
+              "標待確認，不提醒",
+              "當成 0°C，直接略過",
+              "當成 28°C，發出提醒"
             ],
             "answer": 0,
-            "explanation": "缺值無法比較，不能偷偷轉成0或門檻值。"
+            "explanation": "沒讀到資料，不代表溫度是 0°C，也不能假設已達提醒條件。"
           },
-          "outcome": "達28°C就啟動：共2次模擬請求。\n改成超過28°C：共1次；重送不再觸發。",
+          "outcome": "27°C：不提醒。28°C、29°C：各提醒一次。缺資料：待確認。同一筆重複收到：不再提醒。",
           "why": "想讓系統自動提醒時，先把「什麼時候做、什麼時候不做」講清楚。",
           "classroom": {
-            "task": "先看本區預備材料。畫五筆事件的判定表，親自把「達28°C」改成「超過28°C」，重算哪一筆改變；缺值與重送仍不動作。",
-            "expected": "E01 27：不啟動，0請求0通知。E02 28：模擬啟動，1請求1通知。E03 29：模擬啟動，1請求1通知。E04缺值：未知，0請求0通知。重送E02：略過，0新增請求0新增通知。合計2請求2通知。>28的新批次僅E03啟動，合計1；還原>=28回到2。比較及去重是規則；AI可協助撰寫與解釋，未真正控制設備。"
+            "task": "使用下方預備結果，自己決定改一處、動手修改，再說明怎麼檢查。可以從第 2 步的修改開始。",
+            "expected": "27°C、28°C 都不提醒；29°C 提醒一次；缺資料與重複資料不增加次數。"
+          },
+          "followup": {
+            "source": "",
+            "prompt": "把規則改成「超過 28°C 才提醒」。從零開始，用同一批資料再算一次。",
+            "expected": "27°C、28°C 都不提醒；29°C 提醒一次；缺資料與重複資料不增加次數。"
           }
         },
         "en": {
-          "title": "Design automatic fan rules for a model room",
-          "goal": "Try fan rules against five fictional sensor readings without connecting real devices.",
+          "title": "Design a temperature alert",
+          "goal": "Test when a temperature rule should and should not send an alert.",
           "quick": "Make a usable first version, then choose whether to add a feature.",
           "skip": "Choose “Make it work” or “Add a feature” and switch at any time; age does not decide the level.",
-          "source": "Model-room fan scenario. Fictional temperature readings for text simulation; no equipment connection.\nRule: at 28°C or above, create one simulated model-room fan start request and one notification. Below 28°C, do nothing. With no temperature, do nothing for now. If an event ID has already been processed, do not process it again.\nIn order: E01: 27°C; E02: 28°C; E03: 29°C; E04: no temperature; E02: 28°C (the same event sent again).",
-          "prompt": "Try the rules below. For each row show temperature, whether it produces a simulated start request, whether it notifies, and one reason. Do not process a repeated event twice. Use text simulation only.",
+          "source": "This is a model-room alert exercise; it does not control real devices.\nRule: alert at 28°C or above; process each reading once; mark missing temperatures “to confirm”.\nReadings in order: E01 = 27°C, E02 = 28°C, E03 = 29°C, E04 = missing, E02 = 28°C (received again).",
+          "prompt": "For each reading, list its ID, whether it triggers an alert, and why. Give the total number of alerts.",
           "steps": [
-            "Paste the rules, five readings, and request into AI to get a trial table.",
-            "Check that 28 and 29 degrees each produce one request and notification; the missing reading produces no action.",
-            "Then send: “Change the rule to above 28 degrees and rerun these five events from an empty record.” See whether the 28-degree event stops triggering.",
-            "Compare the two versions: 2 requests first, then 1. This tests a rule; it does not connect to real equipment."
+            "Select “Copy material and request” below.",
+            "Paste into a new AI conversation and send.",
+            "Return and check the points below. Ask AI to correct any errors."
           ],
-          "expected": "E01 27: no activation, 0 requests/0 notifications. E02 28: simulated activation, 1/1. E03 29: simulated activation, 1/1. E04 missing: unknown, 0/0. Redelivered E02: skipped, 0 new requests/0 new notifications. Total 2 requests and 2 notifications. A fresh >28 batch activates only E03, total 1; restoring >=28 gives 2. Comparison and deduplication are rules; AI can help write and explain them. No actual device was controlled.",
+          "expected": "E01: no alert. E02 and E03: one alert each. E04: to confirm, no alert. The repeated E02 was already processed, so no new alert. Total: 2.",
           "independent": {
-            "task": "New fictional rule and events: humidity >=70% produces one dehumidification reminder, simulation only; deduplicate by ID and mark missing as unknown. In order: H01,69; H02,70; H03,71; H04,missing; H02,70 redelivery. List each result independently.",
-            "expected": "H01 no reminder; H02 one; H03 one; H04 unknown, none; duplicate H02 skipped. Total 2 reminders. 70 qualifies; missing is not 0%."
+            "task": "For each reading, decide whether to alert and explain why. Count the alerts.",
+            "expected": "H02 and H03 alert once each: 2 total. H01, H04, and the repeated H02 add no alerts.",
+            "source": "Alert at 70% humidity or above; process each reading once; do not alert for missing data.\nIn order: H01 = 69%, H02 = 70%, H03 = 71%, H04 = missing, H02 = 70% (repeated)."
           },
           "challenge": {
-            "task": "Add a 5-minute notification cooldown.",
-            "source": "Fictional model room simulation, Asia/Taipei: >=28°C creates a simulated fan request; check each new reading. After a successful notification, suppress further notifications for less than 5 minutes, but still create qualifying requests. R1 at 10:00 is 28°C; R2 at 10:03 is 29°C; R3 at 10:05 is 28°C. Assume all requests succeed, with no redeliveries.",
-            "prompt": "List request, notification, and reason for each event. Add only the cooldown rule; do not operate devices.",
-            "expected": "R1 requests and notifies; R2 requests but does not notify, only 3 minutes later; R3 requests and notifies, exactly 5 minutes after 10:00. Total 3 requests and 2 notifications; no devices connected."
+            "task": "Avoid constant alerts",
+            "source": "Three distinct readings: 10:00 = 28°C, 10:03 = 29°C, 10:05 = 28°C. No alerts were sent before these.",
+            "prompt": "At 28°C or above, send an alert only if at least five minutes have passed since the last alert. Process these three readings and list the alert times.",
+            "expected": "Alert at 10:00, not at 10:03, and again at 10:05 when five minutes have passed. Total: 2."
           },
           "checks": [
-            "At least 28 includes 28; above 28 does not.",
-            "Missing readings cause no action; repeated event IDs cause no new notification.",
-            "This is text simulation, not actual model-room fan control."
+            "28°C triggers an alert; 27°C does not.",
+            "Receiving E02 again does not add another alert.",
+            "Missing data is not 0°C. The total is 2 alerts."
           ],
           "quiz": {
-            "question": "Under >=28°C, what should happen when temperature is missing?",
+            "question": "What should happen when the temperature is missing?",
             "choices": [
-              "Mark unknown and make no control request",
-              "Treat it as 0°C",
-              "Treat it as 28°C and activate"
+              "Mark it to confirm and do not alert",
+              "Treat it as 0°C and skip it",
+              "Treat it as 28°C and alert"
             ],
             "answer": 0,
-            "explanation": "Missing data cannot be compared and must not silently become zero or the threshold."
+            "explanation": "Missing data is not 0°C, and it does not prove that the alert condition has been met."
           },
-          "outcome": "At least 28°C: 2 simulated start requests.\nAbove 28°C: 1 request; repeated events do not trigger again.",
+          "outcome": "27°C: no alert. 28°C and 29°C: one each. Missing: to confirm. A repeated reading: no extra alert.",
           "why": "Before automating a reminder, spell out when it should and should not happen.",
           "classroom": {
-            "task": "Read the prepared materials here. Draw a decision table for the five events. Change “at least 28°C” to “above 28°C” yourself and identify the changed result; missing and repeated events still cause no action.",
-            "expected": "E01 27: no activation, 0 requests/0 notifications. E02 28: simulated activation, 1/1. E03 29: simulated activation, 1/1. E04 missing: unknown, 0/0. Redelivered E02: skipped, 0 new requests/0 new notifications. Total 2 requests and 2 notifications. A fresh >28 batch activates only E03, total 1; restoring >=28 gives 2. Comparison and deduplication are rules; AI can help write and explain them. No actual device was controlled."
+            "task": "Use the prepared result below. Choose one detail to change, edit it yourself, and explain how you checked it. You can use the change in step 2 as a starting point.",
+            "expected": "27°C and 28°C do not alert. 29°C alerts once. Missing or repeated readings do not add alerts."
+          },
+          "followup": {
+            "source": "",
+            "prompt": "Change the rule to “alert only above 28°C”. Start from zero and process the same readings again.",
+            "expected": "27°C and 28°C do not alert. 29°C alerts once. Missing or repeated readings do not add alerts."
           }
         }
       }
@@ -1112,28 +1188,28 @@
       ],
       "locales": {
         "zh-Hant": {
-          "title": "讓交換學生也看得懂社團體驗日",
-          "goal": "得到中文與英文各一版短通知，並能調整成適合朋友的語氣。",
+          "title": "把活動介紹寫成中英文",
+          "goal": "改寫成兩種語言，保留相同的日期、地點與費用。",
           "quick": "先做出一份可用的成果，再自己決定要不要加一個功能。",
           "skip": "自由選「先做出來」或「再加一個功能」，隨時可換；不按年齡分組。",
           "source": "虛構通知L1：『社團體驗日』活動於2026/11/21 09:00（Asia/Taipei）在雲樓A室舉行；費用每人300 TWD；請於2026/11/18 18:00（Asia/Taipei）前回覆參加；材料另計，價格未定。活動與場地無核准英文名稱。",
           "prompt": "請把下方資訊寫成中文與英文短通知，讓參加者快速看到時間、地點、費用與回覆期限。活動與場地名稱保留原文；材料另計也要保留。",
           "steps": [
-            "把活動資訊與要求一起貼到 AI，讀讀兩種語言的通知。",
-            "接著送出：「中文更像傳給朋友的訊息，英文再短一點。」",
-            "看看改寫後的日期與300 TWD／人有沒有變，材料是否仍寫另計。",
-            "選出你喜歡的版本保存；遇到不懂的英文，可以追問「請用中文解釋這一句」。"
+            "按下方「複製資料與要求」。",
+            "貼到 AI 的新對話，送出。",
+            "回來核對下方重點；有錯就請 AI 修正。"
           ],
           "expected": "中文：『社團體驗日』11/21 09:00於雲樓A室舉行，每人300 TWD；請於11/18 18:00前回覆。日期皆2026年，時間皆Asia/Taipei；材料另計、價格待確認。英文：Join 社團體驗日 at 雲樓A室 on 2026/11/21 at 09:00 (Asia/Taipei), 300 TWD per person. Reply by 2026/11/18 18:00 (Asia/Taipei). Materials cost extra; the price is unconfirmed. 核對：兩版六欄一致，沒有新造官方名稱。",
           "independent": {
-            "task": "新虛構L2：2026/12/03 15:00（Asia/Taipei）『紙上散步』於B室；免費；12/01 12:00（Asia/Taipei）前登記；是否提供材料未知。無官方英文活動名。自行寫中英兩版及核對表。",
-            "expected": "中文保留12/03 15:00、B室、免費、12/01 12:00登記期限、材料未知。英文可寫：紙上散步 is at Room B on 2026/12/03 at 15:00 (Asia/Taipei), free of charge. Register by 2026/12/01 12:00 (Asia/Taipei). Materials provision is unconfirmed. 不把免費延伸成含材料。"
+            "task": "寫一份簡短中英文通知。兩種語言的資訊相同，保留原活動名稱，缺資料不要猜。",
+            "expected": "中文保留12/03 15:00、B室、免費、12/01 12:00登記期限、材料未知。英文可寫：紙上散步 is at Room B on 2026/12/03 at 15:00 (Asia/Taipei), free of charge. Register by 2026/12/01 12:00 (Asia/Taipei). Materials provision is unconfirmed. 不把免費延伸成含材料。",
+            "source": "活動：紙上散步，2026/12/03 15:00，B 教室，免費。\n報名截止：2026/12/01 12:00。以上為台北時間。\n是否提供材料：待確認。活動名稱沒有官方英文名。"
           },
           "challenge": {
-            "task": "加一版20秒口語介紹。",
+            "task": "讓介紹念起來自然",
             "source": "虛構通知L1：『社團體驗日』活動於2026/11/21 09:00（Asia/Taipei）在雲樓A室舉行；費用每人300 TWD；請於2026/11/18 18:00（Asia/Taipei）前回覆參加；材料另計，價格未定。活動與場地無核准英文名稱。",
-            "prompt": "依同一份資料寫中文與英文口語稿；各約20秒。說不完可超時，不可刪掉費用、期限與未知材料費。讀給同伴聽，再核對。",
-            "expected": "兩版保留11/21 09:00、雲樓A室、300 TWD／人、11/18 18:00回覆，以及材料另計價格未定；2026年與Asia/Taipei不變。以同伴聽得懂且資訊完整為準，不以速度取代核對。"
+            "prompt": "把資料改成能念給同學聽的中英文簡介。每種語言用三到四句；保留所有已知資訊與待確認事項。",
+            "expected": "兩種語言都能自然念出；活動日期、時間、地點、費用、截止時間與未知材料費一致。"
           },
           "checks": [
             "兩版活動日、回覆期限與300 TWD／人的金額一致。",
@@ -1153,33 +1229,38 @@
           "outcome": "11/21 09:00一起參加「社團體驗日」，每人300 TWD。\nJoin 社團體驗日 on 11/21 at 09:00; 300 TWD per person.\n（節錄；完整通知另含回覆期限與材料說明）",
           "why": "把同一場活動說給不同語言的朋友，調整說法也要保住事實。",
           "classroom": {
-            "task": "先看本區預備材料。親自改一句中文語氣，再從預備英文圈出對應的時間、費用與材料另計；不熟悉英文時請講師解釋，不以英文程度評分。",
-            "expected": "中文有一處自己選的語氣修改；中英仍同為11/21 09:00、11/18 18:00回覆、300 TWD／人，材料另計且價格未定。"
+            "task": "使用下方預備結果，自己決定改一處、動手修改，再說明怎麼檢查。可以從第 2 步的修改開始。",
+            "expected": "只改語氣與句子長度；兩種語言的活動資訊仍一致。"
+          },
+          "followup": {
+            "source": "",
+            "prompt": "中文改得親切一點，英文用短句。日期、地點、費用與待確認事項都要保留。",
+            "expected": "只改語氣與句子長度；兩種語言的活動資訊仍一致。"
           }
         },
         "en": {
-          "title": "Help exchange students understand the club activity day",
-          "goal": "Get short Chinese and English notices and adjust their tone for friends.",
+          "title": "Introduce an event in two languages",
+          "goal": "Write in two languages while keeping dates, places, and costs the same.",
           "quick": "Make a usable first version, then choose whether to add a feature.",
           "skip": "Choose “Make it work” or “Add a feature” and switch at any time; age does not decide the level.",
           "source": "Fictional notice L1: 社團體驗日 takes place on 2026/11/21 at 09:00 (Asia/Taipei), at 雲樓A室; 300 TWD per person. Reply whether attending by 2026/11/18 18:00 (Asia/Taipei). Materials cost extra; their price is undecided. Neither activity nor venue has an approved English name.",
           "prompt": "Write short Chinese and English notices from these details. Make the time, place, price, and reply deadline easy to find. Keep activity and venue names in their original form and keep the extra materials cost.",
           "steps": [
-            "Paste the activity details and request into AI and read both notices.",
-            "Then send: “Make the Chinese sound like a message to a friend, and make the English shorter.”",
-            "Check that the dates and 300 TWD per person did not change, and materials still costs extra.",
-            "Save the versions you like. For unfamiliar English, ask: “Explain this sentence in Chinese.”"
+            "Select “Copy material and request” below.",
+            "Paste into a new AI conversation and send.",
+            "Return and check the points below. Ask AI to correct any errors."
           ],
           "expected": "Chinese: 『社團體驗日』11/21 09:00於雲樓A室舉行，每人300 TWD；請於11/18 18:00前回覆。日期皆2026年，時間皆Asia/Taipei；材料另計、價格待確認。 English: Join 社團體驗日 at 雲樓A室 on 2026/11/21 at 09:00 (Asia/Taipei), 300 TWD per person. Reply by 2026/11/18 18:00 (Asia/Taipei). Materials cost extra; the price is unconfirmed. All six fields agree, with no invented official names.",
           "independent": {
-            "task": "New fictional L2: 紙上散步 at Room B on 2026/12/03 15:00 (Asia/Taipei); free; register by 12/01 12:00 (Asia/Taipei); materials provision unknown. No official English activity name. Write both language versions and a fact comparison independently.",
-            "expected": "Chinese preserves 12/03 15:00, B室, free admission, 12/01 12:00 registration deadline, and unknown materials. English example: 紙上散步 is at Room B on 2026/12/03 at 15:00 (Asia/Taipei), free of charge. Register by 2026/12/01 12:00 (Asia/Taipei). Materials provision is unconfirmed. Free admission does not imply included materials."
+            "task": "Write a short notice in Chinese and English. Keep the information identical, preserve the event’s original name, and do not guess missing details.",
+            "expected": "Chinese preserves 12/03 15:00, B室, free admission, 12/01 12:00 registration deadline, and unknown materials. English example: 紙上散步 is at Room B on 2026/12/03 at 15:00 (Asia/Taipei), free of charge. Register by 2026/12/01 12:00 (Asia/Taipei). Materials provision is unconfirmed. Free admission does not imply included materials.",
+            "source": "Event: 紙上散步, 2026/12/03 at 15:00, classroom B, free.\nRegistration closes 2026/12/01 at 12:00. All times are Taipei time.\nMaterials provided: to confirm. There is no official English event name."
           },
           "challenge": {
-            "task": "Add a 20-second spoken introduction.",
+            "task": "Make it sound natural aloud",
             "source": "Fictional notice L1: 社團體驗日 takes place on 2026/11/21 at 09:00 (Asia/Taipei), at 雲樓A室; 300 TWD per person. Reply whether attending by 2026/11/18 18:00 (Asia/Taipei). Materials cost extra; their price is undecided. Neither activity nor venue has an approved English name.",
-            "prompt": "Write Chinese and English spoken introductions from the same data, aiming for 20 seconds each. If necessary, go longer rather than drop the price, deadline, or unknown materials cost. Read them to a partner and check.",
-            "expected": "Both versions keep 11/21 09:00, 雲樓A室, 300 TWD per person, reply by 11/18 18:00, and extra materials with an unknown price; retain 2026 and Asia/Taipei. Prioritize understanding and complete facts over speed."
+            "prompt": "Turn the details into Chinese and English introductions to read aloud. Use three or four sentences per language and keep all known facts and unknowns.",
+            "expected": "Both sound natural aloud and agree on the date, time, place, fee, deadline, and unknown materials fee."
           },
           "checks": [
             "Both versions keep the same activity date, reply deadline, and 300 TWD per-person price.",
@@ -1199,8 +1280,13 @@
           "outcome": "11/21 09:00一起參加「社團體驗日」，每人300 TWD。\nJoin 社團體驗日 on 11/21 at 09:00; 300 TWD per person.\n(Excerpt; the full notice also includes the reply deadline and materials details.)",
           "why": "Tell friends in different languages about the same activity, keeping the facts while changing the wording.",
           "classroom": {
-            "task": "Read the prepared materials here. Change the tone of one Chinese sentence yourself, then circle matching times, price, and extra materials in the prepared English. Ask the instructor to explain unfamiliar English; English proficiency is not graded.",
-            "expected": "Chinese has one tone change you chose; both versions retain 11/21 09:00, reply by 11/18 18:00, 300 TWD per person, and extra materials with an unknown price."
+            "task": "Use the prepared result below. Choose one detail to change, edit it yourself, and explain how you checked it. You can use the change in step 2 as a starting point.",
+            "expected": "Only tone and sentence length change. Both versions still give the same event details."
+          },
+          "followup": {
+            "source": "",
+            "prompt": "Make the Chinese friendlier and use shorter English sentences. Keep all dates, places, costs, and unknowns.",
+            "expected": "Only tone and sentence length change. Both versions still give the same event details."
           }
         }
       }
@@ -1214,33 +1300,33 @@
       ],
       "locales": {
         "zh-Hant": {
-          "title": "做一件下週會用的小作品",
-          "goal": "選一件自己的小需求，做出可用成果，再請同伴試一次。",
+          "title": "選自己的題目，做出一版",
+          "goal": "選一件自己想做的事，完成一版、改一處、檢查一次。",
           "quick": "先做出一份可用的成果，再自己決定要不要加一個功能。",
           "skip": "自由選「先做出來」或「再加一個功能」，隨時可換；不按年齡分組。",
           "source": "虛構範例：週六14:00–16:00，3人在社團教室玩桌遊。\n已有兩款桌遊與紙筆；需要準備清單及活動順序。\n先介紹規則，再玩遊戲，最後留10分鐘收拾。\n每款遊戲所需時間未提供，不用做網站或算預算。",
           "prompt": "請依資料做「已有／還要準備／活動順序」清單。未知時間要標示，不猜遊戲時長；補充物品列為建議。先給可用的第一版，再問我想改哪一處。",
           "steps": [
-            "選練習清單、閱讀追蹤、社團活動包等你想用的小需求；也可用下方桌遊範例。",
-            "把三項必要資訊與要求交給AI，先取得一份可用成果。",
-            "自己改一個條件，例如3人改5人；要求完整新版，並說明改了什麼。",
-            "請同伴照成品試做第一步，找出一處卡點並改好；保留原版與新版。"
+            "按下方「複製資料與要求」。",
+            "貼到 AI 的新對話，送出。",
+            "回來核對下方重點；有錯就請 AI 修正。"
           ],
           "expected": "已有：兩款桌遊、紙筆；還要準備可列建議，例如飲用水。順序：14:00開始介紹規則→依確認後的時長安排遊戲→15:50收拾→16:00結束。遊戲時長待確認，不虛構每款結束時間。",
           "independent": {
-            "task": "換自己的小需求，先寫三項必要資訊及一個「怎樣才算有用」的判準，取得成果後親自改一處。",
-            "expected": "沒有唯一答案。能照作品完成一次小操作，並指出自己改了什麼；使用虛構資料，不貼私人照片、名單或帳號資訊。"
+            "task": "請先依我的資料做一版。缺少資訊就標出來，不要自行編造。",
+            "expected": "先把方括號換成自己的內容，再送給 AI。完成後提出一項修改，用自己設定的方法檢查，保存新版。",
+            "source": "我的題目：[填入你想做的事]\n已知資料：[填入三件已確定的事]\n希望得到：[例如清單、簡介或小網頁]\n怎麼檢查：[填入一項檢查方式]"
           },
           "challenge": {
-            "task": "加一段給第一次加入者的使用說明。",
-            "source": "沿用你的作品；桌遊範例新增一位不熟悉規則的同伴，其他條件不變。",
-            "prompt": "增加一段「第一次怎麼開始」，不要擅自補出遊戲規則。請同伴照說明做第一步，再修一處卡點。",
-            "expected": "例如先選遊戲、取出盒內規則、確認每人理解再開始；未知規則需看遊戲原說明。同伴能找到第一步，作者保留修改前後版本。"
+            "task": "讓第一次來的人也能跟上",
+            "source": "虛構範例：週六14:00–16:00，3人在社團教室玩桌遊。\n已有兩款桌遊與紙筆；需要準備清單及活動順序。\n先介紹規則，再玩遊戲，最後留10分鐘收拾。\n每款遊戲所需時間未提供，不用做網站或算預算。",
+            "prompt": "依這份桌遊活動資料，加一段「第一次來怎麼開始」。不知道遊戲規則或一局多久，請標待確認，不要替遊戲編規則。",
+            "expected": "有清楚的集合、介紹與開始順序；遊戲規則及一局時間仍待確認。"
           },
           "checks": [
-            "成品有可直接使用的內容，不只是規劃建議。",
-            "已有的兩款桌遊與紙筆不重複列為必備新物品。",
-            "原資料未提供遊戲時長，不猜每款結束時間；新條件影響的內容有更新。"
+            "成果有用到我提供的資料，沒有編造缺少的資訊。",
+            "我改了一項要求，其他正確資訊仍保留。",
+            "我能指出一項核對結果，並保存作品。"
           ],
           "quiz": {
             "question": "怎樣的題目適合當第一個小作品？",
@@ -1255,38 +1341,43 @@
           "outcome": "桌遊聚會｜已有兩款桌遊、紙筆。\n14:00說明規則→遊戲時長待確認→15:50收拾→16:00結束。",
           "why": "把提問、修改與試用串起來，做一件你真的想用的東西。",
           "classroom": {
-            "task": "先看本區預備材料。把桌遊聚會3人改成5人，親自在清單標出要重新確認兩款遊戲的人數限制；請同伴照新版找出第一步，保存兩版。",
-            "expected": "改成5人，遊戲可容納人數待確認，不猜規則；同伴能指出第一步，保留原版與新版。"
+            "task": "使用下方預備結果，自己決定改一處、動手修改，再說明怎麼檢查。可以從第 2 步的修改開始。",
+            "expected": "人數改成 5；需確認桌遊適用人數。時間、地點與最後 10 分鐘收拾不變。"
+          },
+          "followup": {
+            "source": "參加人數由 3 人改成 5 人。",
+            "prompt": "更新活動安排，列出還需要確認什麼。不要假設兩款桌遊都能讓五人一起玩。",
+            "expected": "人數改成 5；需確認桌遊適用人數。時間、地點與最後 10 分鐘收拾不變。"
           }
         },
         "en": {
-          "title": "Make something you will use next week",
-          "goal": "Choose a small need, make a usable result, and ask a partner to try it.",
+          "title": "Make something of your own",
+          "goal": "Choose a task, make a first version, change one thing, and check it.",
           "quick": "Make a usable first version, then choose whether to add a feature.",
           "skip": "Choose “Make it work” or “Add a feature” and switch at any time; age does not decide the level.",
           "source": "Fictional example: 3 people play board games in the club room on Saturday, 14:00–16:00.\nTwo board games and pen and paper are already available; need a preparation checklist and activity sequence.\nExplain rules first, play, then leave 10 minutes for tidying up.\nGame durations are not provided. No website or budget calculation is needed.",
           "prompt": "Make an “Already available / Prepare / Activity sequence” checklist from the data. Mark unknown times instead of inventing game durations; label additional items as suggestions. Give a usable first version, then ask what I want to change.",
           "steps": [
-            "Choose a practice checklist, reading tracker, club activity pack, or another small need. You may use the board-game example.",
-            "Give three necessary details and your request to AI for a usable result.",
-            "Change one condition yourself, such as 3 people to 5. Request a complete revision and a description of what changed.",
-            "Ask a partner to try the first step, identify one obstacle, and fix it. Keep the original and revised versions."
+            "Select “Copy material and request” below.",
+            "Paste into a new AI conversation and send.",
+            "Return and check the points below. Ask AI to correct any errors."
           ],
           "expected": "Already available: two board games, pen and paper. Suggested preparation might include drinking water. Sequence: start explaining rules at 14:00 → play after confirming game durations → tidy up at 15:50 → finish at 16:00. Game durations are unknown; do not invent finish times for each game.",
           "independent": {
-            "task": "Use your own small need. Write three necessary details and one criterion for usefulness. Obtain a result and personally change one thing.",
-            "expected": "There is no single answer. Use the work for one small action and explain your change. Use fictional data, not private photos, names, or account details."
+            "task": "Make a first version using my details. Point out missing information instead of inventing it.",
+            "expected": "Replace the bracketed text with your details before sending. Then request one change, use your chosen check, and save the new version.",
+            "source": "My task: [something I want to do]\nKnown facts: [three confirmed facts]\nResult I want: [for example, a checklist, introduction, or webpage]\nHow I will check it: [one check]"
           },
           "challenge": {
-            "task": "Add instructions for someone joining for the first time.",
-            "source": "Use your work; for the board-game example, add a companion unfamiliar with the rules. All other conditions remain unchanged.",
-            "prompt": "Add “How to start for the first time” without inventing game rules. Ask a partner to follow the first step, then fix one obstacle.",
-            "expected": "For example, choose a game, take out its rulebook, and check everyone understands before starting. Use original instructions for unknown rules. The partner can find the first step, and the author keeps both versions."
+            "task": "Help a first-time participant",
+            "source": "Fictional example: 3 people play board games in the club room on Saturday, 14:00–16:00.\nTwo board games and pen and paper are already available; need a preparation checklist and activity sequence.\nExplain rules first, play, then leave 10 minutes for tidying up.\nGame durations are not provided. No website or budget calculation is needed.",
+            "prompt": "Add “How to get started on your first visit” to this board-game plan. Mark unknown game rules and playing times “to confirm”; do not invent them.",
+            "expected": "There is a clear arrival, introduction, and play sequence; game rules and playing times remain to confirm."
           },
           "checks": [
-            "The result has directly usable content, not just planning advice.",
-            "The two games and pen and paper are available; do not require buying them again.",
-            "Game durations are unknown; do not invent finish times. Update details affected by new conditions."
+            "The result uses my material without inventing missing facts.",
+            "I changed one requirement while keeping the other correct details.",
+            "I can show one check and save the result."
           ],
           "quiz": {
             "question": "What makes a good first small project?",
@@ -1301,8 +1392,13 @@
           "outcome": "Board-game meetup | Two games, pen and paper available.\n14:00 explain rules → game durations to confirm → 15:50 tidy → 16:00 finish.",
           "why": "Combine asking, revising, and trying to make something you actually want to use.",
           "classroom": {
-            "task": "Read the prepared materials here. Change the board-game group from 3 to 5 people yourself, marking that each game’s player limit must be checked again. Ask a partner to find the first step in the revision and keep both versions.",
-            "expected": "Group changed to 5; game player limits remain to confirm, with no invented rules. A partner can find the first step; original and revision are kept."
+            "task": "Use the prepared result below. Choose one detail to change, edit it yourself, and explain how you checked it. You can use the change in step 2 as a starting point.",
+            "expected": "The plan uses five people and asks about game capacity. The time, place, and final ten minutes for cleanup stay the same."
+          },
+          "followup": {
+            "source": "The group grows from three people to five.",
+            "prompt": "Update the plan and list what we need to confirm. Do not assume both games support five players.",
+            "expected": "The plan uses five people and asks about game capacity. The time, place, and final ten minutes for cleanup stay the same."
           }
         }
       }

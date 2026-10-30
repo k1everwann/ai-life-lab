@@ -1,71 +1,74 @@
-Design automatic fan rules for a model room
+Design a temperature alert
 
-Before automating a reminder, spell out when it should and should not happen.
+Open this lesson: https://k1everwann.github.io/ai-life-lab/en/index.html#lesson-automation
 
-What you will make
+Test when a temperature rule should and should not send an alert.
 
-Try fan rules against five fictional sensor readings without connecting real devices.
+Prepared example result
 
-Example result
+27°C: no alert. 28°C and 29°C: one each. Missing: to confirm. A repeated reading: no extra alert.
 
-At least 28°C: 2 simulated start requests.
-Above 28°C: 1 request; repeated events do not trigger again.
-
-This is a prepared example. Your AI may use different wording.
-
-Follow along
-
-Use ChatGPT or your usual AI tool
+1. Make a first version
 
 Practice material
 
-Model-room fan scenario. Fictional temperature readings for text simulation; no equipment connection.
-Rule: at 28°C or above, create one simulated model-room fan start request and one notification. Below 28°C, do nothing. With no temperature, do nothing for now. If an event ID has already been processed, do not process it again.
-In order: E01: 27°C; E02: 28°C; E03: 29°C; E04: no temperature; E02: 28°C (the same event sent again).
+This is a model-room alert exercise; it does not control real devices.
+Rule: alert at 28°C or above; process each reading once; mark missing temperatures “to confirm”.
+Readings in order: E01 = 27°C, E02 = 28°C, E03 = 29°C, E04 = missing, E02 = 28°C (received again).
 
 Request for AI
 
-Try the rules below. For each row show temperature, whether it produces a simulated start request, whether it notifies, and one reason. Do not process a repeated event twice. Use text simulation only.
+For each reading, list its ID, whether it triggers an alert, and why. Give the total number of alerts.
 
-1. Paste the rules, five readings, and request into AI to get a trial table.
-2. Check that 28 and 29 degrees each produce one request and notification; the missing reading produces no action.
-3. Then send: “Change the rule to above 28 degrees and rerun these five events from an empty record.” See whether the 28-degree event stops triggering.
-4. Compare the two versions: 2 requests first, then 1. This tests a rule; it does not connect to real equipment.
+1. Select “Copy material and request” below.
+2. Paste into a new AI conversation and send.
+3. Return and check the points below. Ask AI to correct any errors.
 
-After trying: compare a possible result
+See a reference answer
 
-E01 27: no activation, 0 requests/0 notifications. E02 28: simulated activation, 1/1. E03 29: simulated activation, 1/1. E04 missing: unknown, 0/0. Redelivered E02: skipped, 0 new requests/0 new notifications. Total 2 requests and 2 notifications. A fresh >28 batch activates only E03, total 1; restoring >=28 gives 2. Comparison and deduplication are rules; AI can help write and explain them. No actual device was controlled.
+E01: no alert. E02 and E03: one alert each. E04: to confirm, no alert. The repeated E02 was already processed, so no new alert. Total: 2.
 
-Check these parts of your result
+Check these points
 
-At least 28 includes 28; above 28 does not.
-Missing readings cause no action; repeated event IDs cause no new notification.
-This is text simulation, not actual model-room fan control.
+28°C triggers an alert; 27°C does not.
+Receiving E02 again does not add another alert.
+Missing data is not 0°C. The total is 2 alerts.
 
-Try a different situation yourself
+2. Change one thing and check
 
-New fictional rule and events: humidity >=70% produces one dehumidification reminder, simulation only; deduplicate by ID and mark missing as unknown. In order: H01,69; H02,70; H03,71; H04,missing; H02,70 redelivery. List each result independently.
+Continue the same AI conversation. Use the request below or choose a change of your own.
 
-H01 no reminder; H02 one; H03 one; H04 unknown, none; duplicate H02 skipped. Total 2 reminders. 70 qualifies; missing is not 0%.
+Change the rule to “alert only above 28°C”. Start from zero and process the same readings again.
+
+27°C and 28°C do not alert. 29°C alerts once. Missing or repeated readings do not add alerts.
+
+3. Save your work
+
+Save the final response in your notes. Add what you changed and how you checked it.
+
+Try a different task
+
+Alert at 70% humidity or above; process each reading once; do not alert for missing data.
+In order: H01 = 69%, H02 = 70%, H03 = 71%, H04 = missing, H02 = 70% (repeated).
+
+For each reading, decide whether to alert and explain why. Count the alerts.
+
+H02 and H03 alert once each: 2 total. H01, H04, and the repeated H02 add no alerts.
 
 Try a more involved task
 
-Add a 5-minute notification cooldown.
+Avoid constant alerts
 
-Fictional model room simulation, Asia/Taipei: >=28°C creates a simulated fan request; check each new reading. After a successful notification, suppress further notifications for less than 5 minutes, but still create qualifying requests. R1 at 10:00 is 28°C; R2 at 10:03 is 29°C; R3 at 10:05 is 28°C. Assume all requests succeed, with no redeliveries.
+Three distinct readings: 10:00 = 28°C, 10:03 = 29°C, 10:05 = 28°C. No alerts were sent before these.
 
-List request, notification, and reason for each event. Add only the cooldown rule; do not operate devices.
+At 28°C or above, send an alert only if at least five minutes have passed since the last alert. Process these three readings and list the alert times.
 
-R1 requests and notifies; R2 requests but does not notify, only 3 minutes later; R3 requests and notifies, exactly 5 minutes after 10:00. Total 3 requests and 2 notifications; no devices connected.
+Alert at 10:00, not at 10:03, and again at 10:05 when five minutes have passed. Total: 2.
 
 Classroom task: adult demo / prepared-material review
 
-Read the prepared materials here. Draw a decision table for the five events. Change “at least 28°C” to “above 28°C” yourself and identify the changed result; missing and repeated events still cause no action.
+Use the prepared result below. Choose one detail to change, edit it yourself, and explain how you checked it. You can use the change in step 2 as a starting point.
 
 What to check
 
-E01 27: no activation, 0 requests/0 notifications. E02 28: simulated activation, 1/1. E03 29: simulated activation, 1/1. E04 missing: unknown, 0/0. Redelivered E02: skipped, 0 new requests/0 new notifications. Total 2 requests and 2 notifications. A fresh >28 batch activates only E03, total 1; restoring >=28 gives 2. Comparison and deduplication are rules; AI can help write and explain them. No actual device was controlled.
-
-Save your work and continue later
-
-Save your result and note what you changed and how you checked it.
+27°C and 28°C do not alert. 29°C alerts once. Missing or repeated readings do not add alerts.

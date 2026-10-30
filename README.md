@@ -4,6 +4,8 @@
 
 介面預設大家已備妥 AI 帳號，直接看範例、跟著操作、修改並保存。帳號資格集中在首頁收合的「課前準備」，不逐課重複；不用帳號的預備材料練習保留在課末收合區，成果如實記為材料判讀／成人示範。
 
+每課主線固定為「做出第一版 → 改一處，再檢查 → 保存作品」。第 2 步有可直接使用的修改要求；獨立題與挑戰放在課末，複製時帶齊該題資料，不依賴前一段對話。24 份下載教材附本課完整網址，除錯課另附六份練習程式網址。
+
 - [繁體中文](https://k1everwann.github.io/ai-life-lab/)
 - [English](https://k1everwann.github.io/ai-life-lab/en/)
 
@@ -59,6 +61,6 @@ python -m http.server 5085 --bind 127.0.0.1
 - [GitHub Skills: Introduction to GitHub](https://github.com/skills/introduction-to-github)：先說明會做出什麼，再逐步操作；問題排除另行展開。
 - [Microsoft: Generative AI for Beginners](https://github.com/microsoft/generative-ai-for-beginners)：各課可獨立選擇，完成後有延伸學習。借鏡結構，不搬入開發環境門檻。
 - [既有培訓指南](https://github.com/k1everwann/codex-starter-guide)：固定章節目錄、直接實作入口。
-- [OpenAI 官方連接應用教學](https://developers.openai.com/training/walkthroughs/plugins-and-skills)：連接帳號、指定任務、回原始資料確認。功能依帳號與工作區而異。
+- [OpenAI 官方連接應用教學](https://help.openai.com/en/articles/11487775-connected-apps-in-chatgpt)：2026-10-30 核對設定入口、選用服務及權限說明；連接帳號、指定任務、回原始資料確認。功能依帳號與工作區而異。
 
 以上為結構參考，課程文字與程式碼由本專案撰寫。

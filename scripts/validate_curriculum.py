@@ -45,13 +45,15 @@ def validate():
             if c.get('connection'):
                 assert all(c['connection'].get(k) for k in ('title','source','prompt','steps','expected'))
             assert 3<=len(c['steps'])<=7
-            assert c['independent']['task'] and c['independent']['expected']
+            assert all(c['independent'].get(k) for k in ('source','task','expected')), f'{m["id"]}: independent task needs its own material'
+            assert c['followup']['prompt'] and c['followup']['expected'], f'{m["id"]}: missing actionable second step'
             assert c['classroom']['task'] and c['classroom']['expected'], f'{m["id"]}: no-account path missing'
             assert all(c['challenge'][k] for k in ('task','source','prompt','expected'))
             assert 0<=c['quiz']['answer']<len(c['quiz']['choices'])
             assert c['quiz']['answer']==m['locales']['zh-Hant']['quiz']['answer']
             path=ROOT/'downloads'/'curriculum'/f'{m["id"].lower()}-{lang}.txt'
             assert path.read_text(encoding='utf-8')==lesson_text(m,lang),f'{path}: lesson pack drift'
+            assert 'https://k1everwann.github.io/ai-life-lab/' in path.read_text(encoding='utf-8'),f'{path}: no way back to the lesson'
     for lang in UI:
         for row,minutes in zip(UI[lang]['plansrows'],(60,90,120)):
             total=sum(int(re.search(r'(\d+)\s*$',part).group(1)) for part in row[1].split('→'))

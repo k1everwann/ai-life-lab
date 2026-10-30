@@ -1,21 +1,15 @@
-Reply to a board-game club invitation
+Reply to a club invitation
 
-When you want to join but have a question, use your own decision to guide the draft.
+Open this lesson: https://k1everwann.github.io/ai-life-lab/en/index.html#lesson-gmail
 
-What you will make
+Draft a reply, then make it sound like you.
 
-Write a two-sentence reply draft with your attendance decision and a specific question.
-
-Example result
+Prepared example result
 
 Thanks for inviting me; I will join on 11/21!
 Should I bring a board game? (Unsent draft)
 
-This is a prepared example. Your AI may use different wording.
-
-Follow along
-
-Use ChatGPT or your usual AI tool
+1. Make a first version
 
 Practice material
 
@@ -27,57 +21,69 @@ Request for AI
 
 Use my decision to draft two sentences: say I will attend, then ask whether to bring a board game. Provide a draft only; do not send it.
 
-1. Give the fictional email and your decision to AI; no email connection is needed.
-2. Check that the draft says you will attend and asks about bringing a game.
-3. Choose a change such as a friendlier or more formal tone, keeping your decision.
-4. Save your two-sentence version, marked “Draft — not sent.”
+1. Select “Copy material and request” below.
+2. Paste into a new AI conversation and send.
+3. Return and check the points below. Ask AI to correct any errors.
 
-After trying: compare a possible result
+See a reference answer
 
 Example: “Thanks for inviting me; I will join the activity on 11/21! Should I bring a board game?” Do not answer for the other club; no email has been sent.
 
-Check these parts of your result
+Check these points
 
 Clearly says you will attend.
 Bringing a game remains a question, not a promise from the other club; draft is unsent.
 
-Try a different situation yourself
+2. Change one thing and check
 
-Change your decision to being unable to attend but wanting to ask about a future session. Write your own request and save another draft.
+Continue the same AI conversation. Use the request below or choose a change of your own.
+
+Keep my acceptance and question about whether I need to bring a board game. Rewrite it as two natural sentences between classmates.
+
+The tone changes. No particular game is promised and no email is sent.
+
+3. Save your work
+
+Save the final response in your notes. Add what you changed and how you checked it.
+
+Try a different task
+
+Fictional email | Subject: Board-game club collaboration
+Join our activity on 2026/11/21. Reply by 11/18 17:00 (Asia/Taipei). It does not say whether participants must bring a board game.
+Your decision: you will attend and want to ask whether to bring a game.
+
+This time I cannot attend. Draft two sentences declining and asking about the next event. Do not invent a date or send the email.
 
 Clearly declines this session and asks about another without inventing dates; still unsent.
 
 Try a more involved task
 
-Add one thing you are willing to help with.
+Offer one way to help
 
-Use the original invitation; you also decide you can help clear tables afterward.
+Fictional email | Subject: Board-game club collaboration
+Join our activity on 2026/11/21. Reply by 11/18 17:00 (Asia/Taipei). It does not say whether participants must bring a board game.
+Your decision: you will attend and want to ask whether to bring a game.
 
-Add one offer to help after the two-sentence draft. Do not assume acceptance or commit teammates.
+Draft three sentences: I will attend, ask whether I need to bring a board game, and offer to help clean up. Add no other promises and do not send.
 
-Example: “I can also help clear the tables afterward if needed.” It is your offer, not a commitment by others.
+All three points are present; no particular game is promised and no email is sent.
 
 Classroom task: adult demo / prepared-material review
 
-Read the prepared materials here. Personally change the tone of one part of the prepared reply. With a partner, check the attendance decision and question about bringing a game, and label it unsent.
+Use the prepared result below. Choose one detail to change, edit it yourself, and explain how you checked it. You can use the change in step 2 as a starting point.
 
 What to check
 
-Example: “Thanks for inviting me; I will join the activity on 11/21! Should I bring a board game?” Do not answer for the other club; no email has been sent.
+The tone changes. No particular game is promised and no email is sent.
 
-Instructor extension: ask AI to read one Gmail message you choose
+Read an email with Gmail
 
-An eligible adult operates an authorized practice account here; students do not need to register or connect accounts. Prepare a practice message you may use, with no personal or confidential information. You can send the fictional email to yourself in a practice account, using a distinctive subject such as “AI practice – activity confirmation.” Note the actual sending date.
+Prepare: place this lesson’s fictional invitation in a teaching account. Note its exact subject and sending date.
 
-Use Gmail to read this practice email: subject [enter the exact subject], sending date [enter the actual date]. If several match, list them for me to choose. Read it, summarize my action, and write a reply in this chat only. Do not send it or create a Gmail draft.
+Use Gmail to read this practice email: subject [enter subject], sent on [enter date]. If several match, let me choose. List the actions and draft a reply in this conversation only. Do not send it or create a Gmail draft.
 
-Look for available Plugins or connected apps in your AI tool, find Gmail, and follow the connection flow for your practice account. Review the requested access. Availability depends on the tool, plan, and workspace.
-Replace the subject and date in the request with your details. Select the Gmail plugin in the conversation and send the request.
-Open the original-message link AI returns to check that it read the intended email, then review the reply.
-If the service is unavailable or cannot read the email, return to pasted-text practice. Text organization alone does not establish a connection.
+Connect Gmail using the account connection guide.
+Copy the request below, replace [subject] and [date], select Gmail in your AI conversation, and send.
+Open the original email to check. This exercise drafts a reply without sending it.
 
-You can open the specified original message, and AI has read its content and produced a chat draft. The email has not been sent.
-
-Save your work and continue later
-
-Save your result and note what you changed and how you checked it.
+The correct email was read. The draft stays in the AI conversation; no email was sent.

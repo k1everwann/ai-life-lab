@@ -8,7 +8,7 @@ Captured on 2026-10-29 using the browser screenshot API. These are actual UI cap
 - `plugins-directory-zh.jpg`: https://chatgpt.com/plugins?plugins_landing=1 public directory.
 - `drive-entry-zh.jpg`: https://chatgpt.com/plugins/plugin_connector_1p_ab21a553bfbc81919ea8fd1858e3ffa7?plugins_landing=1 public Google Drive listing.
 - `notion-entry-zh.jpg`: https://chatgpt.com/plugins/plugin_asdk_app_69c18c28f1188191bf5b8445c4ab0a2e?plugins_landing=1 public Notion listing.
-- `html-preview-zh.jpg`: this repository's public M08 workspace, filled with `downloads/curriculum/correct-checklist-zh-Hant.html`. The caption identifies the prepared fixture; this is not presented as a learner's generated code.
+- `html-preview-20261030.jpg`: refreshed on 2026-10-30 from the local M08 workspace, filled with `downloads/curriculum/correct-checklist-zh-Hant.html`. The 1265×712 capture shows the current Preview webpage / Download webpage controls and all three checklist items. The caption identifies the prepared fixture; this is not presented as a learner's generated code. `html-preview-zh.jpg` is the retained older capture.
 
 The public Gmail search did not expose a verified Gmail connector entry, only other products. Do not substitute those products or imply OAuth has been tested. The directory picture explains where to search and the lesson retains a text-only path.
 

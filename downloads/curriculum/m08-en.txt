@@ -1,21 +1,15 @@
-Build a club performance checklist webpage
+Build a clickable checklist
 
-Make a tool you can actually check and reset, then change it with your own request.
+Open this lesson: https://k1everwann.github.io/ai-life-lab/en/index.html#lesson-build
 
-What you will make
+Describe a webpage that lets you tick items, count them, and reset.
 
-Get a downloadable checklist webpage that opens, checks items, and resets.
-
-Example result
+Prepared example result
 
 Text illustration: ☑ Bring props  ☑ Check the music  ☐ Bring a water bottle
 2/3 completed; uncheck one for 1/3, reset for 0/3.
 
-This is a prepared example. Your AI may use different wording.
-
-Follow along
-
-Use ChatGPT or your usual AI tool
+1. Make a first version
 
 Practice material
 
@@ -23,49 +17,58 @@ Fictional checklist titled “Club performance checklist”; three items in orde
 
 Request for AI
 
-Make a complete HTML checklist for these three tasks, with CSS and JavaScript in the same file and no external libraries or network. Each task can be checked. Show n/3 completed and a reset button. Support phones and keyboards. Do not save progress: reopening clears it to 0/3, and the page must say so. Give me the complete code without omissions.
+Make an HTML webpage for these three items. Each can be ticked; show how many are complete and add a reset button. Put all code in one file with no downloads or internet needed. Support phones and keyboards. Reopening starts at 0/3; explain on the page that progress is not saved. Return the complete code.
 
-1. Paste the material and request into AI to get the complete HTML code.
-2. Copy the code into this page’s Complete HTML code field without the surrounding triple backticks. Select Update isolated preview.
-3. In the preview, check two items, uncheck one, then reset. Counts should be 2/3, 1/3, and 0/3.
-4. Select Download this HTML. Open the file from your browser downloads and check that reopening starts at 0/3.
-5. Write one change yourself, such as “Change only the title to Friday club performance checklist; keep the three items and return the full HTML.” Give it to AI, then preview and test it.
-6. Download the revision as departure-v2.html and keep the first version. Reopen it and check your changed title and starting count of 0/3.
+1. Copy the material and request below into a new AI conversation.
+2. Copy the complete code from the answer into “Paste your code” below, without the surrounding ``` marks.
+3. Select “Preview webpage”. Tick two items, untick one, then reset.
 
-After trying: compare a possible result
+See a reference answer
 
-Get HTML that opens, with three checkable items and an updating count; reset and reopening return to 0/3. The revision changes only the title to “Friday club performance checklist”, keeping all three items. Colors may vary; test the functions.
+The page starts at 0/3. Tick two items: 2/3. Untick one: 1/3. Reset: 0/3. Reopening the page also starts at 0/3.
 
-Check these parts of your result
+Check these points
 
-Check two for 2/3, uncheck one for 1/3, reset for 0/3.
-Reopening starts at 0/3; this exercise does not save progress.
-Only the title changes to “Friday club performance checklist”; items and counting stay the same. Keep the first version, save departure-v2.html separately, and reopen to check 0/3.
+Every item can be ticked and unticked.
+Two ticks show 2/3; unticking one shows 1/3; reset shows 0/3.
+Closing and reopening starts again at 0/3.
 
-Try a different situation yourself
+2. Change one thing and check
 
-New fictional checklist: 'Reading preparation', with 'Choose an article' and 'Write three questions'. Write your own request for another HTML file without progress saving, save study.html, and test checking, unchecking, reset, and reopening.
+Continue the same AI conversation. Use the request below or choose a change of your own.
 
-Initial 0/2; both checked 2/2; uncheck one 1/2; reset 0/2; reopen 0/2. Provide your own request and actual generated file. Task labels must not become explanatory paragraphs.
+Change the page title to “Friday club checklist”. Keep every feature and return the complete HTML.
+
+Paste the new code and select “Preview webpage”. The title changes; two ticks still show 2/3 and reset returns to 0/3.
+
+3. Save your work
+
+Save the final response in your notes. Add what you changed and how you checked it.
+
+Download the webpage. Open the downloaded file and test it again.
+
+Try a different task
+
+A reading checklist has two items: “Choose an article” and “Write down three questions”. It does not need to remember previous ticks.
+
+Build a single HTML webpage with two checkboxes, a completion count, and a reset button. Use no external libraries. Return the complete code.
+
+Start at 0/2; tick both for 2/2; untick one for 1/2. Resetting or reopening returns to 0/2.
 
 Try a more involved task
 
-Add search without changing the counting scope. First paste your completed full HTML. If you do not have a file, complete the guided task first. Confirm the current complete version in the same AI chat before submitting the new requirement; do not assume AI can see your local file.
+Add a search box
 
-Three fictional tasks: Bring props, Check the music, Bring a water bottle. Search changes visibility only; the count includes all three tasks. Reset clears every checkbox and the search.
+Fictional checklist titled “Club performance checklist”; three items in order: “Bring props”, “Check the music”, “Bring a water bottle”. No network access or saved progress; reopening starts at 0/3.
 
-Add text search to my complete HTML using these rules. Preserve existing features and no progress saving. List test expectations first, then provide the complete file.
+Build the three-item checklist with search. Search changes only which items are visible; the count still covers all three. Reset clears every item, including hidden ones. Return complete HTML without external libraries.
 
-Check Bring props and Bring a water bottle: 2/3. Search 'props': only one item is visible, count remains 2/3. Uncheck it: 1/3. Clear search: Bring a water bottle is still checked. Reset: all three visible and 0/3.
+Tick the first and third items: 2/3. Search “props”: only the first is visible, still 2/3. Reset: 0/3. Clear the search: all three are unticked.
 
 Classroom task: adult demo / prepared-material review
 
-Load the prepared HTML here: it is a teaching fixture, not something you have generated with AI. Check the first two items, uncheck the first, and reset; record 2/3 → 1/3 → 0/3. Write your own title-change request for the instructor, preview the supplied revision, and check that all three items stay unchanged. Without a device, draw three boxes on paper and perform the same actions and counts.
+Load the prepared code and preview it. Test ticking and reset. In the code, find the title and change it to a title you choose; preview and test again.
 
 What to check
 
-Record 2/3 → 1/3 → 0/3, your own change request, and that you tested prepared HTML / an instructor-supplied revision. Mark paper-only work as code not executed.
-
-Save your work and continue later
-
-Save your result and note what you changed and how you checked it.
+Paste the new code and select “Preview webpage”. The title changes; two ticks still show 2/3 and reset returns to 0/3.
