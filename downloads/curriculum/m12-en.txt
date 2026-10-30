@@ -15,7 +15,7 @@ This is a prepared example. Your AI may use different wording.
 
 Follow along
 
-AI is operated by an eligible learner or an adult instructor
+Use ChatGPT or your usual AI tool
 
 Practice material
 
@@ -29,7 +29,7 @@ Request for AI
 Make an “Already available / Prepare / Activity sequence” checklist from the data. Mark unknown times instead of inventing game durations; label additional items as suggestions. Give a usable first version, then ask what I want to change.
 
 1. Choose a practice checklist, reading tracker, club activity pack, or another small need. You may use the board-game example.
-2. Give three necessary details and your request to AI or the instructor for a usable result.
+2. Give three necessary details and your request to AI for a usable result.
 3. Change one condition yourself, such as 3 people to 5. Request a complete revision and a description of what changed.
 4. Ask a partner to try the first step, identify one obstacle, and fix it. Keep the original and revised versions.
 
@@ -69,4 +69,4 @@ Group changed to 5; game player limits remain to confirm, with no invented rules
 
 Save your work and continue later
 
-Save your work and explain what you chose to change and how you checked it. Credit AI, prepared material, or peer help. Open your downloaded file once.
+Save your result and note what you changed and how you checked it.

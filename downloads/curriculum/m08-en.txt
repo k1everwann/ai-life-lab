@@ -15,7 +15,7 @@ This is a prepared example. Your AI may use different wording.
 
 Follow along
 
-AI is operated by an eligible learner or an adult instructor
+Use ChatGPT or your usual AI tool
 
 Practice material
 
@@ -25,11 +25,11 @@ Request for AI
 
 Make a complete HTML checklist for these three tasks, with CSS and JavaScript in the same file and no external libraries or network. Each task can be checked. Show n/3 completed and a reset button. Support phones and keyboards. Do not save progress: reopening clears it to 0/3, and the page must say so. Give me the complete code without omissions.
 
-1. Give the material and request to AI or the instructor for complete HTML code; without an account, start with this lesson’s prepared HTML exercise.
+1. Paste the material and request into AI to get the complete HTML code.
 2. Copy the code into this page’s Complete HTML code field without the surrounding triple backticks. Select Update isolated preview.
 3. In the preview, check two items, uncheck one, then reset. Counts should be 2/3, 1/3, and 0/3.
 4. Select Download this HTML. Open the file from your browser downloads and check that reopening starts at 0/3.
-5. Write one change yourself, such as “Change only the title to Friday club performance checklist; keep the three items and return the full HTML.” Give it to AI or the instructor, then preview and test it.
+5. Write one change yourself, such as “Change only the title to Friday club performance checklist; keep the three items and return the full HTML.” Give it to AI, then preview and test it.
 6. Download the revision as departure-v2.html and keep the first version. Reopen it and check your changed title and starting count of 0/3.
 
 After trying: compare a possible result
@@ -68,4 +68,4 @@ Record 2/3 → 1/3 → 0/3, your own change request, and that you tested prepare
 
 Save your work and continue later
 
-Save your work and explain what you chose to change and how you checked it. Credit AI, prepared material, or peer help. Open your downloaded file once.
+Save your result and note what you changed and how you checked it.

@@ -15,7 +15,7 @@ This is a prepared example. Your AI may use different wording.
 
 Follow along
 
-AI is operated by an eligible learner or an adult instructor
+Use ChatGPT or your usual AI tool
 
 Practice material
 
@@ -27,7 +27,7 @@ Request for AI
 
 Make a four-person comparison with calculations, known subtotals, and unknown costs. Do not yet claim which complete total is cheaper.
 
-1. Give both plans and the request to AI or the instructor for a comparison table.
+1. Give both plans and the request to AI for a comparison table.
 2. Use a calculator: A is 150×4+200=800; B is known 760 with materials unknown.
 3. Choose a condition such as a group budget of at most 800 and request an updated comparison.
 4. Save the table and one question to ask before deciding; unknown is not zero.
@@ -80,4 +80,4 @@ A totals 800 TWD. B has a known subtotal of 760 TWD plus unknown materials; its 
 
 Save your work and continue later
 
-Save your work and explain what you chose to change and how you checked it. Credit AI, prepared material, or peer help. Open your downloaded file once.
+Save your result and note what you changed and how you checked it.

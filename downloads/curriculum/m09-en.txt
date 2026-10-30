@@ -15,7 +15,7 @@ This is a prepared example. Your AI may use different wording.
 
 Follow along
 
-AI is operated by an eligible learner or an adult instructor
+Use ChatGPT or your usual AI tool
 
 Practice material
 
@@ -30,7 +30,7 @@ I will paste broken HTML. Checking only the first item should show 1/3 but shows
 
 1. Select Download the original file and Download the reference fix. Keep both originals.
 2. Open the broken file in a browser. Check the first item, then the second: it incorrectly shows 0/3 and 1/3.
-3. Select Copy broken code and request. Paste the complete broken HTML and repair request directly into AI, or give them to the instructor and send them.
+3. Select Copy broken code and request. Paste the complete broken HTML and repair request directly into AI and send them.
 4. Paste AI’s complete corrected HTML into this page’s Complete HTML code field and select Update isolated preview.
 5. Try the first item alone, the first two, unchecking the first, and reset: expect 1/3, 2/3, 1/3, and 0/3. Select Download this HTML to keep the fix.
 6. Open the retained reference fix separately, practicing a return to a working version.
@@ -71,4 +71,4 @@ Distinguish faulty 0/3 from correct 1/3; keep your own repair request and four-s
 
 Save your work and continue later
 
-Save your work and explain what you chose to change and how you checked it. Credit AI, prepared material, or peer help. Open your downloaded file once.
+Save your result and note what you changed and how you checked it.

@@ -124,25 +124,46 @@ def account_note(lang):
     l=LABELS[lang]
     return '<p class="small-text">'+l['policy']+' <a href="https://help.openai.com/en/articles/8313401-is-chatgpt-safe-for-all-ages" target="_blank" rel="noopener">'+('Official guidance' if lang=='en' else '官方說明')+'</a></p>'
 
+LABELS['zh-Hant'].update({
+    'intro':'選一個題目，用 AI 做出第一版，再改成自己的作品。',
+    'howsteps':['複製資料，貼到 AI。','改一處，再核對結果。','保存作品，有興趣再挑戰。'],
+    'ready':'課程預設已備妥 AI 帳號。',
+    'mapnote':'選你想做的題目。會的部分直接跳過。',
+    'where':'在 ChatGPT 或你慣用的 AI 工具操作',
+    'copynote':'複製後貼到 AI 對話送出，再回來核對。',
+    'ownhint':'換個題目，用剛才的方法再試一次。',
+    'finishnote':'存下成果，留一句「我改了什麼、怎麼確認」。',
+    'nextideas':['換個題目，再做一版。','替小工具加一個功能，找同學試用。'],
+})
+LABELS['en'].update({
+    'intro':'Pick a task, make a first version with AI, then make it your own.',
+    'howsteps':['Copy the material into AI.','Make one change and check it.','Save your work; try a challenge if you like.'],
+    'ready':'An AI account is assumed to be ready.',
+    'mapnote':'Choose something you want to make. Skip what you already know.',
+    'where':'Use ChatGPT or your usual AI tool',
+    'copynote':'Paste and send in your AI conversation, then return to check the result.',
+    'ownhint':'Try the same method with a different task.',
+    'finishnote':'Save your result and note what you changed and how you checked it.',
+    'nextideas':['Try another topic and make a new version.','Add one feature to your tool and ask a classmate to try it.'],
+})
+
 def render_module(module, lang, modules, prefix):
     from build_curriculum import UI, p, pre, listing, button, workspace
     t=UI[lang]; l=LABELS[lang]; c=module['locales'][lang]; key=module['id']; idx=modules.index(module)
     def copy(kind, label=None):
         return button(('Copy broken code and request' if lang=='en' else '複製故障程式碼與要求') if key=='M09' else (label or l['copy']),f'data-copy-module="{key}" data-copy-kind="{kind}"')+f'<p id="copy-{key}-{kind}" role="status"></p>'
     out=f'<article id="{module["anchor"]}" class="module wrap section" data-module="{key}">'
-    out+=p(l['lesson'].format(n=idx+1)+' · '+str(module['minutes'])+' '+l['minutes'],'eyebrow')+'<h1 tabindex="-1">'+esc(c['title'])+'</h1>'+p(c.get('why',c['goal']),'lead')
-    if c.get('connection'):
-        out+='<p class="lesson-mode">'+('Start with the sample text; no account connection is needed. ' if lang=='en' else '先貼上範例文字練習，不需要連接帳號。')+'<a href="#connection-'+key+'">'+('Want to connect your account? →' if lang=='en' else '想連接自己的帳號？→')+'</a></p>'
-    out+='<div class="outcome"><strong>'+l['outcome']+'</strong>'+p(c['goal'])+'<div class="example-result"><span>'+l['sample']+'</span>'+p(c.get('outcome',c['expected']))+'</div>'+p(l['samplehint'],'small-text')+'</div>'
-    out+='<div class="lesson-shortcuts"><a class="button" href="#classroom-'+key+'">'+l['classroom']+'</a><a href="#do-'+key+'">'+l['follow']+'</a>'+button(l['quick'],f'data-jump-independent="{key}"')+'</div>'
-    out+=f'<details class="classroom-path" id="classroom-{key}"><summary>'+l['classroom']+'</summary>'+p(l['classhint'])+pre(c['classroom']['task'])
+    out+=p(l['lesson'].format(n=idx+1)+' · '+str(module['minutes'])+' '+l['minutes'],'eyebrow')+'<h1 tabindex="-1">'+esc(c['title'])+'</h1>'+p(c['goal'],'lead')
+    out+='<div class="example-result"><span>'+l['sample']+'</span>'+p(c.get('outcome',c['expected']))+'</div>'
+    out+='<div class="lesson-shortcuts"><a class="button" href="#do-'+key+'">'+l['follow']+'</a>'+button(l['quick'],f'data-jump-independent="{key}"')+'</div>'
+    alternative=f'<details class="classroom-path" id="classroom-{key}"><summary>'+l['classroom']+'</summary>'+p(l['classhint'])+pre(c['classroom']['task'])
     if key not in ('M08','M09'):
-        out+='<details><summary>'+('Material and prepared result' if lang=='en' else '本課資料與預備結果')+'</summary><h3>'+l['source']+'</h3>'+pre(c['source'])+'<h3>'+l['sample']+'</h3>'+pre(c['expected'])+'</details>'
+        alternative+='<details><summary>'+('Material and prepared result' if lang=='en' else '本課資料與預備結果')+'</summary><h3>'+l['source']+'</h3>'+pre(c['source'])+'<h3>'+l['sample']+'</h3>'+pre(c['expected'])+'</details>'
     if key in ('M08','M09'):
-        out+=button(l['prepared'],f'data-load-prepared="{key}"')+p(('Prepared teaching code; not generated on this website. Loading replaces existing code only after confirmation.' if lang=='en' else '這是預備教學程式，不是本站生成；已有程式碼時，會先確認才替換。'),'small-text')
+        alternative+=button(l['prepared'],f'data-load-prepared="{key}"')+p(('Prepared teaching code; not generated on this website. Loading replaces existing code only after confirmation.' if lang=='en' else '這是預備教學程式，不是本站生成；已有程式碼時，會先確認才替換。'),'small-text')
     if key=='M09':
-        out+='<details><summary>'+('After finding the bug: try the reference fix' if lang=='en' else '找出錯誤後：試試參考修正版')+'</summary>'+button(('Load the reference fix' if lang=='en' else '載入參考修正版'),f'data-load-prepared="{key}" data-prepared-fixed="true"')+p(('This replaces the workspace with prepared corrected code. Preview, test, then download this version.' if lang=='en' else '將工作區換成預備的參考修正版；請更新預覽、測試，再下載此版本。'))+'</details>'
-    out+='<details><summary>'+l['classanswer']+'</summary>'+pre(c['classroom']['expected'])+'</details>'+p(l['classnext'])+button(l['classrecord'],f'data-classroom-record="{key}"')+'</details>'+account_note(lang)
+        alternative+='<details><summary>'+('After finding the bug: try the reference fix' if lang=='en' else '找出錯誤後：試試參考修正版')+'</summary>'+button(('Load the reference fix' if lang=='en' else '載入參考修正版'),f'data-load-prepared="{key}" data-prepared-fixed="true"')+p(('This replaces the workspace with prepared corrected code. Preview, test, then download this version.' if lang=='en' else '將工作區換成預備的參考修正版；請更新預覽、測試，再下載此版本。'))+'</details>'
+    alternative+='<details><summary>'+l['classanswer']+'</summary>'+pre(c['classroom']['expected'])+'</details>'+p(l['classnext'])+button(l['classrecord'],f'data-classroom-record="{key}"')+'</details>'
     out+=f'<section class="guided learning-step" id="do-{key}"><h2>1. {l["follow"]}</h2>'+p(l['where'],'eyebrow')+listing(c['steps'],'ol')
     if key=='M09':out+=debug_links(lang,prefix,'guided')
     out+='<div class="exercise-material"><h3>'+l['source']+'</h3>'+pre(c['source'])+'<h3>'+l['prompt']+'</h3>'+pre(c['prompt'])+'</div>'
@@ -181,7 +202,7 @@ def render_module(module, lang, modules, prefix):
     q=c['quiz'];out+='<details><summary>'+l['selfcheck']+'</summary><fieldset class="lesson-question"><legend>'+esc(q['question'])+'</legend>'+''.join(f'<label><input type="radio" name="quiz-{key}" value="{i}"><span>{esc(choice)}</span></label>' for i,choice in enumerate(q['choices']))+button(t['answer'],f'data-check-quiz="{key}"')+f'<p id="quiz-{key}-feedback" role="status"></p></fieldset></details>'
     needs=[m for m in modules if m['id'] in module['needs']]
     if needs:out+='<details><summary>'+l['more']+'</summary>'+p(c['skip'])+'<ul>'+''.join('<li><a href="#'+m['anchor']+'">'+esc(m['locales'][lang]['title'])+'</a></li>' for m in needs)+'</ul></details>'
-    out+='</section><nav class="module-pager" aria-label="'+l['menu']+'">'
+    out+=alternative+'</section><nav class="module-pager" aria-label="'+l['menu']+'">'
     if idx:out+='<a href="#'+modules[idx-1]['anchor']+'">← '+l['previous']+'</a>'
     out+='<a href="#course-map">'+l['home']+'</a>'
     if idx+1<len(modules):out+='<a href="#'+modules[idx+1]['anchor']+'">'+l['next']+' →</a>'
@@ -198,8 +219,8 @@ def render(lang):
     html+='</head><body class="curriculum-page"><a class="skip" href="#main">'+('Skip to content' if en else '跳到主要內容')+'</a><header class="site-header"><a class="brand" href="#top">AI Life Lab</a><nav><a href="#course-map">'+l['home']+'</a><a href="#continue">'+l['continue']+'</a></nav><div class="language-switch" role="group" aria-label="Language"><a href="'+('../' if en else '')+'index.html" data-language-switch="zh-Hant" lang="zh-Hant">繁體中文</a><a href="'+('' if en else 'en/')+'index.html" data-language-switch="en" lang="en">English</a></div></header>'
     nav=''.join(f'<a href="#{m["anchor"]}"><span>{i+1:02}</span>{esc(m["locales"][lang]["title"])}</a>' for i,m in enumerate(modules))
     html+='<aside class="lesson-sidebar"><p>'+l['menu']+'</p><nav aria-label="'+l['menu']+'">'+nav+'</nav></aside><details class="mobile-lessons"><summary>'+l['menu']+'</summary><nav aria-label="'+l['menu']+'">'+nav+'</nav></details><main id="main">'
-    html+='<section class="wrap section intro" id="top" data-view="home"><p class="eyebrow">'+('12 creative tasks · Choose your challenge' if en else '12 個動手做的題目 · 自選挑戰')+'</p><h1>'+l['title']+'</h1>'+p(l['intro'],'lead')+'<div class="actions"><a class="button" href="#lesson-start">'+l['start']+'</a><a href="#course-map">'+l['browse']+'</a></div><h2>'+l['how']+'</h2>'+listing(l['howsteps'],'ol')+p(l['ready'],'small-text')+account_note(lang)+'</section>'
-    html+='<section class="wrap section" id="course-map" data-view="home"><h2>'+l['menu']+'</h2>'+p(l['mapnote'])+'<p class="start-note"><strong>'+l['first']+'</strong> '+l['firstnote']+'</p>'
+    html+='<section class="wrap section intro" id="top" data-view="home"><p class="eyebrow">'+('12 creative tasks · Choose your challenge' if en else '12 個動手做的題目 · 自選挑戰')+'</p><h1>'+l['title']+'</h1>'+p(l['intro'],'lead')+'<div class="actions"><a class="button" href="#lesson-start">'+l['start']+'</a><a href="#course-map">'+l['browse']+'</a></div>'+p(' → '.join(l['howsteps']),'small-text')+'<details><summary>'+('Class preparation (optional)' if en else '課前準備（選看）')+'</summary>'+p(l['ready'])+account_note(lang)+'</details></section>'
+    html+='<section class="wrap section" id="course-map" data-view="home"><h2>'+l['menu']+'</h2>'+p(l['mapnote'])
     for group,(start,end) in zip(l['groups'],((0,3),(3,7),(7,10),(10,12))):
         html+='<h3>'+group+'</h3><ol class="module-list">'
         for idx in range(start,end):

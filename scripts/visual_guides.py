@@ -23,13 +23,13 @@ for key,file,h,zh,en in (
 def figure(key,lang,prefix,show_title=True):
     file,w,h,zh,en,zhtext,entext=SHOTS[key]
     title,text=(en,entext) if lang=='en' else (zh,zhtext)
-    text=('Earlier fictional example: use it only to locate controls; use this lesson’s material for the task. ' if lang=='en' else '先前虛構範例，僅看按鈕位置；題目用本課資料。')+text
+    text=('Controls shown with an earlier example. ' if lang=='en' else '操作位置示意（圖中為先前範例）。')+text
     url=prefix+'assets/walkthrough/'+file+'?v='+hashlib.sha256((Path(__file__).resolve().parents[1]/'assets/walkthrough'/file).read_bytes()).hexdigest()[:12]
     zoom='View larger image' if lang=='en' else '查看大圖'
     return '<figure class="walkthrough-shot"><figcaption>'+('<strong>'+escape(title)+'</strong>' if show_title else '')+'<p>'+escape(text)+'</p></figcaption><a class="screenshot-link" href="'+url+'" target="_blank" rel="noopener" data-screenshot aria-label="'+escape(zoom+': '+title,quote=True)+'"><img src="'+url+'" width="'+str(w)+'" height="'+str(h)+'" loading="lazy" alt="'+escape(title+' — '+text,quote=True)+'"><span>'+zoom+' ↗</span></a></figure>'
 
 def note(lang):
-    return '<p class="screenshot-note">'+('Real screenshots · 2026-10-29 · Earlier fictional examples: locate controls only; use this lesson’s material. Traditional Chinese interface with English instructions. Screens vary by account or version. An adult demonstrates for learners who cannot operate the tool.' if lang=='en' else '實際截圖 · 2026-10-29 · 先前虛構範例，僅看按鈕位置；題目用本課資料。畫面可能依帳號與版本不同。不符合操作資格者由成人示範。')+'</p>'
+    return '<p class="screenshot-note">'+('Real screenshots · 2026-10-29 · Traditional Chinese interface; use this lesson’s material. Your screen may differ.' if lang=='en' else '實際截圖 · 2026-10-29 · 畫面可能不同，題目請用本課資料。')+'</p>'
 
 def chat_guide(lang,prefix,key):
     en=lang=='en'
