@@ -1,28 +1,28 @@
-Notion: turn rough notes into a plan
+Turn a 30-second film into doable tasks
 
-After a meeting or chat, organize rough notes into actions before putting them in your notes app.
+When creating together, agree who does what; no filming or uploading real people is needed.
 
 What you will make
 
-Get a reading-group action table with tasks, owners, and deadlines.
+Separate storyboarding and props into a task table with owners and deadlines.
 
 Example result
 
-T01 | Xiaohe | Choose three articles by 11/18.
-T02 | Me | Confirm the venue by 11/19.
+T01 | Xiaohe | Draw three storyboard panels by 11/18.
+T02 | Me | Prepare paper props by 11/19.
 
 This is a prepared example. Your AI may use different wording.
 
 Follow along
 
-Work in your own AI tool
+AI is operated by an eligible learner or an adult instructor
 
 Practice material
 
-Fictional teaching page: [AI Lab] Reading group start N1
+Fictional teaching page: [AI Lab] 30-second school film start N1
 Activity: 2026/11/21 14:00 (Asia/Taipei), 6 people.
-T01: Xiaohe to choose three articles by 11/18, incomplete.
-T02: confirm venue by 11/19, owner undecided, incomplete.
+T01: Xiaohe to draw three storyboard panels by 11/18, incomplete.
+T02: prepare paper props by 11/19, owner undecided, incomplete.
 Budget undecided.
 
 Request for AI
@@ -30,49 +30,57 @@ Request for AI
 Organize these notes into activity details, an action table, and things to discuss. Use ID, task, owner, deadline, and progress as columns; mark missing details “to confirm.”
 
 1. Paste the notes and request into AI to get a draft plan.
-2. Read the task table: choosing articles and confirming the venue should be separate tasks.
-3. Then send: “I will take responsibility for T02, confirming the venue. Update only that item.”
+2. Read the task table: storyboarding and preparing paper props should be separate tasks.
+3. Then send: “I will take responsibility for T02, preparing paper props. Update only that item.”
 4. Copy the plan you like into your notes. Try the optional connection exercise to put it in an actual Notion page.
 
 After trying: compare a possible result
 
-Activity: 11/21 14:00, 6 people. T01: Xiaohe chooses three articles by 11/18, incomplete. T02: confirm venue by 11/19, incomplete; after your follow-up its owner is “me.” Still to discuss: venue and budget. This stays in the AI chat until you copy it into your notes.
+Activity: 11/21 14:00, 6 people. T01: Xiaohe draws three storyboard panels by 11/18, incomplete. T02: prepare paper props by 11/19, incomplete; after your follow-up its owner is “me.” Still to discuss: venue and budget. This stays in the AI chat until you copy it into your notes.
 
 Check these parts of your result
 
-Choosing articles and confirming the venue are separate tasks.
+Storyboarding and preparing paper props are separate tasks.
 After the follow-up, only T02’s owner becomes “me”; its deadline stays 11/19.
 The budget remains to discuss; no amount is invented.
 
 Try a different situation yourself
 
-New fictional N2: sharing session 2026/12/02 15:00 (Asia/Taipei); T10 Aqing prepares slides by 12/01, in progress; T11 venue confirmation completed, venue Cloud Tower room A; participant count unknown. Produce the three-part draft using pasted text; do not write it back.
+Using T01 and T02, write a request to change only T01’s deadline to 11/17; keep other fields.
 
-Confirmed: 12/02 15:00, Cloud Tower room A, T11 completed. Action: T10 Aqing prepares slides by 12/01, in progress. Question: participant count. Status: draft, not written back.
+T01 is due 11/17; other details remain unchanged. There are still two tasks, with no duplicates.
 
 Try a more involved task
 
-Simulate ID-based updates and this-week filtering without creating duplicates.
+Add an “unfinished only” filter.
 
-Fictional data; this week is 2026/11/16–11/22. T01 | 11/18 | Xiaohe | incomplete; T02 | 11/19 | blank owner | incomplete; T03 | 11/25 | Aqing | incomplete. Update: T01 completed; T02 owner still unknown.
+Use T01 and T02; mark T01 completed and keep T02 unfinished.
 
-Simulate a database table only: apply updates by ID and list incomplete items this week. Apply the same update again and give the total row count. Do not write to Notion.
+Update T01 by ID, then show unfinished tasks. Keep the full table; do not delete completed tasks.
 
-There are 3 rows after updating, with T01 completed. Only T02 is incomplete this week; owner remains to confirm. T03 is next week and is excluded. Repeating the update leaves 3 rows, without a second T01. This is a text simulation, not a created database.
+The full table still contains T01 and T02. The unfinished list shows only T02. Filtering is not deletion.
 
-Optional: put the plan in your own Notion
+Classroom task: adult demo / prepared-material review
 
-In your Notion practice area, create “AI practice – reading group,” paste this lesson’s fictional notes, and copy the page link. Create a separate blank parent page, “AI practice – results,” for the organized version.
+Read the prepared materials here, starting from N1 where T02 is unassigned. Take ownership of T02 on paper by writing “me”; check that T01 and deadlines remain unchanged, with only two tasks.
+
+What to check
+
+T02 owner changes from undecided to “me”, still due 11/19. T01 remains Xiaohe’s three storyboard panels due 11/18.
+
+Instructor extension: put the plan in your own Notion
+
+An eligible adult operates an authorized practice account here; students do not need to register or connect accounts. In your Notion practice area, create “AI practice – 30-second school film,” paste this lesson’s fictional notes, and copy the page link. Create a separate blank parent page, “AI practice – results,” for the organized version.
 
 Use Notion to read this page: [practice page link]. Organize activity details and an action table. Show the draft in chat first without changing the page.
 
 Connect Notion through available Plugins or connected apps in your AI tool. Use the actual permission flow to allow your practice pages, and confirm you can open them yourself.
 Insert the source-page link, select the Notion plugin, and send the request. Review the draft against your notes.
-To save it to Notion, send a separate request: “Under [results parent link], create Reading group plan and write the complete draft we just reviewed.” This is the step that creates a page.
+To save it to Notion, send a separate request: “Under [results parent link], create 30-second school film plan and write the complete draft we just reviewed.” This is the step that creates a page.
 Open the returned page and check its title, tasks, and location. Without write access, copy the draft to your practice page yourself.
 
 Reading produces a chat draft. An actual new Notion page exists only after you separately request writing and it succeeds.
 
 Save your work and continue later
 
-Save the AI response in your own notes and add one sentence about what you changed. You can also use the optional record below.
+Save your work and explain what you chose to change and how you checked it. Credit AI, prepared material, or peer help. Open your downloaded file once.

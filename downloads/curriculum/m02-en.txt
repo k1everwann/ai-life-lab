@@ -1,68 +1,76 @@
-Plans changed: ask AI to update them
+Rehearsal changed: update only what changed
 
-When a time, location, or headcount changes, you do not have to rewrite everything.
+Changing one arrangement should not accidentally change everything else.
 
 What you will make
 
-Get a reminder with an updated ticket deadline and the original meeting details.
+Make a revised club performance schedule that shows what changed.
 
 Example result
 
-Download tickets by 11/19 19:00.
-Meet on 11/21 at 09:00 at Cloudbank Station.
+Revised | 11/21 rehearsal 14:30; performance 16:00.
+Sound equipment to confirm.
 
 This is a prepared example. Your AI may use different wording.
 
 Follow along
 
-Work in your own AI tool
+AI is operated by an eligible learner or an adult instructor
 
 Practice material
 
-Fictional B0; time zone Asia/Taipei: download tickets by 2026/11/19 20:00; meet at Cloudbank Station on 2026/11/21 at 09:00; check-in time not provided.
+Fictional B0; time zone Asia/Taipei: on 2026/11/21, rehearsal at 15:00 and performance at 16:00; sound equipment undecided.
 
 Request for AI
 
-Organize these departure details into three lines: ticket download, meeting, and check-in. Write “to confirm” for anything not provided.
+Make three lines: rehearsal, performance, sound equipment. Mark missing details as to confirm.
 
-1. Paste the data and request below into AI to get your three-line reminder.
-2. Paste the second-round data and request into the same chat to change the download deadline to 19:00.
-3. Compare the versions: download is one hour earlier, while the meeting stays at 09:00.
-4. Save the updated version you want to use. You can also ask to turn it into a checklist.
+1. Give the data and request to AI or the instructor for a three-line schedule.
+2. Send the second-round request, changing only rehearsal to 14:30.
+3. Circle the only change: 15:00 becomes 14:30; performance stays at 16:00.
+4. Save the revision and label its version on paper or in the filename so teammates can tell versions apart.
 
 After trying: compare a possible result
 
-The first version has a download deadline of 11/19 20:00; the update changes it to 19:00. Meeting remains 11/21 09:00 at Cloudbank Station; check-in is to confirm.
+Rehearsal on 11/21 moves from 15:00 to 14:30, 30 minutes earlier. Performance remains 16:00; sound equipment is to confirm.
 
 Check these parts of your result
 
-The download deadline moves from 20:00 to 19:00, one hour earlier.
-Meeting remains 11/21 09:00; check-in remains to confirm.
+Rehearsal 15:00 → 14:30, 30 minutes earlier.
+Performance stays 16:00; equipment remains to confirm.
 
 Now make it work for you
 
-Update: the organizer changes the ticket download deadline to 2026/11/19 19:00 (Asia/Taipei). Everything else stays the same.
+Organizer confirms: rehearsal on 2026/11/21 moves to 14:30 (Asia/Taipei); everything else stays the same.
 
-Update the three-line reminder, changing only the download deadline to 19:00.
+Update only rehearsal, then state what changed.
 
-Download tickets by 11/19 19:00. Meet on 11/21 at 09:00 at Cloudbank Station. Check-in: to confirm.
+Rehearsal 15:00 → 14:30; performance 16:00 and unconfirmed equipment remain unchanged.
 
 Try a different situation yourself
 
-New fictional R0: report due 2026/12/04 16:00; discussion 12/06 10:00; room undecided. R1: the owner confirms the report deadline changes to 15:00; everything else stays the same. Time zone Asia/Taipei. Make a before/after comparison yourself.
+Turn the revision into a teammate checklist. Choose your own wording without adding unconfirmed arrangements.
 
-Report deadline 12/04 16:00 → 15:00, 1 hour earlier; discussion remains 12/06 10:00; room remains to confirm.
+Rehearsal 14:30, performance 16:00; equipment to confirm. Format changes; facts do not.
 
 Try a more involved task
 
-Identify the conflict without choosing an unsupported deadline.
+Add a changed / unchanged column.
 
-Fictional C1: contact A says download by 2026/11/19 19:00. C2: contact B says 18:30 the same day. Neither states which notice is replaced or who has authority. Time zone Asia/Taipei.
+Use B0 and the organizer-confirmed 14:30 update.
 
-List the conflict, common facts, and who should confirm the answer. Do not treat earlier or newer as a confirmed answer.
+Show old version, new version, and changed / unchanged. Keep equipment unconfirmed.
 
-Shared fact: download is due on 2026/11/19. Conflict: 19:00 versus 18:30, a 30-minute difference; the valid deadline is unconfirmed. Ask the organizer's decision owner which notice is valid and whether it replaces the other. Do not claim 18:30 is officially adopted.
+Rehearsal 15:00 → 14:30: changed. Performance 16:00 → 16:00: unchanged. Equipment to confirm → to confirm: unchanged.
+
+Classroom task: adult demo / prepared-material review
+
+Read the prepared materials here. Write the original 15:00 rehearsal on paper, change it yourself to 14:30, and mark the unchanged 16:00 performance and unconfirmed equipment.
+
+What to check
+
+Rehearsal on 11/21 moves from 15:00 to 14:30, 30 minutes earlier. Performance remains 16:00; sound equipment is to confirm.
 
 Save your work and continue later
 
-Save the AI response in your own notes and add one sentence about what you changed. You can also use the optional record below.
+Save your work and explain what you chose to change and how you checked it. Credit AI, prepared material, or peer help. Open your downloaded file once.

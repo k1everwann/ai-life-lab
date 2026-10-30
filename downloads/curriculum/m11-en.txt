@@ -1,6 +1,6 @@
-Say the same thing for a different audience
+Help exchange students understand the club activity day
 
-When a notice is too long, too formal, or needs another language, ask AI to change how it is written.
+Tell friends in different languages about the same activity, keeping the facts while changing the wording.
 
 What you will make
 
@@ -8,37 +8,37 @@ Get short Chinese and English notices and adjust their tone for friends.
 
 Example result
 
-11/21 09:00一起參加「雲岸共學」，每人300 TWD。
-Join 雲岸共學 on 11/21 at 09:00; 300 TWD per person.
-(Excerpt; the full notice also includes the reply deadline and lunch details.)
+11/21 09:00一起參加「社團體驗日」，每人300 TWD。
+Join 社團體驗日 on 11/21 at 09:00; 300 TWD per person.
+(Excerpt; the full notice also includes the reply deadline and materials details.)
 
 This is a prepared example. Your AI may use different wording.
 
 Follow along
 
-Work in your own AI tool
+AI is operated by an eligible learner or an adult instructor
 
 Practice material
 
-Fictional notice L1: 雲岸共學 takes place on 2026/11/21 at 09:00 (Asia/Taipei), at 雲樓A室; 300 TWD per person. Reply whether attending by 2026/11/18 18:00 (Asia/Taipei). Lunch costs extra; its price is undecided. Neither activity nor venue has an approved English name.
+Fictional notice L1: 社團體驗日 takes place on 2026/11/21 at 09:00 (Asia/Taipei), at 雲樓A室; 300 TWD per person. Reply whether attending by 2026/11/18 18:00 (Asia/Taipei). Materials cost extra; their price is undecided. Neither activity nor venue has an approved English name.
 
 Request for AI
 
-Write short Chinese and English notices from these details. Make the time, place, price, and reply deadline easy to find. Keep activity and venue names in their original form and keep the extra lunch cost.
+Write short Chinese and English notices from these details. Make the time, place, price, and reply deadline easy to find. Keep activity and venue names in their original form and keep the extra materials cost.
 
 1. Paste the activity details and request into AI and read both notices.
 2. Then send: “Make the Chinese sound like a message to a friend, and make the English shorter.”
-3. Check that the dates and 300 TWD per person did not change, and lunch still costs extra.
+3. Check that the dates and 300 TWD per person did not change, and materials still costs extra.
 4. Save the versions you like. For unfamiliar English, ask: “Explain this sentence in Chinese.”
 
 After trying: compare a possible result
 
-Chinese: 『雲岸共學』11/21 09:00於雲樓A室舉行，每人300 TWD；請於11/18 18:00前回覆。日期皆2026年，時間皆Asia/Taipei；午餐另計、價格待確認。 English: Join 雲岸共學 at 雲樓A室 on 2026/11/21 at 09:00 (Asia/Taipei), 300 TWD per person. Reply by 2026/11/18 18:00 (Asia/Taipei). Lunch costs extra; the price is unconfirmed. All six fields agree, with no invented official names.
+Chinese: 『社團體驗日』11/21 09:00於雲樓A室舉行，每人300 TWD；請於11/18 18:00前回覆。日期皆2026年，時間皆Asia/Taipei；材料另計、價格待確認。 English: Join 社團體驗日 at 雲樓A室 on 2026/11/21 at 09:00 (Asia/Taipei), 300 TWD per person. Reply by 2026/11/18 18:00 (Asia/Taipei). Materials cost extra; the price is unconfirmed. All six fields agree, with no invented official names.
 
 Check these parts of your result
 
 Both versions keep the same activity date, reply deadline, and 300 TWD per-person price.
-Lunch remains extra with its price unconfirmed, not included.
+Materials remains extra with their price unconfirmed, not included.
 Keep original activity and venue names and Asia/Taipei in the full notice.
 
 Try a different situation yourself
@@ -49,14 +49,22 @@ Chinese preserves 12/03 15:00, B室, free admission, 12/01 12:00 registration de
 
 Try a more involved task
 
-Make a two-sentence spoken script while retaining limitations.
+Add a 20-second spoken introduction.
 
-Fictional L3: online exchange 2026/12/10 19:00 (Asia/Taipei); register by 12/08 17:00 (Asia/Taipei); 200 TWD per person; access link not yet provided.
+Fictional notice L1: 社團體驗日 takes place on 2026/11/21 at 09:00 (Asia/Taipei), at 雲樓A室; 300 TWD per person. Reply whether attending by 2026/11/18 18:00 (Asia/Taipei). Materials cost extra; their price is undecided. Neither activity nor venue has an approved English name.
 
-Write two sentences each in Chinese and English: activity and price first, then deadline and missing link. Do not invent a URL.
+Write Chinese and English spoken introductions from the same data, aiming for 20 seconds each. If necessary, go longer rather than drop the price, deadline, or unknown materials cost. Read them to a partner and check.
 
-Chinese: 12月10日19:00有線上交流，每人200 TWD。請於12月8日17:00前報名，參加連結待提供；以上日期皆2026年，時間皆Asia/Taipei。 English: The online exchange is on 2026/12/10 at 19:00 (Asia/Taipei), at 200 TWD per person. Register by 2026/12/08 17:00 (Asia/Taipei); the access link has not been provided. Wording can vary; time zone and missing-link status cannot be dropped.
+Both versions keep 11/21 09:00, 雲樓A室, 300 TWD per person, reply by 11/18 18:00, and extra materials with an unknown price; retain 2026 and Asia/Taipei. Prioritize understanding and complete facts over speed.
+
+Classroom task: adult demo / prepared-material review
+
+Read the prepared materials here. Change the tone of one Chinese sentence yourself, then circle matching times, price, and extra materials in the prepared English. Ask the instructor to explain unfamiliar English; English proficiency is not graded.
+
+What to check
+
+Chinese has one tone change you chose; both versions retain 11/21 09:00, reply by 11/18 18:00, 300 TWD per person, and extra materials with an unknown price.
 
 Save your work and continue later
 
-Save the AI response in your own notes and add one sentence about what you changed. You can also use the optional record below.
+Save your work and explain what you chose to change and how you checked it. Credit AI, prepared material, or peer help. Open your downloaded file once.

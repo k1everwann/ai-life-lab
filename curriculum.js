@@ -2,7 +2,7 @@
   "use strict";
   const node = document.getElementById("curriculum-data");
   if (!node) return;
-  const {modules, ui, debugFixtures} = JSON.parse(node.textContent);
+  const {modules, ui, debugFixtures, preparedFixtures} = JSON.parse(node.textContent);
   const lang = document.documentElement.lang;
   const en = lang === "en";
   const $ = id => document.getElementById(id);
@@ -32,6 +32,13 @@
   function capture(key) {
     return {request:$("question-"+key).value,result:$("result-"+key).value,mode:$("mode-"+key).value,code:$("code-"+key)?.value || ""};
   }
+  function evidenceKind(key,kind) {
+    return kind==='guided' && $('mode-'+key).value==='1' ? 'classroom' : kind;
+  }
+  function updateEvidence(key) {
+    const active=evidenceKind(key,article(key).dataset.exercise || 'guided');
+    article(key).querySelectorAll('[data-evidence-kind]').forEach(group=>{group.hidden=group.dataset.evidenceKind!==active;});
+  }
   function setExercise(key,kind) {
     const current=article(key).dataset.exercise || "guided";
     if(current!==kind){
@@ -49,9 +56,49 @@
     }
     article(key).dataset.exercise=kind;
     $("exercise-"+key).value=kind;
-    article(key).querySelectorAll("[data-evidence-kind]").forEach(group=>{group.hidden=group.dataset.evidenceKind!==kind;});
+    updateEvidence(key);
   }
   modules.forEach(m=>$("exercise-"+m.id).addEventListener("change",event=>setExercise(m.id,event.target.value)));
+  modules.forEach(m=>$('mode-'+m.id).addEventListener('change',()=>updateEvidence(m.id)));
+  all('[data-classroom-record]').forEach(button=>button.addEventListener('click',()=>{
+    const key=button.dataset.classroomRecord;
+    setExercise(key,'guided');
+    $('mode-'+key).value='1';
+    updateEvidence(key);
+    article(key).querySelector('.module-record').open=true;
+    $('question-'+key).focus();
+    $('question-'+key).scrollIntoView({block:'center'});
+  }));
+  let pendingPrepared=null;
+  const preparedDialog=$('prepared-confirm');
+  function loadPrepared(button) {
+    const key=button.dataset.loadPrepared;
+    setExercise(key,'guided');
+    const fixed=button.dataset.preparedFixed==='true';
+    $('code-'+key).value=preparedFixtures[key+(fixed?'fixed':'')];
+    $('mode-'+key).value='1';
+    updateEvidence(key);
+    $('code-'+key).dispatchEvent(new Event('input',{bubbles:true}));
+    $('workspace-'+key).scrollIntoView({block:'start'});
+    article(key).querySelector('[data-preview]').focus({preventScroll:true});
+    say('code-status-'+key,fixed ? (en?'Prepared reference fix loaded. Update the preview, test, and download this corrected version.':'已載入預備的參考修正版。請更新預覽、測試並下載這份修正版。') : (en?'Prepared code loaded. Update the preview and test it; record your own change separately.':'已載入預備程式。請更新預覽並實測，再記下自己想改的地方。'));
+  }
+  all('[data-load-prepared]').forEach(button=>button.addEventListener('click',()=>{
+    const key=button.dataset.loadPrepared;
+    const targetCode=(article(key).dataset.exercise || 'guided')==='guided' ? $('code-'+key).value : (drafts.get(key+':guided')?.code || '');
+    if(targetCode.trim()) {
+      pendingPrepared=button;
+      preparedDialog.showModal();
+    } else loadPrepared(button);
+  }));
+  $('prepared-cancel').addEventListener('click',()=>preparedDialog.close());
+  $('prepared-replace').addEventListener('click',()=>{
+    const button=pendingPrepared;
+    pendingPrepared=null;
+    preparedDialog.close();
+    if(button)loadPrepared(button);
+  });
+  preparedDialog.addEventListener('close',()=>{pendingPrepared?.focus();pendingPrepared=null;});
   const aliases = {"classroom":"lesson-start", "tool":"lesson-build", "principles":"course-map", "showcase":"course-map", "takeaway":"continue"};
   let lastLesson = "lesson-gmail";
   all('.connection a[href="#connection-guide"]').forEach(link=>link.addEventListener("click",()=>{lastLesson=link.closest("details").id;}));
@@ -168,7 +215,8 @@
     const request = saved.request.trim();
     const result = saved.result.trim();
     const mode = Number(saved.mode);
-    const boxes = [...article(m.id).querySelectorAll(`[data-evidence-kind="${kind}"] [data-evidence]`)];
+    const evidence=kind==='guided' && mode===1 ? 'classroom' : kind;
+    const boxes = [...article(m.id).querySelectorAll(`[data-evidence-kind="${evidence}"] [data-evidence]`)];
     const code = saved.code.trim();
     if (!request && !result && !code && !mode && !boxes.some(box => box.checked)) return null;
     const typeIndex=["guided","independent","challenge","connection"].indexOf(kind);
@@ -176,8 +224,8 @@
     const prompt=kind==="connection"?m.connection?.prompt:kind==="independent"?m.independent.task:kind==="challenge"?m.challenge.prompt:[m.prompt,m.followup?[m.followup.source,m.followup.prompt].join("\n\n"):""].filter(Boolean).join("\n\n");
     return [
       `${m.id} ${m.title}`, `${ui.exercise}\n${ui.exercise_types[typeIndex] || (en?"Connected account":"連線練習")}`, `${ui.mode}\n${ui.modes[mode]}`, `${ui.source}\n${source || "—"}`,
-      `${ui.prompt}\n${prompt}`, `${ui.question}\n${request || "—"}`,
-      `${ui.result}\n${result || "—"}`, kind!=="guided"&&m[kind]?`${ui.expected}\n${m[kind].expected}`:"", `${ui.checks}\n${boxes.map(box => `${box.checked?"[x]":"[ ]"} ${(kind==="guided"?m.checks:ui.other_checks)[Number(box.dataset.evidence)]}`).join("\n")}`,
+      `${ui.prompt}\n${prompt}`, mode===1 && kind==='guided' ? `${en?'Prepared-material task':'預備材料練習'}\n${m.classroom.task}` : '', `${ui.question}\n${request || "—"}`,
+      `${ui.result}\n${result || "—"}`, kind!=="guided"&&m[kind]?`${ui.expected}\n${m[kind].expected}`:"", `${ui.checks}\n${boxes.map(box => `${box.checked?"[x]":"[ ]"} ${(evidence==="guided"?m.checks:ui.other_checks)[Number(box.dataset.evidence)]}`).join("\n")}`,
       code ? `${ui.codeinput}\n${code}` : "", ui.self
     ].filter(Boolean).join("\n\n");
   }

@@ -1,64 +1,72 @@
-Bring scattered messages into one plan
+Which group message can you trust?
 
-When a group chat mixes changes and suggestions, ask AI to pull out the arrangements to follow.
+When a group mixes forwarded messages and suggestions, find what you can actually act on.
 
 What you will make
 
-Get a schedule that separates confirmed plans from questions to ask.
+Make a source-backed school game schedule separating confirmed facts from questions.
 
 Example result
 
-Meet: 11/21 09:00, Cloudbank Station.
-Tickets: download by 11/19 19:00; ask about the shuttle.
+Check-in: 11/21 09:00, the club room.
+Team name: submit by 11/19 19:00; ask about the game start.
 
 This is a prepared example. Your AI may use different wording.
 
 Follow along
 
-Work in your own AI tool
+AI is operated by an eligible learner or an adult instructor
 
 Practice material
 
 Fictional data; time zone Asia/Taipei.
-D | issued 10/20: meet at Cloudbank Station on 2026/11/21 at 10:00.
-B | organizer approved 10/25: replaces D; meet at Cloudbank Station on 2026/11/21 at 09:00; download tickets by 11/19 19:00; check-in undecided.
-E | discussion draft 10/28: suggests meeting on 11/21 at 08:30; not approved.
-F | shuttle note: departs 11/21 at 09:30; approval status not stated.
+D | issued 10/20: check in at the club room on 2026/11/21 at 10:00.
+B | organizer approved 10/25: replaces D; check in at the club room on 2026/11/21 at 09:00; submit a team name by 11/19 19:00; game format undecided.
+E | discussion draft 10/28: suggests check-in on 11/21 at 08:30; not approved.
+F | game-start note: starts 11/21 at 09:30; approval status not stated.
 
 Request for AI
 
 Turn these four messages into a table: action / time / note. Put organizer-confirmed arrangements first, then suggestions and questions.
 
 1. Paste the four messages and request into AI to get a table.
-2. Look back at organizer message B: the meeting is 09:00; E’s 08:30 is a suggestion. Check that the table keeps them separate.
-3. Then send: “Make this three lines I can read before leaving, followed by one question for the organizer.”
-4. Check that you can quickly find the meeting time and ticket deadline, then save your preferred version.
+2. Look back at organizer message B: the check-in is 09:00; E’s 08:30 is a suggestion. Check that the table keeps them separate.
+3. Choose one unconfirmed detail, write a question that would resolve it, and add a source ID to each table row.
+4. Check that check-in time and the team-name submission deadline are easy to find, then save the schedule card.
 
 After trying: compare a possible result
 
-Meet on 11/21 at 09:00 at Cloudbank Station; download tickets by 11/19 19:00. 08:30 is only a draft suggestion. You can ask the organizer about the 09:30 shuttle and check-in time.
+Meet on 11/21 at 09:00 at the club room; submit a team name by 11/19 19:00. 08:30 is only a draft suggestion. You can ask the organizer about the 09:30 game-start and game format.
 
 Check these parts of your result
 
-Use the organizer-confirmed 09:00 meeting; 08:30 remains a suggestion.
-09:30 is a shuttle departure note, not the meeting time.
+Use the organizer-confirmed 09:00 check-in; 08:30 remains a suggestion.
+09:30 is an unconfirmed game-start note, not the check-in time.
 
 Try a different situation yourself
 
-Fictional P: approved 10/26, registration limit 20 people. Q: draft 10/29 suggests 30, unapproved. R: contact message 10/28 says 'limit 25' without stating whether it replaces P. List the approved value and unresolved issues.
+A teammate says “E is newest, so 08:30 is correct.” Write a source-based response without guessing authority.
 
-Known approved value: 20 (P). The 30-person value is a draft. The 25-person message differs from P, but authority and replacement are unclear. Ask the decision owner; do not assert that 25 or 30 is the final valid limit.
+B is approved and replaces D, so check-in is confirmed at 09:00. E suggests 08:30; newest does not mean valid.
 
 Try a more involved task
 
-Preserve uncertainty when no current approved version is available.
+Add a “What evidence is missing?” column.
 
-Fictional V1: valid through 2026/10/20; fee 300 TWD. V2: draft dated 2026/10/28; proposed fee 350 TWD, unapproved. Inquiry date: 2026/10/29.
+Use the four fictional messages D, B, E, F.
 
-Can today's fee be confirmed? State the limitations of both documents and the evidence needed.
+For E and F, write one question each for the organizer, specifying what needs confirmation. Do not adopt unconfirmed times.
 
-The current fee cannot be confirmed. V1 expired; V2 is newer but unapproved. Obtain the current approved fee notice, effective dates, and publisher confirmation. Neither 300 nor 350 can be presented as confirmed.
+E: Was the 08:30 suggestion approved to replace B? F: Is the 09:30 game start confirmed? Confirmed check-in remains 09:00.
+
+Classroom task: adult demo / prepared-material review
+
+Read the prepared materials here. Suppose a teammate wrote check-in as 08:30. Correct that detail yourself and label source B, then write a question about the unconfirmed 09:30 game start.
+
+What to check
+
+Change 08:30 to 09:00 and label source B; ask whether the 09:30 game start is confirmed.
 
 Save your work and continue later
 
-Save the AI response in your own notes and add one sentence about what you changed. You can also use the optional record below.
+Save your work and explain what you chose to change and how you checked it. Credit AI, prepared material, or peer help. Open your downloaded file once.
