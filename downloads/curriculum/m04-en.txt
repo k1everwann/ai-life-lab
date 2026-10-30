@@ -15,7 +15,7 @@ This is a prepared example. Your AI may use different wording.
 
 Follow along
 
-AI is operated by an eligible learner or an adult instructor
+Use ChatGPT or your usual AI tool
 
 Practice material
 
@@ -27,7 +27,7 @@ Request for AI
 
 Use my decision to draft two sentences: say I will attend, then ask whether to bring a board game. Provide a draft only; do not send it.
 
-1. Give the fictional email and your decision to AI or the instructor; no email connection is needed.
+1. Give the fictional email and your decision to AI; no email connection is needed.
 2. Check that the draft says you will attend and asks about bringing a game.
 3. Choose a change such as a friendlier or more formal tone, keeping your decision.
 4. Save your two-sentence version, marked “Draft — not sent.”
@@ -80,4 +80,4 @@ You can open the specified original message, and AI has read its content and pro
 
 Save your work and continue later
 
-Save your work and explain what you chose to change and how you checked it. Credit AI, prepared material, or peer help. Open your downloaded file once.
+Save your result and note what you changed and how you checked it.
