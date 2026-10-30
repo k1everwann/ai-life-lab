@@ -1,21 +1,15 @@
-Choose a board-game afternoon for four
+Choose an activity within budget
 
-An apparently cheaper plan may leave out a cost. Ask before choosing.
+Open this lesson: https://k1everwann.github.io/ai-life-lab/en/index.html#lesson-drive
 
-What you will make
+Compare known costs and spot a price you still need.
 
-Compare two plans, separating known costs from costs you still need to ask about.
-
-Example result
+Prepared example result
 
 A: 150×4+200=800 TWD.
 B: known 760 TWD; materials to confirm.
 
-This is a prepared example. Your AI may use different wording.
-
-Follow along
-
-Use ChatGPT or your usual AI tool
+1. Make a first version
 
 Practice material
 
@@ -27,57 +21,71 @@ Request for AI
 
 Make a four-person comparison with calculations, known subtotals, and unknown costs. Do not yet claim which complete total is cheaper.
 
-1. Give both plans and the request to AI for a comparison table.
-2. Use a calculator: A is 150×4+200=800; B is known 760 with materials unknown.
-3. Choose a condition such as a group budget of at most 800 and request an updated comparison.
-4. Save the table and one question to ask before deciding; unknown is not zero.
+1. Select “Copy material and request” below.
+2. Paste into a new AI conversation and send.
+3. Return and check the points below. Ask AI to correct any errors.
 
-After trying: compare a possible result
+See a reference answer
 
 A totals 800 TWD. B has a known subtotal of 760 TWD plus unknown materials; its complete total and whether it is cheaper are unconfirmed.
 
-Check these parts of your result
+Check these points
 
 A is 150 per person ×4; materials 200 is for the group.
 B’s 760 is only a known subtotal; unknown materials are not zero.
 
-Try a different situation yourself
+2. Change one thing and check
 
-Write three sentences for teammates: A’s cost, B’s limitation, and the next question to ask.
+Continue the same AI conversation. Use the request below or choose a change of your own.
+
+The total budget for all four people is TWD 800.
+
+Use this budget to explain which option is known to fit and which needs a price check.
+
+A totals TWD 800 and fits. B has an unknown materials fee, so it is not yet known to be cheaper.
+
+3. Save your work
+
+Save the final response in your notes. Add what you changed and how you checked it.
+
+Try a different task
+
+Fictional board-game afternoon plans: same day, 4 people, all TWD.
+A: 150 per person plus 200 materials for the group.
+B: 760 for the group; materials cost extra, price not provided.
+
+Use three sentences: A’s known total, B’s known cost, and what you need to ask B.
 
 A is 800; B is known 760 plus unknown materials; ask for B’s materials cost without claiming it is cheaper.
 
 Try a more involved task
 
-Add an 800 budget filter.
+Find the remaining budget
 
-Use A and B; the four-person group has a budget of at most 800 TWD.
+Fictional board-game afternoon plans: same day, 4 people, all TWD.
+A: 150 per person plus 200 materials for the group.
+B: 760 for the group; materials cost extra, price not provided.
 
-Mark which plan meets the budget and which needs confirmation. What is the maximum B materials cost that would fit?
+The four-person budget is TWD 800. B’s known group fee is TWD 760. What is the maximum materials fee? Can we already say B is cheaper than A?
 
-A qualifies. B needs confirmation: materials must cost no more than 40 TWD. That is an acceptable limit, not a confirmed quote.
+The maximum materials fee is TWD 40. The actual fee is unknown, so B is not yet known to be cheaper.
 
 Classroom task: adult demo / prepared-material review
 
-Read the prepared materials here. Rewrite the comparison as two sentences for teammates. Calculate 150×4+200 yourself and circle B’s missing materials cost.
+Use the prepared result below. Choose one detail to change, edit it yourself, and explain how you checked it. You can use the change in step 2 as a starting point.
 
 What to check
 
-A totals 800 TWD. B has a known subtotal of 760 TWD plus unknown materials; its complete total and whether it is cheaper are unconfirmed.
+A totals TWD 800 and fits. B has an unknown materials fee, so it is not yet known to be cheaper.
 
-Instructor extension: read your own Drive practice documents
+Compare two Google Drive documents
 
-An eligible adult operates an authorized practice account here; students do not need to register or connect accounts. Create two blank Google Docs in your Drive named “AI practice – option A” and “AI practice – option B.” Paste each option’s fictional data into its matching document and copy both links.
+Prepare: put plans A and B in separate documents in a teaching Drive. Copy both document links.
 
-Use Google Drive to read these fictional practice documents: [A link], [B link]. Compare four-person admission, materials, and known subtotals. Do not edit; say if contents are inaccessible.
+Use Google Drive to read these practice documents: [A link] and [B link]. Compare costs for four people, separating known amounts from unknown fees. Do not edit the documents. Tell me if you cannot read them.
 
-Open both documents yourself to confirm their text is saved and your account can read them.
-Connect Google Drive through available Plugins or connected apps in your AI tool, using the account with access.
-Put both links into the request, select the Drive plugin, and send it.
-Compare the table with the original documents. If reading fails, continue with pasted text from the main exercise.
+Connect Google Drive using the account connection guide.
+Put both document links into the request below, select Google Drive, and send.
+Open the originals. Check A’s TWD 800 and B’s TWD 760 plus unknown materials.
 
-A totals 800 TWD. B has a known subtotal of 760 TWD plus unknown materials; its complete total and whether it is cheaper are unconfirmed.
-
-Save your work and continue later
-
-Save your result and note what you changed and how you checked it.
+A costs TWD 800. B has a known TWD 760 fee plus unknown materials. The original documents are unchanged.

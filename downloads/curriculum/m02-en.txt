@@ -1,21 +1,15 @@
-Rehearsal changed: update only what changed
+Update a changed event time
 
-Changing one arrangement should not accidentally change everything else.
+Open this lesson: https://k1everwann.github.io/ai-life-lab/en/index.html#lesson-refine
 
-What you will make
+Change one time without changing the other details.
 
-Make a revised club performance schedule that shows what changed.
-
-Example result
+Prepared example result
 
 Revised | 11/21 rehearsal 14:30; performance 16:00.
 Sound equipment to confirm.
 
-This is a prepared example. Your AI may use different wording.
-
-Follow along
-
-Use ChatGPT or your usual AI tool
+1. Make a first version
 
 Practice material
 
@@ -25,52 +19,57 @@ Request for AI
 
 Make three lines: rehearsal, performance, sound equipment. Mark missing details as to confirm.
 
-1. Give the data and request to AI for a three-line schedule.
-2. Send the second-round request, changing only rehearsal to 14:30.
-3. Circle the only change: 15:00 becomes 14:30; performance stays at 16:00.
-4. Save the revision and label its version on paper or in the filename so teammates can tell versions apart.
+1. Select “Copy material and request” below.
+2. Paste into a new AI conversation and send.
+3. Return and check the points below. Ask AI to correct any errors.
 
-After trying: compare a possible result
+See a reference answer
 
-Rehearsal on 11/21 moves from 15:00 to 14:30, 30 minutes earlier. Performance remains 16:00; sound equipment is to confirm.
+Rehearsal: 2026/11/21 at 15:00.
+Performance: 16:00 on the same day.
+Sound equipment: to confirm.
 
-Check these parts of your result
+Check these points
 
 Rehearsal 15:00 → 14:30, 30 minutes earlier.
 Performance stays 16:00; equipment remains to confirm.
 
-Now make it work for you
+2. Change one thing and check
 
-Organizer confirms: rehearsal on 2026/11/21 moves to 14:30 (Asia/Taipei); everything else stays the same.
+Continue the same AI conversation. Use the request below or choose a change of your own.
 
-Update only rehearsal, then state what changed.
+The organizer confirmed: rehearsal moves to 2026/11/21 at 14:30. Everything else stays the same.
 
-Rehearsal 15:00 → 14:30; performance 16:00 and unconfirmed equipment remain unchanged.
+Update only the rehearsal time and show the three-line notice again.
 
-Try a different situation yourself
+Rehearsal: 14:30. Performance: 16:00. Sound equipment: still to confirm.
 
-Turn the revision into a teammate checklist. Choose your own wording without adding unconfirmed arrangements.
+3. Save your work
+
+Save the final response in your notes. Add what you changed and how you checked it.
+
+Try a different task
+
+Fictional B0; time zone Asia/Taipei: on 2026/11/21, rehearsal at 14:30 and performance at 16:00; sound equipment undecided.
+
+Turn the updated details into a checklist with a task and time on each line. Mark missing times “to confirm”.
 
 Rehearsal 14:30, performance 16:00; equipment to confirm. Format changes; facts do not.
 
 Try a more involved task
 
-Add a changed / unchanged column.
+Show before and after
 
-Use B0 and the organizer-confirmed 14:30 update.
+Fictional B0; time zone Asia/Taipei: on 2026/11/21, rehearsal at 15:00 and performance at 16:00; sound equipment undecided.
 
-Show old version, new version, and changed / unchanged. Keep equipment unconfirmed.
+The organizer confirmed rehearsal moves from 15:00 to 14:30. Make a table with item, old detail, new detail, and whether it changed. Leave performance and sound details unchanged.
 
-Rehearsal 15:00 → 14:30: changed. Performance 16:00 → 16:00: unchanged. Equipment to confirm → to confirm: unchanged.
+Only rehearsal changes. Performance stays at 16:00; sound equipment remains unconfirmed.
 
 Classroom task: adult demo / prepared-material review
 
-Read the prepared materials here. Write the original 15:00 rehearsal on paper, change it yourself to 14:30, and mark the unchanged 16:00 performance and unconfirmed equipment.
+Use the prepared result below. Choose one detail to change, edit it yourself, and explain how you checked it. You can use the change in step 2 as a starting point.
 
 What to check
 
-Rehearsal on 11/21 moves from 15:00 to 14:30, 30 minutes earlier. Performance remains 16:00; sound equipment is to confirm.
-
-Save your work and continue later
-
-Save your result and note what you changed and how you checked it.
+Rehearsal: 14:30. Performance: 16:00. Sound equipment: still to confirm.

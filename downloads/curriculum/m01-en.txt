@@ -1,21 +1,15 @@
-Build a team for a school puzzle event
+Write a team reminder
 
-Invite teammates with a clear reply deadline, without confusing it with the event date.
+Open this lesson: https://k1everwann.github.io/ai-life-lab/en/index.html#lesson-start
 
-What you will make
+Turn event details into a reminder you can share with teammates.
 
-Make a sign-up reminder so teammates know what to do next.
-
-Example result
+Prepared example result
 
 Reply by 11/18 18:00 about attending.
 Activity: 11/21; meeting location to be announced.
 
-This is a prepared example. Your AI may use different wording.
-
-Follow along
-
-Use ChatGPT or your usual AI tool
+1. Make a first version
 
 Practice material
 
@@ -26,49 +20,63 @@ The meeting location has not been announced.
 
 Request for AI
 
-Turn this notice into one to-do: what to do and by when. List any details that have not been announced.
+Write three lines: what I need to do, the reply deadline, and what I still need to ask. Mark missing details “to confirm”.
 
-1. Open ChatGPT or your usual AI tool and start a new conversation.
-2. Copy the practice text and request below, paste both into the AI chat, and send them.
-3. Read the answer, then send: “Make this one friendly reminder I can send to a friend.”
-4. Check that the shorter version keeps the 11/18 18:00 reply deadline. Copy your favorite version to notes or save it in this lesson’s record area.
+1. Select “Copy material and request” below.
+2. Paste into a new AI conversation and send.
+3. Return and check the points below. Ask AI to correct any errors.
 
-After trying: compare a possible result
+See a reference answer
 
-The reply deadline remains 11/18 18:00; the activity is on 11/21. A friendly version: “Remember to reply by 6 pm on 11/18 about joining the 11/21 activity! We’re waiting for the organizer to announce the meeting location.”
+Action: form a team for the November 21 campus puzzle event and reply about joining.
+Deadline: 2026/11/18, 18:00 (Taipei time).
+To confirm: meeting place.
 
-Check these parts of your result
+Check these points
 
 The reply deadline is 11/18 18:00, not the activity date of 11/21.
 The short version keeps the action and does not invent a meeting location.
 
-Try a different situation yourself
+2. Change one thing and check
 
-Using A1, write a reminder for a teammate seeing the notice for the first time. Choose the tone and save a second version.
+Continue the same AI conversation. Use the request below or choose a change of your own.
 
-Keep the 11/18 18:00 reply deadline, 11/21 event, and unconfirmed meeting place; include at least one change you chose.
+Make it a friendly, short message for teammates. Keep the reply deadline and leave the meeting place as “to confirm”.
 
-Try a more involved task
+The November 18, 18:00 deadline stays. No meeting place is invented.
 
-Shorten the reminder to 40 English words for teammates who already know the event.
+3. Save your work
+
+Save the final response in your notes. Add what you changed and how you checked it.
+
+Try a different task
 
 Fictional teaching notice A1
 School puzzle event date: 2026/11/21.
 Reply whether you will attend by 2026/11/18 18:00 (Asia/Taipei).
 The meeting location has not been announced.
 
-Write a teammate reminder of at most 40 English words. Keep the reply action, 11/18 18:00 deadline, and unknown meeting place; you may omit the event date. Explain what you omitted and why.
+Write a reminder with three lines: action, deadline, and to confirm. Choose your own tone.
 
-Example: “Reply by 11/18 18:00 to say whether you will join. Meeting place to be announced.” Explain that the known event date was omitted; restore it for a new teammate.
+Keep the 11/18 18:00 reply deadline, 11/21 event, and unconfirmed meeting place; include at least one change you chose.
+
+Try a more involved task
+
+Can you make it shorter?
+
+Fictional teaching notice A1
+School puzzle event date: 2026/11/21.
+Reply whether you will attend by 2026/11/18 18:00 (Asia/Taipei).
+The meeting location has not been announced.
+
+Write a reminder of no more than 40 English words for teammates who already know the event. Keep the reply deadline and the unconfirmed meeting place.
+
+It keeps “reply by November 18 at 18:00” and “meeting place to confirm”, without inventing a place.
 
 Classroom task: adult demo / prepared-material review
 
-Read the prepared materials here. Rewrite the reminder on paper in your own teammate-friendly voice. Circle 11/18 18:00 and check that no meeting place was invented.
+Use the prepared result below. Choose one detail to change, edit it yourself, and explain how you checked it. You can use the change in step 2 as a starting point.
 
 What to check
 
-Change at least one part of the tone; preserve the 11/18 18:00 reply deadline, 11/21 event date, and unannounced place.
-
-Save your work and continue later
-
-Save your result and note what you changed and how you checked it.
+The November 18, 18:00 deadline stays. No meeting place is invented.

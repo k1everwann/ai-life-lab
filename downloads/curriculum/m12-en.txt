@@ -1,21 +1,15 @@
-Make something you will use next week
+Make something of your own
 
-Combine asking, revising, and trying to make something you actually want to use.
+Open this lesson: https://k1everwann.github.io/ai-life-lab/en/index.html#lesson-project
 
-What you will make
+Choose a task, make a first version, change one thing, and check it.
 
-Choose a small need, make a usable result, and ask a partner to try it.
-
-Example result
+Prepared example result
 
 Board-game meetup | Two games, pen and paper available.
 14:00 explain rules → game durations to confirm → 15:50 tidy → 16:00 finish.
 
-This is a prepared example. Your AI may use different wording.
-
-Follow along
-
-Use ChatGPT or your usual AI tool
+1. Make a first version
 
 Practice material
 
@@ -28,45 +22,62 @@ Request for AI
 
 Make an “Already available / Prepare / Activity sequence” checklist from the data. Mark unknown times instead of inventing game durations; label additional items as suggestions. Give a usable first version, then ask what I want to change.
 
-1. Choose a practice checklist, reading tracker, club activity pack, or another small need. You may use the board-game example.
-2. Give three necessary details and your request to AI for a usable result.
-3. Change one condition yourself, such as 3 people to 5. Request a complete revision and a description of what changed.
-4. Ask a partner to try the first step, identify one obstacle, and fix it. Keep the original and revised versions.
+1. Select “Copy material and request” below.
+2. Paste into a new AI conversation and send.
+3. Return and check the points below. Ask AI to correct any errors.
 
-After trying: compare a possible result
+See a reference answer
 
 Already available: two board games, pen and paper. Suggested preparation might include drinking water. Sequence: start explaining rules at 14:00 → play after confirming game durations → tidy up at 15:50 → finish at 16:00. Game durations are unknown; do not invent finish times for each game.
 
-Check these parts of your result
+Check these points
 
-The result has directly usable content, not just planning advice.
-The two games and pen and paper are available; do not require buying them again.
-Game durations are unknown; do not invent finish times. Update details affected by new conditions.
+The result uses my material without inventing missing facts.
+I changed one requirement while keeping the other correct details.
+I can show one check and save the result.
 
-Try a different situation yourself
+2. Change one thing and check
 
-Use your own small need. Write three necessary details and one criterion for usefulness. Obtain a result and personally change one thing.
+Continue the same AI conversation. Use the request below or choose a change of your own.
 
-There is no single answer. Use the work for one small action and explain your change. Use fictional data, not private photos, names, or account details.
+The group grows from three people to five.
+
+Update the plan and list what we need to confirm. Do not assume both games support five players.
+
+The plan uses five people and asks about game capacity. The time, place, and final ten minutes for cleanup stay the same.
+
+3. Save your work
+
+Save the final response in your notes. Add what you changed and how you checked it.
+
+Try a different task
+
+My task: [something I want to do]
+Known facts: [three confirmed facts]
+Result I want: [for example, a checklist, introduction, or webpage]
+How I will check it: [one check]
+
+Make a first version using my details. Point out missing information instead of inventing it.
+
+Replace the bracketed text with your details before sending. Then request one change, use your chosen check, and save the new version.
 
 Try a more involved task
 
-Add instructions for someone joining for the first time.
+Help a first-time participant
 
-Use your work; for the board-game example, add a companion unfamiliar with the rules. All other conditions remain unchanged.
+Fictional example: 3 people play board games in the club room on Saturday, 14:00–16:00.
+Two board games and pen and paper are already available; need a preparation checklist and activity sequence.
+Explain rules first, play, then leave 10 minutes for tidying up.
+Game durations are not provided. No website or budget calculation is needed.
 
-Add “How to start for the first time” without inventing game rules. Ask a partner to follow the first step, then fix one obstacle.
+Add “How to get started on your first visit” to this board-game plan. Mark unknown game rules and playing times “to confirm”; do not invent them.
 
-For example, choose a game, take out its rulebook, and check everyone understands before starting. Use original instructions for unknown rules. The partner can find the first step, and the author keeps both versions.
+There is a clear arrival, introduction, and play sequence; game rules and playing times remain to confirm.
 
 Classroom task: adult demo / prepared-material review
 
-Read the prepared materials here. Change the board-game group from 3 to 5 people yourself, marking that each game’s player limit must be checked again. Ask a partner to find the first step in the revision and keep both versions.
+Use the prepared result below. Choose one detail to change, edit it yourself, and explain how you checked it. You can use the change in step 2 as a starting point.
 
 What to check
 
-Group changed to 5; game player limits remain to confirm, with no invented rules. A partner can find the first step; original and revision are kept.
-
-Save your work and continue later
-
-Save your result and note what you changed and how you checked it.
+The plan uses five people and asks about game capacity. The time, place, and final ten minutes for cleanup stay the same.

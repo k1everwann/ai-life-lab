@@ -1,27 +1,21 @@
-Turn a 30-second film into doable tasks
+Turn a video idea into a task list
 
-When creating together, agree who does what; no filming or uploading real people is needed.
+Open this lesson: https://k1everwann.github.io/ai-life-lab/en/index.html#lesson-notion
 
-What you will make
+List who does what and by when, then change one assignment.
 
-Separate storyboarding and props into a task table with owners and deadlines.
+Prepared example result
 
-Example result
-
-T01 | Xiaohe | Draw three storyboard panels by 11/18.
+T01 | Xiaohe | Draw three scene sketches by 11/18.
 T02 | Me | Prepare paper props by 11/19.
 
-This is a prepared example. Your AI may use different wording.
-
-Follow along
-
-Use ChatGPT or your usual AI tool
+1. Make a first version
 
 Practice material
 
 Fictional teaching page: [AI Lab] 30-second school film start N1
 Activity: 2026/11/21 14:00 (Asia/Taipei), 6 people.
-T01: Xiaohe to draw three storyboard panels by 11/18, incomplete.
+T01: Xiaohe to draw three scene sketches by 11/18, incomplete.
 T02: prepare paper props by 11/19, owner undecided, incomplete.
 Budget undecided.
 
@@ -29,58 +23,81 @@ Request for AI
 
 Organize these notes into activity details, an action table, and things to discuss. Use ID, task, owner, deadline, and progress as columns; mark missing details “to confirm.”
 
-1. Paste the notes and request into AI to get a draft plan.
-2. Read the task table: storyboarding and preparing paper props should be separate tasks.
-3. Then send: “I will take responsibility for T02, preparing paper props. Update only that item.”
-4. Copy the plan you like into your notes. Try the optional connection exercise to put it in an actual Notion page.
+1. Select “Copy material and request” below.
+2. Paste into a new AI conversation and send.
+3. Return and check the points below. Ask AI to correct any errors.
 
-After trying: compare a possible result
+See a reference answer
 
-Activity: 11/21 14:00, 6 people. T01: Xiaohe draws three storyboard panels by 11/18, incomplete. T02: prepare paper props by 11/19, incomplete; after your follow-up its owner is “me.” Still to discuss: venue and budget. This stays in the AI chat until you copy it into your notes.
+Activity: six people making a video on November 21 at 14:00.
+T01: Xiaohe draws three scene sketches by November 18; not done.
+T02: make paper props by November 19; owner to confirm; not done.
+Budget and location: to confirm.
 
-Check these parts of your result
+Check these points
 
 Storyboarding and preparing paper props are separate tasks.
 After the follow-up, only T02’s owner becomes “me”; its deadline stays 11/19.
 The budget remains to discuss; no amount is invented.
 
-Try a different situation yourself
+2. Change one thing and check
 
-Using T01 and T02, write a request to change only T01’s deadline to 11/17; keep other fields.
+Continue the same AI conversation. Use the request below or choose a change of your own.
+
+I will take responsibility for T02.
+
+Update only the owner of T02. Leave everything else unchanged.
+
+T02 is assigned to me. T01, both deadlines, and the task statuses stay the same.
+
+3. Save your work
+
+Save the final response in your notes. Add what you changed and how you checked it.
+
+Try a different task
+
+Fictional teaching page: [AI Lab] 30-second school film start N1
+Activity: 2026/11/21 14:00 (Asia/Taipei), 6 people.
+T01: Xiaohe to draw three storyboard panels by 11/18, incomplete.
+T02: prepare paper props by 11/19, owner undecided, incomplete.
+Budget undecided.
+T02 is now assigned to me.
+
+Move T01’s deadline to November 17 and show the task list again. Keep T02 and everything else unchanged.
 
 T01 is due 11/17; other details remain unchanged. There are still two tasks, with no duplicates.
 
 Try a more involved task
 
-Add an “unfinished only” filter.
+Show what still needs doing
 
-Use T01 and T02; mark T01 completed and keep T02 unfinished.
+Fictional teaching page: [AI Lab] 30-second school film start N1
+Activity: 2026/11/21 14:00 (Asia/Taipei), 6 people.
+T01: Xiaohe to draw three storyboard panels by 11/18, incomplete.
+T02: prepare paper props by 11/19, owner undecided, incomplete.
+Budget undecided.
+T02 is now assigned to me.
 
-Update T01 by ID, then show unfinished tasks. Keep the full table; do not delete completed tasks.
+T01 is finished. Update the full task list, then show unfinished tasks separately. Keep T01 in the full list.
 
-The full table still contains T01 and T02. The unfinished list shows only T02. Filtering is not deletion.
+T01 remains in the full list as done. Only T02 appears in the unfinished list.
 
 Classroom task: adult demo / prepared-material review
 
-Read the prepared materials here, starting from N1 where T02 is unassigned. Take ownership of T02 on paper by writing “me”; check that T01 and deadlines remain unchanged, with only two tasks.
+Use the prepared result below. Choose one detail to change, edit it yourself, and explain how you checked it. You can use the change in step 2 as a starting point.
 
 What to check
 
-T02 owner changes from undecided to “me”, still due 11/19. T01 remains Xiaohe’s three storyboard panels due 11/18.
+T02 is assigned to me. T01, both deadlines, and the task statuses stay the same.
 
-Instructor extension: put the plan in your own Notion
+Organize a Notion note
 
-An eligible adult operates an authorized practice account here; students do not need to register or connect accounts. In your Notion practice area, create “AI practice – 30-second school film,” paste this lesson’s fictional notes, and copy the page link. Create a separate blank parent page, “AI practice – results,” for the organized version.
+Prepare: create a teaching Notion page with this lesson’s film notes, then copy its link.
 
-Use Notion to read this page: [practice page link]. Organize activity details and an action table. Show the draft in chat first without changing the page.
+Use Notion to read this page: [note link]. Organize the activity, tasks, and unknowns. Show the result in this conversation first without editing the page.
 
-Connect Notion through available Plugins or connected apps in your AI tool. Use the actual permission flow to allow your practice pages, and confirm you can open them yourself.
-Insert the source-page link, select the Notion plugin, and send the request. Review the draft against your notes.
-To save it to Notion, send a separate request: “Under [results parent link], create 30-second school film plan and write the complete draft we just reviewed.” This is the step that creates a page.
-Open the returned page and check its title, tasks, and location. Without write access, copy the draft to your practice page yourself.
+Connect Notion using the account connection guide and allow access to the practice page.
+Insert the note link, select Notion, send, and check the result.
+To save in Notion, first check that page creation is supported. Then ask: “Create a page under [destination page link] with this result.” Open and check the new page. If creation is unavailable, paste it yourself.
 
-Reading produces a chat draft. An actual new Notion page exists only after you separately request writing and it succeeds.
-
-Save your work and continue later
-
-Save your result and note what you changed and how you checked it.
+Reading produces a result in the conversation. A new Notion page exists only after you separately request creation and it succeeds.

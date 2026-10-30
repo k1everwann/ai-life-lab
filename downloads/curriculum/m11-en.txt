@@ -1,22 +1,16 @@
-Help exchange students understand the club activity day
+Introduce an event in two languages
 
-Tell friends in different languages about the same activity, keeping the facts while changing the wording.
+Open this lesson: https://k1everwann.github.io/ai-life-lab/en/index.html#lesson-language
 
-What you will make
+Write in two languages while keeping dates, places, and costs the same.
 
-Get short Chinese and English notices and adjust their tone for friends.
-
-Example result
+Prepared example result
 
 11/21 09:00一起參加「社團體驗日」，每人300 TWD。
 Join 社團體驗日 on 11/21 at 09:00; 300 TWD per person.
 (Excerpt; the full notice also includes the reply deadline and materials details.)
 
-This is a prepared example. Your AI may use different wording.
-
-Follow along
-
-Use ChatGPT or your usual AI tool
+1. Make a first version
 
 Practice material
 
@@ -26,45 +20,56 @@ Request for AI
 
 Write short Chinese and English notices from these details. Make the time, place, price, and reply deadline easy to find. Keep activity and venue names in their original form and keep the extra materials cost.
 
-1. Paste the activity details and request into AI and read both notices.
-2. Then send: “Make the Chinese sound like a message to a friend, and make the English shorter.”
-3. Check that the dates and 300 TWD per person did not change, and materials still costs extra.
-4. Save the versions you like. For unfamiliar English, ask: “Explain this sentence in Chinese.”
+1. Select “Copy material and request” below.
+2. Paste into a new AI conversation and send.
+3. Return and check the points below. Ask AI to correct any errors.
 
-After trying: compare a possible result
+See a reference answer
 
 Chinese: 『社團體驗日』11/21 09:00於雲樓A室舉行，每人300 TWD；請於11/18 18:00前回覆。日期皆2026年，時間皆Asia/Taipei；材料另計、價格待確認。 English: Join 社團體驗日 at 雲樓A室 on 2026/11/21 at 09:00 (Asia/Taipei), 300 TWD per person. Reply by 2026/11/18 18:00 (Asia/Taipei). Materials cost extra; the price is unconfirmed. All six fields agree, with no invented official names.
 
-Check these parts of your result
+Check these points
 
 Both versions keep the same activity date, reply deadline, and 300 TWD per-person price.
 Materials remains extra with their price unconfirmed, not included.
 Keep original activity and venue names and Asia/Taipei in the full notice.
 
-Try a different situation yourself
+2. Change one thing and check
 
-New fictional L2: 紙上散步 at Room B on 2026/12/03 15:00 (Asia/Taipei); free; register by 12/01 12:00 (Asia/Taipei); materials provision unknown. No official English activity name. Write both language versions and a fact comparison independently.
+Continue the same AI conversation. Use the request below or choose a change of your own.
+
+Make the Chinese friendlier and use shorter English sentences. Keep all dates, places, costs, and unknowns.
+
+Only tone and sentence length change. Both versions still give the same event details.
+
+3. Save your work
+
+Save the final response in your notes. Add what you changed and how you checked it.
+
+Try a different task
+
+Event: 紙上散步, 2026/12/03 at 15:00, classroom B, free.
+Registration closes 2026/12/01 at 12:00. All times are Taipei time.
+Materials provided: to confirm. There is no official English event name.
+
+Write a short notice in Chinese and English. Keep the information identical, preserve the event’s original name, and do not guess missing details.
 
 Chinese preserves 12/03 15:00, B室, free admission, 12/01 12:00 registration deadline, and unknown materials. English example: 紙上散步 is at Room B on 2026/12/03 at 15:00 (Asia/Taipei), free of charge. Register by 2026/12/01 12:00 (Asia/Taipei). Materials provision is unconfirmed. Free admission does not imply included materials.
 
 Try a more involved task
 
-Add a 20-second spoken introduction.
+Make it sound natural aloud
 
 Fictional notice L1: 社團體驗日 takes place on 2026/11/21 at 09:00 (Asia/Taipei), at 雲樓A室; 300 TWD per person. Reply whether attending by 2026/11/18 18:00 (Asia/Taipei). Materials cost extra; their price is undecided. Neither activity nor venue has an approved English name.
 
-Write Chinese and English spoken introductions from the same data, aiming for 20 seconds each. If necessary, go longer rather than drop the price, deadline, or unknown materials cost. Read them to a partner and check.
+Turn the details into Chinese and English introductions to read aloud. Use three or four sentences per language and keep all known facts and unknowns.
 
-Both versions keep 11/21 09:00, 雲樓A室, 300 TWD per person, reply by 11/18 18:00, and extra materials with an unknown price; retain 2026 and Asia/Taipei. Prioritize understanding and complete facts over speed.
+Both sound natural aloud and agree on the date, time, place, fee, deadline, and unknown materials fee.
 
 Classroom task: adult demo / prepared-material review
 
-Read the prepared materials here. Change the tone of one Chinese sentence yourself, then circle matching times, price, and extra materials in the prepared English. Ask the instructor to explain unfamiliar English; English proficiency is not graded.
+Use the prepared result below. Choose one detail to change, edit it yourself, and explain how you checked it. You can use the change in step 2 as a starting point.
 
 What to check
 
-Chinese has one tone change you chose; both versions retain 11/21 09:00, reply by 11/18 18:00, 300 TWD per person, and extra materials with an unknown price.
-
-Save your work and continue later
-
-Save your result and note what you changed and how you checked it.
+Only tone and sentence length change. Both versions still give the same event details.

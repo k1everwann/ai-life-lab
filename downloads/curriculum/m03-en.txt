@@ -1,21 +1,15 @@
-Which group message can you trust?
+Check conflicting messages
 
-When a group mixes forwarded messages and suggestions, find what you can actually act on.
+Open this lesson: https://k1everwann.github.io/ai-life-lab/en/index.html#lesson-sources
 
-What you will make
+Separate confirmed details from things you still need to ask.
 
-Make a source-backed school game schedule separating confirmed facts from questions.
-
-Example result
+Prepared example result
 
 Check-in: 11/21 09:00, the club room.
 Team name: submit by 11/19 19:00; ask about the game start.
 
-This is a prepared example. Your AI may use different wording.
-
-Follow along
-
-Use ChatGPT or your usual AI tool
+1. Make a first version
 
 Practice material
 
@@ -29,44 +23,61 @@ Request for AI
 
 Turn these four messages into a table: action / time / note. Put organizer-confirmed arrangements first, then suggestions and questions.
 
-1. Paste the four messages and request into AI to get a table.
-2. Look back at organizer message B: the check-in is 09:00; E’s 08:30 is a suggestion. Check that the table keeps them separate.
-3. Choose one unconfirmed detail, write a question that would resolve it, and add a source ID to each table row.
-4. Check that check-in time and the team-name submission deadline are easy to find, then save the schedule card.
+1. Select “Copy material and request” below.
+2. Paste into a new AI conversation and send.
+3. Return and check the points below. Ask AI to correct any errors.
 
-After trying: compare a possible result
+See a reference answer
 
 Meet on 11/21 at 09:00 at the club room; submit a team name by 11/19 19:00. 08:30 is only a draft suggestion. You can ask the organizer about the 09:30 game-start and game format.
 
-Check these parts of your result
+Check these points
 
 Use the organizer-confirmed 09:00 check-in; 08:30 remains a suggestion.
 09:30 is an unconfirmed game-start note, not the check-in time.
 
-Try a different situation yourself
+2. Change one thing and check
 
-A teammate says “E is newest, so 08:30 is correct.” Write a source-based response without guessing authority.
+Continue the same AI conversation. Use the request below or choose a change of your own.
+
+Add the source letter after each detail. Do not treat a newer draft as a confirmed notice.
+
+The 09:00 check-in comes from B; 08:30 is only a draft in E; F says games start at 09:30, but approval is unconfirmed.
+
+3. Save your work
+
+Save the final response in your notes. Add what you changed and how you checked it.
+
+Try a different task
+
+Fictional data; time zone Asia/Taipei.
+D | issued 10/20: check in at the club room on 2026/11/21 at 10:00.
+B | organizer approved 10/25: replaces D; check in at the club room on 2026/11/21 at 09:00; submit a team name by 11/19 19:00; game format undecided.
+E | discussion draft 10/28: suggests check-in on 11/21 at 08:30; not approved.
+F | game-start note: starts 11/21 at 09:30; approval status not stated.
+
+A teammate says, “E is newer, so we meet at 08:30.” Explain in two sentences whether this is justified, citing the source letters.
 
 B is approved and replaces D, so check-in is confirmed at 09:00. E suggests 08:30; newest does not mean valid.
 
 Try a more involved task
 
-Add a “What evidence is missing?” column.
+Turn uncertainty into questions
 
-Use the four fictional messages D, B, E, F.
+Fictional data; time zone Asia/Taipei.
+D | issued 10/20: check in at the club room on 2026/11/21 at 10:00.
+B | organizer approved 10/25: replaces D; check in at the club room on 2026/11/21 at 09:00; submit a team name by 11/19 19:00; game format undecided.
+E | discussion draft 10/28: suggests check-in on 11/21 at 08:30; not approved.
+F | game-start note: starts 11/21 at 09:30; approval status not stated.
 
-For E and F, write one question each for the organizer, specifying what needs confirmation. Do not adopt unconfirmed times.
+Write one question for the organizer about E and one about F. Specify which time needs confirmation and whether it has been approved.
 
-E: Was the 08:30 suggestion approved to replace B? F: Is the 09:30 game start confirmed? Confirmed check-in remains 09:00.
+E: Is 08:30 check-in officially approved? F: Is the 09:30 game start approved, and does it change B’s 09:00 check-in?
 
 Classroom task: adult demo / prepared-material review
 
-Read the prepared materials here. Suppose a teammate wrote check-in as 08:30. Correct that detail yourself and label source B, then write a question about the unconfirmed 09:30 game start.
+Use the prepared result below. Choose one detail to change, edit it yourself, and explain how you checked it. You can use the change in step 2 as a starting point.
 
 What to check
 
-Change 08:30 to 09:00 and label source B; ask whether the 09:30 game start is confirmed.
-
-Save your work and continue later
-
-Save your result and note what you changed and how you checked it.
+The 09:00 check-in comes from B; 08:30 is only a draft in E; F says games start at 09:30, but approval is unconfirmed.
